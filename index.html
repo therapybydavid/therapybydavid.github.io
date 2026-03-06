@@ -19,7 +19,8 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
+  body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; font-size: 1rem; }
+  p { font-size: 1rem; line-height: 1.8; }
 
   /* NAV */
   nav {
@@ -152,7 +153,7 @@
   #telehealth h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.6rem); color: var(--navy); line-height: 1.2; margin-bottom: 1.5rem; }
   #telehealth .tele-intro { color: #1a1a1a; line-height: 1.9; font-weight: 300; margin-bottom: 1.5rem; }
   .tele-list { list-style: none; }
-  .tele-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); color: #1a1a1a; font-size: 0.95rem; line-height: 1.6; font-weight: 300; }
+  .tele-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); color: #1a1a1a; font-size: 1rem; line-height: 1.8; font-weight: 300; }
   .tele-list li span { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
   .tele-box { background: var(--navy); border: 1px solid rgba(201,168,76,0.2); padding: 3rem; text-align: center; border-radius: 2px; }
   .tele-box .icon { font-size: 4rem; display: block; margin-bottom: 1.5rem; }
@@ -163,7 +164,7 @@
   #contact { padding: 4rem 8%; background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .contact-left p { color: rgba(255,255,255,0.85); line-height: 1.9; font-weight: 300; margin-bottom: 2rem; }
   .contact-details { list-style: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
-  .contact-details li { display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1rem; }
+  .contact-details li { display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1rem; }
   .contact-details a { color: rgba(255,255,255,0.8); text-decoration: none; }
   .steps-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); padding: 2.5rem; border-radius: 2px; }
   .steps-box h3 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 1.5rem; }
@@ -273,13 +274,13 @@
     <p style="color:rgba(255,255,255,0.85);line-height:1.9;font-weight:300;margin-bottom:1.5rem;">Many people reach out when life starts feeling heavier than it should. You might be dealing with constant stress, anxiety that will not quiet down, past trauma that keeps resurfacing, or simply feeling stuck in patterns that are hard to change.</p>
     <p style="color:var(--gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;">I work with adults who are experiencing:</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem;margin-bottom:1.5rem;">
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Anxiety and chronic stress</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Depression or loss of motivation</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Trauma and difficult life experiences</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Major life transitions</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Burnout and emotional exhaustion</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Self-esteem struggles</p>
-      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:0.95rem;">→ Relationship stress</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Anxiety and chronic stress</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Depression or loss of motivation</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Trauma and difficult life experiences</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Major life transitions</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Burnout and emotional exhaustion</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Self-esteem struggles</p>
+      <p style="color:rgba(255,255,255,0.85);font-weight:300;font-size:1rem;">→ Relationship stress</p>
     </div>
     <p style="color:rgba(255,255,255,0.7);line-height:1.9;font-weight:300;font-style:italic;">You do not have to have everything figured out before starting therapy. Many people begin simply needing a place to talk and sort things out.</p>
   </div>
@@ -312,12 +313,12 @@
     <p style="color:rgba(255,255,255,0.85);line-height:1.9;font-weight:300;margin-bottom:2rem;">I accept several insurance plans and also offer private pay options. Please reach out to confirm your specific coverage before scheduling.</p>
     <p style="color:var(--gold);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.2rem;">Insurance accepted may include:</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;">
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;TRICARE</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;Blue Cross Blue Shield</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;Aetna</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;United Healthcare</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;Cigna</div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:300;">✓ &nbsp;Other major plans</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;TRICARE</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;Blue Cross Blue Shield</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;Aetna</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;United Healthcare</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;Cigna</div>
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);padding:1rem 1.2rem;border-radius:2px;color:rgba(255,255,255,0.85);font-size:1rem;font-weight:300;">✓ &nbsp;Other major plans</div>
     </div>
   </div>
 </section>
