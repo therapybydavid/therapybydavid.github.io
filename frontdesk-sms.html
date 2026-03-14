@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Mind Space &mdash; Front Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #161616;
+    --border: #222222;
+    --border2: #2a2a2a;
+    --text: #e8e8e8;
+    --text2: #888888;
+    --text3: #444444;
+    --teal: #1D9E75;
+    --teal-light: #5DCAA5;
+    --teal-dim: #0F6E56;
+    --teal-bg: rgba(29,158,117,0.1);
+    --amber: #EF9F27;
+    --amber-bg: rgba(239,159,39,0.1);
+    --amber-dim: #633806;
+    --blue: #378ADD;
+    --blue-bg: rgba(55,138,221,0.1);
+    --blue-dim: #185FA5;
+    --red: #E24B4A;
+    --red-bg: rgba(226,75,74,0.1);
+    --red-dim: #791F1F;
+    --coral-dim: #993C1D;
+  }
+  html, body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.5; min-height: 100vh; }
+  .layout { display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 64px 1fr; min-height: 100vh; }
+
+  /* TOPBAR */
+  .topbar { grid-column: 1 / -1; background: #0d0d0d; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--teal-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .brand-dot svg { width: 14px; height: 14px; fill: var(--teal-light); }
+  .brand-name { font-size: 15px; font-weight: 500; color: var(--text); }
+  .brand-sub { font-size: 11px; color: var(--text3); margin-top: 1px; }
+  .clock { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--text); }
+  .date-str { font-size: 11px; color: var(--text3); text-align: right; margin-top: 1px; }
+
+  /* SIDEBAR */
+  .sidebar { background: #0d0d0d; border-right: 0.5px solid var(--border); padding: 1.25rem 0; display: flex; flex-direction: column; gap: 2px; }
+  .sidebar-label { font-size: 10px; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 1.5rem 0.4rem; }
+  .nav-btn { width: 100%; text-align: left; padding: 8px 1.5rem; background: transparent; border: none; color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.12s; display: flex; align-items: center; gap: 8px; }
+  .nav-btn:hover { background: var(--surface2); color: var(--text); }
+  .nav-btn.active { background: var(--teal-bg); color: var(--teal-light); border-right: 2px solid var(--teal); }
+  .nav-icon { width: 14px; height: 14px; flex-shrink: 0; fill: currentColor; }
+  .sidebar-divider { height: 0.5px; background: var(--border); margin: 0.5rem 1.5rem; }
+  .sidebar-stats { padding: 0 1rem; }
+  .sstat { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; }
+  .sstat-label { font-size: 10px; color: var(--text3); margin-bottom: 3px; }
+  .sstat-val { font-size: 20px; font-weight: 500; color: var(--text); font-family: 'DM Mono', monospace; }
+
+  /* MAIN */
+  .main { padding: 1.5rem; overflow-y: auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .page-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; }
+
+  /* CARDS */
+  .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+  .card-title { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+
+  /* FORMS */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .form-row.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  label { font-size: 11px; color: var(--text2); display: block; margin-bottom: 4px; }
+  input, select, textarea { width: 100%; background: var(--bg); border: 0.5px solid var(--border2); border-radius: 6px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 8px 10px; outline: none; transition: border-color 0.12s; }
+  input:focus, select:focus, textarea:focus { border-color: var(--teal); }
+  input::placeholder { color: var(--text3); }
+  textarea { resize: vertical; min-height: 60px; }
+  select option { background: var(--surface); }
+  .btn-row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+  button { padding: 8px 16px; font-size: 12px; font-weight: 500; border-radius: 6px; cursor: pointer; border: 0.5px solid var(--border2); background: transparent; color: var(--text2); font-family: 'DM Sans', sans-serif; transition: all 0.12s; }
+  button:hover { background: var(--surface2); color: var(--text); }
+  button.primary { background: var(--teal); color: #fff; border-color: var(--teal); }
+  button.primary:hover { background: var(--teal-light); border-color: var(--teal-light); color: #0a0a0a; }
+  button.danger { color: var(--red); border-color: rgba(226,75,74,0.2); }
+  button.danger:hover { background: var(--red-bg); }
+  button.small { padding: 4px 10px; font-size: 11px; }
+  button.ghost { border-color: transparent; color: var(--text3); }
+  button.ghost:hover { color: var(--text); background: var(--surface2); border-color: var(--border); }
+  button.export-btn { background: var(--surface2); border-color: var(--border2); color: var(--text2); display: flex; align-items: center; gap: 6px; }
+  button.export-btn:hover { color: var(--text); }
+
+  /* SECTION HEADER */
+  .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .section-head h2 { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* LOG ITEMS */
+  .log-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 14px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; margin-bottom: 6px; transition: border-color 0.12s; }
+  .log-item:hover { border-color: var(--border2); }
+  .log-badge { font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+  .badge-new { background: var(--teal-dim); color: #9FE1CB; }
+  .badge-referral { background: var(--blue-dim); color: #B5D4F4; }
+  .badge-callback { background: var(--amber-dim); color: #FAC775; }
+  .badge-other { background: #1a1a1a; color: var(--text3); }
+  .badge-crisis { background: var(--red-dim); color: #F7C1C1; }
+  .badge-intake { background: #26215C; color: #CECBF6; }
+  .log-meta { font-size: 12px; color: var(--text); font-weight: 500; }
+  .log-sub { font-size: 11px; color: var(--text3); margin-top: 2px; line-height: 1.5; }
+  .log-time-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .log-time { font-size: 10px; color: var(--text3); white-space: nowrap; font-family: 'DM Mono', monospace; }
+  .empty { text-align: center; padding: 2.5rem; color: var(--text3); font-size: 12px; }
+
+  /* INTAKE ITEMS */
+  .intake-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; }
+  .intake-header { display: flex; align-items: center; justify-content: space-between; }
+  .intake-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .intake-detail { font-size: 11px; color: var(--text3); margin-top: 5px; line-height: 1.7; }
+  .status-badge { font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: 500; }
+  .status-pending { background: var(--amber-bg); color: var(--amber); border: 0.5px solid var(--amber-dim); }
+  .status-scheduled { background: var(--teal-bg); color: var(--teal-light); border: 0.5px solid var(--teal-dim); }
+  .status-waitlist { background: var(--blue-bg); color: var(--blue); border: 0.5px solid var(--blue-dim); }
+
+  /* THERAPIST */
+  .therapist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; margin-bottom: 1rem; }
+  .therapist-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; cursor: pointer; transition: all 0.12s; display: flex; align-items: center; gap: 10px; }
+  .therapist-card:hover { border-color: var(--teal); background: var(--teal-bg); }
+  .therapist-card.selected { border-color: var(--teal); background: var(--teal-bg); }
+  .t-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--surface2); border: 0.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--teal-light); flex-shrink: 0; }
+  .t-name { font-size: 12px; font-weight: 500; color: var(--text); }
+  .t-title { font-size: 10px; color: var(--text3); margin-top: 1px; }
+  .therapist-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
+
+  /* FILTER */
+  .filter-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .filter-btn { padding: 4px 12px; font-size: 11px; border: 0.5px solid var(--border); border-radius: 20px; background: transparent; color: var(--text2); cursor: pointer; }
+  .filter-btn.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .filter-btn:hover:not(.active) { border-color: var(--border2); color: var(--text); }
+
+  /* INTERN CHIPS */
+  .intern-chip { display: inline-flex; align-items: center; gap: 6px; background: var(--surface2); border: 0.5px solid var(--border2); border-radius: 20px; padding: 4px 10px; font-size: 11px; color: var(--text2); margin: 3px; }
+  .intern-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+  /* SELECTED BANNER */
+  .selected-banner { background: var(--teal-bg); border: 0.5px solid var(--teal-dim); border-radius: 6px; padding: 6px 12px; font-size: 12px; color: var(--teal-light); margin-bottom: 10px; display: none; align-items: center; justify-content: space-between; }
+  .selected-banner.visible { display: flex; }
+
+  /* DUTY BAR */
+  .duty-bar { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; align-items: center; }
+  .duty-label { font-size: 10px; color: var(--text3); margin-right: 4px; }
+
+  .divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
+
+  /* LOG TABLE */
+  .log-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .log-toolbar-left { display: flex; gap: 5px; flex-wrap: wrap; }
+  .log-toolbar-right { display: flex; gap: 6px; }
+  .log-count { font-size: 11px; color: var(--text3); padding: 4px 0; }
+
+  /* PRINT STYLES */
+  @media print {
+    .sidebar, .topbar, .btn-row, button, .filter-row, .log-toolbar-right, .nav-btn { display: none !important; }
+    .layout { display: block; }
+    .main { padding: 0; }
+    .panel { display: block !important; }
+    .panel:not(#panel-log) { display: none !important; }
+    body { background: #fff; color: #000; font-size: 12px; }
+    .print-header { display: block !important; }
+    .log-item { border: 0.5px solid #ccc; margin-bottom: 4px; break-inside: avoid; }
+    .log-meta { color: #000; }
+    .log-sub, .log-time { color: #555; }
+    .log-badge { border: 0.5px solid #ccc; background: #f5f5f5 !important; color: #333 !important; }
+    .intake-item { border: 0.5px solid #ccc; break-inside: avoid; margin-bottom: 4px; }
+    .intake-name { color: #000; }
+    .card { border: 0.5px solid #ccc; }
+  }
+  .print-header { display: none; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #ccc; }
+  .print-header h1 { font-size: 18px; color: #000; }
+  .print-header p { font-size: 12px; color: #555; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="data:image/jpeg;base64,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" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid #2a2a2a;">
+      <div>
+        <div class="brand-name">Safe Mind Space</div>
+        <div class="brand-sub">Counseling Group LLC &mdash; Front desk</div>
+      </div>
+    </div>
+    <div style="text-align:right;">
+      <div class="clock" id="clock"></div>
+      <div class="date-str" id="dateline"></div>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <div class="sidebar-label">Navigation</div>
+    <button class="nav-btn active" onclick="switchTab('calls')">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M3 2a1 1 0 00-1 1v1.5C2 10.404 5.596 14 10.5 14H12a1 1 0 001-1v-2a1 1 0 00-.8-.98l-2-.4a1 1 0 00-1.1.55l-.5 1A5.5 5.5 0 014.83 5.4l1-.5A1 1 0 006.38 3.9L5.98 1.9A1 1 0 005 1H3.5A1.5 1.5 0 003 2z"/></svg>
+      Call log
+    </button>
+    <button class="nav-btn" onclick="switchTab('intake')">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M5 3a1 1 0 000 2h6a1 1 0 000-2H5zM5 7a1 1 0 000 2h6a1 1 0 000-2H5zM5 11a1 1 0 000 2h3a1 1 0 000-2H5z"/><path fill-rule="evenodd" d="M2 1a1 1 0 011-1h10a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V1zm2 0v14h8V1H4z"/></svg>
+      Client intake
+    </button>
+    <button class="nav-btn" onclick="switchTab('log')">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M2 2a1 1 0 011-1h10a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V2zm2 1v10h8V3H4zm1 2h6v1H5V5zm0 2h6v1H5V7zm0 2h4v1H5V9z"/></svg>
+      Activity log
+    </button>
+    <button class="nav-btn" onclick="switchTab('directory')">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 14s-1 0-1-1 1-4 7-4 7 3 7 4-1 1-1 1H2z"/></svg>
+      Staff directory
+    </button>
+    <button class="nav-btn" onclick="switchTab('interns')">
+      <svg class="nav-icon" viewBox="0 0 16 16"><path d="M7 6a2 2 0 11-4 0 2 2 0 014 0zM1.5 13s-.5 0-.5-.5S1.5 10 5 10s4 2 4 2.5-.5.5-.5.5H1.5zM10 5a2 2 0 11-4 0 2 2 0 014 0z"/><path d="M13.5 13H10s0-.5-.07-1C10.38 11.08 11.6 10 13 10c2.5 0 3 2 3 2.5s-.5.5-.5.5h-2z"/></svg>
+      Interns
+    </button>
+    <button class="nav-btn" onclick="switchTab('resources')">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M1 2.5A1.5 1.5 0 012.5 1h3A1.5 1.5 0 017 2.5v3A1.5 1.5 0 015.5 7h-3A1.5 1.5 0 011 5.5v-3zm8 0A1.5 1.5 0 0110.5 1h3A1.5 1.5 0 0115 2.5v3A1.5 1.5 0 0113.5 7h-3A1.5 1.5 0 019 5.5v-3zm-8 8A1.5 1.5 0 012.5 9h3A1.5 1.5 0 017 10.5v3A1.5 1.5 0 015.5 15h-3A1.5 1.5 0 011 13.5v-3zm8 0A1.5 1.5 0 0110.5 9h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 13.5v-3z"/></svg>
+      Resources
+    </button>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Today</div>
+    <div class="sidebar-stats">
+      <div class="sstat"><div class="sstat-label">Calls logged</div><div class="sstat-val" id="stat-calls">0</div></div>
+      <div class="sstat"><div class="sstat-label">New referrals</div><div class="sstat-val" id="stat-refs">0</div></div>
+      <div class="sstat"><div class="sstat-label">Open intakes</div><div class="sstat-val" id="stat-intakes">0</div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- CALL LOG -->
+    <div id="panel-calls" class="panel active">
+      <div class="page-title">Call log</div>
+      <div class="card">
+        <div class="card-title">Log a call</div>
+        <div class="duty-bar">
+          <span class="duty-label">On duty:</span>
+          <span id="duty-bar-chips"><span style="font-size:11px;color:var(--text3);">No interns added</span></span>
+        </div>
+        <div id="therapist-banner" class="selected-banner">
+          <span>Routing to: <strong id="banner-name"></strong></span>
+          <button class="ghost small" onclick="clearTherapistSel()">Clear</button>
+        </div>
+        <div class="form-row">
+          <div><label>Caller name</label><input type="text" id="c-name" placeholder="Full name"></div>
+          <div><label>Phone number</label><input type="tel" id="c-phone" placeholder="(xxx) xxx-xxxx"></div>
+        </div>
+        <div class="form-row three">
+          <div><label>Call type</label>
+            <select id="c-type">
+              <option value="new">New client inquiry</option>
+              <option value="referral">Referral</option>
+              <option value="callback">Callback request</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div><label>Logged by</label>
+            <select id="c-logged-by"><option value="">Select intern...</option></select>
+          </div>
+          <div><label>Urgency</label>
+            <select id="c-urgency">
+              <option value="routine">Routine</option>
+              <option value="urgent">Urgent</option>
+              <option value="crisis">Crisis</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div><label>Routed to (or click therapist below)</label><input type="text" id="c-routed" placeholder="Staff name or dept"></div>
+          <div><label>Callback date / time (if needed)</label><input type="datetime-local" id="c-callback"></div>
+        </div>
+        <div class="form-row full">
+          <div><label>Notes</label><textarea id="c-notes" placeholder="Brief summary of the call..."></textarea></div>
+        </div>
+        <div style="margin-top:12px;">
+          <div class="card-title" style="margin-bottom:8px;">Quick-select therapist</div>
+          <div class="therapist-grid" id="quick-therapist-grid">
+            <div class="empty" style="grid-column:1/-1;padding:1rem;font-size:11px;">No therapists added yet. Add them in Staff Directory.</div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button onclick="clearCallForm()">Clear</button>
+          <button class="primary" onclick="logCall()">Save call</button>
+        </div>
+      </div>
+      <div class="section-head"><h2>Today's calls</h2></div>
+      <div id="call-list"></div>
+    </div>
+
+    <!-- CLIENT INTAKE -->
+    <div id="panel-intake" class="panel">
+      <div class="page-title">Client intake</div>
+      <div class="card">
+        <div class="card-title">New client intake form</div>
+        <div class="form-row">
+          <div><label>First name</label><input type="text" id="i-first" placeholder="First"></div>
+          <div><label>Last name</label><input type="text" id="i-last" placeholder="Last"></div>
+        </div>
+        <div class="form-row">
+          <div><label>Date of birth</label><input type="date" id="i-dob"></div>
+          <div><label>Phone</label><input type="tel" id="i-phone" placeholder="(xxx) xxx-xxxx"></div>
+        </div>
+        <div class="form-row">
+          <div><label>Insurance / payor</label><input type="text" id="i-insurance" placeholder="Insurance name or self-pay"></div>
+          <div><label>Referral source</label><input type="text" id="i-ref" placeholder="Who referred them?"></div>
+        </div>
+        <div class="form-row">
+          <div><label>Presenting concern</label>
+            <select id="i-concern">
+              <option value="">Select...</option>
+              <option>Anxiety</option><option>Depression</option><option>Trauma / PTSD</option>
+              <option>Substance use</option><option>Family / relationship</option>
+              <option>Grief / loss</option><option>Adolescent services</option><option>Other</option>
+            </select>
+          </div>
+          <div><label>Status</label>
+            <select id="i-status">
+              <option value="pending">Pending review</option>
+              <option value="scheduled">Appointment scheduled</option>
+              <option value="waitlist">On waitlist</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div><label>Logged by</label>
+            <select id="i-logged-by"><option value="">Select intern...</option></select>
+          </div>
+          <div><label>Preferred therapist</label>
+            <select id="i-therapist"><option value="">No preference</option></select>
+          </div>
+        </div>
+        <div class="form-row full">
+          <div><label>Additional notes</label><textarea id="i-notes" placeholder="Any other relevant information..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button onclick="clearIntakeForm()">Clear</button>
+          <button class="primary" onclick="saveIntake()">Save intake</button>
+        </div>
+      </div>
+      <div class="section-head"><h2>Open intakes</h2></div>
+      <div id="intake-list"></div>
+    </div>
+
+    <!-- ACTIVITY LOG -->
+    <div id="panel-log" class="panel">
+      <div class="print-header">
+        <h1>Safe Mind Space Counseling Group LLC</h1>
+        <p id="print-meta"></p>
+      </div>
+
+      <div class="page-title">Activity log</div>
+
+      <div class="log-toolbar">
+        <div class="log-toolbar-left">
+          <button class="filter-btn active" onclick="filterLog('all',this)">All entries</button>
+          <button class="filter-btn" onclick="filterLog('call',this)">Calls only</button>
+          <button class="filter-btn" onclick="filterLog('intake',this)">Intakes only</button>
+          <button class="filter-btn" onclick="filterLog('today',this)">Today</button>
+        </div>
+        <div class="log-toolbar-right">
+          <button class="export-btn" onclick="exportCSV()">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a.5.5 0 01.5.5v9.793l2.146-2.147a.5.5 0 01.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L7.5 11.293V1.5A.5.5 0 018 1zM1 14.5A1.5 1.5 0 002.5 16h11a1.5 1.5 0 001.5-1.5v-2a.5.5 0 00-1 0v2a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-2a.5.5 0 00-1 0v2z"/></svg>
+            Export CSV
+          </button>
+          <button class="export-btn" onclick="printLog()">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M2.5 8a.5.5 0 100-1 .5.5 0 000 1z"/><path d="M5 1a2 2 0 00-2 2v2H2a2 2 0 00-2 2v3a2 2 0 002 2h1v1a2 2 0 002 2h6a2 2 0 002-2v-1h1a2 2 0 002-2V7a2 2 0 00-2-2h-1V3a2 2 0 00-2-2H5zM4 3a1 1 0 011-1h6a1 1 0 011 1v2H4V3zm1 5a2 2 0 00-2 2v1H2a1 1 0 01-1-1V7a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-1 1h-1v-1a2 2 0 00-2-2H5zm7 2v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3a1 1 0 011-1h6a1 1 0 011 1z"/></svg>
+            Print
+          </button>
+          <button class="danger small" onclick="clearAllData()">Clear all</button>
+        </div>
+      </div>
+
+      <div class="log-count" id="log-count"></div>
+      <div id="activity-log-list" style="margin-top:8px;"></div>
+    </div>
+
+    <!-- STAFF DIRECTORY -->
+    <div id="panel-directory" class="panel">
+      <div class="page-title">Staff directory</div>
+      <div class="card">
+        <div class="card-title">Add therapist</div>
+        <div class="form-row four">
+          <div><label>Full name</label><input type="text" id="t-name" placeholder="Dr. Jane Smith"></div>
+          <div><label>Credentials / title</label><input type="text" id="t-creds" placeholder="LPC, LCSW, etc."></div>
+          <div><label>Specialty</label><input type="text" id="t-specialty" placeholder="Trauma, Anxiety..."></div>
+          <div><label>Extension / contact</label><input type="text" id="t-ext" placeholder="Ext. 102"></div>
+        </div>
+        <div class="btn-row">
+          <button class="primary" onclick="addTherapist()">Add therapist</button>
+        </div>
+      </div>
+      <div class="section-head"><h2>Therapist roster</h2></div>
+      <div id="therapist-list"></div>
+    </div>
+
+    <!-- INTERNS -->
+    <div id="panel-interns" class="panel">
+      <div class="page-title">Interns</div>
+      <div class="card">
+        <div class="card-title">Add intern</div>
+        <div class="form-row">
+          <div><label>Intern name</label><input type="text" id="n-name" placeholder="Full name"></div>
+          <div><label>Role / title</label><input type="text" id="n-role" placeholder="MSW intern, practicum student..."></div>
+        </div>
+        <div class="btn-row">
+          <button class="primary" onclick="addIntern()">Add intern</button>
+        </div>
+      </div>
+      <div class="section-head"><h2>Current interns</h2></div>
+      <div id="intern-list"></div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div id="panel-resources" class="panel">
+      <div class="page-title">Resources</div>
+
+      <div style="background:#1a0808;border:0.5px solid #791F1F;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;">
+        <div style="font-size:11px;font-weight:500;color:#F7C1C1;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Crisis &amp; 24/7 support</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#888;margin-bottom:4px;">National suicide &amp; crisis lifeline</div>
+            <div style="font-size:22px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">988</div>
+            <div style="font-size:10px;color:#555;margin-top:2px;">Simply dial 988</div>
+          </div>
+          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#888;margin-bottom:4px;">Harris Center crisis line</div>
+            <div style="font-size:15px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">713-970-7000</div>
+            <div style="font-size:10px;color:#555;margin-top:2px;">theharriscenter.org</div>
+          </div>
+          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#888;margin-bottom:4px;">HPD mental health / mobile crisis</div>
+            <div style="font-size:15px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">713-970-7000</div>
+            <div style="font-size:10px;color:#555;margin-top:2px;">or via 988</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Houston &amp; local resources</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">Mental Health America of Greater Houston</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Wellness Guide with directory of local crisis lines and resources.</div></div>
+            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;white-space:nowrap;">713-523-8963</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">NAMI Greater Houston</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Support, education, and advocacy for people affected by mental illness.</div></div>
+            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Crisis line</div><div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;">866-970-4770</div></div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;">
+            <div style="font-size:13px;font-weight:500;color:var(--text);">Houston CIT (Crisis Intervention Team)</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px;">Local crisis hotlines and specialized services including for people experiencing homelessness and mental illness.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">National resources (available locally)</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">National Suicide Prevention Lifeline</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">24/7 free and confidential support for people in distress.</div></div>
+            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">988</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">Crisis Text Line</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Free, 24/7 crisis support via text message.</div></div>
+            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Text HOME to</div><div style="font-size:18px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">741741</div></div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">SAMHSA National Helpline</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Free, confidential, 24/7 treatment referral for mental health and substance use disorders.</div></div>
+            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;white-space:nowrap;">1-800-662-4357</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div><div style="font-size:13px;font-weight:500;color:var(--text);">2-1-1 Texas</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Connects callers to mental health services and local resources.</div></div>
+            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">211</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Group program interest form</div>
+        <div id="group-form-success" style="display:none;background:rgba(29,158,117,0.1);border:0.5px solid #0F6E56;border-radius:8px;padding:12px 14px;margin-bottom:12px;font-size:13px;color:#5DCAA5;">Entry saved and added to the activity log.</div>
+        <div class="form-row">
+          <div><label>Full name</label><input type="text" id="g-name" placeholder="Caller full name"></div>
+          <div><label>Email</label><input type="email" id="g-email" placeholder="email@example.com"></div>
+        </div>
+        <div class="form-row full">
+          <div><label>Groups of interest</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+              <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;font-weight:400;"><input type="checkbox" id="g-kids" style="width:auto;padding:0;margin:0;accent-color:#1D9E75;"> Raising kids &mdash; Keeping Calm group</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;font-weight:400;"><input type="checkbox" id="g-grief" style="width:auto;padding:0;margin:0;accent-color:#1D9E75;"> Adult Grief Group</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;font-weight:400;"><input type="checkbox" id="g-sa-adult" style="width:auto;padding:0;margin:0;accent-color:#1D9E75;"> Substance Abuse &mdash; Adult group</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;font-weight:400;"><input type="checkbox" id="g-sa-teen" style="width:auto;padding:0;margin:0;accent-color:#1D9E75;"> Substance Abuse &mdash; Teens group</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;font-weight:400;"><input type="checkbox" id="g-couples" style="width:auto;padding:0;margin:0;accent-color:#1D9E75;"> Couples retreat: The Love Reset</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row full">
+          <div><label>Additional notes</label><textarea id="g-notes" placeholder="Any other information..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button onclick="clearGroupForm()">Clear</button>
+          <button class="primary" onclick="saveGroupForm()">Save &amp; log</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const CK='sms_calls', IK='sms_intakes', INK='sms_interns', TK='sms_therapists';
+const gc=()=>{try{return JSON.parse(localStorage.getItem(CK)||'[]');}catch(e){return[];}};
+const gi=()=>{try{return JSON.parse(localStorage.getItem(IK)||'[]');}catch(e){return[];}};
+const gn=()=>{try{return JSON.parse(localStorage.getItem(INK)||'[]');}catch(e){return[];}};
+const gt=()=>{try{return JSON.parse(localStorage.getItem(TK)||'[]');}catch(e){return[];}};
+const sc=d=>localStorage.setItem(CK,JSON.stringify(d));
+const si=d=>localStorage.setItem(IK,JSON.stringify(d));
+const sn=d=>localStorage.setItem(INK,JSON.stringify(d));
+const st_=d=>localStorage.setItem(TK,JSON.stringify(d));
+
+let selTherapist=null;
+let currentLogFilter='all';
+
+function fmtDate(ts){
+  return new Date(ts).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function fmtTime(ts){
+  return new Date(ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'});
+}
+function fmtFull(ts){
+  return new Date(ts).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'})+' at '+new Date(ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'});
+}
+function isToday(ts){return new Date(ts).toDateString()===new Date().toDateString();}
+function initials(name){return name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
+
+function switchTab(name){
+  const tabs=['calls','intake','log','directory','interns','resources'];
+  document.querySelectorAll('.nav-btn').forEach((b,i)=>b.classList.toggle('active',tabs[i]===name));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if(name==='log')renderActivityLog(currentLogFilter);
+  if(name==='intake'){renderIntakes();populateSelects();}
+  if(name==='interns')renderInterns();
+  if(name==='directory')renderTherapists();
+  if(name==='calls'){renderTodayCalls();renderQuickGrid();populateSelects();}
+}
+
+function updateStats(){
+  const calls=gc(); const intakes=gi();
+  const tod=calls.filter(c=>isToday(c.ts));
+  document.getElementById('stat-calls').textContent=tod.length;
+  document.getElementById('stat-refs').textContent=tod.filter(c=>c.type==='referral').length;
+  document.getElementById('stat-intakes').textContent=intakes.filter(i=>i.status==='pending').length;
+}
+
+function populateSelects(){
+  const interns=gn(); const therapists=gt();
+  ['c-logged-by','i-logged-by'].forEach(id=>{
+    const el=document.getElementById(id); if(!el)return;
+    const v=el.value;
+    el.innerHTML='<option value="">Select intern...</option>'+interns.map(n=>`<option value="${n.name}">${n.name}</option>`).join('');
+    el.value=v;
+  });
+  const ts=document.getElementById('i-therapist');
+  if(ts){
+    const v=ts.value;
+    ts.innerHTML='<option value="">No preference</option>'+therapists.map(t=>`<option value="${t.name}">${t.name}${t.creds?' ('+t.creds+')':''}</option>`).join('');
+    ts.value=v;
+  }
+  renderDutyBar(); renderQuickGrid();
+}
+
+function renderDutyBar(){
+  const interns=gn();
+  const el=document.getElementById('duty-bar-chips'); if(!el)return;
+  if(!interns.length){el.innerHTML='<span style="font-size:11px;color:var(--text3);">No interns added</span>';return;}
+  el.innerHTML=interns.map(n=>`<span class="intern-chip"><span class="intern-dot"></span>${n.name}${n.role?' &middot; <span style="color:var(--text3);font-size:10px;">${n.role}</span>':''}</span>`).join('');
+}
+
+function renderQuickGrid(){
+  const therapists=gt();
+  const el=document.getElementById('quick-therapist-grid'); if(!el)return;
+  if(!therapists.length){
+    el.innerHTML='<div class="empty" style="grid-column:1/-1;padding:1rem;font-size:11px;">No therapists added yet. Add them in Staff Directory.</div>';
+    return;
+  }
+  el.innerHTML=therapists.map((t,i)=>`
+    <div class="therapist-card${selTherapist===t.name?' selected':''}" onclick="selectTherapist('${t.name.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
+      <div class="t-avatar">${initials(t.name)}</div>
+      <div>
+        <div class="t-name">${t.name}</div>
+        <div class="t-title">${t.creds||t.specialty||'Therapist'}</div>
+      </div>
+    </div>`).join('');
+}
+
+function selectTherapist(name){
+  selTherapist=name;
+  document.getElementById('c-routed').value=name;
+  document.getElementById('banner-name').textContent=name;
+  document.getElementById('therapist-banner').classList.add('visible');
+  renderQuickGrid();
+}
+
+function clearTherapistSel(){
+  selTherapist=null;
+  document.getElementById('c-routed').value='';
+  document.getElementById('therapist-banner').classList.remove('visible');
+  renderQuickGrid();
+}
+
+function badgeCls(t){return{new:'badge-new',referral:'badge-referral',callback:'badge-callback',crisis:'badge-crisis',other:'badge-other',intake:'badge-intake'}[t]||'badge-other';}
+function badgeLbl(t){return{new:'New inquiry',referral:'Referral',callback:'Callback',crisis:'Crisis',other:'Other',intake:'Intake'}[t]||t;}
+
+function renderTodayCalls(){
+  const calls=gc().filter(c=>isToday(c.ts)).reverse();
+  const el=document.getElementById('call-list');
+  if(!calls.length){el.innerHTML='<div class="empty">No calls logged yet today.</div>';return;}
+  el.innerHTML=calls.map(c=>`
+    <div class="log-item">
+      <span class="log-badge ${badgeCls(c.urgency==='crisis'?'crisis':c.type)}">${badgeLbl(c.urgency==='crisis'?'crisis':c.type)}</span>
+      <div>
+        <div class="log-meta">${c.name||'Unknown caller'}${c.phone?' &middot; '+c.phone:''}</div>
+        <div class="log-sub">${c.loggedBy?'By: '+c.loggedBy+' &middot; ':''}${c.routed?'Routed: <strong style="color:var(--teal-light)">'+c.routed+'</strong> &middot; ':''}${c.notes||''}</div>
+      </div>
+      <div class="log-time-col">
+        <span class="log-time">${fmtTime(c.ts)}</span>
+        <button class="danger small" style="font-size:10px;padding:2px 8px;" onclick="deleteCall(${c.ts})">Delete</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderIntakes(){
+  const intakes=gi().filter(i=>i.status!=='archived').reverse();
+  const el=document.getElementById('intake-list');
+  if(!intakes.length){el.innerHTML='<div class="empty">No open intakes.</div>';return;}
+  el.innerHTML=intakes.map(i=>`
+    <div class="intake-item">
+      <div class="intake-header">
+        <span class="intake-name">${i.first} ${i.last}</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="status-badge status-${i.status}">${{pending:'Pending review',scheduled:'Scheduled',waitlist:'Waitlist'}[i.status]}</span>
+        </div>
+      </div>
+      <div class="intake-detail">
+        ${i.dob?'DOB: '+i.dob+' &middot; ':''} ${i.phone||''} ${i.concern?'&middot; '+i.concern:''}<br>
+        ${i.insurance?'Insurance: '+i.insurance:''}${i.ref?' &middot; Ref: '+i.ref:''}<br>
+        ${i.therapist?'<span style="color:var(--teal-light);">Preferred: '+i.therapist+'</span>':''}
+        ${i.loggedBy?' &middot; Logged by: '+i.loggedBy:''}
+        ${i.notes?'<br><span style="color:var(--text3);">'+i.notes+'</span>':''}
+        <br><span style="color:var(--text3);font-family:\'DM Mono\',monospace;font-size:10px;">${fmtFull(i.ts)}</span>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+        <button class="small" onclick="updStatus(${i.ts},'scheduled')">Mark scheduled</button>
+        <button class="small" onclick="updStatus(${i.ts},'waitlist')">Waitlist</button>
+        <button class="small danger" onclick="archiveIntake(${i.ts})">Dismiss</button>
+        <button class="small danger" onclick="deleteIntake(${i.ts})">Delete</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderActivityLog(filter){
+  currentLogFilter=filter;
+  const calls=gc().slice().reverse();
+  const intakes=gi().slice().reverse();
+
+  let entries=[];
+  if(filter==='all'||filter==='today'||filter==='call'){
+    calls.forEach(c=>{
+      if(filter==='today'&&!isToday(c.ts))return;
+      entries.push({kind:'call',...c});
+    });
+  }
+  if(filter==='all'||filter==='today'||filter==='intake'){
+    intakes.forEach(i=>{
+      if(filter==='today'&&!isToday(i.ts))return;
+      entries.push({kind:'intake',...i});
+    });
+  }
+  entries.sort((a,b)=>b.ts-a.ts);
+
+  const countEl=document.getElementById('log-count');
+  countEl.textContent=entries.length+' entr'+(entries.length===1?'y':'ies');
+
+  document.getElementById('print-meta').textContent=
+    'Printed: '+fmtFull(Date.now())+' &middot; Filter: '+filter;
+
+  const el=document.getElementById('activity-log-list');
+  if(!entries.length){el.innerHTML='<div class="empty">No entries found.</div>';return;}
+
+  el.innerHTML=entries.map(e=>{
+    if(e.kind==='call'){
+      return `<div class="log-item">
+        <span class="log-badge ${badgeCls(e.urgency==='crisis'?'crisis':e.type)}">${badgeLbl(e.urgency==='crisis'?'crisis':e.type)}</span>
+        <div>
+          <div class="log-meta">${e.name||'Unknown caller'}${e.phone?' &middot; '+e.phone:''}</div>
+          <div class="log-sub">
+            ${e.loggedBy?'By: '+e.loggedBy+' &middot; ':''}${e.routed?'Routed: <strong style="color:var(--teal-light)">'+e.routed+'</strong> &middot; ':''}${e.notes||''}
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);margin-top:3px;">${fmtFull(e.ts)}</div>
+        </div>
+        <div class="log-time-col">
+          <span class="log-badge badge-other" style="margin-bottom:4px;">Call</span>
+          <button class="danger small" style="font-size:10px;padding:2px 8px;" onclick="deleteCall(${e.ts});renderActivityLog(currentLogFilter);">Delete</button>
+        </div>
+      </div>`;
+    } else {
+      return `<div class="log-item">
+        <span class="log-badge badge-intake">Intake</span>
+        <div>
+          <div class="log-meta">${e.first} ${e.last}${e.phone?' &middot; '+e.phone:''}</div>
+          <div class="log-sub">
+            ${e.concern||''}${e.insurance?' &middot; '+e.insurance:''}${e.therapist?' &middot; Preferred: '+e.therapist:''}${e.loggedBy?' &middot; By: '+e.loggedBy:''}
+            ${e.notes?'<br>'+e.notes:''}
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);margin-top:3px;">${fmtFull(e.ts)}</div>
+        </div>
+        <div class="log-time-col">
+          <span class="status-badge status-${e.status}" style="margin-bottom:4px;">${{pending:'Pending',scheduled:'Scheduled',waitlist:'Waitlist',archived:'Archived'}[e.status]||e.status}</span>
+          <button class="danger small" style="font-size:10px;padding:2px 8px;" onclick="deleteIntake(${e.ts});renderActivityLog(currentLogFilter);">Delete</button>
+        </div>
+      </div>`;
+    }
+  }).join('');
+}
+
+function filterLog(type,btn){
+  document.querySelectorAll('#panel-log .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderActivityLog(type);
+}
+
+function renderTherapists(){
+  const therapists=gt();
+  const el=document.getElementById('therapist-list');
+  if(!therapists.length){el.innerHTML='<div class="empty">No therapists added yet.</div>';return;}
+  el.innerHTML=therapists.map((t,i)=>`
+    <div class="therapist-item">
+      <div class="t-avatar">${initials(t.name)}</div>
+      <div>
+        <div class="log-meta">${t.name}${t.creds?' &middot; <span style="color:var(--text3);font-size:11px;">'+t.creds+'</span>':''}</div>
+        <div class="log-sub">${t.specialty||''}${t.ext?' &middot; '+t.ext:''}</div>
+      </div>
+      <button class="small danger" onclick="removeTherapist(${i})">Remove</button>
+    </div>`).join('');
+}
+
+function renderInterns(){
+  const interns=gn();
+  const el=document.getElementById('intern-list');
+  if(!interns.length){el.innerHTML='<div class="empty">No interns added yet.</div>';return;}
+  el.innerHTML=interns.map((n,i)=>`
+    <div class="therapist-item">
+      <div class="intern-dot" style="width:10px;height:10px;border-radius:50%;background:var(--teal);"></div>
+      <div>
+        <div class="log-meta">${n.name}</div>
+        <div class="log-sub">${n.role||'No role specified'}</div>
+      </div>
+      <button class="small danger" onclick="removeIntern(${i})">Remove</button>
+    </div>`).join('');
+}
+
+function logCall(){
+  const name=document.getElementById('c-name').value.trim();
+  const phone=document.getElementById('c-phone').value.trim();
+  if(!name&&!phone){alert('Please enter at least a caller name or phone number.');return;}
+  const calls=gc();
+  calls.push({name,phone,type:document.getElementById('c-type').value,loggedBy:document.getElementById('c-logged-by').value,urgency:document.getElementById('c-urgency').value,routed:document.getElementById('c-routed').value.trim(),callback:document.getElementById('c-callback').value,notes:document.getElementById('c-notes').value.trim(),ts:Date.now()});
+  sc(calls); clearCallForm(); renderTodayCalls(); updateStats();
+}
+
+function saveIntake(){
+  const first=document.getElementById('i-first').value.trim();
+  const last=document.getElementById('i-last').value.trim();
+  if(!first||!last){alert('Please enter the client name.');return;}
+  const intakes=gi();
+  intakes.push({first,last,dob:document.getElementById('i-dob').value,phone:document.getElementById('i-phone').value.trim(),insurance:document.getElementById('i-insurance').value.trim(),ref:document.getElementById('i-ref').value.trim(),concern:document.getElementById('i-concern').value,status:document.getElementById('i-status').value,loggedBy:document.getElementById('i-logged-by').value,therapist:document.getElementById('i-therapist').value,notes:document.getElementById('i-notes').value.trim(),ts:Date.now()});
+  si(intakes); clearIntakeForm(); renderIntakes(); updateStats();
+}
+
+function addTherapist(){
+  const name=document.getElementById('t-name').value.trim();
+  if(!name){alert('Please enter the therapist name.');return;}
+  const therapists=gt();
+  therapists.push({name,creds:document.getElementById('t-creds').value.trim(),specialty:document.getElementById('t-specialty').value.trim(),ext:document.getElementById('t-ext').value.trim()});
+  st_(therapists);
+  ['t-name','t-creds','t-specialty','t-ext'].forEach(id=>document.getElementById(id).value='');
+  renderTherapists(); populateSelects();
+}
+
+function addIntern(){
+  const name=document.getElementById('n-name').value.trim();
+  if(!name){alert('Please enter the intern name.');return;}
+  const interns=gn();
+  interns.push({name,role:document.getElementById('n-role').value.trim()});
+  sn(interns);
+  document.getElementById('n-name').value='';
+  document.getElementById('n-role').value='';
+  renderInterns(); populateSelects();
+}
+
+function removeTherapist(idx){const t=gt();t.splice(idx,1);st_(t);renderTherapists();populateSelects();}
+function removeIntern(idx){const n=gn();n.splice(idx,1);sn(n);renderInterns();populateSelects();}
+function updStatus(ts,status){si(gi().map(i=>i.ts===ts?{...i,status}:i));renderIntakes();updateStats();}
+function archiveIntake(ts){si(gi().map(i=>i.ts===ts?{...i,status:'archived'}:i));renderIntakes();updateStats();}
+
+function deleteCall(ts){
+  if(!confirm('Delete this call record?'))return;
+  sc(gc().filter(c=>c.ts!==ts));
+  renderTodayCalls(); updateStats();
+}
+function deleteIntake(ts){
+  if(!confirm('Delete this intake record?'))return;
+  si(gi().filter(i=>i.ts!==ts));
+  renderIntakes(); updateStats();
+}
+
+function clearCallForm(){
+  ['c-name','c-phone','c-routed','c-notes','c-callback'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('c-type').value='new';
+  document.getElementById('c-urgency').value='routine';
+  document.getElementById('c-logged-by').value='';
+  clearTherapistSel();
+}
+function clearIntakeForm(){
+  ['i-first','i-last','i-dob','i-phone','i-insurance','i-ref','i-notes'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('i-concern').value='';
+  document.getElementById('i-status').value='pending';
+  document.getElementById('i-logged-by').value='';
+  document.getElementById('i-therapist').value='';
+}
+
+function clearAllData(){
+  if(!confirm('Clear ALL call and intake records? This cannot be undone.'))return;
+  localStorage.removeItem(CK); localStorage.removeItem(IK);
+  renderTodayCalls(); renderIntakes(); renderActivityLog(currentLogFilter); updateStats();
+}
+
+function exportCSV(){
+  const calls=gc(); const intakes=gi();
+  let rows=[['Type','Timestamp','Date','Time','Name','Phone','Call Type','Urgency','Routed To','Logged By','Notes','Status','DOB','Insurance','Referral Source','Concern','Preferred Therapist']];
+  calls.forEach(c=>{
+    rows.push(['Call',c.ts,fmtDate(c.ts),fmtTime(c.ts),c.name||'',c.phone||'',c.type||'',c.urgency||'',c.routed||'',c.loggedBy||'',c.notes||'','','','','','','']);
+  });
+  intakes.forEach(i=>{
+    rows.push(['Intake',i.ts,fmtDate(i.ts),fmtTime(i.ts),(i.first||'')+' '+(i.last||''),i.phone||'','','','',i.loggedBy||'',i.notes||'',i.status||'',i.dob||'',i.insurance||'',i.ref||'',i.concern||'',i.therapist||'']);
+  });
+  rows.sort((a,b)=>b[1]-a[1]);
+  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='safemindspace-log-'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+function printLog(){
+  document.getElementById('print-meta').textContent=
+    'Printed: '+fmtFull(Date.now())+' | Filter: '+currentLogFilter+' | Safe Mind Space Counseling Group LLC';
+  window.print();
+}
+
+function saveGroupForm(){
+  const name=document.getElementById('g-name').value.trim();
+  if(!name){alert('Please enter the caller name.');return;}
+  const groups=[];
+  if(document.getElementById('g-kids').checked)groups.push('Raising Kids - Keeping Calm');
+  if(document.getElementById('g-grief').checked)groups.push('Adult Grief Group');
+  if(document.getElementById('g-sa-adult').checked)groups.push('Substance Abuse - Adult');
+  if(document.getElementById('g-sa-teen').checked)groups.push('Substance Abuse - Teens');
+  if(document.getElementById('g-couples').checked)groups.push('Couples Retreat: The Love Reset');
+  const email=document.getElementById('g-email').value.trim();
+  const notes=document.getElementById('g-notes').value.trim();
+  const calls=gc();
+  calls.push({name,phone:email,type:'other',loggedBy:'',urgency:'routine',routed:'Group program inquiry',callback:'',notes:'Groups: '+(groups.join(', ')||'None selected')+'. '+(notes||''),ts:Date.now()});
+  sc(calls); updateStats();
+  clearGroupForm();
+  const s=document.getElementById('group-form-success');
+  s.style.display='block'; setTimeout(()=>s.style.display='none',4000);
+}
+function clearGroupForm(){
+  document.getElementById('g-name').value='';
+  document.getElementById('g-email').value='';
+  document.getElementById('g-notes').value='';
+  ['g-kids','g-grief','g-sa-adult','g-sa-teen','g-couples'].forEach(id=>document.getElementById(id).checked=false);
+}
+
+function updateClock(){
+  document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'});
+}
+document.getElementById('dateline').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+updateClock(); setInterval(updateClock,1000);
+
+// Pre-load Safe Mind Space therapist roster on first open
+if(!localStorage.getItem(TK)){
+  const roster=[
+    {name:'Christina Garcia',creds:'',specialty:'',ext:''},
+    {name:'Sandra Mireles',creds:'',specialty:'',ext:''},
+    {name:'Isabella Bacy',creds:'',specialty:'',ext:''},
+    {name:'Stacy Young',creds:'',specialty:'',ext:''},
+    {name:'Edgar Lewis',creds:'',specialty:'',ext:''},
+    {name:'David Robles',creds:'LMSW',specialty:'',ext:''},
+    {name:'Quintara Spencer Vallaire',creds:'',specialty:'',ext:''},
+    {name:'Flor Aponte',creds:'',specialty:'',ext:''},
+  ];
+  st_(roster);
+}
+
+renderTodayCalls(); updateStats(); populateSelects();
+</script>
+</body>
+</html>
