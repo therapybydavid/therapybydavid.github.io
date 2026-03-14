@@ -444,6 +444,170 @@
   .toast.show { opacity: 1; transform: translateY(0); }
 
   /* PRINT STYLES */
+  /* QUICK LOG */
+  .ql-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+
+  .ql-step {
+    margin-bottom: 24px;
+  }
+
+  .ql-step-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .ql-client-btn {
+    width: 100%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.15s;
+    text-align: left;
+  }
+
+  .ql-client-btn.selected {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(79,142,247,0.08);
+  }
+
+  .ql-client-btn:hover { border-color: var(--accent); }
+
+  .ql-type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ql-type-btn {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 16px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+
+  .ql-type-btn.selected {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    background: rgba(56,201,142,0.08);
+  }
+
+  .ql-type-btn:hover { border-color: var(--accent2); }
+
+  .ql-method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ql-method-btn {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 16px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .ql-method-btn.selected {
+    border-color: var(--warn);
+    color: var(--warn);
+    background: rgba(247,164,79,0.08);
+  }
+
+  .ql-method-btn:hover { border-color: var(--warn); }
+
+  .ql-confirm-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+  }
+
+  .ql-confirm-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+  }
+
+  .ql-confirm-row:last-child { border-bottom: none; }
+  .ql-confirm-row span:last-child { color: var(--text); font-weight: 500; }
+
+  .ql-log-btn {
+    width: 100%;
+    background: var(--accent2);
+    border: none;
+    border-radius: 14px;
+    padding: 20px;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .ql-log-btn:hover { background: #2db87d; transform: translateY(-1px); }
+  .ql-log-btn:active { transform: translateY(0); }
+  .ql-log-btn:disabled { background: var(--surface2); color: var(--text3); cursor: not-allowed; transform: none; }
+
+  .ql-success {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+  }
+
+  .ql-success-icon { font-size: 56px; margin-bottom: 16px; }
+  .ql-success-title { font-family: var(--serif); font-size: 26px; margin-bottom: 8px; }
+  .ql-success-sub { color: var(--text2); font-size: 14px; margin-bottom: 28px; }
+
+  .ql-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    z-index: 300;
+    margin-top: 4px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  }
+
   @media print {
     .sidebar, .btn-row, .tabs, .nav-item { display: none !important; }
     .main { margin-left: 0; padding: 20px; }
@@ -477,6 +641,9 @@
       <div class="nav-section">Logging</div>
       <button class="nav-item" onclick="showPage('clients')">
         <span class="icon">◑</span> Clients
+      </button>
+      <button class="nav-item" onclick="showPage('quick-log')">
+        <span class="icon">⚡</span> Quick Log
       </button>
       <button class="nav-item" onclick="showPage('log-session')">
         <span class="icon">＋</span> Log Session
@@ -583,6 +750,89 @@
             <tbody id="stats-table-body"></tbody>
           </table>
         </div>
+      </div>
+    </div>
+
+    <!-- QUICK LOG -->
+    <div id="page-quick-log" class="page">
+      <div class="page-header">
+        <h1>Quick Log</h1>
+        <p>Log a session in 3 taps</p>
+      </div>
+
+      <div class="ql-wrap">
+
+        <div id="ql-form">
+          <!-- Step 1: Client -->
+          <div class="ql-step">
+            <div class="ql-step-label">Step 1 — Who did you just see?</div>
+            <div style="position:relative;">
+              <button class="ql-client-btn" id="ql-client-btn" onclick="toggleQlDropdown()">
+                <span id="ql-client-label">Tap to select client</span>
+                <span style="font-size:12px;opacity:0.4;">▼</span>
+              </button>
+              <div class="ql-dropdown" id="ql-dropdown">
+                <div style="padding:10px;">
+                  <input id="ql-search" type="text" placeholder="Search..."
+                    style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
+                    oninput="filterQlClients(this.value)">
+                </div>
+                <div id="ql-client-list" style="max-height:240px;overflow-y:auto;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Session Type -->
+          <div class="ql-step" id="ql-step2" style="opacity:0.3;pointer-events:none;">
+            <div class="ql-step-label">Step 2 — What type of session?</div>
+            <div class="ql-type-grid">
+              <button class="ql-type-btn" onclick="selectQlType('Intake session', this)">
+                Intake<br>Session
+              </button>
+              <button class="ql-type-btn" onclick="selectQlType('Psychotherapy session', this)">
+                Psychotherapy<br>Session
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Method -->
+          <div class="ql-step" id="ql-step3" style="opacity:0.3;pointer-events:none;">
+            <div class="ql-step-label">Step 3 — How did you meet?</div>
+            <div class="ql-method-grid">
+              <button class="ql-method-btn" onclick="selectQlMethod('IP', this)">
+                🏢 In-Person
+              </button>
+              <button class="ql-method-btn" onclick="selectQlMethod('V', this)">
+                💻 Virtual
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm -->
+          <div id="ql-confirm" style="display:none;">
+            <div class="ql-step-label">Confirm &amp; Log</div>
+            <div class="ql-confirm-card">
+              <div class="ql-confirm-row"><span>Client</span><span id="ql-c-name">—</span></div>
+              <div class="ql-confirm-row"><span>Agency</span><span id="ql-c-agency">—</span></div>
+              <div class="ql-confirm-row"><span>Fee</span><span id="ql-c-fee">—</span></div>
+              <div class="ql-confirm-row"><span>Session Type</span><span id="ql-c-type">—</span></div>
+              <div class="ql-confirm-row"><span>Method</span><span id="ql-c-method">—</span></div>
+              <div class="ql-confirm-row"><span>Date</span><span id="ql-c-date">—</span></div>
+            </div>
+            <button class="ql-log-btn" id="ql-log-btn" onclick="submitQuickLog()">
+              ✓ Log Session
+            </button>
+          </div>
+        </div>
+
+        <!-- Success state -->
+        <div class="ql-success" id="ql-success">
+          <div class="ql-success-icon">✅</div>
+          <div class="ql-success-title">Session Logged</div>
+          <div class="ql-success-sub" id="ql-success-sub"></div>
+          <button class="btn btn-primary" onclick="resetQuickLog()" style="font-size:15px;padding:12px 28px;">Log Another</button>
+        </div>
+
       </div>
     </div>
 
@@ -1272,6 +1522,7 @@ function showPage(id) {
 function renderPage(id) {
   if (id === 'dashboard') renderDashboard();
   if (id === 'clients') renderClients();
+  if (id === 'quick-log') initQuickLog();
   if (id === 'session-log') renderLog();
   if (id === 'invoices') renderInvoice();
   if (id === 'supervision') renderSupervision();
@@ -1991,6 +2242,148 @@ function toast(msg, err = false) {
   el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 2500);
 }
+
+// ============================================================
+// QUICK LOG
+// ============================================================
+let qlState = { client: null, type: null, method: null };
+
+function initQuickLog() {
+  resetQuickLog();
+}
+
+function toggleQlDropdown() {
+  const dd = document.getElementById('ql-dropdown');
+  const isOpen = dd.style.display === 'block';
+  if (isOpen) { dd.style.display = 'none'; return; }
+  dd.style.display = 'block';
+  document.getElementById('ql-search').value = '';
+  filterQlClients('');
+  setTimeout(() => document.getElementById('ql-search').focus(), 50);
+}
+
+function filterQlClients(val) {
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const filtered = val
+    ? clients.filter(c => c.name.toLowerCase().includes(val.toLowerCase()))
+    : clients;
+  const sorted = filtered.sort((a,b) => a.name.localeCompare(b.name));
+  const container = document.getElementById('ql-client-list');
+  container.innerHTML = sorted.map(c => `
+    <div onclick="selectQlClient(${JSON.stringify(c)})"
+      style="padding:14px 16px;cursor:pointer;font-size:15px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);"
+      onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='transparent'">
+      <span>${c.name}</span>
+      <span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span>
+    </div>
+  `).join('') || '<div style="padding:14px 16px;color:var(--text3);">No clients found</div>';
+}
+
+function selectQlClient(c) {
+  qlState.client = c;
+  document.getElementById('ql-client-label').textContent = c.name;
+  document.getElementById('ql-client-btn').classList.add('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  // Unlock step 2
+  const step2 = document.getElementById('ql-step2');
+  step2.style.opacity = '1';
+  step2.style.pointerEvents = 'auto';
+  updateQlConfirm();
+}
+
+function selectQlType(type, el) {
+  qlState.type = type;
+  document.querySelectorAll('.ql-type-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  // Unlock step 3
+  const step3 = document.getElementById('ql-step3');
+  step3.style.opacity = '1';
+  step3.style.pointerEvents = 'auto';
+  // Pre-select client's default method
+  if (qlState.client) {
+    const defaultMethod = qlState.client.method;
+    document.querySelectorAll('.ql-method-btn').forEach(b => {
+      if ((defaultMethod === 'IP' && b.textContent.includes('In-Person')) ||
+          (defaultMethod === 'V' && b.textContent.includes('Virtual'))) {
+        b.classList.add('selected');
+        qlState.method = defaultMethod;
+      }
+    });
+  }
+  updateQlConfirm();
+}
+
+function selectQlMethod(method, el) {
+  qlState.method = method;
+  document.querySelectorAll('.ql-method-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  updateQlConfirm();
+}
+
+function updateQlConfirm() {
+  if (!qlState.client || !qlState.type || !qlState.method) {
+    document.getElementById('ql-confirm').style.display = 'none';
+    return;
+  }
+  const c = qlState.client;
+  const today = new Date();
+  const [y,m,d] = today.toISOString().split('T')[0].split('-');
+  document.getElementById('ql-c-name').textContent = c.name;
+  document.getElementById('ql-c-agency').textContent = c.agency;
+  document.getElementById('ql-c-fee').textContent = '$' + c.rate;
+  document.getElementById('ql-c-type').textContent = qlState.type;
+  document.getElementById('ql-c-method').textContent = qlState.method === 'IP' ? 'In-Person' : 'Virtual';
+  document.getElementById('ql-c-date').textContent = `${m}/${d}/${y}`;
+  document.getElementById('ql-confirm').style.display = 'block';
+}
+
+function submitQuickLog() {
+  if (!qlState.client || !qlState.type || !qlState.method) return;
+  const c = qlState.client;
+  const today = new Date().toISOString().split('T')[0];
+  const sessions = load(KEYS.sessions);
+  sessions.push({
+    id: uid(),
+    date: today,
+    name: c.name,
+    agency: c.agency,
+    hours: 2,
+    fee: c.rate,
+    method: qlState.method,
+    desc: qlState.type,
+    type: 'clinical',
+    insurance: c.insurance || '',
+  });
+  save(KEYS.sessions, sessions);
+  document.getElementById('ql-success-sub').textContent = `${c.name} · ${qlState.type} · $${c.rate}`;
+  document.getElementById('ql-form').style.display = 'none';
+  document.getElementById('ql-success').style.display = 'block';
+  toast('Session logged');
+}
+
+function resetQuickLog() {
+  qlState = { client: null, type: null, method: null };
+  document.getElementById('ql-form').style.display = 'block';
+  document.getElementById('ql-success').style.display = 'none';
+  document.getElementById('ql-client-label').textContent = 'Tap to select client';
+  document.getElementById('ql-client-btn').classList.remove('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  document.querySelectorAll('.ql-type-btn, .ql-method-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('ql-step2').style.opacity = '0.3';
+  document.getElementById('ql-step2').style.pointerEvents = 'none';
+  document.getElementById('ql-step3').style.opacity = '0.3';
+  document.getElementById('ql-step3').style.pointerEvents = 'none';
+  document.getElementById('ql-confirm').style.display = 'none';
+}
+
+// Close ql dropdown on outside click
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('ql-dropdown');
+  const btn = document.getElementById('ql-client-btn');
+  if (dd && btn && !dd.contains(e.target) && !btn.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
 
 // ============================================================
 // DATE HELPER
