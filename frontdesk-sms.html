@@ -8,72 +8,72 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --surface2: #161616;
-    --border: #222222;
-    --border2: #2a2a2a;
-    --text: #e8e8e8;
-    --text2: #888888;
-    --text3: #444444;
-    --teal: #1D9E75;
-    --teal-light: #5DCAA5;
-    --teal-dim: #0F6E56;
-    --teal-bg: rgba(29,158,117,0.1);
+    --bg: #ffffff;
+    --surface: #f8f8f8;
+    --surface2: #f0f0f0;
+    --border: #e0e0e0;
+    --border2: #d0d0d0;
+    --text: #1a1a1a;
+    --text2: #555555;
+    --text3: #999999;
+    --teal: #0F6E56;
+    --teal-light: #1D9E75;
+    --teal-dim: #9FE1CB;
+    --teal-bg: rgba(29,158,117,0.08);
     --amber: #EF9F27;
     --amber-bg: rgba(239,159,39,0.1);
-    --amber-dim: #633806;
+    --amber-dim: #FAC775;
     --blue: #378ADD;
     --blue-bg: rgba(55,138,221,0.1);
-    --blue-dim: #185FA5;
+    --blue-dim: #B5D4F4;
     --red: #E24B4A;
-    --red-bg: rgba(226,75,74,0.1);
-    --red-dim: #791F1F;
+    --red-bg: rgba(226,75,74,0.08);
+    --red-dim: #F7C1C1;
     --coral-dim: #993C1D;
   }
-  html, body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.5; min-height: 100vh; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.5; min-height: 100vh; }
   .layout { display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 64px 1fr; min-height: 100vh; }
 
   /* TOPBAR */
-  .topbar { grid-column: 1 / -1; background: #0d0d0d; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; }
+  .topbar { grid-column: 1 / -1; background: #f4f4f4; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; }
   .brand { display: flex; align-items: center; gap: 10px; }
-  .brand-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--teal-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .brand-dot svg { width: 14px; height: 14px; fill: var(--teal-light); }
+  .brand-dot { width: 28px; height: 28px; border-radius: 50%; background: #9FE1CB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .brand-dot svg { width: 14px; height: 14px; fill: #0F6E56; }
   .brand-name { font-size: 15px; font-weight: 500; color: var(--text); }
   .brand-sub { font-size: 11px; color: var(--text3); margin-top: 1px; }
   .clock { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--text); }
   .date-str { font-size: 11px; color: var(--text3); text-align: right; margin-top: 1px; }
 
   /* SIDEBAR */
-  .sidebar { background: #0d0d0d; border-right: 0.5px solid var(--border); padding: 1.25rem 0; display: flex; flex-direction: column; gap: 2px; }
-  .sidebar-label { font-size: 10px; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 1.5rem 0.4rem; }
-  .nav-btn { width: 100%; text-align: left; padding: 8px 1.5rem; background: transparent; border: none; color: var(--text2); font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.12s; display: flex; align-items: center; gap: 8px; }
+  .sidebar { background: #f4f4f4; border-right: 0.5px solid var(--border); padding: 1.25rem 0; display: flex; flex-direction: column; gap: 2px; }
+  .sidebar-label { font-size: 11px; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 1.5rem 0.4rem; }
+  .nav-btn { width: 100%; text-align: left; padding: 8px 1.5rem; background: transparent; border: none; color: var(--text2); font-size: 14px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.12s; display: flex; align-items: center; gap: 8px; }
   .nav-btn:hover { background: var(--surface2); color: var(--text); }
-  .nav-btn.active { background: var(--teal-bg); color: var(--teal-light); border-right: 2px solid var(--teal); }
+  .nav-btn.active { background: var(--teal-bg); color: #0F6E56; border-right: 2px solid #0F6E56; }
   .nav-icon { width: 14px; height: 14px; flex-shrink: 0; fill: currentColor; }
   .sidebar-divider { height: 0.5px; background: var(--border); margin: 0.5rem 1.5rem; }
   .sidebar-stats { padding: 0 1rem; }
   .sstat { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; }
   .sstat-label { font-size: 10px; color: var(--text3); margin-bottom: 3px; }
-  .sstat-val { font-size: 20px; font-weight: 500; color: var(--text); font-family: 'DM Mono', monospace; }
+  .sstat-val { font-size: 22px; font-weight: 500; color: var(--text); font-family: 'DM Mono', monospace; }
 
   /* MAIN */
   .main { padding: 1.5rem; overflow-y: auto; }
   .panel { display: none; }
   .panel.active { display: block; }
-  .page-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; }
+  .page-title { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; }
 
   /* CARDS */
   .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
-  .card-title { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+  .card-title { font-size: 11px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
 
   /* FORMS */
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
   .form-row.full { grid-template-columns: 1fr; }
   .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
   .form-row.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
-  label { font-size: 11px; color: var(--text2); display: block; margin-bottom: 4px; }
-  input, select, textarea { width: 100%; background: var(--bg); border: 0.5px solid var(--border2); border-radius: 6px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 8px 10px; outline: none; transition: border-color 0.12s; }
+  label { font-size: 12px; color: var(--text2); display: block; margin-bottom: 4px; }
+  input, select, textarea { width: 100%; background: var(--bg); border: 0.5px solid var(--border2); border-radius: 6px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 8px 10px; outline: none; transition: border-color 0.12s; }
   input:focus, select:focus, textarea:focus { border-color: var(--teal); }
   input::placeholder { color: var(--text3); }
   textarea { resize: vertical; min-height: 60px; }
@@ -98,17 +98,17 @@
   /* LOG ITEMS */
   .log-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 14px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; margin-bottom: 6px; transition: border-color 0.12s; }
   .log-item:hover { border-color: var(--border2); }
-  .log-badge { font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
-  .badge-new { background: var(--teal-dim); color: #9FE1CB; }
+  .log-badge { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+  .badge-new { background: #9FE1CB; color: #9FE1CB; }
   .badge-referral { background: var(--blue-dim); color: #B5D4F4; }
   .badge-callback { background: var(--amber-dim); color: #FAC775; }
   .badge-other { background: #1a1a1a; color: var(--text3); }
   .badge-crisis { background: var(--red-dim); color: #F7C1C1; }
   .badge-intake { background: #26215C; color: #CECBF6; }
-  .log-meta { font-size: 12px; color: var(--text); font-weight: 500; }
-  .log-sub { font-size: 11px; color: var(--text3); margin-top: 2px; line-height: 1.5; }
+  .log-meta { font-size: 13px; color: var(--text); font-weight: 500; }
+  .log-sub { font-size: 12px; color: var(--text3); margin-top: 2px; line-height: 1.5; }
   .log-time-col { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-  .log-time { font-size: 10px; color: var(--text3); white-space: nowrap; font-family: 'DM Mono', monospace; }
+  .log-time { font-size: 11px; color: var(--text3); white-space: nowrap; font-family: 'DM Mono', monospace; }
   .empty { text-align: center; padding: 2.5rem; color: var(--text3); font-size: 12px; }
 
   /* INTAKE ITEMS */
@@ -127,8 +127,8 @@
   .therapist-card:hover { border-color: var(--teal); background: var(--teal-bg); }
   .therapist-card.selected { border-color: var(--teal); background: var(--teal-bg); }
   .t-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--surface2); border: 0.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--teal-light); flex-shrink: 0; }
-  .t-name { font-size: 12px; font-weight: 500; color: var(--text); }
-  .t-title { font-size: 10px; color: var(--text3); margin-top: 1px; }
+  .t-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .t-title { font-size: 11px; color: var(--text3); margin-top: 1px; }
   .therapist-item { background: var(--surface); border: 0.5px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
 
   /* FILTER */
@@ -251,7 +251,7 @@
           <div><label>Caller name</label><input type="text" id="c-name" placeholder="Full name"></div>
           <div><label>Phone number</label><input type="tel" id="c-phone" placeholder="(xxx) xxx-xxxx"></div>
         </div>
-        <div class="form-row three">
+        <div class="form-row">
           <div><label>Call type</label>
             <select id="c-type">
               <option value="new">New client inquiry</option>
@@ -263,13 +263,7 @@
           <div><label>Logged by</label>
             <select id="c-logged-by"><option value="">Select intern...</option></select>
           </div>
-          <div><label>Urgency</label>
-            <select id="c-urgency">
-              <option value="routine">Routine</option>
-              <option value="urgent">Urgent</option>
-              <option value="crisis">Crisis</option>
-            </select>
-          </div>
+
         </div>
         <div class="form-row">
           <div><label>Routed to (or click therapist below)</label><input type="text" id="c-routed" placeholder="Staff name or dept"></div>
@@ -420,23 +414,23 @@
     <div id="panel-resources" class="panel">
       <div class="page-title">Resources</div>
 
-      <div style="background:#1a0808;border:0.5px solid #791F1F;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;">
-        <div style="font-size:11px;font-weight:500;color:#F7C1C1;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Crisis &amp; 24/7 support</div>
+      <div style="background:#fff0f0;border:0.5px solid #F09595;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;">
+        <div style="font-size:11px;font-weight:500;color:#A32D2D;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Crisis &amp; 24/7 support</div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
-            <div style="font-size:11px;color:#888;margin-bottom:4px;">National suicide &amp; crisis lifeline</div>
-            <div style="font-size:22px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">988</div>
-            <div style="font-size:10px;color:#555;margin-top:2px;">Simply dial 988</div>
+          <div style="background:#ffe8e8;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#A32D2D;margin-bottom:4px;">National suicide &amp; crisis lifeline</div>
+            <div style="font-size:22px;font-weight:500;color:#A32D2D;font-family:'DM Mono',monospace;">988</div>
+            <div style="font-size:10px;color:#cc6666;margin-top:2px;">Simply dial 988</div>
           </div>
-          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
-            <div style="font-size:11px;color:#888;margin-bottom:4px;">Harris Center crisis line</div>
-            <div style="font-size:15px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">713-970-7000</div>
-            <div style="font-size:10px;color:#555;margin-top:2px;">theharriscenter.org</div>
+          <div style="background:#ffe8e8;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#A32D2D;margin-bottom:4px;">Harris Center crisis line</div>
+            <div style="font-size:15px;font-weight:500;color:#A32D2D;font-family:'DM Mono',monospace;">713-970-7000</div>
+            <div style="font-size:10px;color:#cc6666;margin-top:2px;">theharriscenter.org</div>
           </div>
-          <div style="background:#200f0f;border-radius:8px;padding:10px 12px;">
-            <div style="font-size:11px;color:#888;margin-bottom:4px;">HPD mental health / mobile crisis</div>
-            <div style="font-size:15px;font-weight:500;color:#F7C1C1;font-family:'DM Mono',monospace;">713-970-7000</div>
-            <div style="font-size:10px;color:#555;margin-top:2px;">or via 988</div>
+          <div style="background:#ffe8e8;border-radius:8px;padding:10px 12px;">
+            <div style="font-size:11px;color:#A32D2D;margin-bottom:4px;">HPD mental health / mobile crisis</div>
+            <div style="font-size:15px;font-weight:500;color:#A32D2D;font-family:'DM Mono',monospace;">713-970-7000</div>
+            <div style="font-size:10px;color:#cc6666;margin-top:2px;">or via 988</div>
           </div>
         </div>
       </div>
@@ -444,15 +438,15 @@
       <div class="card">
         <div class="card-title">Houston &amp; local resources</div>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">Mental Health America of Greater Houston</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Wellness Guide with directory of local crisis lines and resources.</div></div>
-            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;white-space:nowrap;">713-523-8963</div>
+            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#0F6E56;white-space:nowrap;">713-523-8963</div>
           </div>
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">NAMI Greater Houston</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Support, education, and advocacy for people affected by mental illness.</div></div>
-            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Crisis line</div><div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;">866-970-4770</div></div>
+            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Crisis line</div><div style="font-size:13px;font-family:'DM Mono',monospace;color:#0F6E56;">866-970-4770</div></div>
           </div>
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;">
             <div style="font-size:13px;font-weight:500;color:var(--text);">Houston CIT (Crisis Intervention Team)</div>
             <div style="font-size:11px;color:var(--text3);margin-top:2px;">Local crisis hotlines and specialized services including for people experiencing homelessness and mental illness.</div>
           </div>
@@ -462,21 +456,21 @@
       <div class="card">
         <div class="card-title">National resources (available locally)</div>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">National Suicide Prevention Lifeline</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">24/7 free and confidential support for people in distress.</div></div>
-            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">988</div>
+            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#0F6E56;">988</div>
           </div>
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">Crisis Text Line</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Free, 24/7 crisis support via text message.</div></div>
-            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Text HOME to</div><div style="font-size:18px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">741741</div></div>
+            <div style="text-align:right;white-space:nowrap;"><div style="font-size:10px;color:var(--text3);">Text HOME to</div><div style="font-size:18px;font-weight:500;font-family:'DM Mono',monospace;color:#0F6E56;">741741</div></div>
           </div>
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">SAMHSA National Helpline</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Free, confidential, 24/7 treatment referral for mental health and substance use disorders.</div></div>
-            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#5DCAA5;white-space:nowrap;">1-800-662-4357</div>
+            <div style="font-size:13px;font-family:'DM Mono',monospace;color:#0F6E56;white-space:nowrap;">1-800-662-4357</div>
           </div>
-          <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+          <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
             <div><div style="font-size:13px;font-weight:500;color:var(--text);">2-1-1 Texas</div><div style="font-size:11px;color:var(--text3);margin-top:2px;">Connects callers to mental health services and local resources.</div></div>
-            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#5DCAA5;">211</div>
+            <div style="font-size:22px;font-weight:500;font-family:'DM Mono',monospace;color:#0F6E56;">211</div>
           </div>
         </div>
       </div>
@@ -623,7 +617,7 @@ function renderTodayCalls(){
   if(!calls.length){el.innerHTML='<div class="empty">No calls logged yet today.</div>';return;}
   el.innerHTML=calls.map(c=>`
     <div class="log-item">
-      <span class="log-badge ${badgeCls(c.urgency==='crisis'?'crisis':c.type)}">${badgeLbl(c.urgency==='crisis'?'crisis':c.type)}</span>
+      <span class="log-badge ${badgeCls(c.type)}">${badgeLbl(c.type)}</span>
       <div>
         <div class="log-meta">${c.name||'Unknown caller'}${c.phone?' &middot; '+c.phone:''}</div>
         <div class="log-sub">${c.loggedBy?'By: '+c.loggedBy+' &middot; ':''}${c.routed?'Routed: <strong style="color:var(--teal-light)">'+c.routed+'</strong> &middot; ':''}${c.notes||''}</div>
@@ -696,7 +690,7 @@ function renderActivityLog(filter){
   el.innerHTML=entries.map(e=>{
     if(e.kind==='call'){
       return `<div class="log-item">
-        <span class="log-badge ${badgeCls(e.urgency==='crisis'?'crisis':e.type)}">${badgeLbl(e.urgency==='crisis'?'crisis':e.type)}</span>
+        <span class="log-badge ${badgeCls(e.type)}">${badgeLbl(e.type)}</span>
         <div>
           <div class="log-meta">${e.name||'Unknown caller'}${e.phone?' &middot; '+e.phone:''}</div>
           <div class="log-sub">
@@ -770,7 +764,7 @@ function logCall(){
   const phone=document.getElementById('c-phone').value.trim();
   if(!name&&!phone){alert('Please enter at least a caller name or phone number.');return;}
   const calls=gc();
-  calls.push({name,phone,type:document.getElementById('c-type').value,loggedBy:document.getElementById('c-logged-by').value,urgency:document.getElementById('c-urgency').value,routed:document.getElementById('c-routed').value.trim(),callback:document.getElementById('c-callback').value,notes:document.getElementById('c-notes').value.trim(),ts:Date.now()});
+  calls.push({name,phone,type:document.getElementById('c-type').value,loggedBy:document.getElementById('c-logged-by').value,urgency:'routine',routed:document.getElementById('c-routed').value.trim(),callback:document.getElementById('c-callback').value,notes:document.getElementById('c-notes').value.trim(),ts:Date.now()});
   sc(calls); clearCallForm(); renderTodayCalls(); updateStats();
 }
 
@@ -823,7 +817,6 @@ function deleteIntake(ts){
 function clearCallForm(){
   ['c-name','c-phone','c-routed','c-notes','c-callback'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('c-type').value='new';
-  document.getElementById('c-urgency').value='routine';
   document.getElementById('c-logged-by').value='';
   clearTherapistSel();
 }
