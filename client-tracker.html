@@ -954,6 +954,44 @@
       </div>
     </div>
 
+    <!-- CLIENT PROFILE MODAL -->
+    <div id="client-profile-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;align-items:center;justify-content:center;overflow-y:auto;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:600px;max-width:95vw;margin:20px auto;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+          <div>
+            <div style="font-family:var(--serif);font-size:24px;" id="profile-name">—</div>
+            <div style="font-size:12px;color:var(--text3);margin-top:4px;" id="profile-meta">—</div>
+          </div>
+          <button onclick="closeProfileModal()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 12px;color:var(--text2);font-family:var(--sans);font-size:13px;cursor:pointer;">Close</button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+          <div class="stat-card">
+            <div class="stat-label">Total Sessions</div>
+            <div class="stat-value" id="profile-sessions" style="color:var(--accent)">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Hours</div>
+            <div class="stat-value" id="profile-hours" style="color:var(--accent2)">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Billed</div>
+            <div class="stat-value" id="profile-billed" style="color:var(--warn)">$0</div>
+          </div>
+        </div>
+
+        <div class="card-title" style="margin-bottom:12px;">Session History</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Description</th><th>Method</th><th>Hours</th><th>Fee</th></tr>
+            </thead>
+            <tbody id="profile-sessions-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <!-- EDIT SESSION MODAL -->
     <div id="edit-session-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;overflow-y:auto;">
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:520px;max-width:95vw;margin:20px auto;">
@@ -1378,7 +1416,6 @@
             <select id="sup-type">
               <option value="Individual">Individual</option>
               <option value="Group">Group</option>
-              <option value="Virtual">Virtual</option>
             </select>
           </div>
 
@@ -1390,10 +1427,7 @@
             <label>Cost ($)</label>
             <input type="number" id="sup-cost" placeholder="0">
           </div>
-          <div class="field">
-            <label>Topic</label>
-            <input type="text" id="sup-topic" placeholder="Session topic">
-          </div>
+
         </div>
         <div class="btn-row">
           <button class="btn btn-primary" onclick="logSupervision()">Save</button>
@@ -1405,7 +1439,7 @@
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Date</th><th>Type</th><th>Topic</th><th>Hours</th><th>Cost</th><th></th></tr>
+              <tr><th>Date</th><th>Type</th><th>Hours</th><th>Cost</th><th></th></tr>
             </thead>
             <tbody id="sup-table-body"></tbody>
           </table>
@@ -1432,13 +1466,9 @@
             <select id="edit-sup-type">
               <option value="Individual">Individual</option>
               <option value="Group">Group</option>
-              <option value="Virtual">Virtual</option>
             </select>
           </div>
-          <div class="field">
-            <label>Topic</label>
-            <input type="text" id="edit-sup-topic">
-          </div>
+
           <div class="field">
             <label>Hours</label>
             <input type="number" id="edit-sup-hours" min="0.5" step="0.5">
@@ -1838,6 +1868,49 @@ function addClient() {
   populateClientDatalist();
 }
 
+function openClientProfile(name) {
+  if (!name) return;
+  const sessions = load(KEYS.sessions).filter(s => s.name === name).sort((a,b) => b.date.localeCompare(a.date));
+  const clients = load(KEYS.clients);
+  const client = clients.find(c => c.name === name);
+
+  document.getElementById('profile-name').textContent = name;
+  const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space', Emora: 'Emora', ME: 'Private' };
+  const agency = client ? (agencyNames[client.agency] || client.agency) : '—';
+  const status = client ? (client.status || 'active') : '—';
+  const gender = client ? (client.gender || '') : '';
+  document.getElementById('profile-meta').textContent = `${agency} · ${status.charAt(0).toUpperCase() + status.slice(1)}${gender ? ' · ' + gender.charAt(0).toUpperCase() + gender.slice(1) : ''}`;
+
+  const totalSessions = sessions.length;
+  const totalHours = sessions.reduce((a,s) => a + (parseFloat(s.hours)||0), 0);
+  const totalBilled = sessions.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+
+  document.getElementById('profile-sessions').textContent = totalSessions;
+  document.getElementById('profile-hours').textContent = totalHours;
+  document.getElementById('profile-billed').textContent = '$' + totalBilled.toLocaleString();
+
+  const tbody = document.getElementById('profile-sessions-body');
+  if (!sessions.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="color:var(--text3);text-align:center;padding:20px;">No sessions logged yet</td></tr>';
+  } else {
+    tbody.innerHTML = sessions.map(s => `
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td>${s.desc || '—'}</td>
+        <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
+        <td style="font-family:var(--mono)">${s.hours}</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">${s.fee ? '$'+s.fee : '—'}</td>
+      </tr>
+    `).join('');
+  }
+
+  document.getElementById('client-profile-modal').style.display = 'flex';
+}
+
+function closeProfileModal() {
+  document.getElementById('client-profile-modal').style.display = 'none';
+}
+
 function selectGender(val) {
   document.getElementById('c-gender').value = val;
   const male = document.getElementById('c-gender-male');
@@ -1897,7 +1970,7 @@ function renderClients() {
   const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
   tbody.innerHTML = sorted.map(c => `
     <tr>
-      <td style="color:var(--text);font-weight:500">${c.name}</td>
+      <td style="color:var(--text);font-weight:500;cursor:pointer;text-decoration:underline;text-decoration-color:var(--text3);" onclick="openClientProfile('${c.name}')">${c.name}</td>
       <td><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span></td>
       <td style="font-family:var(--mono)">$${c.rate}</td>
       <td><span class="badge badge-${c.method.toLowerCase()}">${c.method}</span></td>
@@ -2289,12 +2362,11 @@ function renderLog() {
   tbody.innerHTML = filtered.map(s => `
     <tr>
       <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
-      <td style="color:var(--text)">${s.name || '<span style="color:var(--text3);font-style:italic">—</span>'}</td>
+      <td style="color:var(--text);cursor:pointer;text-decoration:underline;text-decoration-color:var(--text3);" onclick="openClientProfile('${s.name}')">${s.name || '<span style="color:var(--text3);font-style:italic">—</span>'}</td>
       <td><span class="badge badge-${(s.agency||'').toLowerCase().replace(' ','')}">${s.agency || '—'}</span></td>
       <td style="font-family:var(--mono)">${s.hours}</td>
       <td style="font-family:var(--mono)">${s.fee ? '$' + s.fee : '—'}</td>
       <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
-      <td style="font-size:11px;color:var(--text3)">${s.type || ''}</td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.desc || ''}</td>
       <td style="display:flex;gap:6px;">
         <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditSession('${s.id}')">Edit</button>
@@ -2478,7 +2550,6 @@ function logSupervision() {
     id: uid(),
     date,
     type: document.getElementById('sup-type').value,
-    topic: document.getElementById('sup-topic').value.trim(),
     hours: parseFloat(document.getElementById('sup-hours').value) || 0,
     cost: parseFloat(document.getElementById('sup-cost').value) || 0,
   });
@@ -2516,7 +2587,6 @@ function renderSupervision() {
     <tr>
       <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
       <td>${s.type}</td>
-      <td>${s.topic || '—'}</td>
       <td style="font-family:var(--mono)">${s.hours}</td>
       <td style="font-family:var(--mono)">${s.cost ? '$' + s.cost : '—'}</td>
       <td style="display:flex;gap:6px;">
@@ -2542,7 +2612,6 @@ function openEditSup(id) {
   document.getElementById('edit-sup-id').value = s.id;
   document.getElementById('edit-sup-date').value = s.date;
   document.getElementById('edit-sup-type').value = s.type;
-  document.getElementById('edit-sup-topic').value = s.topic || '';
   document.getElementById('edit-sup-hours').value = s.hours;
   document.getElementById('edit-sup-cost').value = s.cost || '';
   document.getElementById('edit-sup-modal').style.display = 'flex';
@@ -2557,7 +2626,6 @@ function saveEditSup() {
     ...sup[idx],
     date: document.getElementById('edit-sup-date').value,
     type: document.getElementById('edit-sup-type').value,
-    topic: document.getElementById('edit-sup-topic').value.trim(),
     hours: parseFloat(document.getElementById('edit-sup-hours').value) || 0,
     cost: parseFloat(document.getElementById('edit-sup-cost').value) || 0,
   };
