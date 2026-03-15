@@ -2475,31 +2475,21 @@ function fmtDate(dateStr) {
 // ============================================================
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
 
-async function postToSheets(sheet, rows) {
-  const form = new FormData();
-  form.append('action', 'save');
-  form.append('sheet', sheet);
-  form.append('rows', JSON.stringify(rows));
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: form
-    });
-    return true;
-  } catch(e) {
-    return false;
-  }
+async function saveSheetViaGet(sheet, rows) {
+  const encoded = encodeURIComponent(JSON.stringify(rows));
+  const url = `${SCRIPT_URL}?action=save&sheet=${sheet}&rows=${encoded}&t=${Date.now()}`;
+  const res = await fetch(url);
+  return res.json();
 }
 
 async function syncToSheets() {
   try {
     showSyncStatus('Syncing...', 'var(--warn)');
-    await postToSheets('Sessions', load(KEYS.sessions));
-    await postToSheets('Clients', load(KEYS.clients));
-    await postToSheets('Supervision', load(KEYS.supervision));
-    await postToSheets('Expenses', load(KEYS.expenses));
-    await postToSheets('Referrals', load(KEYS.referrals));
+    await saveSheetViaGet('Sessions', load(KEYS.sessions));
+    await saveSheetViaGet('Clients', load(KEYS.clients));
+    await saveSheetViaGet('Supervision', load(KEYS.supervision));
+    await saveSheetViaGet('Expenses', load(KEYS.expenses));
+    await saveSheetViaGet('Referrals', load(KEYS.referrals));
     showSyncStatus('✓ Synced to Google Sheets', 'var(--accent2)');
   } catch (err) {
     showSyncStatus('Sync failed — check connection', 'var(--danger)');
@@ -2513,7 +2503,7 @@ async function syncFromSheets() {
     const keys = [KEYS.sessions, KEYS.clients, KEYS.supervision, KEYS.expenses, KEYS.referrals];
     for (let i = 0; i < sheets.length; i++) {
       const url = `${SCRIPT_URL}?action=get&sheet=${sheets[i]}&t=${Date.now()}`;
-      const res = await fetch(url, { mode: 'cors' });
+      const res = await fetch(url);
       const json = await res.json();
       if (json.data && json.data.length > 0) {
         localStorage.setItem(keys[i], JSON.stringify(json.data));
