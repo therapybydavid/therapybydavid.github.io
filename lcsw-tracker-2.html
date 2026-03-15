@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMSW Practice Tracker — David Robles</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #181c27;
+    --surface2: #1e2333;
+    --border: #2a3045;
+    --accent: #4f8ef7;
+    --accent2: #38c98e;
+    --warn: #f7a44f;
+    --danger: #f75f5f;
+    --text: #e8eaf2;
+    --text2: #8892a8;
+    --text3: #5a6278;
+    --serif: 'DM Serif Display', serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+  }
+
+  /* LAYOUT */
+  .app { display: flex; min-height: 100vh; }
+
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    z-index: 100;
+  }
+
+  .sidebar-logo {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo .name {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .sidebar-logo .title {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav { padding: 16px 12px; flex: 1; }
+
+  .nav-section {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    padding: 12px 8px 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 13.5px;
+    font-weight: 400;
+    transition: all 0.15s;
+    margin-bottom: 2px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active { background: rgba(79,142,247,0.12); color: var(--accent); font-weight: 500; }
+
+  .nav-item .icon { font-size: 16px; width: 20px; text-align: center; }
+
+  .main {
+    margin-left: 220px;
+    flex: 1;
+    padding: 32px;
+    max-width: 1100px;
+  }
+
+
+
+  /* HEADER */
+  .page-header {
+    margin-bottom: 28px;
+  }
+
+  .page-header h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .page-header p {
+    color: var(--text2);
+    margin-top: 4px;
+    font-size: 13.5px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  /* PROGRESS BARS */
+  .progress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+  .progress-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .progress-label { font-size: 12px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .progress-numbers {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 10px 0 14px;
+  }
+
+  .progress-current { font-family: var(--mono); font-size: 36px; color: var(--text); }
+  .progress-total { font-family: var(--mono); font-size: 16px; color: var(--text3); }
+
+  .progress-bar {
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  .progress-pct { font-size: 11px; color: var(--text3); margin-top: 6px; font-family: var(--mono); }
+
+  /* STATS ROW */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-value { font-family: var(--mono); font-size: 24px; color: var(--text); margin-top: 6px; }
+  .stat-sub { font-size: 11px; color: var(--text2); margin-top: 3px; }
+
+  /* FORMS */
+  .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .form-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+  .form-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+  .form-full { grid-column: 1 / -1; }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+
+  .field input, .field select, .field textarea {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .field select option { background: var(--surface2); }
+
+  /* BUTTONS */
+  .btn {
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: none;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #3a7de8; }
+  .btn-success { background: var(--accent2); color: #fff; }
+  .btn-success:hover { background: #2db87d; }
+  .btn-warn { background: var(--warn); color: #fff; }
+  .btn-danger { background: transparent; border: 1px solid var(--danger); color: var(--danger); font-size: 12px; padding: 5px 10px; }
+  .btn-danger:hover { background: var(--danger); color: #fff; }
+  .btn-ghost { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); }
+  .btn-ghost:hover { color: var(--text); border-color: var(--text3); }
+
+  .btn-row { display: flex; gap: 10px; margin-top: 18px; align-items: center; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text3);
+    font-weight: 500;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(42,48,69,0.5);
+    font-size: 13px;
+    color: var(--text2);
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); color: var(--text); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+
+  .badge-dc { background: rgba(79,142,247,0.15); color: var(--accent); }
+  .badge-sms { background: rgba(56,201,142,0.15); color: var(--accent2); }
+  .badge-emora { background: rgba(247,164,79,0.15); color: var(--warn); }
+  .badge-me { background: rgba(247,95,95,0.15); color: var(--danger); }
+  .badge-ip { background: rgba(255,255,255,0.06); color: var(--text2); }
+  .badge-v { background: rgba(56,201,142,0.08); color: var(--accent2); }
+
+  /* TABS */
+  .tabs { display: flex; gap: 4px; margin-bottom: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 4px; width: fit-content; }
+
+  .tab {
+    padding: 7px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text2);
+    border: none;
+    background: none;
+    font-family: var(--sans);
+    transition: all 0.15s;
+  }
+
+  .tab.active { background: var(--surface2); color: var(--text); font-weight: 500; }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  /* INVOICE */
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .invoice-title { font-family: var(--serif); font-size: 24px; }
+  .invoice-meta { text-align: right; font-size: 13px; color: var(--text2); }
+  .invoice-total { font-family: var(--mono); font-size: 28px; color: var(--accent2); margin-top: 8px; }
+
+  /* MONTH NAV */
+  .month-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .month-nav span { font-family: var(--serif); font-size: 20px; min-width: 160px; text-align: center; }
+
+  /* EMPTY STATE */
+  .empty { text-align: center; padding: 40px 20px; color: var(--text3); font-size: 13px; }
+  .empty-icon { font-size: 32px; margin-bottom: 10px; }
+
+  /* PAGE SECTIONS */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* REFERRAL */
+  .ref-scorecard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .ref-source-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ref-source-card.top-source {
+    border-color: var(--accent2);
+    box-shadow: 0 0 0 1px rgba(56,201,142,0.2);
+  }
+
+  .ref-source-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .ref-source-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .ref-best-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    font-weight: 600;
+    background: rgba(56,201,142,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .ref-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .ref-bar-label { font-size: 11px; color: var(--text3); width: 62px; flex-shrink: 0; }
+
+  .ref-bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .ref-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  .ref-bar-count { font-family: var(--mono); font-size: 11px; color: var(--text2); width: 16px; text-align: right; flex-shrink: 0; }
+
+  .ref-conversion-rate {
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--text);
+    margin-top: 14px;
+  }
+
+  .ref-conversion-label { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+  .ref-clients-list { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+
+  .ref-client {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 12.5px;
+    color: var(--text2);
+  }
+
+  .ref-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent2);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* PRINT STYLES */
+  /* QUICK LOG */
+  .ql-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+
+  .ql-step {
+    margin-bottom: 24px;
+  }
+
+  .ql-step-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .ql-client-btn {
+    width: 100%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.15s;
+    text-align: left;
+  }
+
+  .ql-client-btn.selected {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(79,142,247,0.08);
+  }
+
+  .ql-client-btn:hover { border-color: var(--accent); }
+
+  .ql-type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ql-type-btn {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 16px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    line-height: 1.3;
+  }
+
+  .ql-type-btn.selected {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    background: rgba(56,201,142,0.08);
+  }
+
+  .ql-type-btn:hover { border-color: var(--accent2); }
+
+  .ql-method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ql-method-btn {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 16px;
+    color: var(--text2);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .ql-method-btn.selected {
+    border-color: var(--warn);
+    color: var(--warn);
+    background: rgba(247,164,79,0.08);
+  }
+
+  .ql-method-btn:hover { border-color: var(--warn); }
+
+  .ql-confirm-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+  }
+
+  .ql-confirm-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+  }
+
+  .ql-confirm-row:last-child { border-bottom: none; }
+  .ql-confirm-row span:last-child { color: var(--text); font-weight: 500; }
+
+  .ql-log-btn {
+    width: 100%;
+    background: var(--accent2);
+    border: none;
+    border-radius: 14px;
+    padding: 20px;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .ql-log-btn:hover { background: #2db87d; transform: translateY(-1px); }
+  .ql-log-btn:active { transform: translateY(0); }
+  .ql-log-btn:disabled { background: var(--surface2); color: var(--text3); cursor: not-allowed; transform: none; }
+
+  .ql-success {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+  }
+
+  .ql-success-icon { font-size: 56px; margin-bottom: 16px; }
+  .ql-success-title { font-family: var(--serif); font-size: 26px; margin-bottom: 8px; }
+  .ql-success-sub { color: var(--text2); font-size: 14px; margin-bottom: 28px; }
+
+  .ql-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    z-index: 300;
+    margin-top: 4px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  }
+
+
+
+  @media print {
+    .sidebar, .btn-row, .tabs, .nav-item { display: none !important; }
+    .main { margin-left: 0; padding: 20px; }
+    body { background: white; color: black; }
+    .card, .invoice-area { background: white; border: 1px solid #ddd; }
+  }
+
+  .delete-btn {
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  tr:hover .delete-btn { opacity: 1; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="name">David Robles</div>
+      <div class="title">LMSW Practice Tracker</div>
+      <div style="margin-top:10px;display:flex;gap:6px;align-items:center;">
+        <button onclick="syncFromSheets()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
+        <span id="sync-status" style="font-size:10px;color:var(--text3);transition:opacity 0.5s;opacity:0;"></span>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section">Overview</div>
+      <button class="nav-item active" onclick="showPage('dashboard')">
+        <span class="icon">◈</span> Dashboard
+      </button>
+      <div class="nav-section">Logging</div>
+      <button class="nav-item" onclick="showPage('clients')">
+        <span class="icon">◑</span> Clients
+      </button>
+      <button class="nav-item" onclick="showPage('quick-log')">
+        <span class="icon">⚡</span> Quick Log
+      </button>
+      <button class="nav-item" onclick="showPage('log-session')">
+        <span class="icon">＋</span> Log Session
+      </button>
+      <button class="nav-item" onclick="showPage('session-log')">
+        <span class="icon">≡</span> Session Log
+      </button>
+      <div class="nav-section">Billing</div>
+      <button class="nav-item" onclick="showPage('invoices')">
+        <span class="icon">◷</span> Invoices
+      </button>
+      <div class="nav-section">Practice</div>
+      <button class="nav-item" onclick="showPage('supervision')">
+        <span class="icon">◉</span> Supervision
+      </button>
+      <button class="nav-item" onclick="showPage('referrals')">
+        <span class="icon">◎</span> Referrals
+      </button>
+      <button class="nav-item" onclick="showPage('expenses')">
+        <span class="icon">◫</span> Expenses
+      </button>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <div id="page-dashboard" class="page active">
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p id="dash-date"></p>
+      </div>
+
+      <div class="progress-grid">
+        <div class="progress-card">
+          <div class="progress-label">Clinical Hours toward LCSW</div>
+          <div class="progress-numbers">
+            <span class="progress-current" id="prog-clinical">0</span>
+            <span class="progress-total">/ 3,000 hrs</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="prog-clinical-bar" style="background: var(--accent); width: 0%"></div>
+          </div>
+          <div class="progress-pct" id="prog-clinical-pct">0.0% complete</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-label">Supervision Hours</div>
+          <div class="progress-numbers">
+            <span class="progress-current" id="prog-sup">0</span>
+            <span class="progress-total">/ 100 hrs</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="prog-sup-bar" style="background: var(--accent2); width: 0%"></div>
+          </div>
+          <div class="progress-pct" id="prog-sup-pct">0.0% complete</div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">This Month Sessions</div>
+          <div class="stat-value" id="stat-month-sessions">0</div>
+          <div class="stat-sub" id="stat-month-label">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">This Month Income</div>
+          <div class="stat-value" id="stat-month-income">$0</div>
+          <div class="stat-sub">billed this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">In-Person</div>
+          <div class="stat-value" id="stat-ip">0</div>
+          <div class="stat-sub">this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Virtual</div>
+          <div class="stat-value" id="stat-v">0</div>
+          <div class="stat-sub">this month</div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(79,142,247,0.3); margin-bottom:20px;">
+        <div class="card-title">2026 Year-to-Date Income</div>
+        <div style="display:flex; align-items:baseline; gap:12px;">
+          <div style="font-family:var(--mono); font-size:42px; color:var(--accent)" id="stat-yearly-income">$0</div>
+          <div style="color:var(--text3); font-size:13px" id="stat-yearly-sub">across all sessions</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Caseload — Gender Breakdown</div>
+        <div id="gender-stats" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Monthly Income — 2026</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>In-Person</th>
+                <th>Virtual</th>
+                <th>Total Sessions</th>
+                <th>Income</th>
+              </tr>
+            </thead>
+            <tbody id="stats-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LOG -->
+    <div id="page-quick-log" class="page">
+      <div class="page-header">
+        <h1>Quick Log</h1>
+        <p>Log a session in 3 taps</p>
+      </div>
+
+      <div class="ql-wrap">
+
+        <div id="ql-form">
+          <!-- Step 1: Client -->
+          <div class="ql-step">
+            <div class="ql-step-label">Step 1 — Who did you just see?</div>
+            <div style="position:relative;">
+              <button class="ql-client-btn" id="ql-client-btn" onclick="toggleQlDropdown()">
+                <span id="ql-client-label">Tap to select client</span>
+                <span style="font-size:12px;opacity:0.4;">▼</span>
+              </button>
+              <div class="ql-dropdown" id="ql-dropdown">
+                <div style="padding:10px;">
+                  <input id="ql-search" type="text" placeholder="Search..."
+                    style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;"
+                    oninput="filterQlClients(this.value)">
+                </div>
+                <div id="ql-client-list" style="max-height:240px;overflow-y:auto;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Session Type -->
+          <div class="ql-step" id="ql-step2" style="opacity:0.3;pointer-events:none;">
+            <div class="ql-step-label">Step 2 — What type of session?</div>
+            <div class="ql-type-grid">
+              <button class="ql-type-btn" onclick="selectQlType('Intake session', this)">
+                Intake<br>Session
+              </button>
+              <button class="ql-type-btn" onclick="selectQlType('Psychotherapy session', this)">
+                Psychotherapy<br>Session
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Method -->
+          <div class="ql-step" id="ql-step3" style="opacity:0.3;pointer-events:none;">
+            <div class="ql-step-label">Step 3 — How did you meet?</div>
+            <div class="ql-method-grid">
+              <button class="ql-method-btn" onclick="selectQlMethod('IP', this)">
+                🏢 In-Person
+              </button>
+              <button class="ql-method-btn" onclick="selectQlMethod('V', this)">
+                💻 Virtual
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm -->
+          <div id="ql-confirm" style="display:none;">
+            <div class="ql-step-label">Confirm &amp; Log</div>
+            <div class="ql-confirm-card">
+              <div class="ql-confirm-row"><span>Client</span><span id="ql-c-name">—</span></div>
+              <div class="ql-confirm-row"><span>Agency</span><span id="ql-c-agency">—</span></div>
+              <div class="ql-confirm-row"><span>Fee</span><span id="ql-c-fee">—</span></div>
+              <div class="ql-confirm-row"><span>Session Type</span><span id="ql-c-type">—</span></div>
+              <div class="ql-confirm-row"><span>Method</span><span id="ql-c-method">—</span></div>
+              <div class="ql-confirm-row"><span>Date</span><span id="ql-c-date">—</span></div>
+            </div>
+            <button class="ql-log-btn" id="ql-log-btn" onclick="submitQuickLog()">
+              ✓ Log Session
+            </button>
+          </div>
+        </div>
+
+        <!-- Success state -->
+        <div class="ql-success" id="ql-success">
+          <div class="ql-success-icon">✅</div>
+          <div class="ql-success-title">Session Logged</div>
+          <div class="ql-success-sub" id="ql-success-sub"></div>
+          <button class="btn btn-primary" onclick="resetQuickLog()" style="font-size:15px;padding:12px 28px;">Log Another</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CLIENTS -->
+    <div id="page-clients" class="page">
+      <div class="page-header">
+        <h1>Client Roster</h1>
+        <p>Add clients once — auto-fill when logging sessions</p>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Add Client</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" id="c-name" placeholder="Client full name">
+          </div>
+          <div class="field">
+            <label>Agency</label>
+            <select id="c-agency">
+              <option value="DC">District Counseling (DC)</option>
+              <option value="SMS">Safe Mind Space (SMS)</option>
+              <option value="Emora">Emora</option>
+              <option value="ME">Private (ME)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Session Rate ($)</label>
+            <input type="number" id="c-rate" placeholder="e.g. 50">
+          </div>
+          <div class="field">
+            <label>Default Method</label>
+            <select id="c-method">
+              <option value="IP">In-Person (IP)</option>
+              <option value="V">Virtual (V)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Insurance (SMS only)</label>
+            <input type="text" id="c-insurance" placeholder="e.g. BCBS">
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <select id="c-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="unknown">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="c-status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addClient()">Add Client</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Active Clients</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Agency</th><th>Rate</th><th>Method</th><th>Insurance</th><th>Gender</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="clients-table-body"></tbody>
+          </table>
+        </div>
+        <div id="clients-empty" class="empty" style="display:none;">
+          <div class="empty-icon">👤</div>
+          No clients added yet.
+        </div>
+      </div>
+    </div>
+
+    <!-- EDIT CLIENT MODAL -->
+    <div id="edit-client-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:480px;max-width:95vw;position:relative;">
+        <div style="font-family:var(--serif);font-size:20px;margin-bottom:20px;">Edit Client</div>
+        <input type="hidden" id="edit-c-id">
+        <div class="form-grid two-col">
+          <div class="field form-full">
+            <label>Full Name</label>
+            <input type="text" id="edit-c-name">
+          </div>
+          <div class="field">
+            <label>Agency</label>
+            <select id="edit-c-agency">
+              <option value="DC">District Counseling (DC)</option>
+              <option value="SMS">Safe Mind Space (SMS)</option>
+              <option value="Emora">Emora</option>
+              <option value="ME">Private (ME)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Session Rate ($)</label>
+            <input type="number" id="edit-c-rate">
+          </div>
+          <div class="field">
+            <label>Default Method</label>
+            <select id="edit-c-method">
+              <option value="IP">In-Person (IP)</option>
+              <option value="V">Virtual (V)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Insurance</label>
+            <input type="text" id="edit-c-insurance" placeholder="e.g. BCBS">
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <select id="edit-c-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="unknown">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="edit-c-status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="saveEditClient()">Save Changes</button>
+          <button class="btn btn-ghost" onclick="closeEditModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOG SESSION -->
+    <div id="page-log-session" class="page">
+      <div class="page-header">
+        <h1>Log Session</h1>
+        <p>Add a new session to your hour log</p>
+      </div>
+
+      <div class="card">
+        <div class="form-grid">
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="s-date">
+          </div>
+          <div class="field" style="position:relative;">
+            <label>Client Name</label>
+            <div id="s-name-display"
+              onclick="toggleClientDropdown()"
+              style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text3);font-size:13.5px;cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;min-height:38px;">
+              <span id="s-name-label">Select client...</span>
+              <span style="font-size:10px;opacity:0.5;">▼</span>
+            </div>
+            <input type="hidden" id="s-name" value="">
+            <div id="client-dropdown" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border:1px solid var(--accent);border-radius:8px;z-index:200;margin-top:2px;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+              <div style="padding:8px;">
+                <input id="client-search" type="text" placeholder="Type to search..."
+                  style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-family:var(--sans);font-size:13px;outline:none;"
+                  oninput="filterClientList(this.value)">
+              </div>
+              <div id="client-list-items" style="max-height:200px;overflow-y:auto;"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Agency</label>
+            <div id="s-agency-display" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text3);font-size:13.5px;min-height:38px;">
+              Auto-fills from client
+            </div>
+            <input type="hidden" id="s-agency" value="—">
+          </div>
+          <div class="field">
+            <label>Hours</label>
+            <input type="number" id="s-hours" value="2" min="0.5" step="0.5">
+          </div>
+          <div class="field">
+            <label>Fee</label>
+            <div style="position:relative;">
+              <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:13.5px;">$</span>
+              <input type="number" id="s-fee" placeholder="0.00" min="0" style="padding-left:24px;width:100%;">
+            </div>
+          </div>
+          <div class="field">
+            <label>Method</label>
+            <select id="s-method">
+              <option value="IP">In-Person (IP)</option>
+              <option value="V">Virtual (V)</option>
+              <option value="—">N/A</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Activity / Description</label>
+            <select id="s-desc-select" onchange="handleDescSelect()">
+              <option value="">Select activity...</option>
+              <option value="Intake session">Intake session</option>
+              <option value="Psychotherapy session">Psychotherapy session</option>
+              <option value="custom">Other (custom)</option>
+            </select>
+          </div>
+          <div class="field" id="s-desc-custom-wrap" style="display:none;">
+            <label>Custom Description</label>
+            <input type="text" id="s-desc-custom" placeholder="Enter custom description...">
+          </div>
+          <input type="hidden" id="s-desc">
+          <div class="field">
+            <label>Session Type</label>
+            <select id="s-type">
+              <option value="clinical">Clinical (counts toward 3,000)</option>
+              <option value="supervision">Supervision (counts toward 100)</option>
+              <option value="training">Training / CEU</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Insurance (SMS only)</label>
+            <input type="text" id="s-insurance" placeholder="e.g. BCBS">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="logSession()">Save Session</button>
+          <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SESSION LOG -->
+    <div id="page-session-log" class="page">
+      <div class="page-header" style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div>
+          <h1>Session Log</h1>
+          <p>Complete record of all logged hours</p>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center; margin-top:6px;">
+          <button class="btn btn-success" onclick="exportToExcel()">⬇ Export Master Log</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; gap:10px; margin-bottom:16px; align-items:center;">
+          <div class="field" style="flex:1;">
+            <input type="text" id="search-log" placeholder="Search by name, agency, description..." oninput="renderLog()">
+          </div>
+          <select id="filter-agency" onchange="renderLog()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-family:var(--sans);font-size:13.5px;outline:none;">
+            <option value="">All Agencies</option>
+            <option value="DC">DC</option>
+            <option value="SMS">SMS</option>
+            <option value="Emora">Emora</option>
+            <option value="ME">ME</option>
+          </select>
+          <select id="filter-month" onchange="renderLog()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-family:var(--sans);font-size:13.5px;outline:none;">
+            <option value="">All Months</option>
+            <option value="2026-01">January 2026</option>
+            <option value="2026-02">February 2026</option>
+            <option value="2026-03">March 2026</option>
+            <option value="2026-04">April 2026</option>
+            <option value="2026-05">May 2026</option>
+            <option value="2026-06">June 2026</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Client</th>
+                <th>Agency</th>
+                <th>Hrs</th>
+                <th>Fee</th>
+                <th>Method</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="log-table-body"></tbody>
+          </table>
+        </div>
+        <div id="log-empty" class="empty" style="display:none;">
+          <div class="empty-icon">📋</div>
+          No sessions found. Start by logging a session.
+        </div>
+      </div>
+    </div>
+
+    <!-- INVOICES -->
+    <div id="page-invoices" class="page">
+      <div class="page-header">
+        <h1>Invoices</h1>
+        <p>Generate agency invoices from your session log</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchInvoice('DC', this)">District Counseling</button>
+        <button class="tab" onclick="switchInvoice('SMS', this)">Safe Mind Space</button>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; gap:12px; align-items:flex-end; margin-bottom:20px; flex-wrap:wrap;">
+          <div class="field">
+            <label>Invoice Month</label>
+            <select id="invoice-month" onchange="renderInvoice()">
+              <option value="2026-01">January 2026</option>
+              <option value="2026-02">February 2026</option>
+              <option value="2026-03" selected>March 2026</option>
+              <option value="2026-04">April 2026</option>
+              <option value="2026-05">May 2026</option>
+              <option value="2026-06">June 2026</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>DC Due Date</label>
+            <input type="date" id="dc-due-date" onchange="renderInvoice()" style="width:160px;">
+          </div>
+          <div class="field">
+            <label>SMS Due Date</label>
+            <input type="date" id="sms-due-date" onchange="renderInvoice()" style="width:160px;">
+          </div>
+          <div>
+            <button class="btn btn-ghost" onclick="saveInvoiceDates()">Save Dates</button>
+          </div>
+          <div>
+            <button class="btn btn-ghost" onclick="window.print()">🖨 Print Invoice</button>
+          </div>
+        </div>
+
+        <div id="invoice-area">
+          <div class="invoice-header">
+            <div>
+              <div class="invoice-title">Invoice</div>
+              <div style="font-size:13px; color:var(--text2); margin-top:4px;">David Robles, LMSW</div>
+            </div>
+            <div class="invoice-meta">
+              <div id="invoice-agency-name">District Counseling</div>
+              <div id="invoice-due-date" style="margin-top:4px;"></div>
+              <div class="invoice-total" id="invoice-total">$0</div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table id="invoice-table">
+              <thead id="invoice-thead"></thead>
+              <tbody id="invoice-tbody"></tbody>
+            </table>
+          </div>
+          <div id="invoice-empty" class="empty" style="display:none;">
+            <div class="empty-icon">🧾</div>
+            No sessions found for this agency and month.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPERVISION -->
+    <div id="page-supervision" class="page">
+      <div class="page-header">
+        <h1>Supervision</h1>
+        <p>Tracking toward your 100-hour requirement</p>
+      </div>
+
+      <div class="progress-card" style="margin-bottom:20px;">
+        <div class="progress-label">Supervision Hours Completed</div>
+        <div class="progress-numbers">
+          <span class="progress-current" id="sup-total">0</span>
+          <span class="progress-total">/ 100 hrs</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="sup-bar" style="background: var(--accent2); width: 0%"></div>
+        </div>
+        <div class="progress-pct" id="sup-pct">0.0% complete</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Log Supervision Session</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="sup-date">
+          </div>
+          <div class="field">
+            <label>Type</label>
+            <select id="sup-type">
+              <option value="Individual">Individual</option>
+              <option value="Group">Group</option>
+              <option value="Virtual">Virtual</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Supervisor</label>
+            <input type="text" id="sup-supervisor" placeholder="Supervisor name">
+          </div>
+          <div class="field">
+            <label>Hours</label>
+            <input type="number" id="sup-hours" value="2" min="0.5" step="0.5">
+          </div>
+          <div class="field">
+            <label>Cost ($)</label>
+            <input type="number" id="sup-cost" placeholder="0">
+          </div>
+          <div class="field">
+            <label>Topic</label>
+            <input type="text" id="sup-topic" placeholder="Session topic">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="logSupervision()">Save</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Supervision Log</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Type</th><th>Topic</th><th>Supervisor</th><th>Hours</th><th>Cost</th><th></th></tr>
+            </thead>
+            <tbody id="sup-table-body"></tbody>
+          </table>
+        </div>
+        <div id="sup-empty" class="empty" style="display:none;">
+          <div class="empty-icon">📚</div>
+          No supervision sessions logged yet.
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERRALS -->
+    <div id="page-referrals" class="page">
+      <div class="page-header">
+        <h1>Referral Sources</h1>
+        <p>Track where your private pay clients are coming from</p>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Add Referral</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Client Name</label>
+            <input type="text" id="ref-name" placeholder="Full name">
+          </div>
+          <div class="field">
+            <label>Source</label>
+            <select id="ref-source">
+              <option value="Psychology Today">Psychology Today</option>
+              <option value="Therapist.com">Therapist.com</option>
+              <option value="Open Path">Open Path</option>
+              <option value="Mental Health Match">Mental Health Match</option>
+              <option value="Word of Mouth">Word of Mouth</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="ref-status">
+              <option value="converted">✅ Converted</option>
+              <option value="pending">⏳ Pending</option>
+              <option value="declined">❌ Declined</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addReferral()">Add Referral</button>
+        </div>
+      </div>
+
+      <div id="ref-grid-container" class="ref-scorecard"></div>
+    </div>
+
+    <!-- EXPENSES -->
+    <div id="page-expenses" class="page">
+      <div class="page-header">
+        <h1>Expenses</h1>
+        <p>Monthly expense tracking for tax purposes</p>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Add Expense</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Month</label>
+            <select id="exp-month">
+              <option value="Jan">January</option>
+              <option value="Feb">February</option>
+              <option value="Mar" selected>March</option>
+              <option value="Apr">April</option>
+              <option value="May">May</option>
+              <option value="Jun">June</option>
+              <option value="Jul">July</option>
+              <option value="Aug">August</option>
+              <option value="Sep">September</option>
+              <option value="Oct">October</option>
+              <option value="Nov">November</option>
+              <option value="Dec">December</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select id="exp-category">
+              <option value="Internet">Internet</option>
+              <option value="SimplePractice">SimplePractice</option>
+              <option value="Upheal">Upheal</option>
+              <option value="Therapist.com">Therapist.com</option>
+              <option value="Malpractice">Malpractice Insurance</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Continuing Education">Continuing Education</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Amount ($)</label>
+            <input type="number" id="exp-amount" placeholder="0.00" step="0.01">
+          </div>
+          <div class="field">
+            <label>Notes</label>
+            <input type="text" id="exp-notes" placeholder="Optional note">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2026 Expense Log</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Month</th><th>Category</th><th>Amount</th><th>Notes</th><th></th></tr>
+            </thead>
+            <tbody id="exp-table-body"></tbody>
+          </table>
+        </div>
+        <div id="exp-empty" class="empty" style="display:none;">
+          <div class="empty-icon">💳</div>
+          No expenses logged yet.
+        </div>
+        <div id="exp-total-row" style="text-align:right; padding:14px 12px 0; font-family:var(--mono); font-size:15px; color:var(--text2); display:none;">
+          YTD Total: <span id="exp-ytd" style="color:var(--text);">$0</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+// ============================================================
+// DATA LAYER
+// ============================================================
+const KEYS = {
+  sessions: 'lmsw_sessions',
+  clients: 'lmsw_clients',
+  supervision: 'lmsw_supervision',
+  referrals: 'lmsw_referrals',
+  expenses: 'lmsw_expenses'
+};
+
+function load(key) {
+  try { return JSON.parse(localStorage.getItem(key)) || []; }
+  catch { return []; }
+}
+
+function save(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+// Seed with existing data from the spreadsheet
+function seedData() {
+  if (localStorage.getItem('lmsw_seeded')) return;
+
+  const sessions = [
+    { id: uid(), date: '2026-01-15', name: '', agency: 'DC', hours: 3, fee: 0, method: '—', desc: 'Orientation + SimplePractice training', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-16', name: '', agency: 'DC', hours: 2, fee: 0, method: '—', desc: 'Office setup (Met Sarah)', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-19', name: 'Daniel Hall', agency: 'DC', hours: 3, fee: 40, method: '—', desc: 'Intake assessments, documentation, treatment planning', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-01-29', name: '', agency: 'Emora', hours: 1, fee: 0, method: '—', desc: 'Orientation Zoom meeting', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-28', name: 'Oscar Garcia', agency: '—', hours: 1, fee: 0, method: '—', desc: 'Discovery Call', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-30', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: '—', desc: 'Intake session, documentation', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-01', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Intake session, documentation', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-05', name: 'Grant Rainety', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'Intake session (No Show)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-06', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-08', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-09', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Intake: Pornography (Court mandate)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-12', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Intake ($60 per week)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-13', name: 'DBT Crash Course', agency: '—', hours: 8, fee: 0, method: '—', desc: '15 Core Techniques to Improve Emotional Regulation', type: 'training', insurance: '' },
+    { id: uid(), date: '2026-02-14', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake: (Court mandate)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake (Mom and Son)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-16', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-16', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Virtual Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-18', name: 'Grant Rainety', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-18', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-21', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-22', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-22', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-23', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-23', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-24', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-25', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-25', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-26', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-26', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-27', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-02', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-02', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-02', name: 'Anthony Zamorano', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-03', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-04', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-04', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-06', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-06', name: 'Jose Herbert', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-09', name: 'CPT Training', agency: '—', hours: 8, fee: 0, method: '—', desc: 'An Evidence-Based Approach to Treat PTSD', type: 'training', insurance: '' },
+    { id: uid(), date: '2026-03-09', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-11', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Alexander Tribush', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-12', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-12', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+  ];
+
+  const supervision = [
+    { id: uid(), date: '2026-02-23', type: 'Virtual', topic: 'Intro', supervisor: 'Flor', hours: 2, cost: 100 },
+    { id: uid(), date: '2026-03-09', type: 'Virtual', topic: 'Supervision', supervisor: '', hours: 2, cost: 0 },
+  ];
+
+  const referrals = [
+    { id: uid(), name: 'Daniel Hall', source: 'Psychology Today', status: 'converted' },
+    { id: uid(), name: 'Alexander Tribush', source: 'Psychology Today', status: 'converted' },
+    { id: uid(), name: 'Corinne Lira', source: 'Therapist.com', status: 'converted' },
+    { id: uid(), name: 'Oscar Garcia', source: 'Open Path', status: 'declined' },
+    { id: uid(), name: 'Jacob Sparks', source: 'Open Path', status: 'declined' },
+    { id: uid(), name: 'Jennifer Wilson', source: 'Open Path', status: 'declined' },
+    { id: uid(), name: 'Anthony Zamorano', source: 'Open Path', status: 'converted' },
+    { id: uid(), name: 'Fernan Alvarado', source: 'Open Path', status: 'pending' },
+  ];
+
+  const expenses = [
+    { id: uid(), month: 'Jan', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Jan', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Feb', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Mar', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Malpractice', amount: 166, notes: '' },
+  ];
+
+  const clients = [
+    { id: uid(), name: 'Jarmonica Kershaw', agency: 'DC', rate: 30, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Marcus Marquez', agency: 'DC', rate: 52, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Corinne Lira', agency: 'ME', rate: 60, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Alex Villarreal', agency: 'DC', rate: 50, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Khalid Hamad', agency: 'DC', rate: 50, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Alexander Tribush', agency: 'SMS', rate: 40, method: 'V', insurance: 'BCBS', status: 'active' },
+    { id: uid(), name: 'Zane Koenig', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Eric Rodriguez', agency: 'DC', rate: 50, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Zachary Maiberger', agency: 'SMS', rate: 40, method: 'IP', insurance: 'BCBS', status: 'active' },
+    { id: uid(), name: 'Jose Herbert', agency: 'SMS', rate: 40, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Camare Halrston', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Jennifer Corder', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Fernan Alvarado', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Anthony Zamorano', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
+  ];
+  save(KEYS.clients, clients);
+  save(KEYS.sessions, sessions);
+  save(KEYS.supervision, supervision);
+  save(KEYS.referrals, referrals);
+  save(KEYS.expenses, expenses);
+  localStorage.setItem('lmsw_seeded', '1');
+}
+
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+let currentInvoiceAgency = 'DC';
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  renderPage(id);
+}
+
+function renderPage(id) {
+  if (id === 'dashboard') renderDashboard();
+  if (id === 'clients') renderClients();
+  if (id === 'quick-log') initQuickLog();
+  if (id === 'session-log') { renderLog(); }
+  if (id === 'invoices') renderInvoice();
+  if (id === 'supervision') renderSupervision();
+  if (id === 'referrals') renderReferrals();
+  if (id === 'expenses') renderExpenses();
+}
+
+// ============================================================
+// CLIENTS
+// ============================================================
+function addClient() {
+  const name = document.getElementById('c-name').value.trim();
+  if (!name) { toast('Please enter a client name', true); return; }
+  const clients = load(KEYS.clients);
+  if (clients.find(c => c.name.toLowerCase() === name.toLowerCase())) {
+    toast('Client already exists', true); return;
+  }
+  clients.push({
+    id: uid(),
+    name,
+    agency: document.getElementById('c-agency').value,
+    rate: parseFloat(document.getElementById('c-rate').value) || 0,
+    method: document.getElementById('c-method').value,
+    insurance: document.getElementById('c-insurance').value.trim(),
+    gender: document.getElementById('c-gender').value,
+    status: document.getElementById('c-status').value,
+  });
+  save(KEYS.clients, clients);
+  document.getElementById('c-name').value = '';
+  document.getElementById('c-rate').value = '';
+  document.getElementById('c-insurance').value = '';
+  toast('Client added');
+  renderClients();
+  populateClientDatalist();
+}
+
+function renderClients() {
+  const clients = load(KEYS.clients);
+  const tbody = document.getElementById('clients-table-body');
+  const empty = document.getElementById('clients-empty');
+  if (!clients.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  const sorted = [...clients].sort((a, b) => a.name.localeCompare(b.name));
+  tbody.innerHTML = sorted.map(c => `
+    <tr>
+      <td style="color:var(--text);font-weight:500">${c.name}</td>
+      <td><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span></td>
+      <td style="font-family:var(--mono)">$${c.rate}</td>
+      <td><span class="badge badge-${c.method.toLowerCase()}">${c.method}</span></td>
+      <td>${c.insurance || '—'}</td>
+      <td style="font-size:12px;color:var(--text2)">${c.gender ? c.gender.charAt(0).toUpperCase() + c.gender.slice(1) : '—'}</td>
+      <td><span style="font-size:11px;color:${c.status==='active'?'var(--accent2)':'var(--text3)'}">${c.status}</span></td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditClient('${c.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteClient('${c.id}')">✕</button>
+      </td>
+    </tr>
+  `).join('');
+  populateClientDatalist();
+}
+
+function deleteClient(id) {
+  let clients = load(KEYS.clients);
+  clients = clients.filter(c => c.id !== id);
+  save(KEYS.clients, clients);
+  renderClients();
+  toast('Client removed');
+}
+
+function openEditClient(id) {
+  const clients = load(KEYS.clients);
+  const c = clients.find(c => c.id === id);
+  if (!c) return;
+  document.getElementById('edit-c-id').value = c.id;
+  document.getElementById('edit-c-name').value = c.name;
+  document.getElementById('edit-c-agency').value = c.agency;
+  document.getElementById('edit-c-rate').value = c.rate;
+  document.getElementById('edit-c-method').value = c.method;
+  document.getElementById('edit-c-insurance').value = c.insurance || '';
+  document.getElementById('edit-c-gender').value = c.gender || 'unknown';
+  document.getElementById('edit-c-status').value = c.status;
+  const modal = document.getElementById('edit-client-modal');
+  modal.style.display = 'flex';
+}
+
+function saveEditClient() {
+  const id = document.getElementById('edit-c-id').value;
+  let clients = load(KEYS.clients);
+  const idx = clients.findIndex(c => c.id === id);
+  if (idx === -1) return;
+  clients[idx] = {
+    ...clients[idx],
+    name: document.getElementById('edit-c-name').value.trim(),
+    agency: document.getElementById('edit-c-agency').value,
+    rate: parseFloat(document.getElementById('edit-c-rate').value) || 0,
+    method: document.getElementById('edit-c-method').value,
+    insurance: document.getElementById('edit-c-insurance').value.trim(),
+    gender: document.getElementById('edit-c-gender').value,
+    status: document.getElementById('edit-c-status').value,
+  };
+  save(KEYS.clients, clients);
+  closeEditModal();
+  renderClients();
+  toast('Client updated');
+}
+
+function closeEditModal() {
+  document.getElementById('edit-client-modal').style.display = 'none';
+}
+
+function populateClientDatalist() {}  // kept for compatibility
+
+function toggleClientDropdown() {
+  const dd = document.getElementById('client-dropdown');
+  const isOpen = dd.style.display === 'block';
+  if (isOpen) { dd.style.display = 'none'; return; }
+  dd.style.display = 'block';
+  document.getElementById('client-search').value = '';
+  filterClientList('');
+  setTimeout(() => document.getElementById('client-search').focus(), 50);
+}
+
+function filterClientList(val) {
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const filtered = val.length === 0
+    ? clients.sort((a,b) => a.name.localeCompare(b.name))
+    : clients.filter(c => c.name.toLowerCase().includes(val.toLowerCase())).sort((a,b) => a.name.localeCompare(b.name));
+
+  const container = document.getElementById('client-list-items');
+  if (!filtered.length) {
+    container.innerHTML = '<div style="padding:12px 14px;color:var(--text3);font-size:13px;">No clients found</div>';
+    return;
+  }
+  container.innerHTML = filtered.map(c => `
+    <div onclick="selectClient('${c.name.replace(/'/g, "&apos;")}')"
+      style="padding:10px 14px;cursor:pointer;font-size:13.5px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);"
+      onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='transparent'">
+      <span>${c.name}</span>
+      <span class="badge badge-${c.agency.toLowerCase()}" style="font-size:10px">${c.agency}</span>
+    </div>
+  `).join('');
+}
+
+function hideClientDropdown() {
+  const d = document.getElementById('client-dropdown');
+  if (d) d.style.display = 'none';
+}
+
+function selectClient(name) {
+  document.getElementById('s-name').value = name;
+  document.getElementById('s-name-label').textContent = name;
+  document.getElementById('s-name-display').style.color = 'var(--text)';
+  hideClientDropdown();
+  autoFillClientByName(name);
+}
+
+function autoFillClient() {}  // legacy, kept for compatibility
+
+function autoFillClientByName(name) {
+  const clients = load(KEYS.clients);
+  const match = clients.find(c => c.name.toLowerCase() === name.toLowerCase());
+  const agencyDisplay = document.getElementById('s-agency-display');
+  if (match) {
+    document.getElementById('s-agency').value = match.agency;
+    document.getElementById('s-fee').value = match.rate;
+    document.getElementById('s-method').value = match.method;
+    document.getElementById('s-insurance').value = match.insurance || '';
+    const agencyNames = { DC: 'District Counseling (DC)', SMS: 'Safe Mind Space (SMS)', Emora: 'Emora', ME: 'Private (ME)' };
+    agencyDisplay.textContent = agencyNames[match.agency] || match.agency;
+    agencyDisplay.style.color = 'var(--text)';
+  } else {
+    document.getElementById('s-agency').value = '—';
+    agencyDisplay.textContent = 'Auto-fills from client';
+    agencyDisplay.style.color = 'var(--text3)';
+  }
+}
+
+// ============================================================
+// EXPORT TO EXCEL
+// ============================================================
+function exportToExcel() {
+  const sessions = load(KEYS.sessions).sort((a,b) => a.date.localeCompare(b.date));
+  if (!sessions.length) { toast('No sessions to export', true); return; }
+
+  const wb = XLSX.utils.book_new();
+
+  // --- MASTER LOG sheet ---
+  const masterRows = sessions.map(s => ({
+    Date: fmtDate(s.date),
+    Client: s.name || '',
+    Agency: s.agency || '',
+    Hours: parseFloat(s.hours) || 0,
+    Fee: parseFloat(s.fee) || 0,
+    Method: s.method || '',
+    Type: s.type || '',
+    Insurance: s.insurance || '',
+    Description: s.desc || ''
+  }));
+  const totalHrs = sessions.reduce((a,s) => a + (parseFloat(s.hours)||0), 0);
+  const totalFee = sessions.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  masterRows.push({});
+  masterRows.push({ Date: 'TOTALS', Client: '', Agency: '', Hours: totalHrs, Fee: totalFee, Method: '', Type: '', Insurance: '', Description: '' });
+
+  const wsMaster = XLSX.utils.json_to_sheet(masterRows);
+  wsMaster['!cols'] = [{wch:12},{wch:22},{wch:10},{wch:7},{wch:9},{wch:8},{wch:12},{wch:10},{wch:32}];
+  XLSX.utils.book_append_sheet(wb, wsMaster, 'Master Log');
+
+  // --- One sheet per month ---
+  const monthNames = {
+    '01':'January','02':'February','03':'March','04':'April',
+    '05':'May','06':'June','07':'July','08':'August',
+    '09':'September','10':'October','11':'November','12':'December'
+  };
+  const months = [...new Set(sessions.map(s => (s.date||'').slice(0,7)))].sort();
+  months.forEach(m => {
+    const ms = sessions.filter(s => (s.date||'').startsWith(m));
+    if (!ms.length) return;
+    const [y, mo] = m.split('-');
+    const rows = ms.map(s => ({
+      Date: fmtDate(s.date),
+      Client: s.name || '',
+      Agency: s.agency || '',
+      Hours: parseFloat(s.hours) || 0,
+      Fee: parseFloat(s.fee) || 0,
+      Method: s.method || '',
+      Type: s.type || '',
+      Insurance: s.insurance || '',
+      Description: s.desc || ''
+    }));
+    const mHrs = ms.reduce((a,s) => a+(parseFloat(s.hours)||0), 0);
+    const mFee = ms.reduce((a,s) => a+(parseFloat(s.fee)||0), 0);
+    rows.push({});
+    rows.push({ Date: 'TOTALS', Client: '', Agency: '', Hours: mHrs, Fee: mFee, Method:'', Type:'', Insurance:'', Description:'' });
+    const ws = XLSX.utils.json_to_sheet(rows);
+    ws['!cols'] = [{wch:12},{wch:22},{wch:10},{wch:7},{wch:9},{wch:8},{wch:12},{wch:10},{wch:32}];
+    XLSX.utils.book_append_sheet(wb, ws, (monthNames[mo]||mo) + ' ' + y);
+  });
+
+  XLSX.writeFile(wb, 'LCSW_Master_Log_2026.xlsx');
+  toast('Master log downloaded');
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  const sessions = load(KEYS.sessions);
+  const supervision = load(KEYS.supervision);
+
+  const now = new Date();
+  const monthStr = now.toISOString().slice(0, 7);
+  const monthName = now.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+  document.getElementById('dash-date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Clinical hours = all sessions
+  const clinicalHrs = sessions.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+  const supHrs = supervision.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+
+  document.getElementById('prog-clinical').textContent = clinicalHrs;
+  document.getElementById('prog-clinical-bar').style.width = Math.min(100, (clinicalHrs / 3000) * 100) + '%';
+  document.getElementById('prog-clinical-pct').textContent = ((clinicalHrs / 3000) * 100).toFixed(1) + '% complete';
+
+  document.getElementById('prog-sup').textContent = supHrs;
+  document.getElementById('prog-sup-bar').style.width = Math.min(100, (supHrs / 100) * 100) + '%';
+  document.getElementById('prog-sup-pct').textContent = ((supHrs / 100) * 100).toFixed(1) + '% complete';
+
+  const thisMonth = sessions.filter(s => s.date && s.date.startsWith(monthStr));
+  const monthSessions = thisMonth.length;
+  const monthIncome = thisMonth.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
+  const monthIP = thisMonth.filter(s => s.method === 'IP').length;
+  const monthV = thisMonth.filter(s => s.method === 'V').length;
+
+  document.getElementById('stat-month-sessions').textContent = monthSessions;
+  document.getElementById('stat-month-label').textContent = monthName;
+  document.getElementById('stat-month-income').textContent = '$' + monthIncome.toLocaleString();
+  document.getElementById('stat-ip').textContent = monthIP;
+  document.getElementById('stat-v').textContent = monthV;
+
+  const yearlyIncome = sessions.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
+  document.getElementById('stat-yearly-income').textContent = '$' + yearlyIncome.toLocaleString();
+  document.getElementById('stat-yearly-sub').textContent = sessions.filter(s => s.fee > 0).length + ' billable sessions in 2026';
+
+  // Gender stats
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const male = clients.filter(c => c.gender === 'male').length;
+  const female = clients.filter(c => c.gender === 'female').length;
+  const other = clients.filter(c => c.gender === 'other').length;
+  const unknown = clients.filter(c => !c.gender || c.gender === 'unknown').length;
+  const totalC = clients.length;
+
+  const genderBar = (label, count, color) => {
+    if (!count) return '';
+    const pct = totalC ? Math.round((count / totalC) * 100) : 0;
+    return `
+      <div style="flex:1;min-width:100px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">${label}</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--text);margin-bottom:8px;">${count}</div>
+        <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;">
+          <div style="width:${pct}%;height:100%;background:${color};border-radius:3px;"></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:4px;font-family:var(--mono)">${pct}%</div>
+      </div>
+    `;
+  };
+
+  const genderEl = document.getElementById('gender-stats');
+  if (genderEl) {
+    genderEl.innerHTML =
+      genderBar('Male', male, 'var(--accent)') +
+      genderBar('Female', female, '#e879a0') +
+      (other ? genderBar('Other', other, 'var(--accent2)') : '') +
+      (unknown ? genderBar('Unknown', unknown, 'var(--text3)') : '');
+  }
+
+  // Stats table
+  const months = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  let tbody = '';
+  months.forEach((m, i) => {
+    const ms = sessions.filter(s => s.date && s.date.startsWith(m));
+    const ip = ms.filter(s => s.method === 'IP').length;
+    const v = ms.filter(s => s.method === 'V').length;
+    const total = ms.length;
+    const income = ms.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
+    const isNow = m === monthStr;
+    tbody += `<tr${isNow ? ' style="background:rgba(79,142,247,0.05)"' : ''}>
+      <td style="color:var(--text)">${monthNames[i]}</td>
+      <td>${ip || '—'}</td>
+      <td>${v || '—'}</td>
+      <td>${total || '—'}</td>
+      <td style="font-family:var(--mono)">${income ? '$' + income.toLocaleString() : '—'}</td>
+    </tr>`;
+  });
+  document.getElementById('stats-table-body').innerHTML = tbody;
+}
+
+// ============================================================
+// SESSION LOG
+// ============================================================
+function logSession() {
+  const date = document.getElementById('s-date').value;
+  const name = document.getElementById('s-name').value.trim();
+  if (!date) { toast('Please enter a date', true); return; }
+
+  const sessions = load(KEYS.sessions);
+  sessions.push({
+    id: uid(),
+    date,
+    name,
+    agency: document.getElementById('s-agency').value,
+    hours: parseFloat(document.getElementById('s-hours').value) || 0,
+    fee: parseFloat(document.getElementById('s-fee').value) || 0,
+    method: document.getElementById('s-method').value,
+    desc: document.getElementById('s-desc').value.trim() || document.getElementById('s-desc-custom').value.trim(),
+    type: document.getElementById('s-type').value,
+    insurance: document.getElementById('s-insurance').value.trim(),
+  });
+  save(KEYS.sessions, sessions);
+  renderDashboard();
+  toast('Session saved');
+  clearForm();
+}
+
+function clearForm() {
+  ['s-name','s-desc','s-insurance','s-desc-custom'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('s-name-label').textContent = 'Select client...';
+  document.getElementById('s-name-display').style.color = 'var(--text3)';
+  document.getElementById('s-fee').value = '';
+  document.getElementById('s-hours').value = '2';
+  document.getElementById('s-agency').value = '—';
+  document.getElementById('s-agency-display').textContent = 'Auto-fills from client';
+  document.getElementById('s-agency-display').style.color = 'var(--text3)';
+  document.getElementById('s-desc-select').value = '';
+  document.getElementById('s-desc-custom-wrap').style.display = 'none';
+  document.getElementById('s-date').value = new Date().toISOString().split('T')[0];
+}
+
+function handleDescSelect() {
+  const val = document.getElementById('s-desc-select').value;
+  const customWrap = document.getElementById('s-desc-custom-wrap');
+  const hiddenDesc = document.getElementById('s-desc');
+  if (val === 'custom') {
+    customWrap.style.display = 'block';
+    hiddenDesc.value = '';
+  } else {
+    customWrap.style.display = 'none';
+    hiddenDesc.value = val;
+    document.getElementById('s-desc-custom').value = '';
+  }
+}
+
+function renderLog() {
+  const sessions = load(KEYS.sessions);
+  const search = (document.getElementById('search-log')?.value || '').toLowerCase();
+  const agency = document.getElementById('filter-agency')?.value || '';
+  const month = document.getElementById('filter-month')?.value || '';
+
+  let filtered = sessions.filter(s => {
+    if (agency && s.agency !== agency) return false;
+    if (month && !(s.date || '').startsWith(month)) return false;
+    if (search && !`${s.name} ${s.agency} ${s.desc}`.toLowerCase().includes(search)) return false;
+    return true;
+  }).sort((a, b) => b.date.localeCompare(a.date));
+
+  const tbody = document.getElementById('log-table-body');
+  const empty = document.getElementById('log-empty');
+
+  if (!filtered.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = filtered.map(s => `
+    <tr>
+      <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+      <td style="color:var(--text)">${s.name || '<span style="color:var(--text3);font-style:italic">—</span>'}</td>
+      <td><span class="badge badge-${(s.agency||'').toLowerCase().replace(' ','')}">${s.agency || '—'}</span></td>
+      <td style="font-family:var(--mono)">${s.hours}</td>
+      <td style="font-family:var(--mono)">${s.fee ? '$' + s.fee : '—'}</td>
+      <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
+      <td style="font-size:11px;color:var(--text3)">${s.type || ''}</td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.desc || ''}</td>
+      <td><button class="btn btn-danger delete-btn" onclick="deleteSession('${s.id}')">✕</button></td>
+    </tr>
+  `).join('');
+}
+
+function deleteSession(id) {
+  let sessions = load(KEYS.sessions);
+  sessions = sessions.filter(s => s.id !== id);
+  save(KEYS.sessions, sessions);
+  renderLog();
+  toast('Session deleted');
+}
+
+// ============================================================
+// INVOICES
+// ============================================================
+function switchInvoice(agency, el) {
+  currentInvoiceAgency = agency;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderInvoice();
+}
+
+function saveInvoiceDates() {
+  const dc = document.getElementById('dc-due-date')?.value || '';
+  const sms = document.getElementById('sms-due-date')?.value || '';
+  localStorage.setItem('lmsw_invoice_dates', JSON.stringify({ DC: dc, SMS: sms }));
+  toast('Due dates saved');
+  renderInvoice();
+}
+
+function renderInvoice() {
+  const agency = currentInvoiceAgency;
+  const month = document.getElementById('invoice-month')?.value || '2026-03';
+  const sessions = load(KEYS.sessions).filter(s =>
+    s.agency === agency && (s.date || '').startsWith(month)
+  ).sort((a, b) => a.date.localeCompare(b.date));
+
+  const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space' };
+  document.getElementById('invoice-agency-name').textContent = agencyNames[agency] || agency;
+
+  // Load saved due dates
+  const savedDates = JSON.parse(localStorage.getItem('lmsw_invoice_dates') || '{}');
+  const dcDue = document.getElementById('dc-due-date');
+  const smsDue = document.getElementById('sms-due-date');
+  if (dcDue && savedDates.DC && !dcDue.value) dcDue.value = savedDates.DC;
+  if (smsDue && savedDates.SMS && !smsDue.value) smsDue.value = savedDates.SMS;
+
+  const dueDateVal = agency === 'DC' ? (dcDue?.value || '') : (smsDue?.value || '');
+  if (dueDateVal) {
+    const [dy, dm, dd] = dueDateVal.split('-');
+    document.getElementById('invoice-due-date').textContent = 'Due: ' + `${dm}/${dd}/${dy}`;
+  } else {
+    document.getElementById('invoice-due-date').textContent = 'Due date not set';
+  }
+
+  const empty = document.getElementById('invoice-empty');
+  const table = document.getElementById('invoice-table');
+
+  if (!sessions.length) {
+    empty.style.display = 'block';
+    table.style.display = 'none';
+    document.getElementById('invoice-total').textContent = '$0';
+    return;
+  }
+
+  empty.style.display = 'none';
+  table.style.display = 'table';
+
+  if (agency === 'DC') {
+    document.getElementById('invoice-thead').innerHTML = `<tr><th>Date</th><th>Client</th><th>Fee</th><th>50%</th><th>Total</th></tr>`;
+    let total = 0;
+    document.getElementById('invoice-tbody').innerHTML = sessions.map(s => {
+      const half = (s.fee / 2).toFixed(2);
+      total += parseFloat(half);
+      return `<tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td style="color:var(--text)">${s.name}</td>
+        <td style="font-family:var(--mono)">$${s.fee}</td>
+        <td style="font-family:var(--mono);color:var(--text3)">0.5</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">$${half}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('invoice-total').textContent = '$' + total.toFixed(2);
+  } else {
+    document.getElementById('invoice-thead').innerHTML = `<tr><th>Date</th><th>Client</th><th>Insurance</th><th>Fee</th></tr>`;
+    let total = 0;
+    document.getElementById('invoice-tbody').innerHTML = sessions.map(s => {
+      total += parseFloat(s.fee) || 0;
+      return `<tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td style="color:var(--text)">${s.name}</td>
+        <td>${s.insurance || '—'}</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">$${s.fee}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('invoice-total').textContent = '$' + total.toFixed(2);
+  }
+}
+
+// ============================================================
+// SUPERVISION
+// ============================================================
+function logSupervision() {
+  const date = document.getElementById('sup-date').value;
+  if (!date) { toast('Please enter a date', true); return; }
+
+  const supervision = load(KEYS.supervision);
+  supervision.push({
+    id: uid(),
+    date,
+    type: document.getElementById('sup-type').value,
+    topic: document.getElementById('sup-topic').value.trim(),
+    supervisor: document.getElementById('sup-supervisor').value.trim(),
+    hours: parseFloat(document.getElementById('sup-hours').value) || 0,
+    cost: parseFloat(document.getElementById('sup-cost').value) || 0,
+  });
+  save(KEYS.supervision, supervision);
+  toast('Supervision session saved');
+  renderSupervision();
+}
+
+function renderSupervision() {
+  const supervision = load(KEYS.supervision);
+  const total = supervision.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+  const pct = Math.min(100, (total / 100) * 100);
+
+  document.getElementById('sup-total').textContent = total;
+  document.getElementById('sup-bar').style.width = pct + '%';
+  document.getElementById('sup-pct').textContent = pct.toFixed(1) + '% complete';
+  document.getElementById('prog-sup').textContent = total;
+  document.getElementById('prog-sup-bar').style.width = pct + '%';
+  document.getElementById('prog-sup-pct').textContent = pct.toFixed(1) + '% complete';
+
+  const tbody = document.getElementById('sup-table-body');
+  const empty = document.getElementById('sup-empty');
+
+  if (!supervision.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = [...supervision].sort((a, b) => b.date.localeCompare(a.date)).map(s => `
+    <tr>
+      <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+      <td>${s.type}</td>
+      <td>${s.topic || '—'}</td>
+      <td>${s.supervisor || '—'}</td>
+      <td style="font-family:var(--mono)">${s.hours}</td>
+      <td style="font-family:var(--mono)">${s.cost ? '$' + s.cost : '—'}</td>
+      <td><button class="btn btn-danger delete-btn" onclick="deleteSup('${s.id}')">✕</button></td>
+    </tr>
+  `).join('');
+}
+
+function deleteSup(id) {
+  let sup = load(KEYS.supervision);
+  sup = sup.filter(s => s.id !== id);
+  save(KEYS.supervision, sup);
+  renderSupervision();
+  toast('Entry deleted');
+}
+
+// ============================================================
+// REFERRALS
+// ============================================================
+function addReferral() {
+  const name = document.getElementById('ref-name').value.trim();
+  if (!name) { toast('Please enter a client name', true); return; }
+
+  const referrals = load(KEYS.referrals);
+  referrals.push({
+    id: uid(),
+    name,
+    source: document.getElementById('ref-source').value,
+    status: document.getElementById('ref-status').value,
+  });
+  save(KEYS.referrals, referrals);
+  document.getElementById('ref-name').value = '';
+  toast('Referral added');
+  renderReferrals();
+}
+
+function renderReferrals() {
+  const referrals = load(KEYS.referrals);
+  const sources = ['Psychology Today', 'Therapist.com', 'Open Path', 'Mental Health Match', 'Word of Mouth', 'Other'];
+  const dotColor = { converted: 'var(--accent2)', pending: 'var(--warn)', declined: 'var(--danger)' };
+
+  // Find which source has most conversions
+  const conversionsBySource = {};
+  sources.forEach(src => {
+    conversionsBySource[src] = referrals.filter(r => r.source === src && r.status === 'converted').length;
+  });
+  const maxConversions = Math.max(...Object.values(conversionsBySource), 1);
+  const topSource = sources.find(s => conversionsBySource[s] === maxConversions && maxConversions > 0);
+
+  const container = document.getElementById('ref-grid-container');
+  container.innerHTML = sources.map(src => {
+    const all = referrals.filter(r => r.source === src);
+    if (!all.length) return '';
+
+    const converted = all.filter(r => r.status === 'converted').length;
+    const pending = all.filter(r => r.status === 'pending').length;
+    const declined = all.filter(r => r.status === 'declined').length;
+    const total = all.length;
+    const rate = total ? Math.round((converted / total) * 100) : 0;
+    const isTop = src === topSource;
+    const maxBar = total;
+
+    return `
+      <div class="ref-source-card${isTop ? ' top-source' : ''}">
+        <div class="ref-source-header">
+          <div class="ref-source-name">${src}</div>
+          ${isTop ? '<div class="ref-best-tag">Most Fruitful</div>' : ''}
+        </div>
+
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Converted</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(converted/maxBar)*100}%;background:var(--accent2)"></div>
+          </div>
+          <div class="ref-bar-count">${converted}</div>
+        </div>
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Pending</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(pending/maxBar)*100}%;background:var(--warn)"></div>
+          </div>
+          <div class="ref-bar-count">${pending}</div>
+        </div>
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Declined</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(declined/maxBar)*100}%;background:var(--danger)"></div>
+          </div>
+          <div class="ref-bar-count">${declined}</div>
+        </div>
+
+        <div class="ref-conversion-rate">${rate}%</div>
+        <div class="ref-conversion-label">conversion rate · ${total} total referral${total !== 1 ? 's' : ''}</div>
+
+        <div class="ref-clients-list">
+          ${all.map(c => `
+            <div class="ref-client">
+              <span>${c.name}</span>
+              <span class="ref-dot" style="background:${dotColor[c.status]}"></span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// EXPENSES
+// ============================================================
+function addExpense() {
+  const amount = parseFloat(document.getElementById('exp-amount').value);
+  if (!amount) { toast('Please enter an amount', true); return; }
+
+  const expenses = load(KEYS.expenses);
+  expenses.push({
+    id: uid(),
+    month: document.getElementById('exp-month').value,
+    category: document.getElementById('exp-category').value,
+    amount,
+    notes: document.getElementById('exp-notes').value.trim(),
+  });
+  save(KEYS.expenses, expenses);
+  document.getElementById('exp-amount').value = '';
+  document.getElementById('exp-notes').value = '';
+  toast('Expense saved');
+  renderExpenses();
+}
+
+function renderExpenses() {
+  const expenses = load(KEYS.expenses);
+  const tbody = document.getElementById('exp-table-body');
+  const empty = document.getElementById('exp-empty');
+  const totalRow = document.getElementById('exp-total-row');
+
+  if (!expenses.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    totalRow.style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+  totalRow.style.display = 'block';
+
+  const sorted = [...expenses].sort((a, b) => {
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months.indexOf(a.month) - months.indexOf(b.month);
+  });
+
+  tbody.innerHTML = sorted.map(e => `
+    <tr>
+      <td>${e.month}</td>
+      <td style="color:var(--text)">${e.category}</td>
+      <td style="font-family:var(--mono)">$${parseFloat(e.amount).toFixed(2)}</td>
+      <td style="color:var(--text3)">${e.notes || '—'}</td>
+      <td><button class="btn btn-danger delete-btn" onclick="deleteExpense('${e.id}')">✕</button></td>
+    </tr>
+  `).join('');
+
+  const ytd = expenses.reduce((a, e) => a + (parseFloat(e.amount) || 0), 0);
+  document.getElementById('exp-ytd').textContent = '$' + ytd.toFixed(2);
+}
+
+function deleteExpense(id) {
+  let expenses = load(KEYS.expenses);
+  expenses = expenses.filter(e => e.id !== id);
+  save(KEYS.expenses, expenses);
+  renderExpenses();
+  toast('Expense deleted');
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg, err = false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.background = err ? 'var(--danger)' : 'var(--accent2)';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ============================================================
+// QUICK LOG
+// ============================================================
+let qlState = { client: null, type: null, method: null };
+
+function initQuickLog() {
+  resetQuickLog();
+}
+
+function toggleQlDropdown() {
+  const dd = document.getElementById('ql-dropdown');
+  const isOpen = dd.style.display === 'block';
+  if (isOpen) { dd.style.display = 'none'; return; }
+  dd.style.display = 'block';
+  document.getElementById('ql-search').value = '';
+  filterQlClients('');
+  setTimeout(() => document.getElementById('ql-search').focus(), 50);
+}
+
+function filterQlClients(val) {
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const filtered = val
+    ? clients.filter(c => c.name.toLowerCase().includes(val.toLowerCase()))
+    : clients;
+  const sorted = filtered.sort((a,b) => a.name.localeCompare(b.name));
+  const container = document.getElementById('ql-client-list');
+  if (!sorted.length) {
+    container.innerHTML = '<div style="padding:14px 16px;color:var(--text3);">No clients found</div>';
+    return;
+  }
+  container.innerHTML = '';
+  sorted.forEach(c => {
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:14px 16px;cursor:pointer;font-size:15px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);';
+    div.innerHTML = `<span>${c.name}</span><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span>`;
+    div.addEventListener('mouseover', () => div.style.background = 'var(--surface2)');
+    div.addEventListener('mouseout', () => div.style.background = 'transparent');
+    div.addEventListener('click', () => selectQlClient(c));
+    container.appendChild(div);
+  });
+}
+
+function selectQlClient(c) {
+  qlState.client = c;
+  document.getElementById('ql-client-label').textContent = c.name;
+  document.getElementById('ql-client-btn').classList.add('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  // Unlock step 2
+  const step2 = document.getElementById('ql-step2');
+  step2.style.opacity = '1';
+  step2.style.pointerEvents = 'auto';
+  updateQlConfirm();
+}
+
+function selectQlType(type, el) {
+  qlState.type = type;
+  document.querySelectorAll('.ql-type-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  // Unlock step 3
+  const step3 = document.getElementById('ql-step3');
+  step3.style.opacity = '1';
+  step3.style.pointerEvents = 'auto';
+  // Pre-select client's default method
+  if (qlState.client) {
+    const defaultMethod = qlState.client.method;
+    document.querySelectorAll('.ql-method-btn').forEach(b => {
+      if ((defaultMethod === 'IP' && b.textContent.includes('In-Person')) ||
+          (defaultMethod === 'V' && b.textContent.includes('Virtual'))) {
+        b.classList.add('selected');
+        qlState.method = defaultMethod;
+      }
+    });
+  }
+  updateQlConfirm();
+}
+
+function selectQlMethod(method, el) {
+  qlState.method = method;
+  document.querySelectorAll('.ql-method-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  updateQlConfirm();
+}
+
+function updateQlConfirm() {
+  if (!qlState.client || !qlState.type || !qlState.method) {
+    document.getElementById('ql-confirm').style.display = 'none';
+    return;
+  }
+  const c = qlState.client;
+  const today = new Date();
+  const [y,m,d] = today.toISOString().split('T')[0].split('-');
+  document.getElementById('ql-c-name').textContent = c.name;
+  document.getElementById('ql-c-agency').textContent = c.agency;
+  document.getElementById('ql-c-fee').textContent = '$' + c.rate;
+  document.getElementById('ql-c-type').textContent = qlState.type;
+  document.getElementById('ql-c-method').textContent = qlState.method === 'IP' ? 'In-Person' : 'Virtual';
+  document.getElementById('ql-c-date').textContent = `${m}/${d}/${y}`;
+  document.getElementById('ql-confirm').style.display = 'block';
+}
+
+function submitQuickLog() {
+  if (!qlState.client || !qlState.type || !qlState.method) return;
+  const c = qlState.client;
+  const today = new Date().toISOString().split('T')[0];
+  const sessions = load(KEYS.sessions);
+  sessions.push({
+    id: uid(),
+    date: today,
+    name: c.name,
+    agency: c.agency,
+    hours: 2,
+    fee: c.rate,
+    method: qlState.method,
+    desc: qlState.type,
+    type: 'clinical',
+    insurance: c.insurance || '',
+  });
+  save(KEYS.sessions, sessions);
+  renderDashboard();
+  document.getElementById('ql-success-sub').textContent = `${c.name} · ${qlState.type} · $${c.rate}`;
+  document.getElementById('ql-form').style.display = 'none';
+  document.getElementById('ql-success').style.display = 'block';
+  toast('Session logged');
+}
+
+function resetQuickLog() {
+  qlState = { client: null, type: null, method: null };
+  document.getElementById('ql-form').style.display = 'block';
+  document.getElementById('ql-success').style.display = 'none';
+  document.getElementById('ql-client-label').textContent = 'Tap to select client';
+  document.getElementById('ql-client-btn').classList.remove('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  document.querySelectorAll('.ql-type-btn, .ql-method-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('ql-step2').style.opacity = '0.3';
+  document.getElementById('ql-step2').style.pointerEvents = 'none';
+  document.getElementById('ql-step3').style.opacity = '0.3';
+  document.getElementById('ql-step3').style.pointerEvents = 'none';
+  document.getElementById('ql-confirm').style.display = 'none';
+}
+
+// Close ql dropdown on outside click
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('ql-dropdown');
+  const btn = document.getElementById('ql-client-btn');
+  if (dd && btn && !dd.contains(e.target) && !btn.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
+
+// ============================================================
+// DATE HELPER
+// ============================================================
+function fmtDate(dateStr) {
+  if (!dateStr) return '—';
+  const [y, m, d] = dateStr.split('-');
+  return `${m}/${d}/${y}`;
+}
+
+// ============================================================
+// GOOGLE SHEETS SYNC
+// ============================================================
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
+
+async function syncToSheets() {
+  try {
+    const data = {
+      action: 'save',
+      sheet: 'Sessions',
+      rows: load(KEYS.sessions)
+    };
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Clients', rows: load(KEYS.clients) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Supervision', rows: load(KEYS.supervision) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Expenses', rows: load(KEYS.expenses) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Referrals', rows: load(KEYS.referrals) })
+    });
+
+    showSyncStatus('✓ Synced to Google Sheets', 'var(--accent2)');
+  } catch (err) {
+    showSyncStatus('Sync failed — check connection', 'var(--danger)');
+  }
+}
+
+async function syncFromSheets() {
+  try {
+    showSyncStatus('Syncing from Google Sheets...', 'var(--warn)');
+
+    const sheets = ['Sessions', 'Clients', 'Supervision', 'Expenses', 'Referrals'];
+    const keys = [KEYS.sessions, KEYS.clients, KEYS.supervision, KEYS.expenses, KEYS.referrals];
+
+    for (let i = 0; i < sheets.length; i++) {
+      const res = await fetch(`${SCRIPT_URL}?action=get&sheet=${sheets[i]}`);
+      const json = await res.json();
+      if (json.data && json.data.length > 0) {
+        save(keys[i], json.data);
+      }
+    }
+
+    showSyncStatus('✓ Data loaded from Google Sheets', 'var(--accent2)');
+    renderDashboard();
+    renderLog();
+  } catch (err) {
+    showSyncStatus('Sync failed — check connection', 'var(--danger)');
+  }
+}
+
+function showSyncStatus(msg, color) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = color;
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 3000);
+}
+
+// Auto-sync after every save
+const _origSave = save;
+function save(key, data) {
+  _origSave(key, data);
+  // Debounced sync to sheets
+  clearTimeout(window._syncTimer);
+  window._syncTimer = setTimeout(() => syncToSheets(), 2000);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+seedData();
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('client-dropdown');
+  const display = document.getElementById('s-name-display');
+  if (dd && display && !dd.contains(e.target) && !display.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
+document.getElementById('dash-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+document.getElementById('s-date').value = new Date().toISOString().split('T')[0];
+document.getElementById('sup-date').value = new Date().toISOString().split('T')[0];
+renderDashboard();
+renderSupervision();
+populateClientDatalist();
+</script>
+</body>
+</html>
