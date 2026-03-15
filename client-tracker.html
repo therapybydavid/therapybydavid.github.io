@@ -888,12 +888,17 @@
           </div>
           <div class="field">
             <label>Gender</label>
-            <select id="c-gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="unknown">Prefer not to say</option>
-            </select>
+            <div style="display:flex;gap:8px;">
+              <button type="button" id="c-gender-male" onclick="selectGender('male')"
+                style="flex:1;padding:9px;border-radius:8px;border:2px solid var(--border);background:var(--surface2);color:var(--text2);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all 0.15s;">
+                Male
+              </button>
+              <button type="button" id="c-gender-female" onclick="selectGender('female')"
+                style="flex:1;padding:9px;border-radius:8px;border:2px solid var(--border);background:var(--surface2);color:var(--text2);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all 0.15s;">
+                Female
+              </button>
+            </div>
+            <input type="hidden" id="c-gender" value="">
           </div>
           <div class="field">
             <label>Status</label>
@@ -961,12 +966,17 @@
           </div>
           <div class="field">
             <label>Gender</label>
-            <select id="edit-c-gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="unknown">Prefer not to say</option>
-            </select>
+            <div style="display:flex;gap:8px;">
+              <button type="button" id="edit-c-gender-male" onclick="selectEditGender('male')"
+                style="flex:1;padding:9px;border-radius:8px;border:2px solid var(--border);background:var(--surface2);color:var(--text2);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all 0.15s;">
+                Male
+              </button>
+              <button type="button" id="edit-c-gender-female" onclick="selectEditGender('female')"
+                style="flex:1;padding:9px;border-radius:8px;border:2px solid var(--border);background:var(--surface2);color:var(--text2);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all 0.15s;">
+                Female
+              </button>
+            </div>
+            <input type="hidden" id="edit-c-gender" value="">
           </div>
           <div class="field">
             <label>Status</label>
@@ -1209,16 +1219,25 @@
         <p>Tracking toward your 100-hour requirement</p>
       </div>
 
-      <div class="progress-card" style="margin-bottom:20px;">
-        <div class="progress-label">Supervision Hours Completed</div>
-        <div class="progress-numbers">
-          <span class="progress-current" id="sup-total">0</span>
-          <span class="progress-total">/ 100 hrs</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div class="progress-card">
+          <div class="progress-label">Hours Completed</div>
+          <div class="progress-numbers">
+            <span class="progress-current" id="sup-total">0</span>
+            <span class="progress-total">/ 100 hrs</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="sup-bar" style="background:var(--accent2);width:0%"></div>
+          </div>
+          <div class="progress-pct" id="sup-pct">0.0% complete</div>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="sup-bar" style="background: var(--accent2); width: 0%"></div>
+        <div class="progress-card" style="border-color:rgba(56,201,142,0.3);">
+          <div class="progress-label">Total Cost</div>
+          <div class="progress-numbers">
+            <span class="progress-current" id="sup-cost-total" style="color:var(--accent2);">$0</span>
+          </div>
+          <div style="font-size:11px;color:var(--text3);margin-top:6px;">spent on supervision in 2026</div>
         </div>
-        <div class="progress-pct" id="sup-pct">0.0% complete</div>
       </div>
 
       <div class="card">
@@ -1660,9 +1679,31 @@ function addClient() {
   document.getElementById('c-name').value = '';
   document.getElementById('c-rate').value = '';
   document.getElementById('c-insurance').value = '';
+  document.getElementById('c-gender').value = '';
+  selectGender('');
   toast('Client added');
   renderClients();
   populateClientDatalist();
+}
+
+function selectGender(val) {
+  document.getElementById('c-gender').value = val;
+  const male = document.getElementById('c-gender-male');
+  const female = document.getElementById('c-gender-female');
+  male.style.borderColor = val === 'male' ? 'var(--accent)' : 'var(--border)';
+  male.style.color = val === 'male' ? 'var(--accent)' : 'var(--text2)';
+  female.style.borderColor = val === 'female' ? '#e879a0' : 'var(--border)';
+  female.style.color = val === 'female' ? '#e879a0' : 'var(--text2)';
+}
+
+function selectEditGender(val) {
+  document.getElementById('edit-c-gender').value = val;
+  const male = document.getElementById('edit-c-gender-male');
+  const female = document.getElementById('edit-c-gender-female');
+  male.style.borderColor = val === 'male' ? 'var(--accent)' : 'var(--border)';
+  male.style.color = val === 'male' ? 'var(--accent)' : 'var(--text2)';
+  female.style.borderColor = val === 'female' ? '#e879a0' : 'var(--border)';
+  female.style.color = val === 'female' ? '#e879a0' : 'var(--text2)';
 }
 
 function renderClients() {
@@ -1708,7 +1749,8 @@ function openEditClient(id) {
   document.getElementById('edit-c-rate').value = c.rate;
   document.getElementById('edit-c-method').value = c.method;
   document.getElementById('edit-c-insurance').value = c.insurance || '';
-  document.getElementById('edit-c-gender').value = c.gender || 'unknown';
+  document.getElementById('edit-c-gender').value = c.gender || '';
+  selectEditGender(c.gender || '');
   document.getElementById('edit-c-status').value = c.status;
   const modal = document.getElementById('edit-client-modal');
   modal.style.display = 'flex';
@@ -2187,6 +2229,9 @@ function renderSupervision() {
   document.getElementById('prog-sup').textContent = total;
   document.getElementById('prog-sup-bar').style.width = pct + '%';
   document.getElementById('prog-sup-pct').textContent = pct.toFixed(1) + '% complete';
+  const totalCost = supervision.reduce((a, s) => a + (parseFloat(s.cost) || 0), 0);
+  const costEl = document.getElementById('sup-cost-total');
+  if (costEl) costEl.textContent = '$' + totalCost.toLocaleString();
 
   const tbody = document.getElementById('sup-table-body');
   const empty = document.getElementById('sup-empty');
