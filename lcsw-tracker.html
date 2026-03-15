@@ -1421,7 +1421,7 @@ function save(key, data) {
 
 // Seed with existing data from the spreadsheet
 function seedData() {
-  localStorage.clear();
+  if (localStorage.getItem('lmsw_seeded')) return;
 
   const sessions = [
     { id: uid(), date: '2026-01-15', name: '', agency: 'DC', hours: 3, fee: 0, method: '—', desc: 'Orientation + SimplePractice training', type: 'admin', insurance: '' },
