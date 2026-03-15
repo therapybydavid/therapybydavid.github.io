@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Quick Log">
-<title>Quick Log — David Robles</title>
+<title>Quick Log — Client Tracker</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -350,7 +350,7 @@
       <div class="header-title">Quick Log</div>
       <div class="header-sub">David Robles, LMSW</div>
     </div>
-    <a class="back-btn" href="index.html">← Dashboard</a>
+    <a class="back-btn" href="client-tracker.html">← Dashboard</a>
   </div>
 
   <!-- FORM -->
@@ -451,7 +451,7 @@
     <div class="success-sub" id="success-detail"></div>
     <div class="success-time" id="success-time"></div>
     <button class="again-btn" onclick="resetForm()">+ Log Another Session</button>
-    <a class="main-app-link" href="lcsw-tracker.html">Go to full dashboard →</a>
+    <a class="main-app-link" href="client-tracker.html">Go to full dashboard →</a>
   </div>
 
 </div>
@@ -484,12 +484,36 @@ let state = { client: null, type: null, method: null };
 // ============================================================
 // INIT
 // ============================================================
-window.addEventListener('load', () => {
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
+
+window.addEventListener('load', async () => {
   const now = new Date();
   const [y, m, d] = now.toISOString().split('T')[0].split('-');
   document.getElementById('today-label').textContent =
     now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   document.getElementById('c-date').textContent = `${m}/${d}/${y}`;
+
+  // Load clients from Google Sheets
+  try {
+    const res = await fetch(`${SCRIPT_URL}?action=get&sheet=Clients&t=${Date.now()}`);
+    const json = await res.json();
+    if (json.data && json.data.length > 0) {
+      saveData(CLIENTS_KEY, json.data);
+    }
+  } catch(e) {
+    console.log('Could not load clients from Sheets:', e);
+  }
+
+  // Also load sessions from Google Sheets so we stay in sync
+  try {
+    const res = await fetch(`${SCRIPT_URL}?action=get&sheet=Sessions&t=${Date.now()}`);
+    const json = await res.json();
+    if (json.data && json.data.length > 0) {
+      saveData(SESSIONS_KEY, json.data);
+    }
+  } catch(e) {
+    console.log('Could not load sessions from Sheets:', e);
+  }
 });
 
 // Close dropdown on outside click
@@ -629,6 +653,15 @@ function submitLog() {
     insurance: c.insurance || '',
   });
   saveData(SESSIONS_KEY, sessions);
+
+  // Sync to Google Sheets
+  try {
+    fetch('https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ action: 'save', sheet: 'Sessions', rows: sessions })
+    });
+  } catch(e) { console.log('Sync error:', e); }
 
   // Show success
   const now = new Date();
