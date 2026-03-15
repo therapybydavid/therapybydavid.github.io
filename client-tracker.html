@@ -670,9 +670,7 @@
       <button class="nav-item" onclick="showPage('referrals')">
         <span class="icon">◎</span> Referrals
       </button>
-      <button class="nav-item" onclick="showPage('expenses')">
-        <span class="icon">◫</span> Expenses
-      </button>
+
     </nav>
   </aside>
 
@@ -1238,10 +1236,7 @@
               <option value="Virtual">Virtual</option>
             </select>
           </div>
-          <div class="field">
-            <label>Supervisor</label>
-            <input type="text" id="sup-supervisor" placeholder="Supervisor name">
-          </div>
+
           <div class="field">
             <label>Hours</label>
             <input type="number" id="sup-hours" value="2" min="0.5" step="0.5">
@@ -1265,7 +1260,7 @@
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Date</th><th>Type</th><th>Topic</th><th>Supervisor</th><th>Hours</th><th>Cost</th><th></th></tr>
+              <tr><th>Date</th><th>Type</th><th>Topic</th><th>Hours</th><th>Cost</th><th></th></tr>
             </thead>
             <tbody id="sup-table-body"></tbody>
           </table>
@@ -1275,6 +1270,86 @@
           No supervision sessions logged yet.
         </div>
       </div>
+    </div>
+
+    <!-- EDIT SUPERVISION MODAL -->
+    <div id="edit-sup-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:440px;max-width:95vw;">
+        <div style="font-family:var(--serif);font-size:20px;margin-bottom:20px;">Edit Supervision</div>
+        <input type="hidden" id="edit-sup-id">
+        <div class="form-grid two-col">
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="edit-sup-date">
+          </div>
+          <div class="field">
+            <label>Type</label>
+            <select id="edit-sup-type">
+              <option value="Individual">Individual</option>
+              <option value="Group">Group</option>
+              <option value="Virtual">Virtual</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Topic</label>
+            <input type="text" id="edit-sup-topic">
+          </div>
+          <div class="field">
+            <label>Hours</label>
+            <input type="number" id="edit-sup-hours" min="0.5" step="0.5">
+          </div>
+          <div class="field">
+            <label>Cost ($)</label>
+            <input type="number" id="edit-sup-cost">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="saveEditSup()">Save Changes</button>
+          <button class="btn btn-ghost" onclick="closeEditSupModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERRALS -->
+    <div id="page-referrals" class="page">
+      <div class="page-header">
+        <h1>Referral Sources</h1>
+        <p>Track where your private pay clients are coming from</p>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Add Referral</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Client Name</label>
+            <input type="text" id="ref-name" placeholder="Full name">
+          </div>
+          <div class="field">
+            <label>Source</label>
+            <select id="ref-source">
+              <option value="Psychology Today">Psychology Today</option>
+              <option value="Therapist.com">Therapist.com</option>
+              <option value="Open Path">Open Path</option>
+              <option value="Mental Health Match">Mental Health Match</option>
+              <option value="Word of Mouth">Word of Mouth</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="ref-status">
+              <option value="converted">✅ Converted</option>
+              <option value="pending">⏳ Pending</option>
+              <option value="declined">❌ Declined</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addReferral()">Add Referral</button>
+        </div>
+      </div>
+
+      <div id="ref-grid-container" class="ref-scorecard"></div>
     </div>
 
     <!-- REFERRALS -->
@@ -1559,7 +1634,6 @@ function renderPage(id) {
   if (id === 'invoices') renderInvoice();
   if (id === 'supervision') renderSupervision();
   if (id === 'referrals') renderReferrals();
-  if (id === 'expenses') renderExpenses();
 }
 
 // ============================================================
@@ -2094,7 +2168,6 @@ function logSupervision() {
     date,
     type: document.getElementById('sup-type').value,
     topic: document.getElementById('sup-topic').value.trim(),
-    supervisor: document.getElementById('sup-supervisor').value.trim(),
     hours: parseFloat(document.getElementById('sup-hours').value) || 0,
     cost: parseFloat(document.getElementById('sup-cost').value) || 0,
   });
@@ -2130,10 +2203,12 @@ function renderSupervision() {
       <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
       <td>${s.type}</td>
       <td>${s.topic || '—'}</td>
-      <td>${s.supervisor || '—'}</td>
       <td style="font-family:var(--mono)">${s.hours}</td>
       <td style="font-family:var(--mono)">${s.cost ? '$' + s.cost : '—'}</td>
-      <td><button class="btn btn-danger delete-btn" onclick="deleteSup('${s.id}')">✕</button></td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditSup('${s.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteSup('${s.id}')">✕</button>
+      </td>
     </tr>
   `).join('');
 }
@@ -2144,6 +2219,42 @@ function deleteSup(id) {
   save(KEYS.supervision, sup);
   renderSupervision();
   toast('Entry deleted');
+}
+
+function openEditSup(id) {
+  const sup = load(KEYS.supervision);
+  const s = sup.find(s => s.id === id);
+  if (!s) return;
+  document.getElementById('edit-sup-id').value = s.id;
+  document.getElementById('edit-sup-date').value = s.date;
+  document.getElementById('edit-sup-type').value = s.type;
+  document.getElementById('edit-sup-topic').value = s.topic || '';
+  document.getElementById('edit-sup-hours').value = s.hours;
+  document.getElementById('edit-sup-cost').value = s.cost || '';
+  document.getElementById('edit-sup-modal').style.display = 'flex';
+}
+
+function saveEditSup() {
+  const id = document.getElementById('edit-sup-id').value;
+  let sup = load(KEYS.supervision);
+  const idx = sup.findIndex(s => s.id === id);
+  if (idx === -1) return;
+  sup[idx] = {
+    ...sup[idx],
+    date: document.getElementById('edit-sup-date').value,
+    type: document.getElementById('edit-sup-type').value,
+    topic: document.getElementById('edit-sup-topic').value.trim(),
+    hours: parseFloat(document.getElementById('edit-sup-hours').value) || 0,
+    cost: parseFloat(document.getElementById('edit-sup-cost').value) || 0,
+  };
+  save(KEYS.supervision, sup);
+  closeEditSupModal();
+  renderSupervision();
+  toast('Supervision updated');
+}
+
+function closeEditSupModal() {
+  document.getElementById('edit-sup-modal').style.display = 'none';
 }
 
 // ============================================================
@@ -2490,7 +2601,6 @@ async function syncToSheets() {
     await postData('Sessions', load(KEYS.sessions));
     await postData('Clients', load(KEYS.clients));
     await postData('Supervision', load(KEYS.supervision));
-    await postData('Expenses', load(KEYS.expenses));
     await postData('Referrals', load(KEYS.referrals));
     showSyncStatus('✓ Synced to Google Sheets', 'var(--accent2)');
   } catch (err) {
