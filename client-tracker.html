@@ -625,6 +625,7 @@
   }
   tr:hover .delete-btn { opacity: 1; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -686,6 +687,8 @@
         <h1>Dashboard</h1>
         <p id="dash-date"></p>
       </div>
+
+      <div id="invoice-reminders" style="margin-bottom:20px;display:none;"></div>
 
       <div class="progress-grid">
         <div class="progress-card">
@@ -1365,7 +1368,12 @@
       <!-- Sessions by Agency -->
       <div class="card" style="margin-bottom:20px;">
         <div class="card-title">Sessions by Agency</div>
-        <div id="stats-agency" style="display:flex;gap:16px;flex-wrap:wrap;"></div>
+        <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+          <div style="position:relative;width:200px;height:200px;flex-shrink:0;">
+            <canvas id="agency-pie-chart"></canvas>
+          </div>
+          <div id="stats-agency-legend" style="flex:1;min-width:160px;"></div>
+        </div>
       </div>
 
       <!-- Weekly Stats -->
@@ -2196,6 +2204,43 @@ function renderDashboard() {
   const monthStr = now.toISOString().slice(0, 7);
   const monthName = now.toLocaleString('default', { month: 'long', year: 'numeric' });
 
+  // Invoice reminders
+  const invoiceDates = JSON.parse(localStorage.getItem('lmsw_invoice_dates') || '{}');
+  const remindersEl = document.getElementById('invoice-reminders');
+  if (remindersEl) {
+    const today = new Date();
+    const reminders = [];
+    const agencyLabels = { DC: 'District Counseling', SMS: 'Safe Mind Space' };
+    ['DC', 'SMS'].forEach(agency => {
+      const due = invoiceDates[agency];
+      if (!due) return;
+      const dueDate = new Date(due);
+      const diffDays = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+      if (diffDays <= 7 && diffDays >= 0) {
+        const color = diffDays <= 2 ? 'var(--danger)' : diffDays <= 4 ? 'var(--warn)' : 'var(--accent)';
+        const msg = diffDays === 0 ? 'due today' : diffDays === 1 ? 'due tomorrow' : `due in ${diffDays} days`;
+        reminders.push(`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid ${color};border-left:3px solid ${color};border-radius:10px;padding:12px 16px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">🔔</span>
+            <span style="font-size:13.5px;color:var(--text);">${agencyLabels[agency]} Invoice</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:12px;color:${color};font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">${msg}</span>
+            <button onclick="showPage('invoices')" style="background:${color};border:none;border-radius:6px;padding:5px 12px;color:#fff;font-family:var(--sans);font-size:12px;cursor:pointer;">View Invoice</button>
+          </div>
+        </div>`);
+      }
+    });
+    if (reminders.length) {
+      remindersEl.style.display = 'flex';
+      remindersEl.style.flexDirection = 'column';
+      remindersEl.style.gap = '10px';
+      remindersEl.innerHTML = reminders.join('');
+    } else {
+      remindersEl.style.display = 'none';
+    }
+  }
+
   document.getElementById('dash-date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
   // Clinical hours = all sessions
@@ -2988,26 +3033,60 @@ function renderStats() {
       (unknown ? genderBar('Unknown', unknown, 'var(--text3)') : '');
   }
 
-  // --- Sessions by Agency ---
+  // --- Sessions by Agency (Pie Chart) ---
   const agencies = ['DC', 'SMS', 'Emora', 'ME'];
   const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space', Emora: 'Emora', ME: 'Private' };
-  const agencyColors = { DC: 'var(--accent)', SMS: 'var(--accent2)', Emora: 'var(--warn)', ME: 'var(--danger)' };
+  const agencyHexColors = { DC: '#4f8ef7', SMS: '#38c98e', Emora: '#f7a44f', ME: '#f75f5f' };
   const totalSessions = sessions.length;
-  const agencyEl = document.getElementById('stats-agency');
-  if (agencyEl) {
-    agencyEl.innerHTML = agencies.map(a => {
-      const count = sessions.filter(s => s.agency === a).length;
-      if (!count) return '';
-      const pct = totalSessions ? Math.round((count / totalSessions) * 100) : 0;
-      const income = sessions.filter(s => s.agency === a).reduce((sum, s) => sum + (parseFloat(s.fee)||0), 0);
-      return `<div style="flex:1;min-width:140px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px;">
-        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">${agencyNames[a]}</div>
-        <div style="font-family:var(--mono);font-size:28px;color:${agencyColors[a]};margin-bottom:4px;">${count}</div>
-        <div style="font-size:11px;color:var(--text3);margin-bottom:8px;">${pct}% of sessions</div>
-        <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;">
-          <div style="width:${pct}%;height:100%;background:${agencyColors[a]};border-radius:2px;"></div>
+
+  const agencyData = agencies.map(a => ({
+    agency: a,
+    label: agencyNames[a],
+    count: sessions.filter(s => s.agency === a).length,
+    income: sessions.filter(s => s.agency === a).reduce((sum, s) => sum + (parseFloat(s.fee)||0), 0),
+    color: agencyHexColors[a]
+  })).filter(d => d.count > 0);
+
+  const pieCanvas = document.getElementById('agency-pie-chart');
+  if (pieCanvas && typeof Chart !== 'undefined') {
+    if (window._agencyPieChart) window._agencyPieChart.destroy();
+    window._agencyPieChart = new Chart(pieCanvas, {
+      type: 'doughnut',
+      data: {
+        labels: agencyData.map(d => d.label),
+        datasets: [{
+          data: agencyData.map(d => d.count),
+          backgroundColor: agencyData.map(d => d.color),
+          borderWidth: 2,
+          borderColor: '#181c27'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '60%',
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.parsed} sessions (${Math.round((ctx.parsed/totalSessions)*100)}%)`
+          }
+        }}
+      }
+    });
+  }
+
+  const legendEl = document.getElementById('stats-agency-legend');
+  if (legendEl) {
+    legendEl.innerHTML = agencyData.map(d => {
+      const pct = totalSessions ? Math.round((d.count / totalSessions) * 100) : 0;
+      return `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="width:12px;height:12px;border-radius:3px;background:${d.color};flex-shrink:0;"></span>
+          <span style="font-size:13px;color:var(--text)">${d.label}</span>
         </div>
-        <div style="font-size:12px;color:var(--text2);margin-top:8px;font-family:var(--mono)">$${income.toLocaleString()} billed</div>
+        <div style="text-align:right;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--text)">${d.count} sessions · ${pct}%</div>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--text3);">$${d.income.toLocaleString()} billed</div>
+        </div>
       </div>`;
     }).join('');
   }
