@@ -930,6 +930,79 @@
       </div>
     </div>
 
+    <!-- EDIT SESSION MODAL -->
+    <div id="edit-session-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;overflow-y:auto;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:520px;max-width:95vw;margin:20px auto;">
+        <div style="font-family:var(--serif);font-size:20px;margin-bottom:20px;">Edit Session</div>
+        <input type="hidden" id="edit-s-id">
+        <div class="form-grid">
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="edit-s-date">
+          </div>
+          <div class="field">
+            <label>Client Name</label>
+            <input type="text" id="edit-s-name">
+          </div>
+          <div class="field">
+            <label>Agency</label>
+            <select id="edit-s-agency">
+              <option value="DC">District Counseling (DC)</option>
+              <option value="SMS">Safe Mind Space (SMS)</option>
+              <option value="Emora">Emora</option>
+              <option value="ME">Private (ME)</option>
+              <option value="—">N/A</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Hours</label>
+            <input type="number" id="edit-s-hours" min="0.5" step="0.5">
+          </div>
+          <div class="field">
+            <label>Fee ($)</label>
+            <input type="number" id="edit-s-fee" min="0">
+          </div>
+          <div class="field">
+            <label>Method</label>
+            <select id="edit-s-method">
+              <option value="IP">In-Person (IP)</option>
+              <option value="V">Virtual (V)</option>
+              <option value="—">N/A</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Activity / Description</label>
+            <select id="edit-s-desc-select" onchange="handleEditDescSelect()">
+              <option value="Intake session">Intake session</option>
+              <option value="Psychotherapy session">Psychotherapy session</option>
+              <option value="custom">Other (custom)</option>
+            </select>
+          </div>
+          <div class="field" id="edit-s-desc-custom-wrap" style="display:none;">
+            <label>Custom Description</label>
+            <input type="text" id="edit-s-desc-custom" placeholder="Enter custom description...">
+          </div>
+          <div class="field">
+            <label>Session Type</label>
+            <select id="edit-s-type">
+              <option value="clinical">Clinical</option>
+              <option value="supervision">Supervision</option>
+              <option value="training">Training / CEU</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Insurance</label>
+            <input type="text" id="edit-s-insurance" placeholder="e.g. BCBS">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="saveEditSession()">Save Changes</button>
+          <button class="btn btn-ghost" onclick="closeEditSessionModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <!-- EDIT CLIENT MODAL -->
     <div id="edit-client-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;align-items:center;justify-content:center;">
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:480px;max-width:95vw;position:relative;">
@@ -2097,7 +2170,10 @@ function renderLog() {
       <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
       <td style="font-size:11px;color:var(--text3)">${s.type || ''}</td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.desc || ''}</td>
-      <td><button class="btn btn-danger delete-btn" onclick="deleteSession('${s.id}')">✕</button></td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditSession('${s.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteSession('${s.id}')">✕</button>
+      </td>
     </tr>
   `).join('');
 }
@@ -2108,6 +2184,73 @@ function deleteSession(id) {
   save(KEYS.sessions, sessions);
   renderLog();
   toast('Session deleted');
+}
+
+function openEditSession(id) {
+  const sessions = load(KEYS.sessions);
+  const s = sessions.find(s => s.id === id);
+  if (!s) return;
+  document.getElementById('edit-s-id').value = s.id;
+  document.getElementById('edit-s-date').value = s.date;
+  document.getElementById('edit-s-name').value = s.name || '';
+  document.getElementById('edit-s-agency').value = s.agency || '—';
+  document.getElementById('edit-s-hours').value = s.hours;
+  document.getElementById('edit-s-fee').value = s.fee;
+  document.getElementById('edit-s-method').value = s.method || '—';
+  document.getElementById('edit-s-type').value = s.type || 'clinical';
+  document.getElementById('edit-s-insurance').value = s.insurance || '';
+
+  const knownDescs = ['Intake session', 'Psychotherapy session'];
+  if (knownDescs.includes(s.desc)) {
+    document.getElementById('edit-s-desc-select').value = s.desc;
+    document.getElementById('edit-s-desc-custom-wrap').style.display = 'none';
+  } else {
+    document.getElementById('edit-s-desc-select').value = 'custom';
+    document.getElementById('edit-s-desc-custom').value = s.desc || '';
+    document.getElementById('edit-s-desc-custom-wrap').style.display = 'block';
+  }
+
+  document.getElementById('edit-session-modal').style.display = 'flex';
+}
+
+function handleEditDescSelect() {
+  const val = document.getElementById('edit-s-desc-select').value;
+  document.getElementById('edit-s-desc-custom-wrap').style.display = val === 'custom' ? 'block' : 'none';
+}
+
+function saveEditSession() {
+  const id = document.getElementById('edit-s-id').value;
+  let sessions = load(KEYS.sessions);
+  const idx = sessions.findIndex(s => s.id === id);
+  if (idx === -1) return;
+
+  const descSelect = document.getElementById('edit-s-desc-select').value;
+  const desc = descSelect === 'custom'
+    ? document.getElementById('edit-s-desc-custom').value.trim()
+    : descSelect;
+
+  sessions[idx] = {
+    ...sessions[idx],
+    date: document.getElementById('edit-s-date').value,
+    name: document.getElementById('edit-s-name').value.trim(),
+    agency: document.getElementById('edit-s-agency').value,
+    hours: parseFloat(document.getElementById('edit-s-hours').value) || 0,
+    fee: parseFloat(document.getElementById('edit-s-fee').value) || 0,
+    method: document.getElementById('edit-s-method').value,
+    desc,
+    type: document.getElementById('edit-s-type').value,
+    insurance: document.getElementById('edit-s-insurance').value.trim(),
+  };
+
+  save(KEYS.sessions, sessions);
+  closeEditSessionModal();
+  renderLog();
+  renderDashboard();
+  toast('Session updated');
+}
+
+function closeEditSessionModal() {
+  document.getElementById('edit-session-modal').style.display = 'none';
 }
 
 // ============================================================
