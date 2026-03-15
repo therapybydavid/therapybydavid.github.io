@@ -109,6 +109,8 @@
     max-width: 1100px;
   }
 
+
+
   /* HEADER */
   .page-header {
     margin-bottom: 28px;
@@ -608,6 +610,8 @@
     box-shadow: 0 12px 32px rgba(0,0,0,0.5);
   }
 
+
+
   @media print {
     .sidebar, .btn-row, .tabs, .nav-item { display: none !important; }
     .main { margin-left: 0; padding: 20px; }
@@ -632,6 +636,10 @@
     <div class="sidebar-logo">
       <div class="name">David Robles</div>
       <div class="title">LMSW Practice Tracker</div>
+      <div style="margin-top:10px;display:flex;gap:6px;align-items:center;">
+        <button onclick="syncFromSheets()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
+        <span id="sync-status" style="font-size:10px;color:var(--text3);transition:opacity 0.5s;opacity:0;"></span>
+      </div>
     </div>
     <nav class="nav">
       <div class="nav-section">Overview</div>
@@ -731,6 +739,12 @@
         <div style="display:flex; align-items:baseline; gap:12px;">
           <div style="font-family:var(--mono); font-size:42px; color:var(--accent)" id="stat-yearly-income">$0</div>
           <div style="color:var(--text3); font-size:13px" id="stat-yearly-sub">across all sessions</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Caseload — Gender Breakdown</div>
+        <div id="gender-stats" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
         </div>
       </div>
 
@@ -875,6 +889,15 @@
             <input type="text" id="c-insurance" placeholder="e.g. BCBS">
           </div>
           <div class="field">
+            <label>Gender</label>
+            <select id="c-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="unknown">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field">
             <label>Status</label>
             <select id="c-status">
               <option value="active">Active</option>
@@ -892,7 +915,7 @@
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Name</th><th>Agency</th><th>Rate</th><th>Method</th><th>Insurance</th><th>Status</th><th></th></tr>
+              <tr><th>Name</th><th>Agency</th><th>Rate</th><th>Method</th><th>Insurance</th><th>Gender</th><th>Status</th><th></th></tr>
             </thead>
             <tbody id="clients-table-body"></tbody>
           </table>
@@ -937,6 +960,15 @@
           <div class="field">
             <label>Insurance</label>
             <input type="text" id="edit-c-insurance" placeholder="e.g. BCBS">
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <select id="edit-c-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="unknown">Prefer not to say</option>
+            </select>
           </div>
           <div class="field">
             <label>Status</label>
@@ -1523,7 +1555,7 @@ function renderPage(id) {
   if (id === 'dashboard') renderDashboard();
   if (id === 'clients') renderClients();
   if (id === 'quick-log') initQuickLog();
-  if (id === 'session-log') renderLog();
+  if (id === 'session-log') { renderLog(); }
   if (id === 'invoices') renderInvoice();
   if (id === 'supervision') renderSupervision();
   if (id === 'referrals') renderReferrals();
@@ -1547,6 +1579,7 @@ function addClient() {
     rate: parseFloat(document.getElementById('c-rate').value) || 0,
     method: document.getElementById('c-method').value,
     insurance: document.getElementById('c-insurance').value.trim(),
+    gender: document.getElementById('c-gender').value,
     status: document.getElementById('c-status').value,
   });
   save(KEYS.clients, clients);
@@ -1572,6 +1605,7 @@ function renderClients() {
       <td style="font-family:var(--mono)">$${c.rate}</td>
       <td><span class="badge badge-${c.method.toLowerCase()}">${c.method}</span></td>
       <td>${c.insurance || '—'}</td>
+      <td style="font-size:12px;color:var(--text2)">${c.gender ? c.gender.charAt(0).toUpperCase() + c.gender.slice(1) : '—'}</td>
       <td><span style="font-size:11px;color:${c.status==='active'?'var(--accent2)':'var(--text3)'}">${c.status}</span></td>
       <td style="display:flex;gap:6px;">
         <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditClient('${c.id}')">Edit</button>
@@ -1600,6 +1634,7 @@ function openEditClient(id) {
   document.getElementById('edit-c-rate').value = c.rate;
   document.getElementById('edit-c-method').value = c.method;
   document.getElementById('edit-c-insurance').value = c.insurance || '';
+  document.getElementById('edit-c-gender').value = c.gender || 'unknown';
   document.getElementById('edit-c-status').value = c.status;
   const modal = document.getElementById('edit-client-modal');
   modal.style.display = 'flex';
@@ -1617,6 +1652,7 @@ function saveEditClient() {
     rate: parseFloat(document.getElementById('edit-c-rate').value) || 0,
     method: document.getElementById('edit-c-method').value,
     insurance: document.getElementById('edit-c-insurance').value.trim(),
+    gender: document.getElementById('edit-c-gender').value,
     status: document.getElementById('edit-c-status').value,
   };
   save(KEYS.clients, clients);
@@ -1802,6 +1838,38 @@ function renderDashboard() {
   document.getElementById('stat-yearly-income').textContent = '$' + yearlyIncome.toLocaleString();
   document.getElementById('stat-yearly-sub').textContent = sessions.filter(s => s.fee > 0).length + ' billable sessions in 2026';
 
+  // Gender stats
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const male = clients.filter(c => c.gender === 'male').length;
+  const female = clients.filter(c => c.gender === 'female').length;
+  const other = clients.filter(c => c.gender === 'other').length;
+  const unknown = clients.filter(c => !c.gender || c.gender === 'unknown').length;
+  const totalC = clients.length;
+
+  const genderBar = (label, count, color) => {
+    if (!count) return '';
+    const pct = totalC ? Math.round((count / totalC) * 100) : 0;
+    return `
+      <div style="flex:1;min-width:100px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">${label}</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--text);margin-bottom:8px;">${count}</div>
+        <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;">
+          <div style="width:${pct}%;height:100%;background:${color};border-radius:3px;"></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:4px;font-family:var(--mono)">${pct}%</div>
+      </div>
+    `;
+  };
+
+  const genderEl = document.getElementById('gender-stats');
+  if (genderEl) {
+    genderEl.innerHTML =
+      genderBar('Male', male, 'var(--accent)') +
+      genderBar('Female', female, '#e879a0') +
+      (other ? genderBar('Other', other, 'var(--accent2)') : '') +
+      (unknown ? genderBar('Unknown', unknown, 'var(--text3)') : '');
+  }
+
   // Stats table
   const months = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
   const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -1847,6 +1915,7 @@ function logSession() {
     insurance: document.getElementById('s-insurance').value.trim(),
   });
   save(KEYS.sessions, sessions);
+  renderDashboard();
   toast('Session saved');
   clearForm();
 }
@@ -2269,14 +2338,20 @@ function filterQlClients(val) {
     : clients;
   const sorted = filtered.sort((a,b) => a.name.localeCompare(b.name));
   const container = document.getElementById('ql-client-list');
-  container.innerHTML = sorted.map(c => `
-    <div onclick="selectQlClient(${JSON.stringify(c)})"
-      style="padding:14px 16px;cursor:pointer;font-size:15px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);"
-      onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='transparent'">
-      <span>${c.name}</span>
-      <span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span>
-    </div>
-  `).join('') || '<div style="padding:14px 16px;color:var(--text3);">No clients found</div>';
+  if (!sorted.length) {
+    container.innerHTML = '<div style="padding:14px 16px;color:var(--text3);">No clients found</div>';
+    return;
+  }
+  container.innerHTML = '';
+  sorted.forEach(c => {
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:14px 16px;cursor:pointer;font-size:15px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);';
+    div.innerHTML = `<span>${c.name}</span><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span>`;
+    div.addEventListener('mouseover', () => div.style.background = 'var(--surface2)');
+    div.addEventListener('mouseout', () => div.style.background = 'transparent');
+    div.addEventListener('click', () => selectQlClient(c));
+    container.appendChild(div);
+  });
 }
 
 function selectQlClient(c) {
@@ -2355,6 +2430,7 @@ function submitQuickLog() {
     insurance: c.insurance || '',
   });
   save(KEYS.sessions, sessions);
+  renderDashboard();
   document.getElementById('ql-success-sub').textContent = `${c.name} · ${qlState.type} · $${c.rate}`;
   document.getElementById('ql-form').style.display = 'none';
   document.getElementById('ql-success').style.display = 'block';
@@ -2392,6 +2468,90 @@ function fmtDate(dateStr) {
   if (!dateStr) return '—';
   const [y, m, d] = dateStr.split('-');
   return `${m}/${d}/${y}`;
+}
+
+// ============================================================
+// GOOGLE SHEETS SYNC
+// ============================================================
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
+
+async function syncToSheets() {
+  try {
+    const data = {
+      action: 'save',
+      sheet: 'Sessions',
+      rows: load(KEYS.sessions)
+    };
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Clients', rows: load(KEYS.clients) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Supervision', rows: load(KEYS.supervision) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Expenses', rows: load(KEYS.expenses) })
+    });
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'save', sheet: 'Referrals', rows: load(KEYS.referrals) })
+    });
+
+    showSyncStatus('✓ Synced to Google Sheets', 'var(--accent2)');
+  } catch (err) {
+    showSyncStatus('Sync failed — check connection', 'var(--danger)');
+  }
+}
+
+async function syncFromSheets() {
+  try {
+    showSyncStatus('Syncing from Google Sheets...', 'var(--warn)');
+
+    const sheets = ['Sessions', 'Clients', 'Supervision', 'Expenses', 'Referrals'];
+    const keys = [KEYS.sessions, KEYS.clients, KEYS.supervision, KEYS.expenses, KEYS.referrals];
+
+    for (let i = 0; i < sheets.length; i++) {
+      const res = await fetch(`${SCRIPT_URL}?action=get&sheet=${sheets[i]}`);
+      const json = await res.json();
+      if (json.data && json.data.length > 0) {
+        save(keys[i], json.data);
+      }
+    }
+
+    showSyncStatus('✓ Data loaded from Google Sheets', 'var(--accent2)');
+    renderDashboard();
+    renderLog();
+  } catch (err) {
+    showSyncStatus('Sync failed — check connection', 'var(--danger)');
+  }
+}
+
+function showSyncStatus(msg, color) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = color;
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 3000);
+}
+
+// Auto-sync after every save
+const _origSave = save;
+function save(key, data) {
+  _origSave(key, data);
+  // Debounced sync to sheets
+  clearTimeout(window._syncTimer);
+  window._syncTimer = setTimeout(() => syncToSheets(), 2000);
 }
 
 // ============================================================
