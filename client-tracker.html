@@ -855,6 +855,19 @@
         <p>Add clients once — auto-fill when logging sessions</p>
       </div>
 
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;">
+        <div class="stat-card">
+          <div class="stat-label">Active</div>
+          <div class="stat-value" id="roster-active" style="color:var(--accent2)">0</div>
+          <div class="stat-sub">currently seeing</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Inactive</div>
+          <div class="stat-value" id="roster-inactive" style="color:var(--text3)">0</div>
+          <div class="stat-sub">paused or ended</div>
+        </div>
+      </div>
+
       <div class="card" style="margin-bottom:20px;">
         <div class="card-title">Add Client</div>
         <div class="form-grid">
@@ -914,7 +927,15 @@
       </div>
 
       <div class="card">
-        <div class="card-title">Active Clients</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <div class="card-title" style="margin-bottom:0;">All Clients</div>
+          <div style="display:flex;gap:6px;">
+            <button onclick="filterRoster('all', this)" class="btn btn-ghost" style="font-size:11px;padding:5px 10px;background:var(--accent);color:#fff;border-color:var(--accent);">All</button>
+            <button onclick="filterRoster('active', this)" class="btn btn-ghost" style="font-size:11px;padding:5px 10px;">Active</button>
+            <button onclick="filterRoster('inactive', this)" class="btn btn-ghost" style="font-size:11px;padding:5px 10px;">Inactive</button>
+
+          </div>
+        </div>
         <div class="table-wrap">
           <table>
             <thead>
@@ -1779,13 +1800,43 @@ function selectEditGender(val) {
   female.style.color = val === 'female' ? '#e879a0' : 'var(--text2)';
 }
 
+let currentRosterFilter = 'all';
+
+function filterRoster(filter, el) {
+  currentRosterFilter = filter;
+  document.querySelectorAll('.card-title + div button, [onclick*="filterRoster"]').forEach(b => {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--text2)';
+    b.style.borderColor = 'var(--border)';
+  });
+  if (el) {
+    el.style.background = 'var(--accent)';
+    el.style.color = '#fff';
+    el.style.borderColor = 'var(--accent)';
+  }
+  renderClients();
+}
+
 function renderClients() {
   const clients = load(KEYS.clients);
   const tbody = document.getElementById('clients-table-body');
   const empty = document.getElementById('clients-empty');
-  if (!clients.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+
+  // Update counts
+  const activeCount = clients.filter(c => !c.status || c.status === 'active').length;
+  const inactiveCount = clients.filter(c => c.status === 'inactive').length;
+  const activeEl = document.getElementById('roster-active');
+  const inactiveEl = document.getElementById('roster-inactive');
+  if (activeEl) activeEl.textContent = activeCount;
+  if (inactiveEl) inactiveEl.textContent = inactiveCount;
+
+  const filtered = currentRosterFilter === 'all'
+    ? clients
+    : clients.filter(c => (c.status || 'active') === currentRosterFilter);
+
+  if (!filtered.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
   empty.style.display = 'none';
-  const sorted = [...clients].sort((a, b) => a.name.localeCompare(b.name));
+  const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
   tbody.innerHTML = sorted.map(c => `
     <tr>
       <td style="color:var(--text);font-weight:500">${c.name}</td>
@@ -1794,7 +1845,14 @@ function renderClients() {
       <td><span class="badge badge-${c.method.toLowerCase()}">${c.method}</span></td>
       <td>${c.insurance || '—'}</td>
       <td style="font-size:12px;color:var(--text2)">${c.gender ? c.gender.charAt(0).toUpperCase() + c.gender.slice(1) : '—'}</td>
-      <td><span style="font-size:11px;color:${c.status==='active'?'var(--accent2)':'var(--text3)'}">${c.status}</span></td>
+      <td>
+        <button onclick="toggleClientStatus('${c.id}')"
+          style="font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;border:none;cursor:pointer;
+          background:${c.status==='active'?'rgba(56,201,142,0.15)':'rgba(90,98,120,0.2)'};
+          color:${c.status==='active'?'var(--accent2)':'var(--text3)'};">
+          ${c.status ? c.status.charAt(0).toUpperCase() + c.status.slice(1) : 'Active'}
+        </button>
+      </td>
       <td style="display:flex;gap:6px;">
         <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditClient('${c.id}')">Edit</button>
         <button class="btn btn-danger delete-btn" onclick="deleteClient('${c.id}')">✕</button>
@@ -1802,6 +1860,16 @@ function renderClients() {
     </tr>
   `).join('');
   populateClientDatalist();
+}
+
+function toggleClientStatus(id) {
+  let clients = load(KEYS.clients);
+  const idx = clients.findIndex(c => c.id === id);
+  if (idx === -1) return;
+  clients[idx].status = clients[idx].status === 'active' ? 'inactive' : 'active';
+  save(KEYS.clients, clients);
+  renderClients();
+  toast('Status updated');
 }
 
 function deleteClient(id) {
