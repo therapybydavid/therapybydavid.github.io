@@ -2475,38 +2475,31 @@ function fmtDate(dateStr) {
 // ============================================================
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
 
+async function postToSheets(sheet, rows) {
+  const form = new FormData();
+  form.append('action', 'save');
+  form.append('sheet', sheet);
+  form.append('rows', JSON.stringify(rows));
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: form
+    });
+    return true;
+  } catch(e) {
+    return false;
+  }
+}
+
 async function syncToSheets() {
   try {
-    const data = {
-      action: 'save',
-      sheet: 'Sessions',
-      rows: load(KEYS.sessions)
-    };
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify(data)
-    });
-
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'save', sheet: 'Clients', rows: load(KEYS.clients) })
-    });
-
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'save', sheet: 'Supervision', rows: load(KEYS.supervision) })
-    });
-
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'save', sheet: 'Expenses', rows: load(KEYS.expenses) })
-    });
-
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'save', sheet: 'Referrals', rows: load(KEYS.referrals) })
-    });
-
+    showSyncStatus('Syncing...', 'var(--warn)');
+    await postToSheets('Sessions', load(KEYS.sessions));
+    await postToSheets('Clients', load(KEYS.clients));
+    await postToSheets('Supervision', load(KEYS.supervision));
+    await postToSheets('Expenses', load(KEYS.expenses));
+    await postToSheets('Referrals', load(KEYS.referrals));
     showSyncStatus('✓ Synced to Google Sheets', 'var(--accent2)');
   } catch (err) {
     showSyncStatus('Sync failed — check connection', 'var(--danger)');
@@ -2515,20 +2508,18 @@ async function syncToSheets() {
 
 async function syncFromSheets() {
   try {
-    showSyncStatus('Syncing from Google Sheets...', 'var(--warn)');
-
-    const sheets = ['Sessions', 'Clients', 'Supervision', 'Expenses', 'Referrals'];
+    showSyncStatus('Loading from Sheets...', 'var(--warn)');
+    const sheets = ['Sessions','Clients','Supervision','Expenses','Referrals'];
     const keys = [KEYS.sessions, KEYS.clients, KEYS.supervision, KEYS.expenses, KEYS.referrals];
-
     for (let i = 0; i < sheets.length; i++) {
-      const res = await fetch(`${SCRIPT_URL}?action=get&sheet=${sheets[i]}`);
+      const url = `${SCRIPT_URL}?action=get&sheet=${sheets[i]}&t=${Date.now()}`;
+      const res = await fetch(url, { mode: 'cors' });
       const json = await res.json();
       if (json.data && json.data.length > 0) {
-        save(keys[i], json.data);
+        localStorage.setItem(keys[i], JSON.stringify(json.data));
       }
     }
-
-    showSyncStatus('✓ Data loaded from Google Sheets', 'var(--accent2)');
+    showSyncStatus('✓ Loaded from Google Sheets', 'var(--accent2)');
     renderDashboard();
     renderLog();
   } catch (err) {
