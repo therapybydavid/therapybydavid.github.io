@@ -1526,16 +1526,12 @@ function seedData() {
     { id: uid(), name: 'Fernan Alvarado', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
     { id: uid(), name: 'Anthony Zamorano', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
   ];
-  window._seeding = true;
   save(KEYS.clients, clients);
   save(KEYS.sessions, sessions);
   save(KEYS.supervision, supervision);
   save(KEYS.referrals, referrals);
   save(KEYS.expenses, expenses);
   localStorage.setItem('lmsw_seeded', '1');
-  window._seeding = false;
-  // Now sync to sheets after all data is saved
-  setTimeout(() => syncToSheets(), 1000);
 }
 
 function uid() {
@@ -1918,7 +1914,7 @@ function logSession() {
     type: document.getElementById('s-type').value,
     insurance: document.getElementById('s-insurance').value.trim(),
   });
-  save(KEYS.sessions, sessions);
+  localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
   renderDashboard();
   toast('Session saved');
   clearForm();
@@ -2530,14 +2526,7 @@ function showSyncStatus(msg, color) {
   setTimeout(() => { el.style.opacity = '0'; }, 3000);
 }
 
-// Auto-sync after every save (skipped during seeding)
-const _origSave = save;
-function save(key, data) {
-  _origSave(key, data);
-  if (window._seeding) return;
-  clearTimeout(window._syncTimer);
-  window._syncTimer = setTimeout(() => syncToSheets(), 2000);
-}
+// No auto-sync - only manual sync via button
 
 // ============================================================
 // INIT
