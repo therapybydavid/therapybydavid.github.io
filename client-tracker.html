@@ -3137,6 +3137,7 @@ function renderStats() {
   startOfWeek.setHours(0,0,0,0);
   const sessionsThisWeek = sessions.filter(s => {
     if (!s.date) return false;
+    if (!parseFloat(s.fee)) return false;
     return new Date(s.date) >= startOfWeek;
   }).length;
 
