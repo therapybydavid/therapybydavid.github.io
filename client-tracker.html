@@ -1680,26 +1680,23 @@ function save(key, data) {
 // Seed with existing data from the spreadsheet
 function seedData() {
   if (localStorage.getItem('lmsw_seeded')) {
-    // Check if new clients need to be added
+    // Only add missing clients, never overwrite existing ones (preserves gender, status, etc.)
     const existing = JSON.parse(localStorage.getItem('lmsw_clients') || '[]');
-    const newNames = ['Daniel Hall','Randy Ehresman','Grant Rainety','Azariah Peacock','Oscar Garcia'];
-    const hasNew = newNames.every(n => existing.find(c => c.name === n));
-    if (!hasNew) {
-      const missingClients = [
-        { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
-        { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
-        { id: uid(), name: 'Grant Rainety', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
-        { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
-        { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
-      ];
-      missingClients.forEach(nc => {
-        if (!existing.find(c => c.name === nc.name)) existing.push(nc);
-      });
-      // Also mark Anthony Zamorano as inactive
-      const ai = existing.findIndex(c => c.name === 'Anthony Zamorano');
-      if (ai !== -1) existing[ai].status = 'inactive';
-      localStorage.setItem('lmsw_clients', JSON.stringify(existing));
-    }
+    const allNewClients = [
+      { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Grant Rainety', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
+    ];
+    let changed = false;
+    allNewClients.forEach(nc => {
+      if (!existing.find(c => c.name === nc.name)) {
+        existing.push(nc);
+        changed = true;
+      }
+    });
+    if (changed) localStorage.setItem('lmsw_clients', JSON.stringify(existing));
     return;
   }
 
