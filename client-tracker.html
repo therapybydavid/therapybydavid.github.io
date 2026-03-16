@@ -3129,20 +3129,20 @@ function renderStats() {
   // Total sessions YTD
   const totalYTD = sessions.filter(s => (s.date||'').startsWith('2026')).length;
 
-  // Sessions this week (Monday to Sunday)
-  const startOfWeek = new Date(now);
+  // Sessions this week (Monday to Sunday) - using string comparison to avoid timezone issues
+  const todayStr = now.toISOString().split('T')[0];
   const day = now.getDay();
   const diffToMonday = (day === 0) ? -6 : 1 - day;
-  startOfWeek.setDate(now.getDate() + diffToMonday);
-  startOfWeek.setHours(0,0,0,0);
-  const endOfWeek = new Date(startOfWeek);
-  endOfWeek.setDate(startOfWeek.getDate() + 6);
-  endOfWeek.setHours(23,59,59,999);
+  const mondayDate = new Date(now);
+  mondayDate.setDate(now.getDate() + diffToMonday);
+  const sundayDate = new Date(mondayDate);
+  sundayDate.setDate(mondayDate.getDate() + 6);
+  const mondayStr = mondayDate.toISOString().split('T')[0];
+  const sundayStr = sundayDate.toISOString().split('T')[0];
   const sessionsThisWeek = sessions.filter(s => {
     if (!s.date) return false;
     if (!parseFloat(s.fee)) return false;
-    const d = new Date(s.date);
-    return d >= startOfWeek && d <= endOfWeek;
+    return s.date >= mondayStr && s.date <= sundayStr;
   }).length;
 
   const weeklyEl = document.getElementById('stats-weekly');
