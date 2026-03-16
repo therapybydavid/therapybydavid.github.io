@@ -3135,10 +3135,14 @@ function renderStats() {
   const diffToMonday = (day === 0) ? -6 : 1 - day;
   startOfWeek.setDate(now.getDate() + diffToMonday);
   startOfWeek.setHours(0,0,0,0);
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 6);
+  endOfWeek.setHours(23,59,59,999);
   const sessionsThisWeek = sessions.filter(s => {
     if (!s.date) return false;
     if (!parseFloat(s.fee)) return false;
-    return new Date(s.date) >= startOfWeek;
+    const d = new Date(s.date);
+    return d >= startOfWeek && d <= endOfWeek;
   }).length;
 
   const weeklyEl = document.getElementById('stats-weekly');
