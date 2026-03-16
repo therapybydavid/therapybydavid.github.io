@@ -3129,6 +3129,17 @@ function renderStats() {
   // Total sessions YTD
   const totalYTD = sessions.filter(s => (s.date||'').startsWith('2026')).length;
 
+  // Sessions this week (Monday to Sunday)
+  const startOfWeek = new Date(now);
+  const day = now.getDay();
+  const diffToMonday = (day === 0) ? -6 : 1 - day;
+  startOfWeek.setDate(now.getDate() + diffToMonday);
+  startOfWeek.setHours(0,0,0,0);
+  const sessionsThisWeek = sessions.filter(s => {
+    if (!s.date) return false;
+    return new Date(s.date) >= startOfWeek;
+  }).length;
+
   const weeklyEl = document.getElementById('stats-weekly');
   if (weeklyEl) {
     weeklyEl.innerHTML = `
@@ -3136,6 +3147,11 @@ function renderStats() {
         <div class="stat-label">Total Sessions YTD</div>
         <div class="stat-value" style="color:var(--accent)">${totalYTD}</div>
         <div class="stat-sub">in 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Sessions This Week</div>
+        <div class="stat-value" style="color:var(--accent2)">${sessionsThisWeek}</div>
+        <div class="stat-sub">since Monday</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Avg Price / Session</div>
