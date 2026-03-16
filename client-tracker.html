@@ -1379,8 +1379,10 @@
       <!-- Weekly Stats -->
       <div class="card" style="margin-bottom:20px;">
         <div class="card-title">Session Stats</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" id="stats-weekly"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" id="stats-weekly"></div>
       </div>
+
+
 
     </div>
 
@@ -3154,11 +3156,6 @@ function renderStats() {
         <div class="stat-label">Sessions This Week</div>
         <div class="stat-value" style="color:var(--accent2)">${sessionsThisWeek}</div>
         <div class="stat-sub">since Monday</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Avg Price / Session</div>
-        <div class="stat-value" style="color:var(--warn)">$${avgPrice}</div>
-        <div class="stat-sub">across all agencies</div>
       </div>
     `;
   }
