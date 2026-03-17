@@ -626,6 +626,7 @@
   tr:hover .delete-btn { opacity: 1; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -638,7 +639,7 @@
       <div class="name">David Robles</div>
       <div class="title">Client Tracker</div>
       <div style="margin-top:10px;display:flex;gap:6px;align-items:center;">
-        <button onclick="syncToSheets()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
+        <button onclick="pushToSupabase()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
         <span id="sync-status" style="font-size:10px;color:var(--text3);transition:opacity 0.5s;opacity:0;"></span>
       </div>
     </div>
@@ -1687,6 +1688,86 @@
 // ============================================================
 // DATA LAYER
 // ============================================================
+// ============================================================
+// SUPABASE CONFIG
+// ============================================================
+const SUPABASE_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_gStNMvoKidzckDmZCUDG5Q_q-6UPaLx';
+
+async function sbFetch(table, method='GET', body=null) {
+  const opts = {
+    method,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, opts);
+  if (method === 'GET') return res.json();
+  return res.ok;
+}
+
+async function sbUpsert(table, rows) {
+  if (!rows || !rows.length) return;
+  // Map 'desc' field to 'description' for sessions table
+  const mapped = rows.map(r => {
+    const obj = {...r};
+    if (table === 'sessions' && obj.desc !== undefined) {
+      obj.description = obj.desc;
+      delete obj.desc;
+    }
+    delete obj.created_at;
+    return obj;
+  });
+  return sbFetch(table + '?on_conflict=id', 'POST', mapped);
+}
+
+async function sbLoad(table) {
+  const rows = await sbFetch(table + '?select=*&order=created_at.asc');
+  if (!Array.isArray(rows)) return [];
+  // Map 'description' back to 'desc' for sessions
+  if (table === 'sessions') {
+    return rows.map(r => { const o = {...r}; o.desc = o.description; return o; });
+  }
+  return rows;
+}
+
+// Push all local data to Supabase
+async function pushToSupabase() {
+  try {
+    await sbUpsert('sessions', load(KEYS.sessions));
+    await sbUpsert('clients', load(KEYS.clients));
+    await sbUpsert('supervision', load(KEYS.supervision));
+    await sbUpsert('referrals', load(KEYS.referrals));
+    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
+  } catch(e) {
+    console.error('Supabase push error:', e);
+  }
+}
+
+// Pull all data from Supabase into localStorage
+async function pullFromSupabase() {
+  try {
+    const [sessions, clients, supervision, referrals] = await Promise.all([
+      sbLoad('sessions'),
+      sbLoad('clients'),
+      sbLoad('supervision'),
+      sbLoad('referrals')
+    ]);
+    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+    if (clients.length) localStorage.setItem(KEYS.clients, JSON.stringify(clients));
+    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+    return true;
+  } catch(e) {
+    console.error('Supabase pull error:', e);
+    return false;
+  }
+}
+
 const KEYS = {
   sessions: 'lmsw_sessions',
   clients: 'lmsw_clients',
@@ -3236,6 +3317,103 @@ function fmtDate(dateStr) {
 // ============================================================
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzT9cR0Yl2Po9zhLdLTafJWOBCtdzqwh-W-ppYEFGHcKMvafqa_xpFZSMAm6tCSZizljQ/exec';
 
+// ============================================================
+// SUPABASE CONFIG
+// ============================================================
+const SB_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
+const SB_KEY = 'sb_publishable_gStNMvoKidzckDmZCUDG5Q_q-6UPaLx';
+
+async function sbFetch(path, options = {}) {
+  const res = await fetch(`${SB_URL}/rest/v1/${path}`, {
+    ...options,
+    headers: {
+      'apikey': SB_KEY,
+      'Authorization': `Bearer ${SB_KEY}`,
+      'Content-Type': 'application/json',
+      'Prefer': options.prefer || '',
+      ...options.headers
+    }
+  });
+  if (!res.ok && res.status !== 204) {
+    const err = await res.text();
+    throw new Error(err);
+  }
+  if (res.status === 204) return null;
+  return res.json();
+}
+
+async function sbUpsert(table, rows) {
+  if (!rows || !rows.length) return;
+  // Map 'desc' field to 'description' for Supabase
+  const mapped = rows.map(r => {
+    const obj = { ...r };
+    if ('desc' in obj) { obj.description = obj.desc; delete obj.desc; }
+    return obj;
+  });
+  await sbFetch(table + '?on_conflict=id', {
+    method: 'POST',
+    prefer: 'resolution=merge-duplicates',
+    body: JSON.stringify(mapped)
+  });
+}
+
+async function sbSelect(table) {
+  const data = await sbFetch(table + '?select=*&order=created_at.asc');
+  if (!data) return [];
+  // Map 'description' back to 'desc'
+  return data.map(r => {
+    const obj = { ...r };
+    if ('description' in obj) { obj.desc = obj.description; delete obj.description; }
+    return obj;
+  });
+}
+
+async function pushToSupabase() {
+  try {
+    await sbUpsert('sessions', load(KEYS.sessions));
+    await sbUpsert('clients', load(KEYS.clients));
+    await sbUpsert('supervision', load(KEYS.supervision));
+    await sbUpsert('referrals', load(KEYS.referrals));
+    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
+  } catch(e) {
+    console.error('Supabase push error:', e);
+    showSyncStatus('Cloud save failed', 'var(--danger)');
+  }
+}
+
+async function pullFromSupabase() {
+  try {
+    const [sessions, clients, supervision, referrals] = await Promise.all([
+      sbSelect('sessions'),
+      sbSelect('clients'),
+      sbSelect('supervision'),
+      sbSelect('referrals')
+    ]);
+    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+    if (clients.length) {
+      // Merge to preserve local edits like gender
+      const local = load(KEYS.clients);
+      const merged = clients.map(remote => {
+        const localClient = local.find(l => l.name === remote.name);
+        return localClient ? { ...remote, ...localClient } : remote;
+      });
+      local.forEach(l => { if (!merged.find(m => m.name === l.name)) merged.push(l); });
+      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
+    }
+    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+    renderDashboard();
+    const activePage = document.querySelector('.page.active');
+    if (activePage && activePage.id === 'page-stats') renderStats();
+    if (activePage && activePage.id === 'page-session-log') renderLog();
+    if (activePage && activePage.id === 'page-clients') renderClients();
+    showSyncStatus('✓ Loaded from cloud', 'var(--accent2)');
+  } catch(e) {
+    console.error('Supabase pull error:', e);
+    showSyncStatus('Cloud load failed', 'var(--danger)');
+  }
+}
+
 async function postData(sheet, rows) {
   const response = await fetch(SCRIPT_URL, {
     method: 'POST',
@@ -3295,7 +3473,13 @@ function showSyncStatus(msg, color) {
   setTimeout(() => { el.style.opacity = '0'; }, 3000);
 }
 
-// No auto-sync - only manual sync via button
+// Auto-push to Supabase after every save
+const _origSave = save;
+function save(key, data) {
+  _origSave(key, data);
+  clearTimeout(window._sbTimer);
+  window._sbTimer = setTimeout(() => pushToSupabase(), 1500);
+}
 
 // ============================================================
 // INIT
