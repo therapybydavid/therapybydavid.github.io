@@ -262,24 +262,52 @@ function showPage(id) {
 
 // SUPABASE API
 async function sbReq(path, method='GET', body=null) {
-    const res = await fetch(`${SB_URL}/rest/v1/${path}`, {
-        method,
-        headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', 'Prefer': 'resolution=merge-duplicates' },
-        body: body ? JSON.stringify(body) : null
-    });
-    return res.ok ? (method === 'GET' ? res.json() : true) : null;
+    try {
+        const res = await fetch(`${SB_URL}/rest/v1/${path}`, {
+            method,
+            headers: { 
+                'apikey': SB_KEY, 
+                'Authorization': `Bearer ${SB_KEY}`, 
+                'Content-Type': 'application/json', 
+                'Prefer': 'resolution=merge-duplicates' 
+            },
+            body: body ? JSON.stringify(body) : null
+        });
+
+        if (!res.ok) {
+            const errorText = await res.text();
+            console.error(`Supabase Error (${res.status}):`, errorText);
+            toast(`Sync Error: ${res.status}`); // This will pop up on your screen
+            return null;
+        }
+
+        return (method === 'GET' ? res.json() : true);
+    } catch (err) {
+        console.error("Network/CORS Error:", err);
+        toast("Connection Failed");
+        return null;
+    }
 }
 
-async function pushToSupabase() {
+async function pullFromSupabase() {
     const status = document.getElementById('sync-status');
-    status.textContent = '☁ Saving to cloud...';
-    try {
-        const s = load(KEYS.sessions).map(x => ({...x, description: x.desc || 'Psychotherapy'}));
-        const c = load(KEYS.clients);
-        const v = load(KEYS.supervision);
-        await Promise.all([sbReq('sessions', 'POST', s), sbReq('clients', 'POST', c), sbReq('supervision', 'POST', v)]);
-        status.textContent = '✓ Cloud Updated';
-    } catch(e) { status.textContent = '⚠ Sync Error'; }
+    status.textContent = '☁ Attempting Pull...';
+    
+    // Attempting to pull all 3 tables
+    const s = await sbReq('sessions?select=*');
+    const c = await sbReq('clients?select=*');
+    const v = await sbReq('supervision?select=*');
+
+    if (s && c && v) {
+        localStorage.setItem(KEYS.sessions, JSON.stringify(s.map(x => ({...x, desc: x.description}))));
+        localStorage.setItem(KEYS.clients, JSON.stringify(c));
+        localStorage.setItem(KEYS.supervision, JSON.stringify(v));
+        renderDashboard();
+        toast('✓ Cloud Data Loaded');
+        status.textContent = '✓ Last Sync: ' + new Date().toLocaleTimeString();
+    } else {
+        status.textContent = '❌ Sync Failed';
+    }
 }
 
 async function pullFromSupabase() {
