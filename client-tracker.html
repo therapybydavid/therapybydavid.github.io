@@ -3257,9 +3257,13 @@ function showSyncStatus(msg, color) {
 // ============================================================
 seedData();
 
-// Auto-load from Google Sheets on every page open
+// Auto-load from Google Sheets ONLY if local data is empty
 (async function autoLoad() {
   try {
+    const localSessions = JSON.parse(localStorage.getItem('lmsw_sessions') || '[]');
+    // If we already have local data, don't overwrite it
+    if (localSessions.length > 0) return;
+
     const sheets = ['Sessions','Clients','Supervision','Referrals'];
     const keys = ['lmsw_sessions','lmsw_clients','lmsw_supervision','lmsw_referrals'];
     for (let i = 0; i < sheets.length; i++) {
@@ -3267,27 +3271,12 @@ seedData();
       const res = await fetch(url);
       const json = await res.json();
       if (json.data && json.data.length > 0) {
-        // Merge clients carefully to preserve local edits like gender
-        if (sheets[i] === 'Clients') {
-          const local = JSON.parse(localStorage.getItem(keys[i]) || '[]');
-          const merged = json.data.map(remote => {
-            const localClient = local.find(l => l.name === remote.name);
-            return localClient ? { ...remote, ...localClient } : remote;
-          });
-          // Add any local-only clients not in sheets
-          local.forEach(l => {
-            if (!merged.find(m => m.name === l.name)) merged.push(l);
-          });
-          localStorage.setItem(keys[i], JSON.stringify(merged));
-        } else {
-          localStorage.setItem(keys[i], JSON.stringify(json.data));
-        }
+        localStorage.setItem(keys[i], JSON.stringify(json.data));
       }
     }
     renderDashboard();
-    showSyncStatus('✓ Data loaded', 'var(--accent2)');
+    showSyncStatus('✓ Data loaded from Sheets', 'var(--accent2)');
   } catch(e) {
-    // Silently fail - use local data if sheets unavailable
     console.log('Auto-load failed, using local data:', e);
   }
 })();
