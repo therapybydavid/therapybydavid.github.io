@@ -3119,63 +3119,18 @@ document.addEventListener('click', function(e) {
 // ============================================================
 function renderStats() {
   const sessions = load(KEYS.sessions);
-  
-  // 1. Calculate YTD Stats for 2026
-  const ytdSessions = sessions.filter(s => (s.date || '').startsWith('2026'));
-  const ytdIncomeTotal = ytdSessions.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
-  
-  // 2. Map to "At a Glance" IDs
-  // Ensure these match your HTML exactly
-  const sessionsYtdEl = document.getElementById('glance-sessions-ytd');
-  const earnedYtdEl = document.getElementById('stat-yearly-income');
-  
-  if (sessionsYtdEl) sessionsYtdEl.textContent = ytdSessions.length;
-  if (earnedYtdEl) earnedYtdEl.textContent = '$' + ytdIncomeTotal.toLocaleString();
 
-  // 3. Weekly Calculations (Monday - Sunday)
-  const now = new Date();
-  const day = now.getDay();
-  const diffToMonday = (day === 0) ? -6 : 1 - day;
-  const mondayDate = new Date(now);
-  mondayDate.setDate(now.getDate() + diffToMonday);
-  const mondayStr = mondayDate.toISOString().split('T')[0];
-
-  const sessionsThisWeek = ytdSessions.filter(s => s.date >= mondayStr);
-  const earnedThisWeek = sessionsThisWeek.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
-
-  const weeklySessionsEl = document.getElementById('glance-sessions-week');
-  const weeklyEarnedEl = document.getElementById('glance-earned-week');
-
-  if (weeklySessionsEl) weeklySessionsEl.textContent = sessionsThisWeek.length;
-  if (weeklyEarnedEl) weeklyEarnedEl.textContent = '$' + earnedThisWeek.toLocaleString();
-
-  // 4. Update the visual Pie Chart and Gender breakdown
-  renderAgencyChart(sessions);
-  renderGenderBreakdown();
-}
-
-function renderGenderBreakdown() {
-  const clients = load(KEYS.clients).filter(c => c.status === 'active');
-  const genderEl = document.getElementById('stats-gender');
-  if (!genderEl) return;
-
-  const male = clients.filter(c => c.gender === 'male').length;
-  const female = clients.filter(c => c.gender === 'female').length;
-  const total = clients.length || 1;
-
-  genderEl.innerHTML = `
-    <div style="flex:1;">
-      <div class="stat-label">Male</div>
-      <div class="stat-value">${male}</div>
-      <div class="progress-bar"><div class="progress-fill" style="background:var(--accent);width:${(male/total)*100}%"></div></div>
-    </div>
-    <div style="flex:1;">
-      <div class="stat-label">Female</div>
-      <div class="stat-value">${female}</div>
-      <div class="progress-bar"><div class="progress-fill" style="background:#e879a0;width:${(female/total)*100}%"></div></div>
-    </div>
-  `;
-}
+  // YTD Stats
+  const ytdSessions = sessions.filter(s => (s.date||'').startsWith('2026'));
+  const ytdBillable = ytdSessions.filter(s => parseFloat(s.fee) > 0);
+  const ytdIncomeTotal = ytdBillable.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  const ytdSessionsEl = document.getElementById('stat-ytd-sessions');
+  const ytdIncomeEl = document.getElementById('stat-ytd-income');
+  const ytdSubEl = document.getElementById('stat-ytd-sub');
+  if (ytdSessionsEl) ytdSessionsEl.textContent = ytdSessions.length;
+  if (ytdIncomeEl) ytdIncomeEl.textContent = '$' + ytdIncomeTotal.toLocaleString();
+  if (ytdSubEl) ytdSubEl.textContent = ytdBillable.length + ' billable sessions';
+  const clients = load(KEYS.clients);
 
   // --- In-Person vs Virtual this month ---
   const nowMonth = new Date().toISOString().slice(0, 7);
