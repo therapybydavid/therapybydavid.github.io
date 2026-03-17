@@ -1860,7 +1860,7 @@ function showPage(id) {
 
 function renderPage(id) {
   if (id === 'dashboard') renderDashboard();
-  if (id === 'stats') renderStats();
+  if (id === 'stats') { setTimeout(() => renderStats(), 100); }
   if (id === 'clients') renderClients();
   if (id === 'quick-log') initQuickLog();
   if (id === 'session-log') { renderLog(); }
@@ -3325,7 +3325,12 @@ seedData();
       }
     }
     renderDashboard();
-    showSyncStatus('✓ Data loaded from Sheets', 'var(--accent2)');
+    // Re-render whatever page is currently active
+    const activePage = document.querySelector('.page.active');
+    if (activePage && activePage.id === 'page-stats') renderStats();
+    if (activePage && activePage.id === 'page-session-log') renderLog();
+    if (activePage && activePage.id === 'page-clients') renderClients();
+    showSyncStatus('✓ Data loaded', 'var(--accent2)');
   } catch(e) {
     console.log('Auto-load failed, using local data:', e);
   }
