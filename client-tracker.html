@@ -1744,20 +1744,7 @@ async function sbLoad(table) {
     return rows.map(r => { const o = {...r}; o.desc = o.description; return o; });
   }
   return rows;
-}
 
-// Push all local data to Supabase
-async function pushToSupabase() {
-  try {
-    await sbUpsert('sessions', load(KEYS.sessions));
-    await sbUpsert('clients', load(KEYS.clients));
-    await sbUpsert('supervision', load(KEYS.supervision));
-    await sbUpsert('referrals', load(KEYS.referrals));
-    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
-  } catch(e) {
-    console.error('Supabase push error:', e);
-  }
-}
 
 // Pull all data from Supabase into localStorage
 async function pullFromSupabase() {
@@ -3379,18 +3366,7 @@ async function sbSelect(table) {
   });
 }
 
-async function pushToSupabase() {
-  try {
-    await sbUpsert('sessions', load(KEYS.sessions));
-    await sbUpsert('clients', load(KEYS.clients));
-    await sbUpsert('supervision', load(KEYS.supervision));
-    await sbUpsert('referrals', load(KEYS.referrals));
-    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
-  } catch(e) {
-    console.error('Supabase push error:', e);
-    showSyncStatus('Cloud save failed', 'var(--danger)');
-  }
-}
+
 
 async function pullFromSupabase() {
   try {
