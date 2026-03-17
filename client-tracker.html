@@ -185,7 +185,7 @@
   .progress-pct { font-size: 11px; color: var(--text3); margin-top: 6px; font-family: var(--mono); }
 
   /* STATS ROW */
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+  .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 20px; }
 
   .stat-card {
     background: var(--surface);
@@ -716,26 +716,17 @@
       </div>
 
       <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-label">This Month Sessions</div>
-          <div class="stat-value" id="stat-month-sessions">0</div>
-          <div class="stat-sub" id="stat-month-label">—</div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+          <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">This Month Sessions</div>
+          <div style="font-family:var(--mono);font-size:36px;color:var(--accent)" id="stat-month-sessions">0</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:6px;" id="stat-month-label">—</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">This Month Income</div>
-          <div class="stat-value" id="stat-month-income">$0</div>
-          <div class="stat-sub">billed this month</div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
+          <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">This Month Income</div>
+          <div style="font-family:var(--mono);font-size:36px;color:var(--accent2)" id="stat-month-income">$0</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:6px;">billed this month</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">In-Person</div>
-          <div class="stat-value" id="stat-ip">0</div>
-          <div class="stat-sub">this month</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Virtual</div>
-          <div class="stat-value" id="stat-v">0</div>
-          <div class="stat-sub">this month</div>
-        </div>
+
       </div>
 
 
@@ -1347,20 +1338,36 @@
         <p>Practice analytics for 2026</p>
       </div>
 
-      <!-- YTD Income -->
-      <div class="card" style="border-color:rgba(79,142,247,0.3);margin-bottom:20px;">
-        <div class="card-title">2026 Year-to-Date Income</div>
-        <div style="display:flex;align-items:baseline;gap:12px;">
-          <div style="font-family:var(--mono);font-size:42px;color:var(--accent)" id="stat-yearly-income">$0</div>
-          <div style="color:var(--text3);font-size:13px;" id="stat-yearly-sub">across all sessions</div>
+      <!-- Combined YTD + Weekly Card -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title" style="margin-bottom:14px;">At a Glance</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div class="stat-card">
+            <div class="stat-label">Sessions YTD</div>
+            <div class="stat-value" id="glance-sessions-ytd" style="color:var(--accent)">0</div>
+            <div class="stat-sub">in 2026</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Earned YTD</div>
+            <div class="stat-value" id="stat-yearly-income" style="color:var(--accent2)">$0</div>
+            <div class="stat-sub" id="stat-yearly-sub">in 2026</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="stat-card">
+            <div class="stat-label">Sessions This Week</div>
+            <div class="stat-value" id="glance-sessions-week" style="color:var(--accent)">0</div>
+            <div class="stat-sub">since Monday</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Earned This Week</div>
+            <div class="stat-value" id="glance-earned-week" style="color:var(--accent2)">$0</div>
+            <div class="stat-sub">since Monday</div>
+          </div>
         </div>
       </div>
 
-      <!-- Gender Breakdown -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-title">Caseload — Gender Breakdown</div>
-        <div id="stats-gender" style="display:flex;gap:24px;flex-wrap:wrap;"></div>
-      </div>
+
 
 
 
@@ -1375,13 +1382,32 @@
         </div>
       </div>
 
-      <!-- Weekly Stats -->
+
+
+
+
+      <!-- In-Person vs Virtual -->
       <div class="card" style="margin-bottom:20px;">
-        <div class="card-title">Session Stats</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" id="stats-weekly"></div>
+        <div class="card-title">In-Person vs Virtual — This Month</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+            <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">In-Person</div>
+            <div style="font-family:var(--mono);font-size:28px;color:var(--accent)" id="stats-ip-count">0</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:3px;">this month</div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+            <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Virtual</div>
+            <div style="font-family:var(--mono);font-size:28px;color:var(--accent2)" id="stats-v-count">0</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:3px;">this month</div>
+          </div>
+        </div>
       </div>
 
-
+      <!-- Gender Breakdown -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Caseload — Gender Breakdown</div>
+        <div id="stats-gender" style="display:flex;gap:24px;flex-wrap:wrap;"></div>
+      </div>
 
     </div>
 
@@ -2257,14 +2283,12 @@ function renderDashboard() {
   const thisMonth = sessions.filter(s => s.date && s.date.startsWith(monthStr));
   const monthSessions = thisMonth.length;
   const monthIncome = thisMonth.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
-  const monthIP = thisMonth.filter(s => s.method === 'IP').length;
-  const monthV = thisMonth.filter(s => s.method === 'V').length;
+
 
   document.getElementById('stat-month-sessions').textContent = monthSessions;
   document.getElementById('stat-month-label').textContent = monthName;
   document.getElementById('stat-month-income').textContent = '$' + monthIncome.toLocaleString();
-  document.getElementById('stat-ip').textContent = monthIP;
-  document.getElementById('stat-v').textContent = monthV;
+
 
 
 
@@ -3016,15 +3040,27 @@ document.addEventListener('click', function(e) {
 function renderStats() {
   const sessions = load(KEYS.sessions);
 
-  // YTD Income
-  const ytdIncomeTotal = sessions.filter(s => (s.date||'').startsWith('2026') && parseFloat(s.fee) > 0)
-    .reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
-  const ytdBillable = sessions.filter(s => (s.date||'').startsWith('2026') && parseFloat(s.fee) > 0).length;
-  const ytdIncomeEl = document.getElementById('stat-yearly-income');
-  const ytdSubEl = document.getElementById('stat-yearly-sub');
+  // YTD Stats
+  const ytdSessions = sessions.filter(s => (s.date||'').startsWith('2026'));
+  const ytdBillable = ytdSessions.filter(s => parseFloat(s.fee) > 0);
+  const ytdIncomeTotal = ytdBillable.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  const ytdSessionsEl = document.getElementById('stat-ytd-sessions');
+  const ytdIncomeEl = document.getElementById('stat-ytd-income');
+  const ytdSubEl = document.getElementById('stat-ytd-sub');
+  if (ytdSessionsEl) ytdSessionsEl.textContent = ytdSessions.length;
   if (ytdIncomeEl) ytdIncomeEl.textContent = '$' + ytdIncomeTotal.toLocaleString();
-  if (ytdSubEl) ytdSubEl.textContent = ytdBillable + ' billable sessions in 2026';
+  if (ytdSubEl) ytdSubEl.textContent = ytdBillable.length + ' billable sessions';
   const clients = load(KEYS.clients);
+
+  // --- In-Person vs Virtual this month ---
+  const nowMonth = new Date().toISOString().slice(0, 7);
+  const monthSessions = sessions.filter(s => (s.date||'').startsWith(nowMonth));
+  const ipCount = monthSessions.filter(s => s.method === 'IP').length;
+  const vCount = monthSessions.filter(s => s.method === 'V').length;
+  const ipEl = document.getElementById('stats-ip-count');
+  const vEl = document.getElementById('stats-v-count');
+  if (ipEl) ipEl.textContent = ipCount;
+  if (vEl) vEl.textContent = vCount;
 
   // --- Gender Breakdown ---
   const active = clients.filter(c => !c.status || c.status === 'active');
