@@ -3187,7 +3187,11 @@ function renderStats() {
 // ============================================================
 function fmtDate(dateStr) {
   if (!dateStr) return '—';
-  const [y, m, d] = dateStr.split('-');
+  // Handle ISO timestamp format like 2026-03-12T05:00:00.000Z
+  const clean = String(dateStr).split('T')[0];
+  const parts = clean.split('-');
+  if (parts.length !== 3) return dateStr;
+  const [y, m, d] = parts;
   return `${m}/${d}/${y}`;
 }
 
@@ -3229,7 +3233,12 @@ async function syncFromSheets() {
       const res = await fetch(url);
       const json = await res.json();
       if (json.data && json.data.length > 0) {
-        localStorage.setItem(keys[i], JSON.stringify(json.data));
+        // Clean date fields that come back as ISO timestamps from Sheets
+        const cleaned = json.data.map(row => {
+          if (row.date) row.date = cleanDate(row.date);
+          return row;
+        });
+        localStorage.setItem(keys[i], JSON.stringify(cleaned));
       }
     }
     showSyncStatus('✓ Loaded from Google Sheets', 'var(--accent2)');
@@ -3271,7 +3280,12 @@ seedData();
       const res = await fetch(url);
       const json = await res.json();
       if (json.data && json.data.length > 0) {
-        localStorage.setItem(keys[i], JSON.stringify(json.data));
+        // Normalize dates when loading from Sheets
+        const normalized = json.data.map(row => {
+          if (row.date) row.date = String(row.date).split('T')[0];
+          return row;
+        });
+        localStorage.setItem(keys[i], JSON.stringify(normalized));
       }
     }
     renderDashboard();
