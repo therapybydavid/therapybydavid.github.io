@@ -1562,47 +1562,7 @@
       <div id="ref-grid-container" class="ref-scorecard"></div>
     </div>
 
-    <!-- REFERRALS -->
-    <div id="page-referrals" class="page">
-      <div class="page-header">
-        <h1>Referral Sources</h1>
-        <p>Track where your private pay clients are coming from</p>
-      </div>
-
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-title">Add Referral</div>
-        <div class="form-grid">
-          <div class="field">
-            <label>Client Name</label>
-            <input type="text" id="ref-name" placeholder="Full name">
-          </div>
-          <div class="field">
-            <label>Source</label>
-            <select id="ref-source">
-              <option value="Psychology Today">Psychology Today</option>
-              <option value="Therapist.com">Therapist.com</option>
-              <option value="Open Path">Open Path</option>
-              <option value="Mental Health Match">Mental Health Match</option>
-              <option value="Word of Mouth">Word of Mouth</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Status</label>
-            <select id="ref-status">
-              <option value="converted">✅ Converted</option>
-              <option value="pending">⏳ Pending</option>
-              <option value="declined">❌ Declined</option>
-            </select>
-          </div>
-        </div>
-        <div class="btn-row">
-          <button class="btn btn-primary" onclick="addReferral()">Add Referral</button>
-        </div>
-      </div>
-
-      <div id="ref-grid-container" class="ref-scorecard"></div>
-    </div>
+    
 
     <!-- EXPENSES -->
     <div id="page-expenses" class="page">
@@ -1744,6 +1704,7 @@ async function sbLoad(table) {
     return rows.map(r => { const o = {...r}; o.desc = o.description; return o; });
   }
   return rows;
+  }
 
 
 // Pull all data from Supabase into localStorage
