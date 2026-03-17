@@ -1693,20 +1693,32 @@
 const SUPABASE_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZ2RobXh6dW91emR5ZXJzeXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Njg3MzQsImV4cCI6MjA4OTM0NDczNH0.tiGpTU7L816sNt9o1svj7R7GxY9FgxNKft4ow1ft_OU';
 
-async function sbFetch(table, method='GET', body=null) {
+async function sbFetch(path, method = 'GET', body = null) {
+  const url = `${SUPABASE_URL}/rest/v1/${path}`;
+  console.log('Supabase URL:', url);
+
   const opts = {
     method,
     headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      apikey: SUPABASE_KEY,
+      Authorization: 'Bearer ' + SUPABASE_KEY,
       'Content-Type': 'application/json',
-      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
+      Prefer: method === 'POST' ? 'resolution=merge-duplicates' : ''
     }
   };
+
   if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, opts);
+
+  const res = await fetch(url, opts);
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error('Supabase error:', text);
+    throw new Error(text);
+  }
+
   if (method === 'GET') return res.json();
-  return res.ok;
+  return true;
 }
 
 async function sbUpsert(table, rows) {
