@@ -1680,24 +1680,38 @@ function save(key, data) {
 
 // Seed with existing data from the spreadsheet
 function seedData() {
-  if (localStorage.getItem('lmsw_seeded')) {
-    // Only add missing clients, never overwrite existing ones (preserves gender, status, etc.)
+  if (localStorage.getItem('lmsw_seeded_v3')) { localStorage.setItem('lmsw_seeded', '1'); localStorage.setItem('lmsw_seeded_v3', '1');
     const existing = JSON.parse(localStorage.getItem('lmsw_clients') || '[]');
-    const allNewClients = [
+    const newClients = [
       { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
       { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
       { id: uid(), name: 'Grant Rainety', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
       { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
       { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Jon Torres', agency: 'DC', rate: 40, method: 'V', insurance: '', status: 'active' },
     ];
     let changed = false;
-    allNewClients.forEach(nc => {
-      if (!existing.find(c => c.name === nc.name)) {
-        existing.push(nc);
-        changed = true;
-      }
+    newClients.forEach(nc => {
+      if (!existing.find(c => c.name === nc.name)) { existing.push(nc); changed = true; }
     });
     if (changed) localStorage.setItem('lmsw_clients', JSON.stringify(existing));
+
+    // Add missing sessions (March 13, 14, 16)
+    const sessions = JSON.parse(localStorage.getItem('lmsw_sessions') || '[]');
+    const newSessions = [
+      { id: uid(), date: '2026-03-13', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+      { id: uid(), date: '2026-03-14', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+      { id: uid(), date: '2026-03-16', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+      { id: uid(), date: '2026-03-16', name: 'Jon Torres', agency: 'DC', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+      { id: uid(), date: '2026-03-16', name: 'Fernan Alvarado', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    ];
+    let sessionsChanged = false;
+    newSessions.forEach(ns => {
+      if (!sessions.find(s => s.name === ns.name && s.date === ns.date)) {
+        sessions.push(ns); sessionsChanged = true;
+      }
+    });
+    if (sessionsChanged) localStorage.setItem('lmsw_sessions', JSON.stringify(sessions));
     return;
   }
 
@@ -1713,12 +1727,12 @@ function seedData() {
     { id: uid(), date: '2026-02-06', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-08', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-09', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Intake: Pornography (Court mandate)', type: 'clinical', insurance: '' },
-    { id: uid(), date: '2026-02-12', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Intake ($60 per week)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-12', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-13', name: 'DBT Crash Course', agency: '—', hours: 8, fee: 0, method: '—', desc: '15 Core Techniques to Improve Emotional Regulation', type: 'training', insurance: '' },
     { id: uid(), date: '2026-02-14', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
-    { id: uid(), date: '2026-02-15', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake: (Court mandate)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-15', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
-    { id: uid(), date: '2026-02-15', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake (Mom and Son)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-16', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-16', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Virtual Intake session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-02-18', name: 'Grant Rainety', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
@@ -1736,7 +1750,7 @@ function seedData() {
     { id: uid(), date: '2026-02-27', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: 'BCBS' },
     { id: uid(), date: '2026-03-02', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-02', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
-    { id: uid(), date: '2026-03-02', name: 'Anthony Zamorano', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-02', name: 'Anthony Zamorano', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-03', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-04', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-04', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
@@ -1747,18 +1761,23 @@ function seedData() {
     { id: uid(), date: '2026-03-06', name: 'Jose Herbert', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-09', name: 'CPT Training', agency: '—', hours: 8, fee: 0, method: '—', desc: 'An Evidence-Based Approach to Treat PTSD', type: 'training', insurance: '' },
     { id: uid(), date: '2026-03-09', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-09', name: 'Supervision', agency: '—', hours: 2, fee: 0, method: '—', desc: 'Supervision', type: 'supervision', insurance: '' },
     { id: uid(), date: '2026-03-11', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-12', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-12', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
     { id: uid(), date: '2026-03-12', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
-    { id: uid(), date: '2026-03-12', name: 'Alexander Tribush', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-12', name: 'Alexander Tribush', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: 'BCBS' },
     { id: uid(), date: '2026-03-12', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
-    { id: uid(), date: '2026-03-12', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-13', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-14', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-16', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-16', name: 'Jon Torres', agency: 'DC', hours: 2, fee: 40, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-16', name: 'Fernan Alvarado', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
   ];
 
   const supervision = [
-    { id: uid(), date: '2026-02-23', type: 'Virtual', topic: 'Intro', supervisor: 'Flor', hours: 2, cost: 100 },
-    { id: uid(), date: '2026-03-09', type: 'Virtual', topic: 'Supervision', supervisor: '', hours: 2, cost: 0 },
+    { id: uid(), date: '2026-02-23', type: 'Individual', hours: 2, cost: 100 },
   ];
 
   const referrals = [
@@ -1767,30 +1786,14 @@ function seedData() {
     { id: uid(), name: 'Corinne Lira', source: 'Therapist.com', status: 'converted' },
     { id: uid(), name: 'Oscar Garcia', source: 'Open Path', status: 'declined' },
     { id: uid(), name: 'Anthony Zamorano', source: 'Open Path', status: 'converted' },
-    { id: uid(), name: 'Fernan Alvarado', source: 'Open Path', status: 'pending' },
-  ];
-
-  const expenses = [
-    { id: uid(), month: 'Jan', category: 'Internet', amount: 100, notes: '' },
-    { id: uid(), month: 'Feb', category: 'Internet', amount: 100, notes: '' },
-    { id: uid(), month: 'Mar', category: 'Internet', amount: 100, notes: '' },
-    { id: uid(), month: 'Jan', category: 'SimplePractice', amount: 75, notes: '' },
-    { id: uid(), month: 'Feb', category: 'SimplePractice', amount: 75, notes: '' },
-    { id: uid(), month: 'Mar', category: 'SimplePractice', amount: 75, notes: '' },
-    { id: uid(), month: 'Jan', category: 'Upheal', amount: 14, notes: '' },
-    { id: uid(), month: 'Feb', category: 'Upheal', amount: 14, notes: '' },
-    { id: uid(), month: 'Mar', category: 'Upheal', amount: 14, notes: '' },
-    { id: uid(), month: 'Jan', category: 'Therapist.com', amount: 2.6, notes: '' },
-    { id: uid(), month: 'Feb', category: 'Therapist.com', amount: 2.6, notes: '' },
-    { id: uid(), month: 'Mar', category: 'Therapist.com', amount: 2.6, notes: '' },
-    { id: uid(), month: 'Jan', category: 'Malpractice', amount: 166, notes: '' },
+    { id: uid(), name: 'Fernan Alvarado', source: 'Open Path', status: 'converted' },
   ];
 
   const clients = [
     { id: uid(), name: 'Jarmonica Kershaw', agency: 'DC', rate: 30, method: 'IP', insurance: '', status: 'active' },
     { id: uid(), name: 'Marcus Marquez', agency: 'DC', rate: 52, method: 'IP', insurance: '', status: 'active' },
     { id: uid(), name: 'Corinne Lira', agency: 'ME', rate: 60, method: 'V', insurance: '', status: 'active' },
-    { id: uid(), name: 'Alex Villarreal', agency: 'DC', rate: 50, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Alex Villarreal', agency: 'DC', rate: 45, method: 'IP', insurance: '', status: 'active' },
     { id: uid(), name: 'Khalid Hamad', agency: 'DC', rate: 50, method: 'V', insurance: '', status: 'active' },
     { id: uid(), name: 'Alexander Tribush', agency: 'SMS', rate: 40, method: 'V', insurance: 'BCBS', status: 'active' },
     { id: uid(), name: 'Zane Koenig', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'active' },
@@ -1800,6 +1803,7 @@ function seedData() {
     { id: uid(), name: 'Camare Halrston', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
     { id: uid(), name: 'Jennifer Corder', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
     { id: uid(), name: 'Fernan Alvarado', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Jon Torres', agency: 'DC', rate: 40, method: 'V', insurance: '', status: 'active' },
     { id: uid(), name: 'Anthony Zamorano', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'inactive' },
     { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
     { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
@@ -1807,14 +1811,13 @@ function seedData() {
     { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
     { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
   ];
-  save(KEYS.clients, clients);
-  save(KEYS.sessions, sessions);
-  save(KEYS.supervision, supervision);
-  save(KEYS.referrals, referrals);
-  save(KEYS.expenses, expenses);
+
+  localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+  localStorage.setItem(KEYS.clients, JSON.stringify(clients));
+  localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+  localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
   localStorage.setItem('lmsw_seeded', '1');
 }
-
 function uid() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
