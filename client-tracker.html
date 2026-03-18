@@ -185,7 +185,7 @@
   .progress-pct { font-size: 11px; color: var(--text3); margin-top: 6px; font-family: var(--mono); }
 
   /* STATS ROW */
-  .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 20px; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
 
   .stat-card {
     background: var(--surface);
@@ -638,7 +638,7 @@
       <div class="name">David Robles</div>
       <div class="title">Client Tracker</div>
       <div style="margin-top:10px;display:flex;gap:6px;align-items:center;">
-        <button onclick="pushToSupabase()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
+        <button onclick="syncToSheets()" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);border-radius:6px;padding:4px 10px;color:var(--accent);font-family:var(--sans);font-size:11px;cursor:pointer;">⟳ Sync</button>
         <span id="sync-status" style="font-size:10px;color:var(--text3);transition:opacity 0.5s;opacity:0;"></span>
       </div>
     </div>
@@ -716,17 +716,26 @@
       </div>
 
       <div class="stats-row">
-        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
-          <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">This Month Sessions</div>
-          <div style="font-family:var(--mono);font-size:36px;color:var(--accent)" id="stat-month-sessions">0</div>
-          <div style="font-size:12px;color:var(--text3);margin-top:6px;" id="stat-month-label">—</div>
+        <div class="stat-card">
+          <div class="stat-label">This Month Sessions</div>
+          <div class="stat-value" id="stat-month-sessions">0</div>
+          <div class="stat-sub" id="stat-month-label">—</div>
         </div>
-        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;">
-          <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">This Month Income</div>
-          <div style="font-family:var(--mono);font-size:36px;color:var(--accent2)" id="stat-month-income">$0</div>
-          <div style="font-size:12px;color:var(--text3);margin-top:6px;">billed this month</div>
+        <div class="stat-card">
+          <div class="stat-label">This Month Income</div>
+          <div class="stat-value" id="stat-month-income">$0</div>
+          <div class="stat-sub">billed this month</div>
         </div>
-
+        <div class="stat-card">
+          <div class="stat-label">In-Person</div>
+          <div class="stat-value" id="stat-ip">0</div>
+          <div class="stat-sub">this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Virtual</div>
+          <div class="stat-value" id="stat-v">0</div>
+          <div class="stat-sub">this month</div>
+        </div>
       </div>
 
 
@@ -1338,36 +1347,20 @@
         <p>Practice analytics for 2026</p>
       </div>
 
-      <!-- Combined YTD + Weekly Card -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-title" style="margin-bottom:14px;">At a Glance</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-          <div class="stat-card">
-            <div class="stat-label">Sessions YTD</div>
-            <div class="stat-value" id="glance-sessions-ytd" style="color:var(--accent)">0</div>
-            <div class="stat-sub">in 2026</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Earned YTD</div>
-            <div class="stat-value" id="stat-yearly-income" style="color:var(--accent2)">$0</div>
-            <div class="stat-sub" id="stat-yearly-sub">in 2026</div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div class="stat-card">
-            <div class="stat-label">Sessions This Week</div>
-            <div class="stat-value" id="glance-sessions-week" style="color:var(--accent)">0</div>
-            <div class="stat-sub">since Monday</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Earned This Week</div>
-            <div class="stat-value" id="glance-earned-week" style="color:var(--accent2)">$0</div>
-            <div class="stat-sub">since Monday</div>
-          </div>
+      <!-- YTD Income -->
+      <div class="card" style="border-color:rgba(79,142,247,0.3);margin-bottom:20px;">
+        <div class="card-title">2026 Year-to-Date Income</div>
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <div style="font-family:var(--mono);font-size:42px;color:var(--accent)" id="stat-yearly-income">$0</div>
+          <div style="color:var(--text3);font-size:13px;" id="stat-yearly-sub">across all sessions</div>
         </div>
       </div>
 
-
+      <!-- Gender Breakdown -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">Caseload — Gender Breakdown</div>
+        <div id="stats-gender" style="display:flex;gap:24px;flex-wrap:wrap;"></div>
+      </div>
 
 
 
@@ -1382,32 +1375,13 @@
         </div>
       </div>
 
-
-
-
-
-      <!-- In-Person vs Virtual -->
+      <!-- Weekly Stats -->
       <div class="card" style="margin-bottom:20px;">
-        <div class="card-title">In-Person vs Virtual — This Month</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
-            <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">In-Person</div>
-            <div style="font-family:var(--mono);font-size:28px;color:var(--accent)" id="stats-ip-count">0</div>
-            <div style="font-size:11px;color:var(--text3);margin-top:3px;">this month</div>
-          </div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
-            <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Virtual</div>
-            <div style="font-family:var(--mono);font-size:28px;color:var(--accent2)" id="stats-v-count">0</div>
-            <div style="font-size:11px;color:var(--text3);margin-top:3px;">this month</div>
-          </div>
-        </div>
+        <div class="card-title">Session Stats</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" id="stats-weekly"></div>
       </div>
 
-      <!-- Gender Breakdown -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-title">Caseload — Gender Breakdown</div>
-        <div id="stats-gender" style="display:flex;gap:24px;flex-wrap:wrap;"></div>
-      </div>
+
 
     </div>
 
@@ -1687,86 +1661,6 @@
 // ============================================================
 // DATA LAYER
 // ============================================================
-// ============================================================
-// SUPABASE CONFIG
-// ============================================================
-const SUPABASE_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZ2RobXh6dW91emR5ZXJzeXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Njg3MzQsImV4cCI6MjA4OTM0NDczNH0.tiGpTU7L816sNt9o1svj7R7GxY9FgxNKft4ow1ft_OU';
-
-async function sbFetch(table, method='GET', body=null) {
-  const opts = {
-    method,
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
-      'Content-Type': 'application/json',
-      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
-    }
-  };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, opts);
-  if (method === 'GET') return res.json();
-  return res.ok;
-}
-
-async function sbUpsert(table, rows) {
-  if (!rows || !rows.length) return;
-  // Map 'desc' field to 'description' for sessions table
-  const mapped = rows.map(r => {
-    const obj = {...r};
-    if (table === 'sessions' && obj.desc !== undefined) {
-      obj.description = obj.desc;
-      delete obj.desc;
-    }
-    delete obj.created_at;
-    return obj;
-  });
-  return sbFetch(table + '?on_conflict=id', 'POST', mapped);
-}
-
-async function sbLoad(table) {
-  const rows = await sbFetch(table + '?select=*&order=created_at.asc');
-  if (!Array.isArray(rows)) return [];
-  // Map 'description' back to 'desc' for sessions
-  if (table === 'sessions') {
-    return rows.map(r => { const o = {...r}; o.desc = o.description; return o; });
-  }
-  return rows;
-}
-
-// Push all local data to Supabase
-async function pushToSupabase() {
-  try {
-    await sbUpsert('sessions', load(KEYS.sessions));
-    await sbUpsert('clients', load(KEYS.clients));
-    await sbUpsert('supervision', load(KEYS.supervision));
-    await sbUpsert('referrals', load(KEYS.referrals));
-    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
-  } catch(e) {
-    console.error('Supabase push error:', e);
-  }
-}
-
-// Pull all data from Supabase into localStorage
-async function pullFromSupabase() {
-  try {
-    const [sessions, clients, supervision, referrals] = await Promise.all([
-      sbLoad('sessions'),
-      sbLoad('clients'),
-      sbLoad('supervision'),
-      sbLoad('referrals')
-    ]);
-    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
-    if (clients.length) localStorage.setItem(KEYS.clients, JSON.stringify(clients));
-    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
-    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
-    return true;
-  } catch(e) {
-    console.error('Supabase pull error:', e);
-    return false;
-  }
-}
-
 const KEYS = {
   sessions: 'lmsw_sessions',
   clients: 'lmsw_clients',
@@ -1782,48 +1676,6 @@ function load(key) {
 
 function save(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
-  clearTimeout(window._sbPushTimer);
-  window._sbPushTimer = setTimeout(() => pushToSupabase().catch(() => {}), 1500);
-}
-
-async function syncToSheets() {
-  try {
-    showSyncStatus('Syncing...', 'var(--warn)');
-    await pushToSupabase();
-    showSyncStatus('✓ Synced', 'var(--accent2)');
-  } catch(e) {
-    showSyncStatus('Sync failed', 'var(--danger)');
-  }
-}
-
-async function syncFromSheets() {
-  await pullFromSupabase();
-}
-
-async function pullFromSupabase() {
-  try {
-    showSyncStatus('Loading...', 'var(--warn)');
-    const [sessions, clients, supervision, referrals] = await Promise.all([
-      sbLoad('sessions'), sbLoad('clients'), sbLoad('supervision'), sbLoad('referrals')
-    ]);
-    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
-    if (clients.length) {
-      const local = JSON.parse(localStorage.getItem(KEYS.clients) || '[]');
-      const merged = clients.map(r => { const loc = local.find(l => l.id === r.id); return loc ? { ...r, ...loc } : r; });
-      local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
-      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
-    }
-    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
-    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
-    showSyncStatus('✓ Data loaded', 'var(--accent2)');
-    renderDashboard();
-    const active = document.querySelector('.page.active');
-    if (active?.id === 'page-stats') renderStats();
-    if (active?.id === 'page-session-log') renderLog();
-    if (active?.id === 'page-clients') renderClients();
-  } catch(e) {
-    showSyncStatus('Using local data', 'var(--text3)');
-  }
 }
 
 // Seed with existing data from the spreadsheet
@@ -1982,7 +1834,7 @@ function showPage(id) {
 
 function renderPage(id) {
   if (id === 'dashboard') renderDashboard();
-  if (id === 'stats') { setTimeout(() => renderStats(), 100); }
+  if (id === 'stats') renderStats();
   if (id === 'clients') renderClients();
   if (id === 'quick-log') initQuickLog();
   if (id === 'session-log') { renderLog(); }
@@ -2405,12 +2257,14 @@ function renderDashboard() {
   const thisMonth = sessions.filter(s => s.date && s.date.startsWith(monthStr));
   const monthSessions = thisMonth.length;
   const monthIncome = thisMonth.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
-
+  const monthIP = thisMonth.filter(s => s.method === 'IP').length;
+  const monthV = thisMonth.filter(s => s.method === 'V').length;
 
   document.getElementById('stat-month-sessions').textContent = monthSessions;
   document.getElementById('stat-month-label').textContent = monthName;
   document.getElementById('stat-month-income').textContent = '$' + monthIncome.toLocaleString();
-
+  document.getElementById('stat-ip').textContent = monthIP;
+  document.getElementById('stat-v').textContent = monthV;
 
 
 
@@ -3162,27 +3016,15 @@ document.addEventListener('click', function(e) {
 function renderStats() {
   const sessions = load(KEYS.sessions);
 
-  // YTD Stats
-  const ytdSessions = sessions.filter(s => (s.date||'').startsWith('2026'));
-  const ytdBillable = ytdSessions.filter(s => parseFloat(s.fee) > 0);
-  const ytdIncomeTotal = ytdBillable.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
-  const ytdSessionsEl = document.getElementById('stat-ytd-sessions');
-  const ytdIncomeEl = document.getElementById('stat-ytd-income');
-  const ytdSubEl = document.getElementById('stat-ytd-sub');
-  if (ytdSessionsEl) ytdSessionsEl.textContent = ytdSessions.length;
+  // YTD Income
+  const ytdIncomeTotal = sessions.filter(s => (s.date||'').startsWith('2026') && parseFloat(s.fee) > 0)
+    .reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  const ytdBillable = sessions.filter(s => (s.date||'').startsWith('2026') && parseFloat(s.fee) > 0).length;
+  const ytdIncomeEl = document.getElementById('stat-yearly-income');
+  const ytdSubEl = document.getElementById('stat-yearly-sub');
   if (ytdIncomeEl) ytdIncomeEl.textContent = '$' + ytdIncomeTotal.toLocaleString();
-  if (ytdSubEl) ytdSubEl.textContent = ytdBillable.length + ' billable sessions';
+  if (ytdSubEl) ytdSubEl.textContent = ytdBillable + ' billable sessions in 2026';
   const clients = load(KEYS.clients);
-
-  // --- In-Person vs Virtual this month ---
-  const nowMonth = new Date().toISOString().slice(0, 7);
-  const monthSessions = sessions.filter(s => (s.date||'').startsWith(nowMonth));
-  const ipCount = monthSessions.filter(s => s.method === 'IP').length;
-  const vCount = monthSessions.filter(s => s.method === 'V').length;
-  const ipEl = document.getElementById('stats-ip-count');
-  const vEl = document.getElementById('stats-v-count');
-  if (ipEl) ipEl.textContent = ipCount;
-  if (vEl) vEl.textContent = vCount;
 
   // --- Gender Breakdown ---
   const active = clients.filter(c => !c.status || c.status === 'active');
@@ -3307,7 +3149,206 @@ function renderStats() {
   // Total sessions YTD
   const totalYTD = sessions.filter(s => (s.date||'').startsWith('2026')).length;
 
-  // Ses// ============================================================
+  // Sessions this week (Monday to Sunday) - using string comparison to avoid timezone issues
+  const todayStr = now.toISOString().split('T')[0];
+  const day = now.getDay();
+  const diffToMonday = (day === 0) ? -6 : 1 - day;
+  const mondayDate = new Date(now);
+  mondayDate.setDate(now.getDate() + diffToMonday);
+  const sundayDate = new Date(mondayDate);
+  sundayDate.setDate(mondayDate.getDate() + 6);
+  const mondayStr = mondayDate.toISOString().split('T')[0];
+  const sundayStr = sundayDate.toISOString().split('T')[0];
+  const sessionsThisWeek = sessions.filter(s => {
+    if (!s.date) return false;
+    if (!parseFloat(s.fee)) return false;
+    return s.date >= mondayStr && s.date <= sundayStr;
+  }).length;
+
+  // YTD income
+  const ytdIncome = sessions.filter(s => (s.date||'').startsWith('2026') && parseFloat(s.fee) > 0)
+    .reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+
+  // This week income
+  const thisWeekIncome = sessions.filter(s => {
+    if (!s.date || !parseFloat(s.fee)) return false;
+    return s.date >= mondayStr && s.date <= sundayStr;
+  }).reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+
+  const weeklyEl = document.getElementById('stats-weekly');
+  if (weeklyEl) {
+    weeklyEl.innerHTML = `
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Sessions YTD</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--accent)">${totalYTD}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:3px;">in 2026</div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Earned YTD</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--accent2)">$${ytdIncome.toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:3px;">in 2026</div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Sessions This Week</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--accent)">${sessionsThisWeek}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:3px;">Mon — Sun</div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Earned This Week</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--accent2)">$${thisWeekIncome.toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:3px;">Mon — Sun</div>
+      </div>
+    `;
+  }
+}
+
+// ============================================================
+// DATE HELPER
+// ============================================================
+function fmtDate(dateStr) {
+  if (!dateStr) return '—';
+  const [y, m, d] = dateStr.split('-');
+  return `${m}/${d}/${y}`;
+}
+
+// ============================================================
+// SUPABASE SYNC
+// ============================================================
+const SB_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZ2RobXh6dW91emR5ZXJzeXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Njg3MzQsImV4cCI6MjA4OTM0NDczNH0.tiGpTU7L816sNt9o1svj7R7GxY9FgxNKft4ow1ft_OU';
+
+async function sbRequest(method, path, body) {
+  const res = await fetch(SB_URL + '/rest/v1/' + path, {
+    method: method,
+    headers: {
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + SB_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': 'resolution=merge-duplicates,return=minimal'
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  if (method === 'GET') return res.json();
+  return res.ok;
+}
+
+function cleanRow(row, table) {
+  const r = {};
+  if (table === 'sessions') {
+    r.id = String(row.id || '');
+    r.date = row.date ? String(row.date).split('T')[0] : null;
+    r.name = row.name || '';
+    r.agency = row.agency || '';
+    r.hours = parseFloat(row.hours) || 0;
+    r.fee = parseFloat(row.fee) || 0;
+    r.method = row.method || '';
+    r.description = row.desc || row.description || '';
+    r.type = row.type || 'clinical';
+    r.insurance = row.insurance || '';
+  } else if (table === 'clients') {
+    r.id = String(row.id || '');
+    r.name = row.name || '';
+    r.agency = row.agency || '';
+    r.rate = parseFloat(row.rate) || 0;
+    r.method = row.method || '';
+    r.insurance = row.insurance || '';
+    r.gender = row.gender || '';
+    r.status = row.status || 'active';
+  } else if (table === 'supervision') {
+    r.id = String(row.id || '');
+    r.date = row.date ? String(row.date).split('T')[0] : null;
+    r.type = row.type || '';
+    r.hours = parseFloat(row.hours) || 0;
+    r.cost = parseFloat(row.cost) || 0;
+  } else if (table === 'referrals') {
+    r.id = String(row.id || '');
+    r.name = row.name || '';
+    r.source = row.source || '';
+    r.status = row.status || '';
+  }
+  return r;
+}
+
+async function pushToSupabase() {
+  const tables = ['sessions','clients','supervision','referrals'];
+  const keys = [KEYS.sessions, KEYS.clients, KEYS.supervision, KEYS.referrals];
+  for (let i = 0; i < tables.length; i++) {
+    const rows = load(keys[i]).map(r => cleanRow(r, tables[i])).filter(r => r.id);
+    if (rows.length) await sbRequest('POST', tables[i], rows);
+  }
+}
+
+async function pullFromSupabase() {
+  const [sessions, clients, sup, refs] = await Promise.all([
+    sbRequest('GET', 'sessions?select=*'),
+    sbRequest('GET', 'clients?select=*'),
+    sbRequest('GET', 'supervision?select=*'),
+    sbRequest('GET', 'referrals?select=*')
+  ]);
+  if (sessions?.length) {
+    localStorage.setItem(KEYS.sessions, JSON.stringify(sessions.map(s => ({
+      id: s.id, date: s.date, name: s.name, agency: s.agency,
+      hours: s.hours, fee: s.fee, method: s.method,
+      desc: s.description, type: s.type, insurance: s.insurance
+    }))));
+  }
+  if (clients?.length) {
+    const local = load(KEYS.clients);
+    const merged = clients.map(r => {
+      const loc = local.find(l => l.id === r.id);
+      return loc ? { ...r, ...loc } : r;
+    });
+    local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
+    localStorage.setItem(KEYS.clients, JSON.stringify(merged));
+  }
+  if (sup?.length) localStorage.setItem(KEYS.supervision, JSON.stringify(sup));
+  if (refs?.length) localStorage.setItem(KEYS.referrals, JSON.stringify(refs));
+}
+
+function showSyncStatus(msg, color) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = color;
+  el.style.opacity = '1';
+  setTimeout(() => { el.style.opacity = '0'; }, 3000);
+}
+
+async function syncToSheets() {
+  try {
+    showSyncStatus('Syncing...', 'var(--warn)');
+    await pushToSupabase();
+    showSyncStatus('✓ Synced', 'var(--accent2)');
+  } catch(e) {
+    showSyncStatus('Sync failed', 'var(--danger)');
+    console.error('Sync error:', e);
+  }
+}
+
+async function syncFromSheets() {
+  try {
+    showSyncStatus('Loading...', 'var(--warn)');
+    await pullFromSupabase();
+    showSyncStatus('✓ Loaded', 'var(--accent2)');
+    renderDashboard();
+    const active = document.querySelector('.page.active');
+    if (active?.id === 'page-stats') renderStats();
+    if (active?.id === 'page-session-log') renderLog();
+    if (active?.id === 'page-clients') renderClients();
+  } catch(e) {
+    showSyncStatus('Load failed', 'var(--danger)');
+  }
+}
+
+// Auto-push 2 seconds after any save
+const _origSave = save;
+function save(key, data) {
+  _origSave(key, data);
+  clearTimeout(window._sbTimer);
+  window._sbTimer = setTimeout(() => pushToSupabase().catch(() => {}), 2000);
+}
+
+// ============================================================
 // INIT
 // ============================================================
 seedData();
@@ -3315,30 +3356,13 @@ seedData();
 // Auto-load from Supabase on startup
 (async function autoLoad() {
   try {
-    const [sessions, clients, supervision, referrals] = await Promise.all([
-      sbLoad('sessions'),
-      sbLoad('clients'),
-      sbLoad('supervision'),
-      sbLoad('referrals')
-    ]);
-    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
-    if (clients.length) {
-      const local = JSON.parse(localStorage.getItem(KEYS.clients) || '[]');
-      const merged = clients.map(r => {
-        const loc = local.find(l => l.id === r.id);
-        return loc ? { ...r, ...loc } : r;
-      });
-      local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
-      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
-    }
-    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
-    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+    await pullFromSupabase();
+    renderDashboard();
+    showSyncStatus('✓ Data loaded', 'var(--accent2)');
   } catch(e) {
     console.log('Auto-load failed, using local data');
+    renderDashboard();
   }
-  renderDashboard();
-  renderSupervision();
-  populateClientDatalist();
 })();
 
 document.addEventListener('click', function(e) {
@@ -3348,6 +3372,7 @@ document.addEventListener('click', function(e) {
     dd.style.display = 'none';
   }
 });
+
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('ql-dropdown');
   const btn = document.getElementById('ql-client-btn');
@@ -3355,10 +3380,12 @@ document.addEventListener('click', function(e) {
     dd.style.display = 'none';
   }
 });
+
 document.getElementById('dash-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 document.getElementById('s-date').value = new Date().toISOString().split('T')[0];
 document.getElementById('sup-date').value = new Date().toISOString().split('T')[0];
-
+renderSupervision();
+populateClientDatalist();
 </script>
 </body>
 </html>
