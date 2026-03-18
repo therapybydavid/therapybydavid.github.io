@@ -58,12 +58,12 @@
       gap: 4rem; align-items: center;
       padding: 5rem 8% 7rem; max-width: 1200px; width: 100%;
     }
-    .hero-text { position: relative; z-index: 2; }
+    .hero-text { position: relative; z-index: 2; max-width: 750px; }
     .hero-eyebrow { display: inline-block; color: var(--gold); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 0.5rem; }
     .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4.5vw, 4rem); color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
     .hero-text h1 span { color: var(--gold); }
     .hero-text p { color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.9; font-weight: 300; margin-bottom: 2.5rem; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .btn-gold-solid { display: inline-block; background: var(--gold); color: var(--navy); padding: 1rem 2.2rem; text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: all 0.3s; }
     .btn-gold-solid:hover { background: var(--gold-light); }
     .btn-outline-white { display: inline-block; border: 1px solid rgba(255,255,255,0.4); color: var(--white); padding: 1rem 2.2rem; text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
@@ -91,11 +91,11 @@
     .who-inner { max-width: 1000px; margin: 0 auto; }
     .who-inner > p { color: #555; font-weight: 300; margin-bottom: 3rem; font-size: 1.05rem; }
     .persona-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
-    .persona-card { background: var(--white); border: 1px solid rgba(13,27,46,0.08); border-top: 3px solid var(--gold); padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; }
+    .persona-card { background: var(--white); border: 1px solid rgba(13,27,46,0.08); border-top: 3px solid var(--gold); padding: 0 0 2rem 0; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
     .persona-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(13,27,46,0.1); }
-    .persona-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .persona-card h3 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.1rem; margin-bottom: 0.8rem; }
-    .persona-card p { color: #555; font-size: 0.95rem; font-weight: 300; line-height: 1.8; }
+    .persona-icon { font-size: 2rem; margin-bottom: 1rem; padding: 0 2rem; }
+    .persona-card h3 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.1rem; margin-bottom: 0.8rem; padding: 0 2rem; }
+    .persona-card p { color: #555; font-size: 0.95rem; font-weight: 300; line-height: 1.8; padding: 0 2rem; }
 
     /* WHY DAVID */
     #why { padding: 6rem 8%; background: var(--navy); }
@@ -230,26 +230,32 @@
 <!-- WHO IS THIS FOR -->
 <section id="who">
   <div class="who-inner">
-    <span class="section-label">Who It's For</span>
-    <h2 class="section-title">Does Any of This Sound Like You?</h2>
-    <p>You don't have to be falling apart to benefit from coaching. Most people who reach out are driven, capable individuals who feel like something is off — and can't quite figure out why.</p>
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Who It's For</span>
+      <h2 class="section-title">Does Any of This Sound Like You?</h2>
+      <p style="color:#555;font-weight:300;max-width:600px;margin:0 auto;">You don't have to be falling apart to benefit from coaching. Most people who reach out are driven, capable individuals who feel like something is off — and can't quite figure out why.</p>
+    </div>
     <div class="persona-grid">
       <div class="persona-card">
+        <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=600&q=80" alt="Burned out professional" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;margin-bottom:1.5rem;">
         <div class="persona-icon">💼</div>
         <h3>The Burned-Out Professional</h3>
         <p>You have the career, the income, the responsibilities — but you feel empty, exhausted, and like you're just going through the motions. You know you're capable of more. You just can't find your way back to it.</p>
       </div>
       <div class="persona-card">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Veteran transitioning" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;margin-bottom:1.5rem;">
         <div class="persona-icon">🎖️</div>
         <h3>The Transitioning Veteran</h3>
         <p>You served with purpose and structure. Now civilian life feels scattered and directionless. You're looking for someone who actually understands what that transition feels like — because I've lived it.</p>
       </div>
       <div class="persona-card">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Couple at crossroads" style="width:100%;height:180px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;">
         <div class="persona-icon">💑</div>
         <h3>The Couple at a Crossroads</h3>
         <p>You love each other but keep having the same arguments, the same distance. Coaching gives you both an honest space to finally hear each other and move forward together.</p>
       </div>
       <div class="persona-card">
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=80" alt="Person in transition" style="width:100%;height:180px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;">
         <div class="persona-icon">🔄</div>
         <h3>The Person in Transition</h3>
         <p>Divorce. Career change. A new chapter you didn't plan for. Life has shifted and you're trying to find solid ground. Coaching helps you stop reacting and start rebuilding — with intention.</p>
