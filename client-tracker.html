@@ -1688,106 +1688,102 @@
 // DATA LAYER
 // ============================================================
 // ============================================================
+// SUPABASE CONFIG
 // ============================================================
-// SUPABASE — Direct REST API
-// ============================================================
-const SB_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZ2RobXh6dW91emR5ZXJzeXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Njg3MzQsImV4cCI6MjA4OTM0NDczNH0.tiGpTU7L816sNt9o1svj7R7GxY9FgxNKft4ow1ft_OU';
+const SUPABASE_URL = 'https://dbgdhmxzuouzdyersysl.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiZ2RobXh6dW91emR5ZXJzeXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Njg3MzQsImV4cCI6MjA4OTM0NDczNH0.tiGpTU7L816sNt9o1svj7R7GxY9FgxNKft4ow1ft_OU';
 
-function cleanDate(d) {
-  if (!d) return null;
-  const s = String(d).split('T')[0];
-  return /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null;
-}
-
-async function sbRequest(method, table, body) {
-  const url = SB_URL + '/rest/v1/' + table;
+async function sbFetch(table, method='GET', body=null) {
   const opts = {
     method,
     headers: {
-      'apikey': SB_KEY,
-      'Authorization': 'Bearer ' + SB_KEY,
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
       'Content-Type': 'application/json',
-      'Prefer': 'resolution=merge-duplicates,return=minimal'
+      'Prefer': method === 'POST' ? 'resolution=merge-duplicates' : ''
     }
   };
   if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(url, opts);
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(table + ': ' + text);
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, opts);
+  if (method === 'GET') return res.json();
+  return res.ok;
+}
+
+async function sbUpsert(table, rows) {
+  if (!rows || !rows.length) return;
+  // Map 'desc' field to 'description' for sessions table
+  const mapped = rows.map(r => {
+    const obj = {...r};
+    if (table === 'sessions' && obj.desc !== undefined) {
+      obj.description = obj.desc;
+      delete obj.desc;
+    }
+    delete obj.created_at;
+    return obj;
+  });
+  return sbFetch(table + '?on_conflict=id', 'POST', mapped);
+}
+
+async function sbLoad(table) {
+  const rows = await sbFetch(table + '?select=*&order=created_at.asc');
+  if (!Array.isArray(rows)) return [];
+  // Map 'description' back to 'desc' for sessions
+  if (table === 'sessions') {
+    return rows.map(r => { const o = {...r}; o.desc = o.description; return o; });
   }
-  return method === 'GET' ? res.json() : null;
+  return rows;
 }
 
+// Push all local data to Supabase
 async function pushToSupabase() {
-  const sessions = load(KEYS.sessions).map(s => ({
-    id: String(s.id), date: cleanDate(s.date), name: s.name || '',
-    agency: s.agency || '', hours: parseFloat(s.hours) || 0,
-    fee: parseFloat(s.fee) || 0, method: s.method || '',
-    description: s.desc || '', type: s.type || 'clinical',
-    insurance: s.insurance || ''
-  }));
-  const clients = load(KEYS.clients).map(c => ({
-    id: String(c.id), name: c.name || '', agency: c.agency || '',
-    rate: parseFloat(c.rate) || 0, method: c.method || '',
-    insurance: c.insurance || '', gender: c.gender || '',
-    status: c.status || 'active'
-  }));
-  const supervision = load(KEYS.supervision).map(s => ({
-    id: String(s.id), date: cleanDate(s.date), type: s.type || '',
-    hours: parseFloat(s.hours) || 0, cost: parseFloat(s.cost) || 0
-  }));
-  const referrals = load(KEYS.referrals).map(r => ({
-    id: String(r.id), name: r.name || '', source: r.source || '',
-    status: r.status || ''
-  }));
-
-  if (sessions.length) await sbRequest('POST', 'sessions', sessions);
-  if (clients.length) await sbRequest('POST', 'clients', clients);
-  if (supervision.length) await sbRequest('POST', 'supervision', supervision);
-  if (referrals.length) await sbRequest('POST', 'referrals', referrals);
+  try {
+    await sbUpsert('sessions', load(KEYS.sessions));
+    await sbUpsert('clients', load(KEYS.clients));
+    await sbUpsert('supervision', load(KEYS.supervision));
+    await sbUpsert('referrals', load(KEYS.referrals));
+    showSyncStatus('✓ Saved to cloud', 'var(--accent2)');
+  } catch(e) {
+    console.error('Supabase push error:', e);
+  }
 }
 
+// Pull all data from Supabase into localStorage
 async function pullFromSupabase() {
   try {
-    showSyncStatus('Loading...', 'var(--warn)');
     const [sessions, clients, supervision, referrals] = await Promise.all([
-      sbRequest('GET', 'sessions?select=*'),
-      sbRequest('GET', 'clients?select=*'),
-      sbRequest('GET', 'supervision?select=*'),
-      sbRequest('GET', 'referrals?select=*')
+      sbLoad('sessions'),
+      sbLoad('clients'),
+      sbLoad('supervision'),
+      sbLoad('referrals')
     ]);
-
-    if (sessions?.length) {
-      localStorage.setItem(KEYS.sessions, JSON.stringify(sessions.map(s => ({
-        id: s.id, date: s.date, name: s.name, agency: s.agency,
-        hours: s.hours, fee: s.fee, method: s.method,
-        desc: s.description, type: s.type, insurance: s.insurance
-      }))));
-    }
-    if (clients?.length) {
-      const local = load(KEYS.clients);
-      const merged = clients.map(r => {
-        const loc = local.find(l => l.id === r.id);
-        return loc ? { ...r, desc: r.description, ...loc } : r;
-      });
-      local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
-      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
-    }
-    if (supervision?.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
-    if (referrals?.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
-
-    showSyncStatus('✓ Data loaded', 'var(--accent2)');
-    renderDashboard();
-    const active = document.querySelector('.page.active');
-    if (active?.id === 'page-stats') renderStats();
-    if (active?.id === 'page-session-log') renderLog();
-    if (active?.id === 'page-clients') renderClients();
+    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+    if (clients.length) localStorage.setItem(KEYS.clients, JSON.stringify(clients));
+    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+    return true;
   } catch(e) {
-    console.log('Pull error:', e);
-    showSyncStatus('Using local data', 'var(--text3)');
+    console.error('Supabase pull error:', e);
+    return false;
   }
+}
+
+const KEYS = {
+  sessions: 'lmsw_sessions',
+  clients: 'lmsw_clients',
+  supervision: 'lmsw_supervision',
+  referrals: 'lmsw_referrals',
+  expenses: 'lmsw_expenses'
+};
+
+function load(key) {
+  try { return JSON.parse(localStorage.getItem(key)) || []; }
+  catch { return []; }
+}
+
+function save(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+  clearTimeout(window._sbPushTimer);
+  window._sbPushTimer = setTimeout(() => pushToSupabase().catch(() => {}), 1500);
 }
 
 async function syncToSheets() {
@@ -1797,7 +1793,6 @@ async function syncToSheets() {
     showSyncStatus('✓ Synced', 'var(--accent2)');
   } catch(e) {
     showSyncStatus('Sync failed', 'var(--danger)');
-    console.error('Sync error:', e);
   }
 }
 
@@ -1805,12 +1800,1565 @@ async function syncFromSheets() {
   await pullFromSupabase();
 }
 
-// Auto-push after every save
-const _origSave = save;
-function save(key, data) {
-  _origSave(key, data);
-  clearTimeout(window._sbTimer);
-  window._sbTimer = setTimeout(() => pushToSupabase().catch(()=>{}), 1500);
+async function pullFromSupabase() {
+  try {
+    showSyncStatus('Loading...', 'var(--warn)');
+    const [sessions, clients, supervision, referrals] = await Promise.all([
+      sbLoad('sessions'), sbLoad('clients'), sbLoad('supervision'), sbLoad('referrals')
+    ]);
+    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+    if (clients.length) {
+      const local = JSON.parse(localStorage.getItem(KEYS.clients) || '[]');
+      const merged = clients.map(r => { const loc = local.find(l => l.id === r.id); return loc ? { ...r, ...loc } : r; });
+      local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
+      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
+    }
+    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+    showSyncStatus('✓ Data loaded', 'var(--accent2)');
+    renderDashboard();
+    const active = document.querySelector('.page.active');
+    if (active?.id === 'page-stats') renderStats();
+    if (active?.id === 'page-session-log') renderLog();
+    if (active?.id === 'page-clients') renderClients();
+  } catch(e) {
+    showSyncStatus('Using local data', 'var(--text3)');
+  }
 }
 
+// Seed with existing data from the spreadsheet
+function seedData() {
+  if (localStorage.getItem('lmsw_seeded')) {
+    // Only add missing clients, never overwrite existing ones (preserves gender, status, etc.)
+    const existing = JSON.parse(localStorage.getItem('lmsw_clients') || '[]');
+    const allNewClients = [
+      { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Grant Rainety', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+      { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
+    ];
+    let changed = false;
+    allNewClients.forEach(nc => {
+      if (!existing.find(c => c.name === nc.name)) {
+        existing.push(nc);
+        changed = true;
+      }
+    });
+    if (changed) localStorage.setItem('lmsw_clients', JSON.stringify(existing));
+    return;
+  }
 
+  const sessions = [
+    { id: uid(), date: '2026-01-15', name: '', agency: 'DC', hours: 3, fee: 0, method: '—', desc: 'Orientation + SimplePractice training', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-16', name: '', agency: 'DC', hours: 2, fee: 0, method: '—', desc: 'Office setup (Met Sarah)', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-19', name: 'Daniel Hall', agency: 'DC', hours: 3, fee: 40, method: '—', desc: 'Intake assessments, documentation, treatment planning', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-01-29', name: '', agency: 'Emora', hours: 1, fee: 0, method: '—', desc: 'Orientation Zoom meeting', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-28', name: 'Oscar Garcia', agency: '—', hours: 1, fee: 0, method: '—', desc: 'Discovery Call', type: 'admin', insurance: '' },
+    { id: uid(), date: '2026-01-30', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: '—', desc: 'Intake session, documentation', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-01', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Intake session, documentation', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-05', name: 'Grant Rainety', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'Intake session (No Show)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-06', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-08', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-09', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Intake: Pornography (Court mandate)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-12', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Intake ($60 per week)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-13', name: 'DBT Crash Course', agency: '—', hours: 8, fee: 0, method: '—', desc: '15 Core Techniques to Improve Emotional Regulation', type: 'training', insurance: '' },
+    { id: uid(), date: '2026-02-14', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake: (Court mandate)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-15', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake (Mom and Son)', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-16', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-16', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Virtual Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-18', name: 'Grant Rainety', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-18', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-21', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-22', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-22', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-23', name: 'Marcus Marquez', agency: 'DC', hours: 2, fee: 52, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-23', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-24', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-25', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-25', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-26', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-26', name: 'Randy Ehresman', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-02-27', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Intake session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-02', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-02', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-02', name: 'Anthony Zamorano', agency: 'ME', hours: 2, fee: 50, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-03', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-04', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-04', name: 'Azariah Peacock', agency: 'Emora', hours: 2, fee: 19, method: 'V', desc: 'NS', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-05', name: 'Zane Koenig', agency: 'Emora', hours: 2, fee: 37, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-06', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-06', name: 'Jose Herbert', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-09', name: 'CPT Training', agency: '—', hours: 8, fee: 0, method: '—', desc: 'An Evidence-Based Approach to Treat PTSD', type: 'training', insurance: '' },
+    { id: uid(), date: '2026-03-09', name: 'Khalid Hamad', agency: 'DC', hours: 2, fee: 50, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-11', name: 'Corinne Lira', agency: 'ME', hours: 2, fee: 60, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Jarmonica Kershaw', agency: 'DC', hours: 2, fee: 30, method: 'V', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Eric Rodriguez', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Alex Villarreal', agency: 'DC', hours: 2, fee: 50, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: '' },
+    { id: uid(), date: '2026-03-12', name: 'Alexander Tribush', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-12', name: 'Zachary Maiberger', agency: 'SMS', hours: 2, fee: 40, method: 'IP', desc: 'Psychotherapy session', type: 'clinical', insurance: 'BCBS' },
+    { id: uid(), date: '2026-03-12', name: 'Camare Halrston', agency: 'SMS', hours: 2, fee: 40, method: 'V', desc: 'Intake', type: 'clinical', insurance: '' },
+  ];
+
+  const supervision = [
+    { id: uid(), date: '2026-02-23', type: 'Virtual', topic: 'Intro', supervisor: 'Flor', hours: 2, cost: 100 },
+    { id: uid(), date: '2026-03-09', type: 'Virtual', topic: 'Supervision', supervisor: '', hours: 2, cost: 0 },
+  ];
+
+  const referrals = [
+    { id: uid(), name: 'Daniel Hall', source: 'Psychology Today', status: 'converted' },
+    { id: uid(), name: 'Alexander Tribush', source: 'Psychology Today', status: 'converted' },
+    { id: uid(), name: 'Corinne Lira', source: 'Therapist.com', status: 'converted' },
+    { id: uid(), name: 'Oscar Garcia', source: 'Open Path', status: 'declined' },
+    { id: uid(), name: 'Anthony Zamorano', source: 'Open Path', status: 'converted' },
+    { id: uid(), name: 'Fernan Alvarado', source: 'Open Path', status: 'pending' },
+  ];
+
+  const expenses = [
+    { id: uid(), month: 'Jan', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Internet', amount: 100, notes: '' },
+    { id: uid(), month: 'Jan', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Feb', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Mar', category: 'SimplePractice', amount: 75, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Upheal', amount: 14, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Feb', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Mar', category: 'Therapist.com', amount: 2.6, notes: '' },
+    { id: uid(), month: 'Jan', category: 'Malpractice', amount: 166, notes: '' },
+  ];
+
+  const clients = [
+    { id: uid(), name: 'Jarmonica Kershaw', agency: 'DC', rate: 30, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Marcus Marquez', agency: 'DC', rate: 52, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Corinne Lira', agency: 'ME', rate: 60, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Alex Villarreal', agency: 'DC', rate: 50, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Khalid Hamad', agency: 'DC', rate: 50, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Alexander Tribush', agency: 'SMS', rate: 40, method: 'V', insurance: 'BCBS', status: 'active' },
+    { id: uid(), name: 'Zane Koenig', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Eric Rodriguez', agency: 'DC', rate: 50, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Zachary Maiberger', agency: 'SMS', rate: 40, method: 'IP', insurance: 'BCBS', status: 'active' },
+    { id: uid(), name: 'Jose Herbert', agency: 'SMS', rate: 40, method: 'IP', insurance: '', status: 'active' },
+    { id: uid(), name: 'Camare Halrston', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Jennifer Corder', agency: 'SMS', rate: 40, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Fernan Alvarado', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'active' },
+    { id: uid(), name: 'Anthony Zamorano', agency: 'ME', rate: 50, method: 'V', insurance: '', status: 'inactive' },
+    { id: uid(), name: 'Daniel Hall', agency: 'DC', rate: 40, method: 'IP', insurance: '', status: 'inactive' },
+    { id: uid(), name: 'Randy Ehresman', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+    { id: uid(), name: 'Grant Rainety', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+    { id: uid(), name: 'Azariah Peacock', agency: 'Emora', rate: 37, method: 'V', insurance: '', status: 'inactive' },
+    { id: uid(), name: 'Oscar Garcia', agency: 'ME', rate: 0, method: 'V', insurance: '', status: 'inactive' },
+  ];
+  save(KEYS.clients, clients);
+  save(KEYS.sessions, sessions);
+  save(KEYS.supervision, supervision);
+  save(KEYS.referrals, referrals);
+  save(KEYS.expenses, expenses);
+  localStorage.setItem('lmsw_seeded', '1');
+}
+
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+let currentInvoiceAgency = 'DC';
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  renderPage(id);
+}
+
+function renderPage(id) {
+  if (id === 'dashboard') renderDashboard();
+  if (id === 'stats') { setTimeout(() => renderStats(), 100); }
+  if (id === 'clients') renderClients();
+  if (id === 'quick-log') initQuickLog();
+  if (id === 'session-log') { renderLog(); }
+  if (id === 'invoices') renderInvoice();
+  if (id === 'supervision') renderSupervision();
+  if (id === 'referrals') renderReferrals();
+}
+
+// ============================================================
+// CLIENTS
+// ============================================================
+function addClient() {
+  const name = document.getElementById('c-name').value.trim();
+  if (!name) { toast('Please enter a client name', true); return; }
+  const clients = load(KEYS.clients);
+  if (clients.find(c => c.name.toLowerCase() === name.toLowerCase())) {
+    toast('Client already exists', true); return;
+  }
+  clients.push({
+    id: uid(),
+    name,
+    agency: document.getElementById('c-agency').value,
+    rate: parseFloat(document.getElementById('c-rate').value) || 0,
+    method: document.getElementById('c-method').value,
+    insurance: document.getElementById('c-insurance').value.trim(),
+    gender: document.getElementById('c-gender').value,
+    status: document.getElementById('c-status').value,
+  });
+  save(KEYS.clients, clients);
+  document.getElementById('c-name').value = '';
+  document.getElementById('c-rate').value = '';
+  document.getElementById('c-insurance').value = '';
+  document.getElementById('c-gender').value = '';
+  selectGender('');
+  toast('Client added');
+  renderClients();
+  populateClientDatalist();
+}
+
+function openClientProfile(name) {
+  if (!name) return;
+  const sessions = load(KEYS.sessions).filter(s => s.name === name).sort((a,b) => b.date.localeCompare(a.date));
+  const clients = load(KEYS.clients);
+  const client = clients.find(c => c.name === name);
+
+  document.getElementById('profile-name').textContent = name;
+  const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space', Emora: 'Emora', ME: 'Private' };
+  const agency = client ? (agencyNames[client.agency] || client.agency) : '—';
+  const status = client ? (client.status || 'active') : '—';
+  const gender = client ? (client.gender || '') : '';
+  document.getElementById('profile-meta').textContent = `${agency} · ${status.charAt(0).toUpperCase() + status.slice(1)}${gender ? ' · ' + gender.charAt(0).toUpperCase() + gender.slice(1) : ''}`;
+
+  const totalSessions = sessions.length;
+  const totalHours = sessions.reduce((a,s) => a + (parseFloat(s.hours)||0), 0);
+  const totalBilled = sessions.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+
+  document.getElementById('profile-sessions').textContent = totalSessions;
+  document.getElementById('profile-hours').textContent = totalHours;
+  document.getElementById('profile-billed').textContent = '$' + totalBilled.toLocaleString();
+
+  const tbody = document.getElementById('profile-sessions-body');
+  if (!sessions.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="color:var(--text3);text-align:center;padding:20px;">No sessions logged yet</td></tr>';
+  } else {
+    tbody.innerHTML = sessions.map(s => `
+      <tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td>${s.desc || '—'}</td>
+        <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
+        <td style="font-family:var(--mono)">${s.hours}</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">${s.fee ? '$'+s.fee : '—'}</td>
+      </tr>
+    `).join('');
+  }
+
+  document.getElementById('client-profile-modal').style.display = 'flex';
+}
+
+function closeProfileModal() {
+  document.getElementById('client-profile-modal').style.display = 'none';
+}
+
+function selectGender(val) {
+  document.getElementById('c-gender').value = val;
+  const male = document.getElementById('c-gender-male');
+  const female = document.getElementById('c-gender-female');
+  male.style.borderColor = val === 'male' ? 'var(--accent)' : 'var(--border)';
+  male.style.color = val === 'male' ? 'var(--accent)' : 'var(--text2)';
+  female.style.borderColor = val === 'female' ? '#e879a0' : 'var(--border)';
+  female.style.color = val === 'female' ? '#e879a0' : 'var(--text2)';
+}
+
+function selectEditGender(val) {
+  document.getElementById('edit-c-gender').value = val;
+  const male = document.getElementById('edit-c-gender-male');
+  const female = document.getElementById('edit-c-gender-female');
+  male.style.borderColor = val === 'male' ? 'var(--accent)' : 'var(--border)';
+  male.style.color = val === 'male' ? 'var(--accent)' : 'var(--text2)';
+  female.style.borderColor = val === 'female' ? '#e879a0' : 'var(--border)';
+  female.style.color = val === 'female' ? '#e879a0' : 'var(--text2)';
+}
+
+let currentRosterFilter = 'all';
+
+function filterRoster(filter, el) {
+  currentRosterFilter = filter;
+  document.querySelectorAll('.card-title + div button, [onclick*="filterRoster"]').forEach(b => {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--text2)';
+    b.style.borderColor = 'var(--border)';
+  });
+  if (el) {
+    el.style.background = 'var(--accent)';
+    el.style.color = '#fff';
+    el.style.borderColor = 'var(--accent)';
+  }
+  renderClients();
+}
+
+function renderClients() {
+  const clients = load(KEYS.clients);
+  const tbody = document.getElementById('clients-table-body');
+  const empty = document.getElementById('clients-empty');
+
+  // Update counts
+  const activeCount = clients.filter(c => !c.status || c.status === 'active').length;
+  const inactiveCount = clients.filter(c => c.status === 'inactive').length;
+  const activeEl = document.getElementById('roster-active');
+  const inactiveEl = document.getElementById('roster-inactive');
+  if (activeEl) activeEl.textContent = activeCount;
+  if (inactiveEl) inactiveEl.textContent = inactiveCount;
+
+  const filtered = currentRosterFilter === 'all'
+    ? clients
+    : clients.filter(c => (c.status || 'active') === currentRosterFilter);
+
+  if (!filtered.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+  tbody.innerHTML = sorted.map(c => `
+    <tr>
+      <td style="color:var(--text);font-weight:500;cursor:pointer;text-decoration:underline;text-decoration-color:var(--text3);" onclick="openClientProfile('${c.name}')">${c.name}</td>
+      <td><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span></td>
+      <td style="font-family:var(--mono)">$${c.rate}</td>
+      <td><span class="badge badge-${c.method.toLowerCase()}">${c.method}</span></td>
+      <td>${c.insurance || '—'}</td>
+      <td style="font-size:12px;color:var(--text2)">${c.gender ? c.gender.charAt(0).toUpperCase() + c.gender.slice(1) : '—'}</td>
+      <td>
+        <button onclick="toggleClientStatus('${c.id}')"
+          style="font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;border:none;cursor:pointer;
+          background:${c.status==='active'?'rgba(56,201,142,0.15)':'rgba(90,98,120,0.2)'};
+          color:${c.status==='active'?'var(--accent2)':'var(--text3)'};">
+          ${c.status ? c.status.charAt(0).toUpperCase() + c.status.slice(1) : 'Active'}
+        </button>
+      </td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditClient('${c.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteClient('${c.id}')">✕</button>
+      </td>
+    </tr>
+  `).join('');
+  populateClientDatalist();
+}
+
+function toggleClientStatus(id) {
+  let clients = load(KEYS.clients);
+  const idx = clients.findIndex(c => c.id === id);
+  if (idx === -1) return;
+  clients[idx].status = clients[idx].status === 'active' ? 'inactive' : 'active';
+  save(KEYS.clients, clients);
+  renderClients();
+  toast('Status updated');
+}
+
+function deleteClient(id) {
+  let clients = load(KEYS.clients);
+  clients = clients.filter(c => c.id !== id);
+  save(KEYS.clients, clients);
+  renderClients();
+  toast('Client removed');
+}
+
+function openEditClient(id) {
+  const clients = load(KEYS.clients);
+  const c = clients.find(c => c.id === id);
+  if (!c) return;
+  document.getElementById('edit-c-id').value = c.id;
+  document.getElementById('edit-c-name').value = c.name;
+  document.getElementById('edit-c-agency').value = c.agency;
+  document.getElementById('edit-c-rate').value = c.rate;
+  document.getElementById('edit-c-method').value = c.method;
+  document.getElementById('edit-c-insurance').value = c.insurance || '';
+  document.getElementById('edit-c-gender').value = c.gender || '';
+  selectEditGender(c.gender || '');
+  document.getElementById('edit-c-status').value = c.status;
+  const modal = document.getElementById('edit-client-modal');
+  modal.style.display = 'flex';
+}
+
+function saveEditClient() {
+  const id = document.getElementById('edit-c-id').value;
+  let clients = load(KEYS.clients);
+  const idx = clients.findIndex(c => c.id === id);
+  if (idx === -1) return;
+  clients[idx] = {
+    ...clients[idx],
+    name: document.getElementById('edit-c-name').value.trim(),
+    agency: document.getElementById('edit-c-agency').value,
+    rate: parseFloat(document.getElementById('edit-c-rate').value) || 0,
+    method: document.getElementById('edit-c-method').value,
+    insurance: document.getElementById('edit-c-insurance').value.trim(),
+    gender: document.getElementById('edit-c-gender').value,
+    status: document.getElementById('edit-c-status').value,
+  };
+  save(KEYS.clients, clients);
+  closeEditModal();
+  renderClients();
+  toast('Client updated');
+}
+
+function closeEditModal() {
+  document.getElementById('edit-client-modal').style.display = 'none';
+}
+
+function populateClientDatalist() {}  // kept for compatibility
+
+function toggleClientDropdown() {
+  const dd = document.getElementById('client-dropdown');
+  const isOpen = dd.style.display === 'block';
+  if (isOpen) { dd.style.display = 'none'; return; }
+  dd.style.display = 'block';
+  document.getElementById('client-search').value = '';
+  filterClientList('');
+  setTimeout(() => document.getElementById('client-search').focus(), 50);
+}
+
+function filterClientList(val) {
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const filtered = val.length === 0
+    ? clients.sort((a,b) => a.name.localeCompare(b.name))
+    : clients.filter(c => c.name.toLowerCase().includes(val.toLowerCase())).sort((a,b) => a.name.localeCompare(b.name));
+
+  const container = document.getElementById('client-list-items');
+  if (!filtered.length) {
+    container.innerHTML = '<div style="padding:12px 14px;color:var(--text3);font-size:13px;">No clients found</div>';
+    return;
+  }
+  container.innerHTML = filtered.map(c => `
+    <div onclick="selectClient('${c.name.replace(/'/g, "&apos;")}')"
+      style="padding:10px 14px;cursor:pointer;font-size:13.5px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);"
+      onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='transparent'">
+      <span>${c.name}</span>
+      <span class="badge badge-${c.agency.toLowerCase()}" style="font-size:10px">${c.agency}</span>
+    </div>
+  `).join('');
+}
+
+function hideClientDropdown() {
+  const d = document.getElementById('client-dropdown');
+  if (d) d.style.display = 'none';
+}
+
+function selectClient(name) {
+  document.getElementById('s-name').value = name;
+  document.getElementById('s-name-label').textContent = name;
+  document.getElementById('s-name-display').style.color = 'var(--text)';
+  hideClientDropdown();
+  autoFillClientByName(name);
+}
+
+function autoFillClient() {}  // legacy, kept for compatibility
+
+function autoFillClientByName(name) {
+  const clients = load(KEYS.clients);
+  const match = clients.find(c => c.name.toLowerCase() === name.toLowerCase());
+  const agencyDisplay = document.getElementById('s-agency-display');
+  if (match) {
+    document.getElementById('s-agency').value = match.agency;
+    document.getElementById('s-fee').value = match.rate;
+    document.getElementById('s-method').value = match.method;
+    document.getElementById('s-insurance').value = match.insurance || '';
+    const agencyNames = { DC: 'District Counseling (DC)', SMS: 'Safe Mind Space (SMS)', Emora: 'Emora', ME: 'Private (ME)' };
+    agencyDisplay.textContent = agencyNames[match.agency] || match.agency;
+    agencyDisplay.style.color = 'var(--text)';
+  } else {
+    document.getElementById('s-agency').value = '—';
+    agencyDisplay.textContent = 'Auto-fills from client';
+    agencyDisplay.style.color = 'var(--text3)';
+  }
+}
+
+// ============================================================
+// EXPORT TO EXCEL
+// ============================================================
+function exportToExcel() {
+  const sessions = load(KEYS.sessions).sort((a,b) => a.date.localeCompare(b.date));
+  if (!sessions.length) { toast('No sessions to export', true); return; }
+
+  const wb = XLSX.utils.book_new();
+
+  // --- MASTER LOG sheet ---
+  const masterRows = sessions.map(s => ({
+    Date: fmtDate(s.date),
+    Client: s.name || '',
+    Agency: s.agency || '',
+    Hours: parseFloat(s.hours) || 0,
+    Fee: parseFloat(s.fee) || 0,
+    Method: s.method || '',
+    Type: s.type || '',
+    Insurance: s.insurance || '',
+    Description: s.desc || ''
+  }));
+  const totalHrs = sessions.reduce((a,s) => a + (parseFloat(s.hours)||0), 0);
+  const totalFee = sessions.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  masterRows.push({});
+  masterRows.push({ Date: 'TOTALS', Client: '', Agency: '', Hours: totalHrs, Fee: totalFee, Method: '', Type: '', Insurance: '', Description: '' });
+
+  const wsMaster = XLSX.utils.json_to_sheet(masterRows);
+  wsMaster['!cols'] = [{wch:12},{wch:22},{wch:10},{wch:7},{wch:9},{wch:8},{wch:12},{wch:10},{wch:32}];
+  XLSX.utils.book_append_sheet(wb, wsMaster, 'Master Log');
+
+  // --- One sheet per month ---
+  const monthNames = {
+    '01':'January','02':'February','03':'March','04':'April',
+    '05':'May','06':'June','07':'July','08':'August',
+    '09':'September','10':'October','11':'November','12':'December'
+  };
+  const months = [...new Set(sessions.map(s => (s.date||'').slice(0,7)))].sort();
+  months.forEach(m => {
+    const ms = sessions.filter(s => (s.date||'').startsWith(m));
+    if (!ms.length) return;
+    const [y, mo] = m.split('-');
+    const rows = ms.map(s => ({
+      Date: fmtDate(s.date),
+      Client: s.name || '',
+      Agency: s.agency || '',
+      Hours: parseFloat(s.hours) || 0,
+      Fee: parseFloat(s.fee) || 0,
+      Method: s.method || '',
+      Type: s.type || '',
+      Insurance: s.insurance || '',
+      Description: s.desc || ''
+    }));
+    const mHrs = ms.reduce((a,s) => a+(parseFloat(s.hours)||0), 0);
+    const mFee = ms.reduce((a,s) => a+(parseFloat(s.fee)||0), 0);
+    rows.push({});
+    rows.push({ Date: 'TOTALS', Client: '', Agency: '', Hours: mHrs, Fee: mFee, Method:'', Type:'', Insurance:'', Description:'' });
+    const ws = XLSX.utils.json_to_sheet(rows);
+    ws['!cols'] = [{wch:12},{wch:22},{wch:10},{wch:7},{wch:9},{wch:8},{wch:12},{wch:10},{wch:32}];
+    XLSX.utils.book_append_sheet(wb, ws, (monthNames[mo]||mo) + ' ' + y);
+  });
+
+  XLSX.writeFile(wb, 'LCSW_Master_Log_2026.xlsx');
+  toast('Master log downloaded');
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  const sessions = load(KEYS.sessions);
+  const supervision = load(KEYS.supervision);
+
+  const now = new Date();
+  const monthStr = now.toISOString().slice(0, 7);
+  const monthName = now.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+  // Invoice reminders
+  const invoiceDates = JSON.parse(localStorage.getItem('lmsw_invoice_dates') || '{}');
+  const remindersEl = document.getElementById('invoice-reminders');
+  if (remindersEl) {
+    const today = new Date();
+    const reminders = [];
+    const agencyLabels = { DC: 'District Counseling', SMS: 'Safe Mind Space' };
+    ['DC', 'SMS'].forEach(agency => {
+      const agencyData = invoiceDates[agency];
+      const due = agencyData?.due || agencyData;
+      if (!due) return;
+      const dueDate = new Date(due);
+      const diffDays = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+      if (diffDays <= 7 && diffDays >= 0) {
+        const color = diffDays <= 2 ? 'var(--danger)' : diffDays <= 4 ? 'var(--warn)' : 'var(--accent)';
+        const msg = diffDays === 0 ? 'due today' : diffDays === 1 ? 'due tomorrow' : `due in ${diffDays} days`;
+        reminders.push(`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid ${color};border-left:3px solid ${color};border-radius:10px;padding:12px 16px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">🔔</span>
+            <span style="font-size:13.5px;color:var(--text);">${agencyLabels[agency]} Invoice</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:12px;color:${color};font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">${msg}</span>
+            <button onclick="showPage('invoices')" style="background:${color};border:none;border-radius:6px;padding:5px 12px;color:#fff;font-family:var(--sans);font-size:12px;cursor:pointer;">View Invoice</button>
+          </div>
+        </div>`);
+      }
+    });
+    if (reminders.length) {
+      remindersEl.style.display = 'flex';
+      remindersEl.style.flexDirection = 'column';
+      remindersEl.style.gap = '10px';
+      remindersEl.innerHTML = reminders.join('');
+    } else {
+      remindersEl.style.display = 'none';
+    }
+  }
+
+  document.getElementById('dash-date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Clinical hours = all sessions
+  const clinicalHrs = sessions.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+  const supHrs = supervision.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+
+  document.getElementById('prog-clinical').textContent = clinicalHrs;
+  document.getElementById('prog-clinical-bar').style.width = Math.min(100, (clinicalHrs / 3000) * 100) + '%';
+  document.getElementById('prog-clinical-pct').textContent = ((clinicalHrs / 3000) * 100).toFixed(1) + '% complete';
+
+  document.getElementById('prog-sup').textContent = supHrs;
+  document.getElementById('prog-sup-bar').style.width = Math.min(100, (supHrs / 100) * 100) + '%';
+  document.getElementById('prog-sup-pct').textContent = ((supHrs / 100) * 100).toFixed(1) + '% complete';
+
+  const thisMonth = sessions.filter(s => s.date && s.date.startsWith(monthStr));
+  const monthSessions = thisMonth.length;
+  const monthIncome = thisMonth.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
+
+
+  document.getElementById('stat-month-sessions').textContent = monthSessions;
+  document.getElementById('stat-month-label').textContent = monthName;
+  document.getElementById('stat-month-income').textContent = '$' + monthIncome.toLocaleString();
+
+
+
+
+  // Gender stats
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const male = clients.filter(c => c.gender === 'male').length;
+  const female = clients.filter(c => c.gender === 'female').length;
+  const other = clients.filter(c => c.gender === 'other').length;
+  const unknown = clients.filter(c => !c.gender || c.gender === 'unknown').length;
+  const totalC = clients.length;
+
+  const genderBar = (label, count, color) => {
+    if (!count) return '';
+    const pct = totalC ? Math.round((count / totalC) * 100) : 0;
+    return `
+      <div style="flex:1;min-width:100px;">
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">${label}</div>
+        <div style="font-family:var(--mono);font-size:28px;color:var(--text);margin-bottom:8px;">${count}</div>
+        <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;">
+          <div style="width:${pct}%;height:100%;background:${color};border-radius:3px;"></div>
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:4px;font-family:var(--mono)">${pct}%</div>
+      </div>
+    `;
+  };
+
+  const genderEl = document.getElementById('gender-stats');
+  if (genderEl) {
+    genderEl.innerHTML =
+      genderBar('Male', male, 'var(--accent)') +
+      genderBar('Female', female, '#e879a0') +
+      (other ? genderBar('Other', other, 'var(--accent2)') : '') +
+      (unknown ? genderBar('Unknown', unknown, 'var(--text3)') : '');
+  }
+
+  // Stats table
+  const months = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  let tbody = '';
+  months.forEach((m, i) => {
+    const ms = sessions.filter(s => s.date && s.date.startsWith(m));
+    const ip = ms.filter(s => s.method === 'IP').length;
+    const v = ms.filter(s => s.method === 'V').length;
+    const total = ms.length;
+    const income = ms.reduce((a, s) => a + (parseFloat(s.fee) || 0), 0);
+    const isNow = m === monthStr;
+    tbody += `<tr${isNow ? ' style="background:rgba(79,142,247,0.05)"' : ''}>
+      <td style="color:var(--text)">${monthNames[i]}</td>
+      <td>${ip || '—'}</td>
+      <td>${v || '—'}</td>
+      <td>${total || '—'}</td>
+      <td style="font-family:var(--mono)">${income ? '$' + income.toLocaleString() : '—'}</td>
+    </tr>`;
+  });
+  document.getElementById('stats-table-body').innerHTML = tbody;
+}
+
+// ============================================================
+// SESSION LOG
+// ============================================================
+function logSession() {
+  const date = document.getElementById('s-date').value;
+  const name = document.getElementById('s-name').value.trim();
+  if (!date) { toast('Please enter a date', true); return; }
+
+  const sessions = load(KEYS.sessions);
+  sessions.push({
+    id: uid(),
+    date,
+    name,
+    agency: document.getElementById('s-agency').value,
+    hours: parseFloat(document.getElementById('s-hours').value) || 0,
+    fee: parseFloat(document.getElementById('s-fee').value) || 0,
+    method: document.getElementById('s-method').value,
+    desc: document.getElementById('s-desc').value.trim() || document.getElementById('s-desc-custom').value.trim(),
+    type: document.getElementById('s-type').value,
+    insurance: document.getElementById('s-insurance').value.trim(),
+  });
+  localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+  renderDashboard();
+  toast('Session saved');
+  clearForm();
+}
+
+function clearForm() {
+  ['s-name','s-desc','s-insurance','s-desc-custom'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('s-name-label').textContent = 'Select client...';
+  document.getElementById('s-name-display').style.color = 'var(--text3)';
+  document.getElementById('s-fee').value = '';
+  document.getElementById('s-hours').value = '2';
+  document.getElementById('s-agency').value = '—';
+  document.getElementById('s-agency-display').textContent = 'Auto-fills from client';
+  document.getElementById('s-agency-display').style.color = 'var(--text3)';
+  document.getElementById('s-desc-select').value = '';
+  document.getElementById('s-desc-custom-wrap').style.display = 'none';
+  document.getElementById('s-date').value = new Date().toISOString().split('T')[0];
+}
+
+function handleDescSelect() {
+  const val = document.getElementById('s-desc-select').value;
+  const customWrap = document.getElementById('s-desc-custom-wrap');
+  const hiddenDesc = document.getElementById('s-desc');
+  if (val === 'custom') {
+    customWrap.style.display = 'block';
+    hiddenDesc.value = '';
+  } else {
+    customWrap.style.display = 'none';
+    hiddenDesc.value = val;
+    document.getElementById('s-desc-custom').value = '';
+  }
+}
+
+function renderLog() {
+  const sessions = load(KEYS.sessions);
+  const search = (document.getElementById('search-log')?.value || '').toLowerCase();
+  const agency = document.getElementById('filter-agency')?.value || '';
+  const month = document.getElementById('filter-month')?.value || '';
+
+  let filtered = sessions.filter(s => {
+    if (agency && s.agency !== agency) return false;
+    if (month && !(s.date || '').startsWith(month)) return false;
+    if (search && !`${s.name} ${s.agency} ${s.desc}`.toLowerCase().includes(search)) return false;
+    return true;
+  }).sort((a, b) => b.date.localeCompare(a.date));
+
+  const tbody = document.getElementById('log-table-body');
+  const empty = document.getElementById('log-empty');
+
+  if (!filtered.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = filtered.map(s => `
+    <tr>
+      <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+      <td style="color:var(--text);cursor:pointer;text-decoration:underline;text-decoration-color:var(--text3);" onclick="openClientProfile('${s.name}')">${s.name || '<span style="color:var(--text3);font-style:italic">—</span>'}</td>
+      <td><span class="badge badge-${(s.agency||'').toLowerCase().replace(' ','')}">${s.agency || '—'}</span></td>
+      <td style="font-family:var(--mono)">${s.hours}</td>
+      <td style="font-family:var(--mono)">${s.fee ? '$' + s.fee : '—'}</td>
+      <td><span class="badge badge-${(s.method||'').toLowerCase()}">${s.method || '—'}</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.desc || ''}</td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditSession('${s.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteSession('${s.id}')">✕</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function deleteSession(id) {
+  let sessions = load(KEYS.sessions);
+  sessions = sessions.filter(s => s.id !== id);
+  save(KEYS.sessions, sessions);
+  renderLog();
+  toast('Session deleted');
+}
+
+function openEditSession(id) {
+  const sessions = load(KEYS.sessions);
+  const s = sessions.find(s => s.id === id);
+  if (!s) return;
+  document.getElementById('edit-s-id').value = s.id;
+  document.getElementById('edit-s-date').value = s.date;
+  document.getElementById('edit-s-name').value = s.name || '';
+  document.getElementById('edit-s-agency').value = s.agency || '—';
+  document.getElementById('edit-s-hours').value = s.hours;
+  document.getElementById('edit-s-fee').value = s.fee;
+  document.getElementById('edit-s-method').value = s.method || '—';
+  document.getElementById('edit-s-type').value = s.type || 'clinical';
+  document.getElementById('edit-s-insurance').value = s.insurance || '';
+
+  const knownDescs = ['Intake session', 'Psychotherapy session'];
+  if (knownDescs.includes(s.desc)) {
+    document.getElementById('edit-s-desc-select').value = s.desc;
+    document.getElementById('edit-s-desc-custom-wrap').style.display = 'none';
+  } else {
+    document.getElementById('edit-s-desc-select').value = 'custom';
+    document.getElementById('edit-s-desc-custom').value = s.desc || '';
+    document.getElementById('edit-s-desc-custom-wrap').style.display = 'block';
+  }
+
+  document.getElementById('edit-session-modal').style.display = 'flex';
+}
+
+function handleEditDescSelect() {
+  const val = document.getElementById('edit-s-desc-select').value;
+  document.getElementById('edit-s-desc-custom-wrap').style.display = val === 'custom' ? 'block' : 'none';
+}
+
+function saveEditSession() {
+  const id = document.getElementById('edit-s-id').value;
+  let sessions = load(KEYS.sessions);
+  const idx = sessions.findIndex(s => s.id === id);
+  if (idx === -1) return;
+
+  const descSelect = document.getElementById('edit-s-desc-select').value;
+  const desc = descSelect === 'custom'
+    ? document.getElementById('edit-s-desc-custom').value.trim()
+    : descSelect;
+
+  sessions[idx] = {
+    ...sessions[idx],
+    date: document.getElementById('edit-s-date').value,
+    name: document.getElementById('edit-s-name').value.trim(),
+    agency: document.getElementById('edit-s-agency').value,
+    hours: parseFloat(document.getElementById('edit-s-hours').value) || 0,
+    fee: parseFloat(document.getElementById('edit-s-fee').value) || 0,
+    method: document.getElementById('edit-s-method').value,
+    desc,
+    type: document.getElementById('edit-s-type').value,
+    insurance: document.getElementById('edit-s-insurance').value.trim(),
+  };
+
+  save(KEYS.sessions, sessions);
+  closeEditSessionModal();
+  renderLog();
+  renderDashboard();
+  toast('Session updated');
+}
+
+function closeEditSessionModal() {
+  document.getElementById('edit-session-modal').style.display = 'none';
+}
+
+// ============================================================
+// INVOICES
+// ============================================================
+function switchInvoice(agency, el) {
+  currentInvoiceAgency = agency;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderInvoice();
+}
+
+function saveInvoiceDates() {
+  const agency = currentInvoiceAgency;
+  const due = document.getElementById('current-due-date')?.value || '';
+  const start = document.getElementById('billing-start-date')?.value || '';
+  const saved = JSON.parse(localStorage.getItem('lmsw_invoice_dates') || '{}');
+  saved[agency] = { due, start };
+  localStorage.setItem('lmsw_invoice_dates', JSON.stringify(saved));
+  toast('Dates saved');
+  renderInvoice();
+}
+
+function renderInvoice() {
+  const agency = currentInvoiceAgency;
+  const month = document.getElementById('invoice-month')?.value || '2026-03';
+  const sessions = load(KEYS.sessions).filter(s =>
+    s.agency === agency && (s.date || '').startsWith(month)
+  ).sort((a, b) => a.date.localeCompare(b.date));
+
+  const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space' };
+  document.getElementById('invoice-agency-name').textContent = agencyNames[agency] || agency;
+
+  // Load saved dates for this agency
+  const savedDates = JSON.parse(localStorage.getItem('lmsw_invoice_dates') || '{}');
+  const agencyDates = savedDates[agency] || {};
+
+  const dueDateInput = document.getElementById('current-due-date');
+  const startDateInput = document.getElementById('billing-start-date');
+  const dueLabelEl = document.getElementById('due-date-label');
+
+  if (dueLabelEl) dueLabelEl.textContent = (agency === 'DC' ? 'DC' : 'SMS') + ' Due Date';
+  if (dueDateInput) dueDateInput.value = agencyDates.due || '';
+  if (startDateInput) startDateInput.value = agencyDates.start || '';
+
+  // Show billing period and due date on invoice
+  const fmtD = val => { if (!val) return ''; const [y,m,d] = val.split('-'); return `${m}/${d}/${y}`; };
+  const startStr = agencyDates.start ? fmtD(agencyDates.start) : '';
+  const dueStr = agencyDates.due ? fmtD(agencyDates.due) : '';
+
+  const dueDateEl = document.getElementById('invoice-due-date');
+  if (dueDateEl) {
+    let text = '';
+    if (startStr && dueStr) text = `Billing Period: ${startStr} — ${dueStr}`;
+    else if (dueStr) text = `Due: ${dueStr}`;
+    else text = 'Due date not set';
+    dueDateEl.textContent = text;
+  }
+
+  const empty = document.getElementById('invoice-empty');
+  const table = document.getElementById('invoice-table');
+
+  if (!sessions.length) {
+    empty.style.display = 'block';
+    table.style.display = 'none';
+    document.getElementById('invoice-total').textContent = '$0';
+    return;
+  }
+
+  empty.style.display = 'none';
+  table.style.display = 'table';
+
+  if (agency === 'DC') {
+    document.getElementById('invoice-thead').innerHTML = `<tr><th>Date</th><th>Client</th><th>Fee</th><th>50%</th><th>Total</th></tr>`;
+    let total = 0;
+    document.getElementById('invoice-tbody').innerHTML = sessions.map(s => {
+      const half = (s.fee / 2).toFixed(2);
+      total += parseFloat(half);
+      return `<tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td style="color:var(--text)">${s.name}</td>
+        <td style="font-family:var(--mono)">$${s.fee}</td>
+        <td style="font-family:var(--mono);color:var(--text3)">0.5</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">$${half}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('invoice-total').textContent = '$' + total.toFixed(2);
+  } else {
+    document.getElementById('invoice-thead').innerHTML = `<tr><th>Date</th><th>Client</th><th>Insurance</th><th>Fee</th></tr>`;
+    let total = 0;
+    document.getElementById('invoice-tbody').innerHTML = sessions.map(s => {
+      total += parseFloat(s.fee) || 0;
+      return `<tr>
+        <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+        <td style="color:var(--text)">${s.name}</td>
+        <td>${s.insurance || '—'}</td>
+        <td style="font-family:var(--mono);color:var(--accent2)">$${s.fee}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('invoice-total').textContent = '$' + total.toFixed(2);
+  }
+}
+
+// ============================================================
+// SUPERVISION
+// ============================================================
+function logSupervision() {
+  const date = document.getElementById('sup-date').value;
+  if (!date) { toast('Please enter a date', true); return; }
+
+  const supervision = load(KEYS.supervision);
+  supervision.push({
+    id: uid(),
+    date,
+    type: document.getElementById('sup-type').value,
+    hours: parseFloat(document.getElementById('sup-hours').value) || 0,
+    cost: parseFloat(document.getElementById('sup-cost').value) || 0,
+  });
+  save(KEYS.supervision, supervision);
+  toast('Supervision session saved');
+  renderSupervision();
+}
+
+function renderSupervision() {
+  const supervision = load(KEYS.supervision);
+  const total = supervision.reduce((a, s) => a + (parseFloat(s.hours) || 0), 0);
+  const pct = Math.min(100, (total / 100) * 100);
+
+  document.getElementById('sup-total').textContent = total;
+  document.getElementById('sup-bar').style.width = pct + '%';
+  document.getElementById('sup-pct').textContent = pct.toFixed(1) + '% complete';
+  document.getElementById('prog-sup').textContent = total;
+  document.getElementById('prog-sup-bar').style.width = pct + '%';
+  document.getElementById('prog-sup-pct').textContent = pct.toFixed(1) + '% complete';
+  const totalCost = supervision.reduce((a, s) => a + (parseFloat(s.cost) || 0), 0);
+  const costEl = document.getElementById('sup-cost-total');
+  if (costEl) costEl.textContent = '$' + totalCost.toLocaleString();
+
+  const tbody = document.getElementById('sup-table-body');
+  const empty = document.getElementById('sup-empty');
+
+  if (!supervision.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = [...supervision].sort((a, b) => b.date.localeCompare(a.date)).map(s => `
+    <tr>
+      <td style="font-family:var(--mono);font-size:12px">${fmtDate(s.date)}</td>
+      <td>${s.type}</td>
+      <td style="font-family:var(--mono)">${s.hours}</td>
+      <td style="font-family:var(--mono)">${s.cost ? '$' + s.cost : '—'}</td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-ghost delete-btn" style="font-size:12px;padding:5px 10px;" onclick="openEditSup('${s.id}')">Edit</button>
+        <button class="btn btn-danger delete-btn" onclick="deleteSup('${s.id}')">✕</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function deleteSup(id) {
+  let sup = load(KEYS.supervision);
+  sup = sup.filter(s => s.id !== id);
+  save(KEYS.supervision, sup);
+  renderSupervision();
+  toast('Entry deleted');
+}
+
+function openEditSup(id) {
+  const sup = load(KEYS.supervision);
+  const s = sup.find(s => s.id === id);
+  if (!s) return;
+  document.getElementById('edit-sup-id').value = s.id;
+  document.getElementById('edit-sup-date').value = s.date;
+  document.getElementById('edit-sup-type').value = s.type;
+  document.getElementById('edit-sup-hours').value = s.hours;
+  document.getElementById('edit-sup-cost').value = s.cost || '';
+  document.getElementById('edit-sup-modal').style.display = 'flex';
+}
+
+function saveEditSup() {
+  const id = document.getElementById('edit-sup-id').value;
+  let sup = load(KEYS.supervision);
+  const idx = sup.findIndex(s => s.id === id);
+  if (idx === -1) return;
+  sup[idx] = {
+    ...sup[idx],
+    date: document.getElementById('edit-sup-date').value,
+    type: document.getElementById('edit-sup-type').value,
+    hours: parseFloat(document.getElementById('edit-sup-hours').value) || 0,
+    cost: parseFloat(document.getElementById('edit-sup-cost').value) || 0,
+  };
+  save(KEYS.supervision, sup);
+  closeEditSupModal();
+  renderSupervision();
+  toast('Supervision updated');
+}
+
+function closeEditSupModal() {
+  document.getElementById('edit-sup-modal').style.display = 'none';
+}
+
+// ============================================================
+// REFERRALS
+// ============================================================
+function addReferral() {
+  const name = document.getElementById('ref-name').value.trim();
+  if (!name) { toast('Please enter a client name', true); return; }
+
+  const referrals = load(KEYS.referrals);
+  referrals.push({
+    id: uid(),
+    name,
+    source: document.getElementById('ref-source').value,
+    status: document.getElementById('ref-status').value,
+  });
+  save(KEYS.referrals, referrals);
+  document.getElementById('ref-name').value = '';
+  toast('Referral added');
+  renderReferrals();
+}
+
+function renderReferrals() {
+  const referrals = load(KEYS.referrals);
+  const sources = ['Psychology Today', 'Therapist.com', 'Open Path', 'Mental Health Match', 'Word of Mouth', 'Other'];
+  const dotColor = { converted: 'var(--accent2)', pending: 'var(--warn)', declined: 'var(--danger)' };
+
+  // Find which source has most conversions
+  const conversionsBySource = {};
+  sources.forEach(src => {
+    conversionsBySource[src] = referrals.filter(r => r.source === src && r.status === 'converted').length;
+  });
+  const maxConversions = Math.max(...Object.values(conversionsBySource), 1);
+  const topSource = sources.find(s => conversionsBySource[s] === maxConversions && maxConversions > 0);
+
+  const container = document.getElementById('ref-grid-container');
+  container.innerHTML = sources.map(src => {
+    const all = referrals.filter(r => r.source === src);
+    if (!all.length) return '';
+
+    const converted = all.filter(r => r.status === 'converted').length;
+    const pending = all.filter(r => r.status === 'pending').length;
+    const declined = all.filter(r => r.status === 'declined').length;
+    const total = all.length;
+    const rate = total ? Math.round((converted / total) * 100) : 0;
+    const isTop = src === topSource;
+    const maxBar = total;
+
+    return `
+      <div class="ref-source-card${isTop ? ' top-source' : ''}">
+        <div class="ref-source-header">
+          <div class="ref-source-name">${src}</div>
+          ${isTop ? '<div class="ref-best-tag">Most Fruitful</div>' : ''}
+        </div>
+
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Converted</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(converted/maxBar)*100}%;background:var(--accent2)"></div>
+          </div>
+          <div class="ref-bar-count">${converted}</div>
+        </div>
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Pending</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(pending/maxBar)*100}%;background:var(--warn)"></div>
+          </div>
+          <div class="ref-bar-count">${pending}</div>
+        </div>
+        <div class="ref-bar-row">
+          <div class="ref-bar-label">Declined</div>
+          <div class="ref-bar-track">
+            <div class="ref-bar-fill" style="width:${(declined/maxBar)*100}%;background:var(--danger)"></div>
+          </div>
+          <div class="ref-bar-count">${declined}</div>
+        </div>
+
+        <div class="ref-conversion-rate">${rate}%</div>
+        <div class="ref-conversion-label">conversion rate · ${total} total referral${total !== 1 ? 's' : ''}</div>
+
+        <div class="ref-clients-list">
+          ${all.map(c => `
+            <div class="ref-client">
+              <span>${c.name}</span>
+              <span class="ref-dot" style="background:${dotColor[c.status]}"></span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// EXPENSES
+// ============================================================
+function addExpense() {
+  const amount = parseFloat(document.getElementById('exp-amount').value);
+  if (!amount) { toast('Please enter an amount', true); return; }
+
+  const expenses = load(KEYS.expenses);
+  expenses.push({
+    id: uid(),
+    month: document.getElementById('exp-month').value,
+    category: document.getElementById('exp-category').value,
+    amount,
+    notes: document.getElementById('exp-notes').value.trim(),
+  });
+  save(KEYS.expenses, expenses);
+  document.getElementById('exp-amount').value = '';
+  document.getElementById('exp-notes').value = '';
+  toast('Expense saved');
+  renderExpenses();
+}
+
+function renderExpenses() {
+  const expenses = load(KEYS.expenses);
+  const tbody = document.getElementById('exp-table-body');
+  const empty = document.getElementById('exp-empty');
+  const totalRow = document.getElementById('exp-total-row');
+
+  if (!expenses.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    totalRow.style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+  totalRow.style.display = 'block';
+
+  const sorted = [...expenses].sort((a, b) => {
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months.indexOf(a.month) - months.indexOf(b.month);
+  });
+
+  tbody.innerHTML = sorted.map(e => `
+    <tr>
+      <td>${e.month}</td>
+      <td style="color:var(--text)">${e.category}</td>
+      <td style="font-family:var(--mono)">$${parseFloat(e.amount).toFixed(2)}</td>
+      <td style="color:var(--text3)">${e.notes || '—'}</td>
+      <td><button class="btn btn-danger delete-btn" onclick="deleteExpense('${e.id}')">✕</button></td>
+    </tr>
+  `).join('');
+
+  const ytd = expenses.reduce((a, e) => a + (parseFloat(e.amount) || 0), 0);
+  document.getElementById('exp-ytd').textContent = '$' + ytd.toFixed(2);
+}
+
+function deleteExpense(id) {
+  let expenses = load(KEYS.expenses);
+  expenses = expenses.filter(e => e.id !== id);
+  save(KEYS.expenses, expenses);
+  renderExpenses();
+  toast('Expense deleted');
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg, err = false) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.background = err ? 'var(--danger)' : 'var(--accent2)';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ============================================================
+// QUICK LOG
+// ============================================================
+let qlState = { client: null, type: null, method: null };
+
+function initQuickLog() {
+  resetQuickLog();
+}
+
+function toggleQlDropdown() {
+  const dd = document.getElementById('ql-dropdown');
+  const isOpen = dd.style.display === 'block';
+  if (isOpen) { dd.style.display = 'none'; return; }
+  dd.style.display = 'block';
+  document.getElementById('ql-search').value = '';
+  filterQlClients('');
+  setTimeout(() => document.getElementById('ql-search').focus(), 50);
+}
+
+function filterQlClients(val) {
+  const clients = load(KEYS.clients).filter(c => c.status === 'active');
+  const filtered = val
+    ? clients.filter(c => c.name.toLowerCase().includes(val.toLowerCase()))
+    : clients;
+  const sorted = filtered.sort((a,b) => a.name.localeCompare(b.name));
+  const container = document.getElementById('ql-client-list');
+  if (!sorted.length) {
+    container.innerHTML = '<div style="padding:14px 16px;color:var(--text3);">No clients found</div>';
+    return;
+  }
+  container.innerHTML = '';
+  sorted.forEach(c => {
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:14px 16px;cursor:pointer;font-size:15px;color:var(--text);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);';
+    div.innerHTML = `<span>${c.name}</span><span class="badge badge-${c.agency.toLowerCase()}">${c.agency}</span>`;
+    div.addEventListener('mouseover', () => div.style.background = 'var(--surface2)');
+    div.addEventListener('mouseout', () => div.style.background = 'transparent');
+    div.addEventListener('click', () => selectQlClient(c));
+    container.appendChild(div);
+  });
+}
+
+function selectQlClient(c) {
+  qlState.client = c;
+  document.getElementById('ql-client-label').textContent = c.name;
+  document.getElementById('ql-client-btn').classList.add('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  // Unlock step 2
+  const step2 = document.getElementById('ql-step2');
+  step2.style.opacity = '1';
+  step2.style.pointerEvents = 'auto';
+  updateQlConfirm();
+}
+
+function selectQlType(type, el) {
+  qlState.type = type;
+  document.querySelectorAll('.ql-type-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  // Unlock step 3
+  const step3 = document.getElementById('ql-step3');
+  step3.style.opacity = '1';
+  step3.style.pointerEvents = 'auto';
+  // Pre-select client's default method
+  if (qlState.client) {
+    const defaultMethod = qlState.client.method;
+    document.querySelectorAll('.ql-method-btn').forEach(b => {
+      if ((defaultMethod === 'IP' && b.textContent.includes('In-Person')) ||
+          (defaultMethod === 'V' && b.textContent.includes('Virtual'))) {
+        b.classList.add('selected');
+        qlState.method = defaultMethod;
+      }
+    });
+  }
+  updateQlConfirm();
+}
+
+function selectQlMethod(method, el) {
+  qlState.method = method;
+  document.querySelectorAll('.ql-method-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  updateQlConfirm();
+}
+
+function updateQlConfirm() {
+  if (!qlState.client || !qlState.type || !qlState.method) {
+    document.getElementById('ql-confirm').style.display = 'none';
+    return;
+  }
+  const c = qlState.client;
+  const today = new Date();
+  const [y,m,d] = today.toISOString().split('T')[0].split('-');
+  document.getElementById('ql-c-name').textContent = c.name;
+  document.getElementById('ql-c-agency').textContent = c.agency;
+  document.getElementById('ql-c-fee').textContent = '$' + c.rate;
+  document.getElementById('ql-c-type').textContent = qlState.type;
+  document.getElementById('ql-c-method').textContent = qlState.method === 'IP' ? 'In-Person' : 'Virtual';
+  document.getElementById('ql-c-date').textContent = `${m}/${d}/${y}`;
+  document.getElementById('ql-confirm').style.display = 'block';
+}
+
+function submitQuickLog() {
+  if (!qlState.client || !qlState.type || !qlState.method) return;
+  const c = qlState.client;
+  const today = new Date().toISOString().split('T')[0];
+  const sessions = load(KEYS.sessions);
+  sessions.push({
+    id: uid(),
+    date: today,
+    name: c.name,
+    agency: c.agency,
+    hours: 2,
+    fee: c.rate,
+    method: qlState.method,
+    desc: qlState.type,
+    type: 'clinical',
+    insurance: c.insurance || '',
+  });
+  save(KEYS.sessions, sessions);
+  renderDashboard();
+  document.getElementById('ql-success-sub').textContent = `${c.name} · ${qlState.type} · $${c.rate}`;
+  document.getElementById('ql-form').style.display = 'none';
+  document.getElementById('ql-success').style.display = 'block';
+  toast('Session logged');
+}
+
+function resetQuickLog() {
+  qlState = { client: null, type: null, method: null };
+  document.getElementById('ql-form').style.display = 'block';
+  document.getElementById('ql-success').style.display = 'none';
+  document.getElementById('ql-client-label').textContent = 'Tap to select client';
+  document.getElementById('ql-client-btn').classList.remove('selected');
+  document.getElementById('ql-dropdown').style.display = 'none';
+  document.querySelectorAll('.ql-type-btn, .ql-method-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('ql-step2').style.opacity = '0.3';
+  document.getElementById('ql-step2').style.pointerEvents = 'none';
+  document.getElementById('ql-step3').style.opacity = '0.3';
+  document.getElementById('ql-step3').style.pointerEvents = 'none';
+  document.getElementById('ql-confirm').style.display = 'none';
+}
+
+// Close ql dropdown on outside click
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('ql-dropdown');
+  const btn = document.getElementById('ql-client-btn');
+  if (dd && btn && !dd.contains(e.target) && !btn.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
+
+// ============================================================
+// STATISTICS
+// ============================================================
+function renderStats() {
+  const sessions = load(KEYS.sessions);
+
+  // YTD Stats
+  const ytdSessions = sessions.filter(s => (s.date||'').startsWith('2026'));
+  const ytdBillable = ytdSessions.filter(s => parseFloat(s.fee) > 0);
+  const ytdIncomeTotal = ytdBillable.reduce((a,s) => a + (parseFloat(s.fee)||0), 0);
+  const ytdSessionsEl = document.getElementById('stat-ytd-sessions');
+  const ytdIncomeEl = document.getElementById('stat-ytd-income');
+  const ytdSubEl = document.getElementById('stat-ytd-sub');
+  if (ytdSessionsEl) ytdSessionsEl.textContent = ytdSessions.length;
+  if (ytdIncomeEl) ytdIncomeEl.textContent = '$' + ytdIncomeTotal.toLocaleString();
+  if (ytdSubEl) ytdSubEl.textContent = ytdBillable.length + ' billable sessions';
+  const clients = load(KEYS.clients);
+
+  // --- In-Person vs Virtual this month ---
+  const nowMonth = new Date().toISOString().slice(0, 7);
+  const monthSessions = sessions.filter(s => (s.date||'').startsWith(nowMonth));
+  const ipCount = monthSessions.filter(s => s.method === 'IP').length;
+  const vCount = monthSessions.filter(s => s.method === 'V').length;
+  const ipEl = document.getElementById('stats-ip-count');
+  const vEl = document.getElementById('stats-v-count');
+  if (ipEl) ipEl.textContent = ipCount;
+  if (vEl) vEl.textContent = vCount;
+
+  // --- Gender Breakdown ---
+  const active = clients.filter(c => !c.status || c.status === 'active');
+  const male = active.filter(c => c.gender === 'male').length;
+  const female = active.filter(c => c.gender === 'female').length;
+  const unknown = active.filter(c => !c.gender || c.gender === 'unknown').length;
+  const totalC = active.length;
+
+  const genderBar = (label, count, color) => {
+    if (!count) return '';
+    const pct = totalC ? Math.round((count / totalC) * 100) : 0;
+    return `<div style="flex:1;min-width:120px;">
+      <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">${label}</div>
+      <div style="font-family:var(--mono);font-size:32px;color:var(--text);margin-bottom:8px;">${count}</div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;">
+        <div style="width:${pct}%;height:100%;background:${color};border-radius:3px;"></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px;font-family:var(--mono)">${pct}% of active caseload</div>
+    </div>`;
+  };
+  const genderEl = document.getElementById('stats-gender');
+  if (genderEl) {
+    genderEl.innerHTML =
+      genderBar('Male', male, 'var(--accent)') +
+      genderBar('Female', female, '#e879a0') +
+      (unknown ? genderBar('Unknown', unknown, 'var(--text3)') : '');
+  }
+
+  // --- Sessions by Agency (Pie Chart) ---
+  const agencies = ['DC', 'SMS', 'Emora', 'ME'];
+  const agencyNames = { DC: 'District Counseling', SMS: 'Safe Mind Space', Emora: 'Emora', ME: 'Private' };
+  const agencyHexColors = { DC: '#4f8ef7', SMS: '#38c98e', Emora: '#f7a44f', ME: '#f75f5f' };
+  const totalSessions = sessions.length;
+
+  const agencyData = agencies.map(a => ({
+    agency: a,
+    label: agencyNames[a],
+    count: sessions.filter(s => s.agency === a).length,
+    income: sessions.filter(s => s.agency === a).reduce((sum, s) => sum + (parseFloat(s.fee)||0), 0),
+    color: agencyHexColors[a]
+  })).filter(d => d.count > 0);
+
+  const pieCanvas = document.getElementById('agency-pie-chart');
+  if (pieCanvas && typeof Chart !== 'undefined') {
+    if (window._agencyPieChart) window._agencyPieChart.destroy();
+    window._agencyPieChart = new Chart(pieCanvas, {
+      type: 'doughnut',
+      data: {
+        labels: agencyData.map(d => d.label),
+        datasets: [{
+          data: agencyData.map(d => d.count),
+          backgroundColor: agencyData.map(d => d.color),
+          borderWidth: 2,
+          borderColor: '#181c27'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '60%',
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.parsed} sessions (${Math.round((ctx.parsed/totalSessions)*100)}%)`
+          }
+        }}
+      }
+    });
+  }
+
+  const legendEl = document.getElementById('stats-agency-legend');
+  if (legendEl) {
+    legendEl.innerHTML = agencyData.map(d => {
+      const pct = totalSessions ? Math.round((d.count / totalSessions) * 100) : 0;
+      return `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="width:12px;height:12px;border-radius:3px;background:${d.color};flex-shrink:0;"></span>
+          <span style="font-size:13px;color:var(--text)">${d.label}</span>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--text)">${d.count} sessions · ${pct}%</div>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--text3);">$${d.income.toLocaleString()} billed</div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // --- Weekly Average ---
+  const clinicalSessions = sessions.filter(s => s.type === 'clinical' || !s.type);
+  const firstDate = sessions.map(s => s.date).filter(Boolean).sort()[0];
+  const lastDate = new Date().toISOString().split('T')[0];
+  let weeksElapsed = 1;
+  if (firstDate) {
+    const diff = new Date(lastDate) - new Date(firstDate);
+    weeksElapsed = Math.max(1, Math.round(diff / (1000 * 60 * 60 * 24 * 7)));
+  }
+  const avgPerWeek = (clinicalSessions.length / weeksElapsed).toFixed(1);
+  const totalHrs = sessions.reduce((a, s) => a + (parseFloat(s.hours)||0), 0);
+  const avgHrsPerWeek = (totalHrs / weeksElapsed).toFixed(1);
+  const projectedYearEnd = Math.round(parseFloat(avgPerWeek) * 52);
+
+  // Sessions this month vs last month
+  const now = new Date();
+  const thisMonthStr = now.toISOString().slice(0, 7);
+  const lastMonthDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  const lastMonthStr = lastMonthDate.toISOString().slice(0, 7);
+  const thisMonthSessions = sessions.filter(s => (s.date||'').startsWith(thisMonthStr)).length;
+  const lastMonthSessions = sessions.filter(s => (s.date||'').startsWith(lastMonthStr)).length;
+  const monthDiff = thisMonthSessions - lastMonthSessions;
+  const monthDiffColor = monthDiff >= 0 ? 'var(--accent2)' : 'var(--danger)';
+  const monthDiffText = monthDiff >= 0 ? `+${monthDiff} vs last month` : `${monthDiff} vs last month`;
+
+  // Hours remaining
+  const hoursLogged = sessions.reduce((a, s) => a + (parseFloat(s.hours)||0), 0);
+  const hoursRemaining = Math.max(0, 3000 - hoursLogged);
+  const weeksToGo = avgHrsPerWeek > 0 ? Math.round(hoursRemaining / parseFloat(avgHrsPerWeek)) : '—';
+
+  // Average price per session
+  const billableSessions = sessions.filter(s => parseFloat(s.fee) > 0);
+  const totalIncome = billableSessions.reduce((a, s) => a + (parseFloat(s.fee)||0), 0);
+  const avgPrice = billableSessions.length ? (totalIncome / billableSessions.length).toFixed(2) : '0.00';
+
+  // Total sessions YTD
+  const totalYTD = sessions.filter(s => (s.date||'').startsWith('2026')).length;
+
+  // Ses// ============================================================
+// INIT
+// ============================================================
+seedData();
+
+// Auto-load from Supabase on startup
+(async function autoLoad() {
+  try {
+    const [sessions, clients, supervision, referrals] = await Promise.all([
+      sbLoad('sessions'),
+      sbLoad('clients'),
+      sbLoad('supervision'),
+      sbLoad('referrals')
+    ]);
+    if (sessions.length) localStorage.setItem(KEYS.sessions, JSON.stringify(sessions));
+    if (clients.length) {
+      const local = JSON.parse(localStorage.getItem(KEYS.clients) || '[]');
+      const merged = clients.map(r => {
+        const loc = local.find(l => l.id === r.id);
+        return loc ? { ...r, ...loc } : r;
+      });
+      local.forEach(l => { if (!merged.find(m => m.id === l.id)) merged.push(l); });
+      localStorage.setItem(KEYS.clients, JSON.stringify(merged));
+    }
+    if (supervision.length) localStorage.setItem(KEYS.supervision, JSON.stringify(supervision));
+    if (referrals.length) localStorage.setItem(KEYS.referrals, JSON.stringify(referrals));
+  } catch(e) {
+    console.log('Auto-load failed, using local data');
+  }
+  renderDashboard();
+  renderSupervision();
+  populateClientDatalist();
+})();
+
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('client-dropdown');
+  const display = document.getElementById('s-name-display');
+  if (dd && display && !dd.contains(e.target) && !display.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('ql-dropdown');
+  const btn = document.getElementById('ql-client-btn');
+  if (dd && btn && !dd.contains(e.target) && !btn.contains(e.target)) {
+    dd.style.display = 'none';
+  }
+});
+document.getElementById('dash-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+document.getElementById('s-date').value = new Date().toISOString().split('T')[0];
+document.getElementById('sup-date').value = new Date().toISOString().split('T')[0];
+
+</script>
+</body>
+</html>
