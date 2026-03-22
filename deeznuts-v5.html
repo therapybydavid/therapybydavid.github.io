@@ -57,12 +57,59 @@
     }
     @keyframes pulse-glow {
       0%,100% { opacity:0.7; transform:translate(-50%,-50%) scale(1); }
-      50% { opacity:1; transform:translate(-50%,-50%) scale(1.08); }
+      50% { opacity:1; transform:translate(-50%,-50%) scale(1.12); }
     }
     @keyframes shimmer {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
     }
+    @keyframes float {
+      0%,100% { transform:translateY(0px) rotate(-1deg); }
+      50% { transform:translateY(-12px) rotate(1deg); }
+    }
+    @keyframes wiggle {
+      0%,100% { transform:rotate(-3deg) scale(1); }
+      25% { transform:rotate(3deg) scale(1.05); }
+      75% { transform:rotate(-2deg) scale(0.97); }
+    }
+    @keyframes rainbow-border {
+      0%   { border-color:#FFD700; box-shadow:0 0 16px #FFD700; }
+      25%  { border-color:#FF00FF; box-shadow:0 0 16px #FF00FF; }
+      50%  { border-color:#00FFFF; box-shadow:0 0 16px #00FFFF; }
+      75%  { border-color:#FF4500; box-shadow:0 0 16px #FF4500; }
+      100% { border-color:#FFD700; box-shadow:0 0 16px #FFD700; }
+    }
+    @keyframes bounce-in {
+      0%   { transform:scale(0.3) rotate(-10deg); opacity:0; }
+      60%  { transform:scale(1.1) rotate(3deg); opacity:1; }
+      80%  { transform:scale(0.95) rotate(-1deg); }
+      100% { transform:scale(1) rotate(0deg); }
+    }
+    @keyframes spin-slow {
+      from { transform:rotate(0deg); }
+      to   { transform:rotate(360deg); }
+    }
+    @keyframes neon-pulse {
+      0%,100% { text-shadow:0 0 8px #FFD700, 0 0 20px #FF9500, 0 0 40px #FF4500; }
+      50%      { text-shadow:0 0 16px #FF00FF, 0 0 40px #9900FF, 0 0 80px #FF00FF; }
+    }
+    @keyframes card-entrance {
+      from { opacity:0; transform:translateY(40px) rotate(-3deg); }
+      to   { opacity:1; transform:translateY(0) rotate(0deg); }
+    }
+    .product-card { animation:card-entrance 0.5s ease both; }
+    .product-card:nth-child(1){animation-delay:.05s}
+    .product-card:nth-child(2){animation-delay:.1s}
+    .product-card:nth-child(3){animation-delay:.15s}
+    .product-card:nth-child(4){animation-delay:.2s}
+    .product-card:nth-child(5){animation-delay:.25s}
+    .product-card:nth-child(6){animation-delay:.3s}
+    .product-card:hover .product-img span { animation:wiggle 0.4s ease infinite; }
+    .best-seller-card { animation:rainbow-border 3s linear infinite !important; }
+    .hero-banner { animation:float 3s ease-in-out infinite; }
+    .section-title { animation:shimmer 3s linear infinite, neon-pulse 2s ease-in-out infinite; }
+    .trust-bar .trust-item:hover { animation:wiggle 0.3s ease; transform-origin:center; cursor:default; }
+    .nav-logo img { animation:float 4s ease-in-out infinite; }
     .hero-eyebrow {
       font-family:'Bangers',cursive; font-size:24px;
       letter-spacing:6px; color:var(--cream-dk);
@@ -362,13 +409,15 @@
 
 <section class="reviews-section">
   <div class="section-inner">
-    <div class="section-title">REAL NUT TALK</div>
-    <p class="section-sub">5,000+ happy customers and counting.</p>
+    <div class="section-title">REAL NUT TALK 🗣️</div>
+    <p class="section-sub">5,000+ dangerously obsessed customers. We are not sorry.</p>
     <div class="reviews-grid">
-      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"I told everyone at work I was ordering from Deez Nuts. They thought I was crazy. They changed their minds real fast."</div><div class="review-name">— Marcus T.</div></div>
-      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Freshest nuts I've ever had delivered. You can taste the difference immediately. Already on my third order."</div><div class="review-name">— Priya M.</div></div>
-      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Spicy peanuts are dangerous. I'm not sharing with anyone. Do not tell my family I have them."</div><div class="review-name">— Darnell W.</div></div>
-      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"The Big Bag bundle is worth every penny. Stocked for months. Free shipping sealed the deal."</div><div class="review-name">— Sandra R.</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"I texted my mom 'wanna try deez nuts?' and she blocked me. She unblocked me when the package arrived. We're closer than ever."</div><div class="review-name">— Marcus T. · Reunited with mom</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Ate the honey cashews on a first date. He proposed. I said 'ask me again after the second bag.' We're engaged."</div><div class="review-name">— Priya M. · Getting married because of nuts</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Spicy peanuts had me speaking in tongues. My pastor was concerned. I gave him a bag. He hasn't looked back."</div><div class="review-name">— Darnell W. · Pastor now a regular customer</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"I named my WiFi 'DeezNuts' so when guests ask what the network is I can say the thing. Worth every penny."</div><div class="review-name">— Sandra R. · Petty legend</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"I put cashew butter in my hair by accident. Smelled amazing. My dog licked my head for 20 minutes. No regrets."</div><div class="review-name">— Kevin B. · Dog still obsessed</div></div>
+      <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="review-text">"I ordered the Big Bag as a joke gift. My whole family cried happy tears. We don't talk about feelings but we DO talk about Deez Nuts."</div><div class="review-name">— Tamika J. · Healed her family with nuts</div></div>
     </div>
   </div>
 </section>
@@ -389,10 +438,60 @@
   </div>
 </section>
 
+<!-- WARNING BANNER -->
+<div style="background:linear-gradient(90deg,#FF4500,#FF0080,#FF4500);background-size:200% auto;animation:shimmer 2s linear infinite;padding:14px;text-align:center;border-top:3px solid #FFD700;border-bottom:3px solid #FFD700;">
+  <span style="font-family:'Bangers',cursive;font-size:18px;letter-spacing:3px;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,0.4);">⚠️ WARNING: DEEZ NUTS ARE EXTREMELY ADDICTIVE. SIDE EFFECTS INCLUDE: TELLING EVERYONE ABOUT US, ORDERING IN BULK, AND FORGETTING OTHER SNACKS EXIST. YOU HAVE BEEN WARNED. ⚠️</span>
+</div>
+
+<!-- FOUNDERS STORY -->
+<section style="background:#0D0020;padding:4rem 2rem;border-top:3px solid rgba(255,215,0,0.2);">
+  <div style="max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Bangers',cursive;font-size:clamp(32px,6vw,52px);letter-spacing:3px;background:linear-gradient(90deg,var(--gold),#FF00FF,var(--orange),var(--gold));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s linear infinite;margin-bottom:0.5rem;">THE ORIGIN STORY 🔥</div>
+    <p style="font-size:12px;letter-spacing:2px;color:rgba(255,255,255,0.3);font-family:'Bangers',cursive;margin-bottom:2rem;">100% TRUE. PROBABLY.</p>
+
+    <div style="background:linear-gradient(135deg,#1E0A3A,#2A0050);border:2px solid rgba(255,215,0,0.25);border-radius:20px;padding:2.5rem;text-align:left;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-10px;right:-10px;font-size:100px;opacity:0.06;pointer-events:none;animation:spin-slow 20s linear infinite;">🥜</div>
+
+      <div style="display:flex;gap:20px;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;">
+        <div style="text-align:center;flex-shrink:0;">
+          <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#FF0080,#9900FF);display:flex;align-items:center;justify-content:center;font-size:40px;border:3px solid var(--gold);animation:float 3s ease-in-out infinite;">👩</div>
+          <div style="font-family:'Bangers',cursive;color:var(--gold);font-size:14px;margin-top:6px;letter-spacing:1px;">COLLEENA</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);">The Taste Boss</div>
+        </div>
+        <div style="text-align:center;flex-shrink:0;">
+          <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#FF4500,#FFD700);display:flex;align-items:center;justify-content:center;font-size:40px;border:3px solid var(--orange);animation:float 3s ease-in-out infinite;animation-delay:0.5s;">🧑‍🦲</div>
+          <div style="font-family:'Bangers',cursive;color:var(--orange);font-size:14px;margin-top:6px;letter-spacing:1px;">DAVI</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);">The Bald Visionary</div>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <div style="background:rgba(255,215,0,0.08);border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;font-family:'Bangers',cursive;font-size:15px;letter-spacing:1px;color:var(--gold);line-height:1.5;">"TWO PEOPLE. ONE DREAM. ZERO HAIR ON DAVI'S HEAD. UNLIMITED NUTS." 🥜</div>
+        </div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.85;color:rgba(255,248,231,0.85);margin-bottom:1rem;">
+        It was a <em style="color:var(--gold);">hot Houston Tuesday</em>. Colleena was in a silk robe eating peanuts straight from the can with the energy of someone who had given up on society. She looked at the can. She looked at her life choices. She said:
+      </p>
+
+      <div style="background:rgba(255,215,0,0.08);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:0.85rem 1.25rem;margin:1rem 0;font-family:'Bangers',cursive;font-size:22px;letter-spacing:2px;color:var(--gold);">"THESE NUTS ARE TRASH." 🗑️</div>
+
+      <p style="font-size:15px;line-height:1.85;color:rgba(255,248,231,0.85);margin-bottom:1rem;">
+        Davi — bald, confident, and already holding a roasting pan for absolutely no reason — appeared in the doorway like a snack-based guardian angel and said <em style="color:var(--orange);">"I can do better."</em> Colleena said <em style="color:rgba(255,255,255,0.5);">"prove it."</em> He did. For three weeks. In an apron. We'll leave it at that.
+      </p>
+
+      <div style="background:rgba(255,0,128,0.08);border-left:4px solid #FF0080;border-radius:0 12px 12px 0;padding:0.85rem 1.25rem;margin:1rem 0;font-family:'Bangers',cursive;font-size:20px;letter-spacing:2px;color:#FF69B4;">COLLEENA: "Baby... put DEEZ NUTS in everybody's mouth." 😮</div>
+
+      <p style="font-size:15px;line-height:1.85;color:rgba(255,248,231,0.85);margin-bottom:0.5rem;">
+        And that was that. A business. A legend. A bald man's destiny fulfilled. The nuts you're about to order are <strong style="color:var(--gold);">the exact same recipe</strong> Colleena approved after 19 sleepless nights of extremely focused quality control. 
+      </p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);font-style:italic;">Davi still wears the apron. Colleena still sits on the counter. Houston still hasn't recovered. 🤷</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <strong>DEEZ NUTS</strong> — Premium Nut Co. &nbsp;·&nbsp; Houston, TX &nbsp;·&nbsp;
   <a href="mailto:hello@deeznuts.shop" style="color:var(--gold);text-decoration:none;">hello@deeznuts.shop</a>
-  <br/><br/><span style="font-size:11px;opacity:0.4;">© 2026 Deez Nuts. Yes, that's the real name. All rights reserved.</span>
+  <br/><br/><span style="font-size:11px;opacity:0.4;">© 2026 Deez Nuts. Yes, that's the real name. All rights reserved. Colleena approved this message.</span>
 </footer>
 
 <div class="cart-overlay" id="cartOverlay">
@@ -414,22 +513,23 @@
 
 <script>
 const products=[
-  {id:1,name:'Whole Cashews',desc:'Raw, unsalted. Buttery and smooth.',icon:'🥜',bg:'bg-gold',prices:{'8oz':8.99,'16oz':12.99,'32oz':22.99},badge:null},
-  {id:2,name:'Honey Roasted Cashews',desc:'Sweet, crunchy, dangerously addictive.',icon:'🍯',bg:'bg-orange',prices:{'8oz':9.99,'16oz':14.99,'32oz':26.99},badge:'BEST SELLER'},
-  {id:3,name:'Dry Roasted Peanuts',desc:'Classic salted. Simple and always right.',icon:'🧂',bg:'bg-gold',prices:{'8oz':5.99,'16oz':8.99,'32oz':15.99},badge:null},
-  {id:4,name:'Spicy Peanuts',desc:'Chili lime kick. Not for the faint of heart.',icon:'🌶️',bg:'bg-orange',prices:{'8oz':6.99,'16oz':9.99,'32oz':17.99},badge:'FAN FAVE'},
-  {id:5,name:'Cashew Butter',desc:'Smooth, all-natural. One ingredient: cashews.',icon:'🫙',bg:'bg-gold',prices:{'8oz':9.99,'16oz':11.99},badge:null},
-  {id:6,name:'Mixed Nut Pack',desc:'Half cashew, half peanut. Best of both.',icon:'🥣',bg:'bg-green',prices:{'16oz':13.99,'32oz':22.99},badge:'NEW'},
+  {id:1,name:'Whole Cashews',desc:'BUCK NAKED. No salt, no clothes, no shame. Just raw cashews sitting there looking all innocent. They're not.',icon:'🥜',bg:'bg-gold',prices:{'8oz':8.99,'16oz':12.99,'32oz':22.99},badge:null,wild:'NSFW LEVELS OF BUTTERY'},
+  {id:2,name:'Honey Roasted Cashews',desc:'So sticky and sweet your fingers will need a chaperone. WARNING: causes involuntary eye-rolling and embarrassing noises.',icon:'🍯',bg:'bg-orange',prices:{'8oz':9.99,'16oz':14.99,'32oz':26.99},badge:'BEST SELLER',wild:'DANGEROUSLY DELICIOUS'},
+  {id:3,name:'Dry Roasted Peanuts',desc:'Salty. Crunchy. Dependable. Like a trustworthy ex — always there, never disappoints, slightly addictive.',icon:'🧂',bg:'bg-gold',prices:{'8oz':5.99,'16oz':8.99,'32oz':15.99},badge:null,wild:'YOUR NEW RIDE OR DIE'},
+  {id:4,name:'Spicy Peanuts',desc:'These peanuts have ZERO chill and absolutely no remorse. Your face will sweat. Your soul will tingle. You will order more.',icon:'🌶️',bg:'bg-orange',prices:{'8oz':6.99,'16oz':9.99,'32oz':17.99},badge:'FAN FAVE',wild:'NOT RESPONSIBLE FOR TEARS'},
+  {id:5,name:'Cashew Butter',desc:'Thick. Creamy. Smooth. Goes on everything. EVERYTHING. We asked Colleena to stop licking the jar in public. She said no.',icon:'🫙',bg:'bg-gold',prices:{'8oz':9.99,'16oz':11.99},badge:null,wild:'LICK THE JAR APPROVED'},
+  {id:6,name:'Mixed Nut Pack',desc:'When you literally cannot commit. Half cashew, half peanut, 100% chaos. The bisexual icon of snack foods.',icon:'🥣',bg:'bg-green',prices:{'16oz':13.99,'32oz':22.99},badge:'NEW',wild:'COMMITMENT ISSUES? SAME.'},
 ];
 let sel={};products.forEach(p=>{sel[p.id]=Object.keys(p.prices)[0];});
 let cart=[];
 
 function renderProducts(){
   document.getElementById('productGrid').innerHTML=products.map(p=>`
-    <div class="product-card">
+    <div class="product-card ${p.badge==='BEST SELLER'?'best-seller-card':''}">
       <div class="product-img ${p.bg}"><span>${p.icon}</span>${p.badge?`<span class="product-badge">${p.badge}</span>`:''}</div>
       <div class="product-body">
         <div class="product-name">${p.name}</div>
+        <div style="display:inline-block;background:linear-gradient(90deg,#FF4500,#FF00FF);color:#fff;font-family:'Bangers',cursive;font-size:10px;letter-spacing:1px;padding:2px 8px;border-radius:100px;margin:4px 0 6px;">${p.wild}</div>
         <div class="product-desc">${p.desc}</div>
         <div class="product-sizes">${Object.keys(p.prices).map(s=>`<button class="size-btn ${s===sel[p.id]?'active':''}" onclick="setSz(${p.id},'${s}')">${s}</button>`).join('')}</div>
         <div class="product-footer">
