@@ -441,6 +441,14 @@
 
     /* Explanations */
     .divider { height: 1px; background: var(--line); margin: 28px 0; }
+    .daily-life {
+      margin-top: 14px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.82;
+    }
     .result-section h3 {
       font-family: var(--serif);
       font-size: 20px;
@@ -747,18 +755,54 @@
 
   /* ── Scoring info ── */
   function phqInfo(s) {
-    if (s <=  4) return { label: 'Minimal',           cls: 'sev-minimal',  color: '#3d9970', exp: `Your depression score falls in the minimal range. You may have occasional low days, but they don't appear to be significantly interfering with how you function. It's worth staying attentive, especially during stressful seasons.` };
-    if (s <=  9) return { label: 'Mild',               cls: 'sev-mild',     color: '#c8960c', exp: `Your score suggests mild depression symptoms. This can look like a persistent low mood, reduced motivation, or a quiet sense of hopelessness that doesn't always have an obvious cause. These experiences are real — and they often respond well to early support before they intensify.` };
-    if (s <= 14) return { label: 'Moderate',           cls: 'sev-moderate', color: '#d97706', exp: `Your score falls in the moderate range. This level commonly shows up as low energy, difficulty experiencing pleasure, negative self-talk, and a sense of going through the motions. Many people here feel like they're functioning on the outside while struggling underneath. Therapy at this level tends to make a meaningful difference.` };
-    if (s <= 19) return { label: 'Moderately Severe',  cls: 'sev-modsev',   color: '#dc4a26', exp: `Your score indicates moderately severe depression. At this level, symptoms are likely affecting your ability to work, connect with others, or care for yourself consistently. This is a significant signal — not a character flaw — and it's one worth taking seriously with professional support.` };
-    return          { label: 'Severe',                 cls: 'sev-severe',   color: '#c0392b', exp: `Your score suggests severe depression. This level of intensity rarely improves on its own without intervention. Severe depression is treatable, and reaching out — to a therapist, your doctor, or someone you trust — is the most important step you can take right now.` };
+    if (s <= 4) return {
+      label: 'Minimal', cls: 'sev-minimal', color: '#3d9970',
+      exp: `Your depression score falls in the minimal range. You may have occasional low days, but they don't appear to be significantly interfering with how you function.`,
+      daily: `Most days feel manageable. You might have an off day here and there — low energy, less motivation — but it tends to pass without much disruption to your routine or relationships.`
+    };
+    if (s <= 9) return {
+      label: 'Mild', cls: 'sev-mild', color: '#c8960c',
+      exp: `Your score suggests mild depression symptoms. This can look like a persistent low mood, reduced motivation, or a quiet sense of hopelessness that doesn't always have an obvious cause. These experiences are real — and they often respond well to early support before they intensify.`,
+      daily: `You're probably still functioning — showing up, getting things done — but there's a quiet flatness underneath that you can't quite shake. Things you used to enjoy don't feel as rewarding, and getting started on tasks takes more effort than it should.`
+    };
+    if (s <= 14) return {
+      label: 'Moderate', cls: 'sev-moderate', color: '#d97706',
+      exp: `Your score falls in the moderate range. Many people here feel like they're functioning on the outside while struggling underneath. Therapy at this level tends to make a meaningful difference.`,
+      daily: `This can look like dragging yourself through the day, going through the motions at work or at home while feeling disconnected from it all. You might pull back from people you care about, lose interest in things that used to matter, or find yourself thinking nothing is going to get better — even when life looks okay from the outside.`
+    };
+    if (s <= 19) return {
+      label: 'Moderately Severe', cls: 'sev-modsev', color: '#dc4a26',
+      exp: `Your score indicates moderately severe depression. At this level, symptoms are likely affecting your ability to work, connect with others, or care for yourself consistently. This is a significant signal — not a character flaw — and it's one worth taking seriously with professional support.`,
+      daily: `Most days feel heavy. Getting out of bed, keeping up with responsibilities, staying present in conversations — things that used to be automatic now take real effort. You might feel like you're disappearing inside yourself, or like the people around you can't really see what's happening.`
+    };
+    return {
+      label: 'Severe', cls: 'sev-severe', color: '#c0392b',
+      exp: `Your score suggests severe depression. This level of intensity rarely improves on its own. Severe depression is treatable, and reaching out — to a therapist, your doctor, or someone you trust — is the most important step you can take right now.`,
+      daily: `This can feel suffocating. Eating, sleeping, working, connecting with people who care about you — all of it may feel out of reach. You might feel like nothing will change, or like you're a burden to others. Those feelings are symptoms, not reality, and they respond to the right support.`
+    };
   }
 
   function gadInfo(s) {
-    if (s <=  4) return { label: 'Minimal',  cls: 'sev-minimal',  color: '#3d9970', exp: `Your anxiety score falls in the minimal range. Some tension and worry are a normal part of life, and your responses suggest they aren't significantly disrupting your functioning right now. Continue checking in with yourself, especially during high-pressure periods.` };
-    if (s <=  9) return { label: 'Mild',     cls: 'sev-mild',     color: '#c8960c', exp: `Your score suggests mild anxiety symptoms. You may find it hard to fully relax, notice your mind drifting toward worst-case scenarios, or feel a low-level tension that doesn't go away on its own. These patterns are common and can quietly wear you down over time, especially when life stays demanding.` };
-    if (s <= 14) return { label: 'Moderate', cls: 'sev-moderate', color: '#d97706', exp: `Your score falls in the moderate range for anxiety. Worry may feel hard to control, restlessness or irritability may show up more than you'd like, and your nervous system may feel chronically activated. At this level, therapy — particularly approaches that work directly with anxious patterns — can help you build lasting relief.` };
-    return          { label: 'Severe',       cls: 'sev-severe',   color: '#c0392b', exp: `Your score suggests severe anxiety symptoms. This level can feel relentless — intrusive thoughts, difficulty concentrating, physical tension, and a persistent sense that something is wrong. It is exhausting, and it is also very treatable. Reaching out for professional support is the most direct step toward feeling steadier.` };
+    if (s <= 4) return {
+      label: 'Minimal', cls: 'sev-minimal', color: '#3d9970',
+      exp: `Your anxiety score falls in the minimal range. Some tension and worry are a normal part of life, and your responses suggest they aren't significantly disrupting your functioning right now.`,
+      daily: `You experience the normal tension that comes with a full life — some worry before a difficult conversation, a little restlessness when things are uncertain. But it moves through you and doesn't take over.`
+    };
+    if (s <= 9) return {
+      label: 'Mild', cls: 'sev-mild', color: '#c8960c',
+      exp: `Your score suggests mild anxiety symptoms. You may find it hard to fully relax, notice your mind drifting toward worst-case scenarios, or feel a low-level tension that doesn't fully go away. These patterns can quietly wear you down over time, especially when life stays demanding.`,
+      daily: `The worry isn't constant, but it shows up often enough that you've started managing around it — staying busy, avoiding certain situations, or pushing through with more effort than it should take. You can't quite remember the last time you felt fully at ease.`
+    };
+    if (s <= 14) return {
+      label: 'Moderate', cls: 'sev-moderate', color: '#d97706',
+      exp: `Your score falls in the moderate range for anxiety. Worry may feel hard to control, restlessness or irritability may show up more than you'd like, and your nervous system may feel chronically activated. Therapy at this level can help you build lasting relief.`,
+      daily: `This often looks like a nervous system that never fully turns off. You might feel on edge in conversations, irritable with people you care about, or exhausted from the mental effort of keeping everything together. Sleep can be disrupted, concentration can slip, and the worry tends to jump from one thing to the next without ever fully resolving.`
+    };
+    return {
+      label: 'Severe', cls: 'sev-severe', color: '#c0392b',
+      exp: `Your score suggests severe anxiety symptoms. This level can feel relentless — intrusive thoughts, difficulty concentrating, physical tension, and a persistent sense that something is wrong. It is exhausting, and it is also very treatable.`,
+      daily: `Many people at this level have been white-knuckling it for a long time, not fully realizing how much energy they spend just trying to feel okay. Tense muscles, racing thoughts, dread that doesn't have a clear source — it can interfere with relationships, work, and basic daily life in ways that are hard to explain to people who haven't felt it.`
+    };
   }
 
   /* ── Gauge SVG ── */
@@ -849,11 +893,13 @@
     /* Explanations */
     document.getElementById('phq-section').innerHTML = `
       <h3>Your Depression Score: ${pi.label}</h3>
-      <p>${pi.exp}</p>`;
+      <p>${pi.exp}</p>
+      <p class="daily-life"><strong>What this can look like day to day:</strong> ${pi.daily}</p>`;
 
     document.getElementById('gad-section').innerHTML = `
       <h3>Your Anxiety Score: ${gi.label}</h3>
-      <p>${gi.exp}</p>`;
+      <p>${gi.exp}</p>
+      <p class="daily-life"><strong>What this can look like day to day:</strong> ${gi.daily}</p>`;
   }
 </script>
 
