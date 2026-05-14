@@ -1,13 +1,16 @@
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  const { firstName, email, phqScore, gadScore } = JSON.parse(event.body);
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
+
+  const { firstName, email, phqScore, gadScore } = req.body;
 
   const API_KEY = process.env.MAILCHIMP_API_KEY;
   const LIST_ID = process.env.MAILCHIMP_LIST_ID;
-  const DC = API_KEY.split('-')[1]; // extracts "us5"
+  const DC = API_KEY.split('-')[1];
 
   const phqLabel = phqScore >= 20 ? 'Severe'
     : phqScore >= 15 ? 'Moderately Severe'
@@ -24,11 +27,11 @@ exports.handler = async (event) => {
     email_address: email,
     status: 'subscribed',
     merge_fields: {
-      FNAME:     firstName,
-      PHQSCORE:  String(phqScore),
-      GADSCORE:  String(gadScore),
-      PHQLABEL:  phqLabel,
-      GADLABEL:  gadLabel
+      FNAME:    firstName,
+      PHQSCORE: String(phqScore),
+      GADSCORE: String(gadScore),
+      PHQLABEL: phqLabel,
+      GADLABEL: gadLabel
     },
     tags: [`PHQ-${phqLabel}`, `GAD-${gadLabel}`]
   };
@@ -49,15 +52,15 @@ exports.handler = async (event) => {
     if (response.status === 400) {
       const err = await response.json();
       if (err.title === 'Member Exists') {
-        return { statusCode: 200, body: JSON.stringify({ status: 'already_subscribed' }) };
+        return res.status(200).json({ status: 'already_subscribed' });
       }
-      return { statusCode: 400, body: JSON.stringify(err) };
+      return res.status(400).json(err);
     }
 
     const result = await response.json();
-    return { statusCode: 200, body: JSON.stringify({ status: 'subscribed', id: result.id }) };
+    return res.status(200).json({ status: 'subscribed', id: result.id });
 
   } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+    return res.status(500).json({ error: err.message });
   }
-};
+}
