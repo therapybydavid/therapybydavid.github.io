@@ -746,6 +746,18 @@
     const sensitiveIdx = questions.findIndex(q => q.sensitive);
     const sensitiveVal = resp[sensitiveIdx] || 0;
 
+    // Fire-and-forget: add to Mailchimp audience without blocking the results display
+    fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: userName,
+        email: emailEl.value.trim(),
+        phqScore: phq,
+        gadScore: gad
+      })
+    }).catch(() => {}); // silently ignore network errors
+
     buildResults(phq, gad, sensitiveVal);
     showCard('card-results');
   }

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Email Preview — Therapy by David</title>
+  <!--
+    ══════════════════════════════════════════════════════
+    MAILCHIMP MERGE TAGS (replace sample values when live)
+    ══════════════════════════════════════════════════════
+    *|FNAME|*       → recipient first name ("Donald")
+    *|PHQSCORE|*    → PHQ-9 raw score ("14")
+    *|PHQMAX|*      → PHQ-9 max ("27")
+    *|PHQPCT|*      → fill width % ("52%")
+    *|PHQLABEL|*    → severity label ("Moderate Depression")
+    *|PHQCLASS|*    → severity CSS class ("moderate")
+    *|PHQBODY|*     → 4-paragraph depression explanation (passed as HTML)
+    *|GADSCORE|*    → GAD-7 raw score ("10")
+    *|GADMAX|*      → GAD-7 max ("21")
+    *|GADPCT|*      → fill width % ("48%")
+    *|GADLABEL|*    → severity label ("Moderate Anxiety")
+    *|GADBODY|*     → 4-paragraph anxiety explanation (passed as HTML)
+    *|REPORTDATE|*  → formatted date ("May 14, 2026")
+    ══════════════════════════════════════════════════════
+    All paragraph text below is STATIC — it is the same for
+    everyone at Moderate+Moderate. For other severity combos
+    the quiz page passes different text via *|PHQBODY|* /
+    *|GADBODY|* merge fields populated before sending.
+    ══════════════════════════════════════════════════════
+  -->
+  <style>
+    /* Page shell — not part of the email itself */
+    body { background: #d9d3c9; margin: 0; padding: 32px 16px; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    .shell-note {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      background: #fff;
+      border-left: 4px solid #b99138;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      border-radius: 0 6px 6px 0;
+    }
+    .shell-note strong { color: #101720; }
+    .shell-note code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: #b45309; }
+  </style>
+</head>
+<body>
+
+<div class="shell-note">
+  <strong>Email Preview</strong> — This is exactly what clients receive in their inbox after completing the quiz.<br>
+  Sample values: Depression <strong>14/27 (Moderate)</strong> · Anxiety <strong>10/21 (Moderate)</strong>.<br>
+  Mailchimp merge tags like <code>*|FNAME|*</code> will be replaced automatically when sending.
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     START OF EMAIL BODY (copy everything below into
+     Mailchimp's "Code your own" template editor)
+     ══════════════════════════════════════════════════════ -->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#d9d3c9;">
+<tr><td align="center" style="padding:0;">
+
+  <!-- ── Main container ── -->
+  <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;font-family:Arial,Helvetica,sans-serif;">
+
+    <!-- ════════════════════════════════
+         HEADER / COVER
+         ════════════════════════════════ -->
+    <tr>
+      <td style="background-color:#101720;padding:40px 44px 36px;">
+
+        <!-- Brand row -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="3" style="background-color:#d8b866;border-radius:2px;">&nbsp;</td>
+            <td width="14">&nbsp;</td>
+            <td>
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:bold;color:#ffffff;line-height:1.15;">Therapy by David</div>
+              <div style="font-size:9px;font-weight:bold;letter-spacing:.22em;text-transform:uppercase;color:#d8b866;margin-top:4px;">Private Psychotherapist</div>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Title -->
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:bold;color:#ffffff;line-height:1.1;letter-spacing:-.01em;margin-top:32px;">
+          Your Mental Health<br><span style="color:#d8b866;font-style:italic;">Screening Report</span>
+        </div>
+
+        <!-- Meta -->
+        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;margin-bottom:32px;">
+          Prepared for: <span style="color:rgba(255,255,255,.82);font-weight:bold;">Donald</span>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          May 14, 2026
+        </div>
+
+        <!-- Score chips — 2 columns via table -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <!-- Depression chip -->
+            <td width="48%" style="background-color:rgba(255,255,255,.07);border:1px solid rgba(216,184,102,.22);border-radius:12px;padding:16px 18px;vertical-align:top;">
+              <div style="font-size:9px;font-weight:bold;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;">Depression Score</div>
+              <div>
+                <span style="font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:bold;color:#ffffff;line-height:1;">14</span>
+                <span style="font-size:12px;color:rgba(255,255,255,.35);"> / 27</span>
+              </div>
+              <div style="font-size:11px;font-weight:bold;color:#f59e0b;margin-top:6px;letter-spacing:.04em;">Moderate</div>
+            </td>
+            <td width="4%">&nbsp;</td>
+            <!-- Anxiety chip -->
+            <td width="48%" style="background-color:rgba(255,255,255,.07);border:1px solid rgba(216,184,102,.22);border-radius:12px;padding:16px 18px;vertical-align:top;">
+              <div style="font-size:9px;font-weight:bold;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;">Anxiety Score</div>
+              <div>
+                <span style="font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:bold;color:#ffffff;line-height:1;">10</span>
+                <span style="font-size:12px;color:rgba(255,255,255,.35);"> / 21</span>
+              </div>
+              <div style="font-size:11px;font-weight:bold;color:#f59e0b;margin-top:6px;letter-spacing:.04em;">Moderate</div>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         DEPRESSION SECTION
+         ════════════════════════════════ -->
+    <tr>
+      <td style="padding:36px 44px;border-bottom:1px solid #e8decc;">
+
+        <!-- Eyebrow -->
+        <div style="font-size:9px;font-weight:bold;letter-spacing:.18em;text-transform:uppercase;color:#b99138;margin-bottom:12px;">
+          &#8212;&nbsp; Depression Screening
+        </div>
+
+        <!-- Heading -->
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:#101720;line-height:1.2;margin-bottom:18px;">
+          Your Depression Score
+        </div>
+
+        <!-- Score bar card -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fbf8f1;border-radius:12px;margin-bottom:18px;">
+          <tr>
+            <td style="padding:18px 22px;">
+
+              <!-- Header row -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+                <tr>
+                  <td style="font-size:12px;font-weight:bold;color:#101720;">Score</td>
+                  <td align="right" style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:bold;color:#101720;">
+                    14 <span style="font-size:12px;color:#9ca3af;font-family:Arial,sans-serif;font-weight:normal;">/ 27</span>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Score bar track -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:8px;">
+                <tr>
+                  <!-- Filled portion -->
+                  <td width="52%" style="height:9px;background:linear-gradient(90deg,#3d9970,#c8960c,#d97706,#dc4a26,#c0392b);border-radius:9px 0 0 9px;font-size:0;">&nbsp;</td>
+                  <!-- Unfilled portion -->
+                  <td style="height:9px;background-color:#e8decc;border-radius:0 9px 9px 0;font-size:0;">&nbsp;</td>
+                </tr>
+              </table>
+
+              <!-- Range labels -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-size:9px;color:#6a6258;">Minimal</td>
+                  <td align="center" style="font-size:9px;color:#6a6258;">Moderate</td>
+                  <td align="right" style="font-size:9px;color:#6a6258;">Severe</td>
+                </tr>
+              </table>
+
+              <!-- Population note -->
+              <div style="font-size:10px;color:#9ca3af;margin-top:8px;">
+                Most adults score below 5 on this scale.
+              </div>
+
+            </td>
+          </tr>
+        </table>
+
+        <!-- Severity badge -->
+        <div style="display:inline-block;background-color:#fef3c7;color:#b45309;font-size:11px;font-weight:bold;letter-spacing:.06em;padding:4px 14px;border-radius:100px;margin-bottom:18px;">
+          Moderate Depression
+        </div>
+
+        <!-- Body paragraphs -->
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          Moderate depression rarely announces itself all at once. More often it builds quietly — a slow erosion of energy, interest, and the sense that things can actually get better. By the time most people take a screening like this one, they have been managing the weight of it for months, sometimes years, often without naming it.
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          A score in this range means your symptoms are real, consistent, and affecting how you function — not just occasionally, but as a pattern. This is not a reflection of how hard you are trying or how much willpower you have. Depression at this level changes how the brain processes reward, motivation, and future possibility. <strong style="color:#101720;font-weight:600;">The belief that nothing will improve is itself a symptom, not a forecast.</strong>
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          The clinical picture at moderate depression typically involves more than low mood. It shows up in how you relate to people, how you respond to stress, how you talk to yourself when no one is listening, and how much of your day is spent simply getting through rather than actually living. Many people describe it as functioning on the outside while something has gone quiet on the inside.
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0;">
+          Moderate depression is among the most treatable presentations in outpatient therapy. The patterns that sustain it are identifiable — and with consistent, structured work, they change. This is not a permanent state.
+        </p>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         ANXIETY SECTION
+         ════════════════════════════════ -->
+    <tr>
+      <td style="padding:36px 44px;border-bottom:1px solid #e8decc;">
+
+        <!-- Eyebrow -->
+        <div style="font-size:9px;font-weight:bold;letter-spacing:.18em;text-transform:uppercase;color:#b99138;margin-bottom:12px;">
+          &#8212;&nbsp; Anxiety Screening
+        </div>
+
+        <!-- Heading -->
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:#101720;line-height:1.2;margin-bottom:18px;">
+          Your Anxiety Score
+        </div>
+
+        <!-- Score bar card -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fbf8f1;border-radius:12px;margin-bottom:18px;">
+          <tr>
+            <td style="padding:18px 22px;">
+
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+                <tr>
+                  <td style="font-size:12px;font-weight:bold;color:#101720;">Score</td>
+                  <td align="right" style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:bold;color:#101720;">
+                    10 <span style="font-size:12px;color:#9ca3af;font-family:Arial,sans-serif;font-weight:normal;">/ 21</span>
+                  </td>
+                </tr>
+              </table>
+
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:8px;">
+                <tr>
+                  <td width="48%" style="height:9px;background:linear-gradient(90deg,#3d9970,#c8960c,#d97706,#dc4a26,#c0392b);border-radius:9px 0 0 9px;font-size:0;">&nbsp;</td>
+                  <td style="height:9px;background-color:#e8decc;border-radius:0 9px 9px 0;font-size:0;">&nbsp;</td>
+                </tr>
+              </table>
+
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="font-size:9px;color:#6a6258;">Minimal</td>
+                  <td align="center" style="font-size:9px;color:#6a6258;">Moderate</td>
+                  <td align="right" style="font-size:9px;color:#6a6258;">Severe</td>
+                </tr>
+              </table>
+
+              <div style="font-size:10px;color:#9ca3af;margin-top:8px;">
+                Most adults score below 5 on this scale.
+              </div>
+
+            </td>
+          </tr>
+        </table>
+
+        <!-- Severity badge -->
+        <div style="display:inline-block;background-color:#fef3c7;color:#b45309;font-size:11px;font-weight:bold;letter-spacing:.06em;padding:4px 14px;border-radius:100px;margin-bottom:18px;">
+          Moderate Anxiety
+        </div>
+
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          A moderate anxiety score often reflects something a person has been living with long enough that it has started to feel normal. The nervous system at this level is not in crisis — it is chronically activated. There is a difference. Crisis passes. Chronic activation becomes the baseline, and over time that baseline quietly reorganizes everything around it.
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          At this level, anxiety is usually not the loud, obvious kind. It tends to look like diligence, preparation, or high standards. It can look like irritability with people you care about, difficulty being fully present, or a mental exhaustion that a full night of sleep does not fix. <strong style="color:#101720;font-weight:600;">Most people at this level are identified by others as capable and reliable — the cost of that is mostly invisible.</strong>
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          Moderate anxiety becomes clinically significant when managing it starts to use more energy than the situations actually require. When you find yourself working harder to feel okay than the circumstances warrant, that is a signal worth paying attention to — not a personal failure, but a sign that the system needs recalibration rather than more effort.
+        </p>
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0;">
+          Anxiety at this level responds well to the right kind of work. The goal is not to eliminate worry — it is to reduce the noise so that your responses are proportional to what is actually in front of you, rather than what the nervous system is anticipating.
+        </p>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         WHAT YOUR RESULTS TOGETHER MEAN
+         ════════════════════════════════ -->
+    <tr>
+      <td style="background-color:#fbf8f1;padding:36px 44px;border-bottom:1px solid #e8decc;">
+
+        <div style="font-size:9px;font-weight:bold;letter-spacing:.18em;text-transform:uppercase;color:#b99138;margin-bottom:12px;">
+          &#8212;&nbsp; What Your Results Together Mean
+        </div>
+
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:#101720;line-height:1.2;margin-bottom:18px;">
+          Depression and anxiety rarely travel alone.
+        </div>
+
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          Your results show moderate scores in both areas — which is more common than most people realize. Studies consistently find that more than half of people who meet criteria for depression also meet criteria for an anxiety disorder, and vice versa. They are not two separate problems happening at the same time. In most cases, they are two expressions of the same underlying experience.
+        </p>
+
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 14px 0;">
+          Here is how the cycle typically works: anxiety keeps the nervous system activated and braced for what might go wrong. That constant state of alertness is exhausting. Over time, the exhaustion becomes depression — a kind of withdrawal, a shutting down of motivation and hope as the mind and body try to conserve what little energy is left. Depression then makes it harder to take the actions that would reduce the anxiety. The anxiety responds by escalating. And the loop continues.
+        </p>
+
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 24px 0;">
+          The experience of living inside that cycle is often described as being simultaneously wound up and shut down — wanting to rest but unable to quiet the mind, wanting to act but unable to find the energy, wanting to connect but feeling too depleted to follow through.
+        </p>
+
+        <!-- Two cards side by side -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
+          <tr>
+            <td width="48%" valign="top" style="background-color:#ffffff;border:1px solid #e8decc;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:12px;font-weight:bold;color:#101720;margin-bottom:6px;">A common misconception</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">Many people assume you can't be anxious and depressed at the same time. Clinically, they are not opposites — they share the same root patterns: avoidance, negative thought loops, and a nervous system that has learned to stay on guard.</p>
+            </td>
+            <td width="4%">&nbsp;</td>
+            <td width="48%" valign="top" style="background-color:#ffffff;border:1px solid #e8decc;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:12px;font-weight:bold;color:#101720;margin-bottom:6px;">What this means for treatment</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">Having both is not a sign that things are more complicated. It means there is a clear, shared target. Therapy that works at the root level tends to move both scores — because both are driven by the same underlying patterns.</p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Callout -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="3" style="background-color:#d8b866;border-radius:2px;">&nbsp;</td>
+            <td width="14">&nbsp;</td>
+            <td style="background-color:#f5efe3;border-radius:0 10px 10px 0;padding:16px 18px;">
+              <p style="font-size:13px;color:#6a6258;line-height:1.78;margin:0;">
+                <strong style="color:#101720;font-weight:600;">What often surprises people:</strong> when the anxiety begins to settle — when the nervous system stops running at a constant low-level alarm — the depression often lifts alongside it. Not because the depression wasn't real, but because a significant part of what was sustaining it was the depletion from managing anxiety that never fully turned off.
+              </p>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         WHAT THERAPY ADDRESSES
+         ════════════════════════════════ -->
+    <tr>
+      <td style="padding:36px 44px;border-bottom:1px solid #e8decc;">
+
+        <div style="font-size:9px;font-weight:bold;letter-spacing:.18em;text-transform:uppercase;color:#b99138;margin-bottom:12px;">
+          &#8212;&nbsp; The Work
+        </div>
+
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:#101720;line-height:1.2;margin-bottom:14px;">
+          What therapy actually addresses at this level.
+        </div>
+
+        <p style="font-size:14px;color:#6a6258;line-height:1.82;margin:0 0 20px 0;">
+          At moderate scores in both areas, therapy is not about venting — it is about identifying and shifting the specific patterns that keep you stuck.
+        </p>
+
+        <!-- Steps -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+          <!-- Step 1 -->
+          <tr>
+            <td valign="top" width="36" style="padding-bottom:18px;">
+              <div style="width:28px;height:28px;background-color:#101720;border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:bold;color:#d8b866;">1</div>
+            </td>
+            <td valign="top" style="padding-bottom:18px;padding-left:10px;border-bottom:1px solid #e8decc;">
+              <div style="font-size:13px;font-weight:bold;color:#101720;margin-bottom:4px;">Naming the pattern</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">What keeps repeating? Where does it show up — at work, in relationships, in how you talk to yourself? Getting specific about the pattern is the first step toward changing it.</p>
+            </td>
+          </tr>
+
+          <!-- Spacer -->
+          <tr><td colspan="2" style="height:18px;"></td></tr>
+
+          <!-- Step 2 -->
+          <tr>
+            <td valign="top" width="36" style="padding-bottom:18px;">
+              <div style="width:28px;height:28px;background-color:#101720;border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:bold;color:#d8b866;">2</div>
+            </td>
+            <td valign="top" style="padding-bottom:18px;padding-left:10px;border-bottom:1px solid #e8decc;">
+              <div style="font-size:13px;font-weight:bold;color:#101720;margin-bottom:4px;">Understanding what drives it</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">Anxiety and depression at this level usually make sense once you understand the experiences and beliefs underneath them. The goal is not to pathologize the past, but to understand how it still shapes the present.</p>
+            </td>
+          </tr>
+
+          <tr><td colspan="2" style="height:18px;"></td></tr>
+
+          <!-- Step 3 -->
+          <tr>
+            <td valign="top" width="36" style="padding-bottom:18px;">
+              <div style="width:28px;height:28px;background-color:#101720;border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:bold;color:#d8b866;">3</div>
+            </td>
+            <td valign="top" style="padding-bottom:18px;padding-left:10px;border-bottom:1px solid #e8decc;">
+              <div style="font-size:13px;font-weight:bold;color:#101720;margin-bottom:4px;">Building practical tools</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">Skills for regulating the nervous system, shifting thought patterns, improving communication, and setting limits that actually hold — not in theory, but in real situations you face each week.</p>
+            </td>
+          </tr>
+
+          <tr><td colspan="2" style="height:18px;"></td></tr>
+
+          <!-- Step 4 -->
+          <tr>
+            <td valign="top" width="36">
+              <div style="width:28px;height:28px;background-color:#101720;border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:bold;color:#d8b866;">4</div>
+            </td>
+            <td valign="top" style="padding-left:10px;">
+              <div style="font-size:13px;font-weight:bold;color:#101720;margin-bottom:4px;">Connecting it to real life</div>
+              <p style="font-size:13px;color:#6a6258;line-height:1.72;margin:0;">Every session connects to something outside the room. The work only matters if it changes how you show up in actual decisions, conversations, and relationships.</p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         ABOUT DAVID
+         ════════════════════════════════ -->
+    <tr>
+      <td style="padding:36px 44px;border-bottom:1px solid #e8decc;">
+
+        <div style="font-size:9px;font-weight:bold;letter-spacing:.18em;text-transform:uppercase;color:#b99138;margin-bottom:12px;">
+          &#8212;&nbsp; Your Therapist
+        </div>
+
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:bold;color:#101720;line-height:1.2;margin-bottom:20px;">
+          About David
+        </div>
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="88" valign="top">
+              <img
+                src="https://therapybydavid.github.io/david-robles-profile.jpeg"
+                alt="David Robles, LMSW"
+                width="76"
+                height="76"
+                style="border-radius:50%;object-fit:cover;object-position:center 15%;border:3px solid #e8decc;display:block;"
+              />
+            </td>
+            <td valign="top" style="padding-left:4px;">
+              <p style="font-size:14px;color:#6a6258;line-height:1.78;margin:0 0 10px 0;">
+                <strong style="color:#101720;font-weight:600;">David Robles, LMSW</strong> is a licensed psychotherapist based in Houston, Texas. As a U.S. Army veteran, he brings a direct, grounded approach to therapy — one that takes seriously both what you're going through and what you're capable of.
+              </p>
+              <p style="font-size:14px;color:#6a6258;line-height:1.78;margin:0 0 14px 0;">
+                His work focuses on anxiety, depression, trauma, burnout, and men's mental health. He sees adults across Texas via telehealth and in-person in Pasadena and Webster.
+              </p>
+              <!-- Credential pills -->
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="background-color:#f5efe3;border:1px solid #e8decc;color:#6a6258;font-size:10px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">U.S. Army Veteran</td>
+                  <td width="6">&nbsp;</td>
+                  <td style="background-color:#f5efe3;border:1px solid #e8decc;color:#6a6258;font-size:10px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">Baylor University</td>
+                  <td width="6">&nbsp;</td>
+                  <td style="background-color:#f5efe3;border:1px solid #e8decc;color:#6a6258;font-size:10px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;">Trauma-Informed</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         CTA
+         ════════════════════════════════ -->
+    <tr>
+      <td style="background-color:#101720;padding:44px 44px;text-align:center;">
+
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:bold;color:#ffffff;line-height:1.2;margin-bottom:10px;">
+          You don't have to keep carrying this alone.
+        </div>
+
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.72;margin:0 auto 28px;max-width:400px;">
+          A free 15-minute consultation is a low-pressure way to ask questions and see if therapy feels like a good fit.
+        </p>
+
+        <a
+          href="https://david-robles.clientsecure.me/request/service"
+          style="display:inline-block;background:linear-gradient(135deg,#d8b866,#b99138);color:#16100a;font-size:13px;font-weight:bold;padding:14px 40px;border-radius:100px;letter-spacing:.04em;text-decoration:none;"
+        >
+          Book a Free Consultation
+        </a>
+
+        <div style="margin-top:22px;">
+          <a href="tel:8325442562" style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;margin-right:20px;">(832) 544-2562</a>
+          <a href="https://therapybydavid.github.io" style="font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;">therapybydavid.github.io</a>
+        </div>
+
+      </td>
+    </tr>
+
+    <!-- ════════════════════════════════
+         FOOTER
+         ════════════════════════════════ -->
+    <tr>
+      <td style="background-color:#f3f4f6;padding:16px 44px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="font-size:10px;color:#9ca3af;line-height:1.55;">
+              © Therapy by David · David Robles, LMSW
+            </td>
+            <td align="right" style="font-size:10px;color:#9ca3af;line-height:1.55;">
+              This is a screening tool, not a clinical diagnosis.<br>
+              For emergencies call or text <strong>988</strong>.
+            </td>
+          </tr>
+        </table>
+        <!-- Mailchimp required unsubscribe block -->
+        <p style="font-size:10px;color:#c0bbb5;text-align:center;margin-top:12px;line-height:1.5;">
+          You received this because you requested a mental health screening at therapybydavid.github.io.<br>
+          <a href="*|UNSUB|*" style="color:#c0bbb5;">Unsubscribe</a>
+        </p>
+      </td>
+    </tr>
+
+  </table>
+  <!-- End main container -->
+
+</td></tr>
+</table>
+<!-- ══════════════════════════════════════════════════════
+     END OF EMAIL BODY
+     ══════════════════════════════════════════════════════ -->
+
+</body>
+</html>
