@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Preview | Therapy by David</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Page shell ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #d1d5db;
+      font-family: 'Inter', sans-serif;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page-note {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .page-note a {
+      color: #b99138;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── Document ── */
+    .doc {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 40px rgba(0,0,0,.18);
+    }
+
+    /* ── Variables ── */
+    :root {
+      --gold: #b99138;
+      --champagne: #d8b866;
+      --ink: #080b10;
+      --night: #101720;
+      --muted: #6a6258;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --line: #e8decc;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', sans-serif;
+    }
+
+    /* ── Cover ── */
+    .cover {
+      background: var(--night);
+      padding: 52px 52px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,184,102,.18), transparent 65%);
+      top: -160px; right: -120px;
+    }
+    .cover-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+    .cover-brand-bar {
+      width: 3px;
+      height: 36px;
+      background: var(--champagne);
+      border-radius: 2px;
+    }
+    .cover-brand-text { line-height: 1.15; }
+    .cover-brand-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .cover-brand-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-top: 2px;
+    }
+    .cover-title {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
+    }
+    .cover-title em { color: var(--champagne); font-style: italic; }
+    .cover-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 40px;
+      display: flex;
+      gap: 24px;
+    }
+    .cover-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* Score summary strip */
+    .score-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .score-chip {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(216,184,102,.22);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .score-chip-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 8px;
+    }
+    .score-chip-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .score-chip-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .score-chip-denom { font-size: 13px; color: rgba(255,255,255,.35); }
+    .score-chip-sev {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 6px;
+      letter-spacing: .04em;
+    }
+    .sev-moderate { color: #f59e0b; }
+    .sev-mild     { color: #84cc16; }
+    .sev-minimal  { color: #34d399; }
+    .sev-modsev   { color: #f97316; }
+    .sev-severe   { color: #ef4444; }
+
+    /* ── Sections ── */
+    section { padding: 40px 52px; border-bottom: 1px solid var(--line); }
+    section:last-child { border-bottom: none; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .6;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--night);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 650;
+      color: var(--night);
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--night); font-weight: 600; }
+
+    /* Score bar */
+    .score-bar-section {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .score-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .score-bar-title { font-size: 13px; font-weight: 700; color: var(--night); }
+    .score-bar-value { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--night); }
+    .score-bar-track {
+      height: 8px;
+      background: var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #3d9970, #c8960c, #d97706, #dc4a26, #c0392b);
+    }
+    .score-bar-range {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--muted);
+      opacity: .7;
+    }
+    .severity-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 16px;
+    }
+    .badge-moderate  { background: #fef3c7; color: #b45309; }
+    .badge-mild      { background: #f0fdf4; color: #15803d; }
+    .badge-minimal   { background: #ecfdf5; color: #047857; }
+    .badge-modsev    { background: #fff7ed; color: #c2410c; }
+    .badge-severe    { background: #fef2f2; color: #b91c1c; }
+
+    .callout {
+      background: var(--cream);
+      border-left: 3px solid var(--champagne);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .callout p { font-size: 14px; margin: 0; }
+    .callout-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    /* Connection section */
+    .connection-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .connection-card {
+      background: var(--paper);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--line);
+    }
+    .connection-card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--night);
+      margin-bottom: 6px;
+    }
+    .connection-card p { font-size: 13px; margin: 0; }
+
+    /* What therapy does */
+    .therapy-steps { margin-top: 20px; }
+    .therapy-step {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .therapy-step:last-child { border-bottom: none; }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--night);
+      color: var(--champagne);
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-body { flex: 1; }
+    .step-title { font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: var(--muted); line-height: 1.72; margin: 0; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .about-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--line);
+    }
+    .about-photo-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 3px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--muted);
+    }
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .credential {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--night);
+      padding: 44px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,184,102,.15), transparent 65%);
+      bottom: -140px; left: 50%;
+      transform: translateX(-50%);
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .cta-section p { color: rgba(255,255,255,.55); margin-bottom: 28px; max-width: 44ch; margin-left: auto; margin-right: auto; }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--champagne), var(--gold));
+      color: #16100a;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 14px 36px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .cta-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-size: 12px;
+      color: rgba(255,255,255,.4);
+    }
+    .cta-contacts a { color: rgba(255,255,255,.6); text-decoration: none; }
+
+    /* Footer */
+    .doc-footer {
+      background: #f3f4f6;
+      padding: 16px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .doc-footer p {
+      font-size: 10px;
+      color: #9ca3af;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .doc { box-shadow: none; }
+      .page-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<p class="page-note">
+  This is a preview of the PDF report that would be emailed to clients after completing the screening.
+  Sample scores: Depression 14/27 (Moderate) · Anxiety 10/21 (Moderate).
+  <br>Use <strong>Ctrl/Cmd + P → Save as PDF</strong> to export it.
+</p>
+
+<div class="doc">
+
+  <!-- ── COVER ── -->
+  <div class="cover">
+    <div class="cover-brand">
+      <div class="cover-brand-bar"></div>
+      <div class="cover-brand-text">
+        <div class="cover-brand-name">Therapy by David</div>
+        <div class="cover-brand-sub">Private Psychotherapy · Texas</div>
+      </div>
+    </div>
+    <h1 class="cover-title">Your Mental Health<br><em>Screening Report</em></h1>
+    <div class="cover-meta">
+      <span>Prepared for: <strong style="color:rgba(255,255,255,.8)">Donald</strong></span>
+      <span>Date: <strong style="color:rgba(255,255,255,.8)">May 14, 2026</strong></span>
+    </div>
+    <div class="score-strip">
+      <div class="score-chip">
+        <div class="score-chip-label">Depression Score</div>
+        <div class="score-chip-row">
+          <span class="score-chip-num">14</span>
+          <span class="score-chip-denom">/ 27</span>
+        </div>
+        <div class="score-chip-sev sev-moderate">Moderate</div>
+      </div>
+      <div class="score-chip">
+        <div class="score-chip-label">Anxiety Score</div>
+        <div class="score-chip-row">
+          <span class="score-chip-num">10</span>
+          <span class="score-chip-denom">/ 21</span>
+        </div>
+        <div class="score-chip-sev sev-moderate">Moderate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DEPRESSION ── -->
+  <section>
+    <div class="section-eyebrow">Depression Screening</div>
+    <h2>Your Depression Score</h2>
+
+    <div class="score-bar-section">
+      <div class="score-bar-header">
+        <span class="score-bar-title">Score</span>
+        <span class="score-bar-value">14 <span style="font-size:14px;color:#9ca3af;font-family:'Inter',sans-serif;font-weight:400">/ 27</span></span>
+      </div>
+      <div class="score-bar-track">
+        <div class="score-bar-fill" style="width: 51.9%"></div>
+      </div>
+      <div class="score-bar-range">
+        <span>Minimal</span><span>Mild</span><span>Moderate</span><span>Mod. Severe</span><span>Severe</span>
+      </div>
+    </div>
+
+    <span class="severity-badge badge-moderate">Moderate Depression</span>
+
+    <p>Your score falls in the moderate range. Many people at this level feel like they're functioning on the outside while struggling underneath. Therapy at this level tends to make a meaningful difference.</p>
+
+    <div class="callout">
+      <div class="callout-label">What this can look like day to day</div>
+      <p>This can look like dragging yourself through the day, going through the motions at work or at home while feeling disconnected from it all. You might pull back from people you care about, lose interest in things that used to matter, or find yourself thinking nothing is going to get better — even when life looks okay from the outside.</p>
+    </div>
+
+    <p>Moderate depression is one of the most common presentations in outpatient therapy. It responds well to structured, consistent work — particularly approaches that identify the underlying patterns keeping you stuck rather than just treating the symptoms on the surface.</p>
+  </section>
+
+  <!-- ── ANXIETY ── -->
+  <section>
+    <div class="section-eyebrow">Anxiety Screening</div>
+    <h2>Your Anxiety Score</h2>
+
+    <div class="score-bar-section">
+      <div class="score-bar-header">
+        <span class="score-bar-title">Score</span>
+        <span class="score-bar-value">10 <span style="font-size:14px;color:#9ca3af;font-family:'Inter',sans-serif;font-weight:400">/ 21</span></span>
+      </div>
+      <div class="score-bar-track">
+        <div class="score-bar-fill" style="width: 47.6%"></div>
+      </div>
+      <div class="score-bar-range">
+        <span>Minimal</span><span>Mild</span><span>Moderate</span><span>Severe</span>
+      </div>
+    </div>
+
+    <span class="severity-badge badge-moderate">Moderate Anxiety</span>
+
+    <p>Your score falls in the moderate range for anxiety. Worry may feel hard to control, restlessness or irritability may show up more than you'd like, and your nervous system may feel chronically activated.</p>
+
+    <div class="callout">
+      <div class="callout-label">What this can look like day to day</div>
+      <p>This often looks like a nervous system that never fully turns off. You might feel on edge in conversations, irritable with people you care about, or exhausted from the mental effort of keeping everything together. Sleep can be disrupted, concentration can slip, and the worry tends to jump from one thing to the next without ever fully resolving.</p>
+    </div>
+
+    <p>At the moderate level, anxiety is often being managed — through staying busy, avoiding certain situations, or simply pushing through. Those coping strategies cost energy, and they rarely address the source. Therapy creates a different path: understanding where the pattern comes from and building a steadier response.</p>
+  </section>
+
+  <!-- ── CONNECTION ── -->
+  <section>
+    <div class="section-eyebrow">What Your Results Together Mean</div>
+    <h2>Depression and anxiety rarely travel alone.</h2>
+
+    <p>Your results show moderate scores in both areas — which is more common than most people realize. Research consistently shows that depression and anxiety occur together in the majority of people who experience either one. They feed each other: anxiety keeps the nervous system activated and braced for threat, while depression drains the energy needed to respond. The result can feel like being simultaneously wound up and shut down.</p>
+
+    <div class="connection-grid">
+      <div class="connection-card">
+        <div class="connection-card-title">Why they overlap</div>
+        <p>Both conditions share underlying patterns — negative thought loops, avoidance, nervous system dysregulation. Addressing one often reduces the other.</p>
+      </div>
+      <div class="connection-card">
+        <div class="connection-card-title">What this means for you</div>
+        <p>Having both doesn't mean things are worse — it means there's a clear target. Therapy that addresses the root patterns tends to move both scores at once.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <p><strong>The important thing to know:</strong> moderate scores in both depression and anxiety are very treatable. This is not a permanent state. These patterns developed for reasons — and they can change with the right kind of consistent support.</p>
+    </div>
+  </section>
+
+  <!-- ── WHAT THERAPY DOES ── -->
+  <section>
+    <div class="section-eyebrow">The Work</div>
+    <h2>What therapy actually addresses at this level.</h2>
+
+    <p>At moderate scores in both depression and anxiety, therapy is not about venting — it is about identifying and shifting the specific patterns that keep you stuck. Here is what that typically looks like in practice:</p>
+
+    <div class="therapy-steps">
+      <div class="therapy-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Naming the pattern</div>
+          <p class="step-desc">What keeps repeating? Where does it show up — at work, in relationships, in how you talk to yourself? Getting specific about the pattern is the first step toward changing it.</p>
+        </div>
+      </div>
+      <div class="therapy-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Understanding what drives it</div>
+          <p class="step-desc">Anxiety and depression at this level usually make sense once you understand the experiences and beliefs underneath them. The goal is not to pathologize the past, but to understand how it still shapes the present.</p>
+        </div>
+      </div>
+      <div class="therapy-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Building practical tools</div>
+          <p class="step-desc">Skills for regulating the nervous system, shifting thought patterns, improving communication, and setting limits that actually hold — not in theory, but in real situations you face each week.</p>
+        </div>
+      </div>
+      <div class="therapy-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Connecting it to real life</div>
+          <p class="step-desc">Every session connects to something outside the room. The work only matters if it changes how you show up in actual decisions, conversations, and relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section>
+    <div class="section-eyebrow">Your Therapist</div>
+    <h2>About David</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-placeholder">D</div>
+      <div>
+        <p style="margin-bottom:10px"><strong>David Robles, LMSW</strong> is a licensed psychotherapist based in Houston, Texas. As a U.S. Army veteran, he brings a direct, grounded approach to therapy — one that takes seriously both what you're going through and what you're capable of.</p>
+        <p>His work focuses on anxiety, depression, trauma, burnout, and men's mental health. He sees adults across Texas via telehealth and in-person at offices in Pasadena and Webster.</p>
+        <div class="credentials">
+          <span class="credential">LMSW · Texas Licensed</span>
+          <span class="credential">U.S. Army Veteran</span>
+          <span class="credential">Baylor University MSW</span>
+          <span class="credential">CBT Trained</span>
+          <span class="credential">Trauma-Informed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <div class="cta-section">
+    <h2>You don't have to keep carrying this alone.</h2>
+    <p>A free 15-minute consultation is a low-pressure way to ask questions and see if therapy feels like a good fit.</p>
+    <a class="cta-btn" href="https://david-robles.clientsecure.me/request/service">Book a Free Consultation</a>
+    <div class="cta-contacts">
+      <a href="tel:8325442562">(832) 544-2562</a>
+      <a href="mailto:roblesinc@gmail.com">roblesinc@gmail.com</a>
+      <a href="https://therapybydavid.github.io">therapybydavid.github.io</a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="doc-footer">
+    <p>© Therapy by David · David Robles, LMSW · Texas License #12345</p>
+    <p style="text-align:right">This report is a screening tool, not a clinical diagnosis.<br>For emergencies call or text 988.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
