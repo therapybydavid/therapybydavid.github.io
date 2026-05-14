@@ -754,25 +754,61 @@
   }
 
   /* ── Gauge SVG ── */
-  function gaugeHTML(score, max, color) {
-    const pct = Math.min(score / max, 1);
+  const PHQ_BANDS = [
+    { max: 4,  color: '#3d9970' },
+    { max: 9,  color: '#c8960c' },
+    { max: 14, color: '#d97706' },
+    { max: 19, color: '#dc4a26' },
+    { max: 27, color: '#c0392b' },
+  ];
+  const GAD_BANDS = [
+    { max: 4,  color: '#3d9970' },
+    { max: 9,  color: '#c8960c' },
+    { max: 14, color: '#d97706' },
+    { max: 21, color: '#c0392b' },
+  ];
+
+  function gaugeHTML(score, max, bands) {
     const r = 56, cx = 70, cy = 68;
+
     function pt(deg) {
       const rad = deg * Math.PI / 180;
-      return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+      return [+(cx + r * Math.cos(rad)).toFixed(2), +(cy + r * Math.sin(rad)).toFixed(2)];
     }
-    const [sx, sy] = pt(180);
-    const endDeg = 180 + pct * 180;
-    const [ex, ey] = pt(endDeg);
-    const large = pct > 0.5 ? 1 : 0;
-    const arc = score > 0
-      ? `<path d="M ${sx} ${sy} A ${r} ${r} 0 ${large} 1 ${ex} ${ey}" fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round"/>`
-      : '';
-    return `
-      <svg class="gauge-svg" viewBox="0 0 140 78">
-        <path d="M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}" fill="none" stroke="#e8decc" stroke-width="9" stroke-linecap="round"/>
-        ${arc}
-      </svg>`;
+
+    function seg(a1, a2, color, opacity) {
+      const [sx, sy] = pt(a1);
+      const [ex, ey] = pt(a2);
+      const large = (a2 - a1) > 180 ? 1 : 0;
+      return `<path d="M ${sx} ${sy} A ${r} ${r} 0 ${large} 1 ${ex} ${ey}" fill="none" stroke="${color}" stroke-width="10" stroke-linecap="butt" opacity="${opacity}"/>`;
+    }
+
+    // Dim track showing full spectrum
+    let dim = '', prev = 0;
+    for (const b of bands) {
+      const a1 = 180 + (prev / max) * 180;
+      const a2 = 180 + (b.max / max) * 180;
+      dim += seg(a1, a2, b.color, 0.2);
+      prev = b.max;
+    }
+
+    // Bright fill up to score
+    let fill = ''; prev = 0;
+    for (const b of bands) {
+      if (prev >= score) break;
+      const a1 = 180 + (prev / max) * 180;
+      const a2 = 180 + (Math.min(b.max, score) / max) * 180;
+      fill += seg(a1, a2, b.color, 1);
+      prev = b.max;
+    }
+
+    // White dot at score position
+    const dotDeg = 180 + (Math.min(score, max) / max) * 180;
+    const [dx, dy] = pt(dotDeg);
+    const dotColor = bands.find(b => b.max >= score)?.color || bands[bands.length - 1].color;
+    const dot = `<circle cx="${dx}" cy="${dy}" r="6" fill="white" stroke="${dotColor}" stroke-width="2.5"/>`;
+
+    return `<svg class="gauge-svg" viewBox="0 0 140 78">${dim}${fill}${dot}</svg>`;
   }
 
   /* ── Build results DOM ── */
@@ -787,7 +823,7 @@
       <div class="gauge-card">
         <div class="gauge-label">Depression</div>
         <div class="gauge-wrap">
-          ${gaugeHTML(phq, 27, pi.color)}
+          ${gaugeHTML(phq, 27, PHQ_BANDS)}
           <div class="gauge-score-display">
             <div class="gauge-number">${phq}</div>
             <div class="gauge-denom">/ 27</div>
@@ -798,7 +834,7 @@
       <div class="gauge-card">
         <div class="gauge-label">Anxiety</div>
         <div class="gauge-wrap">
-          ${gaugeHTML(gad, 21, gi.color)}
+          ${gaugeHTML(gad, 21, GAD_BANDS)}
           <div class="gauge-score-display">
             <div class="gauge-number">${gad}</div>
             <div class="gauge-denom">/ 21</div>
