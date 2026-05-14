@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles | Therapy by David</title>
+  <meta name="description" content="Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW." />
+  <meta property="og:title" content="Articles | Therapy by David" />
+  <meta property="og:description" content="Practical writing on anxiety, trauma, burnout, and what therapy actually looks like." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therapybydavid.github.io/Houston/blog.html" />
+  <link rel="canonical" href="https://therapybydavid.github.io/Houston/blog.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(8,11,16,.74); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(18px); }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 15px 28px; border-radius: 999px; font-size: 14px; font-weight: 800; letter-spacing: .02em; transition: transform .2s ease, box-shadow .2s ease; border: 1px solid transparent; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+
+    .blog-hero {
+      padding: 148px 0 80px;
+      background: linear-gradient(110deg, var(--ink) 0%, var(--night) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%);
+      top: -200px; right: -100px;
+    }
+    .blog-hero .container { position: relative; z-index: 2; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; margin-bottom: 18px; }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    .blog-hero h1 { font-family: var(--serif); color: var(--white); font-size: clamp(42px, 6vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 20px; max-width: 700px; }
+    .blog-hero p { color: rgba(255,255,255,.68); font-size: 18px; line-height: 1.7; max-width: 560px; }
+
+    .blog-grid-section { padding: 80px 0 110px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 56px; }
+
+    .post-card-image { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .post-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 18px 48px rgba(20,33,50,.07);
+      transition: transform .22s ease, box-shadow .22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover { transform: translateY(-6px); box-shadow: 0 28px 70px rgba(20,33,50,.13); }
+    .post-card-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
+    .post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+    .tag { background: rgba(185,145,56,.1); border: 1px solid rgba(185,145,56,.22); border-radius: 999px; padding: 5px 13px; color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .post-date { color: var(--muted); font-size: 13px; font-weight: 600; }
+    .post-card h2 { font-family: var(--serif); color: var(--night); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; margin-bottom: 14px; }
+    .post-card p { font-size: 15px; line-height: 1.75; color: var(--muted); margin-bottom: 28px; flex: 1; max-width: none; }
+    .read-link { display: inline-flex; align-items: center; gap: 8px; color: var(--night); font-size: 14px; font-weight: 800; letter-spacing: .02em; margin-top: auto; }
+    .read-link::after { content: '→'; transition: transform .2s ease; }
+    .post-card:hover .read-link::after { transform: translateX(4px); }
+
+    .blog-cta { background: var(--night); border-radius: var(--radius); padding: 64px; text-align: center; margin-top: 80px; position: relative; overflow: hidden; }
+    .blog-cta::before { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -150px; right: -100px; }
+    .blog-cta .container { position: relative; z-index: 2; }
+    .blog-cta h2 { font-family: var(--serif); color: var(--white); font-size: clamp(28px, 4vw, 46px); margin-bottom: 16px; }
+    .blog-cta p { color: rgba(255,255,255,.68); font-size: 17px; margin: 0 auto 32px; max-width: 480px; }
+
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 36px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-family: var(--serif); font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .blog-cta { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Therapy by David home">
+        <strong>Therapy by David</strong>
+        <span>Private Psychotherapy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#fit">Who It's For</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#locations">Locations</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Free Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="container">
+      <span class="eyebrow">Articles</span>
+      <h1>Practical writing on the work of therapy.</h1>
+      <p>Honest articles on anxiety, trauma, burnout, and what it actually looks like to change — written by a therapist who works with it every week.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-grid-section">
+      <div class="container">
+        <div class="blog-grid">
+
+          <article class="post-card reveal">
+            <img class="post-card-image" src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=80" alt="Person sitting quietly in a calm space" />
+            <div class="post-card-body">
+              <div class="post-meta">
+                <span class="tag">Anxiety</span>
+                <span class="post-date">May 13, 2026 · 6 min read</span>
+              </div>
+              <h2>When Your Mind Won't Slow Down: Understanding Anxiety</h2>
+              <p>Anxiety is not a character flaw or a sign that something is permanently broken. It is a nervous system response that made sense at some point — and with the right work, it can change.</p>
+              <a class="read-link" href="blog/managing-anxiety.html">Read article</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal">
+            <img class="post-card-image" src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=800&q=80" alt="Person looking reflectively into the distance" />
+            <div class="post-card-body">
+              <div class="post-meta">
+                <span class="tag">Trauma</span>
+                <span class="post-date">May 13, 2026 · 7 min read</span>
+              </div>
+              <h2>Why the Past Keeps Showing Up: Trauma and Present-Day Patterns</h2>
+              <p>Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection.</p>
+              <a class="read-link" href="blog/trauma-and-patterns.html">Read article</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal">
+            <img class="post-card-image" src="images/depression-anger-article.jpg" alt="Man sitting alone, looking away, in quiet distress" />
+            <div class="post-card-body">
+              <div class="post-meta">
+                <span class="tag">Depression</span>
+                <span class="post-date">May 13, 2026 · 7 min read</span>
+              </div>
+              <h2>Depression and Anger: The Connection Most People Miss</h2>
+              <p>Depression doesn't always look like sadness. For many people — especially men — it shows up as irritability, a short fuse, and rage that seems to come from nowhere.</p>
+              <a class="read-link" href="blog/depression-and-anger.html">Read article</a>
+            </div>
+          </article>
+
+          <article class="post-card reveal">
+            <img class="post-card-image" src="images/childhood-neglect-article.jpg" alt="Two people sitting apart, distance between them" />
+            <div class="post-card-body">
+              <div class="post-meta">
+                <span class="tag">Relationships</span>
+                <span class="post-date">May 13, 2026 · 7 min read</span>
+              </div>
+              <h2>How Childhood Emotional Neglect Shows Up in Adult Relationships</h2>
+              <p>You had a roof over your head and nothing dramatically wrong. So why do close relationships feel so hard? Childhood emotional neglect is often invisible — but its effects are not.</p>
+              <a class="read-link" href="blog/childhood-neglect-relationships.html">Read article</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="blog-cta reveal">
+          <h2>Ready to stop just reading about it?</h2>
+          <p>Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on.</p>
+          <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Therapy by David</h3>
+          <p>Private psychotherapy for anxiety, trauma, burnout, stress, overthinking, and emotional overwhelm. Serving adults across Texas.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul><li><a href="index.html#fit">Who It's For</a></li><li><a href="index.html#approach">Approach</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#about">About David</a></li></ul>
+        </div>
+        <div>
+          <h4>Locations</h4>
+          <ul><li><a href="https://www.google.com/maps/search/?api=1&query=817%20Southmore%20Ave%2C%20Pasadena%2C%20TX%2077502" target="_blank" rel="noopener">Pasadena Office</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=1335%20Regents%20Park%20Dr%2C%20Houston%2C%20TX%2077058" target="_blank" rel="noopener">Webster Office</a></li><li>Telehealth across Texas</li></ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul><li><a href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Schedule Consultation</a></li><li><a href="tel:8325442562">(832) 544-2562</a></li><li><a href="mailto:roblesinc@gmail.com">Email David</a></li></ul>
+        </div>
+      </div>
+      <div class="copyright"><span>© <span class="year"></span> Therapy by David. All rights reserved.</span><span>Articles are educational and not a substitute for professional care.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
