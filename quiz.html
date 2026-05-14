@@ -32,7 +32,10 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--sans);
-      background: var(--paper);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(216,184,102,.13), transparent 36%),
+        radial-gradient(circle at 10% 80%, rgba(216,184,102,.08), transparent 32%),
+        var(--ink);
       color: var(--text);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -46,9 +49,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(251,248,241,.96);
+      background: rgba(8,11,16,.88);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(216,184,102,.15);
       padding: 0 24px;
     }
     .nav-inner {
@@ -63,7 +66,7 @@
       font-family: var(--serif);
       font-size: 18px;
       font-weight: 700;
-      color: var(--night);
+      color: var(--white);
       line-height: 1.1;
     }
     .nav-logo span {
@@ -73,7 +76,7 @@
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(255,255,255,.45);
     }
     .nav-back {
       display: inline-flex;
@@ -81,10 +84,10 @@
       gap: 6px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--muted);
+      color: rgba(255,255,255,.5);
       transition: color .2s;
     }
-    .nav-back:hover { color: var(--gold); }
+    .nav-back:hover { color: var(--champagne); }
 
     /* ── Layout ── */
     .quiz-wrap {
@@ -496,8 +499,7 @@
       text-align: center;
       padding: 24px;
       font-size: 12px;
-      color: var(--muted);
-      opacity: .65;
+      color: rgba(255,255,255,.3);
     }
   </style>
 </head>
