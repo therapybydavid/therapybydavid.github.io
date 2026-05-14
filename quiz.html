@@ -754,61 +754,50 @@
   }
 
   /* ── Gauge SVG ── */
-  const PHQ_BANDS = [
-    { max: 4,  color: '#3d9970' },
-    { max: 9,  color: '#c8960c' },
-    { max: 14, color: '#d97706' },
-    { max: 19, color: '#dc4a26' },
-    { max: 27, color: '#c0392b' },
-  ];
-  const GAD_BANDS = [
-    { max: 4,  color: '#3d9970' },
-    { max: 9,  color: '#c8960c' },
-    { max: 14, color: '#d97706' },
-    { max: 21, color: '#c0392b' },
-  ];
+  function dotColor(pct) {
+    if (pct <= 0.15) return '#3d9970';
+    if (pct <= 0.34) return '#c8960c';
+    if (pct <= 0.55) return '#d97706';
+    if (pct <= 0.74) return '#dc4a26';
+    return '#c0392b';
+  }
 
-  function gaugeHTML(score, max, bands) {
+  function gaugeHTML(score, max, gradId) {
     const r = 56, cx = 70, cy = 68;
+    const pct = Math.min(score / max, 1);
 
     function pt(deg) {
       const rad = deg * Math.PI / 180;
       return [+(cx + r * Math.cos(rad)).toFixed(2), +(cy + r * Math.sin(rad)).toFixed(2)];
     }
 
-    function seg(a1, a2, color, opacity) {
-      const [sx, sy] = pt(a1);
-      const [ex, ey] = pt(a2);
-      const large = (a2 - a1) > 180 ? 1 : 0;
-      return `<path d="M ${sx} ${sy} A ${r} ${r} 0 ${large} 1 ${ex} ${ey}" fill="none" stroke="${color}" stroke-width="10" stroke-linecap="butt" opacity="${opacity}"/>`;
-    }
+    const [sx, sy] = pt(180);
+    const endDeg = 180 + pct * 180;
+    const [ex, ey] = pt(endDeg);
+    const large = pct > 0.5 ? 1 : 0;
 
-    // Dim track showing full spectrum
-    let dim = '', prev = 0;
-    for (const b of bands) {
-      const a1 = 180 + (prev / max) * 180;
-      const a2 = 180 + (b.max / max) * 180;
-      dim += seg(a1, a2, b.color, 0.2);
-      prev = b.max;
-    }
+    const fillArc = score > 0
+      ? `<path d="M ${sx} ${sy} A ${r} ${r} 0 ${large} 1 ${ex} ${ey}" fill="none" stroke="url(#${gradId})" stroke-width="10" stroke-linecap="round"/>`
+      : '';
 
-    // Bright fill up to score
-    let fill = ''; prev = 0;
-    for (const b of bands) {
-      if (prev >= score) break;
-      const a1 = 180 + (prev / max) * 180;
-      const a2 = 180 + (Math.min(b.max, score) / max) * 180;
-      fill += seg(a1, a2, b.color, 1);
-      prev = b.max;
-    }
+    const [dx, dy] = pt(endDeg);
+    const dc = dotColor(pct);
+    const dot = `<circle cx="${dx}" cy="${dy}" r="5.5" fill="white" stroke="${dc}" stroke-width="2.5"/>`;
 
-    // White dot at score position
-    const dotDeg = 180 + (Math.min(score, max) / max) * 180;
-    const [dx, dy] = pt(dotDeg);
-    const dotColor = bands.find(b => b.max >= score)?.color || bands[bands.length - 1].color;
-    const dot = `<circle cx="${dx}" cy="${dy}" r="6" fill="white" stroke="${dotColor}" stroke-width="2.5"/>`;
-
-    return `<svg class="gauge-svg" viewBox="0 0 140 78">${dim}${fill}${dot}</svg>`;
+    return `<svg class="gauge-svg" viewBox="0 0 140 78">
+      <defs>
+        <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#3d9970"/>
+          <stop offset="30%"  stop-color="#c8960c"/>
+          <stop offset="54%"  stop-color="#d97706"/>
+          <stop offset="74%"  stop-color="#dc4a26"/>
+          <stop offset="100%" stop-color="#c0392b"/>
+        </linearGradient>
+      </defs>
+      <path d="M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}" fill="none" stroke="url(#${gradId})" stroke-width="10" stroke-linecap="round" opacity="0.2"/>
+      ${fillArc}
+      ${dot}
+    </svg>`;
   }
 
   /* ── Build results DOM ── */
@@ -823,7 +812,7 @@
       <div class="gauge-card">
         <div class="gauge-label">Depression</div>
         <div class="gauge-wrap">
-          ${gaugeHTML(phq, 27, PHQ_BANDS)}
+          ${gaugeHTML(phq, 27, 'gauge-phq')}
           <div class="gauge-score-display">
             <div class="gauge-number">${phq}</div>
             <div class="gauge-denom">/ 27</div>
@@ -834,7 +823,7 @@
       <div class="gauge-card">
         <div class="gauge-label">Anxiety</div>
         <div class="gauge-wrap">
-          ${gaugeHTML(gad, 21, GAD_BANDS)}
+          ${gaugeHTML(gad, 21, 'gauge-gad')}
           <div class="gauge-score-display">
             <div class="gauge-number">${gad}</div>
             <div class="gauge-denom">/ 21</div>
