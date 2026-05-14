@@ -523,11 +523,11 @@
   <div class="card active" id="card-intro">
     <div class="eyebrow">Free Screening</div>
     <h1 class="intro-title">How are you really doing?</h1>
-    <p class="intro-desc">This screening uses the PHQ-9 and GAD-7 — two of the most widely used clinical tools in mental health — to give you a clear, honest picture of where your anxiety and depression symptoms currently stand.</p>
+    <p class="intro-desc">This screening uses two of the most widely used clinical tools in mental health to give you a clear, honest picture of where your anxiety and depression symptoms currently stand.</p>
     <p class="intro-desc">It takes about 3 minutes. Your results are private.</p>
     <div class="tool-badges">
-      <span class="badge">PHQ-9 Depression Scale</span>
-      <span class="badge">GAD-7 Anxiety Scale</span>
+      <span class="badge">Depression Screening</span>
+      <span class="badge">Anxiety Screening</span>
     </div>
     <ul class="meta-list">
       <li>16 questions, presented one at a time</li>
@@ -601,7 +601,7 @@
     <div class="divider"></div>
 
     <div class="disclaimer">
-      <strong>Important:</strong> This is a validated clinical screening tool, not a diagnosis. PHQ-9 and GAD-7 measure symptom severity — they are widely used in professional settings to start a conversation, not end one. If you're in crisis, call or text <strong>988</strong> (Suicide & Crisis Lifeline) anytime.
+      <strong>Important:</strong> This is a validated clinical screening tool, not a diagnosis. These questions measure symptom severity and are widely used in professional settings to start a conversation, not end one. If you're in crisis, call or text <strong>988</strong> (Suicide & Crisis Lifeline) anytime.
     </div>
 
     <div class="results-cta">
@@ -785,7 +785,7 @@
     /* Gauges */
     document.getElementById('gauges').innerHTML = `
       <div class="gauge-card">
-        <div class="gauge-label">Depression (PHQ-9)</div>
+        <div class="gauge-label">Depression</div>
         <div class="gauge-wrap">
           ${gaugeHTML(phq, 27, pi.color)}
           <div class="gauge-score-display">
@@ -796,7 +796,7 @@
         <div class="gauge-severity ${pi.cls}">${pi.label}</div>
       </div>
       <div class="gauge-card">
-        <div class="gauge-label">Anxiety (GAD-7)</div>
+        <div class="gauge-label">Anxiety</div>
         <div class="gauge-wrap">
           ${gaugeHTML(gad, 21, gi.color)}
           <div class="gauge-score-display">
