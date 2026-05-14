@@ -782,10 +782,9 @@
     const [sx, sy] = pt(180);
     const endDeg = 180 + pct * 180;
     const [ex, ey] = pt(endDeg);
-    const large = pct > 0.5 ? 1 : 0;
 
     const fillArc = score > 0
-      ? `<path d="M ${sx} ${sy} A ${r} ${r} 0 ${large} 1 ${ex} ${ey}" fill="none" stroke="url(#${gradId})" stroke-width="10" stroke-linecap="round"/>`
+      ? `<path d="M ${sx} ${sy} A ${r} ${r} 0 0 1 ${ex} ${ey}" fill="none" stroke="url(#${gradId})" stroke-width="10" stroke-linecap="round"/>`
       : '';
 
     const [dx, dy] = pt(endDeg);
