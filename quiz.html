@@ -653,6 +653,14 @@
   let resp = new Array(questions.length).fill(null);
   let userName = "";
 
+  // ?preview in URL → jump straight to results with sample scores
+  if (new URLSearchParams(location.search).has('preview')) {
+    userName = "David";
+    buildResults(14, 10, 0);
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    document.getElementById('card-results').classList.add('active');
+  }
+
   function showCard(id) {
     document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
     document.getElementById(id).classList.add('active');
