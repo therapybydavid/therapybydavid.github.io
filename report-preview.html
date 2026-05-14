@@ -220,17 +220,43 @@
     }
     .score-bar-title { font-size: 13px; font-weight: 700; color: var(--night); }
     .score-bar-value { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--night); }
+    .score-bar-wrap { position: relative; margin-bottom: 8px; padding-top: 22px; }
     .score-bar-track {
       height: 8px;
       background: var(--line);
       border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 6px;
     }
     .score-bar-fill {
       height: 100%;
       border-radius: 8px;
       background: linear-gradient(90deg, #3d9970, #c8960c, #d97706, #dc4a26, #c0392b);
+    }
+    .score-bar-marker {
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .marker-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: .7;
+      white-space: nowrap;
+      margin-bottom: 2px;
+    }
+    .marker-line {
+      width: 1.5px;
+      height: 18px;
+      background: var(--muted);
+      opacity: .35;
+      border-radius: 2px;
     }
     .score-bar-range {
       display: flex;
@@ -484,8 +510,14 @@
         <span class="score-bar-title">Score</span>
         <span class="score-bar-value">14 <span style="font-size:14px;color:#9ca3af;font-family:'Inter',sans-serif;font-weight:400">/ 27</span></span>
       </div>
-      <div class="score-bar-track">
-        <div class="score-bar-fill" style="width: 51.9%"></div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-marker" style="left: 11.1%">
+          <span class="marker-label">Most adults</span>
+          <div class="marker-line"></div>
+        </div>
+        <div class="score-bar-track">
+          <div class="score-bar-fill" style="width: 51.9%"></div>
+        </div>
       </div>
       <div class="score-bar-range">
         <span>Minimal</span><span>Mild</span><span>Moderate</span><span>Mod. Severe</span><span>Severe</span>
@@ -513,8 +545,14 @@
         <span class="score-bar-title">Score</span>
         <span class="score-bar-value">10 <span style="font-size:14px;color:#9ca3af;font-family:'Inter',sans-serif;font-weight:400">/ 21</span></span>
       </div>
-      <div class="score-bar-track">
-        <div class="score-bar-fill" style="width: 47.6%"></div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-marker" style="left: 14.3%">
+          <span class="marker-label">Most adults</span>
+          <div class="marker-line"></div>
+        </div>
+        <div class="score-bar-track">
+          <div class="score-bar-fill" style="width: 47.6%"></div>
+        </div>
       </div>
       <div class="score-bar-range">
         <span>Minimal</span><span>Mild</span><span>Moderate</span><span>Severe</span>
