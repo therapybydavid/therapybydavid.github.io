@@ -2,6 +2,8 @@ backend:
   name: github
   repo: therapybydavid/therapybydavid.github.io
   branch: main
+  auth_type: pkce
+  app_id: Ov23liRBgMdAEJi8bBp3
 
 media_folder: "images"
 public_folder: "/images"
