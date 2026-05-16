@@ -2,7 +2,6 @@ backend:
   name: github
   repo: therapybydavid/therapybydavid.github.io
   branch: main
- base_url: https://decap-cms-oauth-provider.vercel.app
 
 media_folder: "images"
 public_folder: "/images"
