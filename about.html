@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About David Robles | Therapy by David</title>
+  <meta name="description" content="David Robles is a U.S. Army veteran and licensed psychotherapist in Texas. Learn about his background, approach, and how he works with clients across Texas." />
+  <link rel="canonical" href="https://therapybydavid.github.io/Houston/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(216,184,102,.2), transparent 36%),
+        linear-gradient(110deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 55%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; position: relative; z-index: 2; }
+    .page-hero h1 { color: var(--white); margin-bottom: 24px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 36px; max-width: 560px; }
+    .hero-photo { border-radius: 34px; overflow: hidden; border: 1px solid rgba(216,184,102,.28); box-shadow: var(--shadow); }
+    .hero-photo img { width: 100%; height: 520px; object-fit: cover; filter: contrast(1.06) saturate(.9); }
+
+    /* About grid */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+
+    /* Cards */
+    .lux-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .quote-card { background: var(--night); color: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
+    .quote-card p { color: rgba(255,255,255,.78); font-family: var(--serif); font-size: 26px; line-height: 1.4; max-width: unset; }
+    .quote-card small { display: block; color: var(--champagne); margin-top: 22px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 11px; }
+
+    /* Credentials */
+    .credential-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .pill { background: var(--cream); border: 1px solid rgba(185,145,56,.22); border-radius: 999px; padding: 8px 13px; color: var(--night); font-size: 13px; font-weight: 800; }
+
+    /* Values / approach cards */
+    .dark-section { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+    .dark-section::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.16), transparent 68%); top: -220px; right: -160px; }
+    .dark-section .container { position: relative; z-index: 2; }
+    .dark-section h2, .dark-section h3 { color: var(--white); }
+    .dark-section p { color: rgba(255,255,255,.68); }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(216,184,102,.42); background: rgba(255,255,255,.08); }
+    .card .num { color: var(--champagne); font-size: 13px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 22px; display: block; }
+    .card h3 { margin-bottom: 12px; font-size: 22px; }
+
+    /* Process steps */
+    .process { display: grid; gap: 18px; margin-top: 42px; }
+    .step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
+    .step-number { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--champagne); font-family: var(--serif); font-size: 22px; }
+    .step h3 { font-size: 23px; margin-bottom: 8px; }
+
+    /* Signal list */
+    .signal-list { display: grid; gap: 14px; margin-top: 34px; list-style: none; }
+    .signal-list li { background: rgba(216,184,102,.11); border: 1px solid rgba(216,184,102,.22); border-radius: 18px; padding: 18px 20px; color: #2b2b2b; font-weight: 600; }
+
+    /* CTA */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; }
+    .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 36px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .floating-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 124px; }
+      .page-hero-inner, .about-grid { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .cards-3, .footer-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+      .floating-cta { left: 18px; right: 18px; width: auto; }
+      .floating-cta .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Therapy by David home">
+        <strong>Therapy by David</strong>
+        <span>Private Psychotherapy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#fit">Who It's For</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#locations">Locations</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Free Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="reveal">
+            <span class="eyebrow">About David</span>
+            <h1>Direct support from someone who has <em>been there.</em></h1>
+            <p class="lead">U.S. Army veteran. Licensed psychotherapist. Trained at Baylor University. Working with adults across Texas who are ready for something to actually change.</p>
+            <div class="button-row">
+              <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
+              <a class="btn btn-ghost" href="#background">Read My Story</a>
+            </div>
+          </div>
+          <div class="hero-photo reveal">
+            <img src="david-robles-profile.jpeg" alt="David Robles, psychotherapist in Texas" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=90';">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section class="section" id="background">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow">Background</span>
+          <h2>Where I come from shapes how I work.</h2>
+          <p class="section-lead" style="margin-top: 24px;">I'm David Robles, a licensed psychotherapist based in Houston, Texas. Before becoming a therapist, I served in the U.S. Army — an experience that taught me what it means to operate under pressure, keep moving when things feel impossible, and carry more than you let on.</p>
+          <p class="section-lead">That background shapes everything about how I practice. I understand the culture of pushing through, the discomfort of asking for help, and the cost of carrying things alone for too long. I bring that understanding into the room — not as a performance, but as a real part of how I connect with clients.</p>
+          <p class="section-lead">I earned my Master of Social Work from Baylor University and am licensed as a psychotherapist in Texas. I work with adults 18 and up across the state via telehealth, with in-person offices in Pasadena and Webster.</p>
+          <div class="credential-row" aria-label="Credentials">
+            <span class="pill">LMSW, Texas Licensed</span>
+            <span class="pill">U.S. Army Veteran</span>
+            <span class="pill">Baylor University MSW</span>
+            <span class="pill">CBT Trained</span>
+            <span class="pill">Trauma-Informed</span>
+            <span class="pill">Telehealth Across Texas</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="quote-card">
+            <p>"You do not need another place to perform. You need a place where the truth can finally breathe."</p>
+            <small>Therapy by David</small>
+          </div>
+          <div class="lux-card" style="margin-top: 22px;">
+            <h3 style="font-size: 20px; margin-bottom: 18px;">Who I work with</h3>
+            <ul class="signal-list" style="margin-top: 0;">
+              <li>Adults carrying anxiety, burnout, or chronic stress</li>
+              <li>People navigating trauma and its lasting effects</li>
+              <li>Men who are used to handling everything alone</li>
+              <li>Veterans and first responders adjusting to life after service</li>
+              <li>Couples stuck in patterns that keep getting in the way</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="section dark-section" id="how-i-work">
+      <div class="container">
+        <span class="eyebrow">My Approach</span>
+        <h2>Direct. Human. Built for real change.</h2>
+        <p class="section-lead">This is not therapy where you talk in circles for months and leave wondering what changed. The work is focused: understand the pattern, regulate what is happening inside, and practice a different way of showing up outside the room.</p>
+        <div class="cards-3">
+          <article class="card reveal">
+            <span class="num">01</span>
+            <h3>Clarity first</h3>
+            <p>We identify what keeps repeating, where it shows up, and what it is costing you — emotionally, relationally, and physically.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">02</span>
+            <h3>Tools that fit</h3>
+            <p>You get practical skills for anxiety, communication, emotional regulation, and nervous system awareness — without turning therapy into homework theater.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">03</span>
+            <h3>Honest support</h3>
+            <p>Support does not mean nodding at everything. It means being respected enough to be told the truth — with care, timing, and purpose.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROCESS -->
+    <section class="section" id="process" style="background: var(--cream);">
+      <div class="container">
+        <span class="eyebrow">How The Work Moves</span>
+        <h2>Therapy should have a direction.</h2>
+        <p class="section-lead">Every session moves toward something. Here is how the work is typically structured.</p>
+        <div class="process">
+          <div class="step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>We name the pattern.</h3>
+              <p>What keeps happening? What triggers it? What are you doing to cope that may be keeping you stuck?</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>We understand the function.</h3>
+              <p>Anxiety, anger, shutdown, avoidance, and overthinking usually make sense once we understand what they are trying to protect.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>We build new responses.</h3>
+              <p>You practice different ways to regulate, communicate, set boundaries, and respond — instead of repeating the same survival strategy.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">4</div>
+            <div>
+              <h3>We keep it connected to real life.</h3>
+              <p>The work has to matter outside the session. We connect insight to actual decisions, conversations, and behavior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Start Here</span>
+        <h2>You do not have to keep carrying this alone.</h2>
+        <p>Start with a private 15-minute consultation. No pressure. No performance. Just a real conversation about what is going on and what kind of support would help.</p>
+        <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Therapy by David</h3>
+          <p>Private psychotherapy for anxiety, trauma, burnout, stress, overthinking, and emotional overwhelm. Serving adults across Texas.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html#fit">Who It's For</a></li>
+            <li><a href="index.html#approach">Approach</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About David</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Education</h4>
+          <ul>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Schedule Consultation</a></li>
+            <li><a href="tel:8325442562">(832) 544-2562</a></li>
+            <li><a href="mailto:roblesinc@gmail.com">Email David</a></li>
+            <li><a href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" rel="noopener">Psychology Today Profile</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© <span id="year"></span> Therapy by David. All rights reserved.</span>
+        <span>Website content is educational and not a substitute for emergency care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-cta"><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book Free Consultation</a></div>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
