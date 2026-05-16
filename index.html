@@ -225,8 +225,8 @@
     .dark-section p { color: rgba(255,255,255,.68); }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
     .card {
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(216,184,102,.45);
       border-radius: var(--radius);
       padding: 30px;
       min-height: 250px;
@@ -250,8 +250,8 @@
     .about-photo { min-height: 620px; border-radius: 36px; overflow: hidden; box-shadow: var(--shadow); background: var(--night); position: relative; }
     .about-photo img { width: 100%; height: 100%; min-height: 620px; object-fit: cover; }
     .about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,11,16,.42), transparent 58%); }
-    .credential-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .pill { background: var(--cream); border: 1px solid rgba(185,145,56,.22); border-radius: 999px; padding: 8px 13px; color: var(--night); font-size: 13px; font-weight: 800; }
+    .credential-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; flex-direction: row; }
+    .pill { background: var(--cream); border: 1px solid rgba(185,145,56,.22); border-radius: 999px; padding: 8px 13px; color: var(--night); font-size: 13px; font-weight: 800; white-space: nowrap; }
 
     .process { display: grid; gap: 18px; margin-top: 42px; }
     .step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
@@ -304,6 +304,7 @@
       .hero-grid, .intro-grid, .about-grid, .assessment-grid, .location-grid { grid-template-columns: 1fr; }
       .hero-card { justify-self: start; }
       .hero-stats, .strip-inner, .cards, .service-grid, .footer-grid { grid-template-columns: 1fr; }
+      .map-card iframe { display: none; }
       .about-photo, .about-photo img { min-height: 300px; }
       .section { padding: 78px 0; }
       h1 { font-size: clamp(42px, 14vw, 64px); }
@@ -324,7 +325,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#locations">Locations</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Free Consultation</a></li>
       </ul>
@@ -403,6 +404,14 @@
           <article class="service reveal"><h3>Therapy for Men</h3><p>A direct, no-fluff approach for men who are used to handling everything alone but know something has to change.</p></article>
           <article class="service reveal"><h3>Veterans & First Responders</h3><p>Support from a U.S. Army veteran who understands the culture, the pressure, and the difficulty of translating life after service.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section style="background: var(--ink); color: var(--white); text-align: center; padding: 64px 0;">
+      <div class="container">
+        <h2 style="color: var(--white); margin-bottom: 16px;">Ready to get started?</h2>
+        <p style="color: rgba(255,255,255,.72); font-size: 18px; margin: 0 auto 28px;">A free 15-minute consultation is the first step. No pressure, no commitment.</p>
+        <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
       </div>
     </section>
 
@@ -533,7 +542,7 @@
         </div>
         <div>
           <h4>Explore</h4>
-          <ul><li><a href="#fit">Who It’s For</a></li><li><a href="#approach">Approach</a></li><li><a href="#services">Services</a></li><li><a href="#about">About David</a></li><li><a href="resources.html">Resources</a></li></ul>
+          <ul><li><a href="#fit">Who It’s For</a></li><li><a href="#approach">Approach</a></li><li><a href="#services">Services</a></li><li><a href="about.html">About David</a></li></ul>
         </div>
         <div>
           <h4>Education</h4>
