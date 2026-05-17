@@ -75,7 +75,8 @@
     .blog-grid-section { padding: 80px 0 110px; }
     .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 56px; }
 
-    .post-card-image { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .post-card-image { width: 100%; height: 210px; object-fit: cover; display: block; transition: opacity .2s ease; }
+    .post-card a:hover .post-card-image { opacity: .88; }
     .post-card {
       background: var(--white);
       border: 1px solid rgba(20,33,50,.08);
@@ -165,7 +166,7 @@
         <div class="blog-grid">
 
           <article class="post-card reveal">
-            <img class="post-card-image" src="images/anxiety-article.jpg" alt="Person sitting quietly in a calm space" />
+            <a href="blog/managing-anxiety.html"><img class="post-card-image" src="images/anxiety-article.jpg" alt="Person sitting quietly in a calm space" /></a>
             <div class="post-card-body">
               <div class="post-meta">
                 <span class="tag">Anxiety</span>
@@ -178,7 +179,7 @@
           </article>
 
           <article class="post-card reveal">
-            <img class="post-card-image" src="images/trauma-article.jpg" alt="Person looking reflectively into the distance" />
+            <a href="blog/trauma-and-patterns.html"><img class="post-card-image" src="images/trauma-article.jpg" alt="Person looking reflectively into the distance" /></a>
             <div class="post-card-body">
               <div class="post-meta">
                 <span class="tag">Trauma</span>
@@ -191,7 +192,7 @@
           </article>
 
           <article class="post-card reveal">
-            <img class="post-card-image" src="images/depression-anger-article.jpg" alt="Man sitting alone, looking away, in quiet distress" />
+            <a href="blog/depression-and-anger.html"><img class="post-card-image" src="images/depression-anger-article.jpg" alt="Man sitting alone, looking away, in quiet distress" /></a>
             <div class="post-card-body">
               <div class="post-meta">
                 <span class="tag">Depression</span>
@@ -204,7 +205,7 @@
           </article>
 
           <article class="post-card reveal">
-            <img class="post-card-image" src="images/childhood-neglect-article.jpg" alt="Two people sitting apart, distance between them" />
+            <a href="blog/childhood-neglect-relationships.html"><img class="post-card-image" src="images/childhood-neglect-article.jpg" alt="Two people sitting apart, distance between them" /></a>
             <div class="post-card-body">
               <div class="post-meta">
                 <span class="tag">Relationships</span>
