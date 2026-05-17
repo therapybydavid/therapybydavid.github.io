@@ -265,7 +265,8 @@
     .fine-print { font-size: 13px; color: var(--muted); margin-top: 18px; }
 
     .locations { background: var(--white); }
-    .map-card { background: var(--paper); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 24px; box-shadow: 0 18px 50px rgba(20,33,50,.06); }
+    .map-card { background: var(--paper); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 24px; box-shadow: 0 18px 50px rgba(20,33,50,.06); display: block; text-decoration: none; color: inherit; transition: box-shadow .2s ease, transform .2s ease; cursor: pointer; }
+    .map-card:hover { box-shadow: 0 24px 60px rgba(20,33,50,.12); transform: translateY(-2px); }
     .map-card iframe { width: 100%; height: 260px; border: 0; border-radius: 20px; margin: 18px 0; }
     .map-card h3 { margin-bottom: 8px; }
 
@@ -306,7 +307,6 @@
       .hero-stats, .strip-inner, .cards, .service-grid, .footer-grid { grid-template-columns: 1fr; }
       .map-card iframe { display: none; }
       .location-grid { gap: 20px; }
-      .map-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
       .step { grid-template-columns: 52px 1fr; gap: 16px; padding: 20px; }
       .step-number { width: 46px; height: 46px; font-size: 22px; }
       .about-photo, .about-photo img { min-height: 300px; }
@@ -430,18 +430,16 @@
         <h2>In-person in Pasadena and Webster. Telehealth across Texas.</h2>
         <p class="section-lead">Choose the setting that makes consistency easier. Both office locations include quick map access for directions.</p>
         <div class="location-grid" style="margin-top: 46px;">
-          <article class="map-card reveal">
+          <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&query=817%20Southmore%20Ave%2C%20Pasadena%2C%20TX%2077502" target="_blank" rel="noopener">
             <h3>Pasadena Office</h3>
             <p>817 Southmore Ave<br>Pasadena, TX 77502</p>
             <iframe src="https://www.google.com/maps?q=817+Southmore+Ave,+Pasadena,+TX+77502&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Pasadena office map"></iframe>
-            <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=817%20Southmore%20Ave%2C%20Pasadena%2C%20TX%2077502" target="_blank" rel="noopener">Open in Google Maps</a>
-          </article>
-          <article class="map-card reveal">
+          </a>
+          <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&query=1335%20Regents%20Park%20Dr%2C%20Houston%2C%20TX%2077058" target="_blank" rel="noopener">
             <h3>Webster Office</h3>
             <p>1335 Regents Park Dr<br>Houston, TX 77058</p>
             <iframe src="https://www.google.com/maps?q=1335+Regents+Park+Dr,+Houston,+TX+77058&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Webster office map"></iframe>
-            <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=1335%20Regents%20Park%20Dr%2C%20Houston%2C%20TX%2077058" target="_blank" rel="noopener">Open in Google Maps</a>
-          </article>
+          </a>
         </div>
       </div>
     </section>
