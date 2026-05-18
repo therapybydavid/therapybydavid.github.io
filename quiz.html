@@ -599,8 +599,7 @@
     </div>
 
     <button class="btn btn-gold btn-block" id="btn-show-results" onclick="showResults()">See My Results</button>
-    <p class="privacy-note">🔒 Private and confidential. Your information is never shared.<br>You'll receive a summary of your results plus occasional mental health resources from David.</p>
-    <p style="text-align:center;margin-top:14px;"><a href="#" onclick="skipGate(event)" style="font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;">Just show me my results without saving</a></p>
+    <p class="privacy-note">🔒 Private and confidential. Your information is never shared.</p>
   </div>
 
   <!-- ── RESULTS ── -->
@@ -737,17 +736,6 @@
     } else {
       showCard('card-gate');
     }
-  }
-
-  function skipGate(e) {
-    e.preventDefault();
-    userName = 'there';
-    const phq = questions.reduce((s, q, i) => q.cat === 'phq' ? s + (resp[i] || 0) : s, 0);
-    const gad = questions.reduce((s, q, i) => q.cat === 'gad' ? s + (resp[i] || 0) : s, 0);
-    const sensitiveIdx = questions.findIndex(q => q.sensitive);
-    const sensitiveVal = resp[sensitiveIdx] || 0;
-    buildResults(phq, gad, sensitiveVal);
-    showCard('card-results');
   }
 
   function showResults() {
