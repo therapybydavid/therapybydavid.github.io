@@ -37,22 +37,22 @@
 
     /* ── HEADER ── */
     header {
-      padding: 28px 24px;
+      padding: 36px 24px;
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
     .logo-name {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      font-size: 32px;
       color: var(--white);
       letter-spacing: .02em;
     }
     .logo-sub {
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     /* ── HERO ── */
@@ -274,6 +274,45 @@
       max-width: 480px;
       margin: 0 auto;
     }
+    .rate-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      background: rgba(185,145,56,.08);
+      border: 1px solid rgba(185,145,56,.2);
+      border-radius: 14px;
+      padding: 20px 28px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .rate-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rate-label {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .rate-value {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--champagne);
+    }
+    .rate-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--border);
+    }
+    @media (max-width: 500px) {
+      .rate-divider { display: none; }
+      .rate-bar { gap: 16px; }
+    }
     .calendly-wrap {
       border-radius: 20px;
       overflow: hidden;
@@ -337,7 +376,7 @@
       <h2>Hi, I'm David.</h2>
       <p>I'm a licensed psychotherapist based in Texas. I work with adults who are quietly carrying a lot — anxiety, burnout, past trauma, relationship stress, or just the weight of trying to hold everything together.</p>
       <p>My approach is direct and practical. I'm not the kind of therapist who sits in silence and waits. I'll ask real questions, offer honest feedback, and work with you — not just observe you.</p>
-      <p>I offer telehealth sessions across Texas, and in-person sessions in Pasadena and Webster.</p>
+      <p>I offer telehealth sessions across all of Texas — so wherever you are in the state, we can work together.</p>
       <div>
         <span class="credential">LCSW</span>
         <span class="credential">Telehealth · Texas</span>
@@ -404,6 +443,22 @@
         <div class="section-label">Schedule</div>
         <h2>Book your free consultation</h2>
         <p>Pick a time that works for you. The call is 15 minutes, by phone, and completely free.</p>
+      </div>
+      <div class="rate-bar">
+        <div class="rate-item">
+          <span class="rate-label">Open Path Session Rate</span>
+          <span class="rate-value">$60 / session</span>
+        </div>
+        <div class="rate-divider"></div>
+        <div class="rate-item">
+          <span class="rate-label">Session Length</span>
+          <span class="rate-value">50 minutes</span>
+        </div>
+        <div class="rate-divider"></div>
+        <div class="rate-item">
+          <span class="rate-label">Format</span>
+          <span class="rate-value">Telehealth Only</span>
+        </div>
       </div>
       <div class="calendly-wrap">
         <div class="calendly-inline-widget" data-url="https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1&background_color=0f1318&text_color=e8e3db&primary_color=b99138"></div>
