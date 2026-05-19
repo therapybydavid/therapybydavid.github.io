@@ -219,31 +219,32 @@
           <span class="eyebrow">Send a Message</span>
           <h2 style="margin-bottom: 8px;">Have a question? Reach out.</h2>
           <p style="margin-bottom: 32px;">Fill out the form and David will get back to you personally within 24 hours.</p>
-          <form action="https://formspree.io/f/mojbvzqz" method="POST" style="display: grid; gap: 16px;">
+          <form id="contact-form" style="display: grid; gap: 16px;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div>
                 <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">First Name</label>
-                <input type="text" name="first_name" required placeholder="John" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+                <input type="text" id="first_name" required placeholder="John" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
               </div>
               <div>
                 <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Last Name</label>
-                <input type="text" name="last_name" required placeholder="Smith" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+                <input type="text" id="last_name" required placeholder="Smith" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
               </div>
             </div>
             <div>
               <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Email</label>
-              <input type="email" name="email" required placeholder="you@email.com" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              <input type="email" id="email" required placeholder="you@email.com" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
             </div>
             <div>
               <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Phone (optional)</label>
-              <input type="tel" name="phone" placeholder="(832) 000-0000" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              <input type="tel" id="phone" placeholder="(832) 000-0000" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
             </div>
             <div>
               <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Message</label>
-              <textarea name="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
+              <textarea id="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
             </div>
             <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line — if you are in immediate danger, call 988 or 911.</p>
-            <button type="submit" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
+            <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
+            <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
           </form>
         </div>
 
@@ -361,5 +362,76 @@
     }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyARzjrwt_Asr-_ca5bBYUBoFUMKM8sRAFc",
+      authDomain: "therapy-by-david.firebaseapp.com",
+      projectId: "therapy-by-david",
+      storageBucket: "therapy-by-david.firebasestorage.app",
+      messagingSenderId: "45351635355",
+      appId: "1:45351635355:web:3da34281325675f125793e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ── EmailJS config ── fill these in after creating your EmailJS account ──
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    // ────────────────────────────────────────────────────────────────────────
+
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn    = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const data   = {
+        first_name: document.getElementById('first_name').value.trim(),
+        last_name:  document.getElementById('last_name').value.trim(),
+        from_email: document.getElementById('email').value.trim(),
+        phone:      document.getElementById('phone').value.trim(),
+        message:    document.getElementById('message').value.trim(),
+        submitted_at: serverTimestamp()
+      };
+
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        // 1 — Save to Firestore
+        await addDoc(collection(db, 'contact_submissions'), data);
+
+        // 2 — Send email notification via EmailJS (if configured)
+        if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data, EMAILJS_PUBLIC_KEY);
+        }
+
+        // Success
+        status.style.display      = 'block';
+        status.style.background   = '#e6f4ea';
+        status.style.color        = '#1a7c34';
+        status.textContent        = '✓ Message sent — David will be in touch within 24 hours.';
+        e.target.reset();
+      } catch (err) {
+        console.error(err);
+        status.style.display      = 'block';
+        status.style.background   = '#fdecea';
+        status.style.color        = '#b71c1c';
+        status.textContent        = 'Something went wrong. Please try again or email directly.';
+      } finally {
+        btn.disabled    = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
+
+  <!-- EmailJS SDK (loaded only when needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>
