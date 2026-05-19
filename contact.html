@@ -205,44 +205,65 @@
     <!-- CONTACT INFO -->
     <section class="section">
       <div class="container">
-        <span class="eyebrow">Reach Out</span>
-        <h2>How to connect.</h2>
-        <div class="contact-grid">
+
+        <!-- Primary CTA -->
+        <div class="reveal" style="background: var(--night); border-radius: 28px; padding: 48px; text-align: center; margin-bottom: 48px;">
+          <span class="eyebrow" style="color: var(--champagne);">Best Way to Start</span>
+          <h2 style="color: var(--white); margin: 12px 0 16px;">Book a Free 15-Minute Consultation</h2>
+          <p style="color: rgba(255,255,255,.7); font-size: 18px; max-width: 520px; margin: 0 auto 28px;">No pressure, no commitment. Just a real conversation about what's going on and whether working together makes sense.</p>
+          <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener" style="font-size: 16px; padding: 18px 36px;">Book a Free Consultation</a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal" style="background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 28px; padding: 48px; box-shadow: 0 18px 60px rgba(20,33,50,.09); margin-bottom: 48px;">
+          <span class="eyebrow">Send a Message</span>
+          <h2 style="margin-bottom: 8px;">Have a question? Reach out.</h2>
+          <p style="margin-bottom: 32px;">Fill out the form and David will get back to you personally within 24 hours.</p>
+          <form action="https://formspree.io/f/mojbvzqz" method="POST" style="display: grid; gap: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">First Name</label>
+                <input type="text" name="first_name" required placeholder="John" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              </div>
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Last Name</label>
+                <input type="text" name="last_name" required placeholder="Smith" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              </div>
+            </div>
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Email</label>
+              <input type="email" name="email" required placeholder="you@email.com" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+            </div>
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Phone (optional)</label>
+              <input type="tel" name="phone" placeholder="(832) 000-0000" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+            </div>
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Message</label>
+              <textarea name="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
+            </div>
+            <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line — if you are in immediate danger, call 988 or 911.</p>
+            <button type="submit" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Secondary options -->
+        <span class="eyebrow">Other Ways to Reach Out</span>
+        <div class="contact-grid" style="margin-top: 24px;">
           <div class="contact-card reveal">
-            <small>Phone</small>
-            <h3>Call Me</h3>
-            <p>Prefer to talk? Give David a call during business hours and connect directly.</p>
-            <a class="btn btn-dark" href="tel:8325442562">(832) 544-2562</a>
-          </div>
-          <div class="contact-card reveal">
-            <small>Text</small>
-            <h3>Send a Text</h3>
-            <p>Prefer to reach out by text? Send a message during business hours and David will get back to you.</p>
-            <a class="btn btn-dark" href="sms:8325442562">(832) 544-2562</a>
-          </div>
-          <div class="contact-card reveal">
-            <small>Message</small>
-            <h3>Send a Message</h3>
-            <p>Have a question before reaching out? Send a message through the secure client portal and David will follow up personally.</p>
-            <a class="btn btn-dark" href="https://david-robles.clientsecure.me/contact-widget" target="_blank" rel="noopener">Message David</a>
+            <small>Call or Text</small>
+            <h3>(832) 544-2562</h3>
+            <p>Call or text during business hours. David responds personally.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a class="btn btn-dark" href="tel:8325442562">Call</a>
+              <a class="btn btn-dark" href="sms:8325442562">Text</a>
+            </div>
           </div>
           <div class="contact-card reveal">
             <small>Email</small>
-            <h3>Email David</h3>
-            <p>You can also reach out directly by email. David responds to all inquiries personally.</p>
+            <h3>Send an Email</h3>
+            <p>Reach out directly by email. David responds to all inquiries personally.</p>
             <a class="btn btn-dark" href="mailto:info@therapybydavid.com">info@therapybydavid.com</a>
-          </div>
-          <div class="contact-card reveal">
-            <small>Psychology Today</small>
-            <h3>Psychology Today Profile</h3>
-            <p>View David's full profile, credentials, and client reviews on Psychology Today.</p>
-            <a class="btn btn-dark" href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" rel="noopener">View Profile</a>
-          </div>
-          <div class="contact-card reveal">
-            <small>Yelp</small>
-            <h3>Yelp</h3>
-            <p>Read reviews from clients and see David's Yelp listing.</p>
-            <a class="btn btn-dark" href="https://www.yelp.com/biz/david-robles-pasadena" target="_blank" rel="noopener">View on Yelp</a>
           </div>
         </div>
       </div>
