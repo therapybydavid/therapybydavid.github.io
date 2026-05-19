@@ -335,7 +335,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Free Consultation</a></li>
+        <li><a class="btn btn-gold" href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1'}); return false;">Free Consultation</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -348,7 +348,7 @@
           <h1>High-functioning on the outside. <em>Exhausted underneath.</em></h1>
           <p class="lead">Private therapy for anxiety, trauma, burnout, overthinking, relationship patterns, and the quiet pressure of holding everything together.</p>
           <div class="button-row">
-            <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free 15-Minute Consultation</a>
+            <a class="btn btn-gold" href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1'}); return false;">Book a Free 15-Minute Consultation</a>
             <a class="btn btn-ghost" href="quiz.html">Check Your Symptoms</a>
           </div>
         </div>
@@ -400,7 +400,7 @@
       <div class="container">
         <h2 style="color: var(--white); margin-bottom: 16px;">Ready to get started?</h2>
         <p style="color: rgba(255,255,255,.72); font-size: 18px; margin: 0 auto 28px;">A free 15-minute consultation is the first step. No pressure, no commitment.</p>
-        <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
+        <a class="btn btn-gold" href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1'}); return false;">Book a Free Consultation</a>
       </div>
     </section>
 
@@ -441,7 +441,7 @@
         <span class="eyebrow">Questions Before Starting</span>
         <h2>Simple answers before you reach out.</h2>
         <div class="faq-list">
-          <details class="reveal"><summary>What happens during the free 15-minute consultation?</summary><p>It's a relaxed, no-pressure conversation. You share a bit about what's going on and what you're hoping to work on. David explains how he works and answers any questions you have. By the end, you'll have a clear sense of whether the fit feels right before booking a full session. <a href="https://david-robles.clientsecure.me/request/service" style="color: var(--gold); text-decoration: underline;">Schedule your free consultation here.</a></p></details>
+          <details class="reveal"><summary>What happens during the free 15-minute consultation?</summary><p>It's a relaxed, no-pressure conversation. You share a bit about what's going on and what you're hoping to work on. David explains how he works and answers any questions you have. By the end, you'll have a clear sense of whether the fit feels right before booking a full session. <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1'}); return false;" style="color: var(--gold); text-decoration: underline;">Schedule your free consultation here.</a></p></details>
           <details class="reveal"><summary>Do you take insurance?</summary><p>Yes. The following insurance plans are currently accepted: Aetna, Ambetter, Anthem, Blue Cross, Blue Shield, BlueCross and BlueShield, Carelon Behavioral Health, Children's Health Insurance Program (CHIP), Cigna and Evernorth, Humana, Magellan, Medicaid, Medicare, Molina Healthcare, Optum, Oscar Health, TRICARE, and UnitedHealthcare UHC | UBH. If you don't see your plan listed, reach out and we can check together.</p></details>
           <details class="reveal"><summary>Do you offer telehealth / online therapy?</summary><p>Yes — all sessions are available via secure video, statewide across Texas. No commute, no waiting room, no special software to download. It works on any phone, tablet, or computer. Research shows telehealth therapy is just as effective as in-person for anxiety, trauma, and stress. If you want the full picture on how it works, <a href="telehealth.html" style="color: var(--gold); text-decoration: underline;">visit the telehealth page</a>.</p></details>
           <details class="reveal"><summary>Do you work with anxiety and overthinking?</summary><p>Yes — these are core areas of focus. Anxiety, overthinking, chronic stress, and emotional overwhelm tend to show up together, and they often hide behind high functioning. We'll work on understanding what your nervous system is responding to, where the patterns came from, and what's actually keeping the loop going. The goal isn't to eliminate every anxious thought — it's to change your relationship to them so they stop running the show.</p></details>
@@ -485,7 +485,7 @@
         <span class="eyebrow">Start Here</span>
         <h2>You do not have to keep carrying this alone.</h2>
         <p>Start with a private 15-minute consultation. No pressure. No performance. Just a real conversation about what is going on and what kind of support would help.</p>
-        <a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Book a Free Consultation</a>
+        <a class="btn btn-gold" href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1'}); return false;">Book a Free Consultation</a>
       </div>
     </section>
   </main>
@@ -545,5 +545,9 @@ const observer = new IntersectionObserver(entries => {
     }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
+  <!-- Calendly popup widget assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
