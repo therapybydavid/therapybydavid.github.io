@@ -175,6 +175,17 @@
   document.querySelectorAll('.fade-up').forEach((el, i) => {
     el.style.animationDelay = (i * 0.15) + 's';
   });
+
+  // Personalize headline with invitee's first name passed from Calendly
+  const params = new URLSearchParams(window.location.search);
+  const fullName = params.get('invitee_full_name');
+  if (fullName) {
+    const firstName = fullName.split(' ')[0];
+    const h1 = document.querySelector('.confirm-hero h1');
+    if (h1) {
+      h1.innerHTML = `You're booked, ${firstName}.<br><span>That took courage.</span>`;
+    }
+  }
 </script>
 </body>
 </html>
