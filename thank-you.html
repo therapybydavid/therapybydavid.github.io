@@ -32,29 +32,14 @@
   body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; font-size: 1rem; }
   p { font-size: 1.1rem !important; line-height: 1.9; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,27,46,0.97); backdrop-filter: blur(10px);
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 5%; height: 70px;
-    border-bottom: 1px solid rgba(201,168,76,0.3);
-  }
-  .nav-logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.6rem; text-decoration: none; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
-  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--gold); }
-
   /* BUTTONS */
   .btn-primary { background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; border: none; border-radius: 2px; font-family: 'Lato', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.3s; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,76,0.4); }
-  .btn-outline-dark { background: transparent; color: var(--navy); padding: 0.9rem 2rem; border: 1px solid rgba(13,27,46,0.3); border-radius: 2px; font-family: 'Lato', sans-serif; font-size: 0.9rem; letter-spacing: 1px; text-decoration: none; transition: all 0.3s; display: inline-block; }
-  .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
 
   /* HERO CONFIRMATION */
   .confirm-hero {
     background: var(--navy);
-    padding: 8rem 8% 5rem;
+    padding: 5rem 8%;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -68,9 +53,9 @@
   .confirm-hero-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
   .checkmark {
     width: 72px; height: 72px; border-radius: 50%;
-    background: rgba(201,168,76,0.15); border: 2px solid var(--gold);
+    background: rgba(34,197,94,0.15); border: 2px solid #22c55e;
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 2rem; font-size: 2rem;
+    margin: 0 auto 2rem; font-size: 2rem; color: #22c55e;
   }
   .confirm-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--white); line-height: 1.15; margin-bottom: 1.2rem; }
   .confirm-hero h1 span { color: var(--gold); }
@@ -101,27 +86,15 @@
   .prep-list li div p { color: rgba(255,255,255,0.75); font-size: 0.9rem !important; line-height: 1.7; font-weight: 300; }
 
   /* CTA BAND */
-  .cta-band { background: var(--gold); text-align: center; padding: 4rem 8%; }
-  .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); margin-bottom: 1rem; }
-  .cta-band p { color: rgba(13,27,46,0.75); font-size: 1rem !important; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; font-weight: 300; }
+  .cta-band { background: var(--gold); text-align: center; padding: 2rem 8%; }
+  .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); margin-bottom: 0.5rem; }
+  .cta-band p { color: rgba(13,27,46,0.75); font-size: 1.2rem !important; margin-bottom: 1.2rem; max-width: 500px; margin-left: auto; margin-right: auto; font-weight: 400; }
   .btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-  /* FOOTER */
-  footer { background: #060e1a; padding: 3rem 8%; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; border-top: 1px solid rgba(201,168,76,0.2); }
-  .footer-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 1rem; }
-  .footer-desc { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.7; font-weight: 300; }
-  .footer-heading { color: var(--gold); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; display: block; }
-  .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 0.7rem; }
-  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-contact { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 0.7rem; }
   .footer-bottom { background: var(--gold); text-align: center; padding: 1.2rem; color: var(--navy); font-size: 0.75rem; font-weight: 600; }
 
   @media (max-width: 768px) {
-    .nav-links { display: none; }
     .steps-grid { grid-template-columns: 1fr; }
-    footer { grid-template-columns: 1fr; }
   }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
@@ -130,15 +103,6 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html">Therapy by David</a>
-  <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#specialties">Services</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-</nav>
 
 <!-- CONFIRMATION HERO -->
 <section class="confirm-hero">
@@ -161,7 +125,7 @@
     <div class="step-card">
       <span class="num">01</span>
       <h3>You'll get a confirmation email</h3>
-      <p>Calendly will send a calendar invite with the call details. Add it to your calendar so nothing slips.</p>
+      <p>You'll receive a confirmation email with all the details. Add it to your calendar so nothing slips.</p>
     </div>
     <div class="step-card">
       <span class="num">02</span>
@@ -215,39 +179,17 @@
   </div>
 </section>
 
+<!-- BACK TO HOME -->
+<div style="text-align: center; padding: 2.5rem 8%; background: var(--off-white);">
+  <a href="index.html" class="btn-primary" style="background: #0d1b2e; color: #ffffff;">Back to Home</a>
+</div>
+
 <!-- NEED TO RESCHEDULE -->
 <section class="cta-band">
   <h2>Need to reschedule?</h2>
-  <p>No problem at all. Use the link in your confirmation email, or reach out directly.</p>
-  <div class="btn-row">
-    <a href="index.html" class="btn-primary">Back to Home</a>
-    <a href="tel:8325442562" class="btn-outline-dark">Call or Text: (832) 544-2562</a>
-  </div>
+  <p>No problem at all. Use the reschedule link in your confirmation email and pick a new time that works for you.</p>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <div class="footer-brand">Therapy by David</div>
-    <p class="footer-desc">David Robles, LMSW, is a Baylor University graduate and U.S. Army veteran offering psychotherapy for anxiety, depression, trauma, and PTSD — in-person in Houston and virtually across Texas.</p>
-  </div>
-  <div>
-    <span class="footer-heading">Sections</span>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About David</a></li>
-      <li><a href="index.html#specialties">Services</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </div>
-  <div>
-    <span class="footer-heading">Contact</span>
-    <p class="footer-contact">📍 <a href="https://maps.google.com/?q=817+Southmore+Ave+Suite+300-C+Pasadena+TX+77502" target="_blank" style="color:rgba(255,255,255,0.6);text-decoration:none;">Pasadena Office</a></p>
-    <p class="footer-contact">📍 <a href="https://maps.google.com/?q=1335+Regents+Park+Dr+%23140+Houston+TX+77058" target="_blank" style="color:rgba(255,255,255,0.6);text-decoration:none;">Friendswood Office</a></p>
-    <p class="footer-contact">📞 <a href="tel:8325442562" style="color:rgba(255,255,255,0.6);text-decoration:none;">Call or Text: (832) 544-2562</a></p>
-    <p class="footer-contact">🟢 <a href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" style="color:rgba(255,255,255,0.6);text-decoration:none;">Psychology Today Profile</a></p>
-  </div>
-</footer>
 <div class="footer-bottom">© 2026 Therapy by David · David Robles, LMSW · All rights reserved.</div>
 
 <script>
