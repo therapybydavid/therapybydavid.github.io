@@ -382,6 +382,12 @@
       .floating-cta { left: 18px; right: 18px; width: auto; }
       .floating-cta .btn { width: 100%; }
     }
+    .cta-band { background: var(--navy); padding: 80px 24px; text-align: center; }
+    .cta-band h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 16px; max-width: none; }
+    .cta-band > p { color: rgba(255,255,255,0.7); font-size: 1.05rem; margin: 0 auto 32px; max-width: 520px; }
+    .cta-band .sub { margin-top: 16px; margin-bottom: 0; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .btn-dark { display: inline-block; background: var(--champagne); color: var(--night); padding: 14px 36px; border-radius: 100px; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.3px; text-decoration: none; transition: background 0.2s; }
+    .btn-dark:hover { background: var(--gold-light, #e8d48a); }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
@@ -646,15 +652,15 @@ const observer = new IntersectionObserver(entries => {
   <div class="steps-box">
     <h3>What to Expect</h3>
     <div class="step">
-      <div class="step-num">1</div>
+      <div class="step-number">1</div>
       <div><h4>Free 15-Min Call</h4><p>We talk about what's going on and whether we're a good fit. Zero pressure.</p></div>
     </div>
     <div class="step">
-      <div class="step-num">2</div>
+      <div class="step-number">2</div>
       <div><h4>First Session</h4><p>We dive into your story, your goals, and map out a path forward together.</p></div>
     </div>
     <div class="step">
-      <div class="step-num">3</div>
+      <div class="step-number">3</div>
       <div><h4>Real Progress</h4><p>Week by week you build real tools, shift patterns, and feel like yourself again.</p></div>
     </div>
   </div>
@@ -704,4 +710,6 @@ const observer = new IntersectionObserver(entries => {
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/roblesinc/consultation', text: 'Book a Free Consultation', color: '#c9a84c', textColor: '#ffffff', branding: undefined }); }</script>
 <!-- Calendly badge widget end -->
-<div class="footer-bottom" style="background:var(--gold);text-align:center;padding:1.2rem;color:var(--navy);font-size:0.75rem;font-weight:600;">© 2026 Therapy by David · 
+<div class="footer-bottom" style="background:var(--gold);text-align:center;padding:1.2rem;color:var(--navy);font-size:0.75rem;font-weight:600;">© 2026 Therapy by David · All rights reserved.</div>
+</body>
+</html> 
