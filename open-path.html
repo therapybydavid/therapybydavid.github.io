@@ -50,7 +50,7 @@
     }
     .logo-name {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
+      font-size: 42px;
       color: var(--white);
       letter-spacing: .02em;
     }
@@ -180,8 +180,11 @@
     }
     .pillars {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .pillars { grid-template-columns: 1fr; }
     }
     .pillar {
       background: var(--card);
@@ -258,9 +261,9 @@
 
     /* ── CALENDLY SECTION ── */
     .booking {
-      background: var(--surface);
+      background: #161c26;
       border-top: 1px solid var(--border);
-      padding: 72px 24px;
+      padding: 40px 24px;
     }
     .booking-inner {
       max-width: 860px;
@@ -268,7 +271,7 @@
     }
     .booking-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
     .booking-header h2 {
       font-family: 'Playfair Display', serif;
@@ -329,7 +332,7 @@
     }
     .calendly-inline-widget {
       min-width: 320px;
-      height: 700px;
+      height: 580px;
     }
 
     /* ── FOOTER ── */
@@ -380,11 +383,6 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo-name">Therapy by David</div>
-    <div class="logo-sub">Private Psychotherapist · Texas</div>
-  </header>
 
   <!-- Hero -->
   <section class="hero">
@@ -418,24 +416,19 @@
       <h2>Therapy that meets you where you actually are.</h2>
       <div class="pillars">
         <div class="pillar">
-          <div class="pillar-icon">🎯</div>
-          <h3>Direct & Practical</h3>
-          <p>We focus on real tools and honest conversation — not just talking in circles. You'll leave sessions with something to work with.</p>
+          <div class="pillar-icon">🧠</div>
+          <h3>A Proven Approach</h3>
+          <p>Every technique I use is grounded in research and adapted to you — not a one-size-fits-all method. We focus on what's actually keeping you stuck and work toward real, lasting change.</p>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">🔒</div>
-          <h3>Private & Confidential</h3>
-          <p>What you share stays between us. I create a space where you can say the things you haven't been able to say anywhere else.</p>
-        </div>
-<div class="pillar">
-          <div class="pillar-icon">⚡</div>
-          <h3>Built for Real Life</h3>
-          <p>Therapy should fit your life, not the other way around. I work with your schedule, your pace, and what actually matters to you.</p>
+          <div class="pillar-icon">🎖️</div>
+          <h3>Veteran & Military Issues</h3>
+          <p>I specialize in working with veterans and service members navigating trauma, transition, identity, and the things that don't easily translate to civilian life.</p>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">🤝</div>
-          <h3>Safe to Be Honest</h3>
-          <p>This is one of the few places where you don't have to manage how you come across. Say what's actually true — that's where the work starts.</p>
+          <div class="pillar-icon">🔄</div>
+          <h3>Trauma & Pattern Work</h3>
+          <p>Whether it's childhood experiences, difficult relationships, or chronic stress, we focus on understanding the deeper patterns beneath the symptoms.</p>
         </div>
       </div>
     </div>
@@ -473,7 +466,7 @@
       <div class="rate-bar">
         <div class="rate-item">
           <span class="rate-label">Open Path Session Rate</span>
-          <span class="rate-value">$60 / session</span>
+          <span class="rate-value">$50 / session</span>
         </div>
         <div class="rate-divider"></div>
         <div class="rate-item">
