@@ -631,6 +631,17 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Subscribing…';
 
+            // Auto-format phone to E.164 (+1XXXXXXXXXX) for MailChimp SMS
+            var phoneInput = document.getElementById('mce-SMSPHONE');
+            if (phoneInput && phoneInput.value) {
+              var digits = phoneInput.value.replace(/\D/g, '');
+              if (digits.length === 10) {
+                phoneInput.value = '+1' + digits;
+              } else if (digits.length === 11 && digits.charAt(0) === '1') {
+                phoneInput.value = '+' + digits;
+              }
+            }
+
             // Build JSONP URL (post → post-json, append callback)
             var actionUrl = form.action.replace('/post?', '/post-json?') + '&c=mcCallback';
             var params = new URLSearchParams(new FormData(form));
