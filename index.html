@@ -572,19 +572,23 @@
         <form action="https://github.us5.list-manage.com/subscribe/post?u=c0215982b55a97a3f734f396e&amp;id=8fcf4a04de&amp;f_id=005cbfedf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
           <div id="mc_embed_signup_scroll">
 
-            <!-- Email -->
+            <!-- First Name -->
             <div style="margin-bottom: 14px;">
-              <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Your email address" required
+              <input type="text" name="FNAME" id="mce-FNAME" placeholder="First name" required
                 style="width: 100%; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none; box-sizing: border-box;">
             </div>
 
-            <!-- Phone -->
-            <div style="margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-              <select name="PHONE_CC" style="padding: 16px 12px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none;">
-                <option value="1">🇺🇸 +1</option>
-              </select>
+            <!-- Email -->
+            <div style="margin-bottom: 14px;">
+              <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email address" required
+                style="width: 100%; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none; box-sizing: border-box;">
+            </div>
+
+            <!-- Phone (US only, no country code dropdown) -->
+            <input type="hidden" name="PHONE_CC" value="1">
+            <div style="margin-bottom: 14px;">
               <input type="tel" name="PHONE" id="mce-PHONE" placeholder="Phone number (optional)"
-                style="flex: 1; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none;">
+                style="width: 100%; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none; box-sizing: border-box;">
             </div>
 
             <!-- SMS Consent -->
