@@ -584,9 +584,10 @@
                 style="width: 100%; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none; box-sizing: border-box;">
             </div>
 
-            <!-- SMS Phone (US only, no country code dropdown) -->
+            <!-- SMS Phone (US +1 hardcoded, compound field for MailChimp) -->
+            <input type="hidden" name="SMSPHONE[cc]" value="1">
             <div style="margin-bottom: 14px;">
-              <input type="tel" name="SMSPHONE" id="mce-SMSPHONE" placeholder="Phone number (optional)"
+              <input type="tel" name="SMSPHONE[phone]" id="mce-SMSPHONE" placeholder="Phone number (optional)"
                 style="width: 100%; padding: 16px 20px; border-radius: 999px; border: 1px solid rgba(185,145,56,.35); background: rgba(255,255,255,.06); color: var(--white); font-size: 15px; font-family: var(--sans); outline: none; box-sizing: border-box;">
             </div>
 
@@ -630,17 +631,6 @@
             // Swap button to loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Subscribing…';
-
-            // Auto-format phone to E.164 (+1XXXXXXXXXX) for MailChimp SMS
-            var phoneInput = document.getElementById('mce-SMSPHONE');
-            if (phoneInput && phoneInput.value) {
-              var digits = phoneInput.value.replace(/\D/g, '');
-              if (digits.length === 10) {
-                phoneInput.value = '+1' + digits;
-              } else if (digits.length === 11 && digits.charAt(0) === '1') {
-                phoneInput.value = '+' + digits;
-              }
-            }
 
             // Build JSONP URL (post → post-json, append callback)
             var actionUrl = form.action.replace('/post?', '/post-json?') + '&c=mcCallback';
