@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Therapy by David</title>
+  <meta name="description" content="Privacy Policy for Therapy by David. How we collect, use, and protect information submitted through our website, contact forms, and SMS messages." />
+  <link rel="canonical" href="https://therapybydavid.com/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 72ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.15; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(28px, 3.4vw, 38px); font-weight: 700; margin-top: 48px; margin-bottom: 14px; }
+    h3 { font-size: 22px; font-weight: 650; margin-top: 28px; margin-bottom: 10px; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-dark { color: var(--white); background: var(--night); }
+
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 820px; margin-bottom: 26px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 0; max-width: 640px; }
+
+    .legal-content {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 56px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .legal-content p { margin-bottom: 16px; max-width: none; }
+    .legal-content ul { margin: 12px 0 20px 22px; color: var(--muted); }
+    .legal-content li { margin-bottom: 8px; }
+    .legal-content a { color: var(--gold); font-weight: 600; border-bottom: 1px solid rgba(185,145,56,.3); }
+    .legal-content a:hover { border-bottom-color: var(--gold); }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .updated { color: var(--gold); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; margin-bottom: 24px; }
+    .callout {
+      background: var(--paper);
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .callout p { margin-bottom: 0; }
+
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 124px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+      .legal-content { padding: 32px 26px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Therapy by David home">
+        <strong>Therapy by David</strong>
+        <span>Private Psychotherapy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a class="btn btn-gold" href="https://david-robles.clientsecure.me/request/service" target="_blank" rel="noopener">Free Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy <em>Policy.</em></h1>
+        <p class="lead">How information submitted through this website, our contact form, and our SMS messages is collected, used, and protected.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="legal-content reveal">
+          <p class="updated">Last updated: May 25, 2026</p>
+
+          <p>This Privacy Policy explains how Therapy by David ("we," "our," or "us"), the private practice of David Robles, LMSW, collects and uses information when you visit therapybydavid.com, fill out a contact form, schedule a consultation, or exchange text messages with our practice. This site is the marketing and intake front-end for the practice; it is not where ongoing clinical records are stored.</p>
+
+          <h2>1. Information We Collect</h2>
+          <p>We collect only the information you choose to provide. That includes:</p>
+          <ul>
+            <li><strong>Contact details:</strong> first and last name, email address, and phone number, when you submit our contact form, request a consultation, or message us.</li>
+            <li><strong>Inquiry content:</strong> the message you type into the contact form, including whatever you choose to share about what you are looking for in therapy.</li>
+            <li><strong>Scheduling details:</strong> the appointment time and contact information you provide when booking through our Calendly link.</li>
+            <li><strong>Referral source data:</strong> if you reach out through a directory such as Open Path Collective, Mental Health Match, or Psychology Today, we receive the contact information you submitted there.</li>
+            <li><strong>SMS content:</strong> the phone number you use to text us and the content of the messages you send.</li>
+          </ul>
+
+          <h2>2. How We Use Your Information</h2>
+          <p>We use the information you provide to:</p>
+          <ul>
+            <li>Respond to your inquiry by email, phone, or text.</li>
+            <li>Schedule a free 15-minute consultation.</li>
+            <li>Introduce the therapist and share a Calendly link to book a consultation when you have submitted a referral through a directory.</li>
+            <li>Maintain basic intake records required for licensure and recordkeeping compliance.</li>
+          </ul>
+          <p>We do not sell your information. We do not use it for advertising or for any purpose unrelated to responding to you.</p>
+
+          <h2>3. SMS / Text Messaging</h2>
+          <p>If you submit a referral through Open Path Collective, Mental Health Match, or Psychology Today, or if you opt in by texting us first, you may receive SMS messages from our practice. These messages are limited to introducing the therapist, sharing a link to book a free consultation, and responding to questions you send us.</p>
+          <div class="callout">
+            <p><strong>Mobile information will NOT be shared with third parties or affiliates for marketing or promotional purposes.</strong> Phone numbers collected through our SMS program are used solely for direct communication with you and are not transferred, sold, or shared with outside parties for their own messaging.</p>
+          </div>
+          <p>You can opt out at any time by replying <strong>STOP</strong> to any message. For full SMS terms, see our <a href="sms-terms.html">SMS Terms &amp; Conditions</a>.</p>
+
+          <h2>4. Third-Party Service Providers</h2>
+          <p>We use a small number of trusted vendors to operate this website and communicate with you. Each one processes only the information needed to perform its specific function:</p>
+          <ul>
+            <li><strong>Cloudflare</strong> &mdash; DNS, content delivery, and email routing for our domain.</li>
+            <li><strong>Resend</strong> &mdash; transactional email delivery (for example, confirmation emails after a form submission).</li>
+            <li><strong>Twilio</strong> &mdash; SMS / text message delivery.</li>
+            <li><strong>Calendly</strong> &mdash; consultation scheduling.</li>
+            <li><strong>beehiiv</strong> &mdash; newsletter delivery, if you opt in to our email list.</li>
+          </ul>
+          <p>Each of these providers has its own privacy policy governing how it handles the data we route through it.</p>
+
+          <h2>5. HIPAA and Clinical Records</h2>
+          <p>This website is an intake and marketing front-end. It is not a treatment platform, and it is not where protected health information from active clients is stored.</p>
+          <p>Once you become a client of the practice, your clinical records (intake paperwork, session notes, treatment plans, and any other protected health information) are kept inside a separate HIPAA-compliant electronic health records system, protected by a Business Associate Agreement and the safeguards required under HIPAA. Information you send through the public contact form or by text before becoming a client is not protected health information in the clinical sense, but we still treat it with care and confidentiality.</p>
+
+          <h2>6. Cookies and Analytics</h2>
+          <p>We do not currently use website analytics, advertising trackers, or third-party cookies on therapybydavid.com. Embedded tools such as Calendly and Google Maps may set their own cookies when you interact with them, governed by their respective privacy policies.</p>
+
+          <h2>7. Data Retention</h2>
+          <p>Information submitted through the contact form or by text is retained until you ask us to delete it, or for up to seven (7) years where retention is required to comply with the records rules of the Texas State Board of Social Worker Examiners, whichever is longer. Newsletter subscribers can unsubscribe at any time, after which their email address is removed from the active list.</p>
+
+          <h2>8. Your Rights</h2>
+          <p>You can request, at any time, to:</p>
+          <ul>
+            <li>Access the information we hold about you.</li>
+            <li>Correct anything that is inaccurate.</li>
+            <li>Delete your information, subject to the recordkeeping retention requirements described above.</li>
+            <li>Opt out of SMS messages (reply <strong>STOP</strong>) or unsubscribe from email at any time.</li>
+          </ul>
+          <p>To exercise any of these rights, email <a href="mailto:david@therapybydavid.com">david@therapybydavid.com</a>.</p>
+
+          <h2>9. Children</h2>
+          <p>This website is intended for adults. We do not knowingly collect information from children under 13.</p>
+
+          <h2>10. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page.</p>
+
+          <h2>11. Contact</h2>
+          <p>Questions about this policy? Email <a href="mailto:david@therapybydavid.com">david@therapybydavid.com</a> or call <a href="tel:8325442562">(832) 544-2562</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Therapy by David</h3>
+          <p>Private psychotherapy for anxiety, trauma, burnout, stress, overthinking, and emotional overwhelm. Serving adults across Texas.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About David</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Education</h4>
+          <ul>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="quiz.html">Check Your Symptoms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:8325442562">(832) 544-2562</a></li>
+            <li><a href="mailto:info@therapybydavid.com">Email David</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <a href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" rel="noopener"><img src="images/psychology-today-verified.png" alt="Verified by Psychology Today" style="height: 52px; width: auto; display: block; opacity: .9;"></a>
+        <span>© <span id="year"></span> Therapy by David. All rights reserved.</span>
+        <span>Website content is educational and not a substitute for emergency care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
