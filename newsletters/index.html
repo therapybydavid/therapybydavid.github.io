@@ -267,7 +267,7 @@
       const sorted = [...newsletters].sort((a, b) => new Date(b.date) - new Date(a.date));
 
       list.innerHTML = sorted.map(n => `
-        <a class="newsletter-card" href="${n.file}" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;">
+        <a class="newsletter-card" href="${n.file}" style="display:block;text-decoration:none;color:inherit;">
           <div class="card-meta">${n.issue || ''} &nbsp;·&nbsp; ${formatDate(n.date)}</div>
           <div class="card-title">${n.title}</div>
           <div class="card-preview">${n.preview || ''}</div>
