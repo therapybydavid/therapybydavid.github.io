@@ -366,6 +366,8 @@
 
   <div class="qr-section">
     <h3>📧 Email</h3>
+    <a class="qr-link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><span class="lbl">Gmail Inbox (roblesinc@)</span><span class="arr">↗</span></a>
+    <a class="qr-link" href="https://mail.google.com/mail/u/0/#settings/accounts" target="_blank"><span class="lbl">Gmail Send-As Settings</span><span class="arr">↗</span></a>
     <a class="qr-link" href="https://outlook.cloud.microsoft/mail/" target="_blank"><span class="lbl">Outlook Inbox</span><span class="arr">↗</span></a>
     <a class="qr-link" href="https://outlook.cloud.microsoft/mail/options/mail/rules" target="_blank"><span class="lbl">Outlook Inbox Rules</span><span class="arr">↗</span></a>
     <a class="qr-link" href="https://resend.com/emails" target="_blank"><span class="lbl">Resend Dashboard</span><span class="arr">↗</span></a>
@@ -375,6 +377,8 @@
   <div class="qr-section">
     <h3>📱 SMS</h3>
     <a class="qr-link" href="https://textbelt.com" target="_blank"><span class="lbl">Textbelt (buy credits)</span><span class="arr">↗</span></a>
+    <a class="qr-link" href="https://console.twilio.com/" target="_blank"><span class="lbl">Twilio Console</span><span class="arr">↗</span></a>
+    <a class="qr-link" href="https://console.twilio.com/us1/develop/sms/regulatory-compliance/campaigns/BN3a085b6572e3bbe477f2563c1fd7b23e/CM4ed74d0fc2200fa688b6905358a8a840" target="_blank"><span class="lbl">Twilio A2P Campaign Status</span><span class="arr">↗</span></a>
   </div>
 
   <div class="qr-section">
@@ -388,13 +392,6 @@
     <h3>🐙 Code & Domain</h3>
     <a class="qr-link" href="https://github.com" target="_blank"><span class="lbl">GitHub</span><span class="arr">↗</span></a>
     <a class="qr-link" href="https://porkbun.com" target="_blank"><span class="lbl">Porkbun (domain)</span><span class="arr">↗</span></a>
-  </div>
-
-  <div class="qr-section">
-    <h3>📣 Marketing</h3>
-    <a class="qr-link" href="https://mailchimp.com" target="_blank"><span class="lbl">Mailchimp</span><span class="arr">↗</span></a>
-    <a class="qr-link" href="https://app.beehiiv.com" target="_blank"><span class="lbl">beehiiv</span><span class="arr">↗</span></a>
-    <a class="qr-link" href="https://zapier.com" target="_blank"><span class="lbl">Zapier</span><span class="arr">↗</span></a>
   </div>
 
   <div class="qr-section">
@@ -462,9 +459,11 @@
       <div class="section sec-cf" style="margin-top:12px; width:100%;">
         <div class="tag tag-cf">☁️ Cloudflare Automation</div>
         <div class="col" style="gap:10px;">
-          <div class="node node-cf" style="width:260px; font-size:0.85rem;">
-            📨 Email Routing
-            <small>referrals@therapybydavid.com</small>
+          <div class="node node-cf" style="width:280px; font-size:0.85rem; text-align:left; padding:14px 18px;">
+            📨 <strong>Email Routing</strong>
+            <small style="margin-top:6px;"><strong>referrals@</strong> → Worker (below)</small>
+            <small><strong>david@</strong> → roblesinc@gmail.com</small>
+            <small><strong>info@</strong> → roblesinc@gmail.com</small>
           </div>
           <div class="arrow-down"><div class="line"></div><div class="head"></div></div>
           <div class="node node-worker" style="width:260px; text-align:left; padding:14px 18px;">
@@ -489,6 +488,10 @@
           <div class="node node-pink" style="flex:1;">
             📱 <strong>Textbelt</strong>
             <small>Welcome SMS<br>($0.01/text)</small>
+          </div>
+          <div class="node node-pink" style="flex:1; opacity:0.65; border:2px dashed #ec4899; background:transparent; color:#f9a8d4;">
+            📞 <strong>Twilio</strong>
+            <small>⏳ A2P 10DLC pending<br>(replaces Textbelt)</small>
           </div>
         </div>
       </div>
@@ -576,26 +579,7 @@
       </div>
       <div class="node node-infra" style="display:flex;align-items:center;gap:10px;text-align:left;">
         <span style="font-size:1.4rem;">📨</span>
-        <div><strong>Google Workspace</strong><small>info@therapybydavid.com</small></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Marketing -->
-  <div class="section sec-marketing bottom-section">
-    <div class="tag tag-mkt">📣 Marketing &amp; Content</div>
-    <div class="nodes-col" style="gap:8px; align-items:stretch;">
-      <div class="node node-amber" style="display:flex;align-items:center;gap:10px;text-align:left;">
-        <span style="font-size:1.4rem;">📰</span>
-        <div><strong>Mailchimp</strong><small>Email marketing campaigns</small></div>
-      </div>
-      <div class="node node-amber" style="display:flex;align-items:center;gap:10px;text-align:left;">
-        <span style="font-size:1.4rem;">🐝</span>
-        <div><strong>beehiiv</strong><small>Newsletter platform</small></div>
-      </div>
-      <div class="node node-amber" style="display:flex;align-items:center;gap:10px;text-align:left;">
-        <span style="font-size:1.4rem;">⚡</span>
-        <div><strong>Zapier</strong><small>Misc automations</small></div>
+        <div><strong>Gmail (free)</strong><small>roblesinc@gmail.com<br>sends as info@ &amp; david@ via Resend SMTP</small></div>
       </div>
     </div>
   </div>
@@ -604,6 +588,10 @@
   <div class="section sec-agencies bottom-section">
     <div class="tag tag-agency">🏥 Practices &amp; Agencies</div>
     <div class="nodes-col" style="gap:8px; align-items:stretch;">
+      <div class="node node-dark" style="display:flex;align-items:center;gap:10px;text-align:left; border:2px solid #6366f1;">
+        <span style="font-size:1.4rem;">⭐</span>
+        <div><strong>TherapyByDavid.com</strong><small>Private Practice (you)</small></div>
+      </div>
       <div class="node node-purple" style="display:flex;align-items:center;gap:10px;text-align:left;">
         <span style="font-size:1.4rem;">🏥</span>
         <div><strong>District Counseling</strong><small>Agency / Employer</small></div>
@@ -615,10 +603,6 @@
       <div class="node node-purple" style="display:flex;align-items:center;gap:10px;text-align:left;">
         <span style="font-size:1.4rem;">🏥</span>
         <div><strong>Safe Mind Space</strong><small>Agency / Employer</small></div>
-      </div>
-      <div class="node node-dark" style="display:flex;align-items:center;gap:10px;text-align:left; border:2px solid #6366f1;">
-        <span style="font-size:1.4rem;">⭐</span>
-        <div><strong>TherapyByDavid.com</strong><small>Private Practice (you)</small></div>
       </div>
     </div>
   </div>
