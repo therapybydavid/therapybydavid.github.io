@@ -240,6 +240,18 @@
               <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Phone (optional)</label>
               <input type="tel" id="phone" placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
             </div>
+
+            <!-- SMS opt-in (revealed only when a valid phone is entered) -->
+            <div id="sms-opt-in-wrapper" style="display: none; padding: 16px 18px; background: var(--paper); border: 1px solid var(--mist); border-radius: 12px;">
+              <label for="sms_opt_in" style="display: flex; gap: 12px; align-items: flex-start; cursor: pointer; font-size: 13px; line-height: 1.55; color: var(--text); margin: 0;">
+                <input type="checkbox" id="sms_opt_in" style="margin-top: 4px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; accent-color: var(--gold);">
+                <span>
+                  <strong style="display: block; margin-bottom: 4px; font-size: 14px; color: var(--night); font-weight: 700;">Yes, text me too</strong>
+                  I agree to receive SMS from David Robles, LMSW (Therapy by David) at the phone number above. Messages may include scheduling, appointment reminders, and follow-ups. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. See <a href="sms-terms.html" style="color: var(--gold); text-decoration: underline;">SMS Terms</a> and <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Privacy Policy</a>.
+                </span>
+              </label>
+            </div>
+
             <div>
               <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Message</label>
               <textarea id="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
@@ -364,14 +376,29 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
-  <!-- Phone auto-format -->
+  <!-- Phone auto-format + SMS opt-in reveal -->
   <script>
-    document.getElementById('phone').addEventListener('input', function (e) {
+    const phoneEl = document.getElementById('phone');
+    const smsWrap = document.getElementById('sms-opt-in-wrapper');
+    const smsCheckEl = document.getElementById('sms_opt_in');
+
+    function phoneDigits() {
+      return phoneEl.value.replace(/\D/g, '');
+    }
+
+    phoneEl.addEventListener('input', function (e) {
       const digits = e.target.value.replace(/\D/g, '').substring(0, 10);
-      if (digits.length === 0) { e.target.value = ''; return; }
-      if (digits.length <= 3) { e.target.value = '(' + digits; return; }
-      if (digits.length <= 6) { e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3); return; }
-      e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6);
+      if (digits.length === 0) { e.target.value = ''; }
+      else if (digits.length <= 3) { e.target.value = '(' + digits; }
+      else if (digits.length <= 6) { e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3); }
+      else { e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6); }
+
+      // Reveal SMS opt-in only when a complete 10-digit number has been entered.
+      // If the user clears the phone field, also uncheck the box so we never
+      // record consent paired with an empty phone number.
+      const hasValidPhone = phoneDigits().length === 10;
+      smsWrap.style.display = hasValidPhone ? 'block' : 'none';
+      if (!hasValidPhone) smsCheckEl.checked = false;
     });
   </script>
 
@@ -398,18 +425,45 @@
     const EMAILJS_PUBLIC_KEY  = 'C2aEWR5X0R26UneeK';
     // ────────────────────────────────────────────────────────────────────────
 
+    // ── SMS consent record ──────────────────────────────────────────────────
+    // Versioned so that if the consent language is ever updated, historical
+    // submissions still point to the exact wording the user saw. This entire
+    // record is what would be produced in a TCPA/TCR audit.
+    const SMS_CONSENT_VERSION = '2026-05-27-v1';
+    const SMS_CONSENT_TEXT =
+      'I agree to receive SMS from David Robles, LMSW (Therapy by David) at the ' +
+      'phone number above. Messages may include scheduling, appointment reminders, ' +
+      'and follow-ups. Message frequency varies. Msg & data rates may apply. ' +
+      'Reply STOP to opt out, HELP for help. See SMS Terms ' +
+      '(https://therapybydavid.com/sms-terms.html) and Privacy Policy ' +
+      '(https://therapybydavid.com/privacy.html).';
+    // ────────────────────────────────────────────────────────────────────────
+
     document.getElementById('contact-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const btn    = document.getElementById('submit-btn');
       const status = document.getElementById('form-status');
+      const smsCheck = document.getElementById('sms_opt_in');
+      const phoneVal = document.getElementById('phone').value.trim();
+      const hasValidPhone = phoneVal.replace(/\D/g, '').length === 10;
+      const smsOptIn = smsCheck.checked && hasValidPhone;
+
       const data   = {
         first_name: document.getElementById('first_name').value.trim(),
         last_name:  document.getElementById('last_name').value.trim(),
         from_email: document.getElementById('email').value.trim(),
-        phone:      document.getElementById('phone').value.trim(),
+        phone:      phoneVal,
         message:    document.getElementById('message').value.trim(),
-        submitted_at: serverTimestamp()
+        submitted_at: serverTimestamp(),
+
+        // ── SMS consent audit trail (TCR/TCPA defensible record) ──
+        sms_opt_in:            smsOptIn,
+        sms_consent_version:   smsOptIn ? SMS_CONSENT_VERSION : null,
+        sms_consent_text:      smsOptIn ? SMS_CONSENT_TEXT    : null,
+        sms_consent_timestamp: smsOptIn ? serverTimestamp()   : null,
+        sms_consent_page:      smsOptIn ? location.href       : null,
+        user_agent:            navigator.userAgent
       };
 
       btn.disabled    = true;
