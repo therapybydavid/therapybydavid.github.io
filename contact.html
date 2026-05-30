@@ -468,6 +468,21 @@
           await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data, EMAILJS_PUBLIC_KEY);
         }
 
+        // 3 — Fire-and-forget SMS notification to David via the openpath-intake
+        // Worker. NOT awaited; a Worker hiccup must not break the form for the
+        // visitor. The Worker has the Textbelt key server-side so it never
+        // leaks to the browser.
+        fetch('https://openpath-intake.roblesinc.workers.dev/contact-notify', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({
+            first_name: data.first_name,
+            last_name:  data.last_name,
+            from_email: data.from_email,
+            phone:      data.phone,
+          }),
+        }).catch(() => {});  // ignore worker errors silently
+
         // Success
         status.style.display      = 'block';
         status.style.background   = '#e6f4ea';
