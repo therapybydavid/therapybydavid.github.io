@@ -22,6 +22,14 @@
   - Inline embed on `contact.html`
   - Popup widget triggered by all consultation buttons on `index.html`
 
+## ⚠️ LCSW Tracker — SEPARATE repo (David's main data app)
+- **What it is:** "LCSW hour and client tracker." In David's words: *"this is where all my data lives."* Treat as high-importance.
+- **Live URL:** `https://therapybydavid.github.io/lcsw-tracker/`
+- **Source code:** lives in a **SEPARATE GitHub repo `therapybydavid/lcsw-tracker`** — it is NOT part of this (`therapybydavid.github.io`) repo. It is served at the `/lcsw-tracker/` path via GitHub Pages "project site" routing (a sibling repo mounted under that path). Do not look for it here.
+- **Where its DATA is stored:** ❓ **NOT YET CONFIRMED.** Could not be verified from a Claude Code web session because (a) outbound network is blocked (the live page returns HTTP 403), and (b) GitHub access is scoped to only `therapybydavid.github.io`, so the `lcsw-tracker` repo can't be read. David suspects it may be "tied to Cloudflare" — unverified. (For reference, the main site uses Firebase project `therapy-by-david` + Cloudflare; lcsw-tracker's backend is unknown.)
+- **To confirm the data backend / edit this page from Claude:** either add `therapybydavid/lcsw-tracker` to the session's allowed repositories, or paste the page's `<script>`/config section into chat.
+- **Parked request:** David wants a link on this page pointing to `http://localhost:8083/Clients/lcsw-dashboard.html` (a local-only dashboard URL). That edit must happen in the `lcsw-tracker` repo, not this one.
+
 ## Pages
 - `index.html` — Homepage
 - `contact.html` — Contact form + inline Calendly embed
