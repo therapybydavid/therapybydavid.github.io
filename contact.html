@@ -223,6 +223,21 @@
     <section class="section">
       <div class="container">
 
+        <!-- Quick text/call CTA (the "low-commitment on-ramp") -->
+        <div class="reveal" style="background: linear-gradient(135deg, #f7efd9, #fbf8f1); border: 1px solid var(--mist); border-radius: 28px; padding: 32px 36px; margin-bottom: 32px; box-shadow: 0 12px 36px rgba(20,33,50,.07);">
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 10px;">Prefer Texting?</span>
+              <h3 style="font-size: 22px; margin-bottom: 6px; color: var(--night);">Text us at (832) 544-2562</h3>
+              <p style="margin: 0; font-size: 14.5px;">David personally replies during business hours (Mon–Fri, 9am–6pm CT) within the hour. Standard message rates may apply.</p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a class="btn btn-dark" href="sms:8325442562">Text</a>
+              <a class="btn btn-gold" href="tel:8325442562">Call</a>
+            </div>
+          </div>
+        </div>
+
         <!-- Contact Form -->
         <div class="reveal" style="background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 28px; padding: 48px; box-shadow: 0 18px 60px rgba(20,33,50,.09); margin-bottom: 48px;">
           <span class="eyebrow">Send a Message</span>
@@ -523,9 +538,11 @@
 
   <!-- EmailJS SDK (loaded only when needed) -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<!-- TherapyByDavid intake chatbot widget -->
-<link rel="stylesheet" href="/chatbot.css">
-<script>window.TBD_CHAT_ENDPOINT = "https://chat.therapybydavid.com/chat";</script>
-<script src="/chatbot.js" defer></script>
+
+  <!-- Chatbot widget intentionally NOT loaded on /contact.
+       The contact page already has 3 clear on-ramps (form, text/call CTA,
+       email card). A chatbot bubble there competes with the form for
+       attention rather than helping conversion. Bot still loads on every
+       other public page (home, services, blog, resources). -->
 </body>
 </html>
