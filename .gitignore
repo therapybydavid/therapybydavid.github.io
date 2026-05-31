@@ -1,5 +1,6 @@
-# Root-level internal scratch copies (not for deploy).
-# Scoped to root with a leading slash so flowcharts/quick-reference.html
-# (linked from the /flowcharts/ hub) is NOT ignored.
+# Internal/admin pages — kept LOCAL only, never deployed to the public site.
+# These expose infrastructure links (Cloudflare account, dashboards, etc.).
+# Open them as local files on the Mac instead of via a public URL.
 /quick-reference.html
 /flowchart.html
+/flowcharts/
