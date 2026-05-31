@@ -13,12 +13,16 @@
     min-width: 1100px;
   }
 
-  /* ── QUICK REFERENCE DRAWER ── */
-  #qr-btn {
+  /* ── TOP-RIGHT NAV BUTTONS ── */
+  #top-nav {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #6366f1;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+  #top-nav a {
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -26,9 +30,17 @@
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(99,102,241,0.5);
+    text-decoration: none;
     transition: background 0.2s;
+  }
+  #sitemap-btn {
+    background: #10b981;
+    box-shadow: 0 4px 20px rgba(16,185,129,0.5);
+  }
+  #sitemap-btn:hover { background: #059669; }
+  #qr-btn {
+    background: #6366f1;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.5);
   }
   #qr-btn:hover { background: #4f46e5; }
 
@@ -340,8 +352,11 @@
 </head>
 <body>
 
-<!-- Quick Reference Button -->
-<a id="qr-btn" href="quick-reference.html">🔗 Quick Reference</a>
+<!-- Top-right nav buttons -->
+<div id="top-nav">
+  <a id="sitemap-btn" href="sitemap.html">🗺️ Sitemap</a>
+  <a id="qr-btn" href="quick-reference.html">🔗 Quick Reference</a>
+</div>
 
 <!-- Quick Reference Drawer -->
 <div id="qr-drawer">
