@@ -1,2 +1,5 @@
-quick-reference.html
-flowchart.html
+# Root-level internal scratch copies (not for deploy).
+# Scoped to root with a leading slash so flowcharts/quick-reference.html
+# (linked from the /flowcharts/ hub) is NOT ignored.
+/quick-reference.html
+/flowchart.html
