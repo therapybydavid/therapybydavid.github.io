@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>David Robles — Quick Reference</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    padding: 40px 30px 80px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    color: #f1f5f9;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
+
+  /* ── BACK BUTTON ── */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e293b;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    border: 1px solid #334155;
+    transition: all 0.15s;
+  }
+  .back-btn:hover { background: #334155; color: #f1f5f9; }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .search-wrap input {
+    width: 100%;
+    background: #1e293b;
+    border: 1.5px solid #334155;
+    border-radius: 12px;
+    padding: 12px 18px 12px 44px;
+    color: #f1f5f9;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-wrap input:focus { border-color: #6366f1; }
+  .search-wrap input::placeholder { color: #475569; }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #475569;
+    font-size: 1rem;
+  }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #1e293b;
+    border-radius: 18px;
+    padding: 22px;
+    border: 1.5px solid #334155;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .card-icon {
+    font-size: 1.3rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  /* ── LINK ITEMS ── */
+  .link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 4px;
+    background: #0f172a;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .link-item:last-child { margin-bottom: 0; }
+  .link-item:hover { background: #334155; }
+  .link-item .name { color: #e2e8f0; font-size: 0.9rem; font-weight: 500; }
+  .link-item .arr { color: #475569; font-size: 0.85rem; flex-shrink: 0; }
+
+  /* ── INFO ITEMS (key/value, no link) ── */
+  .info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    background: #0f172a;
+  }
+  .info-item:last-child { margin-bottom: 0; }
+  .info-item .key { color: #64748b; font-size: 0.85rem; }
+  .info-item .val {
+    color: #e2e8f0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: right;
+    word-break: break-all;
+  }
+  .copy-btn {
+    background: none;
+    border: none;
+    color: #475569;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+  }
+  .copy-btn:hover { color: #6366f1; }
+
+  /* ── CARD COLOR ACCENTS ── */
+  .c-purple .card-icon { background: rgba(99,102,241,0.15); }
+  .c-orange .card-icon { background: rgba(249,115,22,0.15); }
+  .c-sky    .card-icon { background: rgba(14,165,233,0.15); }
+  .c-pink   .card-icon { background: rgba(236,72,153,0.15); }
+  .c-teal   .card-icon { background: rgba(20,184,166,0.15); }
+  .c-green  .card-icon { background: rgba(34,197,94,0.15); }
+  .c-amber  .card-icon { background: rgba(245,158,11,0.15); }
+  .c-slate  .card-icon { background: rgba(100,116,139,0.15); }
+  .c-violet .card-icon { background: rgba(168,85,247,0.15); }
+  .c-red    .card-icon { background: rgba(239,68,68,0.15); }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #22c55e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: transform 0.3s;
+    pointer-events: none;
+    z-index: 999;
+  }
+  #toast.show { transform: translateX(-50%) translateY(0); }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div style="max-width:1200px; margin:0 auto;">
+  <a class="back-btn" href="flowchart.html">← Back to Flowchart</a>
+</div>
+
+<h1>🔗 Quick Reference</h1>
+<p class="subtitle">All your important links and account details in one place</p>
+
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="search" placeholder="Search links..." oninput="filterCards()"/>
+</div>
+
+<div class="grid" id="grid">
+
+  <!-- YOUR WEBSITES -->
+  <div class="card c-purple" data-tags="website therapybydavid flowchart">
+    <div class="card-header">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">Your Websites</div>
+    </div>
+    <a class="link-item" href="https://therapybydavid.com" target="_blank"><span class="name">TherapyByDavid.com</span><span class="arr">↗</span></a>
+    <a class="link-item" href="flowchart.html"><span class="name">Practice Flowchart</span><span class="arr">→</span></a>
+  </div>
+
+  <!-- CLOUDFLARE -->
+  <div class="card c-orange" data-tags="cloudflare dns email routing worker">
+    <div class="card-header">
+      <div class="card-icon">☁️</div>
+      <div class="card-title">Cloudflare</div>
+    </div>
+    <a class="link-item" href="https://dash.cloudflare.com" target="_blank"><span class="name">Main Dashboard</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://dash.cloudflare.com/859b0614a943641723a4b8b3bdf7240a/therapybydavid.com/dns" target="_blank"><span class="name">DNS Records</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://dash.cloudflare.com/859b0614a943641723a4b8b3bdf7240a/email-service/routing/ee975243cfd8f5c89e069f5f9d79cc44/settings" target="_blank"><span class="name">Email Routing</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://dash.cloudflare.com/859b0614a943641723a4b8b3bdf7240a/workers/services/view/openpath-intake" target="_blank"><span class="name">Worker (openpath-intake)</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="card c-sky" data-tags="email outlook resend google inbox rules">
+    <div class="card-header">
+      <div class="card-icon">📧</div>
+      <div class="card-title">Email</div>
+    </div>
+    <a class="link-item" href="https://outlook.cloud.microsoft/mail/" target="_blank"><span class="name">Outlook Inbox</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://outlook.cloud.microsoft/mail/options/mail/rules" target="_blank"><span class="name">Outlook Inbox Rules</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://resend.com/emails" target="_blank"><span class="name">Resend Dashboard</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://resend.com/api-keys" target="_blank"><span class="name">Resend API Keys</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://workspace.google.com" target="_blank"><span class="name">Google Workspace (info@)</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- SMS -->
+  <div class="card c-pink" data-tags="sms textbelt text message">
+    <div class="card-header">
+      <div class="card-icon">📱</div>
+      <div class="card-title">SMS</div>
+    </div>
+    <a class="link-item" href="https://textbelt.com" target="_blank"><span class="name">Textbelt — Buy Credits</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://textbelt.com/docs" target="_blank"><span class="name">Textbelt API Docs</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://us5.admin.mailchimp.com/sms/settings/" target="_blank"><span class="name">Mailchimp SMS Settings</span><span class="arr">↗</span></a>
+    <div class="info-item"><span class="key">Text-to-join</span><div style="display:flex;align-items:center;"><span class="val">Text DAVID to (281) 800-9426</span><button class="copy-btn" onclick="copyText('Text DAVID to (281) 800-9426')">📋</button></div></div>
+  </div>
+
+  <!-- SCHEDULING -->
+  <div class="card c-teal" data-tags="calendly reclaim calendar scheduling booking">
+    <div class="card-header">
+      <div class="card-icon">📅</div>
+      <div class="card-title">Scheduling</div>
+    </div>
+    <a class="link-item" href="https://calendly.com/event_types/user/me" target="_blank"><span class="name">Calendly Dashboard</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://calendly.com/roblesinc/consultation" target="_blank"><span class="name">Your Booking Page (client-facing)</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://app.reclaim.ai" target="_blank"><span class="name">Reclaim</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- CODE & HOSTING -->
+  <div class="card c-green" data-tags="github porkbun domain hosting code">
+    <div class="card-header">
+      <div class="card-icon">🐙</div>
+      <div class="card-title">Code & Hosting</div>
+    </div>
+    <a class="link-item" href="https://github.com" target="_blank"><span class="name">GitHub</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://porkbun.com" target="_blank"><span class="name">Porkbun (domain registrar)</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- MARKETING -->
+  <div class="card c-amber" data-tags="mailchimp beehiiv zapier marketing email newsletter">
+    <div class="card-header">
+      <div class="card-icon">📣</div>
+      <div class="card-title">Marketing & Content</div>
+    </div>
+    <a class="link-item" href="https://mailchimp.com" target="_blank"><span class="name">Mailchimp</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://app.beehiiv.com" target="_blank"><span class="name">beehiiv</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://zapier.com" target="_blank"><span class="name">Zapier</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- REFERRAL PLATFORMS -->
+  <div class="card c-violet" data-tags="openpath zocdoc psychology today therapist mental health match referral">
+    <div class="card-header">
+      <div class="card-icon">🏥</div>
+      <div class="card-title">Referral Platforms</div>
+    </div>
+    <a class="link-item" href="https://openpathcollective.org/therapists" target="_blank"><span class="name">OpenPath Collective</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://www.zocdoc.com/provider" target="_blank"><span class="name">Zocdoc Provider Portal</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://www.psychologytoday.com/us/therapists" target="_blank"><span class="name">Psychology Today</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://www.therapist.com" target="_blank"><span class="name">Therapist.com</span><span class="arr">↗</span></a>
+    <a class="link-item" href="https://mentalhealthmatch.com" target="_blank"><span class="name">Mental Health Match</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- AGENCIES -->
+  <div class="card c-red" data-tags="district counseling emora safe mind space jane agency">
+    <div class="card-header">
+      <div class="card-icon">🏢</div>
+      <div class="card-title">Agencies</div>
+    </div>
+    <div class="link-item" style="cursor:default;"><span class="name" style="color:#475569;">District Counseling</span><span class="arr" style="color:#1e293b;">—</span></div>
+    <div class="link-item" style="cursor:default;"><span class="name" style="color:#475569;">Emora</span><span class="arr" style="color:#1e293b;">—</span></div>
+    <a class="link-item" href="https://safemindspacecg.janeapp.com" target="_blank"><span class="name">Safe Mind Space (Jane)</span><span class="arr">↗</span></a>
+  </div>
+
+  <!-- KEY ACCOUNT INFO -->
+  <div class="card c-slate" data-tags="cloudflare account zone worker email api key info">
+    <div class="card-header">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title">Key Account Info</div>
+    </div>
+    <div class="info-item"><span class="key">Cloudflare Account ID</span><div style="display:flex;align-items:center;"><span class="val">859b0614...240a</span><button class="copy-btn" onclick="copyText('859b0614a943641723a4b8b3bdf7240a')">📋</button></div></div>
+    <div class="info-item"><span class="key">Cloudflare Zone ID</span><div style="display:flex;align-items:center;"><span class="val">ee975243...cc44</span><button class="copy-btn" onclick="copyText('ee975243cfd8f5c89e069f5f9d79cc44')">📋</button></div></div>
+    <div class="info-item"><span class="key">Worker name</span><div style="display:flex;align-items:center;"><span class="val">openpath-intake</span><button class="copy-btn" onclick="copyText('openpath-intake')">📋</button></div></div>
+    <div class="info-item"><span class="key">Routing email</span><div style="display:flex;align-items:center;"><span class="val">referrals@therapybydavid.com</span><button class="copy-btn" onclick="copyText('referrals@therapybydavid.com')">📋</button></div></div>
+    <div class="info-item"><span class="key">Sending email</span><div style="display:flex;align-items:center;"><span class="val">david@therapybydavid.com</span><button class="copy-btn" onclick="copyText('david@therapybydavid.com')">📋</button></div></div>
+    <div class="info-item"><span class="key">General email</span><div style="display:flex;align-items:center;"><span class="val">info@therapybydavid.com</span><button class="copy-btn" onclick="copyText('info@therapybydavid.com')">📋</button></div></div>
+    <div class="info-item"><span class="key">Calendly link</span><div style="display:flex;align-items:center;"><span class="val">calendly.com/roblesinc/consultation</span><button class="copy-btn" onclick="copyText('https://calendly.com/roblesinc/consultation')">📋</button></div></div>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div id="toast">Copied to clipboard!</div>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text);
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  }
+
+  function filterCards() {
+    const q = document.getElementById('search').value.toLowerCase();
+    document.querySelectorAll('.card').forEach(card => {
+      const tags = card.getAttribute('data-tags') || '';
+      const text = card.innerText.toLowerCase();
+      card.classList.toggle('hidden', q && !text.includes(q) && !tags.includes(q));
+    });
+  }
+</script>
+</body>
+</html>
