@@ -312,7 +312,10 @@
       box-shadow: 0 18px 48px rgba(20,33,50,.07);
     }
     .service small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; }
-    .service h3 { margin: 14px 0 12px; font-size: 24px; }
+    .service h3 { margin: 14px 0 12px; font-size: 24px; transition: color .2s ease; }
+    a.service { display: block; color: inherit; text-decoration: none; transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+    a.service:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 22px 56px rgba(20,33,50,.13); }
+    a.service:hover h3 { color: var(--gold); }
 
     .about-photo { min-height: 620px; border-radius: 36px; overflow: hidden; box-shadow: var(--shadow); background: var(--night); position: relative; }
     .about-photo img { width: 100%; height: 100%; min-height: 620px; object-fit: cover; }
@@ -456,12 +459,12 @@
         <h2>Private therapy for the pressure you keep carrying.</h2>
         <p class="section-lead">Therapy by David serves adults across Texas through telehealth, with in-person options in Pasadena and Webster.</p>
         <div class="service-grid">
-          <article class="service reveal"><h3>One-on-One Therapy</h3><p>Focused weekly or biweekly sessions for adults who want structure, honesty, and steady movement toward change.</p></article>
-          <article class="service reveal"><h3>Anxiety & Overthinking</h3><p>For racing thoughts, pressure, worry, restlessness, and the mental loop that keeps stealing your peace.</p></article>
-          <article class="service reveal"><h3>Trauma Therapy</h3><p>Work through how past experiences continue showing up in reactions, relationships, shame, anger, and disconnection.</p></article>
-          <article class="service reveal"><h3>Couples Therapy</h3><p>For partners navigating communication breakdowns, recurring conflict, disconnection, or patterns that keep getting in the way of a real relationship.</p></article>
-          <article class="service reveal"><h3>Therapy for Men</h3><p>A direct, no-fluff approach for men who are used to handling everything alone but know something has to change.</p></article>
-          <article class="service reveal"><h3>Veterans & First Responders</h3><p>Support from a U.S. Army veteran who understands the culture, the pressure, and the difficulty of translating life after service.</p></article>
+          <a class="service reveal" href="contact.html"><h3>One-on-One Therapy</h3><p>Focused weekly or biweekly sessions for adults who want structure, honesty, and steady movement toward change.</p></a>
+          <a class="service reveal" href="anxiety.html"><h3>Anxiety & Overthinking</h3><p>For racing thoughts, pressure, worry, restlessness, and the mental loop that keeps stealing your peace.</p></a>
+          <a class="service reveal" href="trauma.html"><h3>Trauma Therapy</h3><p>Work through how past experiences continue showing up in reactions, relationships, shame, anger, and disconnection.</p></a>
+          <a class="service reveal" href="couples-therapy.html"><h3>Couples Therapy</h3><p>For partners navigating communication breakdowns, recurring conflict, disconnection, or patterns that keep getting in the way of a real relationship.</p></a>
+          <a class="service reveal" href="mens-mental-health.html"><h3>Therapy for Men</h3><p>A direct, no-fluff approach for men who are used to handling everything alone but know something has to change.</p></a>
+          <a class="service reveal" href="veterans-military-families.html"><h3>Veterans &amp; First Responders</h3><p>Support from a U.S. Army veteran who understands the culture, the pressure, and the difficulty of translating life after service.</p></a>
         </div>
       </div>
     </section>
