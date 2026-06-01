@@ -403,12 +403,6 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // ── EmailJS config ── fill these in after creating your EmailJS account ──
-    const EMAILJS_SERVICE_ID  = 'service_3di4nuj';
-    const EMAILJS_TEMPLATE_ID = 'template_qz7ewhr';
-    const EMAILJS_PUBLIC_KEY  = 'C2aEWR5X0R26UneeK';
-    // ────────────────────────────────────────────────────────────────────────
-
     // ── SMS consent record ──────────────────────────────────────────────────
     // Versioned so that if the consent language is ever updated, historical
     // submissions still point to the exact wording the user saw. This entire
@@ -457,12 +451,15 @@
         // 1 — Save to Firestore (must succeed; this is the canonical record)
         await addDoc(collection(db, 'contact_submissions'), data);
 
-        // 2 — Fire-and-forget SMS notification + Trello card + AI draft via
-        // the openpath-intake Worker. NOT awaited; a Worker hiccup must not
-        // break the form. The Worker has Textbelt/Twilio/Resend/Trello keys
-        // server-side so they never leak to the browser. This is the PRIMARY
-        // notification path — kept ABOVE EmailJS so any EmailJS failure cannot
-        // block it (see EmailJS isolation below).
+        // 2 — Fire-and-forget notification pipeline via the openpath-intake
+        // Worker. NOT awaited; a Worker hiccup must not break the form for
+        // the visitor. The Worker has Textbelt / Twilio / Resend / Trello /
+        // Anthropic keys server-side so they never leak to the browser.
+        // Worker does: Textbelt SMS alert to David, Trello card in "New Lead",
+        // Twilio welcome SMS to opted-in visitors, and an AI-drafted Gmail
+        // reply landing in David's Drafts folder. EmailJS was removed
+        // 2026-05-31 — the Worker now covers every notification path it used
+        // to provide (and more).
         fetch('https://openpath-intake.roblesinc.workers.dev/contact-notify', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -475,20 +472,6 @@
             sms_opt_in: data.sms_opt_in,
           }),
         }).catch(() => {});  // ignore worker errors silently
-
-        // 3 — Send email notification via EmailJS (if configured).
-        // ISOLATED in its own try/catch — historically a stale template ID
-        // or hitting the 200-msg/mo free-tier cap threw here and silently
-        // broke the WHOLE form, so the Worker above (Textbelt/Twilio/Trello)
-        // never fired and David lost all contact-form notifications. Failures
-        // here are now logged but do NOT block the visitor's success state.
-        if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-          try {
-            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data, EMAILJS_PUBLIC_KEY);
-          } catch (emailErr) {
-            console.warn('EmailJS notification failed (non-fatal — Worker path still fired):', emailErr);
-          }
-        }
 
         // Success
         status.style.display      = 'block';
@@ -508,9 +491,6 @@
       }
     });
   </script>
-
-  <!-- EmailJS SDK (loaded only when needed) -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- Chatbot widget intentionally NOT loaded on /contact.
        The contact page already has 3 clear on-ramps (form, text/call CTA,
