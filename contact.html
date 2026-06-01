@@ -251,7 +251,10 @@
                 <input type="checkbox" id="sms_opt_in" style="margin-top: 4px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; accent-color: var(--gold);">
                 <span>
                   <strong style="display: block; margin-bottom: 4px; font-size: 14px; color: var(--night); font-weight: 700;">Yes, text me too</strong>
-                  I agree to receive SMS from David Robles, LMSW (Therapy by David) at the phone number above. Messages may include scheduling, appointment reminders, and follow-ups. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. See <a href="sms-terms.html" style="color: var(--gold); text-decoration: underline;">SMS Terms</a> and <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Privacy Policy</a>.
+                  I agree to SMS from Therapy by David (scheduling, reminders). Reply <strong>STOP</strong> to cancel, <strong>HELP</strong> for help.
+                  <span style="display: block; margin-top: 6px; font-size: 11px; color: var(--muted); font-style: italic; line-height: 1.5;">
+                    Frequency varies. Msg &amp; data rates may apply. <a href="sms-terms.html" style="color: var(--muted); text-decoration: underline;">SMS Terms</a> · <a href="privacy.html" style="color: var(--muted); text-decoration: underline;">Privacy Policy</a>
+                  </span>
                 </span>
               </label>
             </div>
@@ -407,14 +410,13 @@
     // Versioned so that if the consent language is ever updated, historical
     // submissions still point to the exact wording the user saw. This entire
     // record is what would be produced in a TCPA/TCR audit.
-    const SMS_CONSENT_VERSION = '2026-05-27-v1';
+    const SMS_CONSENT_VERSION = '2026-06-01-v2';
     const SMS_CONSENT_TEXT =
-      'I agree to receive SMS from David Robles, LMSW (Therapy by David) at the ' +
-      'phone number above. Messages may include scheduling, appointment reminders, ' +
-      'and follow-ups. Message frequency varies. Msg & data rates may apply. ' +
-      'Reply STOP to opt out, HELP for help. See SMS Terms ' +
-      '(https://therapybydavid.com/sms-terms.html) and Privacy Policy ' +
-      '(https://therapybydavid.com/privacy.html).';
+      'I agree to SMS from Therapy by David (scheduling, reminders). ' +
+      'Reply STOP to cancel, HELP for help. ' +
+      'Frequency varies. Msg & data rates may apply. ' +
+      'SMS Terms (https://therapybydavid.com/sms-terms.html) · ' +
+      'Privacy Policy (https://therapybydavid.com/privacy.html).';
     // ────────────────────────────────────────────────────────────────────────
 
     document.getElementById('contact-form').addEventListener('submit', async (e) => {
