@@ -251,10 +251,12 @@
     .care-card p { color: var(--muted); font-size: 15px; max-width: unset; }
 
     /* Stat strip */
-    .stat-strip { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 32px; box-shadow: 0 18px 50px rgba(20,33,50,.07); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-    .stat-item { text-align: center; }
-    .stat-item strong { display: block; font-family: var(--serif); color: var(--night); font-size: 36px; line-height: 1; margin-bottom: 8px; }
-    .stat-item span { color: var(--muted); font-size: 14px; }
+    .stat-strip { background: linear-gradient(135deg, var(--night) 0%, var(--ink) 100%); border: 1px solid var(--line); border-radius: 24px; padding: 42px 30px; box-shadow: 0 26px 64px rgba(8,11,16,.4); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; position: relative; overflow: hidden; }
+    .stat-strip::before { content: ''; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.22), transparent 68%); top: -170px; right: -120px; pointer-events: none; }
+    .stat-item { text-align: center; padding: 0 8px; position: relative; z-index: 1; }
+    .stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,.13); }
+    .stat-item strong { display: block; font-family: var(--serif); color: var(--champagne); font-size: clamp(34px, 2.6vw, 46px); line-height: 1; margin-bottom: 12px; white-space: nowrap; }
+    .stat-item span { color: rgba(255,255,255,.62); font-size: 13.5px; line-height: 1.5; }
 
     /* Quote card */
     .quote-card { background: var(--night); color: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
@@ -289,6 +291,7 @@
       .nav-toggle { display: block; }
       .page-hero { padding-top: 124px; }
       .cards-3, .cards-4, .light-cards-3, .light-cards-4, .impact-grid, .stat-strip, .footer-grid { grid-template-columns: 1fr; }
+      .stat-item + .stat-item { border-left: none; border-top: 1px solid var(--line); padding-top: 26px; margin-top: 4px; }
       .cards-2, .light-cards-2 { grid-template-columns: 1fr; }
       .cycle-step { grid-template-columns: 1fr; }
       .step-number { width: 46px; height: 46px; font-size: 18px; }
