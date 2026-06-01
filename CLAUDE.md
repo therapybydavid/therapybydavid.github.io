@@ -29,7 +29,9 @@
 - `anxiety.html`, `depression.html`, `trauma.html` — Service pages
 - `blog.html` — Blog listing
 - `resources.html` — Resources page
-- `quiz.html` — Symptom checker quiz
+- `flowchart.html` — Practice flowchart (public, deployed 2026-05-31)
+- `quick-reference.html` — Quick reference dashboard (public, deployed 2026-05-31)
+- `sitemap.html` — Human-readable site map (public, deployed 2026-05-31)
 
 ## Key Design Details
 - **Color palette:** dark background (`#080b10`), gold accent (`#b99138`), champagne (`#c8a96e`)
@@ -45,6 +47,7 @@
 - Calendly inline embed added to contact page (dark theme matching site)
 - All consultation buttons on homepage (`index.html`) now trigger Calendly popup instead of linking to ClientSecure
 - Homepage headshot updated to `david-robles-headshot.jpg`
+- **2026-05-31:** Published three new public pages — `flowchart.html` (practice flowchart), `quick-reference.html` (quick reference dashboard), and `sitemap.html` (human-readable site map). Pushed in commit `c8f2647` and live at therapybydavid.com/flowchart.html, /quick-reference.html, /sitemap.html (allow ~1 min after push for Cloudflare/GitHub Pages to refresh).
 
 ## Calendly Account
 - David has a **Calendly Pro account**
