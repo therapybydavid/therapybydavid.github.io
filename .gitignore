@@ -5,3 +5,7 @@
 /flowchart.html
 /flowcharts/
 /sitemap.html
+
+# Stray local notes / context — NEVER publish (infra + project context, not site content)
+/quick_reference_urls.md
+/claude_project_context.md
