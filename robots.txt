@@ -4,6 +4,7 @@ Allow: /
 # Block preview/internal pages
 Disallow: /email-preview.html
 Disallow: /report-preview.html
+Disallow: /mailchimp-campaign.html
 Disallow: /admin/
 
 Sitemap: https://therapybydavid.com/sitemap.xml
