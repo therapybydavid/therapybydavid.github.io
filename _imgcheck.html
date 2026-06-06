@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+body{background:#0d0d0d;margin:0;font-family:system-ui;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.cell{background:#1a1a1a;border-radius:8px;overflow:hidden}
+.cell img{width:100%;height:160px;object-fit:cover;display:block}
+.cell .id{color:#9ad;font-size:11px;font-family:monospace;padding:4px 6px}
+</style></head><body><div class="grid" id="g"></div><script>
+const paths=["photo-1623100989250-27155460738b","photo-1735676286641-5d521e25efcb","photo-1748183607998-30e288846885","photo-1474540412665-1cdae210ae6b","photo-1491929536571-bdbc57e72324","photo-1511458206431-afcf3cebe562","photo-1621519997950-158b631341b6","photo-1614462099399-bd81bac74f16","photo-1598183907939-983e4a0cc745","photo-1511087273610-b219e302a808","photo-1571990678217-9ea41a3a06e2","photo-1544397189-b5a684ee08d9","photo-1516739063901-94072f684dfc","photo-1696677369682-689bc9a89e69","photo-1528561670404-4069030da88e"];
+document.getElementById('g').innerHTML=paths.map((p,i)=>`<div class="cell"><img src="https://images.unsplash.com/${p}?auto=format&fit=crop&w=800&q=80"><div class="id">${i+1}: ${p.slice(6,19)}</div></div>`).join('');
+</script></body></html>
