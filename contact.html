@@ -202,6 +202,7 @@
   .nav-dd-menu a { padding: 8px 0; }
 }
 </style>
+  <script src="/analytics.js" defer></script>
 </head>
 <body>
 
@@ -459,6 +460,11 @@
       const hasValidPhone = phoneVal.replace(/\D/g, '').length === 10;
       const smsOptIn = smsCheck.checked && hasValidPhone;
 
+      // First-touch lead source captured by /analytics.js on whichever
+      // page this visitor landed on first this session.
+      let leadSrc = {};
+      try { leadSrc = JSON.parse(sessionStorage.getItem('tbd_source')) || {}; } catch (err) {}
+
       const data   = {
         first_name: document.getElementById('first_name').value.trim(),
         last_name:  document.getElementById('last_name').value.trim(),
@@ -473,7 +479,15 @@
         sms_consent_text:      smsOptIn ? SMS_CONSENT_TEXT    : null,
         sms_consent_timestamp: smsOptIn ? serverTimestamp()   : null,
         sms_consent_page:      smsOptIn ? location.href       : null,
-        user_agent:            navigator.userAgent
+        user_agent:            navigator.userAgent,
+
+        // ── Lead source attribution (first touch, see /analytics.js) ──
+        lead_referrer:     leadSrc.referrer     || null,
+        lead_landing_page: leadSrc.landing_page || null,
+        lead_utm_source:   leadSrc.utm_source   || null,
+        lead_utm_medium:   leadSrc.utm_medium   || null,
+        lead_utm_campaign: leadSrc.utm_campaign || null,
+        lead_first_seen:   leadSrc.first_seen   || null
       };
 
       btn.disabled    = true;
@@ -482,6 +496,8 @@
       try {
         // 1 — Save to Firestore (must succeed; this is the canonical record)
         await addDoc(collection(db, 'contact_submissions'), data);
+
+        if (typeof gtag === 'function') gtag('event', 'form_submit', { form: 'contact' });
 
         // 2 — Fire-and-forget notification pipeline via the openpath-intake
         // Worker. NOT awaited; a Worker hiccup must not break the form for
@@ -502,6 +518,9 @@
             phone:      data.phone,
             message:    data.message,
             sms_opt_in: data.sms_opt_in,
+            // one-line source summary for the Trello card / SMS alert;
+            // the Worker may ignore it — full detail lives in Firestore
+            lead_source: leadSrc.utm_source || leadSrc.referrer || '(direct)',
           }),
         }).catch(() => {});  // ignore worker errors silently
 
