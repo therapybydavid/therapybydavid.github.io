@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 # Block preview/internal pages
-Disallow: /email-preview.html
-Disallow: /report-preview.html
-Disallow: /mailchimp-campaign.html
+Disallow: /email-preview
+Disallow: /report-preview
+Disallow: /mailchimp-campaign
 Disallow: /admin/
 
 Sitemap: https://therapybydavid.com/sitemap.xml

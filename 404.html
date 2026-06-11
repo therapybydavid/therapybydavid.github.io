@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Therapy by David</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="/analytics.js" defer></script>
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      padding: 24px;
+    }
+    .wrap { max-width: 560px; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 20px;
+    }
+    h1 em { color: var(--champagne); font-style: italic; }
+    p { color: rgba(255,255,255,.74); line-height: 1.7; margin-bottom: 34px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-decoration: none;
+      margin: 0 7px 14px;
+    }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; }
+    .btn-ghost { color: var(--white); border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.04); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">Page not found</div>
+    <h1>This page isn't here — <em>but you're in the right place.</em></h1>
+    <p>The link you followed may be old or mistyped. Everything else is where it should be.</p>
+    <a class="btn btn-gold" href="/">Go to the homepage</a>
+    <a class="btn btn-ghost" href="/contact.html">Contact David</a>
+  </div>
+</body>
+</html>
