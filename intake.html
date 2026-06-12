@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Start Here — Therapy by David</title>
+<script src="/analytics.js" defer></script>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #141414;
+    --line: #2a2a2a;
+    --text: #f5f5f5;
+    --muted: #9a9a9a;
+    --gold: #c9a548;
+    --gold-soft: rgba(201, 165, 72, 0.12);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    line-height: 1.6;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ---- Progress bar ---- */
+  .progress {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .progress span {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line);
+    transition: background 0.35s ease;
+  }
+  .progress span.active { background: var(--gold); }
+
+  /* ---- Steps ---- */
+  .step {
+    display: none;
+    animation: fadeIn 0.3s ease both;
+  }
+  .step.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .sub {
+    color: var(--muted);
+    font-size: 14.5px;
+    margin-bottom: 28px;
+  }
+
+  /* ---- Choice buttons ---- */
+  .choices { display: flex; flex-direction: column; gap: 12px; }
+
+  .choice {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 15.5px;
+    font-family: inherit;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .choice:hover { border-color: var(--gold); }
+  .choice.selected {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+  }
+
+  .choice-note {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .choice.selected .choice-note { color: var(--text); opacity: 0.75; }
+
+  .choice-secondary {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding: 13px 16px;
+  }
+  .choice-secondary.selected { color: var(--text); }
+
+  /* ---- Toggle blocks (step 3) ---- */
+  .group-label {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 22px 0 10px;
+  }
+  .group-label:first-of-type { margin-top: 0; }
+
+  .toggle-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .toggle {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14.5px;
+    font-family: inherit;
+    padding: 14px 12px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .toggle:hover { border-color: var(--gold); }
+  .toggle.selected {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+  }
+
+  .format-note {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 18px;
+  }
+
+  /* ---- Inputs ---- */
+  label.field-label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 18px 0 6px;
+  }
+  label.field-label:first-of-type { margin-top: 0; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+    padding: 13px 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus { border-color: var(--gold); }
+
+  select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23c9a548' stroke-width='1.5' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .reveal {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
+  }
+  .reveal.open {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 16px;
+  }
+
+  /* ---- Consent ---- */
+  .consent {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    margin-top: 20px;
+    font-size: 13.5px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .consent a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .consent a:hover { text-decoration: underline; }
+  .consent input {
+    margin-top: 4px;
+    accent-color: var(--gold);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ---- Nav / actions ---- */
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+  }
+  .btn-back:hover { color: var(--text); }
+
+  .btn-next, .btn-submit {
+    background: var(--gold);
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 13px 28px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+  }
+  .btn-next:hover, .btn-submit:hover { opacity: 0.88; }
+  .btn-next:disabled, .btn-submit:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .btn-submit { width: 100%; }
+
+  .error-msg {
+    color: #e08a8a;
+    font-size: 13.5px;
+    margin-top: 14px;
+    min-height: 18px;
+  }
+
+  /* ---- End screens ---- */
+  .end-screen { text-align: center; padding: 12px 0; }
+  .end-screen .mark {
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    color: var(--gold);
+    font-size: 22px;
+  }
+  .end-screen h2 { margin-bottom: 12px; }
+  .end-screen p { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+  .end-screen a.link {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+  }
+
+  .brand-foot {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 30px 22px; }
+    h2 { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="card" id="card">
+
+  <div class="progress" id="progress" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ============ STEP 1 — Location ============ -->
+  <section class="step visible" id="step-1">
+    <p class="eyebrow">Step 1 of 4 — Location</p>
+    <h2>To ensure we're legally cleared to work together, what state do you currently reside in?</h2>
+    <p class="sub">Therapy licensure is state-specific, so this is the first thing we confirm.</p>
+    <div class="choices">
+      <button type="button" class="choice" data-state="Texas">Texas</button>
+      <button type="button" class="choice" data-state="Other">Other state</button>
+    </div>
+  </section>
+
+  <!-- ============ OUT-OF-STATE HALT ============ -->
+  <section class="step" id="step-oos">
+    <div class="end-screen">
+      <div class="mark">—</div>
+      <h2>Thank you for reaching out.</h2>
+      <p>State regulations limit my practice to clients who reside in Texas, so I'm not able to work with you directly right now.</p>
+      <p>You deserve support where you are. A good place to start is a therapist directory for your state:</p>
+      <p style="margin-top:18px;">
+        <a class="link" href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener">Find a therapist in your state &rarr;</a>
+      </p>
+      <button type="button" class="btn-back" data-back="1" style="margin-top:22px;">&larr; Back — I selected the wrong state</button>
+    </div>
+  </section>
+
+  <!-- ============ STEP 2 — Coverage ============ -->
+  <section class="step" id="step-2">
+    <p class="eyebrow">Step 2 of 4 — Coverage</p>
+    <h2>How do you plan to cover your care?</h2>
+    <p class="sub">Either path works — this just helps us start in the right place.</p>
+    <div class="choices">
+      <button type="button" class="choice" data-pay="private">I prefer private pay / self-pay</button>
+      <button type="button" class="choice" data-pay="insurance">I want to use health insurance</button>
+    </div>
+    <div class="reveal" id="insurance-reveal">
+      <label class="field-label" for="insurance-network">Which network are you with?</label>
+      <select id="insurance-network">
+        <option value="" selected disabled>Select your network</option>
+        <option>Aetna</option>
+        <option>Blue Cross Blue Shield</option>
+        <option>Cigna</option>
+        <option>UnitedHealthcare</option>
+        <option>Medicare</option>
+        <option>Medicaid</option>
+        <option>Other / not sure</option>
+      </select>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn-back" data-back="1">&larr; Back</button>
+    </div>
+  </section>
+
+  <!-- ============ STEP 3 — Cadence & format ============ -->
+  <section class="step" id="step-3">
+    <p class="eyebrow">Step 3 of 4 — Logistics</p>
+    <h2>What session cadence fits your life best?</h2>
+    <p class="sub">Select what feels realistic. Nothing here is locked in.</p>
+
+    <div class="toggle-row" data-group="cadence">
+      <button type="button" class="toggle" data-value="Weekly sessions">Weekly sessions</button>
+      <button type="button" class="toggle" data-value="Bi-weekly sessions">Bi-weekly sessions</button>
+    </div>
+
+    <p class="format-note">All sessions are held by secure video (telehealth), so you can meet from wherever you are in Texas.</p>
+
+    <div class="actions">
+      <button type="button" class="btn-back" data-back="2">&larr; Back</button>
+    </div>
+  </section>
+
+  <!-- ============ STEP 4 — Contact & route ============ -->
+  <section class="step" id="step-4">
+    <p class="eyebrow">Step 4 of 4 — Your details</p>
+    <h2>Almost there. Where can I reach you?</h2>
+    <p class="sub">Your information stays private and is only used to coordinate your care.</p>
+
+    <label class="field-label" for="full-name">Full name</label>
+    <input type="text" id="full-name" autocomplete="name" placeholder="Your full name">
+
+    <label class="field-label" for="email">Email address</label>
+    <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
+
+    <label class="field-label" for="phone">Phone number</label>
+    <input type="tel" id="phone" autocomplete="tel" placeholder="(555) 555-5555">
+
+    <label class="consent">
+      <input type="checkbox" id="consent">
+      <span>I agree to email and SMS from Therapy by David (scheduling, reminders). Reply STOP to cancel, HELP for help. Frequency varies. Msg &amp; data rates may apply. <a href="/sms-terms.html" target="_blank" rel="noopener">SMS&nbsp;Terms</a> &middot; <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a></span>
+    </label>
+
+    <p class="group-label" style="margin-top:26px;">Your next step</p>
+    <div class="choices" data-group="route">
+      <button type="button" class="choice choice-primary selected" data-route="call">
+        Book a free 15-minute phone consultation
+        <span class="choice-note">A short, no-pressure conversation to see if we're a good fit — most people start here.</span>
+      </button>
+      <button type="button" class="choice choice-secondary" data-route="portal">
+        Already sure? Send me the secure client portal link to book a full session directly.
+      </button>
+    </div>
+
+    <div class="error-msg" id="error-4"></div>
+    <div class="actions" style="flex-direction:column;">
+      <button type="button" class="btn-submit" id="submit-btn">Submit &amp; Continue</button>
+      <button type="button" class="btn-back" data-back="3">&larr; Back</button>
+    </div>
+  </section>
+
+  <!-- ============ SUCCESS — Portal route ============ -->
+  <section class="step" id="step-success-portal">
+    <div class="end-screen">
+      <div class="mark">&#10003;</div>
+      <h2>You're all set.</h2>
+      <p>Your information has been received. Use the secure client portal below to choose a time and book your first full session.</p>
+      <p style="margin-top:18px;">
+        <a class="link" href="https://david-robles.clientsecure.me/request/service" id="portal-link" target="_blank" rel="noopener">Open the secure client portal &rarr;</a>
+      </p>
+      <button type="button" class="btn-back" id="back-to-site" style="margin-top:22px;">&larr; Back to therapybydavid.com</button>
+    </div>
+  </section>
+
+  <p class="brand-foot">Therapy by David &middot; Houston, TX</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* =========================================================
+     CONFIGURATION
+     ========================================================= */
+  // Same notification Worker the contact form uses: SMS alert to David,
+  // Trello card, welcome SMS to opted-in visitors, AI-drafted Gmail reply.
+  var NOTIFY_URL    = "https://openpath-intake.roblesinc.workers.dev/contact-notify";
+  var PORTAL_URL    = "https://david-robles.clientsecure.me/request/service"; // SimplePractice client portal
+  var CALENDAR_URL  = "https://calendly.com/roblesinc/consultation"; // 15-min discovery call (Calendly)
+
+  /* ---- State ---- */
+  var data = {
+    state: null,
+    payment: null,
+    insuranceNetwork: null,
+    cadence: [],
+    format: ["Telehealth / Secure video"], // only format offered — stated, not asked
+    fullName: "",
+    email: "",
+    phone: "",
+    consent: false,
+    route: "call", // discovery call is the pre-selected default path
+
+    submittedAt: null
+  };
+
+  /* ---- GA4 funnel events (anonymous — never includes contact fields).
+     Same queue pattern as /analytics.js, so events fired before it
+     loads are delivered once GA4 is ready. ---- */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  function track(eventName, params) {
+    gtag("event", eventName, params || {});
+  }
+
+  /* ---- Draft persistence: saved only in THIS browser (localStorage),
+     never sent anywhere. Lets an interrupted visitor resume where
+     they left off. Cleared on submit. ---- */
+  var DRAFT_KEY = "tbd_intake_draft";
+  function saveDraft() {
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(data)); } catch (e) {}
+  }
+  function clearDraft() {
+    try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+  }
+  function loadDraft() {
+    try { return JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); } catch (e) { return null; }
+  }
+
+  var steps = {
+    1: document.getElementById("step-1"),
+    2: document.getElementById("step-2"),
+    3: document.getElementById("step-3"),
+    4: document.getElementById("step-4"),
+    oos: document.getElementById("step-oos"),
+    successPortal: document.getElementById("step-success-portal")
+  };
+  var progressBars = document.querySelectorAll("#progress span");
+
+  function show(stepKey, progressIndex) {
+    Object.keys(steps).forEach(function (k) {
+      steps[k].classList.remove("visible");
+    });
+    // Restart the entrance animation
+    var el = steps[stepKey];
+    void el.offsetWidth;
+    el.classList.add("visible");
+
+    progressBars.forEach(function (bar, i) {
+      bar.classList.toggle("active", progressIndex != null && i < progressIndex);
+    });
+
+    if (typeof stepKey === "number") track("intake_step_view", { step: stepKey });
+    else if (stepKey === "oos") track("intake_out_of_state");
+  }
+
+  /* ---- Back buttons (all steps, incl. the out-of-state screen) ---- */
+  document.querySelectorAll(".btn-back[data-back]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = parseInt(btn.dataset.back, 10);
+      if (target === 1) {
+        // Returning to the start — clear the state selection so a
+        // mis-click doesn't leave a stale answer highlighted.
+        data.state = null;
+        steps[1].querySelectorAll(".choice").forEach(function (b) {
+          b.classList.remove("selected");
+        });
+      }
+      show(target, target);
+    });
+  });
+
+  /* =========================================================
+     STEP 1 — Licensing filter
+     ========================================================= */
+  steps[1].querySelectorAll(".choice").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      data.state = btn.dataset.state;
+      markSelected(steps[1], btn);
+      if (data.state === "Texas") { saveDraft(); } else { clearDraft(); }
+      setTimeout(function () {
+        if (data.state === "Texas") {
+          show(2, 2);
+        } else {
+          show("oos", null);
+        }
+      }, 220);
+    });
+  });
+
+  /* =========================================================
+     STEP 2 — Coverage
+     ========================================================= */
+  var insuranceReveal = document.getElementById("insurance-reveal");
+  var networkSelect   = document.getElementById("insurance-network");
+
+  steps[2].querySelectorAll(".choice").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      data.payment = btn.dataset.pay;
+      markSelected(steps[2], btn);
+      saveDraft();
+      if (data.payment === "insurance") {
+        // Wait for the network selection — that advances the step.
+        insuranceReveal.classList.add("open");
+      } else {
+        insuranceReveal.classList.remove("open");
+        data.insuranceNetwork = null;
+        setTimeout(function () { show(3, 3); }, 220);
+      }
+    });
+  });
+
+  networkSelect.addEventListener("change", function () {
+    data.insuranceNetwork = networkSelect.value;
+    saveDraft();
+    setTimeout(function () { show(3, 3); }, 220);
+  });
+
+  /* =========================================================
+     STEP 3 — Cadence & format (multi-select toggles)
+     ========================================================= */
+  steps[3].querySelectorAll(".toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      steps[3].querySelectorAll(".toggle").forEach(function (b) {
+        b.classList.remove("selected");
+      });
+      btn.classList.add("selected");
+      data.cadence = [btn.dataset.value];
+      saveDraft();
+      setTimeout(function () { show(4, 4); }, 220);
+    });
+  });
+
+  /* =========================================================
+     STEP 4 — Contact capture & dynamic route
+     ========================================================= */
+  steps[4].querySelectorAll('[data-group="route"] .choice').forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      data.route = btn.dataset.route;
+      markSelected(steps[4].querySelector('[data-group="route"]'), btn);
+      saveDraft();
+    });
+  });
+
+  /* Keep the draft in sync as contact fields are typed — this stays in
+     localStorage on the visitor's own device; nothing is transmitted
+     until they explicitly submit. */
+  function syncContact() {
+    data.fullName = document.getElementById("full-name").value.trim();
+    data.email    = document.getElementById("email").value.trim();
+    data.phone    = document.getElementById("phone").value.trim();
+    data.consent  = document.getElementById("consent").checked;
+    saveDraft();
+  }
+  ["full-name", "email", "phone"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", syncContact);
+  });
+  document.getElementById("consent").addEventListener("change", syncContact);
+
+  document.getElementById("back-to-site").addEventListener("click", function () {
+    window.location.href = "/";
+  });
+
+  document.getElementById("submit-btn").addEventListener("click", function () {
+    var err = document.getElementById("error-4");
+    data.fullName = document.getElementById("full-name").value.trim();
+    data.email    = document.getElementById("email").value.trim();
+    data.phone    = document.getElementById("phone").value.trim();
+    data.consent  = document.getElementById("consent").checked;
+
+    if (!data.fullName) { err.textContent = "Please enter your full name."; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { err.textContent = "Please enter a valid email address."; return; }
+    if (data.phone.replace(/\D/g, "").length < 10) { err.textContent = "Please enter a valid phone number."; return; }
+    if (!data.consent) { err.textContent = "Please confirm the contact consent box so I can follow up with you."; return; }
+    if (!data.route) { err.textContent = "Please choose how you'd like to take the next step."; return; }
+
+    err.textContent = "";
+    submitIntake();
+  });
+
+  /* ---- Consent audit record. Versioned so historical submissions
+     always point to the exact wording the visitor saw — same TCPA
+     audit pattern as the contact form. Keep in sync with the
+     checkbox label above. ---- */
+  var SMS_CONSENT_VERSION = "2026-06-12-intake-v1";
+  var SMS_CONSENT_TEXT =
+    "I agree to email and SMS from Therapy by David (scheduling, reminders). " +
+    "Reply STOP to cancel, HELP for help. " +
+    "Frequency varies. Msg & data rates may apply. " +
+    "SMS Terms (https://therapybydavid.com/sms-terms.html) · " +
+    "Privacy Policy (https://therapybydavid.com/privacy.html).";
+
+  function submitIntake() {
+    var btn = document.getElementById("submit-btn");
+    btn.disabled = true;
+    btn.textContent = "Processing…";
+    track("intake_submitted", { route: data.route, payment: data.payment });
+
+    // First-touch lead source captured by /analytics.js
+    var leadSrc = {};
+    try { leadSrc = JSON.parse(sessionStorage.getItem("tbd_source")) || {}; } catch (e) {}
+
+    var nameParts = data.fullName.split(/\s+/);
+    var firstName = nameParts.shift() || "";
+    var lastName  = nameParts.join(" ");
+    var paymentLabel = data.payment === "insurance"
+      ? "Insurance: " + (data.insuranceNetwork || "unspecified")
+      : "Private pay";
+    var summary = [
+      data.state, paymentLabel, data.cadence.join(", "),
+      data.route === "call" ? "wants 15-min consultation" : "wants portal booking"
+    ].join(" · ");
+
+    var record = {
+      first_name: firstName,
+      last_name:  lastName,
+      from_email: data.email,
+      phone:      data.phone,
+      state:      data.state,
+      payment:    data.payment,
+      insurance_network: data.insuranceNetwork,
+      cadence:    data.cadence,
+      format:     data.format,
+      next_step:  data.route,
+
+      sms_opt_in:          data.consent,
+      sms_consent_version: data.consent ? SMS_CONSENT_VERSION : null,
+      sms_consent_text:    data.consent ? SMS_CONSENT_TEXT    : null,
+      sms_consent_page:    data.consent ? location.href       : null,
+      user_agent:          navigator.userAgent,
+
+      lead_referrer:     leadSrc.referrer     || null,
+      lead_landing_page: leadSrc.landing_page || null,
+      lead_utm_source:   leadSrc.utm_source   || null,
+      lead_utm_medium:   leadSrc.utm_medium   || null,
+      lead_utm_campaign: leadSrc.utm_campaign || null,
+      lead_first_seen:   leadSrc.first_seen   || null
+    };
+
+    // 1 — Firestore (canonical record; window.__intakeStore is defined by
+    // the Firebase module script at the bottom of this page and adds the
+    // server timestamps).
+    var stored = (typeof window.__intakeStore === "function")
+      ? window.__intakeStore(record, data.consent)
+      : Promise.reject(new Error("Firestore module not loaded"));
+
+    // 2 — Fire-and-forget notification pipeline (not awaited; a Worker
+    // hiccup must not break the form for the visitor).
+    fetch(NOTIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name:  lastName,
+        from_email: data.email,
+        phone:      data.phone,
+        message:    "Intake screen: " + summary,
+        sms_opt_in: data.consent,
+        lead_source: leadSrc.utm_source || leadSrc.referrer || "(direct)"
+      })
+    }).catch(function () {});
+
+    // Never strand the client on "Processing…": route after the record
+    // saves, or after 2.5s, whichever comes first.
+    Promise.race([
+      stored.catch(function () {}),
+      new Promise(function (r) { setTimeout(r, 2500); })
+    ]).then(routeUser);
+  }
+
+  function routeUser() {
+    clearDraft(); // submitted for real — the local draft is no longer needed
+    if (data.route === "call") {
+      // Profile captured — send them to Calendly with name/email prefilled
+      // so they never type the same thing twice. (Phone isn't a Calendly
+      // field on this event; it lives only in the captured profile.)
+      var params = new URLSearchParams({ name: data.fullName, email: data.email });
+      window.location.href = CALENDAR_URL + "?" + params.toString();
+    } else {
+      // Portal route — show the on-page success screen with the portal link.
+      document.getElementById("portal-link").href = PORTAL_URL;
+      show("successPortal", null);
+    }
+  }
+
+  /* ---- Helper: single-select highlight within a container ---- */
+  function markSelected(container, chosen) {
+    container.querySelectorAll(".choice").forEach(function (b) {
+      b.classList.remove("selected");
+    });
+    chosen.classList.add("selected");
+  }
+
+  /* =========================================================
+     INITIAL DISPLAY — resume a saved Texas draft, or start fresh
+     ========================================================= */
+  (function init() {
+    var saved = loadDraft();
+    if (!saved || saved.state !== "Texas") { show(1, 1); return; }
+
+    Object.keys(data).forEach(function (k) {
+      if (k in saved && saved[k] != null) data[k] = saved[k];
+    });
+
+    // Re-apply previous selections to the UI
+    markSelected(steps[1], steps[1].querySelector('[data-state="Texas"]'));
+    if (data.payment) {
+      markSelected(steps[2], steps[2].querySelector('[data-pay="' + data.payment + '"]'));
+      if (data.payment === "insurance") {
+        insuranceReveal.classList.add("open");
+        if (data.insuranceNetwork) networkSelect.value = data.insuranceNetwork;
+      }
+    }
+    steps[3].querySelectorAll(".toggle").forEach(function (b) {
+      b.classList.toggle("selected", data.cadence.indexOf(b.dataset.value) !== -1);
+    });
+    document.getElementById("full-name").value = data.fullName || "";
+    document.getElementById("email").value = data.email || "";
+    document.getElementById("phone").value = data.phone || "";
+    document.getElementById("consent").checked = !!data.consent;
+    var routeGroup = steps[4].querySelector('[data-group="route"]');
+    var routeBtn = routeGroup.querySelector('[data-route="' + (data.route || "call") + '"]');
+    if (routeBtn) markSelected(routeGroup, routeBtn);
+
+    // Resume at the furthest step they had completed
+    var resumeAt = 2;
+    if (data.payment && (data.payment !== "insurance" || data.insuranceNetwork)) resumeAt = 3;
+    if (resumeAt === 3 && data.cadence.length) resumeAt = 4;
+    show(resumeAt, resumeAt);
+  })();
+})();
+</script>
+
+<!-- Firebase SDK — same project and pattern as contact.html -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+  const app = initializeApp({
+    apiKey: "AIzaSyARzjrwt_Asr-_ca5bBYUBoFUMKM8sRAFc",
+    authDomain: "therapy-by-david.firebaseapp.com",
+    projectId: "therapy-by-david",
+    storageBucket: "therapy-by-david.firebasestorage.app",
+    messagingSenderId: "45351635355",
+    appId: "1:45351635355:web:3da34281325675f125793e"
+  });
+  const db = getFirestore(app);
+
+  // Called by the form script on submit. Server timestamps are added here
+  // because serverTimestamp() only exists inside this module.
+  window.__intakeStore = function (record, smsOptIn) {
+    record.submitted_at = serverTimestamp();
+    record.sms_consent_timestamp = smsOptIn ? serverTimestamp() : null;
+    return addDoc(collection(db, 'intake_submissions'), record);
+  };
+</script>
+</body>
+</html>
