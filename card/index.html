@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>David Robles · Psychotherapist</title>
+<meta name="description" content="David Robles — Psychotherapist. Save my contact, book a session, or reach out." />
+
+<!-- Open Graph / iMessage & social preview -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="David Robles · Psychotherapist" />
+<meta property="og:description" content="Tap to save my contact, book a session, or reach out." />
+<meta property="og:url" content="https://therapybydavid.com/card" />
+<meta name="theme-color" content="#0f1226" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23119da4'/><text x='50' y='68' font-size='52' font-family='Georgia' fill='white' text-anchor='middle'>DR</text></svg>" />
+
+<style>
+  :root{
+    --bg-0:#0b0e1f;
+    --bg-1:#141a3a;
+    --card:#151a36;
+    --card-2:#1b2148;
+    --ink:#f3f5ff;
+    --muted:#9aa3c7;
+    --line:rgba(255,255,255,.08);
+    --accent:#2ec5c1;       /* calming teal */
+    --accent-2:#7c6cff;     /* soft violet */
+    --accent-ink:#04201f;
+    --radius:20px;
+    --shadow:0 24px 60px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    min-height:100dvh;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124,108,255,.28), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(46,197,193,.22), transparent 55%),
+      linear-gradient(180deg,var(--bg-0),var(--bg-1));
+    display:flex;justify-content:center;
+    padding:24px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+  .wrap{width:100%;max-width:440px;position:relative}
+
+  /* ---------- Cool: living background, motion & depth ---------- */
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .aurora span{position:absolute;display:block;border-radius:50%;filter:blur(72px);opacity:.42}
+  .aurora span:nth-child(1){width:400px;height:400px;background:var(--accent);top:-90px;left:-110px;animation:drift1 17s ease-in-out infinite}
+  .aurora span:nth-child(2){width:440px;height:440px;background:var(--accent-2);bottom:-120px;right:-120px;animation:drift2 21s ease-in-out infinite}
+  .aurora span:nth-child(3){width:300px;height:300px;background:#6354e6;top:38%;left:55%;opacity:.28;animation:drift1 26s ease-in-out infinite reverse}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(70px,50px) scale(1.18)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,-40px) scale(1.12)}}
+
+  @keyframes spin{to{transform:rotate(1turn)}}
+
+  /* staggered entrance — backwards fill so JS tilt can own .card transform after */
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .wrap > *{animation:rise .55s cubic-bezier(.2,.7,.2,1) backwards}
+  .wrap > *:nth-child(1){animation-delay:.04s}
+  .wrap > *:nth-child(2){animation-delay:.12s}
+  .wrap > *:nth-child(3){animation-delay:.20s}
+  .wrap > *:nth-child(4){animation-delay:.28s}
+  .wrap > *:nth-child(5){animation-delay:.36s}
+  .wrap > *:nth-child(6){animation-delay:.44s}
+  .wrap > *:nth-child(7){animation-delay:.52s}
+  .wrap > *:nth-child(8){animation-delay:.60s}
+
+  .card{transition:transform .25s cubic-bezier(.2,.7,.2,1);will-change:transform}
+
+  /* sheen sweep across the primary buttons */
+  .save,.book{position:relative;overflow:hidden}
+  .save::after,.book::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+    transform:skewX(-20deg);animation:sheen 5s ease-in-out infinite;pointer-events:none}
+  .book::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);animation-delay:1.4s}
+  @keyframes sheen{0%,55%{left:-70%}78%,100%{left:140%}}
+
+  @media (prefers-reduced-motion: reduce){
+    .aurora span,.avatar::before,.save::after,.book::after,.wrap > *{animation:none!important}
+    .card{transition:none}
+  }
+
+  /* ---------- Header card ---------- */
+  .card{
+    position:relative;
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .banner{
+    height:118px;
+    background:
+      radial-gradient(600px 200px at 20% 0%, rgba(124,108,255,.55), transparent 60%),
+      linear-gradient(120deg,#16204a,#0f2f35 70%);
+    position:relative;
+  }
+  .banner::after{
+    content:"";position:absolute;inset:0;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39h40M39 0v40' stroke='%23ffffff' stroke-opacity='.05'/%3E%3C/svg%3E");
+  }
+  .avatar{
+    position:absolute;left:50%;bottom:-50px;transform:translateX(-50%);
+    width:132px;height:132px;border-radius:34px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    border:4px solid var(--card);box-shadow:0 10px 30px rgba(0,0,0,.4);
+    z-index:2;isolation:isolate;
+  }
+  .avatar::before{
+    content:"";position:absolute;inset:-7px;border-radius:40px;z-index:-1;
+    background:conic-gradient(from 0deg,var(--accent),var(--accent-2),#6354e6,var(--accent));
+    filter:blur(10px);opacity:.9;animation:spin 6s linear infinite;
+  }
+  .avatar img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;border-radius:30px}
+  .id{padding:66px 24px 22px;text-align:center}
+  .id h1{margin:0;font-size:26px;letter-spacing:.2px}
+  .id .role{margin:4px 0 0;color:var(--accent);font-weight:600;font-size:15px}
+  .id .sub{margin:6px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+  .verline{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(46,197,193,.18)}
+
+  /* ---------- Primary CTA ---------- */
+  .save{
+    margin:4px 24px 18px;
+    display:flex;gap:10px;align-items:center;justify-content:center;
+    width:calc(100% - 48px);
+    background:linear-gradient(135deg,var(--accent),#15a39f);
+    color:var(--accent-ink);font-weight:800;font-size:16px;
+    border:0;border-radius:14px;padding:16px;
+    cursor:pointer;text-decoration:none;
+    box-shadow:0 10px 24px rgba(46,197,193,.32);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .save:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 16px rgba(46,197,193,.3)}
+
+  .book{
+    margin:24px 4px 0;
+    display:flex;gap:10px;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--accent-2),#6354e6);
+    color:#fff;font-weight:800;font-size:16px;
+    border:0;border-radius:14px;padding:16px;
+    cursor:pointer;text-decoration:none;
+    box-shadow:0 10px 24px rgba(124,108,255,.32);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .book:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 16px rgba(124,108,255,.3)}
+  .book .ico{width:20px;height:20px;color:#fff}
+
+  /* ---------- Quick actions ---------- */
+  .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 24px 22px}
+  .quick a{
+    display:flex;flex-direction:column;align-items:center;gap:7px;
+    color:var(--ink);text-decoration:none;font-size:12px;
+    padding:14px 6px;border-radius:14px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);
+    transition:background .15s ease,transform .12s ease;
+  }
+  .quick a:active{transform:translateY(1px)}
+  .quick a:hover{background:rgba(255,255,255,.08)}
+  .quick .ico{width:22px;height:22px;color:var(--accent)}
+
+  /* ---------- Link sections ---------- */
+  .section{margin:18px 4px 0}
+  .section h2{
+    font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);
+    margin:0 0 10px 6px;font-weight:700;
+  }
+  .rows{display:flex;flex-direction:column;gap:10px}
+  .row{
+    display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    transition:transform .12s ease,border-color .15s ease,background .15s ease;
+  }
+  .row:hover{border-color:rgba(46,197,193,.45)}
+  .row:active{transform:scale(.99)}
+  .row .badge{
+    width:40px;height:40px;flex:0 0 40px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+    background:rgba(255,255,255,.06);
+  }
+  .row .meta{flex:1;min-width:0}
+  .row .meta .t{font-weight:650;font-size:15px}
+  .row .meta .d{color:var(--muted);font-size:12.5px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .row .chev{color:var(--muted);flex:0 0 auto}
+
+  /* ---------- Footer ---------- */
+  .foot{margin:26px 6px 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
+  .sharebar{display:flex;justify-content:center;margin:22px 0 0}
+  .share{
+    display:inline-flex;align-items:center;gap:9px;
+    background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--ink);
+    border-radius:12px;padding:12px 22px;font-size:14px;font-weight:650;cursor:pointer;
+  }
+  .share:active{transform:translateY(1px)}
+  .sharepanel{
+    max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .35s ease, opacity .3s ease, margin .3s ease;
+    margin:0 6px;
+  }
+  .sharepanel.open{max-height:520px;opacity:1;margin:16px 6px 0}
+  .chan{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .chan a,.chan button{
+    appearance:none;cursor:pointer;text-decoration:none;color:var(--ink);
+    display:flex;flex-direction:column;align-items:center;gap:7px;font-size:11px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;
+    padding:13px 4px;transition:background .15s ease,transform .12s ease;
+  }
+  .chan a:active,.chan button:active{transform:translateY(1px)}
+  .chan a:hover,.chan button:hover{background:rgba(255,255,255,.08)}
+  .chan .ci{width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .qrwrap{margin:16px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .qrwrap img{background:#fff;padding:12px;border-radius:14px;width:168px;height:168px}
+  .qrwrap span{color:var(--muted);font-size:12px}
+  .toast{
+    position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
+    background:#0b0e1f;border:1px solid var(--accent);color:var(--ink);
+    padding:12px 18px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;
+    transition:all .25s ease;box-shadow:var(--shadow);z-index:50;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  a.link{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="banner"><div class="avatar"><img src="david.png" alt="David Robles" /></div></div>
+      <div class="id">
+        <h1>David Robles</h1>
+        <p class="role">Psychotherapist</p>
+      </div>
+
+      <a class="save" id="saveBtn" href="#">
+        <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        Save my contact
+      </a>
+
+      <nav class="quick">
+        <a href="tel:+12812992495">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call
+        </a>
+        <a href="sms:+12812992495">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text
+        </a>
+        <a href="mailto:DavidRobles@Hey.com">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+        <a href="https://therapybydavid.com" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Website
+        </a>
+      </nav>
+    </section>
+
+    <!-- CONNECT -->
+    <div class="section">
+      <h2>Connect</h2>
+      <div class="rows">
+        <a class="row" href="https://www.psychologytoday.com/us/therapists/david-robles-pasadena-tx/1668640" target="_blank" rel="noopener">
+          <div class="badge">🧠</div>
+          <div class="meta"><div class="t">Psychology Today</div><div class="d">Verified profile &amp; reviews</div></div>
+          <span class="chev">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- TALK TO ME -->
+    <div class="section">
+      <h2>Talk to me</h2>
+      <div class="rows">
+        <a class="row" href="https://api.whatsapp.com/send?phone=12812992495" target="_blank" rel="noopener">
+          <div class="badge">💬</div>
+          <div class="meta"><div class="t">WhatsApp</div><div class="d">Message me directly</div></div>
+          <span class="chev">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- PAY -->
+    <div class="section">
+      <h2>Pay</h2>
+      <div class="rows">
+        <a class="row" href="https://venmo.com/Selbor" target="_blank" rel="noopener">
+          <div class="badge">🅥</div>
+          <div class="meta"><div class="t">Venmo</div><div class="d">@Selbor</div></div>
+          <span class="chev">›</span>
+        </a>
+        <a class="row" href="https://paypal.me/robles" target="_blank" rel="noopener">
+          <div class="badge">🅿️</div>
+          <div class="meta"><div class="t">PayPal</div><div class="d">paypal.me/robles</div></div>
+          <span class="chev">›</span>
+        </a>
+        <a class="row" href="https://cash.app/$empire" target="_blank" rel="noopener">
+          <div class="badge">💵</div>
+          <div class="meta"><div class="t">Cash App</div><div class="d">$empire</div></div>
+          <span class="chev">›</span>
+        </a>
+      </div>
+    </div>
+
+    <a class="book" href="https://therapybydavid.com/join" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Join Unleash the Mind
+    </a>
+
+    <div class="sharebar">
+      <button class="share" id="shareBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share my card
+      </button>
+    </div>
+
+    <div class="sharepanel" id="sharePanel">
+      <div class="chan">
+        <a id="shWhatsapp" target="_blank" rel="noopener"><span class="ci">💬</span>WhatsApp</a>
+        <a id="shEmail"><span class="ci">✉️</span>Email</a>
+        <a id="shX" target="_blank" rel="noopener"><span class="ci">𝕏</span>X</a>
+        <a id="shFb" target="_blank" rel="noopener"><span class="ci">📘</span>Facebook</a>
+        <button id="shCopy"><span class="ci">🔗</span>Copy link</button>
+      </div>
+      <div class="qrwrap"><img id="qrimg" alt="QR code to this card" /><span>Scan to open this card</span></div>
+    </div>
+
+    <p class="foot">
+      <a class="link" href="https://therapybydavid.com" target="_blank" rel="noopener">therapybydavid.com</a>
+    </p>
+  </main>
+
+  <div class="toast" id="toast">Contact downloaded ✓</div>
+
+<script>
+  // ---------- vCard (Save Contact) ----------
+  // Built client-side as a Blob — works offline, no third party.
+  var vcardLines = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Robles;David;;;",
+    "FN:David Robles",
+    "TITLE:Psychotherapist",
+    "TEL;TYPE=CELL,VOICE:+12812992495",
+    "EMAIL;TYPE=INTERNET,PREF:DavidRobles@Hey.com",
+    "URL:https://therapybydavid.com",
+    "X-SOCIALPROFILE;TYPE=psychologytoday:https://www.psychologytoday.com/us/therapists/david-robles-pasadena-tx/1668640",
+    "NOTE:Therapy & coaching for people ready to change."
+  ];
+
+  // Downscale the headshot once on load so it can be embedded in the saved
+  // contact (so David's face shows up in people's phones). Same-origin image →
+  // no canvas taint. Falls back gracefully to a photo-less vCard if it fails.
+  var photoB64 = null;
+  (function(){
+    var img = new Image();
+    img.onload = function(){
+      try{
+        var size = 320;
+        var c = document.createElement("canvas"); c.width = size; c.height = size;
+        var ctx = c.getContext("2d");
+        var s = Math.min(img.width, img.height);
+        ctx.drawImage(img, (img.width - s) / 2, (img.height - s) / 2, s, s, 0, 0, size, size);
+        photoB64 = c.toDataURL("image/jpeg", 0.85).split(",")[1];
+      }catch(e){ /* keep photoB64 null → photo-less vCard */ }
+    };
+    img.src = "david.png";
+  })();
+
+  function buildVcard(){
+    var lines = vcardLines.slice();
+    if(photoB64){ lines.push("PHOTO;ENCODING=b;TYPE=JPEG:" + photoB64); }
+    lines.push("END:VCARD");
+    return lines.join("\r\n");
+  }
+
+  function showToast(msg){
+    var t=document.getElementById("toast");
+    t.textContent=msg; t.classList.add("show");
+    setTimeout(function(){t.classList.remove("show");},2200);
+  }
+
+  document.getElementById("saveBtn").addEventListener("click", function(e){
+    e.preventDefault();
+    var blob=new Blob([buildVcard()],{type:"text/vcard;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a");
+    a.href=url; a.download="David-Robles.vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url);},1500);
+    showToast("Contact downloaded ✓");
+  });
+
+  // ---------- Share ----------
+  var shareUrl = (location.protocol==="http:"||location.protocol==="https:")
+      ? location.href : "https://therapybydavid.com/card";
+  var shareTitle = "David Robles · Psychotherapist";
+  var shareText  = "Here's my card —";
+
+  // Build the channel links + QR once
+  document.getElementById("shWhatsapp").href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl);
+  document.getElementById("shEmail").href    = "mailto:?subject=" + encodeURIComponent(shareTitle) + "&body=" + encodeURIComponent(shareText + "\n\n" + shareUrl);
+  document.getElementById("shX").href        = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(shareUrl);
+  document.getElementById("shFb").href       = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
+  document.getElementById("qrimg").src       = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=" + encodeURIComponent(shareUrl);
+
+  document.getElementById("shCopy").addEventListener("click", function(){
+    if(navigator.clipboard){ navigator.clipboard.writeText(shareUrl).then(function(){showToast("Link copied ✓");}); }
+    else { showToast("Copy this card's URL to share"); }
+  });
+
+  document.getElementById("shareBtn").addEventListener("click", async function(){
+    // Mobile → native share sheet (Messages, AirDrop, every installed app)
+    if(navigator.share){
+      try{
+        await navigator.share({title:shareTitle, text:shareText, url:shareUrl});
+        return;
+      }catch(err){ /* cancelled — fall through to the panel */ }
+    }
+    // Desktop / no native share → reveal the channel panel + QR
+    document.getElementById("sharePanel").classList.toggle("open");
+  });
+
+  // ---------- Cool: subtle 3D tilt on the header card (desktop pointer only) ----------
+  (function(){
+    var card=document.querySelector(".card");
+    if(!card) return;
+    if(!matchMedia("(hover:hover)").matches) return;            // skip on touch
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    window.addEventListener("pointermove",function(e){
+      var r=card.getBoundingClientRect();
+      var dx=(e.clientX-(r.left+r.width/2))/r.width;
+      var dy=(e.clientY-(r.top+r.height/2))/r.height;
+      card.style.transform="perspective(900px) rotateY("+(dx*7).toFixed(2)+"deg) rotateX("+(-dy*7).toFixed(2)+"deg)";
+    });
+    document.addEventListener("mouseleave",function(){ card.style.transform=""; });
+  })();
+</script>
+</body>
+</html>
