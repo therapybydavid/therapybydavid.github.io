@@ -293,14 +293,6 @@
       </nav>
     </section>
 
-    <!-- SERVICES DROPDOWN -->
-    <button class="dropdown" id="svcToggle" type="button" aria-expanded="false" aria-controls="services">
-      <span>Services</span>
-      <svg class="chev-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="services" id="services">
-      <div class="services-inner">
-
     <!-- CONNECT -->
     <div class="section">
       <h2>Connect</h2>
@@ -325,25 +317,30 @@
       </div>
     </div>
 
-    <!-- PAY -->
-    <div class="section">
-      <h2>Pay</h2>
-      <div class="rows">
-        <a class="row" href="https://venmo.com/Selbor" target="_blank" rel="noopener">
-          <div class="badge">🅥</div>
-          <div class="meta"><div class="t">Venmo</div><div class="d">@Selbor</div></div>
-          <span class="chev">›</span>
-        </a>
-        <a class="row" href="https://paypal.me/robles" target="_blank" rel="noopener">
-          <div class="badge">🅿️</div>
-          <div class="meta"><div class="t">PayPal</div><div class="d">paypal.me/robles</div></div>
-          <span class="chev">›</span>
-        </a>
-        <a class="row" href="https://cash.app/$empire" target="_blank" rel="noopener">
-          <div class="badge">💵</div>
-          <div class="meta"><div class="t">Cash App</div><div class="d">$empire</div></div>
-          <span class="chev">›</span>
-        </a>
+    <!-- PAY (collapsible) -->
+    <button class="dropdown" id="payToggle" type="button" aria-expanded="false" aria-controls="payment">
+      <span>Pay</span>
+      <svg class="chev-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="services" id="payment">
+      <div class="services-inner">
+        <div class="rows" style="margin-top:10px">
+          <a class="row" href="https://venmo.com/Selbor" target="_blank" rel="noopener">
+            <div class="badge">🅥</div>
+            <div class="meta"><div class="t">Venmo</div><div class="d">@Selbor</div></div>
+            <span class="chev">›</span>
+          </a>
+          <a class="row" href="https://paypal.me/robles" target="_blank" rel="noopener">
+            <div class="badge">🅿️</div>
+            <div class="meta"><div class="t">PayPal</div><div class="d">paypal.me/robles</div></div>
+            <span class="chev">›</span>
+          </a>
+          <a class="row" href="https://cash.app/$empire" target="_blank" rel="noopener">
+            <div class="badge">💵</div>
+            <div class="meta"><div class="t">Cash App</div><div class="d">$empire</div></div>
+            <span class="chev">›</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -363,10 +360,6 @@
         </a>
       </div>
     </div>
-
-      </div>
-    </div>
-    <!-- /SERVICES DROPDOWN -->
 
     <section class="utm">
       <img class="utm-banner" src="utm-banner-sunrise.png" alt="Unleash the Mind" loading="lazy" />
@@ -492,10 +485,10 @@
     document.getElementById("sharePanel").classList.toggle("open");
   });
 
-  // ---------- Services dropdown ----------
+  // ---------- Pay dropdown ----------
   (function(){
-    var btn=document.getElementById("svcToggle");
-    var panel=document.getElementById("services");
+    var btn=document.getElementById("payToggle");
+    var panel=document.getElementById("payment");
     if(!btn||!panel) return;
     btn.addEventListener("click", function(){
       var open=panel.classList.toggle("open");
