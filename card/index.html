@@ -150,6 +150,18 @@
   .book:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 16px rgba(124,108,255,.3)}
   .book .ico{width:20px;height:20px;color:#fff}
 
+  /* ---------- Unleash the Mind module ---------- */
+  .utm{
+    margin:26px 4px 0;
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.35);padding-bottom:20px;
+  }
+  .utm-banner{width:100%;height:auto;display:block}
+  .utm-h{margin:18px 22px 6px;font-size:21px;line-height:1.18;text-align:center;font-weight:800;letter-spacing:-.2px}
+  .utm-sub{margin:0 22px 16px;text-align:center;color:var(--muted);font-size:13.5px;line-height:1.5}
+  .utm .book{margin:4px 18px 0}
+
   /* ---------- Quick actions ---------- */
   .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 24px 22px}
   .quick a{
@@ -325,10 +337,15 @@
       </div>
     </div>
 
-    <a class="book" href="sms:+18325365177?&body=MIND">
-      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Tap to join by text
-    </a>
+    <section class="utm">
+      <img class="utm-banner" src="utm-banner-sunrise.png" alt="Unleash the Mind" loading="lazy" />
+      <h3 class="utm-h">What I actually tell my clients.</h3>
+      <p class="utm-sub">Honest takes on anxiety, stress, and real change — straight from the therapy room.</p>
+      <a class="book" href="sms:+18325365177?&body=MIND">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Tap to join by text
+      </a>
+    </section>
 
     <div class="sharebar">
       <button class="share" id="shareBtn">
