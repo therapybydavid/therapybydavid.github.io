@@ -150,6 +150,25 @@
   .book:active{transform:translateY(1px) scale(.99);box-shadow:0 6px 16px rgba(124,108,255,.3)}
   .book .ico{width:20px;height:20px;color:#fff}
 
+  /* ---------- Services dropdown ---------- */
+  .dropdown{
+    margin:18px 4px 0;width:calc(100% - 8px);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    border:1px solid var(--line);border-radius:16px;padding:17px 20px;
+    color:var(--ink);font-size:15px;font-weight:750;cursor:pointer;
+    letter-spacing:.2px;
+  }
+  .dropdown:active{transform:translateY(1px)}
+  .dropdown .chev-ico{color:var(--accent);transition:transform .3s ease;flex:0 0 auto}
+  .dropdown[aria-expanded="true"]{border-color:rgba(46,197,193,.45)}
+  .dropdown[aria-expanded="true"] .chev-ico{transform:rotate(180deg)}
+  .services{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+  .services.open{grid-template-rows:1fr}
+  .services-inner{overflow:hidden;min-height:0}
+  /* first section inside the dropdown shouldn't double up top spacing */
+  .services-inner > .section:first-child{margin-top:14px}
+
   /* ---------- Unleash the Mind module ---------- */
   .utm{
     margin:26px 4px 0;
@@ -274,6 +293,14 @@
       </nav>
     </section>
 
+    <!-- SERVICES DROPDOWN -->
+    <button class="dropdown" id="svcToggle" type="button" aria-expanded="false" aria-controls="services">
+      <span>Services</span>
+      <svg class="chev-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="services" id="services">
+      <div class="services-inner">
+
     <!-- CONNECT -->
     <div class="section">
       <h2>Connect</h2>
@@ -336,6 +363,10 @@
         </a>
       </div>
     </div>
+
+      </div>
+    </div>
+    <!-- /SERVICES DROPDOWN -->
 
     <section class="utm">
       <img class="utm-banner" src="utm-banner-sunrise.png" alt="Unleash the Mind" loading="lazy" />
@@ -460,6 +491,17 @@
     // Desktop / no native share → reveal the channel panel + QR
     document.getElementById("sharePanel").classList.toggle("open");
   });
+
+  // ---------- Services dropdown ----------
+  (function(){
+    var btn=document.getElementById("svcToggle");
+    var panel=document.getElementById("services");
+    if(!btn||!panel) return;
+    btn.addEventListener("click", function(){
+      var open=panel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  })();
 
   // ---------- Cool: subtle 3D tilt on the header card (desktop pointer only) ----------
   (function(){
