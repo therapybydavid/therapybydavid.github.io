@@ -9,3 +9,6 @@
 # Stray local notes / context — NEVER publish (infra + project context, not site content)
 /quick_reference_urls.md
 /claude_project_context.md
+
+# Wrangler CLI cache (account ID + page metadata; not secrets but no need to track)
+.wrangler/
