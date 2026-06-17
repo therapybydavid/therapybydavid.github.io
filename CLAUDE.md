@@ -27,7 +27,7 @@
 - Referral/notification automation runs on the free `openpath-intake` Cloudflare Worker (`openpath-intake.roblesinc.workers.dev`).
 - **Keep new costs at $0** — do not introduce paid infrastructure (e.g. Supabase, AI voice, paid automation tiers) without explicit approval.
 - **Preferences:** No AI voice agent and no autonomous outreach agents. Any outreach stays human-approved ("Claude drafts, David sends").
-- **Trello = personal use only** — keep the connection, but never wire it into business automation. Business referral tracking lives in Notion (Leads database), not Trello.
+- **Trello stays in the business mix for now (per David, 2026-06-17)** — keep the referral automation creating a Trello card *alongside* the Notion lead, so David can compare Trello vs Notion side by side. This reverses the earlier "Trello = personal only" call. (Trello may still be used personally too.)
 
 ## Pages
 - `index.html` — Homepage
