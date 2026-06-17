@@ -22,6 +22,13 @@
   - Inline embed on `contact.html`
   - Popup widget triggered by all consultation buttons on `index.html`
 
+## Cost & Tooling Baseline (per David, 2026-06-16)
+- **Only paid tools are MailerLite (email) and Calendly (booking).** Everything else runs on free tiers — Cloudflare Workers/Pages, Notion, Firebase, Gmail.
+- Referral/notification automation runs on the free `openpath-intake` Cloudflare Worker (`openpath-intake.roblesinc.workers.dev`).
+- **Keep new costs at $0** — do not introduce paid infrastructure (e.g. Supabase, AI voice, paid automation tiers) without explicit approval.
+- **Preferences:** No AI voice agent and no autonomous outreach agents. Any outreach stays human-approved ("Claude drafts, David sends").
+- **Trello = personal use only** — keep the connection, but never wire it into business automation. Business referral tracking lives in Notion (Leads database), not Trello.
+
 ## Pages
 - `index.html` — Homepage
 - `contact.html` — Contact form + inline Calendly embed
