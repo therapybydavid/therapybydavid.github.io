@@ -110,3 +110,10 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 - No floating badge widget — keep pages clean
 - Firebase Firestore is write-only for contact submissions (security rules enforce this)
 - EmailJS free tier allows 200 emails/month; upgrade if volume increases
+
+## Cost & Tooling Baseline (per David, 2026-06-16)
+- **Only paid tools are MailerLite (email) and Calendly (booking).** Everything else runs on free tiers — Cloudflare Workers/Pages, Notion, Firebase, Gmail.
+- Referral/notification automation runs on the free `openpath-intake` Cloudflare Worker (`openpath-intake.roblesinc.workers.dev`).
+- **Keep new costs at $0** — do not introduce paid infrastructure (e.g. Supabase, AI voice, paid automation tiers) without explicit approval.
+- **Preferences:** No AI voice agent and no autonomous outreach agents. Any outreach stays human-approved ("Claude drafts, David sends").
+- **Trello stays in the business mix for now (per David, 2026-06-17)** — keep the referral automation creating a Trello card *alongside* the Notion lead, so David can compare Trello vs Notion side by side. This reverses the earlier "Trello = personal only" call. (Trello may still be used personally too.)
