@@ -117,3 +117,20 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 - **Keep new costs at $0** — do not introduce paid infrastructure (e.g. Supabase, AI voice, paid automation tiers) without explicit approval.
 - **Preferences:** No AI voice agent and no autonomous outreach agents. Any outreach stays human-approved ("Claude drafts, David sends").
 - **Trello stays in the business mix for now (per David, 2026-06-17)** — keep the referral automation creating a Trello card *alongside* the Notion lead, so David can compare Trello vs Notion side by side. This reverses the earlier "Trello = personal only" call. (Trello may still be used personally too.)
+
+## Security (hardened 2026-06-21)
+- **Secrets:** never hardcoded — read from env vars / kept in the `openpath-intake`
+  Worker (Textbelt, Twilio, Resend, Trello, Anthropic keys live server-side).
+  Firebase web `apiKey` in contact.njk is public by design (protected by Firestore
+  rules — keep `contact_submissions` write-only, no public read).
+- **Mailchimp removed (2026-06-21):** deleted `api/subscribe.js` (dead, was served
+  as public static source) and `functions/subscribe.js` (unused Mailchimp endpoint).
+  `email-preview.html` + `newsletters/` are leftover Mailchimp template previews —
+  remove later if not needed.
+- **Security headers:** `_headers` sets nosniff, X-Frame-Options, Referrer-Policy,
+  Permissions-Policy, HSTS, and an enforcing minimal CSP (frame-ancestors/object-src/
+  base-uri). Full content CSP is **Report-Only** — validate in console, then promote.
+- **Turnstile (scaffolded, INACTIVE):** `functions/verify-turnstile.js` verifies tokens
+  with `TURNSTILE_SECRET_KEY`. Contact form has commented widget + gate placeholders.
+  To activate: add Turnstile widget (SITE KEY) + script, uncomment the gate, set
+  `TURNSTILE_SECRET_KEY` secret in Cloudflare Pages.

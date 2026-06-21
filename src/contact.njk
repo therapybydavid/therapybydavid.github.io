@@ -286,6 +286,17 @@ eleventyExcludeFromCollections: true
             </div>
             <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line — if you are in immediate danger, call 988 or 911.</p>
             <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
+            <!-- ── Cloudflare Turnstile (spam protection) — INACTIVE until keys are added ──
+                 Activate in 4 steps:
+                 1. Add this once, in <head>:
+                    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                 2. Uncomment the widget below and replace YOUR_TURNSTILE_SITE_KEY with your
+                    Turnstile SITE KEY (public) from the Cloudflare dashboard.
+                 3. Uncomment the verification gate in the submit handler (search "TURNSTILE").
+                 4. Add TURNSTILE_SECRET_KEY (Secret) in Cloudflare Pages → Settings →
+                    Variables and secrets (see functions/verify-turnstile.js).
+            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" style="margin: 4px 0;"></div>
+            -->
             <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
           </form>
         </div>
@@ -444,6 +455,23 @@ eleventyExcludeFromCollections: true
         lead_utm_campaign: leadSrc.utm_campaign || null,
         lead_first_seen:   leadSrc.first_seen   || null
       };
+
+      // ── TURNSTILE spam-protection gate — INACTIVE until keys are added ──
+      // Uncomment to require a valid Turnstile token before saving the lead.
+      // Pair with the widget + script in the form markup above, and set
+      // TURNSTILE_SECRET_KEY in Cloudflare (see functions/verify-turnstile.js).
+      //
+      // const tsToken = (window.turnstile && turnstile.getResponse()) || '';
+      // const tsOk = await fetch('/verify-turnstile', {
+      //   method: 'POST', headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ token: tsToken }),
+      // }).then(r => r.json()).then(d => d.success).catch(() => false);
+      // if (!tsOk) {
+      //   const s = document.getElementById('form-status');
+      //   s.style.display = 'block';
+      //   s.textContent = 'Please complete the spam check and try again.';
+      //   return;
+      // }
 
       btn.disabled    = true;
       btn.textContent = 'Sending…';
