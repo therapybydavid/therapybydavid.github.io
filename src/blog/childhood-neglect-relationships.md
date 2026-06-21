@@ -7,7 +7,7 @@ ogDescription: "Nothing dramatic happened in your childhood. So why do relations
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/childhood-neglect-relationships"
 canonical: "https://therapybydavid.com/blog/childhood-neglect-relationships"
-permalink: "/blog/childhood-neglect-relationships/"
+permalink: "/blog/childhood-neglect-relationships.html"
 date: 2026-04-18
 order: 20
 tag: "Relationships"

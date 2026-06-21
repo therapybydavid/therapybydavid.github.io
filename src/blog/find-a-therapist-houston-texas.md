@@ -7,7 +7,7 @@ ogDescription: "Where to search, what actually matters for fit, the questions to
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/find-a-therapist-houston-texas"
 canonical: "https://therapybydavid.com/blog/find-a-therapist-houston-texas"
-permalink: "/blog/find-a-therapist-houston-texas/"
+permalink: "/blog/find-a-therapist-houston-texas.html"
 date: 2026-06-06
 order: 5
 tag: "Getting Started"

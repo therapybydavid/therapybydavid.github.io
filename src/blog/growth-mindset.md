@@ -7,7 +7,7 @@ ogDescription: "If you believe your anxiety, anger, or relationship patterns are
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/growth-mindset"
 canonical: "https://therapybydavid.com/blog/growth-mindset"
-permalink: "/blog/growth-mindset/"
+permalink: "/blog/growth-mindset.html"
 date: 2026-06-14
 order: 0
 tag: "Anxiety"

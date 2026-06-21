@@ -7,7 +7,7 @@ ogDescription: "Burnout and depression overlap, but they aren't the same. Learn 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/burnout-vs-depression"
 canonical: "https://therapybydavid.com/blog/burnout-vs-depression"
-permalink: "/blog/burnout-vs-depression/"
+permalink: "/blog/burnout-vs-depression.html"
 date: 2026-06-06
 order: 9
 tag: "Burnout"

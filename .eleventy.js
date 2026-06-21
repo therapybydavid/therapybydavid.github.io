@@ -1,11 +1,36 @@
+const fs = require("fs");
+
 module.exports = function (eleventyConfig) {
-  // Copy the shared stylesheet (and any future assets) straight through to the build.
+  // The shared stylesheet + Eleventy-managed assets.
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  // Copy existing site assets that pages reference (images, analytics, manifest).
-  eleventyConfig.addPassthroughCopy({ "images": "images" });
-  eleventyConfig.addPassthroughCopy({ "analytics.js": "analytics.js" });
-  eleventyConfig.addPassthroughCopy({ "site.webmanifest": "site.webmanifest" });
-  eleventyConfig.addPassthroughCopy({ "david-robles-profile.jpeg": "david-robles-profile.jpeg" });
+
+  // --- Hybrid build -------------------------------------------------------
+  // Eleventy OWNS the blog (index + posts, generated from Markdown). Every
+  // other existing page, asset, and backend folder is passed through to the
+  // build verbatim, so the live site is preserved exactly. Pages can be
+  // moved onto the shared template later, one at a time, with no re-cutover.
+
+  // Eleventy generates these, so they must NOT be passed through:
+  const ELEVENTY_OWNS = new Set(["blog.html"]); // /blog and /blog/* come from src/
+
+  // Every root-level .html page (home, about, services, utility pages, etc.).
+  fs.readdirSync(".").forEach((f) => {
+    if (f.endsWith(".html") && !ELEVENTY_OWNS.has(f)) {
+      eleventyConfig.addPassthroughCopy({ [f]: f });
+    }
+  });
+
+  // Root-level asset files and directories (backend functions, images, etc.).
+  // NOTE: the "blog" directory is intentionally excluded — Eleventy builds it.
+  [
+    "images", "analytics.js", "site.webmanifest", "robots.txt", "sitemap.xml",
+    "llms.txt", "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
+    "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
+    "therapy-by-david-logo.png", "TBD.png",
+    "api", "card", "functions", "netlify", "newsletters",
+  ].forEach((p) => {
+    if (fs.existsSync(p)) eleventyConfig.addPassthroughCopy({ [p]: p });
+  });
 
   // Blog posts, ordered to match the curated sequence from the original index.
   eleventyConfig.addCollection("posts", (api) =>

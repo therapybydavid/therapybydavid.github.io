@@ -7,7 +7,7 @@ ogDescription: "Trauma isn't defined by the size of the event — it's defined b
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/do-i-have-trauma"
 canonical: "https://therapybydavid.com/blog/do-i-have-trauma"
-permalink: "/blog/do-i-have-trauma/"
+permalink: "/blog/do-i-have-trauma.html"
 date: 2026-06-06
 order: 10
 tag: "Trauma"

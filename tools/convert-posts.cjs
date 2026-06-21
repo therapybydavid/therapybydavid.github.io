@@ -108,7 +108,7 @@ for (const file of files) {
   fm += `ogType: article\n`;
   if (ogUrl) fm += `ogUrl: ${yaml(ogUrl)}\n`;
   if (canonical) fm += `canonical: ${yaml(canonical)}\n`;
-  fm += `permalink: ${yaml("/blog/" + slug + "/")}\n`;
+  fm += `permalink: ${yaml("/blog/" + slug + ".html")}\n`;
   fm += `date: ${iso}\n`;
   fm += `order: ${c.order != null ? c.order : 999}\n`;
   fm += `tag: ${yaml(tag || c.cardTag)}\n`;

@@ -7,7 +7,7 @@ ogDescription: "You look fine on the outside while bracing all day underneath. H
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-anxiety"
 canonical: "https://therapybydavid.com/blog/high-functioning-anxiety"
-permalink: "/blog/high-functioning-anxiety/"
+permalink: "/blog/high-functioning-anxiety.html"
 date: 2026-06-06
 order: 8
 tag: "Anxiety"

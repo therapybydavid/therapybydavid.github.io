@@ -7,7 +7,7 @@ ogDescription: "Broad questions get broad answers. The problem usually isn't you
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/better-questions-relationships"
 canonical: "https://therapybydavid.com/blog/better-questions-relationships"
-permalink: "/blog/better-questions-relationships/"
+permalink: "/blog/better-questions-relationships.html"
 date: 2026-05-29
 order: 14
 tag: "Relationships"

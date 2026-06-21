@@ -7,7 +7,7 @@ ogDescription: "A clear breakdown of what therapy costs in Texas — insurance c
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/therapy-cost-texas"
 canonical: "https://therapybydavid.com/blog/therapy-cost-texas"
-permalink: "/blog/therapy-cost-texas/"
+permalink: "/blog/therapy-cost-texas.html"
 date: 2026-06-06
 order: 6
 tag: "Getting Started"

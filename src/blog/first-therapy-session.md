@@ -7,7 +7,7 @@ ogDescription: "Nervous about starting therapy? Here's exactly what happens in a
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/first-therapy-session"
 canonical: "https://therapybydavid.com/blog/first-therapy-session"
-permalink: "/blog/first-therapy-session/"
+permalink: "/blog/first-therapy-session.html"
 date: 2026-06-06
 order: 7
 tag: "Getting Started"

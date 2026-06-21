@@ -7,7 +7,7 @@ ogDescription: "Everyday anxiety is normal. It becomes a problem when it's persi
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/how-anxiety-becomes-a-problem"
 canonical: "https://therapybydavid.com/blog/how-anxiety-becomes-a-problem"
-permalink: "/blog/how-anxiety-becomes-a-problem/"
+permalink: "/blog/how-anxiety-becomes-a-problem.html"
 date: 2026-06-06
 order: 11
 tag: "Anxiety"

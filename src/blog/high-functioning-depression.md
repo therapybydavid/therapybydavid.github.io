@@ -7,7 +7,7 @@ ogDescription: "You hold down the job, hit the goals, look fine — but feel fla
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-depression"
 canonical: "https://therapybydavid.com/blog/high-functioning-depression"
-permalink: "/blog/high-functioning-depression/"
+permalink: "/blog/high-functioning-depression.html"
 date: 2026-06-06
 order: 1
 tag: "Depression"

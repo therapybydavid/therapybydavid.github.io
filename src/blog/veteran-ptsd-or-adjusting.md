@@ -7,7 +7,7 @@ ogDescription: "Not every hard transition home is PTSD — but some signs cross 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/veteran-ptsd-or-adjusting"
 canonical: "https://therapybydavid.com/blog/veteran-ptsd-or-adjusting"
-permalink: "/blog/veteran-ptsd-or-adjusting/"
+permalink: "/blog/veteran-ptsd-or-adjusting.html"
 date: 2026-06-06
 order: 4
 tag: "Veterans"

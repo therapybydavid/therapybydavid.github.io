@@ -7,7 +7,7 @@ ogDescription: "You recognize the pattern. You've even named it. So why does it 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/relationship-patterns"
 canonical: "https://therapybydavid.com/blog/relationship-patterns"
-permalink: "/blog/relationship-patterns/"
+permalink: "/blog/relationship-patterns.html"
 date: 2026-05-16
 order: 16
 tag: "Relationships"

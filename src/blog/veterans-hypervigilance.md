@@ -7,7 +7,7 @@ ogDescription: "Hypervigilance kept you alive in service, so your nervous system
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/veterans-hypervigilance"
 canonical: "https://therapybydavid.com/blog/veterans-hypervigilance"
-permalink: "/blog/veterans-hypervigilance/"
+permalink: "/blog/veterans-hypervigilance.html"
 date: 2026-06-06
 order: 12
 tag: "Veterans"

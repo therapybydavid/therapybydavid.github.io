@@ -7,7 +7,7 @@ ogDescription: "Most men avoid therapy out of conditioning, not weakness. Here's
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
 canonical: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
-permalink: "/blog/why-men-dont-go-to-therapy/"
+permalink: "/blog/why-men-dont-go-to-therapy.html"
 date: 2026-06-06
 order: 3
 tag: "Men's Mental Health"

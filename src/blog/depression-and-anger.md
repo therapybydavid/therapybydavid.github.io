@@ -7,7 +7,7 @@ ogDescription: "Depression doesn't always look like sadness. For many people it 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/depression-and-anger"
 canonical: "https://therapybydavid.com/blog/depression-and-anger"
-permalink: "/blog/depression-and-anger/"
+permalink: "/blog/depression-and-anger.html"
 date: 2026-04-25
 order: 19
 tag: "Depression"

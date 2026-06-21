@@ -7,7 +7,7 @@ ogDescription: "Recurring fights are almost never about the surface topic — th
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/couples-same-argument"
 canonical: "https://therapybydavid.com/blog/couples-same-argument"
-permalink: "/blog/couples-same-argument/"
+permalink: "/blog/couples-same-argument.html"
 date: 2026-06-06
 order: 13
 tag: "Relationships"

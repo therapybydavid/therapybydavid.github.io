@@ -7,7 +7,7 @@ ogDescription: "Trauma doesn't stay in the past. It lives in how you react, who 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/trauma-and-patterns"
 canonical: "https://therapybydavid.com/blog/trauma-and-patterns"
-permalink: "/blog/trauma-and-patterns/"
+permalink: "/blog/trauma-and-patterns.html"
 date: 2026-05-02
 order: 18
 tag: "Trauma"

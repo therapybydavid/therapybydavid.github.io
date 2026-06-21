@@ -7,7 +7,7 @@ ogDescription: "A voice note or a quick call does more than carry words. Here's 
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/voice-notes-connection"
 canonical: "https://therapybydavid.com/blog/voice-notes-connection"
-permalink: "/blog/voice-notes-connection/"
+permalink: "/blog/voice-notes-connection.html"
 date: 2026-05-29
 order: 15
 tag: "Relationships"

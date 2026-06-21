@@ -7,7 +7,7 @@ ogDescription: "A balanced guide to choosing between online and in-person therap
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
 canonical: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
-permalink: "/blog/online-vs-in-person-therapy/"
+permalink: "/blog/online-vs-in-person-therapy.html"
 date: 2026-06-06
 order: 2
 tag: "Getting Started"

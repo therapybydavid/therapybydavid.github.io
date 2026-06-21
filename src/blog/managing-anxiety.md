@@ -7,7 +7,7 @@ ogDescription: "Anxiety isn't a character flaw. It's a nervous system doing exac
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/managing-anxiety"
 canonical: "https://therapybydavid.com/blog/managing-anxiety"
-permalink: "/blog/managing-anxiety/"
+permalink: "/blog/managing-anxiety.html"
 date: 2026-05-09
 order: 17
 tag: "Anxiety"
