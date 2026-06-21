@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Why the nervous system stays \"on\" after service — and what helps."
 title: "Why Do Veterans Have Trouble Turning Off Hypervigilance?"
 pageTitle: "Why Do Veterans Have Trouble Turning Off Hypervigilance? | Therapy by David"
 description: "Hypervigilance kept you alive in service, so your nervous system learned it as the default. It doesn't switch off just because the threat is gone — it has to be retrained. Here's why, from an Army veteran and therapist."

@@ -28,7 +28,7 @@ module.exports = function (eleventyConfig) {
   // NOTE: the "blog" directory is intentionally excluded — Eleventy builds it.
   [
     "images", "analytics.js", "site.webmanifest", "robots.txt", "sitemap.xml",
-    "llms.txt", "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
+    "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
     "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
     "therapy-by-david-logo.png", "TBD.png",
     "api", "card", "functions", "newsletters",

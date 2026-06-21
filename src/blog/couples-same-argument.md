@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Why recurring fights are never really about the surface topic."
 title: "Why Do Couples Keep Having the Same Argument?"
 pageTitle: "Why Do Couples Keep Having the Same Argument? | Therapy by David"
 description: "Recurring fights are almost never about the surface topic — the dishes, the money, the in-laws. They repeat because the underlying need or fear never gets addressed. Here's the pattern, and how to break it."

@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Telling a normal post-service adjustment apart from PTSD — veteran to veteran."
 title: "PTSD or Just Adjusting? Signs a Veteran Should Reach Out"
 pageTitle: "PTSD or Just Adjusting? Signs a Veteran Should Reach Out | Therapy by David"
 description: "Not every hard transition home is PTSD — but some signs cross the line. Here's how to tell normal post-service adjustment from PTSD, from an Army veteran and therapist."

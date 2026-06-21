@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Why naming a pattern isn't enough to change it."
 title: "How to Stop Repeating the Same Relationship Patterns"
 pageTitle: "How to Stop Repeating the Same Relationship Patterns | Therapy by David"
 description: "You recognize the pattern. You've even named it. So why does it keep happening? A therapist in Houston explains what's really driving it — and what actually changes it."

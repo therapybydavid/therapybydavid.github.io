@@ -1,4 +1,5 @@
 ---
+llmsDescription: "An honest comparison of telehealth and in-person therapy, and who each suits."
 title: "Online Therapy vs. In-Person: Which Is Right for You?"
 pageTitle: "Online Therapy vs. In-Person: Which Is Right for You? | Therapy by David"
 description: "A balanced guide to choosing between online and in-person therapy: how telehealth works, what the research says, and who each format suits best, from a Texas therapist."

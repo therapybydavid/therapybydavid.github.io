@@ -1,4 +1,5 @@
 ---
+llmsDescription: "What the research says about voice, presence, and connection."
 title: "Why Hearing Each Other's Voice Is a Small Act of Love"
 pageTitle: "Why Hearing Each Other's Voice Is a Small Act of Love | Therapy by David"
 description: "A voice note, a phone call, the sound of someone you love — it does more than carry words. Here's what the research says about voice, connection, and the body, from a therapist in Houston, Texas."

@@ -1,4 +1,5 @@
 ---
+llmsDescription: "What actually happens, from the free consult to your first full session."
 title: "What to Expect in Your First Therapy Session"
 pageTitle: "What to Expect in Your First Therapy Session | Therapy by David"
 description: "Nervous about starting therapy? Here's exactly what happens in a first session — from the free 15-minute consultation to intake, goals, and how telehealth works."

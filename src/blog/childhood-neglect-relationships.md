@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Why relationships feel hard when \"nothing dramatic\" ever happened."
 title: "How Childhood Emotional Neglect Shows Up in Adult Relationships"
 pageTitle: "How Childhood Emotional Neglect Shows Up in Adult Relationships | Therapy by David"
 description: "You had a roof over your head and food on the table. Nothing dramatic happened. So why do relationships feel so hard? A therapist in Houston, Texas explains childhood emotional neglect."

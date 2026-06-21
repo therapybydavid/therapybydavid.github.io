@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Better questions for real connection at home."
 title: "Why \"How Was Your Day\" Never Gets You Anywhere"
 pageTitle: "Why \"How Was Your Day\" Never Gets You Anywhere | Therapy by David"
 description: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you — it's the questions. A therapist's guide to what to ask instead."

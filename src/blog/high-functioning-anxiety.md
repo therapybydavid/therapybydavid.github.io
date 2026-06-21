@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Looking fine on the outside while overthinking and never switching off inside."
 title: "What Does High-Functioning Anxiety Actually Look Like?"
 pageTitle: "What Does High-Functioning Anxiety Actually Look Like? | Therapy by David"
 description: "High-functioning anxiety hides behind success and productivity. Learn what it really looks like and what actually helps, from David Robles, LMSW, telehealth across Texas."

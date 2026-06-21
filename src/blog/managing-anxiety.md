@@ -1,4 +1,5 @@
 ---
+llmsDescription: "What keeps nighttime anxiety going, and how to quiet it."
 title: "Why Won't My Mind Shut Off at Night?"
 pageTitle: "Why Won't My Mind Shut Off at Night? | Therapy by David"
 description: "Anxiety isn't a character flaw. It's a nervous system doing exactly what it was built to do. Learn what keeps it going and what actually helps, from a therapist in Houston, Texas."

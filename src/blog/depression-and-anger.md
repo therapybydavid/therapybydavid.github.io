@@ -1,4 +1,5 @@
 ---
+llmsDescription: "Depression that shows up as irritability and anger — especially in men."
 title: "Why Am I So Angry When I'm Depressed?"
 pageTitle: "Why Am I So Angry When I'm Depressed? | Therapy by David"
 description: "Depression doesn't always look like sadness. For many people — especially men — it shows up as irritability, short fuses, and rage. A therapist in Houston, Texas explains the connection."
