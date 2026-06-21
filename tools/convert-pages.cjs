@@ -16,6 +16,7 @@ const PAGES = [
   "anxiety-therapy", "depression-therapy", "trauma-therapy",
   "mens-mental-health", "couples-therapy", "veterans-military-families",
   "anxiety", "depression", "trauma",
+  "privacy", "sms-terms",
 ];
 
 const NAV_RE = /<nav class="nav"[\s\S]*?<\/nav>/;
