@@ -13,9 +13,13 @@ module.exports = function (eleventyConfig) {
   // Eleventy generates these, so they must NOT be passed through:
   const ELEVENTY_OWNS = new Set(["blog.html"]); // /blog and /blog/* come from src/
 
-  // Every root-level .html page (home, about, services, utility pages, etc.).
+  // Every root-level .html page (home, about, services, utility pages, etc.)
+  // is passed through AS-IS, UNLESS it has been templated into src/ (then
+  // Eleventy generates it from the template instead).
   fs.readdirSync(".").forEach((f) => {
     if (f.endsWith(".html") && !ELEVENTY_OWNS.has(f)) {
+      const templated = "src/" + f.replace(/\.html$/, ".njk");
+      if (fs.existsSync(templated)) return; // Eleventy owns this page now
       eleventyConfig.addPassthroughCopy({ [f]: f });
     }
   });

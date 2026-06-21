@@ -1,0 +1,507 @@
+---
+permalink: /contact.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Therapy by David</title>
+  <meta name="description" content="Contact Therapy by David. Schedule a free consultation, find office locations in Pasadena and Webster, or reach out directly." />
+  <link rel="canonical" href="https://therapybydavid.com/contact">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 820px; margin-bottom: 26px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 36px; max-width: 580px; }
+
+    /* Contact info cards */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .contact-card small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; display: block; margin-bottom: 14px; }
+    .contact-card h3 { margin-bottom: 10px; }
+    .contact-card p { margin-bottom: 20px; }
+
+    /* Map cards */
+    .map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; align-items: stretch; }
+    .map-card { background: var(--paper); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 24px; box-shadow: 0 18px 50px rgba(20,33,50,.06); display: flex; flex-direction: column; }
+    .map-card iframe { width: 100%; height: 300px; border: 0; border-radius: 20px; margin: 18px 0; flex: 1; }
+    .map-card h3 { margin-bottom: 8px; }
+
+    /* CTA */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; }
+    .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* "Prefer Texting?" CTA — text + buttons side-by-side on desktop,
+       stacked + centered on mobile so the phone number doesn't wrap. */
+    .prefer-texting-grid { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .prefer-texting-grid .ptg-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* First content section after the hero — reduce top padding so the
+       hero's bottom padding + gradient overlay don't compound into a
+       gigantic dead zone above the first CTA card. */
+    .contact-info-section { padding-top: 24px; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding: 124px 0 40px; }
+      .contact-grid, .map-grid, .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+      .contact-info-section { padding-top: 10px; }
+      .prefer-texting-grid { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+      .prefer-texting-grid .ptg-actions { justify-content: center; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+<style id="nav-dd-styles">
+.nav-dd { position: relative; }
+.nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+.nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+.nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+.nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+.nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+@media (max-width: 900px) {
+  .nav-dd { width: 100%; }
+  .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+  .nav-dd-menu::before { display: none; }
+  .nav-dd-menu a { padding: 8px 0; }
+}
+</style>
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h1>Let's start a <em>conversation.</em></h1>
+        <p class="lead">No pressure, no commitment. Reach out with a question or find the right way to connect below.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section class="section contact-info-section">
+      <div class="container">
+
+        <!-- Quick text/call CTA (the "low-commitment on-ramp") -->
+        <div class="reveal" style="background: radial-gradient(circle at 88% 25%, rgba(216,184,102,.2), transparent 55%), linear-gradient(135deg, var(--night) 0%, var(--ink) 100%); border: 1px solid var(--line); border-radius: 28px; padding: 32px 36px; margin-bottom: 32px; box-shadow: 0 22px 52px rgba(8,11,16,.3);">
+          <div class="prefer-texting-grid">
+            <div>
+              <h3 style="font-size: 24px; margin: 0; color: var(--white); font-family: var(--sans); font-weight: 700; letter-spacing: .01em; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap;">Text us at (832) 544-2562</h3>
+            </div>
+            <div class="ptg-actions">
+              <a class="btn" href="sms:8325442562" style="background: var(--white); color: var(--night); box-shadow: 0 10px 26px rgba(0,0,0,.22);">Text</a>
+              <a class="btn btn-gold" href="tel:8325442562">Call</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal" style="background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 28px; padding: 48px; box-shadow: 0 18px 60px rgba(20,33,50,.09); margin-bottom: 48px;">
+          <span class="eyebrow">Send a Message</span>
+          <h2 style="margin-bottom: 8px;">Have a question? Reach out.</h2>
+          <p style="margin-bottom: 12px;">Fill out the form and David will get back to you personally within 24 hours.</p>
+          <p style="font-size: 14px; margin-bottom: 32px;">Good to know: the first 15-minute consultation is free, sessions are $150 self-pay (confirmed up front, with sliding-scale spots from $80–$125), and many major insurance plans are accepted.</p>
+          <form id="contact-form" style="display: grid; gap: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">First Name</label>
+                <input type="text" id="first_name" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              </div>
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Last Name</label>
+                <input type="text" id="last_name" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              </div>
+            </div>
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Email</label>
+              <input type="email" id="email" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+            </div>
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Phone (optional)</label>
+              <input type="tel" id="phone" placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+            </div>
+
+            <!-- SMS opt-in (revealed only when a valid phone is entered) -->
+            <div id="sms-opt-in-wrapper" style="display: none; padding: 16px 18px; background: var(--paper); border: 1px solid var(--mist); border-radius: 12px;">
+              <label for="sms_opt_in" style="display: flex; gap: 12px; align-items: flex-start; cursor: pointer; font-size: 13px; line-height: 1.55; color: var(--text); margin: 0;">
+                <input type="checkbox" id="sms_opt_in" style="margin-top: 4px; flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; accent-color: var(--gold);">
+                <span>
+                  <strong style="display: block; margin-bottom: 4px; font-size: 14px; color: var(--night); font-weight: 700;">Yes, text me too</strong>
+                  I agree to SMS from Therapy by David (scheduling, reminders). Reply <strong>STOP</strong> to cancel, <strong>HELP</strong> for help.
+                  <span style="display: block; margin-top: 6px; font-size: 11px; color: var(--muted); font-style: italic; line-height: 1.5;">
+                    Frequency varies. Msg &amp; data rates may apply. <a href="sms-terms.html" style="color: var(--muted); text-decoration: underline;">SMS Terms</a> · <a href="privacy.html" style="color: var(--muted); text-decoration: underline;">Privacy Policy</a>
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Message</label>
+              <textarea id="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
+            </div>
+            <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line — if you are in immediate danger, call 988 or 911.</p>
+            <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
+            <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section" id="locations" style="background: var(--cream);">
+      <div class="container">
+        <span class="eyebrow">Office Locations</span>
+        <h2>In-person in Pasadena and Webster.<br>Telehealth across Texas.</h2>
+        <p class="section-lead" style="margin-top: 16px;">Choose the setting that makes consistency easier. Both office locations include quick map access for directions.</p>
+        <div class="map-grid">
+          <article class="map-card reveal">
+            <h3>Pasadena Office</h3>
+            <p>817 Southmore Ave<br>Pasadena, TX 77502</p>
+            <iframe src="https://www.google.com/maps?q=817+Southmore+Ave,+Pasadena,+TX+77502&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Pasadena office map"></iframe>
+            <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=817%20Southmore%20Ave%2C%20Pasadena%2C%20TX%2077502" target="_blank" rel="noopener">Open in Google Maps</a>
+          </article>
+          <article class="map-card reveal">
+            <h3>Webster Office</h3>
+            <p>1335 Regents Park Dr<br>Houston, TX 77058</p>
+            <iframe src="https://www.google.com/maps?q=1335+Regents+Park+Dr,+Houston,+TX+77058&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Webster office map"></iframe>
+            <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=1335%20Regents%20Park%20Dr%2C%20Houston%2C%20TX%2077058" target="_blank" rel="noopener">Open in Google Maps</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Start Here</span>
+        <h2>You do not have to keep carrying this alone.</h2>
+        <p>When you're ready, the first step is simple. One conversation can change everything.</p>
+        <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Phone auto-format + SMS opt-in reveal -->
+  <script>
+    const phoneEl = document.getElementById('phone');
+    const smsWrap = document.getElementById('sms-opt-in-wrapper');
+    const smsCheckEl = document.getElementById('sms_opt_in');
+
+    function phoneDigits() {
+      return phoneEl.value.replace(/\D/g, '');
+    }
+
+    phoneEl.addEventListener('input', function (e) {
+      const digits = e.target.value.replace(/\D/g, '').substring(0, 10);
+      if (digits.length === 0) { e.target.value = ''; }
+      else if (digits.length <= 3) { e.target.value = '(' + digits; }
+      else if (digits.length <= 6) { e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3); }
+      else { e.target.value = '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6); }
+
+      // Reveal SMS opt-in only when a complete 10-digit number has been entered.
+      // If the user clears the phone field, also uncheck the box so we never
+      // record consent paired with an empty phone number.
+      const hasValidPhone = phoneDigits().length === 10;
+      smsWrap.style.display = hasValidPhone ? 'block' : 'none';
+      if (!hasValidPhone) smsCheckEl.checked = false;
+    });
+  </script>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyARzjrwt_Asr-_ca5bBYUBoFUMKM8sRAFc",
+      authDomain: "therapy-by-david.firebaseapp.com",
+      projectId: "therapy-by-david",
+      storageBucket: "therapy-by-david.firebasestorage.app",
+      messagingSenderId: "45351635355",
+      appId: "1:45351635355:web:3da34281325675f125793e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ── SMS consent record ──────────────────────────────────────────────────
+    // Versioned so that if the consent language is ever updated, historical
+    // submissions still point to the exact wording the user saw. This entire
+    // record is what would be produced in a TCPA/TCR audit.
+    const SMS_CONSENT_VERSION = '2026-06-01-v2';
+    const SMS_CONSENT_TEXT =
+      'I agree to SMS from Therapy by David (scheduling, reminders). ' +
+      'Reply STOP to cancel, HELP for help. ' +
+      'Frequency varies. Msg & data rates may apply. ' +
+      'SMS Terms (https://therapybydavid.com/sms-terms.html) · ' +
+      'Privacy Policy (https://therapybydavid.com/privacy.html).';
+    // ────────────────────────────────────────────────────────────────────────
+
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn    = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const smsCheck = document.getElementById('sms_opt_in');
+      const phoneVal = document.getElementById('phone').value.trim();
+      const hasValidPhone = phoneVal.replace(/\D/g, '').length === 10;
+      const smsOptIn = smsCheck.checked && hasValidPhone;
+
+      // First-touch lead source captured by /analytics.js on whichever
+      // page this visitor landed on first this session.
+      let leadSrc = {};
+      try { leadSrc = JSON.parse(sessionStorage.getItem('tbd_source')) || {}; } catch (err) {}
+
+      const data   = {
+        first_name: document.getElementById('first_name').value.trim(),
+        last_name:  document.getElementById('last_name').value.trim(),
+        from_email: document.getElementById('email').value.trim(),
+        phone:      phoneVal,
+        message:    document.getElementById('message').value.trim(),
+        submitted_at: serverTimestamp(),
+
+        // ── SMS consent audit trail (TCR/TCPA defensible record) ──
+        sms_opt_in:            smsOptIn,
+        sms_consent_version:   smsOptIn ? SMS_CONSENT_VERSION : null,
+        sms_consent_text:      smsOptIn ? SMS_CONSENT_TEXT    : null,
+        sms_consent_timestamp: smsOptIn ? serverTimestamp()   : null,
+        sms_consent_page:      smsOptIn ? location.href       : null,
+        user_agent:            navigator.userAgent,
+
+        // ── Lead source attribution (first touch, see /analytics.js) ──
+        lead_referrer:     leadSrc.referrer     || null,
+        lead_landing_page: leadSrc.landing_page || null,
+        lead_utm_source:   leadSrc.utm_source   || null,
+        lead_utm_medium:   leadSrc.utm_medium   || null,
+        lead_utm_campaign: leadSrc.utm_campaign || null,
+        lead_first_seen:   leadSrc.first_seen   || null
+      };
+
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        // 1 — Save to Firestore (must succeed; this is the canonical record)
+        await addDoc(collection(db, 'contact_submissions'), data);
+
+        if (typeof gtag === 'function') gtag('event', 'form_submit', { form: 'contact' });
+
+        // 2 — Fire-and-forget notification pipeline via the openpath-intake
+        // Worker. NOT awaited; a Worker hiccup must not break the form for
+        // the visitor. The Worker has Textbelt / Twilio / Resend / Trello /
+        // Anthropic keys server-side so they never leak to the browser.
+        // Worker does: Textbelt SMS alert to David, Trello card in "New Lead",
+        // Twilio welcome SMS to opted-in visitors, and an AI-drafted Gmail
+        // reply landing in David's Drafts folder. EmailJS was removed
+        // 2026-05-31 — the Worker now covers every notification path it used
+        // to provide (and more).
+        fetch('https://openpath-intake.roblesinc.workers.dev/contact-notify', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({
+            first_name: data.first_name,
+            last_name:  data.last_name,
+            from_email: data.from_email,
+            phone:      data.phone,
+            message:    data.message,
+            sms_opt_in: data.sms_opt_in,
+            // one-line source summary for the Trello card / SMS alert;
+            // the Worker may ignore it — full detail lives in Firestore
+            lead_source: leadSrc.utm_source || leadSrc.referrer || '(direct)',
+          }),
+        }).catch(() => {});  // ignore worker errors silently
+
+        // Success
+        status.style.display      = 'block';
+        status.style.background   = '#e6f4ea';
+        status.style.color        = '#1a7c34';
+        status.textContent        = '✓ Message sent — David will be in touch within 24 hours.';
+        e.target.reset();
+      } catch (err) {
+        console.error(err);
+        status.style.display      = 'block';
+        status.style.background   = '#fdecea';
+        status.style.color        = '#b71c1c';
+        status.textContent        = 'Something went wrong. Please try again or email directly.';
+      } finally {
+        btn.disabled    = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
+
+  <!-- Chatbot widget intentionally NOT loaded on /contact.
+       The contact page already has 3 clear on-ramps (form, text/call CTA,
+       email card). A chatbot bubble there competes with the form for
+       attention rather than helping conversion. Bot still loads on every
+       other public page (home, services, blog, resources). -->
+</body>
+</html>

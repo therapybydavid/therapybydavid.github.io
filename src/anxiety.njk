@@ -1,0 +1,585 @@
+---
+permalink: /anxiety.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Anxiety Happens | Therapy by David</title>
+  <meta name="description" content="A clear look at what anxiety is, why your brain does it, how it shows up in your body and thoughts, and what actually helps — from Therapy by David." />
+  <link rel="canonical" href="https://therapybydavid.com/anxiety">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); }
+    .btn-light { color: var(--night); border-color: rgba(20,33,50,.18); background: rgba(255,255,255,.62); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 20px;
+      text-decoration: none;
+      transition: text-decoration .15s ease;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 820px; margin-bottom: 26px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 36px; max-width: 640px; }
+
+    /* Dark section */
+    .dark-section { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+    .dark-section::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.16), transparent 68%); top: -220px; right: -160px; }
+    .dark-section .container { position: relative; z-index: 2; }
+    .dark-section h2, .dark-section h3 { color: var(--white); }
+    .dark-section p { color: rgba(255,255,255,.68); }
+
+    /* Cards */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(216,184,102,.42); background: rgba(255,255,255,.08); }
+    .card .num { color: var(--champagne); font-size: 13px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 22px; display: block; }
+    .card h3 { margin-bottom: 12px; font-size: 22px; }
+
+    /* Light cards */
+    .lux-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .lux-card h3 { margin-bottom: 12px; }
+
+    .light-cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+
+    .light-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 18px 48px rgba(20,33,50,.07);
+      transition: transform .22s ease;
+    }
+    .light-card:hover { transform: translateY(-4px); }
+    .light-card small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; display: block; margin-bottom: 14px; }
+    .light-card h3 { font-size: 22px; margin-bottom: 10px; }
+
+    /* Myth-busting tags */
+    .myth-tag {
+      display: inline-block;
+      background: rgba(216,184,102,.15);
+      border: 1px solid rgba(216,184,102,.3);
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin: 4px 4px 4px 0;
+      letter-spacing: .04em;
+    }
+    .myth-busted { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+
+    /* Body / Thoughts / Behavior / Feelings grid */
+    .impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 46px; }
+    .impact-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .impact-card:hover { transform: translateY(-4px); border-color: rgba(216,184,102,.42); }
+    .impact-card .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .impact-card h3 { margin-bottom: 14px; color: var(--white); font-size: 22px; }
+    .impact-list { list-style: none; display: grid; gap: 8px; }
+    .impact-list li { color: rgba(255,255,255,.68); font-size: 15px; padding-left: 18px; position: relative; }
+    .impact-list li::before { content: '›'; position: absolute; left: 0; color: var(--champagne); font-size: 18px; font-weight: 700; line-height: 1; top: 1px; }
+
+    /* Cycle steps */
+    .cycle-steps { display: grid; gap: 18px; margin-top: 42px; }
+    .cycle-step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
+    .step-number { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--champagne); font-family: var(--serif); font-size: 22px; }
+    .cycle-step h3 { font-size: 23px; margin-bottom: 8px; }
+
+    /* Stat strip */
+    .stat-strip { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 32px; box-shadow: 0 18px 50px rgba(20,33,50,.07); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .stat-item { text-align: center; }
+    .stat-item strong { display: block; font-family: var(--serif); color: var(--night); font-size: 36px; line-height: 1; margin-bottom: 8px; }
+    .stat-item span { color: var(--muted); font-size: 14px; }
+
+    /* Quote card */
+    .quote-card { background: var(--night); color: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
+    .quote-card p { color: rgba(255,255,255,.78); font-family: var(--serif); font-size: 26px; line-height: 1.4; max-width: unset; }
+    .quote-card small { display: block; color: var(--champagne); margin-top: 22px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 11px; }
+
+    /* CTA section */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
+    .final-cta .container { position: relative; z-index: 2; }
+    .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .floating-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 124px; }
+      .cards-3, .cards-4, .light-cards-3, .light-cards-4, .impact-grid, .stat-strip, .footer-grid { grid-template-columns: 1fr; }
+      .cards-2, .light-cards-2 { grid-template-columns: 1fr; }
+      .cycle-step { grid-template-columns: 1fr; }
+      .step-number { width: 46px; height: 46px; font-size: 18px; }
+      .section { padding: 78px 0; }
+      .floating-cta { left: 18px; right: 18px; width: auto; }
+      .floating-cta .btn { width: 100%; }
+      .what-is-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style id="nav-dd-styles">
+.nav-dd { position: relative; }
+.nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+.nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+.nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+.nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+.nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+@media (max-width: 900px) {
+  .nav-dd { width: 100%; }
+  .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+  .nav-dd-menu::before { display: none; }
+  .nav-dd-menu a { padding: 8px 0; }
+}
+</style>
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <a class="back-link" href="resources.html">&larr; Back to Resources</a>
+        <span class="eyebrow">Mental Health Resources</span>
+        <h1>Why <em>Anxiety</em> Happens</h1>
+        <p class="lead">A clear look at what anxiety is, why your brain does it, and what actually helps — without dismissing how real it feels.</p>
+        <div class="button-row">
+          <a class="btn btn-gold" href="/intake.html">Talk to David</a>
+          <a class="btn btn-ghost" href="#what-is-anxiety">Start Reading</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS ANXIETY -->
+    <section class="section" id="what-is-anxiety">
+      <div class="container">
+        <div class="what-is-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+          <div class="reveal">
+            <span class="eyebrow">What Is It</span>
+            <h2>Your brain's alarm system — stuck on.</h2>
+            <p class="section-lead">Anxiety is your nervous system's built-in response to perceived danger. It's a normal, even necessary part of being human — it's what kept your ancestors alive when real threats existed. The problem isn't that anxiety exists. It's when the alarm fires too often, too intensely, or in situations where there's no real danger to respond to.</p>
+            <p class="section-lead">When anxiety becomes chronic, the brain starts treating ordinary situations — a presentation at work, a difficult conversation, an unanswered text — as genuine threats. The body responds as though survival is at stake, even when it isn't. That mismatch between the alarm and the reality is the heart of anxiety as a clinical condition.</p>
+            <div class="stat-strip">
+              <div class="stat-item"><strong>1 in 5</strong><span>adults experience an anxiety disorder each year</span></div>
+              <div class="stat-item"><strong>Most common</strong><span>mental health condition in the United States</span></div>
+              <div class="stat-item"><strong>Highly treatable</strong><span>with the right support and approach</span></div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="quote-card">
+              <p>"My mind never stopped. It was like a smoke alarm going off in a room with no smoke — I knew something was wrong, but I couldn't figure out how to make it stop."</p>
+              <small>A common way anxiety gets described</small>
+            </div>
+            <div style="margin-top: 22px;">
+              <p style="color: var(--muted); font-size: 15px; font-weight: 700; margin-bottom: 12px;">Anxiety is not:</p>
+              <div class="myth-busted">
+                <span class="myth-tag">Just nervousness</span>
+                <span class="myth-tag">A sign of weakness</span>
+                <span class="myth-tag">Something to push through</span>
+                <span class="myth-tag">All in your head</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW ANXIETY AFFECTS YOU -->
+    <section class="section dark-section" id="how-it-affects">
+      <div class="container">
+        <span class="eyebrow">The Full Picture</span>
+        <h2>Anxiety shows up everywhere.</h2>
+        <p class="section-lead">Anxiety isn't just a feeling — it's a full-system response. It affects your body, your thinking, your behavior, and your emotions, often all at once. Understanding the full picture makes it easier to recognize and address.</p>
+        <div class="impact-grid">
+          <div class="impact-card reveal">
+            <span class="label">Body</span>
+            <h3>Physical Symptoms</h3>
+            <ul class="impact-list">
+              <li>Racing or pounding heart</li>
+              <li>Chest tightness or pressure</li>
+              <li>Shallow, rapid breathing</li>
+              <li>Muscle tension and aches</li>
+              <li>Fatigue and low energy</li>
+              <li>Nausea or stomach upset</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Thoughts</span>
+            <h3>How You Think</h3>
+            <ul class="impact-list">
+              <li>Catastrophic thinking ("What if everything goes wrong?")</li>
+              <li>"What if" spirals that won't stop</li>
+              <li>Difficulty concentrating or focusing</li>
+              <li>Fear of losing control</li>
+              <li>Mind going blank under pressure</li>
+              <li>Overestimating danger, underestimating coping</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Behavior</span>
+            <h3>What You Do</h3>
+            <ul class="impact-list">
+              <li>Avoiding situations that trigger anxiety</li>
+              <li>Seeking constant reassurance from others</li>
+              <li>Procrastinating on feared tasks</li>
+              <li>Over-preparing and checking repeatedly</li>
+              <li>Withdrawing from social situations</li>
+              <li>Staying busy to avoid sitting with worry</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Feelings</span>
+            <h3>What You Feel</h3>
+            <ul class="impact-list">
+              <li>A persistent sense of dread</li>
+              <li>Irritability and short fuse</li>
+              <li>Overwhelm — too much, all at once</li>
+              <li>Restlessness, unable to relax</li>
+              <li>A feeling that something bad is about to happen</li>
+              <li>Emotional exhaustion from constant vigilance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPES OF ANXIETY -->
+    <section class="section" id="types" style="background: var(--cream);">
+      <div class="container">
+        <span class="eyebrow">The Causes</span>
+        <h2>Anxiety looks different for everyone.</h2>
+        <p class="section-lead">Anxiety isn't one-size-fits-all. It can focus on specific situations, show up in social settings, arrive out of nowhere, or quietly color every part of daily life. Knowing which type you're dealing with is the first step toward addressing it effectively.</p>
+        <div class="light-cards-3" style="margin-top: 46px;">
+          <div class="light-card reveal">
+            <small>Generalized</small>
+            <h3>Generalized Anxiety</h3>
+            <p>Constant, difficult-to-control worry about multiple areas of life — work, health, finances, relationships — that feels out of proportion to the actual situation. The worry moves from topic to topic and rarely turns off completely.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Social</small>
+            <h3>Social Anxiety</h3>
+            <p>Intense fear of judgment, embarrassment, or humiliation in social situations. It goes beyond shyness — it can lead to avoiding gatherings, conversations, or speaking up, even when you want to connect.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Panic</small>
+            <h3>Panic Disorder</h3>
+            <p>Sudden, intense episodes of fear with physical symptoms — racing heart, shortness of breath, dizziness, numbness — that can feel like a heart attack. The fear of having another panic attack often creates its own anxiety.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Health</small>
+            <h3>Health Anxiety</h3>
+            <p>Persistent preoccupation with having or developing a serious illness, despite medical reassurance. Checking symptoms, seeking repeated reassurance, and interpreting normal body sensations as signs of something dangerous.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>OCD-Related</small>
+            <h3>OCD-Related Anxiety</h3>
+            <p>Unwanted, intrusive thoughts that feel distressing or out of character, paired with compulsive behaviors or mental rituals that temporarily reduce the anxiety — but reinforce the cycle over time.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Performance</small>
+            <h3>Performance Anxiety</h3>
+            <p>Fear of failure or judgment in specific high-stakes situations — presentations, tests, athletic events, social performance. The anticipation often becomes more disruptive than the actual event.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ANXIETY CYCLE -->
+    <section class="section" id="the-cycle">
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2>The cycle that keeps anxiety going.</h2>
+        <p class="section-lead">Anxiety tends to maintain itself through a predictable loop. Understanding the cycle matters because it shows you exactly where change is possible — and why avoidance, though it feels like relief, almost always makes things worse in the long run.</p>
+        <div class="cycle-steps">
+          <div class="cycle-step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>A trigger appears (real or imagined).</h3>
+              <p>A situation, thought, sensation, or memory sets the process in motion. The trigger doesn't have to be objectively dangerous — your brain only needs to register it as potentially threatening.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>The brain flags danger.</h3>
+              <p>The amygdala — your brain's threat-detection center — activates before your rational mind can evaluate the situation. This happens fast, below the level of conscious thought.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>The body activates the stress response.</h3>
+              <p>Adrenaline and cortisol flood your system. Your heart rate rises, muscles tense, breathing shallows. Your body is preparing to fight or flee — even if the threat is a work email.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Thoughts amplify the threat.</h3>
+              <p>Anxious thoughts catastrophize the situation — "This will go terribly," "Everyone will notice," "I can't handle this." These predictions feel like facts, not guesses.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">5</div>
+            <div>
+              <h3>You avoid or escape.</h3>
+              <p>The anxiety becomes unbearable, so you avoid the trigger — cancel the plans, skip the meeting, reassure yourself, or distract yourself. The immediate relief feels like success.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">6</div>
+            <div>
+              <h3>Avoidance reinforces the fear.</h3>
+              <p>Because you avoided and felt better, the brain learns: "That was genuinely dangerous." The fear is confirmed. Next time, the alarm fires faster and louder. The cycle tightens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREAKING THE CYCLE -->
+    <section class="section dark-section" id="breaking-free">
+      <div class="container">
+        <span class="eyebrow">Breaking Free</span>
+        <h2>Anxiety can be unlearned.</h2>
+        <p class="section-lead">The same brain that learned to be anxious can learn a different response. It requires interrupting the cycle at multiple points — and that takes practice, not willpower. Here's what the evidence actually supports.</p>
+        <div class="cards-3" style="margin-top: 48px;">
+          <article class="card reveal">
+            <span class="num">01</span>
+            <h3>Face it gradually.</h3>
+            <p>Avoidance keeps anxiety alive by confirming that the feared situation is genuinely dangerous. Gradual, supported exposure to triggers — at a manageable pace — teaches the nervous system that the threat isn't real.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">02</span>
+            <h3>Challenge the thought.</h3>
+            <p>Most anxious thoughts are predictions, not facts. Learning to examine them — "Is this actually likely? What's the evidence?" — interrupts the catastrophizing before it spirals. This is the core of cognitive work in therapy.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">03</span>
+            <h3>Regulate the body.</h3>
+            <p>Slow, diaphragmatic breathing directly calms the nervous system by activating the parasympathetic response. Grounding exercises and intentional movement are not just coping strategies — they change the physiology of anxiety in real time.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">04</span>
+            <h3>Reduce reassurance-seeking.</h3>
+            <p>Constantly checking, asking for reassurance, or Googling symptoms provides temporary relief — but signals to the brain that the threat is real and worth monitoring. Tolerating uncertainty, in small doses, builds genuine resilience.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">05</span>
+            <h3>Build a routine.</h3>
+            <p>Predictability reduces the mental load that feeds anxiety. Consistent sleep, regular movement, and structured days give the nervous system fewer unknowns to scan for danger. Structure isn't boring — it's protective.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">06</span>
+            <h3>Get professional support.</h3>
+            <p>CBT, ACT, and other evidence-based approaches have extensive research backing for anxiety. A therapist helps you apply these tools to your specific patterns — not just explain them, but practice them in a context that actually sticks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">You Don't Have to White-Knuckle Through It</span>
+        <h2>Anxiety is manageable. You don't have to white-knuckle through it.</h2>
+        <p>Therapy gives you tools that actually work — not just strategies to push through, but real ways to change how your nervous system responds.</p>
+        <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

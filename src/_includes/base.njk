@@ -32,52 +32,11 @@
 </head>
 <body>
 
-  <nav class="nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="/" class="brand" aria-label="Therapy by David home">
-        <strong>Therapy by David</strong>
-        <span>Private Psychotherapist</span>
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/">Home</a></li><li class="nav-dd"><a href="/#services" aria-haspopup="true">Services <span class="caret">▾</span></a><ul class="nav-dd-menu"><li><a href="/veterans-military-families">Veterans &amp; Military Families</a></li><li><a href="/mens-mental-health">Men's Mental Health</a></li><li><a href="/couples-therapy">Couples Therapy</a></li><li><a href="/anxiety-therapy">Anxiety &amp; Overthinking</a></li><li><a href="/trauma-therapy">Trauma Therapy</a></li><li><a href="/depression-therapy">Depression Therapy</a></li></ul></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a class="btn btn-gold" href="/intake.html">Free Consultation</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+  {% include "nav.njk" %}
 
   {{ content | safe }}
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Therapy by David</h3>
-          <p>Private psychotherapy for anxiety, trauma, burnout, stress, overthinking, and emotional overwhelm. Serving adults across Texas.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/about">About David</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Education</h4>
-          <ul><li><a href="/resources">Resources</a></li></ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul><li><a href="tel:8325442562">(832) 544-2562</a></li><li><a href="mailto:info@therapybydavid.com">Email David</a></li></ul>
-        </div>
-      </div>
-      <div class="copyright"><a href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" rel="noopener"><img src="/images/psychology-today-verified.png" alt="Verified by Psychology Today" style="height: 52px; width: auto; display: block; opacity: .9;"></a><span>© <span class="year"></span> Therapy by David. All rights reserved.</span><span>Articles are educational and not a substitute for professional care.</span></div>
-    </div>
-  </footer>
+  {% include "footer.njk" %}
 
   <script>
     const navToggle = document.getElementById('nav-toggle');
