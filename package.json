@@ -8,6 +8,8 @@
     "serve": "eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "jsdom": "^29.1.1",
+    "turndown": "^7.2.4"
   }
 }

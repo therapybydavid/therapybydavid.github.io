@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }}</title>
+  <title>{{ pageTitle or title }}</title>
   <meta name="description" content="{{ description }}" />
   {% if ogTitle %}<meta property="og:title" content="{{ ogTitle }}" />{% endif %}
   {% if ogDescription %}<meta property="og:description" content="{{ ogDescription }}" />{% endif %}
@@ -12,6 +12,9 @@
   {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
   {% if schemaJson %}<script type="application/ld+json">
   {{ schemaJson | safe }}
+  </script>{% endif %}
+  {% if faqJson %}<script type="application/ld+json">
+  {{ faqJson | safe }}
   </script>{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

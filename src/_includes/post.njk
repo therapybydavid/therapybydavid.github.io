@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+<header class="article-hero">
+  <div class="container">
+    <a href="/blog/" class="back-link">All Articles</a>
+    <div class="article-meta">
+      {% if tag %}<span class="tag">{{ tag }}</span>{% endif %}
+      <span class="article-date">{{ dateDisplay }}</span>
+    </div>
+    <h1>{{ title }}</h1>
+    {% if deck %}<p class="deck">{{ deck }}</p>{% endif %}
+    <div class="author-row">
+      <img src="/david-robles-profile.jpeg" alt="David Robles" class="author-avatar" onerror="this.onerror=null;this.style.background='#142132'">
+      <div class="author-info">
+        <strong>David Robles, LMSW</strong>
+        <span>Psychotherapist · Houston, Texas</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% if image %}
+<div class="featured-image">
+  <img src="{{ image }}" alt="{{ imageAlt or title }}" />
+</div>
+{% endif %}
+
+<main class="article-body">
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  <div class="article-cta">
+    <h3>{{ ctaHeading or "Ready to work on this?" }}</h3>
+    <p>{{ ctaText or "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help." }}</p>
+    <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+  </div>
+</main>

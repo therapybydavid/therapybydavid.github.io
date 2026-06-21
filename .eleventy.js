@@ -5,6 +5,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "images": "images" });
   eleventyConfig.addPassthroughCopy({ "analytics.js": "analytics.js" });
   eleventyConfig.addPassthroughCopy({ "site.webmanifest": "site.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "david-robles-profile.jpeg": "david-robles-profile.jpeg" });
+
+  // Blog posts, ordered to match the curated sequence from the original index.
+  eleventyConfig.addCollection("posts", (api) =>
+    api.getFilteredByTag("blog").sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  );
 
   // Date helpers — written by hand so the build needs no extra dependencies.
   eleventyConfig.addFilter("dateISO", (d) => new Date(d).toISOString().slice(0, 10));
