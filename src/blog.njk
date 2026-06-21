@@ -1,27 +1,328 @@
 ---
 layout: base.njk
-title: Articles
-description: "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW."
 permalink: /blog/
+title: "Articles | Therapy by David"
+description: "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW."
+ogTitle: "Articles | Therapy by David"
+ogDescription: "Practical writing on anxiety, trauma, burnout, and what therapy actually looks like."
+ogType: website
+ogUrl: "https://therapybydavid.com/blog"
+canonical: "https://therapybydavid.com/blog"
+pageStyles: blog.css
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Therapy by David — Articles",
+    "description": "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like.",
+    "url": "https://therapybydavid.com/blog",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "name": "David Robles",
+      "jobTitle": "Licensed Master Social Worker, Psychotherapist",
+      "url": "https://therapybydavid.com/about"
+    },
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "name": "Therapy by David",
+      "url": "https://therapybydavid.com/"
+    }
+  }
 ---
-<header class="article-hero">
+<header class="blog-hero">
   <div class="container">
-    <h1>Articles</h1>
-    <p class="deck">Practical writing on anxiety, trauma, burnout, and what therapy actually looks like.</p>
+    <span class="eyebrow">Articles</span>
+    <h1>What I actually tell my clients.</h1>
+    <p>Honest articles on anxiety, trauma, burnout, and what it actually looks like to change — written by a therapist who works with it every week.</p>
   </div>
 </header>
 
-<main class="article-body">
-  <ul class="post-list">
-    {%- for post in collections.blog | reverse %}
-    <li class="post-card">
-      <a href="{{ post.url }}">
-        {% if post.data.tag %}<span class="tag">{{ post.data.tag }}</span>{% endif %}
-        <h2>{{ post.data.title }}</h2>
-        <p>{{ post.data.description }}</p>
-        <span class="article-date" style="color: var(--muted);">{{ post.date | readableDate }}{% if post.data.readTime %} &middot; {{ post.data.readTime }}{% endif %}</span>
-      </a>
-    </li>
-    {%- endfor %}
-  </ul>
+<main>
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <article class="post-card reveal">
+          <a href="/blog/growth-mindset"><img class="post-card-image" src="/images/blog/growth-mindset-article.jpg" alt="Illustration of a person climbing a mountain toward a flag at the top" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Anxiety</span>
+              <span class="post-date">June 14, 2026 · 7 min read</span>
+            </div>
+            <h2>A Fixed Mindset Isn't a Personality Flaw. It's a Pattern You Learned.</h2>
+            <p>If you've been telling yourself "this is just who I am" — about your anxiety, your anger, your patterns — that belief itself may be the thing worth examining first.</p>
+            <a class="read-link" href="/blog/growth-mindset">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/high-functioning-depression"><img class="post-card-image" src="https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80" alt="A still, misty grey lake" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Depression</span>
+              <span class="post-date">June 6, 2026 · 7 min read</span>
+            </div>
+            <h2>High-Functioning Depression: When You're Successful but Feel Empty</h2>
+            <p>You hit the goals, hold it together, look fine — and feel flat, numb, or empty underneath. High-functioning depression is real, and "but my life is good" is exactly what keeps people stuck in it.</p>
+            <a class="read-link" href="/blog/high-functioning-depression">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/online-vs-in-person-therapy"><img class="post-card-image" src="https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80" alt="Calm turquoise water" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Getting Started</span>
+              <span class="post-date">June 6, 2026 · 7 min read</span>
+            </div>
+            <h2>Online Therapy vs. In-Person: Which Is Right for You?</h2>
+            <p>Video or in-person? The research says online therapy works just as well for most things — but the right choice depends on you. Here's an honest side-by-side to help you decide.</p>
+            <a class="read-link" href="/blog/online-vs-in-person-therapy">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/why-men-dont-go-to-therapy"><img class="post-card-image" src="https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80" alt="A lone sailboat at dusk" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Men's Mental Health</span>
+              <span class="post-date">June 6, 2026 · 8 min read</span>
+            </div>
+            <h2>Why Don't Men Go to Therapy — and What Changes When They Do?</h2>
+            <p>Most men wait until they're white-knuckling it. Here's why men avoid therapy, how stress and depression hide as anger and shutdown, and what actually changes when they finally go.</p>
+            <a class="read-link" href="/blog/why-men-dont-go-to-therapy">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/veteran-ptsd-or-adjusting"><img class="post-card-image" src="https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80" alt="A quiet, fog-covered forest" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Veterans</span>
+              <span class="post-date">June 6, 2026 · 8 min read</span>
+            </div>
+            <h2>PTSD or Just Adjusting? Signs a Veteran Should Reach Out</h2>
+            <p>Some difficulty after service is normal. But how do you know when it's crossed into PTSD? From one veteran to another — the signs that mean it's time to reach out.</p>
+            <a class="read-link" href="/blog/veteran-ptsd-or-adjusting">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/find-a-therapist-houston-texas"><img class="post-card-image" src="https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=800&q=80" alt="A calm lake at sunset" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Getting Started</span>
+              <span class="post-date">June 6, 2026 · 7 min read</span>
+            </div>
+            <h2>How to Find the Right Therapist in Houston &amp; Across Texas</h2>
+            <p>Finding the right therapist isn't about the most credentials — it's about fit. Here's how to search, what actually matters, and the questions to ask before you commit.</p>
+            <a class="read-link" href="/blog/find-a-therapist-houston-texas">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/therapy-cost-texas"><img class="post-card-image" src="https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=800&q=80" alt="A calm, softly lit room" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Getting Started</span>
+              <span class="post-date">June 6, 2026 · 7 min read</span>
+            </div>
+            <h2>How Much Does Therapy Cost in Texas (With &amp; Without Insurance)?</h2>
+            <p>Therapy in Texas can range from a small copay to full self-pay — and a lot depends on insurance, sliding scale, and what you're looking for. Here's a clear breakdown, no sticker shock.</p>
+            <a class="read-link" href="/blog/therapy-cost-texas">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/first-therapy-session"><img class="post-card-image" src="https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80" alt="Two people in a calm conversation" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Getting Started</span>
+              <span class="post-date">June 6, 2026 · 7 min read</span>
+            </div>
+            <h2>What to Expect in Your First Therapy Session</h2>
+            <p>Not sure what actually happens when you start therapy? Here's exactly what to expect — from the free consultation to your first full session — so the unknown isn't the thing holding you back.</p>
+            <a class="read-link" href="/blog/first-therapy-session">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/high-functioning-anxiety"><img class="post-card-image" src="https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=800&q=80" alt="A composed person who looks fine on the outside" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Anxiety</span>
+              <span class="post-date">June 6, 2026 · 8 min read</span>
+            </div>
+            <h2>What Does High-Functioning Anxiety Actually Look Like?</h2>
+            <p>You look fine on the outside — productive, capable, on top of it. Inside it's overthinking, worry, and never quite switching off. Here's what high-functioning anxiety really looks like.</p>
+            <a class="read-link" href="/blog/high-functioning-anxiety">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/burnout-vs-depression"><img class="post-card-image" src="https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80" alt="A person sitting depleted and flat" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Depression</span>
+              <span class="post-date">June 6, 2026 · 8 min read</span>
+            </div>
+            <h2>Burnout vs. Depression: How to Tell the Difference</h2>
+            <p>Exhausted, flat, running on empty — is it burnout or depression? They overlap, but they're not the same, and the difference changes what actually helps.</p>
+            <a class="read-link" href="/blog/burnout-vs-depression">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/do-i-have-trauma"><img class="post-card-image" src="https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80" alt="A person looking reflectively into the distance" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Trauma</span>
+              <span class="post-date">June 6, 2026 · 9 min read</span>
+            </div>
+            <h2>Do I Have Trauma If Nothing "Bad" Ever Happened to Me?</h2>
+            <p>Many people assume trauma only counts if something dramatic happened. It doesn't. Here's why trauma is about impact, not the size of the event.</p>
+            <a class="read-link" href="/blog/do-i-have-trauma">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/how-anxiety-becomes-a-problem"><img class="post-card-image" src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=800&q=80" alt="A person pausing by a window in soft light" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Anxiety</span>
+              <span class="post-date">June 6, 2026 · 5 min read</span>
+            </div>
+            <h2>How Do I Know If My Anxiety Is Becoming a Problem?</h2>
+            <p>Everyone feels anxious sometimes. The real question is whether it's started running the show. Here are the specific signs that anxiety has crossed the line — and what to do about it.</p>
+            <a class="read-link" href="/blog/how-anxiety-becomes-a-problem">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/veterans-hypervigilance"><img class="post-card-image" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="A quiet, still room at dusk" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Veterans</span>
+              <span class="post-date">June 6, 2026 · 6 min read</span>
+            </div>
+            <h2>Why Do Veterans Have Trouble Turning Off Hypervigilance?</h2>
+            <p>Staying on kept you alive. Your nervous system learned it as the default and never got the all-clear. From an Army veteran and therapist: why it sticks, and how it can be retrained.</p>
+            <a class="read-link" href="/blog/veterans-hypervigilance">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/couples-same-argument"><img class="post-card-image" src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&w=800&q=80" alt="Two people sitting together in conversation" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Relationships</span>
+              <span class="post-date">June 6, 2026 · 6 min read</span>
+            </div>
+            <h2>Why Do Couples Keep Having the Same Argument?</h2>
+            <p>It's never really about the dishes. Recurring fights repeat because the need underneath never gets named. Here's the loop — and how to break it without another blowup.</p>
+            <a class="read-link" href="/blog/couples-same-argument">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/better-questions-relationships"><img class="post-card-image" src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80" alt="A couple sitting together in conversation" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Relationships</span>
+              <span class="post-date">May 29, 2026 · 7 min read</span>
+            </div>
+            <h2>Why "How Was Your Day" Never Gets You Anywhere</h2>
+            <p>Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you — it's the questions. Here's what to ask instead.</p>
+            <a class="read-link" href="/blog/better-questions-relationships">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/voice-notes-connection"><img class="post-card-image" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Friends talking and laughing together around a table" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Relationships</span>
+              <span class="post-date">May 29, 2026 · 7 min read</span>
+            </div>
+            <h2>Why Hearing Each Other's Voice Is a Small Act of Love</h2>
+            <p>A voice note or a quick call feels like a small thing — but research on bonding, oxytocin, and stress says your body knows the difference. Here's why the voice connects us in a way text can't.</p>
+            <a class="read-link" href="/blog/voice-notes-connection">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/relationship-patterns"><img class="post-card-image" src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=800&q=80" alt="Two people sitting apart, looking away from each other" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Relationships</span>
+              <span class="post-date">May 16, 2026 · 7 min read</span>
+            </div>
+            <h2>How to Stop Repeating the Same Relationship Patterns</h2>
+            <p>You recognize the pattern. You've even named it. So why does it keep happening? The answer isn't about wanting it to stop — it's about what feels familiar.</p>
+            <a class="read-link" href="/blog/relationship-patterns">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/managing-anxiety"><img class="post-card-image" src="/images/anxiety-article.jpg" alt="Person sitting quietly in a calm space" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Anxiety</span>
+              <span class="post-date">May 9, 2026 · 6 min read</span>
+            </div>
+            <h2>Why Won't My Mind Shut Off at Night?</h2>
+            <p>Anxiety is not a character flaw or a sign that something is permanently broken. It is a nervous system response that made sense at some point — and with the right work, it can change.</p>
+            <a class="read-link" href="/blog/managing-anxiety">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/trauma-and-patterns"><img class="post-card-image" src="/images/trauma-article.jpg" alt="Person looking reflectively into the distance" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Trauma</span>
+              <span class="post-date">May 2, 2026 · 7 min read</span>
+            </div>
+            <h2>Why Does My Past Keep Affecting My Present?</h2>
+            <p>Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection.</p>
+            <a class="read-link" href="/blog/trauma-and-patterns">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/depression-and-anger"><img class="post-card-image" src="/images/depression-anger-article.jpg" alt="Man sitting alone, looking away, in quiet distress" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Depression</span>
+              <span class="post-date">April 25, 2026 · 7 min read</span>
+            </div>
+            <h2>Why Am I So Angry When I'm Depressed?</h2>
+            <p>Depression doesn't always look like sadness. For many people — especially men — it shows up as irritability, a short fuse, and rage that seems to come from nowhere.</p>
+            <a class="read-link" href="/blog/depression-and-anger">Read article</a>
+          </div>
+        </article>
+
+        <article class="post-card reveal">
+          <a href="/blog/childhood-neglect-relationships"><img class="post-card-image" src="/images/childhood-neglect-article.jpg" alt="Two people sitting apart, distance between them" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">Relationships</span>
+              <span class="post-date">April 18, 2026 · 7 min read</span>
+            </div>
+            <h2>How Childhood Emotional Neglect Shows Up in Adult Relationships</h2>
+            <p>You had a roof over your head and nothing dramatically wrong. So why do close relationships feel so hard? Childhood emotional neglect is often invisible — but its effects are not.</p>
+            <a class="read-link" href="/blog/childhood-neglect-relationships">Read article</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="blog-cta reveal">
+        <h2>Ready to stop just reading about it?</h2>
+        <p>Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on.</p>
+        <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+      </div>
+    </div>
+  </section>
 </main>
