@@ -1,0 +1,21 @@
+{
+  "name": "Therapy by David",
+  "tagline": "Private Psychotherapist",
+  "url": "https://therapybydavid.com",
+  "phone": "(832) 544-2562",
+  "phoneRaw": "8325442562",
+  "email": "info@therapybydavid.com",
+  "description": "Private psychotherapy for anxiety, trauma, burnout, stress, overthinking, and emotional overwhelm. Serving adults across Texas.",
+  "author": {
+    "name": "David Robles",
+    "credentials": "LMSW",
+    "title": "Licensed Master Social Worker",
+    "location": "Houston, Texas"
+  },
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "About", "url": "/about.html" },
+    { "label": "Contact", "url": "/contact.html" },
+    { "label": "Blog", "url": "/blog/" }
+  ]
+}

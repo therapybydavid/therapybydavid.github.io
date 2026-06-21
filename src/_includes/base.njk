@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ pageTitle or title }}</title>
+  <meta name="description" content="{{ description }}" />
+  {% if ogTitle %}<meta property="og:title" content="{{ ogTitle }}" />{% endif %}
+  {% if ogDescription %}<meta property="og:description" content="{{ ogDescription }}" />{% endif %}
+  {% if ogType %}<meta property="og:type" content="{{ ogType }}" />{% endif %}
+  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}" />{% endif %}
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  {% if schemaJson %}<script type="application/ld+json">
+  {{ schemaJson | safe }}
+  </script>{% endif %}
+  {% if faqJson %}<script type="application/ld+json">
+  {{ faqJson | safe }}
+  </script>{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/core.css">
+  {% if pageStyles %}<link rel="stylesheet" href="/assets/{{ pageStyles }}">{% endif %}
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  {{ content | safe }}
+
+  {% include "footer.njk" %}
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

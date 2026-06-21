@@ -1,0 +1,68 @@
+---
+layout: base.njk
+permalink: /blog.html
+title: "Articles | Therapy by David"
+description: "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW."
+ogTitle: "Articles | Therapy by David"
+ogDescription: "Practical writing on anxiety, trauma, burnout, and what therapy actually looks like."
+ogType: website
+ogUrl: "https://therapybydavid.com/blog"
+canonical: "https://therapybydavid.com/blog"
+pageStyles: blog.css
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Therapy by David — Articles",
+    "description": "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like.",
+    "url": "https://therapybydavid.com/blog",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "name": "David Robles",
+      "jobTitle": "Licensed Master Social Worker, Psychotherapist",
+      "url": "https://therapybydavid.com/about"
+    },
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "name": "Therapy by David",
+      "url": "https://therapybydavid.com/"
+    }
+  }
+---
+<header class="blog-hero">
+  <div class="container">
+    <span class="eyebrow">Articles</span>
+    <h1>What I actually tell my clients.</h1>
+    <p>Honest articles on anxiety, trauma, burnout, and what it actually looks like to change — written by a therapist who works with it every week.</p>
+  </div>
+</header>
+
+<main>
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid">
+        {%- for post in collections.posts %}
+        <article class="post-card reveal">
+          <a href="{{ post.url }}"><img class="post-card-image" src="{{ post.data.cardImage }}" alt="{{ post.data.cardAlt }}" /></a>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="tag">{{ post.data.cardTag }}</span>
+              <span class="post-date">{{ post.data.cardDate }}</span>
+            </div>
+            <h2>{{ post.data.cardTitle }}</h2>
+            <p>{{ post.data.cardDescription }}</p>
+            <a class="read-link" href="{{ post.url }}">Read article</a>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+
+      <div class="blog-cta reveal">
+        <h2>Ready to stop just reading about it?</h2>
+        <p>Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on.</p>
+        <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+</main>

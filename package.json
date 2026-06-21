@@ -1,0 +1,15 @@
+{
+  "name": "therapybydavid-eleventy",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Proof-of-concept Eleventy build for Therapy by David (Phase 1).",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "jsdom": "^29.1.1",
+    "turndown": "^7.2.4"
+  }
+}

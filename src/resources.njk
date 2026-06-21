@@ -1,0 +1,334 @@
+---
+permalink: /resources.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | Therapy by David</title>
+  <meta name="description" content="Mental health resources from Therapy by David. Plain-language guides on depression, anxiety, and what actually helps — written without jargon or judgment." />
+  <link rel="canonical" href="https://therapybydavid.com/resources">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); border-color: var(--night); }
+    .btn-dark:hover { background: #1c2a3a; }
+    .btn-light { color: var(--night); border-color: rgba(20,33,50,.18); background: rgba(255,255,255,.62); }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 160px 0 110px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 55%, rgba(216,184,102,.16), transparent 42%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.95) 55%, rgba(8,11,16,.90) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 780px; margin-bottom: 24px; }
+    .page-hero .lead { margin-bottom: 0; max-width: 620px; }
+
+    /* Resources section */
+    .resources-section { background: var(--paper); }
+
+    /* Resource cards grid */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .resource-card {
+      background: var(--white);
+      border: 1px solid rgba(216,184,102,.45);
+      border-radius: var(--radius);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 64px rgba(20,33,50,.12);
+      border-color: rgba(216,184,102,.7);
+    }
+    .resource-card-category {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .resource-card h3 {
+      font-size: 24px;
+      color: var(--night);
+      margin: 0;
+      line-height: 1.15;
+    }
+    .resource-card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: unset;
+      flex: 1;
+    }
+    .resource-card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: var(--white);
+      background: var(--night);
+      border: 1px solid var(--night);
+      transition: transform .2s ease, background .2s ease;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+    .resource-card-link:hover {
+      transform: translateY(-2px);
+      background: #1c2a3a;
+    }
+
+    /* Dark CTA section */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
+    .final-cta .container { position: relative; z-index: 2; }
+    .final-cta h2 { color: var(--white); max-width: 700px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 36px; color: rgba(255,255,255,.72); font-size: 19px; max-width: 52ch; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .floating-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 130px; padding-bottom: 80px; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+      .floating-cta { left: 18px; right: 18px; width: auto; }
+      .floating-cta .btn { width: 100%; text-align: center; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style id="nav-dd-styles">
+.nav-dd { position: relative; }
+.nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+.nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+.nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+.nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+.nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+@media (max-width: 900px) {
+  .nav-dd { width: 100%; }
+  .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+  .nav-dd-menu::before { display: none; }
+  .nav-dd-menu a { padding: 8px 0; }
+}
+</style>
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Mental Health Resources</span>
+        <h1>Resources to help you understand what you're carrying.</h1>
+        <p class="lead">Here are some resources that might help. Each guide is written in plain language — no jargon, no judgment. Just honest information about what's going on and what can actually help.</p>
+      </div>
+    </section>
+
+    <!-- RESOURCE CARDS -->
+    <section class="section resources-section">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Available Resources</span>
+          <h2>Start with what feels most relevant.</h2>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card reveal">
+            <span class="resource-card-category">Mental Health</span>
+            <h3>Making Sense of Depression</h3>
+            <p>A clear look at what depression is, how it affects your mind and body, why it happens, and what actually helps — without the stigma or oversimplification.</p>
+            <a class="resource-card-link" href="depression.html">Read This Guide &rarr;</a>
+          </article>
+          <article class="resource-card reveal">
+            <span class="resource-card-category">Mental Health</span>
+            <h3>Why Anxiety Happens</h3>
+            <p>What anxiety actually is, why your brain does it, how it shows up in your body and thoughts, and what helps beyond just pushing through.</p>
+            <a class="resource-card-link" href="anxiety.html">Read This Guide &rarr;</a>
+          </article>
+          <article class="resource-card reveal">
+            <span class="resource-card-category">Mental Health</span>
+            <h3>How Trauma Works</h3>
+            <p>Trauma isn't defined by the size of what happened — it's defined by the impact. A plain-language guide to what trauma is, how it affects the nervous system, and what healing looks like.</p>
+            <a class="resource-card-link" href="trauma.html">Read This Guide &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Take the Next Step</span>
+        <h2>Ready to talk to someone?</h2>
+        <p>Reading about it is a start. Therapy takes it further.</p>
+        <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
