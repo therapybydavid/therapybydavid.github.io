@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:type" content="{{ ogType or 'website' }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% if schemaType == "BlogPosting" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    {% if image %}"image": {{ image | dump | safe }},{% endif %}
+    "author": { "@type": "Person", "name": {{ site.author.name | dump | safe }}, "jobTitle": {{ site.author.title | dump | safe }}, "url": "{{ site.url }}/about.html" },
+    "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}/" },
+    "datePublished": "{{ page.date | dateISO }}",
+    "dateModified": "{{ page.date | dateISO }}",
+    "url": "{{ site.url }}{{ page.url }}"{% if tag %},
+    "articleSection": {{ tag | dump | safe }}{% endif %}
+  }
+  </script>
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="theme-color" content="#080b10">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="{{ site.name }} home">
+        <strong>{{ site.name }}</strong>
+        <span>{{ site.tagline }}</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        {%- for item in site.nav %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {%- endfor %}
+        <li><a class="btn btn-gold" href="/intake.html">Free Consultation</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  {{ content | safe }}
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>{{ site.name }}</h3>
+          <p>{{ site.description }}</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/about.html">About David</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Education</h4>
+          <ul><li><a href="/resources.html">Resources</a></li></ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:{{ site.phoneRaw }}">{{ site.phone }}</a></li>
+            <li><a href="mailto:{{ site.email }}">Email David</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>&copy; <span class="year"></span> {{ site.name }}. All rights reserved.</span>
+        <span>Articles are educational and not a substitute for professional care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>

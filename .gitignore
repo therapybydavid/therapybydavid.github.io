@@ -12,3 +12,7 @@
 
 # Wrangler CLI cache (account ID + page metadata; not secrets but no need to track)
 .wrangler/
+
+# Eleventy proof of concept (Phase 1) — dependencies and build output
+node_modules/
+_site/

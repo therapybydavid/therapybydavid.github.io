@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Articles
+description: "Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW."
+permalink: /blog/
+---
+<header class="article-hero">
+  <div class="container">
+    <h1>Articles</h1>
+    <p class="deck">Practical writing on anxiety, trauma, burnout, and what therapy actually looks like.</p>
+  </div>
+</header>
+
+<main class="article-body">
+  <ul class="post-list">
+    {%- for post in collections.blog | reverse %}
+    <li class="post-card">
+      <a href="{{ post.url }}">
+        {% if post.data.tag %}<span class="tag">{{ post.data.tag }}</span>{% endif %}
+        <h2>{{ post.data.title }}</h2>
+        <p>{{ post.data.description }}</p>
+        <span class="article-date" style="color: var(--muted);">{{ post.date | readableDate }}{% if post.data.readTime %} &middot; {{ post.data.readTime }}{% endif %}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</main>
