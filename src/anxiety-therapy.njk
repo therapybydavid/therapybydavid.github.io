@@ -71,6 +71,62 @@ eleventyExcludeFromCollections: true
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you offer anxiety therapy in Pasadena, TX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. David Robles, LMSW, provides anxiety therapy for adults in the Pasadena and greater Houston area, with in-person sessions nearby and secure telehealth available anywhere in Texas. The focus is on overthinking, racing thoughts, panic, chronic stress, and high-functioning anxiety."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you accepting new anxiety clients in the Pasadena area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, new clients are currently being accepted. The first step is a free 15-minute consultation — a low-pressure way to talk through what's going on and see whether it's a good fit before committing to anything."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does anxiety therapy cost, and do you take insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Out-of-pocket sessions are $150, confirmed up front with no surprises, and sliding-scale spots ($80–$125) are available when cost is a barrier. Most major insurance plans are accepted, including BCBS, Aetna, Cigna, UnitedHealthcare/Optum, Medicare, Medicaid, TRICARE, and others. Benefits are verified together before the first session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is online anxiety therapy available, or do I have to come in person?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Sessions are available in person in the Pasadena area and by secure video telehealth across Texas, so the work can fit around your schedule and location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kinds of anxiety do you work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common reasons people reach out include overthinking and racing thoughts, panic and physical symptoms, high-functioning anxiety that hides behind staying busy, social and performance anxiety, sleep that won't settle, and constant 'what if' worry. A formal diagnosis isn't needed to begin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does anxiety treatment actually involve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The work draws on evidence-based approaches — Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Acceptance and Commitment Therapy (ACT). Rather than open-ended talk, sessions focus on understanding what's driving the anxiety and building practical tools you can use day to day."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --ink: #080b10;
@@ -298,6 +354,12 @@ eleventyExcludeFromCollections: true
     .related-card h3 { font-size: 21px; margin-bottom: 8px; }
     .related-card span.go { display: inline-block; margin-top: 14px; color: var(--gold); font-size: 14px; font-weight: 800; }
 
+    /* FAQ */
+    .faq-list { display: grid; gap: 18px; margin-top: 44px; }
+    .faq-item { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 28px 32px; box-shadow: 0 18px 48px rgba(20,33,50,.06); }
+    .faq-item h3 { font-size: 20px; margin-bottom: 10px; color: var(--night); }
+    .faq-item p { font-size: 16px; line-height: 1.75; max-width: 82ch; }
+
     /* Footer */
     footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
     .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
@@ -509,6 +571,41 @@ eleventyExcludeFromCollections: true
             <p>When the anxiety traces back to something older. Understand how trauma works and what healing looks like.</p>
             <span class="go">Learn more &rarr;</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Anxiety therapy in Pasadena, TX — your questions answered.</h2>
+        <p class="section-lead">A few of the things people most often ask before reaching out.</p>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3>Do you offer anxiety therapy in Pasadena, TX?</h3>
+            <p>Yes. I'm David Robles, LMSW, and I provide anxiety therapy for adults in the Pasadena and greater Houston area, with in-person sessions nearby and secure telehealth available anywhere in Texas. The focus is on overthinking, racing thoughts, panic, chronic stress, and high-functioning anxiety.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>Are you accepting new anxiety clients in the Pasadena area?</h3>
+            <p>Yes, I'm currently accepting new clients. The first step is a free 15-minute consultation — a low-pressure way to talk through what's going on and see whether it's a good fit before committing to anything.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>How much does anxiety therapy cost, and do you take insurance?</h3>
+            <p>Out-of-pocket sessions are $150, confirmed up front with no surprises, and sliding-scale spots ($80–$125) are available when cost is a barrier. Most major insurance plans are accepted, including BCBS, Aetna, Cigna, UnitedHealthcare/Optum, Medicare, Medicaid, TRICARE, and others. We verify your benefits together before the first session.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>Is online anxiety therapy available, or do I have to come in person?</h3>
+            <p>Both. Sessions are available in person in the Pasadena area and by secure video telehealth across Texas, so the work can fit around your schedule and location.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>What kinds of anxiety do you work with?</h3>
+            <p>Common reasons people reach out include overthinking and racing thoughts, panic and physical symptoms, high-functioning anxiety that hides behind staying busy, social and performance anxiety, sleep that won't settle, and constant "what if" worry. You don't need a formal diagnosis to begin.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>What does anxiety treatment actually involve?</h3>
+            <p>The work draws on evidence-based approaches — Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), and Acceptance and Commitment Therapy (ACT). Rather than open-ended talk, sessions focus on understanding what's driving the anxiety and building practical tools you can use day to day.</p>
+          </div>
         </div>
       </div>
     </section>
