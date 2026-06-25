@@ -1,0 +1,132 @@
+---
+permalink: /start/
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Therapy | Therapy by David</title>
+  <meta name="description" content="Schedule your first 50-minute psychotherapy session with David Robles. Request an appointment through the secure client portal and receive your next steps." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Start Therapy | Therapy by David" />
+  <meta property="og:description" content="Schedule your first 50-minute psychotherapy session. Request an appointment through the secure client portal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therapybydavid.com/start" />
+  <link rel="canonical" href="https://therapybydavid.com/start">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/core.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <script src="/analytics.js" defer></script>
+
+  <style>
+    .start-hero { background: var(--ink); color: var(--white); padding: 150px 0 110px; text-align: center; }
+    .start-hero .eyebrow { display: inline-block; color: var(--champagne); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; }
+    .start-hero h1 { color: var(--white); font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; max-width: 760px; margin: 0 auto 22px; }
+    .start-hero .lead { color: rgba(255,255,255,.74); font-size: 19px; max-width: 600px; margin: 0 auto 44px; }
+
+    .start-card {
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 44px 40px;
+    }
+    .start-card h2 { font-family: var(--serif); color: var(--text); font-size: 1.55rem; margin-bottom: 10px; }
+    .start-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 30px; }
+    .start-card .fine { font-size: 13px; color: var(--muted); margin: 24px 0 0; }
+
+    /* SimplePractice Appointment-Request Widget styles */
+    .spwidget-button-wrapper { text-align: center; }
+    .spwidget-button {
+      display: inline-block;
+      padding: 14px 30px;
+      color: #1371C8;
+      background: #fff;
+      border: 1px solid #1371C8;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, color .2s ease;
+    }
+    .spwidget-button:hover { background: #fff; color: #0F5AA0; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(19,113,200,.18); }
+    .spwidget-button:active { color: rgba(255, 255, 255, .75) !important; box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset; }
+
+    .start-back { display: block; text-align: center; padding: 36px 0 80px; }
+    .start-back a { color: var(--muted); font-size: 14px; font-weight: 600; }
+    .start-back a:hover { color: var(--gold); }
+
+    @media (max-width: 560px) {
+      .start-card { padding: 36px 24px; margin: 0 16px; }
+      .start-hero { padding: 128px 0 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+    <section class="start-hero">
+      <div class="container">
+        <span class="eyebrow">Start Here</span>
+        <h1>Start Therapy</h1>
+        <p class="lead">Schedule your first 50-minute psychotherapy session. Once your request is submitted, you'll receive the next steps through the client portal.</p>
+
+        <div class="start-card">
+          <h2>Schedule your first session</h2>
+          <p>Psychotherapy, 50 minutes. Request a time that works for you and David will confirm the details with you directly.</p>
+
+          <!-- Start SimplePractice Appointment-Request Widget Embed Code -->
+          <div class="spwidget-button-wrapper">
+            <a href="https://david-robles.clientsecure.me"
+               class="spwidget-button"
+               data-spwidget-scope-id="a8458265-25de-4517-9bb4-98a868f6f12b"
+               data-spwidget-scope-uri="david-robles"
+               data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
+               data-spwidget-type="OAR"
+               data-spwidget-scope-global
+               data-spwidget-autobind>
+               Schedule Your First Session
+            </a>
+          </div>
+          <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+          <!-- End SimplePractice Appointment-Request Widget Embed Code -->
+
+          <p class="fine">Prefer to talk first? You can <a href="/intake.html" style="color: var(--gold); font-weight: 600;">book a free 15-minute consultation</a> instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="start-back">
+      <a href="/">&larr; Back to home</a>
+    </div>
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelectorAll('#year,.year').forEach(el => el.textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>
