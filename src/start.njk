@@ -40,27 +40,59 @@ eleventyExcludeFromCollections: true
       margin: 0 auto;
       padding: 44px 40px;
     }
+    .start-card .kicker { display: inline-block; color: #1371C8; background: #eef6fd; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
     .start-card h2 { font-family: var(--serif); color: var(--text); font-size: 1.55rem; margin-bottom: 10px; }
-    .start-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 30px; }
-    .start-card .fine { font-size: 13px; color: var(--muted); margin: 24px 0 0; }
+    .start-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; }
+    .start-card .fine { font-size: 13px; color: var(--muted); margin: 0; }
 
     /* SimplePractice Appointment-Request Widget styles */
     .spwidget-button-wrapper { text-align: center; }
     .spwidget-button {
-      display: inline-block;
-      padding: 14px 30px;
-      color: #1371C8;
-      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 17px 28px;
+      color: #fff;
+      background: #1371C8;
       border: 1px solid #1371C8;
       border-radius: 999px;
-      font-size: 16px;
+      font-size: 16.5px;
       font-weight: 600;
       letter-spacing: .01em;
       text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease, color .2s ease;
+      box-shadow: 0 14px 30px rgba(19,113,200,.22);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .spwidget-button:hover { background: #fff; color: #0F5AA0; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(19,113,200,.18); }
-    .spwidget-button:active { color: rgba(255, 255, 255, .75) !important; box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset; }
+    .spwidget-button svg { width: 19px; height: 19px; }
+    .spwidget-button:hover { background: #0F5AA0; border-color: #0F5AA0; color: #fff; transform: translateY(-2px); box-shadow: 0 18px 38px rgba(19,113,200,.30); }
+    .spwidget-button:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset; }
+
+    .start-hint { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+    .start-hint svg { width: 13px; height: 13px; opacity: .8; }
+
+    .start-rule { height: 1px; background: rgba(0,0,0,.08); margin: 28px 0; }
+
+    .portal-row { text-align: center; }
+    .portal-row .portal-label { display: block; font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
+    .portal-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      color: #1371C8;
+      background: #fff;
+      border: 1px solid rgba(19,113,200,.4);
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .portal-button svg { width: 16px; height: 16px; }
+    .portal-button:hover { border-color: #1371C8; background: #f4f9fe; }
 
     .start-back { display: block; text-align: center; padding: 36px 0 80px; }
     .start-back a { color: var(--muted); font-size: 14px; font-weight: 600; }
@@ -84,8 +116,9 @@ eleventyExcludeFromCollections: true
         <p class="lead">Schedule your first 50-minute psychotherapy session. Once your request is submitted, you'll receive the next steps through the client portal.</p>
 
         <div class="start-card">
-          <h2>Schedule your first session</h2>
-          <p>Psychotherapy, 50 minutes. Request a time that works for you and David will confirm the details with you directly.</p>
+          <span class="kicker">Psychotherapy &middot; 50 min</span>
+          <h2>See available times</h2>
+          <p>Pick a time that works for you and David will confirm the details directly. Your scheduling, intake, and next steps all live in one secure place.</p>
 
           <!-- Start SimplePractice Appointment-Request Widget Embed Code -->
           <div class="spwidget-button-wrapper">
@@ -97,13 +130,26 @@ eleventyExcludeFromCollections: true
                data-spwidget-type="OAR"
                data-spwidget-scope-global
                data-spwidget-autobind>
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                Schedule Your First Session
             </a>
           </div>
           <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
           <!-- End SimplePractice Appointment-Request Widget Embed Code -->
 
-          <p class="fine">Prefer to talk first? You can <a href="/intake.html" style="color: var(--gold); font-weight: 600;">book a free 15-minute consultation</a> instead.</p>
+          <p class="start-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Opens your secure scheduling calendar.</p>
+
+          <div class="start-rule"></div>
+
+          <div class="portal-row">
+            <span class="portal-label">Already a client?</span>
+            <a class="portal-button" href="https://david-robles.clientsecure.me/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+              Open the client portal
+            </a>
+          </div>
+
+          <p class="fine" style="text-align: center; margin-top: 26px;">Prefer to talk first? You can <a href="/intake.html" style="color: var(--gold); font-weight: 600;">book a free 15-minute consultation</a> instead.</p>
         </div>
       </div>
     </section>
