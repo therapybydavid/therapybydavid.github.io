@@ -1,0 +1,398 @@
+---
+permalink: /start-here.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Here: Tools for New Therapists | David Robles</title>
+  <meta name="description" content="The practice-management and documentation tools David Robles, LMSW, actually uses to run a private therapy practice — an honest starting point for new and growing therapists." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://therapybydavid.com/start-here">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 160px 0 110px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 55%, rgba(216,184,102,.16), transparent 42%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.95) 55%, rgba(8,11,16,.90) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 860px; margin-bottom: 24px; }
+    .page-hero .lead { margin-bottom: 0; max-width: 660px; }
+
+    /* Affiliate disclosure */
+    .disclosure {
+      background: var(--paper);
+      padding: 30px 0 0;
+    }
+    .disclosure-inner {
+      background: rgba(20,33,50,.05);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 26px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .disclosure-inner .dot { color: var(--gold); font-weight: 900; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; padding-top: 2px; }
+    .disclosure-inner p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; max-width: unset; }
+
+    /* Intro */
+    .intro-section { background: var(--paper); }
+    .intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+    .intro-section p { font-size: 17px; line-height: 1.85; margin-bottom: 18px; }
+    .intro-checklist { list-style: none; display: grid; gap: 14px; margin-top: 8px; }
+    .intro-checklist li { display: flex; gap: 13px; align-items: flex-start; color: var(--text); font-size: 16px; line-height: 1.6; }
+    .intro-checklist li::before { content: '→'; color: var(--gold); font-weight: 900; }
+
+    /* Partner / tool cards */
+    .tools-section { background: var(--cream); }
+    .tool-grid { display: grid; gap: 28px; margin-top: 52px; }
+    .tool-card {
+      background: var(--white);
+      border: 1px solid rgba(216,184,102,.45);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: center;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(20,33,50,.12);
+      border-color: rgba(216,184,102,.7);
+    }
+    .tool-logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 30px 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      min-height: 150px;
+    }
+    .tool-logo-wrap img { height: 38px; width: auto; }
+    .tool-logo-wrap .tool-tag {
+      font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
+    }
+    .tool-body h3 { font-size: 27px; color: var(--night); margin-bottom: 6px; }
+    .tool-body .tool-kicker { display: block; color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+    .tool-body p { color: var(--muted); font-size: 15.5px; line-height: 1.8; max-width: 64ch; margin-bottom: 14px; }
+    .tool-best { font-size: 14px; color: var(--text); margin-bottom: 20px; }
+    .tool-best strong { color: var(--night); }
+    .tool-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: var(--white);
+      background: var(--night);
+      border: 1px solid var(--night);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .tool-cta:hover { transform: translateY(-2px); background: #1c2a3a; }
+    .tool-note { display: block; margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+
+    /* Honest note strip */
+    .honest { background: var(--paper); }
+    .honest-card {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      border-radius: 16px;
+      padding: 34px 38px;
+      box-shadow: 0 14px 40px rgba(20,33,50,.06);
+    }
+    .honest-card h3 { font-size: 23px; color: var(--night); margin-bottom: 12px; }
+    .honest-card p { font-size: 16px; line-height: 1.8; margin-bottom: 14px; }
+    .honest-card p:last-child { margin-bottom: 0; }
+
+    /* Final / contact */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
+    .final-cta .container { position: relative; z-index: 2; }
+    .final-cta h2 { color: var(--white); max-width: 700px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 36px; color: rgba(255,255,255,.72); font-size: 19px; max-width: 54ch; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 130px; padding-bottom: 80px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 28px; }
+      .tool-card { grid-template-columns: 1fr; gap: 24px; padding: 30px; }
+      .tool-logo-wrap { min-height: 120px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+      .disclosure-inner { flex-direction: column; gap: 8px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">For New &amp; Growing Therapists</span>
+        <h1>Start here: the tools I actually use to run my practice.</h1>
+        <p class="lead">Starting out is overwhelming enough without drowning in software demos. These are the platforms I use myself — the ones that handle the admin so you can stay focused on the work that matters. No fluff, no twelve-tab comparison spreadsheet. Just where I'd tell a colleague to begin.</p>
+      </div>
+    </section>
+
+    <!-- AFFILIATE DISCLOSURE -->
+    <section class="disclosure">
+      <div class="container">
+        <div class="disclosure-inner reveal">
+          <span class="dot">Disclosure</span>
+          <p>Some links on this page are affiliate or referral links. If you sign up through them, I may earn a referral credit at no extra cost to you — and in many cases you get a sign-up perk too. I only list tools I genuinely use and would recommend to a colleague. Recommendations here are never paid placements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section intro-section">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="reveal">
+            <span class="eyebrow">Why This Page Exists</span>
+            <h2>The part of private practice nobody trains you for.</h2>
+            <p>Grad school teaches you to do the clinical work. It doesn't teach you how to schedule clients, take payment, stay HIPAA-compliant, or write your notes without losing your evenings to documentation.</p>
+            <p>When I was setting up, I wasted weeks comparing platforms. This is the shortcut I wish I'd had — the two tools that handle the back office so you can spend your energy on clients, not admin.</p>
+          </div>
+          <div class="reveal">
+            <ul class="intro-checklist">
+              <li>Scheduling, intakes, and client communication in one place</li>
+              <li>Billing, superbills, and insurance claims without the spreadsheet chaos</li>
+              <li>HIPAA-compliant records and a secure client portal</li>
+              <li>Progress notes that get written — instead of piling up</li>
+              <li>Less time on paperwork, more time doing the actual work</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="section tools-section">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">My Core Stack</span>
+          <h2>Two tools. Most of the back office, handled.</h2>
+        </div>
+        <div class="tool-grid">
+
+          <!-- SimplePractice -->
+          <article class="tool-card reveal">
+            <div class="tool-logo-wrap">
+              <img src="/images/partners/simplepractice.png" alt="SimplePractice logo" loading="lazy">
+              <span class="tool-tag">Practice Management</span>
+            </div>
+            <div class="tool-body">
+              <span class="tool-kicker">The hub for everything</span>
+              <h3>SimplePractice</h3>
+              <p>This is the all-in-one EHR most therapists start with, and for good reason. Scheduling, a secure client portal, paperless intakes, billing, superbills, telehealth, and HIPAA-compliant documentation — all under one roof. When a client books, pays, or signs a form, it's handled here. It's the system that makes a solo practice feel like it has a front desk.</p>
+              <p class="tool-best"><strong>Best for:</strong> anyone launching or running a practice who wants scheduling, billing, and records in one compliant place instead of stitching together five tools.</p>
+              <a class="tool-cta" href="https://share.simplepractice.com/davidarobles!51c0efbbb8!a" target="_blank" rel="sponsored noopener nofollow">Try SimplePractice &rarr;</a>
+              <span class="tool-note">Referral link — signing up through it usually includes an extended free trial.</span>
+            </div>
+          </article>
+
+          <!-- Upheal -->
+          <article class="tool-card reveal">
+            <div class="tool-logo-wrap">
+              <img src="/images/partners/upheal.svg" alt="Upheal logo" loading="lazy">
+              <span class="tool-tag">AI Progress Notes</span>
+            </div>
+            <div class="tool-body">
+              <span class="tool-kicker">Get your evenings back</span>
+              <h3>Upheal</h3>
+              <p>Documentation is where most therapists quietly burn out. Upheal listens to (or transcribes) your session and drafts the progress note for you — SOAP, DAP, EMDR, intake notes — so you review and sign instead of writing from scratch. It's HIPAA-compliant and built specifically for mental health clinicians. For me, it's the difference between finishing notes at the office and carrying them home.</p>
+              <p class="tool-best"><strong>Best for:</strong> clinicians losing hours to notes who want AI-assisted documentation made for therapy, not generic dictation.</p>
+              <a class="tool-cta" href="https://upheal.link/david-robles" target="_blank" rel="sponsored noopener nofollow">Try Upheal &rarr;</a>
+              <span class="tool-note">Referral link — often includes free credits or a discount when you sign up.</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HONEST NOTE -->
+    <section class="section honest">
+      <div class="container">
+        <div class="honest-card reveal">
+          <h3>A straight word before you sign up for anything.</h3>
+          <p>No tool replaces clinical judgment, supervision, or your own ethics. AI-assisted notes still need your review and your signature — you're responsible for what goes in the record, and for getting proper client consent before recording or transcribing a session. Check your state board and your malpractice carrier's guidance first.</p>
+          <p>Pick what fits the practice you're actually building, not the one a sales page is selling you. Start with what removes the most friction today. You can always add more later.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CLOSE -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">Building Your Practice?</span>
+        <h2>Got a question about getting set up?</h2>
+        <p>I'm a fellow clinician, not a salesperson. If you're figuring out your setup and want a second opinion, reach out — happy to point you in the right direction.</p>
+        <a class="btn btn-gold" href="mailto:info@therapybydavid.com?subject=Question%20about%20getting%20started%20in%20practice">Email Me a Question</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
