@@ -121,20 +121,6 @@ eleventyExcludeFromCollections: true
     .page-hero h1 { color: var(--white); max-width: 860px; margin-bottom: 24px; }
     .page-hero .lead { margin-bottom: 0; max-width: 660px; }
 
-    /* Affiliate disclosure */
-    .disclosure { background: var(--paper); padding: 30px 0 0; }
-    .disclosure-inner {
-      background: rgba(20,33,50,.05);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px 26px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-    .disclosure-inner .dot { color: var(--gold); font-weight: 900; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; padding-top: 2px; }
-    .disclosure-inner p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; max-width: unset; }
-
     /* Intro */
     .intro-section { background: var(--paper); }
     .intro-section p { font-size: 18px; line-height: 1.85; margin-bottom: 18px; }
@@ -146,9 +132,10 @@ eleventyExcludeFromCollections: true
     .tools-section { background: var(--cream); }
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 24px;
       margin-top: 52px;
+      max-width: 760px;
     }
     .resource-card {
       background: var(--white);
@@ -244,7 +231,6 @@ eleventyExcludeFromCollections: true
       .resource-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .section { padding: 78px 0; }
-      .disclosure-inner { flex-direction: column; gap: 8px; }
     }
   </style>
   <style id="nav-dd-styles">
@@ -284,16 +270,6 @@ eleventyExcludeFromCollections: true
         <span class="eyebrow">For New &amp; Growing Therapists</span>
         <h1>Start here: the tools I actually use to run my practice.</h1>
         <p class="lead">Starting out is overwhelming enough without drowning in software demos. These are the platforms I use myself — the ones that handle the admin so you can stay focused on the work that matters. No fluff, no twelve-tab comparison spreadsheet. Just where I'd tell a colleague to begin.</p>
-      </div>
-    </section>
-
-    <!-- AFFILIATE DISCLOSURE -->
-    <section class="disclosure">
-      <div class="container">
-        <div class="disclosure-inner reveal">
-          <span class="dot">Disclosure</span>
-          <p>Some links on this page are affiliate or referral links. If you sign up through them, I may earn a referral credit at no extra cost to you — and in many cases you get a sign-up perk too. I only list tools I genuinely use and would recommend to a colleague. Recommendations here are never paid placements.</p>
-        </div>
       </div>
     </section>
 
