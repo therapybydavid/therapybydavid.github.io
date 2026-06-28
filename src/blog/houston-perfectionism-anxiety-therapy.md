@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Perfectionism isn't about high standards — it's often anxiety in disguise. Here's what that looks like for Houston adults and when therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=1400&q=85"
+imageAlt: "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston"
+cardImage: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
+cardAlt: "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston"
 ---
 
 ## You Keep Achieving. You Keep Feeling Behind.
