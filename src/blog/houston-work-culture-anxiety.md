@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1724690683713-f7bdcf4dbb66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3MDU3NDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "A man sitting in front of a laptop computer"
-cardImage: "https://images.unsplash.com/photo-1724690683713-f7bdcf4dbb66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3MDU3NDl8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "A man sitting in front of a laptop computer"
+image: "https://images.unsplash.com/photo-1714976326337-f4b6266f56a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDUzNjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a desk with headphones on"
+cardImage: "https://images.unsplash.com/photo-1714976326337-f4b6266f56a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDUzNjl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a desk with headphones on"
 ---
 
 ## Houston Is a City That Respects Hard Work — Sometimes to a Fault
