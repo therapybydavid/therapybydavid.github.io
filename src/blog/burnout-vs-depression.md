@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/burnout-vs-depression"
 canonical: "https://therapybydavid.com/blog/burnout-vs-depression"
 permalink: "/blog/burnout-vs-depression.html"
-date: 2026-06-16
+date: 2026-06-14
 order: 9
 tag: "Burnout"
-dateDisplay: "June 16, 2026 · 8 min read"
+dateDisplay: "June 14, 2026 · 8 min read"
 deck: "They overlap enough to be easy to confuse — and getting them mixed up changes what actually helps. Here's how to tell whether you're depleted, depressed, or both."
 cardTitle: "Burnout vs. Depression: How to Tell the Difference"
 cardTag: "Depression"
 cardDescription: "Exhausted, flat, running on empty — is it burnout or depression? They overlap, but they're not the same, and the difference changes what actually helps."
-cardDate: "June 16, 2026 · 8 min read"
+cardDate: "June 14, 2026 · 8 min read"
 ctaHeading: "Not sure which one this is?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
