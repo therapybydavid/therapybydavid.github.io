@@ -14,7 +14,7 @@ order: 2
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "Both formats can do real work. The right choice isn't about which is \"better\" in the abstract — it's about what fits your life, your nervous system, and the kind of support you're actually looking for."
-image: "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Laptop set up for a video therapy session in a quiet, comfortable room"
 cardImage: "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80"
 cardAlt: "Calm turquoise water"
