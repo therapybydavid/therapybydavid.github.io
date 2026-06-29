@@ -14,7 +14,7 @@ order: 10
 tag: "Trauma"
 dateDisplay: "June 6, 2026 · 9 min read"
 deck: "Trauma is not measured by the size of the event. It's measured by how an experience overwhelmed your capacity to cope — and how your nervous system adapted to survive it."
-image: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Person sitting quietly, reflecting"
 cardImage: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A person looking reflectively into the distance"
