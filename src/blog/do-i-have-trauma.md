@@ -14,10 +14,6 @@ order: 10
 tag: "Trauma"
 dateDisplay: "June 6, 2026 · 9 min read"
 deck: "Trauma is not measured by the size of the event. It's measured by how an experience overwhelmed your capacity to cope — and how your nervous system adapted to survive it."
-image: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "Person sitting quietly, reflecting"
-cardImage: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A person looking reflectively into the distance"
 cardTitle: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?"
 cardTag: "Trauma"
 cardDescription: "Many people assume trauma only counts if something dramatic happened. It doesn't. Here's why trauma is about impact, not the size of the event."
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a window sill"
+cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a window sill"
 ---
 
 You might have trauma even if nothing obviously "bad" ever happened to you, because trauma isn't defined by how dramatic the event looks from the outside. It's defined by whether an experience overwhelmed your capacity to cope at the time — and by how your nervous system adapted afterward. Two people can live through the same thing and walk away carrying it very differently. Neither response is a measure of strength or weakness.
