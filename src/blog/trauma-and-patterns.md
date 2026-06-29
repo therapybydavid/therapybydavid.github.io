@@ -14,7 +14,7 @@ order: 18
 tag: "Trauma"
 dateDisplay: "May 2, 2026 · 7 min read"
 deck: "Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection."
-image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85"
+image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Person looking reflectively into the distance"
 cardImage: "/images/trauma-article.jpg"
 cardAlt: "Person looking reflectively into the distance"
