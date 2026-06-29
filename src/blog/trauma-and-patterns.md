@@ -14,10 +14,6 @@ order: 18
 tag: "Trauma"
 dateDisplay: "May 2, 2026 · 7 min read"
 deck: "Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection."
-image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "Person looking reflectively into the distance"
-cardImage: "/images/trauma-article.jpg"
-cardAlt: "Person looking reflectively into the distance"
 cardTitle: "Why Does My Past Keep Affecting My Present?"
 cardTag: "Trauma"
 cardDescription: "Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection."
@@ -79,6 +75,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1718477322692-70499e74b968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bGx5JTIwd2luZG93JTIwYWR1bHQlMjBqb3VybmFsaW5nJTIwcXVpZXRseSUyMGNhZmUlMjB3b21hbiUyMHBlYWNlZnVsJTIwZGVlcCUyMHRob3VnaHR8ZW58MXwwfHx8MTc4Mjc2OTc4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A woman sitting at a table in front of a window"
+cardImage: "https://images.unsplash.com/photo-1718477322692-70499e74b968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bGx5JTIwd2luZG93JTIwYWR1bHQlMjBqb3VybmFsaW5nJTIwcXVpZXRseSUyMGNhZmUlMjB3b21hbiUyMHBlYWNlZnVsJTIwZGVlcCUyMHRob3VnaHR8ZW58MXwwfHx8MTc4Mjc2OTc4Nnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A woman sitting at a table in front of a window"
 ---
 
 Your past keeps affecting your present because trauma isn't stored as a tidy memory you can file away — it's stored as automatic reactions in your body and nervous system. When something today rhymes with something from back then, your system responds as if the old threat has returned, often before you consciously notice. That's why you react in ways that don't seem to make sense, until you trace them back.
