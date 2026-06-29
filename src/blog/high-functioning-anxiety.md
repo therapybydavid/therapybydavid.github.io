@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-anxiety"
 canonical: "https://therapybydavid.com/blog/high-functioning-anxiety"
 permalink: "/blog/high-functioning-anxiety.html"
-date: 2026-06-06
+date: 2026-06-29
 order: 8
 tag: "Anxiety"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "June 29, 2026 · 8 min read"
 deck: "It rarely looks like a crisis. It looks like high performance with a knot in the stomach — and just because life looks fine from the outside doesn't mean what you're carrying isn't real."
 cardTitle: "What Does High-Functioning Anxiety Actually Look Like?"
 cardTag: "Anxiety"
 cardDescription: "You look fine on the outside — productive, capable, on top of it. Inside it's overthinking, worry, and never quite switching off. Here's what high-functioning anxiety really looks like."
-cardDate: "June 6, 2026 · 8 min read"
+cardDate: "June 29, 2026 · 8 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
