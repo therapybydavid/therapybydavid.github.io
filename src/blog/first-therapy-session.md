@@ -14,7 +14,7 @@ order: 7
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "If the unknown is what's stopping you from booking, this is for you. Here's exactly what happens — from the first low-pressure call to your first full session — so nothing about starting feels like a leap into the dark."
-image: "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Two people in a calm conversation"
 cardImage: "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80"
 cardAlt: "Two people in a calm conversation"
