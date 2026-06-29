@@ -14,7 +14,7 @@ order: 3
 tag: "Men's Mental Health"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "Most men don't avoid therapy because they're weak. They avoid it because of how they were raised — to handle it alone, push through, and never let the strain show. Here's what's really going on, and what shifts when a man finally does the work."
-image: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Man standing alone, looking out, in quiet reflection"
 cardImage: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A lone sailboat at dusk"
