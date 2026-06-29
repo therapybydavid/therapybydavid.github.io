@@ -14,10 +14,6 @@ order: 5
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "Finding a therapist can feel like one more task you don't have energy for. Here's a practical way to narrow the search — and figure out who's actually a good fit for you."
-image: "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "Person searching on a laptop in a calm, well-lit room"
-cardImage: "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A calm lake at sunset"
 cardTitle: "How to Find the Right Therapist in Houston & Across Texas"
 cardTag: "Getting Started"
 cardDescription: "Finding the right therapist isn't about the most credentials — it's about fit. Here's how to search, what actually matters, and the questions to ask before you commit."
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODI3NjUzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "person doing yoga on seashore during daytime"
+cardImage: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODI3NjUzNzV8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "person doing yoga on seashore during daytime"
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
