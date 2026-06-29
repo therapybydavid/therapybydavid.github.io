@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1698891669085-f7f80d7f91e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8YW54aW91cyUyMHByb2Zlc3Npb25hbCUyMHNpdHRpbmclMjBxdWlldGx5JTIwYXQlMjBob21lJTIwZXZlbmluZ3xlbnwxfDB8fHwxNzgyNzA1NzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a couch using a laptop computer"
-cardImage: "https://images.unsplash.com/photo-1698891669085-f7f80d7f91e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8YW54aW91cyUyMHByb2Zlc3Npb25hbCUyMHNpdHRpbmclMjBxdWlldGx5JTIwYXQlMjBob21lJTIwZXZlbmluZ3xlbnwxfDB8fHwxNzgyNzA1NzQ2fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a couch using a laptop computer"
+image: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "sectional sofa near coffee table and window"
+cardImage: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "sectional sofa near coffee table and window"
 ---
 
 ## When the Weekend Stops Feeling Like a Weekend
