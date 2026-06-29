@@ -14,10 +14,6 @@ order: 1
 tag: "Depression"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "You hold down the job, hit the goals, and look fine to everyone around you — but underneath, you feel flat, numb, and like you're just going through the motions. That gap is worth taking seriously."
-image: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "Person looking out a window, quietly going through the motions"
-cardImage: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A still, misty grey lake"
 cardTitle: "High-Functioning Depression: When You're Successful but Feel Empty"
 cardTag: "Depression"
 cardDescription: "You hit the goals, hold it together, look fine — and feel flat, numb, or empty underneath. High-functioning depression is real, and \"but my life is good\" is exactly what keeps people stuck in it."
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1536940135352-b4b3875df888?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwd2luZG93JTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NjUzMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man reading book in front of window"
+cardImage: "https://images.unsplash.com/photo-1536940135352-b4b3875df888?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwd2luZG93JTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NjUzMTZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man reading book in front of window"
 ---
 
 You can be successful, productive, and completely put-together on the outside while feeling empty, flat, and joyless on the inside. That's high-functioning depression — and because nothing in your life looks broken, it's one of the easiest forms of depression to overlook, dismiss, or talk yourself out of.
