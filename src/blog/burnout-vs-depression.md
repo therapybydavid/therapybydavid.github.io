@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/burnout-vs-depression"
 canonical: "https://therapybydavid.com/blog/burnout-vs-depression"
 permalink: "/blog/burnout-vs-depression.html"
-date: 2026-06-06
+date: 2026-06-14
 order: 9
 tag: "Burnout"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "June 14, 2026 · 8 min read"
 deck: "They overlap enough to be easy to confuse — and getting them mixed up changes what actually helps. Here's how to tell whether you're depleted, depressed, or both."
-image: "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Tired person resting their head, looking depleted and worn down"
-cardImage: "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A person sitting depleted and flat"
 cardTitle: "Burnout vs. Depression: How to Tell the Difference"
 cardTag: "Depression"
 cardDescription: "Exhausted, flat, running on empty — is it burnout or depression? They overlap, but they're not the same, and the difference changes what actually helps."
-cardDate: "June 6, 2026 · 8 min read"
+cardDate: "June 14, 2026 · 8 min read"
 ctaHeading: "Not sure which one this is?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1713947503867-3b27964f042b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwZGVza3xlbnwxfDB8fHwxNzgyNzY1MTE4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting at a desk with his head in his hands"
+cardImage: "https://images.unsplash.com/photo-1713947503867-3b27964f042b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwZGVza3xlbnwxfDB8fHwxNzgyNzY1MTE4fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting at a desk with his head in his hands"
 ---
 
 The short version: burnout is depletion from too much for too long, and it tends to lift when you get real rest or change the situation. Depression is broader and more stubborn — it touches your mood, your sense of who you are, and your ability to feel pleasure across all of life, and it doesn't reliably get better just because you take a week off. They can look almost identical from the outside, and they can absolutely happen at the same time.
