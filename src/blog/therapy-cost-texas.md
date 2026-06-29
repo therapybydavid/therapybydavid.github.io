@@ -14,10 +14,6 @@ order: 6
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "Cost is one of the biggest reasons people put off therapy. Here's a straight, no-jargon breakdown of what you can expect to pay in Texas — and the options that make it more affordable than most people assume."
-image: "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "A calm, softly lit room"
-cardImage: "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A calm, softly lit room"
 cardTitle: "How Much Does Therapy Cost in Texas (With & Without Insurance)?"
 cardTag: "Getting Started"
 cardDescription: "Therapy in Texas can range from a small copay to full self-pay — and a lot depends on insurance, sliding scale, and what you're looking for. Here's a clear breakdown, no sticker shock."
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1775163024488-e88e4a71179f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZXZpZXdpbmclMjBpbnN1cmFuY2UlMjBwYXBlcndvcmslMjBhdCUyMGRlc2t8ZW58MXwwfHx8MTc4Mjc2NTM3MXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Two people reviewing documents at a table."
+cardImage: "https://images.unsplash.com/photo-1775163024488-e88e4a71179f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZXZpZXdpbmclMjBpbnN1cmFuY2UlMjBwYXBlcndvcmslMjBhdCUyMGRlc2t8ZW58MXwwfHx8MTc4Mjc2NTM3MXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Two people reviewing documents at a table."
 ---
 
 Cost is one of the most common reasons people delay reaching out for help — and one of the hardest to get a clear answer on. Search "how much does therapy cost" and you'll get a wall of vague ranges with no context. So let's make it concrete. This is a practical map of what therapy actually costs in Texas, both with insurance and without, plus the lower-cost paths that exist if money is tight.
