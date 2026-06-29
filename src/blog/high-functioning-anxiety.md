@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-anxiety"
 canonical: "https://therapybydavid.com/blog/high-functioning-anxiety"
 permalink: "/blog/high-functioning-anxiety.html"
-date: 2026-06-06
+date: 2026-06-20
 order: 8
 tag: "Anxiety"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "June 20, 2026 · 8 min read"
 deck: "It rarely looks like a crisis. It looks like high performance with a knot in the stomach — and just because life looks fine from the outside doesn't mean what you're carrying isn't real."
-image: "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=1400&q=85"
-imageAlt: "Person sitting quietly in a calm space"
-cardImage: "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A composed person who looks fine on the outside"
 cardTitle: "What Does High-Functioning Anxiety Actually Look Like?"
 cardTag: "Anxiety"
 cardDescription: "You look fine on the outside — productive, capable, on top of it. Inside it's overthinking, worry, and never quite switching off. Here's what high-functioning anxiety really looks like."
-cardDate: "June 6, 2026 · 8 min read"
+cardDate: "June 20, 2026 · 8 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxoaWdoJTIwYWNoaWV2aW5nJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjBkZXNrfGVufDF8MHx8fDE3ODI3NjUzNjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman talking through mobile phone while sitting on swivel armchair"
+cardImage: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxoaWdoJTIwYWNoaWV2aW5nJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjBkZXNrfGVufDF8MHx8fDE3ODI3NjUzNjh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman talking through mobile phone while sitting on swivel armchair"
 ---
 
 High-functioning anxiety looks like having it together. You hit your deadlines, answer every text, show up early, and keep all the plates spinning. From the outside, you look organized, capable, maybe even impressive. Underneath, your mind never lets up — overthinking every decision, bracing for what could go wrong, replaying conversations, and quietly exhausted by the effort of holding it all together. The anxiety doesn't stop you from functioning. It powers the functioning. That's exactly why nobody sees it, including, sometimes, you.
