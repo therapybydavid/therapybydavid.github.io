@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
 canonical: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
 permalink: "/blog/why-men-dont-go-to-therapy.html"
-date: 2026-06-06
+date: 2026-06-24
 order: 3
 tag: "Men's Mental Health"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "June 24, 2026 · 8 min read"
 deck: "Most men don't avoid therapy because they're weak. They avoid it because of how they were raised — to handle it alone, push through, and never let the strain show. Here's what's really going on, and what shifts when a man finally does the work."
 cardTitle: "Why Don't Men Go to Therapy — and What Changes When They Do?"
 cardTag: "Men's Mental Health"
 cardDescription: "Most men wait until they're white-knuckling it. Here's why men avoid therapy, how stress and depression hide as anger and shutdown, and what actually changes when they finally go."
-cardDate: "June 6, 2026 · 8 min read"
+cardDate: "June 24, 2026 · 8 min read"
 ctaHeading: "Ready to stop white-knuckling it?"
 ctaText: "Schedule a free 15-minute consultation. No pressure, no paperwork — just a straight conversation about what's going on and whether men's mental health therapy is the right fit."
 schemaJson: |
