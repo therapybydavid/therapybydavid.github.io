@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1446475157725-e6dada23994e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI2ODUxMDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "woman standing in front of body of water during dawn"
-cardImage: "https://images.unsplash.com/photo-1446475157725-e6dada23994e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI2ODUxMDR8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "woman standing in front of body of water during dawn"
+image: "https://images.unsplash.com/photo-1772607565783-c10a19e04b76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI2ODgyNTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Man sleeping peacefully surrounded by flowers and greenery"
+cardImage: "https://images.unsplash.com/photo-1772607565783-c10a19e04b76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI2ODgyNTF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Man sleeping peacefully surrounded by flowers and greenery"
 ---
 
 ## The Helper Who Never Asks for Help
