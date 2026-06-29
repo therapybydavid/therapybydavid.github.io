@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/houston-disaster-anxiety-chronic-stress"
 canonical: "https://therapybydavid.com/blog/houston-disaster-anxiety-chronic-stress"
 permalink: "/blog/houston-disaster-anxiety-chronic-stress.html"
-date: 2026-06-15
+date: 2026-06-08
 order: 50
 tag: "Anxiety"
-dateDisplay: "June 15, 2026 · 6 min read"
+dateDisplay: "June 8, 2026 · 6 min read"
 deck: "When your city has flooded more than once in your lifetime, 'getting back to normal' isn't always as simple as it sounds."
 cardTitle: "After the Storm: Why Houston's Cycle of Natural Disasters Keeps Your Nervous System on Edge"
 cardTag: "Anxiety"
 cardDescription: "Houston floods, freezes, and hurricanes don't just damage homes. They leave a lasting mark on your nervous system. Here's what that can look like."
-cardDate: "June 15, 2026 · 6 min read"
+cardDate: "June 8, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1622411691584-9f368a2b7a11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwcmFpbnklMjB3aW5kb3clMjB0aG91Z2h0ZnVsbHklMjBIb3VzdG9uJTIwcmVzaWRlbnQlMjBkZWVwJTIwYnJlYXRoJTIwYWZ0ZXIlMjBzdG9ybXxlbnwxfDB8fHwxNzgyNzY1NDc4fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "persons hand near window"
