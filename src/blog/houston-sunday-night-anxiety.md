@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1588082012648-ffc00fa1eda6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzgyNjc1ODY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "white swan on water in grayscale photography"
-cardImage: "https://images.unsplash.com/photo-1588082012648-ffc00fa1eda6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzgyNjc1ODY0fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "white swan on water in grayscale photography"
+image: "https://images.unsplash.com/photo-1698891669085-f7f80d7f91e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8YW54aW91cyUyMHByb2Zlc3Npb25hbCUyMHNpdHRpbmclMjBxdWlldGx5JTIwYXQlMjBob21lJTIwZXZlbmluZ3xlbnwxfDB8fHwxNzgyNzA1NzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch using a laptop computer"
+cardImage: "https://images.unsplash.com/photo-1698891669085-f7f80d7f91e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8YW54aW91cyUyMHByb2Zlc3Npb25hbCUyMHNpdHRpbmclMjBxdWlldGx5JTIwYXQlMjBob21lJTIwZXZlbmluZ3xlbnwxfDB8fHwxNzgyNzA1NzQ2fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch using a laptop computer"
 ---
 
 ## When the Weekend Stops Feeling Like a Weekend
