@@ -19,6 +19,10 @@ cardTag: "Grief"
 cardDescription: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
 cardDate: "June 29, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a window sill"
+cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a window sill"
 ---
 
 ## The Losses Nobody Brings Casseroles For
