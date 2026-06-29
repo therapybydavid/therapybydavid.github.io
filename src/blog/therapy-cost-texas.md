@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/therapy-cost-texas"
 canonical: "https://therapybydavid.com/blog/therapy-cost-texas"
 permalink: "/blog/therapy-cost-texas.html"
-date: 2026-06-26
+date: 2026-06-12
 order: 6
 tag: "Getting Started"
-dateDisplay: "June 26, 2026 · 7 min read"
+dateDisplay: "June 12, 2026 · 7 min read"
 deck: "Cost is one of the biggest reasons people put off therapy. Here's a straight, no-jargon breakdown of what you can expect to pay in Texas — and the options that make it more affordable than most people assume."
 cardTitle: "How Much Does Therapy Cost in Texas (With & Without Insurance)?"
 cardTag: "Getting Started"
 cardDescription: "Therapy in Texas can range from a small copay to full self-pay — and a lot depends on insurance, sliding scale, and what you're looking for. Here's a clear breakdown, no sticker shock."
-cardDate: "June 26, 2026 · 7 min read"
+cardDate: "June 12, 2026 · 7 min read"
 ctaHeading: "Not sure what it would cost you?"
 ctaText: "Find out in a no-pressure call. We'll talk through your situation, your coverage, and the current rate — no commitment."
 schemaJson: |
