@@ -14,7 +14,7 @@ order: 1
 tag: "Depression"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "You hold down the job, hit the goals, and look fine to everyone around you — but underneath, you feel flat, numb, and like you're just going through the motions. That gap is worth taking seriously."
-image: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Person looking out a window, quietly going through the motions"
 cardImage: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A still, misty grey lake"
