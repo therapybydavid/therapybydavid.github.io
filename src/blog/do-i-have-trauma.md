@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a window sill"
-cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjUxMDJ8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a window sill"
+image: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man wearing glasses looking out a window"
+cardImage: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man wearing glasses looking out a window"
 ---
 
 You might have trauma even if nothing obviously "bad" ever happened to you, because trauma isn't defined by how dramatic the event looks from the outside. It's defined by whether an experience overwhelmed your capacity to cope at the time — and by how your nervous system adapted afterward. Two people can live through the same thing and walk away carrying it very differently. Neither response is a measure of strength or weakness.
