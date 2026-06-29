@@ -14,10 +14,6 @@ order: 3
 tag: "Men's Mental Health"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "Most men don't avoid therapy because they're weak. They avoid it because of how they were raised — to handle it alone, push through, and never let the strain show. Here's what's really going on, and what shifts when a man finally does the work."
-image: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=1600&q=85"
-imageAlt: "Man standing alone, looking out, in quiet reflection"
-cardImage: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A lone sailboat at dusk"
 cardTitle: "Why Don't Men Go to Therapy — and What Changes When They Do?"
 cardTag: "Men's Mental Health"
 cardDescription: "Most men wait until they're white-knuckling it. Here's why men avoid therapy, how stress and depression hide as anger and shutdown, and what actually changes when they finally go."
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMHNlcmlvdXMlMjBjb252ZXJzYXRpb24lMjBtYW4lMjByZWZsZWN0aW5nJTIwbG9va2luZyUyMGhvcGVmdWx8ZW58MXwwfHx8MTc4Mjc2NTM3OXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to a man"
+cardImage: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMHNlcmlvdXMlMjBjb252ZXJzYXRpb24lMjBtYW4lMjByZWZsZWN0aW5nJTIwbG9va2luZyUyMGhvcGVmdWx8ZW58MXwwfHx8MTc4Mjc2NTM3OXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to a man"
 ---
 
 Most men don't go to therapy because they were taught not to. Not because they don't hurt, and not because they're weak — but because somewhere along the way they learned that handling it alone was the job, that pushing through was the only acceptable response, and that asking for help meant something had gone wrong with them. By the time a man considers therapy, he's usually been carrying the load quietly for years.
