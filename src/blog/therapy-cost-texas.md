@@ -14,7 +14,7 @@ order: 6
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "Cost is one of the biggest reasons people put off therapy. Here's a straight, no-jargon breakdown of what you can expect to pay in Texas — and the options that make it more affordable than most people assume."
-image: "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "A calm, softly lit room"
 cardImage: "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A calm, softly lit room"
