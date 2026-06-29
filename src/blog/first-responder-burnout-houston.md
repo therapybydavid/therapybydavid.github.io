@@ -19,10 +19,10 @@ cardTag: "First Responders"
 cardDescription: "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwcmVzaWxpZW5jZSUyMGRhd24lMjBxdWlldHxlbnwxfDB8fHwxNzgyNzA1MzAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "woman sitting on bench over viewing mountain"
-cardImage: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwcmVzaWxpZW5jZSUyMGRhd24lMjBxdWlldHxlbnwxfDB8fHwxNzgyNzA1MzAzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "woman sitting on bench over viewing mountain"
+image: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man in black and gray jacket and black pants sitting on brown wooden floor"
+cardImage: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man in black and gray jacket and black pants sitting on brown wooden floor"
 ---
 
 ## The Job Changes You. That's Not a Weakness.
