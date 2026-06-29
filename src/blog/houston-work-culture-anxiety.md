@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzgyNjc1ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "gray rocks on seashore during daytime"
+cardImage: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzgyNjc1ODYzfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "gray rocks on seashore during daytime"
 ---
 
 ## Houston Is a City That Respects Hard Work — Sometimes to a Fault
