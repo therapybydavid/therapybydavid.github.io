@@ -14,7 +14,7 @@ order: 5
 tag: "Getting Started"
 dateDisplay: "June 6, 2026 · 7 min read"
 deck: "Finding a therapist can feel like one more task you don't have energy for. Here's a practical way to narrow the search — and figure out who's actually a good fit for you."
-image: "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Person searching on a laptop in a calm, well-lit room"
 cardImage: "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A calm lake at sunset"
