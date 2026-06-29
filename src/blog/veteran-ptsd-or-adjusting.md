@@ -14,7 +14,7 @@ order: 4
 tag: "Veterans"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "Coming home is supposed to be the easy part. When it isn't, the hard question is whether what you're feeling is normal adjustment — or something that's worth getting help for."
-image: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "A veteran sitting quietly, looking out a window"
 cardImage: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A quiet, fog-covered forest"
