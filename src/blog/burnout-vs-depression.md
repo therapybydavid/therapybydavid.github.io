@@ -14,7 +14,7 @@ order: 9
 tag: "Burnout"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "They overlap enough to be easy to confuse — and getting them mixed up changes what actually helps. Here's how to tell whether you're depleted, depressed, or both."
-image: "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Tired person resting their head, looking depleted and worn down"
 cardImage: "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A person sitting depleted and flat"
