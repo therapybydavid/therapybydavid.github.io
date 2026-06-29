@@ -92,10 +92,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0fGVufDF8MHx8fDE3ODI3NjUzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a couch talking to another woman"
-cardImage: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0fGVufDF8MHx8fDE3ODI3NjUzNzV8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a couch talking to another woman"
+image: "https://images.unsplash.com/photo-1758273240403-052b3c99f636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx2ZXRlcmFuJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0fGVufDF8MHx8fDE3ODI3Njk1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Therapist talking to a young woman on couch."
+cardImage: "https://images.unsplash.com/photo-1758273240403-052b3c99f636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx2ZXRlcmFuJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0fGVufDF8MHx8fDE3ODI3Njk1Mjh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Therapist talking to a young woman on couch."
 ---
 
 If you're reading this, you're probably already asking yourself the question — is this just the normal mess of coming home, or is it something more? That's a fair question, and an honest one. Most veterans go through a rough stretch after service. The structure disappears, the mission is over, the people who understood you without a word are scattered across the country. Civilian life can feel slow, loud, and pointless all at once. A hard adjustment is not a diagnosis. But sometimes what looks like "just adjusting" is the early shape of post-traumatic stress — and knowing the difference matters, because one usually settles on its own and the other tends to dig in.
