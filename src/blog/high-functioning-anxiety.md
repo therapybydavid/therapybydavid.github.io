@@ -14,7 +14,7 @@ order: 8
 tag: "Anxiety"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "It rarely looks like a crisis. It looks like high performance with a knot in the stomach — and just because life looks fine from the outside doesn't mean what you're carrying isn't real."
-image: "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=1400&q=85"
+image: "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=1600&q=85"
 imageAlt: "Person sitting quietly in a calm space"
 cardImage: "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A composed person who looks fine on the outside"
