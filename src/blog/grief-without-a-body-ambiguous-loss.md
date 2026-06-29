@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss"
 canonical: "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss"
 permalink: "/blog/grief-without-a-body-ambiguous-loss.html"
-date: 2026-06-29
+date: 2026-06-10
 order: 50
 tag: "Grief"
-dateDisplay: "June 29, 2026 · 6 min read"
+dateDisplay: "June 10, 2026 · 6 min read"
 deck: "Some of the heaviest grief comes from losses the world never officially acknowledges — and that silence makes everything harder."
 cardTitle: "When There's No Funeral: Grieving Losses That Don't Count as Loss"
 cardTag: "Grief"
 cardDescription: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
-cardDate: "June 29, 2026 · 6 min read"
+cardDate: "June 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man in red crew neck shirt standing near white curtain"
