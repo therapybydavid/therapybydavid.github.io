@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/trauma-and-patterns"
 canonical: "https://therapybydavid.com/blog/trauma-and-patterns"
 permalink: "/blog/trauma-and-patterns.html"
-date: 2026-05-02
+date: 2026-05-20
 order: 18
 tag: "Trauma"
-dateDisplay: "May 2, 2026 · 7 min read"
+dateDisplay: "May 20, 2026 · 7 min read"
 deck: "Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection."
 cardTitle: "Why Does My Past Keep Affecting My Present?"
 cardTag: "Trauma"
 cardDescription: "Trauma doesn't stay in the past. It lives in how you react, who you trust, what you avoid, and how your body responds — often without you realizing the connection."
-cardDate: "May 2, 2026 · 7 min read"
+cardDate: "May 20, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
