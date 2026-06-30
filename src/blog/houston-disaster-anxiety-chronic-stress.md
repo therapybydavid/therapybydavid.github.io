@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Houston floods, freezes, and hurricanes don't just damage homes. They leave a lasting mark on your nervous system. Here's what that can look like."
 cardDate: "June 8, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1773584033384-e9f6d34bc6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMzd8fGNhbG0lMjBtaW5kZnVsbmVzcyUyMHBlYWNlZnVsJTIwbmF0dXJlfGVufDF8MHx8fDE3ODI4MjE3OTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Sunrise over a calm ocean with rocky shore."
-cardImage: "https://images.unsplash.com/photo-1773584033384-e9f6d34bc6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMzd8fGNhbG0lMjBtaW5kZnVsbmVzcyUyMHBlYWNlZnVsJTIwbmF0dXJlfGVufDF8MHx8fDE3ODI4MjE3OTB8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Sunrise over a calm ocean with rocky shore."
+image: "https://images.unsplash.com/photo-1763593860007-4de17f2ec311?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxNDV8fGNhbG0lMjBtaW5kZnVsbmVzcyUyMHBlYWNlZnVsJTIwbmF0dXJlfGVufDF8MHx8fDE3ODI4MjE4MDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A concrete pier leading to a calm lake and mountains."
+cardImage: "https://images.unsplash.com/photo-1763593860007-4de17f2ec311?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxNDV8fGNhbG0lMjBtaW5kZnVsbmVzcyUyMHBlYWNlZnVsJTIwbmF0dXJlfGVufDF8MHx8fDE3ODI4MjE4MDB8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A concrete pier leading to a calm lake and mountains."
 ---
 
 ## Houston Doesn't Get to Fully Exhale
