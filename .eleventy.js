@@ -41,6 +41,12 @@ module.exports = function (eleventyConfig) {
     api.getFilteredByTag("blog").sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   );
 
+  // Parse a JSON string (e.g. the faqJson frontmatter) into an object so the
+  // template can render a visible FAQ section from the same source as the schema.
+  eleventyConfig.addFilter("fromJson", (s) => {
+    try { return JSON.parse(s); } catch (e) { return null; }
+  });
+
   // Date helpers — written by hand so the build needs no extra dependencies.
   eleventyConfig.addFilter("dateISO", (d) => new Date(d).toISOString().slice(0, 10));
 
