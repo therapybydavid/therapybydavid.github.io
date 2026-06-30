@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1765251641416-74b29b450fa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Sunset over a calm ocean with boats"
-cardImage: "https://images.unsplash.com/photo-1765251641416-74b29b450fa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NDgyfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Sunset over a calm ocean with boats"
+image: "https://images.unsplash.com/photo-1765120400306-fa89095765af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Sunrise over a calm ocean with a boat."
+cardImage: "https://images.unsplash.com/photo-1765120400306-fa89095765af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NTI4fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Sunrise over a calm ocean with a boat."
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
