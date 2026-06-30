@@ -75,10 +75,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1728581325044-7f51fc18d5f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8cGVyc29uJTIwcmVmbGVjdGluZyUyMHdpbmRvdyUyMGxpZ2h0JTIwdGhlcmFweSUyMHNlc3Npb258ZW58MXwwfHx8MTc4Mjc3ODkxOXww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "A woman looking out a window at the outside"
-cardImage: "https://images.unsplash.com/photo-1728581325044-7f51fc18d5f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8cGVyc29uJTIwcmVmbGVjdGluZyUyMHdpbmRvdyUyMGxpZ2h0JTIwdGhlcmFweSUyMHNlc3Npb258ZW58MXwwfHx8MTc4Mjc3ODkxOXww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "A woman looking out a window at the outside"
+image: "https://images.unsplash.com/photo-1605976586627-92febc576007?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8cGVyc29uJTIwcmVmbGVjdGluZyUyMHRob3VnaHRmdWxseSUyMHdpbmRvdyUyMGxpZ2h0JTIwYWR1bHQlMjBqb3VybmFsaW5nJTIwcXVpZXRseSUyMGluZG9vcnMlMjBob3BlZnVsJTIwcGVyc29uJTIwbG9va2luZyUyMGZvcndhcmR8ZW58MXwwfHx8MTc4Mjc4OTUzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in black blazer sitting on chair"
+cardImage: "https://images.unsplash.com/photo-1605976586627-92febc576007?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8cGVyc29uJTIwcmVmbGVjdGluZyUyMHRob3VnaHRmdWxseSUyMHdpbmRvdyUyMGxpZ2h0JTIwYWR1bHQlMjBqb3VybmFsaW5nJTIwcXVpZXRseSUyMGluZG9vcnMlMjBob3BlZnVsJTIwcGVyc29uJTIwbG9va2luZyUyMGZvcndhcmR8ZW58MXwwfHx8MTc4Mjc4OTUzOXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in black blazer sitting on chair"
 ---
 
 Your past keeps affecting your present because trauma isn't stored as a tidy memory you can file away — it's stored as automatic reactions in your body and nervous system. When something today rhymes with something from back then, your system responds as if the old threat has returned, often before you consciously notice. That's why you react in ways that don't seem to make sense, until you trace them back.
