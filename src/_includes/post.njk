@@ -22,7 +22,7 @@ layout: base.njk
 
 {% if image %}
 <div class="featured-image">
-  <img src="{{ image }}" alt="{{ imageAlt or title }}" />
+  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1400" height="420" loading="eager" />
 </div>
 {% endif %}
 
@@ -37,3 +37,47 @@ layout: base.njk
     <a class="btn btn-gold" href="/intake.html">Book a Free Consultation</a>
   </div>
 </main>
+
+{# --- Internal linking: matching service page + related posts by tag --- #}
+{% set serviceMap = {
+  "Anxiety": ["/anxiety-therapy", "Anxiety therapy in Texas"],
+  "Depression": ["/depression-therapy", "Depression therapy in Texas"],
+  "Trauma": ["/trauma-therapy", "Trauma therapy in Texas"],
+  "Burnout": ["/burnout-overthinking", "Help with burnout & overthinking"],
+  "Veterans": ["/veterans-military-families", "Therapy for veterans & military families"],
+  "Men's Mental Health": ["/mens-mental-health", "Men's mental health"],
+  "Relationships": ["/couples-therapy", "Couples & relationship therapy"],
+  "Getting Started": ["/start-here", "New to therapy? Start here"]
+} %}
+{% set service = serviceMap[tag] %}
+{% set related = [] %}
+{% for post in collections.posts %}
+  {% if post.data.tag == tag and post.url != page.url %}{% set _ = related.push(post) %}{% endif %}
+{% endfor %}
+{# Fallback for single-post tags: fill from the broader pool so every post links out #}
+{% if related.length == 0 %}
+{% for post in collections.posts %}
+  {% if post.url != page.url and related.length < 4 %}{% set _ = related.push(post) %}{% endif %}
+{% endfor %}
+{% endif %}
+
+<aside class="related">
+  {% if service %}
+  <a class="related-service" href="{{ service[0] }}">
+    <span class="related-kicker">Explore</span>
+    <span class="related-service-title">{{ service[1] }} &rarr;</span>
+  </a>
+  {% endif %}
+  {% if related.length %}
+  <h2 class="related-heading">Keep reading</h2>
+  <div class="related-grid">
+    {% for r in related.slice(0, 4) %}
+    <a class="related-card" href="{{ r.data.canonical }}">
+      <span class="tag">{{ r.data.tag }}</span>
+      <span class="related-card-title">{{ r.data.title }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <a class="related-all" href="/blog">Browse all articles &rarr;</a>
+</aside>
