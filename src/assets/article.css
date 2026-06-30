@@ -56,3 +56,13 @@
 @media (max-width: 700px) {
   .related-grid { grid-template-columns: 1fr; }
 }
+
+/* Visible FAQ (matches FAQPage schema) */
+.faq { max-width: var(--article-max); margin: 56px auto 0; padding: 0 24px; }
+.faq-heading { font-family: var(--serif); color: var(--night); font-size: clamp(26px, 3.5vw, 34px); font-weight: 700; letter-spacing: -.02em; margin: 0 0 24px; }
+.faq-item { border: 1px solid rgba(0,0,0,.1); border-radius: 14px; padding: 4px 22px; margin-bottom: 12px; background: #fff; }
+.faq-item summary { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--night); cursor: pointer; padding: 16px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-family: var(--sans, sans-serif); font-size: 24px; font-weight: 400; color: var(--champagne); flex-shrink: 0; line-height: 1; }
+.faq-item[open] summary::after { content: '\2013'; }
+.faq-item p { font-size: 16px; line-height: 1.8; color: #3d3830; margin: 0 0 18px; max-width: none; }

@@ -31,6 +31,21 @@ layout: base.njk
     {{ content | safe }}
   </div>
 
+  {# Visible FAQ — rendered from the same faqJson that powers the FAQPage schema,
+     so the structured data matches what readers actually see on the page. #}
+  {% set faqData = faqJson | fromJson %}
+  {% if faqData and faqData.mainEntity %}
+  <section class="faq" id="faq">
+    <h2 class="faq-heading">Frequently asked questions</h2>
+    {% for item in faqData.mainEntity %}
+    <details class="faq-item"{% if loop.first %} open{% endif %}>
+      <summary>{{ item.name }}</summary>
+      <p>{{ item.acceptedAnswer.text }}</p>
+    </details>
+    {% endfor %}
+  </section>
+  {% endif %}
+
   <div class="article-cta">
     <h3>{{ ctaHeading or "Ready to work on this?" }}</h3>
     <p>{{ ctaText or "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help." }}</p>
