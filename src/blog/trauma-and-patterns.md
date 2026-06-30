@@ -75,10 +75,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1609574073245-f7d3f6c0ff46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjByZWZsZWN0aW5nJTIwd2luZG93JTIwbGlnaHQlMjB0aGVyYXB5JTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzcwMDYzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "person in blue jacket standing near window"
-cardImage: "https://images.unsplash.com/photo-1609574073245-f7d3f6c0ff46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjByZWZsZWN0aW5nJTIwd2luZG93JTIwbGlnaHQlMjB0aGVyYXB5JTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzcwMDYzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "person in blue jacket standing near window"
+image: "https://images.unsplash.com/photo-1731268903258-fee02ac6d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8aGVhbGluZyUyMHNlcmVuZSUyMGxpZ2h0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI3Nzg5MDh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "The sun shines brightly through the grass"
+cardImage: "https://images.unsplash.com/photo-1731268903258-fee02ac6d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8aGVhbGluZyUyMHNlcmVuZSUyMGxpZ2h0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODI3Nzg5MDh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "The sun shines brightly through the grass"
 ---
 
 Your past keeps affecting your present because trauma isn't stored as a tidy memory you can file away — it's stored as automatic reactions in your body and nervous system. When something today rhymes with something from back then, your system responds as if the old threat has returned, often before you consciously notice. That's why you react in ways that don't seem to make sense, until you trace them back.
