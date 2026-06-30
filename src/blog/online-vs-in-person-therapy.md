@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
 canonical: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
 permalink: "/blog/online-vs-in-person-therapy.html"
-date: 2026-06-06
+date: 2026-06-04
 order: 2
 tag: "Getting Started"
-dateDisplay: "June 6, 2026 · 7 min read"
+dateDisplay: "June 4, 2026 · 7 min read"
 deck: "Both formats can do real work. The right choice isn't about which is \"better\" in the abstract — it's about what fits your life, your nervous system, and the kind of support you're actually looking for."
 cardTitle: "Online Therapy vs. In-Person: Which Is Right for You?"
 cardTag: "Getting Started"
 cardDescription: "Video or in-person? The research says online therapy works just as well for most things — but the right choice depends on you. Here's an honest side-by-side to help you decide."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "June 4, 2026 · 7 min read"
 ctaHeading: "Not sure which fits you?"
 ctaText: "Schedule a free 15-minute consultation. We'll talk through what's going on, and whether online or in-person makes the most sense for you."
 schemaJson: |
