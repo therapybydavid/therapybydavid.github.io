@@ -1,0 +1,292 @@
+---
+permalink: /book/index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free 15-Minute Call | Therapy by David</title>
+  <meta name="description" content="Schedule a free 15-minute phone consultation with David Robles, LMSW. No commitment. Just a conversation to see if therapy is a good fit." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://therapybydavid.com/book">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,.74); line-height: 1.7; }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Nav dropdown */
+    .nav-dd { position: relative; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+    .nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+    .nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+    .nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+    .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+    .nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+
+    /* Hero */
+    .page-hero {
+      padding: 160px 0 110px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 55%, rgba(216,184,102,.16), transparent 42%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.95) 55%, rgba(8,11,16,.90) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 860px; margin-bottom: 24px; }
+    .page-hero .lead { margin-bottom: 0; max-width: 620px; }
+
+    /* What to expect */
+    .expect { background: var(--cream); }
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .expect-card {
+      background: var(--white);
+      border: 1px solid rgba(216,184,102,.45);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+    }
+    .expect-num {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .expect-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .expect-card p { font-size: 15.5px; line-height: 1.75; margin: 0; }
+
+    /* Calendar embed */
+    .calendar-section { background: var(--paper); }
+    .calendar-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid rgba(216,184,102,.35);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(20,33,50,.08);
+    }
+    .calendly-inline-widget { min-width: 320px; height: 700px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .nav-dd { width: 100%; }
+      .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+      .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+      .nav-dd-menu::before { display: none; }
+      .nav-dd-menu a { padding: 8px 0; }
+      .page-hero { padding-top: 130px; padding-bottom: 80px; }
+      .expect-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 78px 0; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <script src="/analytics.js" defer></script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Free Consultation</span>
+        <h1>Let's take 15 minutes and see if this is a good fit.</h1>
+        <p class="lead">No pressure, no commitment. Just a straightforward conversation about what you're dealing with and whether therapy with me makes sense.</p>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="section expect">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">What to Expect</span>
+          <h2>Here's what that 15 minutes looks like.</h2>
+        </div>
+        <div class="expect-grid">
+          <div class="expect-card reveal">
+            <div class="expect-num">01</div>
+            <h3>You tell me what's going on.</h3>
+            <p>I'll ask a few questions to understand what's been happening and what you're hoping to get out of therapy.</p>
+          </div>
+          <div class="expect-card reveal">
+            <div class="expect-num">02</div>
+            <h3>I'll be honest about whether I can help.</h3>
+            <p>If what you're describing is in my wheelhouse, I'll tell you. If it isn't, I'll point you somewhere better.</p>
+          </div>
+          <div class="expect-card reveal">
+            <div class="expect-num">03</div>
+            <h3>We decide together what comes next.</h3>
+            <p>No sales pitch. If it feels like a fit, we schedule a first session. If not, no hard feelings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDLY EMBED -->
+    <section class="section calendar-section">
+      <div class="container">
+        <div class="reveal" style="text-align:center; margin-bottom: 48px;">
+          <span class="eyebrow">Schedule Your Call</span>
+          <h2>Pick a time that works for you.</h2>
+          <p style="margin: 0 auto; font-size: 17px;">All calls are by phone. Texas residents only.</p>
+        </div>
+        <div class="calendar-wrap reveal">
+          <div class="calendly-inline-widget"
+            data-url="https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=b99138"
+            style="min-width:320px;height:700px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
