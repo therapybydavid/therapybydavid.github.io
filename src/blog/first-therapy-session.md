@@ -92,10 +92,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714976694265-c15c74ac517d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8dGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzgyODAwMzEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "two people sitting on a couch in a living room"
-cardImage: "https://images.unsplash.com/photo-1714976694265-c15c74ac517d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8dGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzgyODAwMzEwfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "two people sitting on a couch in a living room"
+image: "https://images.unsplash.com/photo-1739303987880-59aa505ecfa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8dGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZSUyMGNvbnZlcnNhdGlvbiUyMGZpcnN0JTIwc2Vzc2lvbiUyMHRoZXJhcGlzdCUyMGNsaWVudCUyMHRhbGtpbmclMjB3ZWxjb21pbmclMjBjb3Vuc2VsaW5nJTIwc2Vzc2lvbiUyMHByb2Zlc3Npb25hbHxlbnwxfDB8fHwxNzgyODAwMzQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A couple of women sitting on top of a white couch"
+cardImage: "https://images.unsplash.com/photo-1739303987880-59aa505ecfa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8dGhlcmFweSUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZSUyMGNvbnZlcnNhdGlvbiUyMGZpcnN0JTIwc2Vzc2lvbiUyMHRoZXJhcGlzdCUyMGNsaWVudCUyMHRhbGtpbmclMjB3ZWxjb21pbmclMjBjb3Vuc2VsaW5nJTIwc2Vzc2lvbiUyMHByb2Zlc3Npb25hbHxlbnwxfDB8fHwxNzgyODAwMzQzfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A couple of women sitting on top of a white couch"
 ---
 
 The hardest part of therapy is often the part that happens before any therapy actually starts: deciding to book the appointment. For a lot of people, what stops them isn't doubt about whether they need support — it's not knowing what they're walking into. Will I have to explain my whole life? What if I freeze? What if I don't even know where to begin?
