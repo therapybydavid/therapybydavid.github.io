@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
 canonical: "https://therapybydavid.com/blog/why-men-dont-go-to-therapy"
 permalink: "/blog/why-men-dont-go-to-therapy.html"
-date: 2026-06-06
+date: 2026-05-26
 order: 3
 tag: "Men's Mental Health"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "May 26, 2026 · 8 min read"
 deck: "Most men don't avoid therapy because they're weak. They avoid it because of how they were raised — to handle it alone, push through, and never let the strain show. Here's what's really going on, and what shifts when a man finally does the work."
-image: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Man standing alone, looking out, in quiet reflection"
-cardImage: "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A lone sailboat at dusk"
 cardTitle: "Why Don't Men Go to Therapy — and What Changes When They Do?"
 cardTag: "Men's Mental Health"
 cardDescription: "Most men wait until they're white-knuckling it. Here's why men avoid therapy, how stress and depression hide as anger and shutdown, and what actually changes when they finally go."
-cardDate: "June 6, 2026 · 8 min read"
+cardDate: "May 26, 2026 · 8 min read"
 ctaHeading: "Ready to stop white-knuckling it?"
 ctaText: "Schedule a free 15-minute consultation. No pressure, no paperwork — just a straight conversation about what's going on and whether men's mental health therapy is the right fit."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting at a table talking to a woman"
+cardImage: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting at a table talking to a woman"
 ---
 
 Most men don't go to therapy because they were taught not to. Not because they don't hurt, and not because they're weak — but because somewhere along the way they learned that handling it alone was the job, that pushing through was the only acceptable response, and that asking for help meant something had gone wrong with them. By the time a man considers therapy, he's usually been carrying the load quietly for years.
