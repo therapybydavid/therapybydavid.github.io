@@ -16,6 +16,15 @@
   {% if faqJson %}<script type="application/ld+json">
   {{ faqJson | safe }}
   </script>{% endif %}
+  {% set ogImageSrc = ogImage or image or cardImage or "/david-robles-headshot.jpg" %}
+  {% if ogImageSrc[0] == "/" %}{% set ogImageSrc = "https://therapybydavid.com" + ogImageSrc %}{% endif %}
+  <meta property="og:site_name" content="Therapy by David" />
+  <meta property="og:image" content="{{ ogImageSrc }}" />
+  <meta property="og:image:alt" content="{{ imageAlt or ogTitle or title }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ ogTitle or pageTitle or title }}" />
+  <meta name="twitter:description" content="{{ ogDescription or description }}" />
+  <meta name="twitter:image" content="{{ ogImageSrc }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
