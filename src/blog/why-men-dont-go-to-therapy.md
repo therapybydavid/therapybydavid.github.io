@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMHNlcmlvdXMlMjBjb252ZXJzYXRpb24lMjBtYW4lMjByZWZsZWN0aW5nJTIwbG9va2luZyUyMGhvcGVmdWx8ZW58MXwwfHx8MTc4Mjc2NTM3OXww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a couch talking to a man"
-cardImage: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMHNlcmlvdXMlMjBjb252ZXJzYXRpb24lMjBtYW4lMjByZWZsZWN0aW5nJTIwbG9va2luZyUyMGhvcGVmdWx8ZW58MXwwfHx8MTc4Mjc2NTM3OXww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a couch talking to a man"
+image: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting at a table talking to a woman"
+cardImage: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting at a table talking to a woman"
 ---
 
 Most men don't go to therapy because they were taught not to. Not because they don't hurt, and not because they're weak — but because somewhere along the way they learned that handling it alone was the job, that pushing through was the only acceptable response, and that asking for help meant something had gone wrong with them. By the time a man considers therapy, he's usually been carrying the load quietly for years.
