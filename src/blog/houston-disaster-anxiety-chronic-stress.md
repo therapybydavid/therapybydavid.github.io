@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Houston floods, freezes, and hurricanes don't just damage homes. They leave a lasting mark on your nervous system. Here's what that can look like."
 cardDate: "June 8, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1780765395201-85160f6e4fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8ZXhoYXVzdGVkJTIwd29tYW4lMjBsb29raW5nJTIwb3V0JTIwcmFpbnklMjB3aW5kb3d8ZW58MXwwfHx8MTc4Mjc5NjAyM3ww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Raindrops on a window with blurred city lights at night."
-cardImage: "https://images.unsplash.com/photo-1780765395201-85160f6e4fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8ZXhoYXVzdGVkJTIwd29tYW4lMjBsb29raW5nJTIwb3V0JTIwcmFpbnklMjB3aW5kb3d8ZW58MXwwfHx8MTc4Mjc5NjAyM3ww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Raindrops on a window with blurred city lights at night."
+image: "https://images.unsplash.com/photo-1780327761393-241262eed702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4OXx8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4Mjc5NjA0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Raindrops creating ripples on a calm water surface with reflections."
+cardImage: "https://images.unsplash.com/photo-1780327761393-241262eed702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4OXx8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4Mjc5NjA0MXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Raindrops creating ripples on a calm water surface with reflections."
 ---
 
 ## Houston Doesn't Get to Fully Exhale
