@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/do-i-have-trauma"
 canonical: "https://therapybydavid.com/blog/do-i-have-trauma"
 permalink: "/blog/do-i-have-trauma.html"
-date: 2026-06-06
+date: 2026-05-22
 order: 10
 tag: "Trauma"
-dateDisplay: "June 6, 2026 · 9 min read"
+dateDisplay: "May 22, 2026 · 9 min read"
 deck: "Trauma is not measured by the size of the event. It's measured by how an experience overwhelmed your capacity to cope — and how your nervous system adapted to survive it."
 cardTitle: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?"
 cardTag: "Trauma"
 cardDescription: "Many people assume trauma only counts if something dramatic happened. It doesn't. Here's why trauma is about impact, not the size of the event."
-cardDate: "June 6, 2026 · 9 min read"
+cardDate: "May 22, 2026 · 9 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
