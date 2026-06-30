@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/houston-military-transition-anxiety"
 canonical: "https://therapybydavid.com/blog/houston-military-transition-anxiety"
 permalink: "/blog/houston-military-transition-anxiety.html"
-date: 2026-06-29
+date: 2026-06-02
 order: 50
 tag: "Veterans"
-dateDisplay: "June 29, 2026 · 6 min read"
+dateDisplay: "June 2, 2026 · 6 min read"
 deck: "For many veterans, the hardest deployment isn't overseas — it's adjusting to civilian life in a city that doesn't quite speak your language."
 cardTitle: "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston"
 cardTag: "Veterans"
 cardDescription: "Leaving the military can trigger anxiety, identity loss, and isolation. Houston veterans share a common struggle — and therapy can help."
-cardDate: "June 29, 2026 · 6 min read"
+cardDate: "June 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9uJTIwaG9wZWZ1bCUyMG1pbGl0YXJ5JTIwdmV0ZXJhbiUyMGpvYiUyMGludGVydmlldyUyMGNvbmZpZGVudCUyMGZvcm1lciUyMHNvbGRpZXIlMjBwcm9mZXNzaW9uYWwlMjBuZXclMjBjYXJlZXJ8ZW58MXwwfHx8MTc4Mjc0NjY0MXww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "minimalist photography of person standing near backpack and boots"
