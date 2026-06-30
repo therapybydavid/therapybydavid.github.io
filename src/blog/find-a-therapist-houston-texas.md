@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxOHx8cGVyc29uJTIwbWVldGluZyUyMHRoZXJhcGlzdCUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZyUyMHByb2Zlc3Npb25hbGx5fGVufDF8MHx8fDE3ODI3Nzg5Njl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a couch talking to another woman"
-cardImage: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxOHx8cGVyc29uJTIwbWVldGluZyUyMHRoZXJhcGlzdCUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZyUyMHByb2Zlc3Npb25hbGx5fGVufDF8MHx8fDE3ODI3Nzg5Njl8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a couch talking to another woman"
+image: "https://images.unsplash.com/photo-1714976694536-5eec9df6db2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8cGVyc29uJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0JTIwb2ZmaWNlJTIwd2FybSUyMHRoZXJhcHklMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nJTIwZnJpZW5kbHklMjBjb3Vuc2Vsb3IlMjBjbGllbnQlMjBjb252ZXJzYXRpb258ZW58MXwwfHx8MTc4Mjc3ODk4M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to a man"
+cardImage: "https://images.unsplash.com/photo-1714976694536-5eec9df6db2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8cGVyc29uJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0JTIwb2ZmaWNlJTIwd2FybSUyMHRoZXJhcHklMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nJTIwZnJpZW5kbHklMjBjb3Vuc2Vsb3IlMjBjbGllbnQlMjBjb252ZXJzYXRpb258ZW58MXwwfHx8MTc4Mjc3ODk4M3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to a man"
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
