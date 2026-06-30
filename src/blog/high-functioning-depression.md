@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-depression"
 canonical: "https://therapybydavid.com/blog/high-functioning-depression"
 permalink: "/blog/high-functioning-depression.html"
-date: 2026-06-06
+date: 2026-05-31
 order: 1
 tag: "Depression"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "May 31, 2026 · 8 min read"
 deck: "You hold down the job, hit the goals, and look fine to everyone around you — but underneath, you feel flat, numb, and like you're just going through the motions. That gap is worth taking seriously."
 cardTitle: "High-Functioning Depression: When You're Successful but Feel Empty"
 cardTag: "Depression"
 cardDescription: "You hit the goals, hold it together, look fine — and feel flat, numb, or empty underneath. High-functioning depression is real, and \"but my life is good\" is exactly what keeps people stuck in it."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "May 31, 2026 · 8 min read"
 ctaHeading: "Successful but feel empty?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on underneath, and what support might help. Start with depression therapy."
 schemaJson: |
