@@ -92,10 +92,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1573496546038-82f9c39f6365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjF8fHBlcnNvbiUyMGxpc3RlbmluZyUyMGNvbXBhc3Npb25hdGVseSUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29udmVyc2F0aW9uJTIwaG9wZWZ1bCUyMGZpcnN0JTIwbWVldGluZyUyMGNvdW5zZWxvcnxlbnwxfDB8fHwxNzgyODIxNzg1fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "two woman sitting by the window laughing"
-cardImage: "https://images.unsplash.com/photo-1573496546038-82f9c39f6365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjF8fHBlcnNvbiUyMGxpc3RlbmluZyUyMGNvbXBhc3Npb25hdGVseSUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29udmVyc2F0aW9uJTIwaG9wZWZ1bCUyMGZpcnN0JTIwbWVldGluZyUyMGNvdW5zZWxvcnxlbnwxfDB8fHwxNzgyODIxNzg1fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "two woman sitting by the window laughing"
+image: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "two women sitting at a table talking to each other"
+cardImage: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "two women sitting at a table talking to each other"
 ---
 
 The hardest part of therapy is often the part that happens before any therapy actually starts: deciding to book the appointment. For a lot of people, what stops them isn't doubt about whether they need support — it's not knowing what they're walking into. Will I have to explain my whole life? What if I freeze? What if I don't even know where to begin?
