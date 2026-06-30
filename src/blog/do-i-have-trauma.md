@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/do-i-have-trauma"
 canonical: "https://therapybydavid.com/blog/do-i-have-trauma"
 permalink: "/blog/do-i-have-trauma.html"
-date: 2026-06-06
+date: 2026-05-22
 order: 10
 tag: "Trauma"
-dateDisplay: "June 6, 2026 · 9 min read"
+dateDisplay: "May 22, 2026 · 9 min read"
 deck: "Trauma is not measured by the size of the event. It's measured by how an experience overwhelmed your capacity to cope — and how your nervous system adapted to survive it."
-image: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Person sitting quietly, reflecting"
-cardImage: "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A person looking reflectively into the distance"
 cardTitle: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?"
 cardTag: "Trauma"
 cardDescription: "Many people assume trauma only counts if something dramatic happened. It doesn't. Here's why trauma is about impact, not the size of the event."
-cardDate: "June 6, 2026 · 9 min read"
+cardDate: "May 22, 2026 · 9 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man wearing glasses looking out a window"
+cardImage: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man wearing glasses looking out a window"
 ---
 
 You might have trauma even if nothing obviously "bad" ever happened to you, because trauma isn't defined by how dramatic the event looks from the outside. It's defined by whether an experience overwhelmed your capacity to cope at the time — and by how your nervous system adapted afterward. Two people can live through the same thing and walk away carrying it very differently. Neither response is a measure of strength or weakness.
