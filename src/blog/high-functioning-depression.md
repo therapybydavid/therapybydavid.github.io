@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/high-functioning-depression"
 canonical: "https://therapybydavid.com/blog/high-functioning-depression"
 permalink: "/blog/high-functioning-depression.html"
-date: 2026-06-06
+date: 2026-05-31
 order: 1
 tag: "Depression"
-dateDisplay: "June 6, 2026 · 8 min read"
+dateDisplay: "May 31, 2026 · 8 min read"
 deck: "You hold down the job, hit the goals, and look fine to everyone around you — but underneath, you feel flat, numb, and like you're just going through the motions. That gap is worth taking seriously."
-image: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Person looking out a window, quietly going through the motions"
-cardImage: "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A still, misty grey lake"
 cardTitle: "High-Functioning Depression: When You're Successful but Feel Empty"
 cardTag: "Depression"
 cardDescription: "You hit the goals, hold it together, look fine — and feel flat, numb, or empty underneath. High-functioning depression is real, and \"but my life is good\" is exactly what keeps people stuck in it."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "May 31, 2026 · 8 min read"
 ctaHeading: "Successful but feel empty?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on underneath, and what support might help. Start with depression therapy."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1611060786742-f69506a5b858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwb3V0JTIwb2ZmaWNlJTIwd2luZG93fGVufDF8MHx8fDE3ODI3Nzg5OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting on a window sill looking at his cell phone"
+cardImage: "https://images.unsplash.com/photo-1611060786742-f69506a5b858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwb3V0JTIwb2ZmaWNlJTIwd2luZG93fGVufDF8MHx8fDE3ODI3Nzg5OTJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting on a window sill looking at his cell phone"
 ---
 
 You can be successful, productive, and completely put-together on the outside while feeling empty, flat, and joyless on the inside. That's high-functioning depression — and because nothing in your life looks broken, it's one of the easiest forms of depression to overlook, dismiss, or talk yourself out of.
