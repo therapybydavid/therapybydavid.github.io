@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
 canonical: "https://therapybydavid.com/blog/online-vs-in-person-therapy"
 permalink: "/blog/online-vs-in-person-therapy.html"
-date: 2026-06-06
+date: 2026-06-04
 order: 2
 tag: "Getting Started"
-dateDisplay: "June 6, 2026 · 7 min read"
+dateDisplay: "June 4, 2026 · 7 min read"
 deck: "Both formats can do real work. The right choice isn't about which is \"better\" in the abstract — it's about what fits your life, your nervous system, and the kind of support you're actually looking for."
-image: "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Laptop set up for a video therapy session in a quiet, comfortable room"
-cardImage: "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80"
-cardAlt: "Calm turquoise water"
 cardTitle: "Online Therapy vs. In-Person: Which Is Right for You?"
 cardTag: "Getting Started"
 cardDescription: "Video or in-person? The research says online therapy works just as well for most things — but the right choice depends on you. Here's an honest side-by-side to help you decide."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "June 4, 2026 · 7 min read"
 ctaHeading: "Not sure which fits you?"
 ctaText: "Schedule a free 15-minute consultation. We'll talk through what's going on, and whether online or in-person makes the most sense for you."
 schemaJson: |
@@ -88,6 +84,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1758521541720-1809f58388c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbGFwdG9wJTIwdmlkZW8lMjBjYWxsJTIwdGhlcmFweXxlbnwxfDB8fHwxNzgyNzc4OTI0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Woman video calls couple on laptop outdoors."
+cardImage: "https://images.unsplash.com/photo-1758521541720-1809f58388c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbGFwdG9wJTIwdmlkZW8lMjBjYWxsJTIwdGhlcmFweXxlbnwxfDB8fHwxNzgyNzc4OTI0fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Woman video calls couple on laptop outdoors."
 ---
 
 A decade ago, "going to therapy" meant one thing: driving to an office, sitting in a waiting room, then spending fifty minutes on a couch across from your therapist. Today you have a real choice. You can do that same work over a secure video call from your living room, your car on a lunch break, or a quiet corner of your home.
