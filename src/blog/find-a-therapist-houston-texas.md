@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1573886798329-30248ef159dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw2NXx8cGVyc29uJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0JTIwd2FybSUyMHRoZXJhcHklMjBvZmZpY2UlMjBjb25zdWx0YXRpb24lMjBmcmllbmRseSUyMGNvdW5zZWxvciUyMG1lZXRpbmclMjBjbGllbnR8ZW58MXwwfHx8MTc4Mjc4OTY5NHww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "man sitting indoors"
-cardImage: "https://images.unsplash.com/photo-1573886798329-30248ef159dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw2NXx8cGVyc29uJTIwdGFsa2luZyUyMHRvJTIwdGhlcmFwaXN0JTIwd2FybSUyMHRoZXJhcHklMjBvZmZpY2UlMjBjb25zdWx0YXRpb24lMjBmcmllbmRseSUyMGNvdW5zZWxvciUyMG1lZXRpbmclMjBjbGllbnR8ZW58MXwwfHx8MTc4Mjc4OTY5NHww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "man sitting indoors"
+image: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8dGhlcmFwaXN0JTIwYW5kJTIwY2xpZW50JTIwdGFsa2luZyUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZXxlbnwxfDB8fHwxNzgyNzg5ODY1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to a man"
+cardImage: "https://images.unsplash.com/photo-1714976694999-21236f6d5201?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8dGhlcmFwaXN0JTIwYW5kJTIwY2xpZW50JTIwdGFsa2luZyUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZXxlbnwxfDB8fHwxNzgyNzg5ODY1fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to a man"
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
