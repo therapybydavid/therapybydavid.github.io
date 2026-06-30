@@ -9,19 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/first-therapy-session"
 canonical: "https://therapybydavid.com/blog/first-therapy-session"
 permalink: "/blog/first-therapy-session.html"
-date: 2026-06-06
+date: 2026-05-18
 order: 7
 tag: "Getting Started"
-dateDisplay: "June 6, 2026 · 7 min read"
+dateDisplay: "May 18, 2026 · 7 min read"
 deck: "If the unknown is what's stopping you from booking, this is for you. Here's exactly what happens — from the first low-pressure call to your first full session — so nothing about starting feels like a leap into the dark."
-image: "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80"
-imageAlt: "Two people in a calm conversation"
-cardImage: "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80"
-cardAlt: "Two people in a calm conversation"
 cardTitle: "What to Expect in Your First Therapy Session"
 cardTag: "Getting Started"
 cardDescription: "Not sure what actually happens when you start therapy? Here's exactly what to expect — from the free consultation to your first full session — so the unknown isn't the thing holding you back."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "May 18, 2026 · 7 min read"
 ctaHeading: "Ready to take the first step?"
 ctaText: "Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on and whether it's a fit."
 schemaJson: |
@@ -96,6 +92,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "two women sitting at a table talking to each other"
+cardImage: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "two women sitting at a table talking to each other"
 ---
 
 The hardest part of therapy is often the part that happens before any therapy actually starts: deciding to book the appointment. For a lot of people, what stops them isn't doubt about whether they need support — it's not knowing what they're walking into. Will I have to explain my whole life? What if I freeze? What if I don't even know where to begin?
