@@ -92,10 +92,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1690192507874-c2aad615b980?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMDV8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjb252ZXJzYXRpb24lMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2FybWx5JTIwcGVyc29uJTIwc2l0dGluZyUyMGNvbWZvcnRhYmxlJTIwY291Y2glMjB0YWxraW5nfGVufDF8MHx8fDE3ODI4MjA2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "two women sitting on a couch looking at their cell phones"
-cardImage: "https://images.unsplash.com/photo-1690192507874-c2aad615b980?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMDV8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjb252ZXJzYXRpb24lMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2FybWx5JTIwcGVyc29uJTIwc2l0dGluZyUyMGNvbWZvcnRhYmxlJTIwY291Y2glMjB0YWxraW5nfGVufDF8MHx8fDE3ODI4MjA2MjR8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "two women sitting on a couch looking at their cell phones"
+image: "https://images.unsplash.com/photo-1633113215844-b2ddc0411724?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMTN8fHRoZXJhcHklMjBjb25zdWx0YXRpb24lMjBvZmZpY2UlMjBjb252ZXJzYXRpb24lMjBmaXJzdCUyMHNlc3Npb24lMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2VsY29taW5nJTIwY291bnNlbGluZyUyMHJvb20lMjBtZWV0aW5nfGVufDF8MHx8fDE3ODI4MjE3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Two coworkers collaborating sitting on chairs holding a Surface laptop with Christmas decorations in the background"
+cardImage: "https://images.unsplash.com/photo-1633113215844-b2ddc0411724?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMTN8fHRoZXJhcHklMjBjb25zdWx0YXRpb24lMjBvZmZpY2UlMjBjb252ZXJzYXRpb24lMjBmaXJzdCUyMHNlc3Npb24lMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2VsY29taW5nJTIwY291bnNlbGluZyUyMHJvb20lMjBtZWV0aW5nfGVufDF8MHx8fDE3ODI4MjE3Mzh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Two coworkers collaborating sitting on chairs holding a Surface laptop with Christmas decorations in the background"
 ---
 
 The hardest part of therapy is often the part that happens before any therapy actually starts: deciding to book the appointment. For a lot of people, what stops them isn't doubt about whether they need support — it's not knowing what they're walking into. Will I have to explain my whole life? What if I freeze? What if I don't even know where to begin?
