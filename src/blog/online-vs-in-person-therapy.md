@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1612831457048-9823ce1ebb6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBvbiUyMGxhcHRvcCUyMHZpZGVvJTIwY2FsbCUyMHRoZXJhcHklMjBhZHVsdCUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdCUyMG9mZmljZXxlbnwxfDB8fHwxNzgyNzY1MzEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "person in white long sleeve shirt using Surface"
-cardImage: "https://images.unsplash.com/photo-1612831457048-9823ce1ebb6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBvbiUyMGxhcHRvcCUyMHZpZGVvJTIwY2FsbCUyMHRoZXJhcHklMjBhZHVsdCUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdCUyMG9mZmljZXxlbnwxfDB8fHwxNzgyNzY1MzEzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "person in white long sleeve shirt using Surface"
+image: "https://images.unsplash.com/photo-1758521541720-1809f58388c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbGFwdG9wJTIwdmlkZW8lMjBjYWxsJTIwdGhlcmFweXxlbnwxfDB8fHwxNzgyNzc4OTI0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Woman video calls couple on laptop outdoors."
+cardImage: "https://images.unsplash.com/photo-1758521541720-1809f58388c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbGFwdG9wJTIwdmlkZW8lMjBjYWxsJTIwdGhlcmFweXxlbnwxfDB8fHwxNzgyNzc4OTI0fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Woman video calls couple on laptop outdoors."
 ---
 
 A decade ago, "going to therapy" meant one thing: driving to an office, sitting in a waiting room, then spending fifty minutes on a couch across from your therapist. Today you have a real choice. You can do that same work over a secure video call from your living room, your car on a lunch break, or a quiet corner of your home.
