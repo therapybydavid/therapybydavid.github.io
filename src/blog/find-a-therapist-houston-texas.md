@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1759715887174-b618ae4007ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODI3NjUzODR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Two kayakers paddle on a foggy lake."
-cardImage: "https://images.unsplash.com/photo-1759715887174-b618ae4007ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODI3NjUzODR8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Two kayakers paddle on a foggy lake."
+image: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxOHx8cGVyc29uJTIwbWVldGluZyUyMHRoZXJhcGlzdCUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZyUyMHByb2Zlc3Npb25hbGx5fGVufDF8MHx8fDE3ODI3Nzg5Njl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to another woman"
+cardImage: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxOHx8cGVyc29uJTIwbWVldGluZyUyMHRoZXJhcGlzdCUyMG9mZmljZSUyMHdhcm0lMjB0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZyUyMHByb2Zlc3Npb25hbGx5fGVufDF8MHx8fDE3ODI3Nzg5Njl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to another woman"
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
