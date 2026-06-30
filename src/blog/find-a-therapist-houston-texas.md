@@ -84,10 +84,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1778001881216-5327f651bfba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0OXx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NTg4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Silhouette of people with horse on beach at sunset"
-cardImage: "https://images.unsplash.com/photo-1778001881216-5327f651bfba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0OXx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NTg4fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Silhouette of people with horse on beach at sunset"
+image: "https://images.unsplash.com/photo-1777019497657-c460553735d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1N3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NjcyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "People rowing a boat on a calm lake"
+cardImage: "https://images.unsplash.com/photo-1777019497657-c460553735d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1N3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzgyNzg5NjcyfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "People rowing a boat on a calm lake"
 ---
 
 If you've been telling yourself you should "find a therapist" for a while now, you already know the hard part isn't deciding you want help. The hard part is the search — opening a directory, seeing a hundred faces and a wall of credentials, and quietly closing the tab because you don't know how to tell who's right for you.
