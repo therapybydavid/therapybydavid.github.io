@@ -14,10 +14,6 @@ order: 4
 tag: "Veterans"
 dateDisplay: "June 6, 2026 · 8 min read"
 deck: "Coming home is supposed to be the easy part. When it isn't, the hard question is whether what you're feeling is normal adjustment — or something that's worth getting help for."
-image: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80"
-imageAlt: "A veteran sitting quietly, looking out a window"
-cardImage: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80"
-cardAlt: "A quiet, fog-covered forest"
 cardTitle: "PTSD or Just Adjusting? Signs a Veteran Should Reach Out"
 cardTag: "Veterans"
 cardDescription: "Some difficulty after service is normal. But how do you know when it's crossed into PTSD? From one veteran to another — the signs that mean it's time to reach out."
@@ -96,6 +92,10 @@ faqJson: |
         }
       ]
     }
+image: "https://images.unsplash.com/photo-1683274104917-9e496e49eabb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8dmV0ZXJhbiUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdHxlbnwxfDB8fHwxNzgyNzc4ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a couple of people sitting on top of a couch"
+cardImage: "https://images.unsplash.com/photo-1683274104917-9e496e49eabb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8dmV0ZXJhbiUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdHxlbnwxfDB8fHwxNzgyNzc4ODk3fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a couple of people sitting on top of a couch"
 ---
 
 If you're reading this, you're probably already asking yourself the question — is this just the normal mess of coming home, or is it something more? That's a fair question, and an honest one. Most veterans go through a rough stretch after service. The structure disappears, the mission is over, the people who understood you without a word are scattered across the country. Civilian life can feel slow, loud, and pointless all at once. A hard adjustment is not a diagnosis. But sometimes what looks like "just adjusting" is the early shape of post-traumatic stress — and knowing the difference matters, because one usually settles on its own and the other tends to dig in.
