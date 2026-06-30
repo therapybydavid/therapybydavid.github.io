@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/first-therapy-session"
 canonical: "https://therapybydavid.com/blog/first-therapy-session"
 permalink: "/blog/first-therapy-session.html"
-date: 2026-06-06
+date: 2026-05-18
 order: 7
 tag: "Getting Started"
-dateDisplay: "June 6, 2026 · 7 min read"
+dateDisplay: "May 18, 2026 · 7 min read"
 deck: "If the unknown is what's stopping you from booking, this is for you. Here's exactly what happens — from the first low-pressure call to your first full session — so nothing about starting feels like a leap into the dark."
 cardTitle: "What to Expect in Your First Therapy Session"
 cardTag: "Getting Started"
 cardDescription: "Not sure what actually happens when you start therapy? Here's exactly what to expect — from the free consultation to your first full session — so the unknown isn't the thing holding you back."
-cardDate: "June 6, 2026 · 7 min read"
+cardDate: "May 18, 2026 · 7 min read"
 ctaHeading: "Ready to take the first step?"
 ctaText: "Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on and whether it's a fit."
 schemaJson: |
