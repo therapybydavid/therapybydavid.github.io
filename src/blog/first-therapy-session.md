@@ -92,10 +92,10 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwb2ZmaWNlJTIwdGFsa2luZyUyMGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjB3ZWxjb21pbmclMjBwYXRpZW50JTIwdGhlcmFwaXN0JTIwY29udmVyc2F0aW9uJTIwc2VhdGVkfGVufDF8MHx8fDE3ODI3NjUzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman sitting on a couch talking to another woman"
-cardImage: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwb2ZmaWNlJTIwdGFsa2luZyUyMGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjB3ZWxjb21pbmclMjBwYXRpZW50JTIwdGhlcmFwaXN0JTIwY29udmVyc2F0aW9uJTIwc2VhdGVkfGVufDF8MHx8fDE3ODI3NjUzNzB8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman sitting on a couch talking to another woman"
+image: "https://images.unsplash.com/photo-1714976694916-6f5b0d76df10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwb2ZmaWNlJTIwY29udmVyc2F0aW9uJTIwZmlyc3QlMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMHdlbGNvbWUlMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2FybWx5fGVufDF8MHx8fDE3ODI3Nzg5ODd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "two women sitting on a couch talking to each other"
+cardImage: "https://images.unsplash.com/photo-1714976694916-6f5b0d76df10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXB5JTIwY29uc3VsdGF0aW9uJTIwb2ZmaWNlJTIwY29udmVyc2F0aW9uJTIwZmlyc3QlMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMHdlbGNvbWUlMjB0aGVyYXBpc3QlMjBjbGllbnQlMjB0YWxraW5nJTIwd2FybWx5fGVufDF8MHx8fDE3ODI3Nzg5ODd8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "two women sitting on a couch talking to each other"
 ---
 
 The hardest part of therapy is often the part that happens before any therapy actually starts: deciding to book the appointment. For a lot of people, what stops them isn't doubt about whether they need support — it's not knowing what they're walking into. Will I have to explain my whole life? What if I freeze? What if I don't even know where to begin?
