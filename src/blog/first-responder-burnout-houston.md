@@ -19,6 +19,70 @@ cardTag: "First Responders"
 cardDescription: "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When Helping Others Leaves You Empty: Burnout in Houston First Responders",
+    "description": "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help.",
+    "image": "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdHxlbnwxfDB8fHwxNzgyNzA1NzM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/first-responder-burnout-houston",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/first-responder-burnout-houston",
+    "wordCount": "1800",
+    "articleSection": "First Responders",
+    "keywords": "first responder burnout, firefighter burnout, police burnout, EMS stress, Houston first responders, occupational stress therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does burnout look like in first responders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Burnout in first responders often doesn't look like falling apart. It tends to show up as emotional numbness, cynicism that has seeped into personal relationships, physical symptoms without a clear cause, and a sustained loss of meaning in work that once felt purposeful. Many first responders continue functioning at a high level externally while quietly running on empty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is burnout different from trauma for Houston first responders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Burnout and trauma are different, but they often overlap. Burnout is about cumulative exhaustion and eroded meaning over time. Trauma involves how the nervous system processes specific threatening or overwhelming events. Many first responders are dealing with both simultaneously, which is one reason working with a therapist who understands occupational stress matters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do first responders wait so long before getting help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First responder culture often values endurance and managing struggles privately. Practical barriers also play a role: shift schedules that make appointments difficult, concerns about confidentiality within smaller departments, and uncertainty about whether a therapist would understand the work. These concerns are legitimate and worth naming rather than minimizing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is therapy for first responders confidential?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Private-pay therapy outside of department EAPs maintains a separate clinical record. That means what is discussed in sessions does not go into a departmental or benefits record. For many first responders, that confidentiality is a significant factor in deciding whether to reach out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a therapist in Houston work with police, fire, and EMS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston-area first responders including police officers, firefighters, EMS personnel, and dispatch staff navigating burnout, occupational stress, and trauma. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man in black and gray jacket and black pants sitting on brown wooden floor"
 cardImage: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400"

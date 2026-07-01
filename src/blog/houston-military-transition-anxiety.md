@@ -19,6 +19,70 @@ cardTag: "Veterans"
 cardDescription: "Leaving the military can trigger anxiety, identity loss, and isolation. Houston veterans share a common struggle — and therapy can help."
 cardDate: "June 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston",
+    "description": "Leaving the military can trigger anxiety, identity loss, and isolation. Houston veterans share a common struggle — and therapy can help.",
+    "image": "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9ufGVufDF8MHx8fDE3ODI3NDY2NDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-02",
+    "dateModified": "2026-06-02",
+    "url": "https://therapybydavid.com/blog/houston-military-transition-anxiety",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-military-transition-anxiety",
+    "wordCount": "1800",
+    "articleSection": "Veterans",
+    "keywords": "military transition anxiety, veteran civilian transition, veteran therapy Houston, veteran identity loss, Houston veterans mental health, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is military transition so hard for veterans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The military provides more than a job. It provides an identity, a community, a clear sense of purpose, and a daily structure that answers the question of who you are and where you belong. When that structure disappears, even by choice, the nervous system often does not know what to do with the quiet. The transition can feel like a disorienting loss that nobody warned you about."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does transition anxiety look like for veterans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It often shows up as restlessness and irritability, a loss of clarity about your role and rank in civilian environments, a sense of disconnection from people who have no reference point for what you have seen or done, and a creeping question of what you are worth without the structure of service. These experiences are real adjustments, not weakness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you have to have PTSD to benefit from veteran therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Transition-related anxiety is its own real experience. You do not need to meet criteria for PTSD for what you are carrying to be worth taking seriously. Many veterans dealing with identity loss, high-functioning anxiety, or relationship strain after service find therapy useful well before anything rises to the level of a clinical diagnosis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is private-pay therapy different from using the VA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Private-pay therapy outside the VA gives veterans the option to work at their own pace with a separate clinical record that does not go into a military or benefits file. For some veterans, that confidentiality and flexibility matters a great deal in deciding whether to reach out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a veteran therapist in Houston who understands military transition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David is led by an Army veteran and works with Houston-area veterans and service members navigating military transition, anxiety, identity loss, and relationship challenges. Sessions are available in person in Houston and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9uJTIwaG9wZWZ1bCUyMG1pbGl0YXJ5JTIwdmV0ZXJhbiUyMGpvYiUyMGludGVydmlldyUyMGNvbmZpZGVudCUyMGZvcm1lciUyMHNvbGRpZXIlMjBwcm9mZXNzaW9uYWwlMjBuZXclMjBjYXJlZXJ8ZW58MXwwfHx8MTc4Mjc0NjY0MXww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "minimalist photography of person standing near backpack and boots"
 cardImage: "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9uJTIwaG9wZWZ1bCUyMG1pbGl0YXJ5JTIwdmV0ZXJhbiUyMGpvYiUyMGludGVydmlldyUyMGNvbmZpZGVudCUyMGZvcm1lciUyMHNvbGRpZXIlMjBwcm9mZXNzaW9uYWwlMjBuZXclMjBjYXJlZXJ8ZW58MXwwfHx8MTc4Mjc0NjY0MXww&ixlib=rb-4.1.0&q=80&w=400"

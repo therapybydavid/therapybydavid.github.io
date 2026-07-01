@@ -19,6 +19,70 @@ cardTag: "Anxiety"
 cardDescription: "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Sunday Night Dread: Why Houston Professionals Can't Turn Off the Work Week",
+    "description": "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help.",
+    "image": "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/houston-sunday-night-anxiety",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-sunday-night-anxiety",
+    "wordCount": "1800",
+    "articleSection": "Anxiety",
+    "keywords": "Sunday night anxiety, Sunday scaries, work anxiety Houston, anticipatory anxiety, Houston professionals stress, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do I get so anxious every Sunday night?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sunday night anxiety is a form of anticipatory anxiety. Your brain is trying to protect you by scanning ahead for threats. When your work environment involves high stakes, constant demands, or a culture that does not respect off-hours, your nervous system learns to stay on alert even when nothing is actually wrong right now. Over time the boundary between work brain and rest brain gets blurry, and Sunday becomes a psychological no-man's land."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Sunday night anxiety normal or is it a problem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A rough Sunday evening before a particularly big week is normal. But if you notice a consistent mood drop every Sunday regardless of how the week ahead actually looks, trouble sleeping even when you are physically tired, anxiety bleeding into Saturdays, or never feeling genuinely rested, that is a pattern worth taking seriously rather than dismissing as ordinary stress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Houston's work culture contribute to Sunday night anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Houston is a city that moves fast and values hard work. That culture can make it difficult to justify rest, set limits at work, or admit you are running on empty. The city's size and sprawl also squeeze out genuine downtime. Many Houston professionals spend weekends catching up on everything they could not finish during the week, which means they never fully stop and Sunday night tension intensifies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can therapy help with Sunday night anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In therapy, this kind of anxiety is worth exploring on several levels: understanding where the hypervigilance came from, working with the nervous system directly so it can actually downshift rather than just intellectually knowing you should relax, and getting clearer on what you are specifically afraid of underneath the Sunday dread."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who helps with work anxiety and stress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston professionals navigating work anxiety, chronic stress, and the patterns that keep them from being present in their own lives. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "sectional sofa near coffee table and window"
 cardImage: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=400"

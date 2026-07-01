@@ -19,6 +19,70 @@ cardTag: "Anxiety"
 cardDescription: "Perfectionism isn't about high standards — it's often anxiety in disguise. Here's what that looks like for Houston adults and when therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston",
+    "description": "Perfectionism isn't about high standards — it's often anxiety in disguise. Here's what that looks like for Houston adults and when therapy can help.",
+    "image": "https://images.unsplash.com/photo-1754307943655-a76a567661e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHByb2Zlc3Npb25hbCUyMGF0JTIwZGVza3xlbnwxfDB8fHwxNzgyNzA1NzU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/houston-perfectionism-anxiety-therapy",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-perfectionism-anxiety-therapy",
+    "wordCount": "1800",
+    "articleSection": "Anxiety",
+    "keywords": "perfectionism anxiety, high-functioning anxiety perfectionism, perfectionist therapy, Houston professionals anxiety, overachiever burnout, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is perfectionism a form of anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Often, yes. Clinical perfectionism is less about caring about quality and more about fear of what will happen if you fall short. The driving force is closer to: if I make a mistake, people will see through me; if I slow down, everything will fall apart; if I am not the best, I am not worth much. That is anxiety wearing a productivity costume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the signs of perfectionism-driven anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common signs include spending disproportionate time on tasks others would consider finished, difficulty delegating because doing it yourself feels safer, criticism landing harder than it probably should, replaying conversations long after they are over, accomplishments bringing brief relief rather than genuine satisfaction, and rest feeling uncomfortable because it has to be earned first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Houston's work culture make perfectionism worse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Houston is a city that rewards output. Industries like energy, healthcare, law, and finance often equate availability with commitment and long hours with loyalty. For someone already wired toward perfectionism, that environment doesn't just tolerate the pattern. It reinforces it. You get positive feedback for overworking, and slowing down starts to feel genuinely dangerous even when you are burning out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can therapy help with perfectionism?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy is not about lowering your standards or learning to not care. What can change is the relationship between your self-worth and your performance. A lot of perfectionism is rooted in early learning that tied love, safety, or approval to achievement. When those roots are examined, the grip tends to loosen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who works with perfectionism and high-functioning anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston professionals navigating perfectionism, high-functioning anxiety, and burnout. Sessions are available for adults in the Houston area in person and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1754307943655-a76a567661e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHByb2Zlc3Npb25hbCUyMGF0JTIwZGVzayUyMEhvdXN0b24lMjBmb2N1c2VkJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwb3ZlcndoZWxtZWQlMjBwZXJzb24lMjB0YWtpbmclMjBicmVhdGh8ZW58MXwwfHx8MTc4MjcwNTc1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "A woman is working on a laptop, looking pensive."
 cardImage: "https://images.unsplash.com/photo-1754307943655-a76a567661e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHByb2Zlc3Npb25hbCUyMGF0JTIwZGVzayUyMEhvdXN0b24lMjBmb2N1c2VkJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwb3ZlcndoZWxtZWQlMjBwZXJzb24lMjB0YWtpbmclMjBicmVhdGh8ZW58MXwwfHx8MTc4MjcwNTc1Nnww&ixlib=rb-4.1.0&q=80&w=400"

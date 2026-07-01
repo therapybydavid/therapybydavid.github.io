@@ -19,6 +19,70 @@ cardTag: "Anxiety"
 cardDescription: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment",
+    "description": "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing.",
+    "image": "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/houston-work-culture-anxiety",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-work-culture-anxiety",
+    "wordCount": "1800",
+    "articleSection": "Anxiety",
+    "keywords": "work anxiety Houston, hustle culture anxiety, high-performance anxiety, Houston professional burnout, work stress therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does work anxiety look like for Houston professionals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Work anxiety in Houston rarely looks like panic attacks in a conference room. It shows up in quieter ways: difficulty shutting down after hours even with the laptop closed, over-preparation as a coping mechanism, avoiding delegation because trusting others with tasks creates more anxiety than doing it yourself, physical symptoms your doctor cannot fully explain, and irritability that bleeds into your personal life by the time you get home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between work stress and work anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stress typically has an identifiable source, like a deadline or a difficult client, and tends to ease when the situation resolves. Anxiety persists. It generalizes. It starts to attach to things that do not logically warrant that level of concern. If the worry has been going on for months, shifts from topic to topic without fully resolving, or you are avoiding situations because of how they make you feel, that is anxiety rather than ordinary stress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Houston's culture make work anxiety worse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Houston's workforce culture, particularly in industries like oil and gas, emergency services, medicine, and finance, often has an implicit norm around self-sufficiency. You figure things out, you push through, you do not complain. That norm keeps a lot of people stuck longer than necessary by framing their struggling as a personal failure rather than a nervous system responding to sustained pressure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is therapy for work anxiety about learning to care less?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Therapy for work-related anxiety is about understanding what is driving it. That might be a fear of failure that predates your current job, a nervous system conditioned by earlier stress, or perfectionistic patterns that made sense at some point but are now costing more than they give. The goal is not lower standards. It is a nervous system that does not treat normal professional life as a constant threat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a private-pay therapist in Houston who works with work anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David is a private-pay practice working with Houston professionals navigating work anxiety, burnout, and high-functioning stress. Private pay means no insurance involvement, no required diagnosis, and more scheduling flexibility. Sessions are available in person in Houston and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "Woman resting head on hand at desk"
 cardImage: "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=400"

@@ -19,6 +19,70 @@ cardTag: "Mental Health"
 cardDescription: "Houston is one of the largest cities in America, yet loneliness is quietly common. Here's why it happens and what can help."
 cardDate: "June 29, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why So Many Houston Adults Feel Lonely in a City of 7 Million",
+    "description": "Houston is one of the largest cities in America, yet loneliness is quietly common. Here's why it happens and what can help.",
+    "image": "https://images.unsplash.com/photo-1530621441005-06d343ab2f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxsb25lbHklMjBwZXJzb24lMjBjaXR5JTIwY2FmZSUyMHdpbmRvd3xlbnwxfDB8fHwxNzgyNzMwODk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "url": "https://therapybydavid.com/blog/houston-isolation-loneliness-therapy",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-isolation-loneliness-therapy",
+    "wordCount": "1800",
+    "articleSection": "Mental Health",
+    "keywords": "loneliness Houston, isolation therapy Houston, feeling disconnected, loneliness adults, social anxiety Houston, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do so many people in Houston feel lonely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Houston's sprawl makes low-stakes, incidental contact rare. Without walkable neighborhoods, most residents drive alone everywhere, reducing the weak-tie connections that anchor people to a community. Add long hours in demanding industries and a professional culture that equates busyness with worth, and many Houston adults find their social world has quietly narrowed to coworkers and a handful of close friends they barely see."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you feel lonely even when you have friends and a full schedule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and this is one of the most disorienting aspects of modern loneliness. What most people are missing isn't quantity of contact. It's depth. Conversations stay surface-level, vulnerability feels risky or out of practice, and over time some people become very good at being around others without ever really being seen by them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does loneliness connect to anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Loneliness and anxiety tend to feed each other. When you're lonely, social situations start to feel higher stakes, the possibility of rejection feels magnified, and you may pull back slightly. That deepens the loneliness, which heightens the anxiety. For people who already deal with high-functioning anxiety, loneliness can operate almost invisibly underneath a busy, competent-looking exterior."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does therapy help with loneliness and social disconnection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Therapy is not a replacement for friendship, but it can be one place to start. For people who are out of practice with genuine self-disclosure, therapy often becomes the space where they remember what it feels like to be understood. That experience makes it easier to seek real connection in the rest of their lives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who helps with loneliness and isolation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston adults who feel disconnected, from others or from themselves. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1530621441005-06d343ab2f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxsb25lbHklMjBwZXJzb24lMjBjaXR5JTIwY2FmZSUyMHdpbmRvd3xlbnwxfDB8fHwxNzgyNzMwODk5fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man sitting on cafe while holding smartphone"
 cardImage: "https://images.unsplash.com/photo-1530621441005-06d343ab2f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxsb25lbHklMjBwZXJzb24lMjBjaXR5JTIwY2FmZSUyMHdpbmRvd3xlbnwxfDB8fHwxNzgyNzMwODk5fDA&ixlib=rb-4.1.0&q=80&w=400"

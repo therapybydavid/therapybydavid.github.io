@@ -2,7 +2,7 @@
 llmsDescription: "When a relationship ends, you don't just lose a partner — you can lose the version of yourself that existed inside it."
 title: "After the Relationship Ends: Rebuilding a Sense of Self"
 pageTitle: "After the Relationship Ends: Rebuilding a Sense of Self | Therapy by David"
-description: "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again."
+description: "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again, from a therapist in Houston, Texas."
 ogTitle: "After the Relationship Ends: Rebuilding a Sense of Self"
 ogDescription: "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again."
 ogType: article
@@ -19,6 +19,70 @@ cardTag: "Relationships"
 cardDescription: "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again."
 cardDate: "May 24, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "After the Relationship Ends: Rebuilding a Sense of Self",
+    "description": "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again, from a therapist in Houston, Texas.",
+    "image": "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "url": "https://therapybydavid.com/blog/after-the-relationship-ends-rebuilding-identity",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/after-the-relationship-ends-rebuilding-identity",
+    "wordCount": "1800",
+    "articleSection": "Relationships",
+    "keywords": "identity after breakup, rebuilding identity after divorce, relationship loss therapy, who am I after divorce, breakup recovery, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does a breakup or divorce cause an identity crisis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Identity is partly relational. We know ourselves through our roles and relationships. A long partnership shapes your preferences, habits, and sense of your own personality. When that ends, the grief isn't only about the person you lost. It's about the self you can no longer locate. That disorientation is real, and it's one of the most under-discussed parts of relationship loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to find yourself again after a relationship ends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no correct timeline. Some people feel ready to reflect within weeks. Others are still sorting through it years later, especially after long marriages or relationships that defined a significant chapter of their adult life. Both are valid. The question isn't whether you're doing it fast enough. It's whether you're doing it at all."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is losing interest in things after a breakup the same as depression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Sometimes what looks like depression is actually disorientation. You haven't lost the capacity for enjoyment. You've lost the context in which your enjoyment made sense. That said, the line between grief and depression is worth paying attention to. If low mood, loss of pleasure, and a sense of worthlessness have been present most days for two weeks or more, that's worth discussing with a therapist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does rebuilding your identity after a relationship actually involve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It tends to involve separating your story from the shared narrative you built together, reclaiming preferences you quietly outsourced over the years, tolerating the uncertainty without rushing past it into the next relationship, and noticing the patterns that may have shaped the relationship dynamics. None of this is linear or dramatic. It happens in small, unglamorous moments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can therapy help after a breakup or divorce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy after a breakup or divorce isn't crisis intervention. It's a space to think carefully and honestly without an audience that has stakes in what you decide. A good therapist helps you hear yourself more clearly, notice the patterns worth noticing, and do the identity work that's hard to do alone. If you're in Houston or anywhere in Texas, sessions are available in person and via telehealth."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a woman sitting on a window sill"
 cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=400"

@@ -2,7 +2,7 @@
 llmsDescription: "Some of the heaviest grief comes from losses the world never officially acknowledges — and that silence makes everything harder."
 title: "When There's No Funeral: Grieving Losses That Don't Count as Loss"
 pageTitle: "When There's No Funeral: Grieving Losses That Don't Count as Loss | Therapy by David"
-description: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
+description: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry, from a therapist in Houston, Texas."
 ogTitle: "When There's No Funeral: Grieving Losses That Don't Count as Loss"
 ogDescription: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
 ogType: article
@@ -19,6 +19,70 @@ cardTag: "Grief"
 cardDescription: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
 cardDate: "June 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When There's No Funeral: Grieving Losses That Don't Count as Loss",
+    "description": "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry, from a therapist in Houston, Texas.",
+    "image": "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-10",
+    "url": "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss",
+    "wordCount": "1800",
+    "articleSection": "Grief",
+    "keywords": "ambiguous loss, grief without closure, estrangement grief, dementia caregiver grief, disenfranchised grief, grief therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is ambiguous loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambiguous loss is a term for losses that lack the clarity of death. There is no official moment of ending, no funeral, no social recognition. Examples include a parent with dementia who is physically present but no longer themselves, estrangement from a family member, or grieving a marriage that ended, a dream you had to abandon, or a child's future you had imagined. The grief is real even though the world often does not acknowledge it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal to grieve a relationship that hasn't ended in death?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely normal. Grief is a response to loss, not just to death. Divorce, estrangement, a dementia diagnosis in a parent, or letting go of a version of your life you expected can all carry genuine grief. The difficulty is that ambiguous losses rarely come with the rituals or social support that help people grieve, which can leave people feeling that they have no right to the pain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does ambiguous grief feel impossible to move past?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because there is often no closure, and closure may genuinely not be available. Popular advice centers on finding an ending, but for losses that remain unresolved, that framing does not hold. A parent may live for years in a memory care facility. An estrangement may never fully resolve. The goal shifts from closure to learning to hold the loss without being consumed by it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can therapy help with grief that has no clear cause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Therapy provides a space to name the loss, which has real weight in itself. It also allows you to carry the grief without needing to explain or justify it to someone who has a stake in your recovery. For ambiguous loss especially, having someone who can hold the weight of what you are going through without trying to rush you past it is often exactly what is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who works with grief and loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston adults navigating grief, ambiguous loss, estrangement, and the kinds of losses the world does not always recognize. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man in red crew neck shirt standing near white curtain"
 cardImage: "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=400"

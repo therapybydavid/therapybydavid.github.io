@@ -19,6 +19,70 @@ cardTag: "Burnout"
 cardDescription: "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When Taking Care of Everyone Else Leaves Nothing for You: Caregiver Burnout in Houston",
+    "description": "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help.",
+    "image": "https://images.unsplash.com/photo-1604830926588-b51d5ddeba7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwb24lMjBjb3VjaCUyMGNhcmVnaXZlciUyMGJ1cm5vdXR8ZW58MXwwfHx8MTc4MjcwNTc1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/houston-caregiver-burnout-therapy",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-caregiver-burnout-therapy",
+    "wordCount": "1800",
+    "articleSection": "Burnout",
+    "keywords": "caregiver burnout, caregiver stress, caregiver mental health, Houston caregivers, family caregiver therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is caregiver burnout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Caregiver burnout is a state of physical and emotional depletion that develops when someone gives sustained care to another person without enough support or recovery. It tends to show up as exhaustion that sleep does not fix, emotional numbness or irritability, resentment you feel guilty about, and a loss of your own identity outside of the caregiving role. It is not a character flaw. It is what happens when the load stays too heavy for too long."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between caregiver stress and caregiver burnout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Caregiver stress often feels like pressure. There is a lot to manage, you are stretched thin, but you still have some sense of agency and can imagine things easing up. Burnout feels more like depletion and disconnection. The emotional resources feel gone, hope feels distant, and you may have started to emotionally distance yourself from the person you are caring for just to cope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it normal to feel resentment as a caregiver?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Feeling resentment toward someone you love while also loving them is one of the most common and least discussed parts of caregiving. Both things can be true at once. The guilt that often accompanies that resentment is also very common. These feelings are not signs that you are a bad caregiver. They are signs that you are depleted and need support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can therapy help with caregiver burnout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy will not take items off your to-do list, but it can change your relationship to everything on it. For caregivers, therapy often involves understanding the patterns behind the caregiving role, processing grief and complicated feelings, rebuilding a sense of identity outside the role, and learning to set limits without guilt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who helps caregivers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston adults who are carrying more than they should have to carry alone, including people in ongoing caregiving roles for aging parents, children with complex needs, or other family members. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1604830926588-b51d5ddeba7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwb24lMjBjb3VjaCUyMGNhcmVnaXZlciUyMGJ1cm5vdXR8ZW58MXwwfHx8MTc4MjcwNTc1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in pink jacket lying on gray couch"
 cardImage: "https://images.unsplash.com/photo-1604830926588-b51d5ddeba7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwb24lMjBjb3VjaCUyMGNhcmVnaXZlciUyMGJ1cm5vdXR8ZW58MXwwfHx8MTc4MjcwNTc1M3ww&ixlib=rb-4.1.0&q=80&w=400"

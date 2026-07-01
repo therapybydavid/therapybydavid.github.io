@@ -40,6 +40,53 @@ schemaJson: |
       "articleSection": "Relationships",
       "keywords": "voice notes, connection, relationships, oxytocin, loneliness, therapist Houston Texas, phone calls vs texting"
     }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do voice notes feel more connecting than texts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Voice carries tone, warmth, and emotion that text strips out. When you hear a familiar voice, the ambiguity that fuels anxiety collapses. You catch whether someone is genuinely okay, not just what they typed. Research confirms that people form significantly stronger bonds through voice than through text, and audio-only contact is just as connecting as video. It's the voice itself, not the face, doing the relational work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does voice do to the body that text doesn't?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hearing a familiar, caring voice is associated with oxytocin release and lower cortisol, the body's main stress hormone. Texting does not reliably produce either effect. So when someone says a phone call calmed them down or a voice note made their day, their physiology genuinely shifted. The voice is one of the original tools of co-regulation between nervous systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are phone calls really less awkward than people think?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Research says yes. Studies found that people consistently predicted calls would be awkward and that their predictions were wrong. The calls weren't awkward, they didn't take meaningfully longer than email, and they left people feeling closer. Most of us talk ourselves out of the very thing that would actually help."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I feel disconnected even when I am in contact with people?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A lot of loneliness is not caused by having no one. It is caused by months of contact that never goes deeper than logistics. You can text someone every day and still feel like strangers because the medium keeps you at arm's length. If the disconnection runs deeper than a missed call, that's worth paying attention to. Persistent loneliness and difficulty letting people close are things therapy is genuinely good at helping with."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a therapist help with loneliness and relationship disconnection in Houston?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston adults navigating loneliness, difficulty with closeness, and relationship patterns that keep connection just out of reach. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 ---
 
 There's a particular kind of message that has quietly become a love language. You're walking to your car, and instead of typing, you hold the phone to your mouth and just talk. A minute later your friend listens — to your actual voice, the laugh in the middle of a sentence, the sigh before you get to the real thing you wanted to say.

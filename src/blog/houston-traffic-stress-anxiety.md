@@ -19,6 +19,70 @@ cardTag: "Anxiety"
 cardDescription: "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+schemaJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Houston Traffic and Your Nervous System: When the Commute Is Making You Worse",
+    "description": "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something.",
+    "image": "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
+    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "url": "https://therapybydavid.com/blog/houston-traffic-stress-anxiety",
+    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-traffic-stress-anxiety",
+    "wordCount": "1800",
+    "articleSection": "Anxiety",
+    "keywords": "Houston traffic stress, commute anxiety Houston, stress and anxiety commute, Houston commuter mental health, I-10 anxiety, therapist Houston TX, therapy Texas, telehealth therapy Texas"
+  }
+faqJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Houston traffic actually cause anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your brain does not always distinguish neatly between a car cutting you off and a genuine threat to your safety. Both can trigger the same stress response: elevated heart rate, muscle tension, heightened alertness. One close call, your body handles it. The problem is when that response gets activated every single morning and evening without real recovery in between. Chronic low-grade stress compounds over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is commuting in Houston especially stressful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Houston has no reliable public transit alternative, so most commuters are in the car regardless of traffic. The city's sprawl means commutes of 45 to 60 minutes each way are common. Flooding and weather unpredictability add anticipatory worry before you have even left the house. And summer heat adds physiological stress on top of psychological stress. These conditions accumulate in real ways."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my commute stress is part of a bigger anxiety problem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some signs to pay attention to: you feel dread the night before a workday, not just in the morning; you replay frustrating drives for hours afterward; you have started avoiding certain routes or times even when it is inconvenient; you notice physical symptoms like a tight chest or jaw clenching during or after the drive; your patience at home runs noticeably lower on high-traffic days. These point toward a larger anxiety pattern worth addressing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What actually helps with commute stress and anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Building an intentional transition between your commute and your next environment gives your nervous system a signal that the threat phase is over. Noticing body tension during the drive creates a small gap between what is happening and your automatic response. And if commute stress is feeding into broader anxiety or relationship tension, working with a therapist to understand the larger pattern is more effective than managing one piece of it in isolation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a therapist in Houston who helps with commute stress and anxiety?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Therapy by David works with Houston adults navigating anxiety, stress accumulation, and the patterns that make daily life harder than it should be. Sessions are available in person in the Houston area and via telehealth across Texas."
+        }
+      }
+    ]
+  }
 image: "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "Modern skyscrapers under a cloudy blue sky."
 cardImage: "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=400"
