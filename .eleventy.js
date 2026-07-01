@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
   // Root-level asset files and directories (backend functions, images, etc.).
   // NOTE: the "blog" directory is intentionally excluded — Eleventy builds it.
   [
-    "images", "analytics.js", "site.webmanifest", "robots.txt", "_headers",
+    "images", "analytics.js", "site.webmanifest", "robots.txt", "_headers", "_redirects",
     "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
     "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
     "therapy-by-david-logo.png", "TBD.png",

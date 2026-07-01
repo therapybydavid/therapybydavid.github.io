@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+# Branded short links → destinations. Used in SMS/print where a clean,
+# on-brand URL reads better and survives carrier link-filtering.
+
+# Free consult — used in the (832) 536-5177 inbound-text auto-reply.
+/consult   https://calendly.com/roblesinc/consultation   302
