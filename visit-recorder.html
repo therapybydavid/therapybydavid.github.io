@@ -310,11 +310,14 @@ async function generateSummary(rec) {
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ transcript: rec.transcript })
     });
-    if (!resp.ok) throw new Error('API error');
+    if (!resp.ok) {
+      var errText = await resp.text().catch(function(){ return resp.status; });
+      throw new Error('HTTP ' + resp.status + ': ' + errText);
+    }
     var data = await resp.json();
     rec.summary = data.summary || rec.transcript;
   } catch(e) {
-    rec.summary = rec.transcript;
+    rec.summary = '[Summary error: ' + e.message + ']\n\n' + rec.transcript;
   }
 
   summaryEl.readOnly = false;
