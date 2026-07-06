@@ -1,5 +1,5 @@
 // Cloudflare Pages Function — AI summary of a medical visit transcript.
-// Endpoint: POST /functions/summarize-visit   Body: { "transcript": "..." }
+// Endpoint: POST /summarize-visit   Body: { "transcript": "..." }
 //
 // SETUP:
 //   Cloudflare Pages → your project → Settings → Variables and secrets
@@ -16,7 +16,7 @@ export async function onRequestPost(context) {
     }
 
     if (!env.ANTHROPIC_API_KEY) {
-      return Response.json({ summary: '[DEBUG: ANTHROPIC_API_KEY not found in env] ' + transcript });
+      return Response.json({ summary: 'Summary unavailable — service not configured.' }, { status: 503 });
     }
 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
@@ -37,8 +37,7 @@ export async function onRequestPost(context) {
     });
 
     if (!resp.ok) {
-      const errBody = await resp.text().catch(() => resp.status);
-      return Response.json({ summary: '[DEBUG: Anthropic API error ' + resp.status + ': ' + errBody + ']' });
+      return Response.json({ summary: 'Could not generate summary. Please try again.' }, { status: 502 });
     }
 
     const data = await resp.json();
@@ -46,6 +45,6 @@ export async function onRequestPost(context) {
     return Response.json({ summary });
 
   } catch (err) {
-    return Response.json({ summary: '[DEBUG: Exception: ' + err.message + ']' }, { status: 500 });
+    return Response.json({ summary: 'Summary failed. Please try again.' }, { status: 500 });
   }
 }

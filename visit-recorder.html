@@ -248,29 +248,28 @@ function toggleRecording() {
 
 function startRecording() {
   finalTranscript = '';
+  setStatus('Starting…');
 
-  // Explicitly request mic permission — required on iOS for speech capture
-  navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
-    stream.getTracks().forEach(function(t) { t.stop(); }); // release immediately
-    if (hasSpeech) { try { recognition.start(); } catch(e) {} }
-  }).catch(function() {
-    setStatus('Microphone access denied — tap the address bar to allow it');
-    return;
-  });
-
-  isRecording     = true;
-  recordStartTime = new Date();
-  elapsed         = 0;
-  document.getElementById('timer').textContent = '0:00';
-  timerInterval   = setInterval(function() {
-    elapsed++;
-    document.getElementById('timer').textContent = fmt(elapsed);
-  }, 1000);
-
-  var btn = document.getElementById('record-btn');
-  btn.className = 'recording';
-  document.getElementById('btn-label').textContent = 'TAP TO STOP';
-  setStatus('● Recording…');
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function(stream) {
+      stream.getTracks().forEach(function(t) { t.stop(); });
+      isRecording     = true;
+      recordStartTime = new Date();
+      elapsed         = 0;
+      document.getElementById('timer').textContent = '0:00';
+      timerInterval   = setInterval(function() {
+        elapsed++;
+        document.getElementById('timer').textContent = fmt(elapsed);
+      }, 1000);
+      var btn = document.getElementById('record-btn');
+      btn.className = 'recording';
+      document.getElementById('btn-label').textContent = 'TAP TO STOP';
+      setStatus('● Recording…');
+      if (hasSpeech) { try { recognition.start(); } catch(e) {} }
+    })
+    .catch(function() {
+      setStatus('Microphone access denied — go to Settings → Safari to allow');
+    });
 }
 
 
