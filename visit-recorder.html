@@ -215,6 +215,8 @@ if (SR) {
     for (var i = e.resultIndex; i < e.results.length; i++) {
       if (e.results[i].isFinal) finalTranscript += e.results[i][0].transcript + ' ';
     }
+    var wordCount = finalTranscript.trim().split(/\s+/).filter(Boolean).length;
+    if (wordCount > 0) setStatus('● Recording… (' + wordCount + ' words)');
   };
   recognition.onerror = function(e) {
     if (e.error === 'no-speech' || e.error === 'aborted') return;
@@ -247,7 +249,14 @@ function toggleRecording() {
 function startRecording() {
   finalTranscript = '';
 
-  if (hasSpeech) { try { recognition.start(); } catch(e) {} }
+  // Explicitly request mic permission — required on iOS for speech capture
+  navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
+    stream.getTracks().forEach(function(t) { t.stop(); }); // release immediately
+    if (hasSpeech) { try { recognition.start(); } catch(e) {} }
+  }).catch(function() {
+    setStatus('Microphone access denied — tap the address bar to allow it');
+    return;
+  });
 
   isRecording     = true;
   recordStartTime = new Date();
@@ -263,6 +272,7 @@ function startRecording() {
   document.getElementById('btn-label').textContent = 'TAP TO STOP';
   setStatus('● Recording…');
 }
+
 
 function stopRecording() {
   isRecording = false;
