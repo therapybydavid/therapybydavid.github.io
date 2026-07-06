@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Visit Recorder</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080b10;
+      --surface: #0f1520;
+      --card: #141c2a;
+      --gold: #b99138;
+      --gold-light: #c8a96e;
+      --text: #e8e0d4;
+      --muted: #8a8a9a;
+      --red: #c0392b;
+      --red-bright: #e74c3c;
+      --green: #27ae60;
+      --border: rgba(185,145,56,0.25);
+    }
+
+    html { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 0 0 60px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px 14px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.3px;
+    }
+    #datetime {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── Main layout ── */
+    main { padding: 20px 16px; max-width: 520px; margin: 0 auto; }
+
+    /* ── Fields ── */
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .field input {
+      width: 100%;
+      padding: 13px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 16px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .field input::placeholder { color: #4a4a5a; }
+    .field input:focus { border-color: var(--gold); }
+
+    /* ── Warning ── */
+    .warning {
+      background: rgba(185,145,56,0.1);
+      border: 1px solid rgba(185,145,56,0.35);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+      line-height: 1.5;
+      display: none;
+    }
+
+    /* ── Record button ── */
+    #record-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100%;
+      padding: 26px 20px;
+      margin: 20px 0 0;
+      border: none;
+      border-radius: 16px;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      transition: transform 0.1s, opacity 0.1s;
+    }
+    #record-btn:active { transform: scale(0.97); opacity: 0.85; }
+    #record-btn.idle  { background: var(--red);       color: #fff; }
+    #record-btn.ready { background: var(--green);      color: #fff; }
+    #record-btn.recording {
+      background: var(--red-bright);
+      color: #fff;
+      animation: pulse-btn 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse-btn {
+      0%,100% { box-shadow: 0 0 0 0 rgba(231,76,60,0.5); }
+      50%      { box-shadow: 0 0 0 16px rgba(231,76,60,0); }
+    }
+
+    /* Dot indicator */
+    .dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    #record-btn.recording .dot {
+      animation: blink-dot 1s ease-in-out infinite;
+    }
+    @keyframes blink-dot {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.15; }
+    }
+
+    /* ── Timer ── */
+    #timer {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 200;
+      font-variant-numeric: tabular-nums;
+      color: var(--gold-light);
+      letter-spacing: 3px;
+      min-height: 52px;
+      line-height: 52px;
+      margin: 14px 0 4px;
+    }
+
+    /* ── Status ── */
+    #status {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 20px;
+      margin-bottom: 16px;
+    }
+    #status.error { color: var(--red-bright); }
+
+    /* ── Interim ── */
+    #interim {
+      padding: 10px 14px;
+      background: rgba(185,145,56,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-size: 15px;
+      color: var(--muted);
+      font-style: italic;
+      min-height: 42px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    /* ── Transcript ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    #transcript {
+      width: 100%;
+      min-height: 180px;
+      padding: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      resize: vertical;
+      outline: none;
+      font-family: inherit;
+      -webkit-appearance: none;
+    }
+    #transcript::placeholder { color: #4a4a5a; }
+    #transcript:focus { border-color: var(--gold); }
+
+    /* ── Action buttons ── */
+    .actions {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 17px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      transition: transform 0.1s, opacity 0.1s;
+      font-family: inherit;
+    }
+    .btn:active { transform: scale(0.97); opacity: 0.8; }
+    .btn-notion   { background: var(--gold); color: #080b10; }
+    .btn-download { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+    .btn-share    { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+    .btn-new      { background: transparent; color: var(--muted); border: 1px solid rgba(138,138,154,0.3); }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      background: var(--green);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 999;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎙 Visit Recorder</h1>
+  <div id="datetime"></div>
+</header>
+
+<main>
+  <!-- Context fields -->
+  <div class="field">
+    <label>Doctor / Nurse (optional)</label>
+    <input type="text" id="provider" placeholder="Dr. Smith" autocomplete="off" autocorrect="off">
+  </div>
+  <div class="field">
+    <label>Reason / Notes (optional)</label>
+    <input type="text" id="reason" placeholder="Follow-up, medication review…" autocomplete="off">
+  </div>
+
+  <div class="warning" id="speech-warning">
+    ⚠️ Live transcription isn't supported in this browser. Recording still works — download the audio and ask Claude to transcribe it.
+  </div>
+
+  <!-- Record button -->
+  <button id="record-btn" class="idle" onclick="toggleRecording()">
+    <span class="dot"></span>
+    <span id="btn-label">START RECORDING</span>
+  </button>
+
+  <!-- Timer & status -->
+  <div id="timer"></div>
+  <div id="status"></div>
+
+  <hr class="divider">
+
+  <!-- Transcript area -->
+  <div class="section-label">Transcript</div>
+  <div id="interim"></div>
+  <textarea id="transcript" placeholder="Live transcript appears here while recording…&#10;&#10;You can also type or edit notes by hand."></textarea>
+
+  <!-- Action buttons (shown after recording) -->
+  <div class="actions" id="actions" style="display:none">
+    <button class="btn btn-notion" onclick="copyForNotion()">📋 Copy for Notion</button>
+    <button class="btn btn-download" id="download-btn" onclick="downloadAudio()" style="display:none">💾 Download Audio</button>
+    <button class="btn btn-share"   id="share-btn"    onclick="shareTranscript()" style="display:none">↗ Share Transcript</button>
+    <button class="btn btn-new"                       onclick="newRecording()">↩ New Recording</button>
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<script>
+  /* ── State ── */
+  let mediaRecorder   = null;
+  let audioChunks     = [];
+  let audioBlob       = null;
+  let recognition     = null;
+  let timerInterval   = null;
+  let elapsed         = 0;
+  let finalTranscript = '';
+  let isRecording     = false;
+  let hasSpeech       = false;
+  let recordedMime    = 'audio/webm';
+
+  /* ── Date/time display ── */
+  function updateDateTime() {
+    const opts = { weekday:'long', month:'long', day:'numeric', hour:'numeric', minute:'2-digit' };
+    document.getElementById('datetime').textContent =
+      new Date().toLocaleDateString('en-US', opts);
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 30000);
+
+  /* ── Speech recognition ── */
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SR) {
+    hasSpeech = true;
+    recognition = new SR();
+    recognition.continuous      = true;
+    recognition.interimResults  = true;
+    recognition.lang            = 'en-US';
+
+    recognition.onresult = function(e) {
+      let interim = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) {
+          finalTranscript += e.results[i][0].transcript + ' ';
+        } else {
+          interim += e.results[i][0].transcript;
+        }
+      }
+      document.getElementById('transcript').value = finalTranscript.trim();
+      const intEl = document.getElementById('interim');
+      if (interim) { intEl.style.display = 'block'; intEl.textContent = interim; }
+      else          { intEl.style.display = 'none'; }
+      try { localStorage.setItem('vr_draft', finalTranscript); } catch(e) {}
+    };
+
+    recognition.onerror = function(e) {
+      if (e.error === 'no-speech' || e.error === 'aborted') return;
+      setStatus('Transcription: ' + e.error, false);
+    };
+
+    /* auto-restart while still recording */
+    recognition.onend = function() {
+      if (isRecording) { try { recognition.start(); } catch(err) {} }
+    };
+  } else {
+    document.getElementById('speech-warning').style.display = 'block';
+  }
+
+  /* ── Helpers ── */
+  function fmt(s) {
+    const m = String(Math.floor(s / 60)).padStart(2,'0');
+    const sec = String(s % 60).padStart(2,'0');
+    return m + ':' + sec;
+  }
+
+  function setStatus(msg, isErr) {
+    const el = document.getElementById('status');
+    el.textContent = msg;
+    el.className = isErr ? 'error' : '';
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  /* ── Record / stop ── */
+  async function toggleRecording() {
+    if (!isRecording) await startRecording(); else stopRecording();
+  }
+
+  async function startRecording() {
+    // Reset
+    finalTranscript = '';
+    audioChunks = [];
+    audioBlob = null;
+    document.getElementById('transcript').value = '';
+    document.getElementById('interim').style.display = 'none';
+    document.getElementById('actions').style.display = 'none';
+    document.getElementById('download-btn').style.display = 'none';
+    document.getElementById('share-btn').style.display = 'none';
+    setStatus('');
+
+    let stream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch(err) {
+      setStatus('Microphone access denied — tap the lock icon in the address bar to allow it.', true);
+      return;
+    }
+
+    // Pick a supported mime type
+    const mimes = ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg'];
+    recordedMime = mimes.find(m => MediaRecorder.isTypeSupported(m)) || '';
+    mediaRecorder = new MediaRecorder(stream, recordedMime ? { mimeType: recordedMime } : {});
+
+    mediaRecorder.ondataavailable = function(e) {
+      if (e.data && e.data.size > 0) audioChunks.push(e.data);
+    };
+    mediaRecorder.onstop = function() {
+      audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+      stream.getTracks().forEach(t => t.stop());
+      document.getElementById('download-btn').style.display = '';
+      if (navigator.share) document.getElementById('share-btn').style.display = '';
+    };
+
+    mediaRecorder.start(1000);
+
+    // Speech
+    if (hasSpeech) { try { recognition.start(); } catch(e) {} }
+
+    // Timer
+    isRecording = true;
+    elapsed = 0;
+    document.getElementById('timer').textContent = '0:00';
+    timerInterval = setInterval(function() {
+      elapsed++;
+      document.getElementById('timer').textContent = fmt(elapsed);
+    }, 1000);
+
+    // UI
+    const btn = document.getElementById('record-btn');
+    btn.className = 'recording';
+    document.getElementById('btn-label').textContent = 'TAP TO STOP';
+    setStatus(hasSpeech ? '● Recording + transcribing live…' : '● Recording audio…');
+  }
+
+  function stopRecording() {
+    isRecording = false;
+    clearInterval(timerInterval);
+
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+    if (hasSpeech) { try { recognition.stop(); } catch(e) {} }
+
+    document.getElementById('interim').style.display = 'none';
+
+    const btn = document.getElementById('record-btn');
+    btn.className = 'idle';
+    document.getElementById('btn-label').textContent = 'START RECORDING';
+    setStatus('Saved — ' + fmt(elapsed));
+
+    setTimeout(function() {
+      document.getElementById('actions').style.display = 'flex';
+    }, 600);
+  }
+
+  /* ── Copy for Notion ── */
+  function copyForNotion() {
+    const provider = document.getElementById('provider').value.trim();
+    const reason   = document.getElementById('reason').value.trim();
+    const text     = document.getElementById('transcript').value.trim();
+    const now      = new Date();
+    const dateStr  = now.toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    const timeStr  = now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
+
+    let out = '# Medical Visit — ' + dateStr + '\n\n';
+    if (provider) out += '**Provider:** ' + provider + '\n';
+    if (reason)   out += '**Reason:** ' + reason + '\n';
+    out += '**Duration:** ' + fmt(elapsed) + '\n';
+    out += '**Time:** ' + timeStr + '\n\n';
+    out += '---\n\n## Transcript\n\n';
+    out += text || '(no transcript)';
+
+    const copy = function(str) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(str).then(function() { showToast('Copied! Paste into Notion ✓'); });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = str;
+        ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try { document.execCommand('copy'); showToast('Copied! Paste into Notion ✓'); }
+        catch(e) { showToast('Copy failed — select text manually'); }
+        document.body.removeChild(ta);
+      }
+    };
+    copy(out);
+  }
+
+  /* ── Download audio ── */
+  function downloadAudio() {
+    if (!audioBlob) { setStatus('No audio available.', true); return; }
+    const type = audioBlob.type || 'audio/webm';
+    const ext  = type.includes('mp4') ? 'm4a' : type.includes('ogg') ? 'ogg' : 'webm';
+    const url  = URL.createObjectURL(audioBlob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'visit-' + new Date().toISOString().slice(0,10) + '.' + ext;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function() { URL.revokeObjectURL(url); }, 15000);
+  }
+
+  /* ── Web Share API ── */
+  function shareTranscript() {
+    const provider = document.getElementById('provider').value.trim();
+    const text     = document.getElementById('transcript').value.trim();
+    const title    = 'Visit notes' + (provider ? ' — ' + provider : '');
+    if (navigator.share) {
+      navigator.share({ title: title, text: text }).catch(function() {});
+    }
+  }
+
+  /* ── New recording ── */
+  function newRecording() {
+    if (isRecording) stopRecording();
+    document.getElementById('transcript').value = '';
+    document.getElementById('timer').textContent = '';
+    setStatus('');
+    document.getElementById('actions').style.display = 'none';
+    finalTranscript = '';
+    audioBlob = null;
+    audioChunks = [];
+    elapsed = 0;
+  }
+
+  /* ── Restore draft ── */
+  window.addEventListener('load', function() {
+    try {
+      const draft = localStorage.getItem('vr_draft');
+      if (draft) {
+        document.getElementById('transcript').value = draft;
+        setStatus('Draft restored from last session — tap New Recording to clear');
+      }
+    } catch(e) {}
+  });
+</script>
+
+</body>
+</html>
