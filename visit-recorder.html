@@ -94,18 +94,6 @@
     }
     #status { text-align: center; font-size: 13px; color: var(--muted); min-height: 20px; margin-bottom: 4px; }
 
-    .speech-warn {
-      background: rgba(185,145,56,0.08); border: 1px solid rgba(185,145,56,0.3);
-      border-radius: 10px; padding: 10px 13px; font-size: 13px;
-      color: var(--gold-lt); line-height: 1.5; margin: 12px 0 0; display: none;
-    }
-    #interim {
-      margin: 12px 0 0; padding: 10px 14px;
-      background: rgba(185,145,56,0.07); border-left: 3px solid var(--gold);
-      border-radius: 0 8px 8px 0; font-size: 15px; color: var(--muted);
-      font-style: italic; line-height: 1.55; display: none;
-    }
-
     #recordings-list { max-width: 520px; margin: 0 auto; padding: 0 16px; }
 
     .rec-card {
@@ -142,26 +130,18 @@
     .rec-who-input::placeholder { color: var(--dim); }
     .rec-who-input:focus { border-color: var(--gold); }
 
-    .rec-tx-wrap { padding: 10px 14px 0; }
-    .rec-tx-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.1px; color: var(--muted); margin-bottom: 5px; }
-    .rec-tx {
-      width: 100%; min-height: 90px; padding: 10px 12px;
+    .rec-summary-wrap { padding: 10px 14px 14px; }
+    .rec-summary-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.1px; color: var(--muted); margin-bottom: 5px; }
+    .rec-summary {
+      width: 100%; min-height: 120px; padding: 10px 12px;
       background: var(--card2); border: 1px solid var(--border);
       border-radius: 8px; color: var(--text); font-size: 14px;
-      line-height: 1.6; resize: vertical; outline: none;
+      line-height: 1.65; resize: vertical; outline: none;
       font-family: inherit; -webkit-appearance: none;
     }
-    .rec-tx::placeholder { color: var(--dim); }
-    .rec-tx:focus { border-color: var(--gold); }
-
-    .rec-actions { display: flex; gap: 8px; padding: 10px 14px 14px; }
-    .rec-btn {
-      flex: 1; padding: 10px 8px; border: none; border-radius: 8px;
-      font-size: 13px; font-weight: 600; cursor: pointer;
-      -webkit-tap-highlight-color: transparent; font-family: inherit; transition: opacity 0.1s;
-    }
-    .rec-btn:active { opacity: 0.7; }
-    .rec-btn-dl { background: var(--card2); color: var(--text); border: 1px solid var(--border); }
+    .rec-summary::placeholder { color: var(--dim); }
+    .rec-summary:focus { border-color: var(--gold); }
+    .rec-summary.loading { color: var(--muted); font-style: italic; }
 
     #toast {
       position: fixed; bottom: 28px; left: 50%;
@@ -192,10 +172,6 @@
   </button>
   <div id="timer"></div>
   <div id="status"></div>
-  <div class="speech-warn" id="speech-warn">
-    ⚠️ Live transcription not available in this browser. Audio still records.
-  </div>
-  <div id="interim"></div>
 </div>
 
 <div id="recordings-list"></div>
@@ -204,8 +180,6 @@
 <!-- ── Main UI script ── -->
 <script>
 var recordings      = [];
-var mediaRecorder   = null;
-var audioChunks     = [];
 var recognition     = null;
 var timerInterval   = null;
 var elapsed         = 0;
@@ -213,57 +187,56 @@ var finalTranscript = '';
 var isRecording     = false;
 var hasSpeech       = false;
 var recordStartTime = null;
-var fbUpdateTimers  = {};   // debounce timers for Firebase field updates
+var fbUpdateTimers  = {};
 
-/* ── Header ── */
-function updateHdrDate() {
+// Queue for records that arrive before Firebase is ready
+window.fbPendingSaves = [];
+
+/* ── Header date ── */
+(function() {
   var opts = { weekday:'long', month:'long', day:'numeric' };
   document.getElementById('hdr-date').textContent = new Date().toLocaleDateString('en-US', opts);
-}
-updateHdrDate();
+})();
 
 /* ── Sync dot ── */
 function setSyncDot(state) {
-  var d = document.getElementById('sync-dot');
-  d.className = state; // 'syncing' | 'synced' | 'error' | ''
+  document.getElementById('sync-dot').className = state;
 }
 
-/* ── Speech recognition ── */
+/* ── Speech recognition (silent capture — no live display) ── */
 var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 if (SR) {
   hasSpeech   = true;
   recognition = new SR();
   recognition.continuous     = true;
-  recognition.interimResults = true;
+  recognition.interimResults = false; // no live text flying across screen
   recognition.lang           = 'en-US';
   recognition.onresult = function(e) {
-    var interim = '';
     for (var i = e.resultIndex; i < e.results.length; i++) {
       if (e.results[i].isFinal) finalTranscript += e.results[i][0].transcript + ' ';
-      else interim += e.results[i][0].transcript;
     }
-    var intEl = document.getElementById('interim');
-    if (interim) { intEl.style.display = 'block'; intEl.textContent = interim; }
-    else          { intEl.style.display = 'none'; }
   };
-  recognition.onerror = function(e) { if (e.error==='no-speech'||e.error==='aborted') return; };
-  recognition.onend   = function()  { if (isRecording) { try { recognition.start(); } catch(e) {} } };
-} else {
-  document.getElementById('speech-warn').style.display = 'block';
+  recognition.onerror = function(e) {
+    if (e.error === 'no-speech' || e.error === 'aborted') return;
+  };
+  recognition.onend = function() {
+    if (isRecording) { try { recognition.start(); } catch(e) {} }
+  };
 }
 
 /* ── Helpers ── */
 function fmt(s) {
-  return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+  return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
 }
 function fmtTime(d) {
-  return d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
+  return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 }
 function setStatus(msg) { document.getElementById('status').textContent = msg; }
 function showToast(msg) {
   var t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(function(){ t.classList.remove('show'); }, 2600);
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2600);
 }
 
 /* ── Record / stop ── */
@@ -272,46 +245,29 @@ function toggleRecording() {
 }
 
 function startRecording() {
-  finalTranscript = ''; audioChunks = [];
-  document.getElementById('interim').style.display = 'none';
-  document.getElementById('interim').textContent = '';
+  finalTranscript = '';
 
-  navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
-    var mimes = ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg'];
-    var mime  = mimes.find(function(m){ return MediaRecorder.isTypeSupported(m); }) || '';
-    mediaRecorder = new MediaRecorder(stream, mime ? { mimeType: mime } : {});
-    mediaRecorder.ondataavailable = function(e){ if (e.data&&e.data.size>0) audioChunks.push(e.data); };
-    mediaRecorder.onstop = function() {
-      var blob = new Blob(audioChunks, { type: mediaRecorder.mimeType||'audio/webm' });
-      if (recordings.length > 0) {
-        recordings[recordings.length-1].audioBlob = blob;
-        var card = document.getElementById('card-' + recordings[recordings.length-1].id);
-        if (card) { var dl = card.querySelector('.rec-btn-dl'); if (dl) dl.style.display = ''; }
-      }
-      stream.getTracks().forEach(function(t){ t.stop(); });
-    };
-    mediaRecorder.start(1000);
-    if (hasSpeech) { try { recognition.start(); } catch(e) {} }
+  if (hasSpeech) { try { recognition.start(); } catch(e) {} }
 
-    isRecording     = true;
-    recordStartTime = new Date();
-    elapsed         = 0;
-    document.getElementById('timer').textContent = '0:00';
-    timerInterval = setInterval(function(){ elapsed++; document.getElementById('timer').textContent = fmt(elapsed); }, 1000);
+  isRecording     = true;
+  recordStartTime = new Date();
+  elapsed         = 0;
+  document.getElementById('timer').textContent = '0:00';
+  timerInterval   = setInterval(function() {
+    elapsed++;
+    document.getElementById('timer').textContent = fmt(elapsed);
+  }, 1000);
 
-    var btn = document.getElementById('record-btn');
-    btn.className = 'recording';
-    document.getElementById('btn-label').textContent = 'TAP TO STOP';
-    setStatus(hasSpeech ? '● Recording + transcribing…' : '● Recording…');
-  }).catch(function(){ setStatus('Microphone access denied — tap the address bar to allow it'); });
+  var btn = document.getElementById('record-btn');
+  btn.className = 'recording';
+  document.getElementById('btn-label').textContent = 'TAP TO STOP';
+  setStatus('● Recording…');
 }
 
 function stopRecording() {
   isRecording = false;
   clearInterval(timerInterval);
-  if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
   if (hasSpeech) { try { recognition.stop(); } catch(e) {} }
-  document.getElementById('interim').style.display = 'none';
 
   var btn = document.getElementById('record-btn');
   btn.className = 'idle';
@@ -324,22 +280,66 @@ function stopRecording() {
     startTime:  recordStartTime,
     duration:   elapsed,
     transcript: finalTranscript.trim(),
-    who:        '',
-    audioBlob:  null
+    summary:    '',
+    who:        ''
   };
   recordings.push(rec);
   renderCard(rec);
+  // Summary generation saves to storage + Firebase when done
+  generateSummary(rec);
+}
 
-  // Auto-save — no button needed
+/* ── AI summary ── */
+async function generateSummary(rec) {
+  var summaryEl = document.getElementById('summary-' + rec.id);
+  if (!summaryEl) return;
+
+  if (!rec.transcript || rec.transcript.length < 15) {
+    summaryEl.readOnly = false;
+    summaryEl.classList.remove('loading');
+    summaryEl.value = '';
+    rec.summary = '';
+    saveToStorage();
+    fbSaveOrQueue(rec);
+    return;
+  }
+
+  try {
+    var resp = await fetch('/functions/summarize-visit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ transcript: rec.transcript })
+    });
+    if (!resp.ok) throw new Error('API error');
+    var data = await resp.json();
+    rec.summary = data.summary || rec.transcript;
+  } catch(e) {
+    rec.summary = rec.transcript;
+  }
+
+  summaryEl.readOnly = false;
+  summaryEl.classList.remove('loading');
+  summaryEl.value = rec.summary;
   saveToStorage();
-  if (window.fbSave) window.fbSave(rec);
+  fbSaveOrQueue(rec);
+}
+
+function fbSaveOrQueue(rec) {
+  if (window.fbSave) {
+    window.fbSave(rec);
+  } else {
+    window.fbPendingSaves.push(rec);
+  }
 }
 
 /* ── Render card ── */
 function renderCard(rec) {
-  var list = document.getElementById('recordings-list');
-  var num  = recordings.length;
-  var card = document.createElement('div');
+  var list    = document.getElementById('recordings-list');
+  var num     = recordings.length;
+  var isNew   = !rec.restored;
+  var display = rec.summary || rec.transcript || '';
+
+  var card    = document.createElement('div');
   card.className = 'rec-card';
   card.id = 'card-' + rec.id;
   card.innerHTML =
@@ -354,18 +354,26 @@ function renderCard(rec) {
       '<div class="rec-who-label">Who visited</div>' +
       '<input class="rec-who-input" type="text" placeholder="Dr. Smith, Nurse Maria…" autocomplete="off" autocorrect="off" oninput="updateRecField(' + rec.id + ',\'who\',this.value)">' +
     '</div>' +
-    '<div class="rec-tx-wrap">' +
-      '<div class="rec-tx-label">Transcript / Notes</div>' +
-      '<textarea class="rec-tx" placeholder="Transcript fills in automatically, or type notes…" oninput="updateRecField(' + rec.id + ',\'transcript\',this.value)"></textarea>' +
-    '</div>' +
-    '<div class="rec-actions">' +
-      '<button class="rec-btn rec-btn-dl" style="display:none" onclick="downloadAudio(' + rec.id + ')">💾 Download Audio</button>' +
+    '<div class="rec-summary-wrap">' +
+      '<div class="rec-summary-label">Summary</div>' +
+      '<textarea class="rec-summary' + (isNew ? ' loading' : '') + '" id="summary-' + rec.id + '"' +
+        (isNew ? ' readonly' : '') +
+        ' placeholder="Add notes…" oninput="updateRecField(' + rec.id + ',\'summary\',this.value)"></textarea>' +
     '</div>';
+
   list.appendChild(card);
-  if (rec.who)        card.querySelector('.rec-who-input').value = rec.who;
-  if (rec.transcript) card.querySelector('.rec-tx').value        = rec.transcript;
-  if (!rec.restored) {
-    setTimeout(function(){ card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+
+  if (rec.who) card.querySelector('.rec-who-input').value = rec.who;
+
+  var summaryEl = document.getElementById('summary-' + rec.id);
+  if (display) {
+    summaryEl.value = display;
+  } else if (isNew) {
+    summaryEl.value = '● Summarizing…';
+  }
+
+  if (isNew) {
+    setTimeout(function() { card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
   }
 }
 
@@ -373,19 +381,17 @@ function showSaved(id) {
   var el = document.getElementById('saved-' + id);
   if (!el) return;
   el.classList.add('show');
-  setTimeout(function(){ el.classList.remove('show'); }, 2000);
+  setTimeout(function() { el.classList.remove('show'); }, 2000);
 }
 
 /* ── Field updates (debounced to Firebase) ── */
 function updateRecField(id, field, val) {
-  var rec = recordings.find(function(r){ return r.id===id; });
+  var rec = recordings.find(function(r) { return r.id === id; });
   if (!rec) return;
-  if (field==='who') rec.who = val;
-  if (field==='transcript') rec.transcript = val;
+  rec[field] = val;
   saveToStorage();
-  // Debounce Firebase update — wait 1s after last keystroke
-  clearTimeout(fbUpdateTimers[id]);
-  fbUpdateTimers[id] = setTimeout(function(){
+  clearTimeout(fbUpdateTimers[id + field]);
+  fbUpdateTimers[id + field] = setTimeout(function() {
     if (window.fbUpdate) window.fbUpdate(id, field, val);
   }, 1000);
 }
@@ -393,8 +399,8 @@ function updateRecField(id, field, val) {
 /* ── Delete ── */
 function deleteCard(id) {
   if (!confirm('Remove this visit?')) return;
-  recordings = recordings.filter(function(r){ return r.id!==id; });
-  var card = document.getElementById('card-' + id);
+  recordings = recordings.filter(function(r) { return r.id !== id; });
+  var card   = document.getElementById('card-' + id);
   if (card) card.remove();
   renumberCards();
   saveToStorage();
@@ -402,53 +408,54 @@ function deleteCard(id) {
 }
 
 function renumberCards() {
-  recordings.forEach(function(rec, i){
+  recordings.forEach(function(rec, i) {
     var card = document.getElementById('card-' + rec.id);
-    if (card) { var n = card.querySelector('.rec-num'); if (n) n.textContent = 'Visit '+(i+1); }
+    if (card) { var n = card.querySelector('.rec-num'); if (n) n.textContent = 'Visit ' + (i + 1); }
   });
 }
 
-/* ── localStorage (fast local cache) ── */
+/* ── localStorage ── */
 function saveToStorage() {
   try {
-    var data = recordings.map(function(r){
-      return { id:r.id, startTime:r.startTime instanceof Date?r.startTime.toISOString():r.startTime, duration:r.duration, transcript:r.transcript||'', who:r.who||'' };
+    var data = recordings.map(function(r) {
+      return {
+        id:         r.id,
+        startTime:  r.startTime instanceof Date ? r.startTime.toISOString() : r.startTime,
+        duration:   r.duration,
+        transcript: r.transcript || '',
+        summary:    r.summary    || '',
+        who:        r.who        || ''
+      };
     });
     localStorage.setItem('vr_recordings', JSON.stringify(data));
-  } catch(e){}
+  } catch(e) {}
 }
+
 function loadFromStorage() {
   try {
     var raw = localStorage.getItem('vr_recordings');
     if (!raw) return;
     var data = JSON.parse(raw);
-    if (!data||!data.length) return;
-    data.forEach(function(d){
-      if (recordings.find(function(r){ return r.id===d.id; })) return;
-      var rec = { id:d.id, startTime:new Date(d.startTime), duration:d.duration, transcript:d.transcript||'', who:d.who||'', audioBlob:null, restored:true };
+    if (!data || !data.length) return;
+    data.forEach(function(d) {
+      if (recordings.find(function(r) { return r.id === d.id; })) return;
+      var rec = {
+        id:         d.id,
+        startTime:  new Date(d.startTime),
+        duration:   d.duration,
+        transcript: d.transcript || '',
+        summary:    d.summary    || '',
+        who:        d.who        || '',
+        restored:   true
+      };
       recordings.push(rec);
       renderCard(rec);
     });
-  } catch(e){}
+  } catch(e) {}
 }
 
-/* ── Download audio ── */
-function downloadAudio(id) {
-  var rec = recordings.find(function(r){ return r.id===id; });
-  if (!rec||!rec.audioBlob) return;
-  var type = rec.audioBlob.type||'audio/webm';
-  var ext  = type.includes('mp4')?'m4a':type.includes('ogg')?'ogg':'webm';
-  var url  = URL.createObjectURL(rec.audioBlob);
-  var a    = document.createElement('a');
-  a.href = url; a.download = 'visit-'+rec.startTime.toTimeString().slice(0,5).replace(':','-')+'.'+ext;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  setTimeout(function(){ URL.revokeObjectURL(url); }, 15000);
-}
-
-/* ── Load on start ── */
-window.addEventListener('load', function(){
+window.addEventListener('load', function() {
   loadFromStorage();
-  // Firebase will merge in anything not in localStorage after it connects
 });
 </script>
 
@@ -468,38 +475,37 @@ const firebaseConfig = {
   appId:             "1:45351635355:web:3da34281325675f125793e"
 };
 
-const app  = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db   = getFirestore(app);
-const fbIdMap = {};   // localId (number) -> Firestore doc ID (string)
+const app     = initializeApp(firebaseConfig);
+const auth    = getAuth(app);
+const db      = getFirestore(app);
+const fbIdMap = {};
 
 setSyncDot('syncing');
 
 try {
-  /* ── Sign in anonymously (gives this device a persistent identity) ── */
   const cred = await signInAnonymously(auth);
   const uid  = cred.user.uid;
 
-  /* ── Load all this device's recordings from Firestore ── */
+  /* ── Load this device's recordings ── */
   const snap = await getDocs(query(
     collection(db, 'visit_recordings'),
     where('userId', '==', uid)
   ));
   const rows = [];
-  snap.forEach(function(d){ rows.push({ fbId: d.id, ...d.data() }); });
-  rows.sort(function(a,b){ return (a.startTime?.seconds||0) - (b.startTime?.seconds||0); });
+  snap.forEach(function(d) { rows.push({ fbId: d.id, ...d.data() }); });
+  rows.sort(function(a, b) { return (a.startTime?.seconds || 0) - (b.startTime?.seconds || 0); });
 
-  rows.forEach(function(d){
+  rows.forEach(function(d) {
     fbIdMap[d.localId] = d.fbId;
-    if (window.recordings && window.recordings.find(function(r){ return r.id===d.localId; })) return;
+    if (window.recordings && window.recordings.find(function(r) { return r.id === d.localId; })) return;
     var rec = {
-      id:        d.localId,
-      startTime: d.startTime?.toDate ? d.startTime.toDate() : new Date(d.startTime),
-      duration:  d.duration,
-      transcript:d.transcript || '',
-      who:       d.who || '',
-      audioBlob: null,
-      restored:  true
+      id:         d.localId,
+      startTime:  d.startTime?.toDate ? d.startTime.toDate() : new Date(d.startTime),
+      duration:   d.duration,
+      transcript: d.transcript || '',
+      summary:    d.summary    || '',
+      who:        d.who        || '',
+      restored:   true
     };
     window.recordings.push(rec);
     window.renderCard(rec);
@@ -517,7 +523,8 @@ try {
         startTime:  rec.startTime,
         duration:   rec.duration,
         transcript: rec.transcript || '',
-        who:        rec.who || '',
+        summary:    rec.summary    || '',
+        who:        rec.who        || '',
         createdAt:  serverTimestamp()
       });
       fbIdMap[rec.id] = ref.id;
@@ -526,7 +533,7 @@ try {
     } catch(e) { setSyncDot('error'); }
   };
 
-  /* ── Update a field (called after debounce) ── */
+  /* ── Update a field ── */
   window.fbUpdate = async function(localId, field, val) {
     var fbId = fbIdMap[localId];
     if (!fbId) return;
@@ -545,6 +552,12 @@ try {
     if (!fbId) return;
     try { await deleteDoc(doc(db, 'visit_recordings', fbId)); delete fbIdMap[localId]; } catch(e) {}
   };
+
+  /* ── Drain any recordings that arrived before Firebase was ready ── */
+  if (window.fbPendingSaves && window.fbPendingSaves.length) {
+    window.fbPendingSaves.forEach(function(rec) { window.fbSave(rec); });
+    window.fbPendingSaves = [];
+  }
 
 } catch(err) {
   setSyncDot('error');
