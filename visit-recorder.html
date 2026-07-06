@@ -315,7 +315,7 @@ async function generateSummary(rec) {
   }
 
   try {
-    var resp = await fetch('/functions/summarize-visit', {
+    var resp = await fetch('/summarize-visit', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ transcript: rec.transcript })
