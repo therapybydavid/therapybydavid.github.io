@@ -97,6 +97,11 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 - Launch config: `.claude/launch.json`
 - Server name: `Therapy by David (static)` — runs on port 8080
 
+## David's Contact & Integrations
+- **David's cell:** +18325365177
+- **Twilio credentials:** stored in Cloudflare Worker `openpath-intake` env vars — never hardcode in repo
+- **Twilio FROM number:** TBD — needs to be confirmed from Twilio console
+
 ## Business Info
 - David is a licensed psychotherapist in Texas
 - Offers telehealth across Texas + in-person in Pasadena and Webster, TX
