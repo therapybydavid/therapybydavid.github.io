@@ -358,6 +358,9 @@
   <button id="copy-all-btn" onclick="copyAllToNotion()">
     📋 Copy All Visits to Notion
   </button>
+  <button onclick="clearAllRecordings()" style="display:block;width:100%;max-width:520px;margin:8px auto 0;padding:10px;background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;">
+    Clear all saved visits
+  </button>
 </div>
 
 <div id="toast"></div>
@@ -382,6 +385,7 @@ function updateHdrDate() {
     new Date().toLocaleDateString('en-US', opts);
 }
 updateHdrDate();
+window.addEventListener('load', loadFromStorage);
 
 /* ── Speech recognition ── */
 var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -521,6 +525,7 @@ function stopRecording() {
   recordings.push(rec);
   renderCard(rec);
   updateBottomBar();
+  saveToStorage();
 }
 
 /* ── Render a recording card ── */
@@ -559,8 +564,13 @@ function renderCard(rec) {
 
   list.appendChild(card);
 
-  // scroll to card
-  setTimeout(function() { card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+  // set values via .value so any characters are safe
+  if (rec.who)        card.querySelector('.rec-who-input').value = rec.who;
+  if (rec.transcript) card.querySelector('.rec-tx').value        = rec.transcript;
+
+  if (!rec.restored) {
+    setTimeout(function() { card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+  }
 }
 
 function escHtml(s) {
@@ -573,6 +583,7 @@ function updateRecField(id, field, val) {
   if (!rec) return;
   if (field === 'who') rec.who = val;
   if (field === 'transcript') rec.transcript = val;
+  saveToStorage();
 }
 
 /* ── Delete card ── */
@@ -582,6 +593,7 @@ function deleteCard(id) {
   if (card) card.remove();
   renumberCards();
   updateBottomBar();
+  saveToStorage();
 }
 
 function renumberCards() {
@@ -598,6 +610,55 @@ function renumberCards() {
 function updateBottomBar() {
   document.getElementById('bottom-bar').style.display =
     recordings.length > 0 ? 'block' : 'none';
+}
+
+/* ── localStorage persistence ── */
+function saveToStorage() {
+  try {
+    var data = recordings.map(function(r) {
+      return {
+        id:         r.id,
+        startTime:  r.startTime instanceof Date ? r.startTime.toISOString() : r.startTime,
+        duration:   r.duration,
+        transcript: r.transcript || '',
+        who:        r.who || ''
+      };
+    });
+    localStorage.setItem('vr_recordings', JSON.stringify(data));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    var raw = localStorage.getItem('vr_recordings');
+    if (!raw) return;
+    var data = JSON.parse(raw);
+    if (!data || !data.length) return;
+    data.forEach(function(d) {
+      var rec = {
+        id:        d.id,
+        startTime: new Date(d.startTime),
+        duration:  d.duration,
+        transcript:d.transcript || '',
+        who:       d.who || '',
+        audioBlob: null,
+        restored:  true
+      };
+      recordings.push(rec);
+      renderCard(rec);
+    });
+    updateBottomBar();
+    setStatus('Visits restored from last session');
+  } catch(e) {}
+}
+
+function clearAllRecordings() {
+  if (!confirm('Delete all saved visits?')) return;
+  recordings = [];
+  document.getElementById('recordings-list').innerHTML = '';
+  updateBottomBar();
+  setStatus('');
+  try { localStorage.removeItem('vr_recordings'); } catch(e) {}
 }
 
 /* ── Copy single card ── */
