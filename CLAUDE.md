@@ -100,7 +100,7 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 ## David's Contact & Integrations
 - **David's cell:** +18325365177
 - **Twilio credentials:** stored in Cloudflare Worker `openpath-intake` env vars — never hardcode in repo
-- **Twilio FROM number:** TBD — needs to be confirmed from Twilio console
+- **Twilio FROM number:** +12812992495
 
 ## Business Info
 - David is a licensed psychotherapist in Texas
