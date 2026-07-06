@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
     "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
     "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
     "therapy-by-david-logo.png", "TBD.png",
-    "card", "functions", "newsletters",
+    "card", "newsletters",
   ].forEach((p) => {
     if (fs.existsSync(p)) eleventyConfig.addPassthroughCopy({ [p]: p });
   });
