@@ -356,7 +356,7 @@
 
 <div id="bottom-bar">
   <button id="copy-all-btn" onclick="copyAllToNotion()">
-    📋 Copy All Visits to Notion
+    📤 Save All Visits to Notion
   </button>
   <button onclick="clearAllRecordings()" style="display:block;width:100%;max-width:520px;margin:8px auto 0;padding:10px;background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;">
     Clear all saved visits
@@ -559,7 +559,7 @@ function renderCard(rec) {
     '</div>' +
     '<div class="rec-actions">' +
       '<button class="rec-btn rec-btn-dl" style="display:none" onclick="downloadAudio(' + rec.id + ')">💾 Audio</button>' +
-      '<button class="rec-btn rec-btn-cp" onclick="copyCardToNotion(' + rec.id + ')">📋 Copy</button>' +
+      '<button class="rec-btn rec-btn-cp" onclick="copyCardToNotion(' + rec.id + ')">📤 Save to Notion</button>' +
     '</div>';
 
   list.appendChild(card);
