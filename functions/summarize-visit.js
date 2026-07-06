@@ -16,7 +16,7 @@ export async function onRequestPost(context) {
     }
 
     if (!env.ANTHROPIC_API_KEY) {
-      return Response.json({ summary: transcript });
+      return Response.json({ summary: '[DEBUG: ANTHROPIC_API_KEY not found in env] ' + transcript });
     }
 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
@@ -37,7 +37,8 @@ export async function onRequestPost(context) {
     });
 
     if (!resp.ok) {
-      return Response.json({ summary: transcript });
+      const errBody = await resp.text().catch(() => resp.status);
+      return Response.json({ summary: '[DEBUG: Anthropic API error ' + resp.status + ': ' + errBody + ']' });
     }
 
     const data = await resp.json();
@@ -45,6 +46,6 @@ export async function onRequestPost(context) {
     return Response.json({ summary });
 
   } catch (err) {
-    return Response.json({ summary: '' }, { status: 500 });
+    return Response.json({ summary: '[DEBUG: Exception: ' + err.message + ']' }, { status: 500 });
   }
 }
