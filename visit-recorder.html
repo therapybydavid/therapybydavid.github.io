@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Visit Recorder</title>
   <meta name="robots" content="noindex, nofollow">
-  <!-- Install as home screen app -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Visit Rec">
@@ -16,32 +15,30 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #080b10;
-      --surface:  #0f1520;
-      --card:     #141c2a;
-      --card2:    #192030;
-      --gold:     #b99138;
-      --gold-lt:  #c8a96e;
-      --text:     #e8e0d4;
-      --muted:    #7a7a8a;
-      --dim:      #4a4a5a;
-      --red:      #c0392b;
-      --red-br:   #e74c3c;
-      --green:    #27ae60;
-      --border:   rgba(185,145,56,0.22);
+      --bg:      #080b10;
+      --surface: #0f1520;
+      --card:    #141c2a;
+      --card2:   #192030;
+      --gold:    #b99138;
+      --gold-lt: #c8a96e;
+      --text:    #e8e0d4;
+      --muted:   #7a7a8a;
+      --dim:     #4a4a5a;
+      --red:     #c0392b;
+      --red-br:  #e74c3c;
+      --green:   #27ae60;
+      --border:  rgba(185,145,56,0.22);
     }
 
     html, body { height: 100%; }
-
     body {
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       min-height: 100vh;
-      padding-bottom: 80px;
+      padding-bottom: 40px;
     }
 
-    /* ── Header ── */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -52,8 +49,16 @@
     }
     header h1 { font-size: 18px; font-weight: 700; color: var(--gold); }
     #hdr-date  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    #sync-dot  {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--dim); flex-shrink: 0;
+      transition: background 0.4s;
+    }
+    #sync-dot.synced  { background: var(--green); }
+    #sync-dot.syncing { background: var(--gold); animation: pulse-dot 1s infinite; }
+    #sync-dot.error   { background: var(--red-br); }
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-    /* ── Record zone ── */
     .record-zone {
       padding: 20px 16px 0;
       max-width: 520px;
@@ -61,271 +66,111 @@
     }
 
     #record-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      width: 100%;
-      padding: 28px 20px;
-      border: none;
-      border-radius: 18px;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      user-select: none;
-      transition: transform 0.1s;
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; width: 100%; padding: 28px 20px;
+      border: none; border-radius: 18px;
+      font-size: 22px; font-weight: 800; letter-spacing: 0.4px;
+      cursor: pointer; -webkit-tap-highlight-color: transparent;
+      user-select: none; transition: transform 0.1s;
     }
     #record-btn:active { transform: scale(0.97); }
-    #record-btn.idle      { background: var(--red);    color: #fff; }
+    #record-btn.idle      { background: var(--red);   color: #fff; }
     #record-btn.recording {
-      background: var(--red-br);
-      color: #fff;
+      background: var(--red-br); color: #fff;
       animation: pulse-ring 1.8s ease-in-out infinite;
     }
     @keyframes pulse-ring {
       0%,100% { box-shadow: 0 0 0 0   rgba(231,76,60,0.55); }
       50%     { box-shadow: 0 0 0 18px rgba(231,76,60,0); }
     }
-
-    .dot {
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: currentColor;
-      flex-shrink: 0;
-    }
+    .dot { width: 16px; height: 16px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
     #record-btn.recording .dot { animation: blink 1s ease-in-out infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.12} }
 
-    /* ── Timer / status ── */
     #timer {
-      text-align: center;
-      font-size: 40px;
-      font-weight: 200;
-      font-variant-numeric: tabular-nums;
-      color: var(--gold-lt);
-      letter-spacing: 3px;
-      min-height: 56px;
-      line-height: 56px;
-      margin: 12px 0 2px;
+      text-align: center; font-size: 40px; font-weight: 200;
+      font-variant-numeric: tabular-nums; color: var(--gold-lt);
+      letter-spacing: 3px; min-height: 56px; line-height: 56px; margin: 12px 0 2px;
     }
-    #status {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      min-height: 20px;
-      margin-bottom: 4px;
-    }
+    #status { text-align: center; font-size: 13px; color: var(--muted); min-height: 20px; margin-bottom: 4px; }
+
     .speech-warn {
-      background: rgba(185,145,56,0.08);
-      border: 1px solid rgba(185,145,56,0.3);
-      border-radius: 10px;
-      padding: 10px 13px;
-      font-size: 13px;
-      color: var(--gold-lt);
-      line-height: 1.5;
-      margin: 12px 0 0;
-      display: none;
+      background: rgba(185,145,56,0.08); border: 1px solid rgba(185,145,56,0.3);
+      border-radius: 10px; padding: 10px 13px; font-size: 13px;
+      color: var(--gold-lt); line-height: 1.5; margin: 12px 0 0; display: none;
     }
-
-    /* ── Interim transcript ── */
     #interim {
-      margin: 12px 0 0;
-      padding: 10px 14px;
-      background: rgba(185,145,56,0.07);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 8px 8px 0;
-      font-size: 15px;
-      color: var(--muted);
-      font-style: italic;
-      line-height: 1.55;
-      display: none;
+      margin: 12px 0 0; padding: 10px 14px;
+      background: rgba(185,145,56,0.07); border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0; font-size: 15px; color: var(--muted);
+      font-style: italic; line-height: 1.55; display: none;
     }
 
-    /* ── Recordings list ── */
-    #recordings-list {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+    #recordings-list { max-width: 520px; margin: 0 auto; padding: 0 16px; }
 
     .rec-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      margin-top: 20px;
-      overflow: hidden;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; margin-top: 20px; overflow: hidden;
       animation: slide-in 0.28s ease;
     }
-    @keyframes slide-in {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes slide-in { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
 
-    /* Card header row */
     .rec-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px 10px;
-      border-bottom: 1px solid var(--border);
-      gap: 8px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 14px 10px; border-bottom: 1px solid var(--border); gap: 8px;
     }
-    .rec-num {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .rec-time {
-      font-size: 12px;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .rec-dur {
-      font-size: 13px;
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
-      color: var(--gold-lt);
-      white-space: nowrap;
-    }
+    .rec-num  { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); white-space: nowrap; }
+    .rec-time { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .rec-dur  { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--gold-lt); white-space: nowrap; }
+    .rec-saved { font-size: 11px; color: var(--green); white-space: nowrap; opacity: 0; transition: opacity 0.4s; }
+    .rec-saved.show { opacity: 1; }
     .rec-delete {
-      background: none;
-      border: none;
-      color: var(--dim);
-      font-size: 18px;
-      cursor: pointer;
-      padding: 2px 4px;
-      line-height: 1;
+      background: none; border: none; color: var(--dim);
+      font-size: 18px; cursor: pointer; padding: 2px 4px; line-height: 1;
       -webkit-tap-highlight-color: transparent;
     }
     .rec-delete:active { color: var(--red-br); }
 
-    /* Who visited field */
     .rec-who-wrap { padding: 10px 14px 0; }
-    .rec-who-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.1px;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
+    .rec-who-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.1px; color: var(--muted); margin-bottom: 5px; }
     .rec-who-input {
-      width: 100%;
-      padding: 10px 12px;
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 16px;
-      outline: none;
-      -webkit-appearance: none;
-      font-family: inherit;
+      width: 100%; padding: 10px 12px; background: var(--card2);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-size: 16px; outline: none;
+      -webkit-appearance: none; font-family: inherit;
     }
     .rec-who-input::placeholder { color: var(--dim); }
     .rec-who-input:focus { border-color: var(--gold); }
 
-    /* Transcript */
     .rec-tx-wrap { padding: 10px 14px 0; }
-    .rec-tx-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.1px;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
+    .rec-tx-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.1px; color: var(--muted); margin-bottom: 5px; }
     .rec-tx {
-      width: 100%;
-      min-height: 90px;
-      padding: 10px 12px;
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.6;
-      resize: vertical;
-      outline: none;
-      font-family: inherit;
-      -webkit-appearance: none;
+      width: 100%; min-height: 90px; padding: 10px 12px;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 14px;
+      line-height: 1.6; resize: vertical; outline: none;
+      font-family: inherit; -webkit-appearance: none;
     }
     .rec-tx::placeholder { color: var(--dim); }
     .rec-tx:focus { border-color: var(--gold); }
 
-    /* Card action row */
-    .rec-actions {
-      display: flex;
-      gap: 8px;
-      padding: 10px 14px 14px;
-    }
+    .rec-actions { display: flex; gap: 8px; padding: 10px 14px 14px; }
     .rec-btn {
-      flex: 1;
-      padding: 10px 8px;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      font-family: inherit;
-      transition: opacity 0.1s;
+      flex: 1; padding: 10px 8px; border: none; border-radius: 8px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      -webkit-tap-highlight-color: transparent; font-family: inherit; transition: opacity 0.1s;
     }
     .rec-btn:active { opacity: 0.7; }
-    .rec-btn-dl  { background: var(--card2); color: var(--text); border: 1px solid var(--border); }
-    .rec-btn-cp  { background: var(--gold);  color: #080b10; }
+    .rec-btn-dl { background: var(--card2); color: var(--text); border: 1px solid var(--border); }
 
-    /* ── Bottom bar ── */
-    #bottom-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 12px 16px;
-      display: none;
-    }
-    #copy-all-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 16px;
-      background: var(--gold);
-      color: #080b10;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 800;
-      cursor: pointer;
-      font-family: inherit;
-      -webkit-tap-highlight-color: transparent;
-    }
-    #copy-all-btn:active { opacity: 0.8; }
-
-    /* ── Toast ── */
     #toast {
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
+      position: fixed; bottom: 28px; left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: var(--green);
-      color: #fff;
-      padding: 11px 22px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 14px;
-      opacity: 0;
+      background: var(--green); color: #fff;
+      padding: 11px 22px; border-radius: 100px;
+      font-weight: 700; font-size: 14px; opacity: 0;
       transition: opacity 0.22s, transform 0.22s;
-      pointer-events: none;
-      white-space: nowrap;
-      z-index: 1000;
+      pointer-events: none; white-space: nowrap; z-index: 1000;
     }
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
@@ -337,6 +182,7 @@
     <h1>🎙 Visit Recorder</h1>
     <div id="hdr-date"></div>
   </div>
+  <div id="sync-dot" title="Firebase sync status"></div>
 </header>
 
 <div class="record-zone">
@@ -347,26 +193,17 @@
   <div id="timer"></div>
   <div id="status"></div>
   <div class="speech-warn" id="speech-warn">
-    ⚠️ Live transcription not available in this browser. Audio still records — download the file to transcribe later.
+    ⚠️ Live transcription not available in this browser. Audio still records.
   </div>
   <div id="interim"></div>
 </div>
 
 <div id="recordings-list"></div>
-
-<div id="bottom-bar">
-  <button id="copy-all-btn" onclick="copyAllToNotion()">
-    📤 Save All Visits to Notion
-  </button>
-  <button onclick="clearAllRecordings()" style="display:block;width:100%;max-width:520px;margin:8px auto 0;padding:10px;background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;">
-    Clear all saved visits
-  </button>
-</div>
-
 <div id="toast"></div>
 
+<!-- ── Main UI script ── -->
 <script>
-/* ── State ── */
+var recordings      = [];
 var mediaRecorder   = null;
 var audioChunks     = [];
 var recognition     = null;
@@ -376,68 +213,57 @@ var finalTranscript = '';
 var isRecording     = false;
 var hasSpeech       = false;
 var recordStartTime = null;
-var recordings      = [];  // array of {id, startTime, duration, transcript, audioBlob}
+var fbUpdateTimers  = {};   // debounce timers for Firebase field updates
 
-/* ── Header date ── */
+/* ── Header ── */
 function updateHdrDate() {
   var opts = { weekday:'long', month:'long', day:'numeric' };
-  document.getElementById('hdr-date').textContent =
-    new Date().toLocaleDateString('en-US', opts);
+  document.getElementById('hdr-date').textContent = new Date().toLocaleDateString('en-US', opts);
 }
 updateHdrDate();
-window.addEventListener('load', loadFromStorage);
+
+/* ── Sync dot ── */
+function setSyncDot(state) {
+  var d = document.getElementById('sync-dot');
+  d.className = state; // 'syncing' | 'synced' | 'error' | ''
+}
 
 /* ── Speech recognition ── */
 var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 if (SR) {
-  hasSpeech = true;
+  hasSpeech   = true;
   recognition = new SR();
   recognition.continuous     = true;
   recognition.interimResults = true;
   recognition.lang           = 'en-US';
-
   recognition.onresult = function(e) {
     var interim = '';
     for (var i = e.resultIndex; i < e.results.length; i++) {
-      if (e.results[i].isFinal) {
-        finalTranscript += e.results[i][0].transcript + ' ';
-      } else {
-        interim += e.results[i][0].transcript;
-      }
+      if (e.results[i].isFinal) finalTranscript += e.results[i][0].transcript + ' ';
+      else interim += e.results[i][0].transcript;
     }
     var intEl = document.getElementById('interim');
     if (interim) { intEl.style.display = 'block'; intEl.textContent = interim; }
     else          { intEl.style.display = 'none'; }
   };
-
-  recognition.onerror = function(e) {
-    if (e.error === 'no-speech' || e.error === 'aborted') return;
-  };
-
-  recognition.onend = function() {
-    if (isRecording) { try { recognition.start(); } catch(err) {} }
-  };
+  recognition.onerror = function(e) { if (e.error==='no-speech'||e.error==='aborted') return; };
+  recognition.onend   = function()  { if (isRecording) { try { recognition.start(); } catch(e) {} } };
 } else {
   document.getElementById('speech-warn').style.display = 'block';
 }
 
 /* ── Helpers ── */
 function fmt(s) {
-  var m = String(Math.floor(s / 60)).padStart(2,'0');
-  var sec = String(s % 60).padStart(2,'0');
-  return m + ':' + sec;
+  return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
 }
 function fmtTime(d) {
   return d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
 }
-function setStatus(msg) {
-  document.getElementById('status').textContent = msg;
-}
+function setStatus(msg) { document.getElementById('status').textContent = msg; }
 function showToast(msg) {
   var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(function() { t.classList.remove('show'); }, 2600);
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2600);
 }
 
 /* ── Record / stop ── */
@@ -446,296 +272,283 @@ function toggleRecording() {
 }
 
 function startRecording() {
-  finalTranscript = '';
-  audioChunks = [];
+  finalTranscript = ''; audioChunks = [];
   document.getElementById('interim').style.display = 'none';
   document.getElementById('interim').textContent = '';
 
   navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
     var mimes = ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg'];
-    var mime  = mimes.find(function(m) { return MediaRecorder.isTypeSupported(m); }) || '';
+    var mime  = mimes.find(function(m){ return MediaRecorder.isTypeSupported(m); }) || '';
     mediaRecorder = new MediaRecorder(stream, mime ? { mimeType: mime } : {});
-
-    mediaRecorder.ondataavailable = function(e) {
-      if (e.data && e.data.size > 0) audioChunks.push(e.data);
-    };
+    mediaRecorder.ondataavailable = function(e){ if (e.data&&e.data.size>0) audioChunks.push(e.data); };
     mediaRecorder.onstop = function() {
-      var blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
-      // attach to the last recording entry
+      var blob = new Blob(audioChunks, { type: mediaRecorder.mimeType||'audio/webm' });
       if (recordings.length > 0) {
-        recordings[recordings.length - 1].audioBlob = blob;
-        var card = document.getElementById('card-' + recordings[recordings.length - 1].id);
-        if (card) {
-          var dlBtn = card.querySelector('.rec-btn-dl');
-          if (dlBtn) dlBtn.style.display = '';
-        }
+        recordings[recordings.length-1].audioBlob = blob;
+        var card = document.getElementById('card-' + recordings[recordings.length-1].id);
+        if (card) { var dl = card.querySelector('.rec-btn-dl'); if (dl) dl.style.display = ''; }
       }
-      stream.getTracks().forEach(function(t) { t.stop(); });
+      stream.getTracks().forEach(function(t){ t.stop(); });
     };
-
     mediaRecorder.start(1000);
-
     if (hasSpeech) { try { recognition.start(); } catch(e) {} }
 
-    isRecording    = true;
+    isRecording     = true;
     recordStartTime = new Date();
-    elapsed        = 0;
-
+    elapsed         = 0;
     document.getElementById('timer').textContent = '0:00';
-    timerInterval = setInterval(function() {
-      elapsed++;
-      document.getElementById('timer').textContent = fmt(elapsed);
-    }, 1000);
+    timerInterval = setInterval(function(){ elapsed++; document.getElementById('timer').textContent = fmt(elapsed); }, 1000);
 
     var btn = document.getElementById('record-btn');
     btn.className = 'recording';
     document.getElementById('btn-label').textContent = 'TAP TO STOP';
     setStatus(hasSpeech ? '● Recording + transcribing…' : '● Recording…');
-
-  }).catch(function() {
-    setStatus('Microphone access denied — tap the address bar to allow it');
-  });
+  }).catch(function(){ setStatus('Microphone access denied — tap the address bar to allow it'); });
 }
 
 function stopRecording() {
   isRecording = false;
   clearInterval(timerInterval);
-
   if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
   if (hasSpeech) { try { recognition.stop(); } catch(e) {} }
-
   document.getElementById('interim').style.display = 'none';
 
   var btn = document.getElementById('record-btn');
   btn.className = 'idle';
   document.getElementById('btn-label').textContent = 'START RECORDING';
-
-  var dur = elapsed;
-  setStatus('Saved — tap to record another visit');
   document.getElementById('timer').textContent = '';
+  setStatus('Tap to record another visit');
 
-  // Create recording entry
   var rec = {
     id:         Date.now(),
     startTime:  recordStartTime,
-    duration:   dur,
+    duration:   elapsed,
     transcript: finalTranscript.trim(),
+    who:        '',
     audioBlob:  null
   };
   recordings.push(rec);
   renderCard(rec);
-  updateBottomBar();
+
+  // Auto-save — no button needed
   saveToStorage();
+  if (window.fbSave) window.fbSave(rec);
 }
 
-/* ── Render a recording card ── */
+/* ── Render card ── */
 function renderCard(rec) {
   var list = document.getElementById('recordings-list');
   var num  = recordings.length;
-
   var card = document.createElement('div');
   card.className = 'rec-card';
   card.id = 'card-' + rec.id;
-
   card.innerHTML =
     '<div class="rec-header">' +
       '<span class="rec-num">Visit ' + num + '</span>' +
       '<span class="rec-time">' + fmtTime(rec.startTime) + '</span>' +
       '<span class="rec-dur">' + fmt(rec.duration) + '</span>' +
-      '<button class="rec-delete" onclick="deleteCard(' + rec.id + ')" title="Remove">✕</button>' +
+      '<span class="rec-saved" id="saved-' + rec.id + '">✓ Saved</span>' +
+      '<button class="rec-delete" onclick="deleteCard(' + rec.id + ')">✕</button>' +
     '</div>' +
     '<div class="rec-who-wrap">' +
       '<div class="rec-who-label">Who visited</div>' +
-      '<input class="rec-who-input" type="text" placeholder="Dr. Smith, Nurse Maria…" ' +
-        'autocomplete="off" autocorrect="off" ' +
-        'oninput="updateRecField(' + rec.id + ', \'who\', this.value)">' +
+      '<input class="rec-who-input" type="text" placeholder="Dr. Smith, Nurse Maria…" autocomplete="off" autocorrect="off" oninput="updateRecField(' + rec.id + ',\'who\',this.value)">' +
     '</div>' +
     '<div class="rec-tx-wrap">' +
       '<div class="rec-tx-label">Transcript / Notes</div>' +
-      '<textarea class="rec-tx" placeholder="Transcript will fill in automatically, or type notes…" ' +
-        'oninput="updateRecField(' + rec.id + ', \'transcript\', this.value)">' +
-        escHtml(rec.transcript) +
-      '</textarea>' +
+      '<textarea class="rec-tx" placeholder="Transcript fills in automatically, or type notes…" oninput="updateRecField(' + rec.id + ',\'transcript\',this.value)"></textarea>' +
     '</div>' +
     '<div class="rec-actions">' +
-      '<button class="rec-btn rec-btn-dl" style="display:none" onclick="downloadAudio(' + rec.id + ')">💾 Audio</button>' +
-      '<button class="rec-btn rec-btn-cp" onclick="copyCardToNotion(' + rec.id + ')">📤 Save to Notion</button>' +
+      '<button class="rec-btn rec-btn-dl" style="display:none" onclick="downloadAudio(' + rec.id + ')">💾 Download Audio</button>' +
     '</div>';
-
   list.appendChild(card);
-
-  // set values via .value so any characters are safe
   if (rec.who)        card.querySelector('.rec-who-input').value = rec.who;
   if (rec.transcript) card.querySelector('.rec-tx').value        = rec.transcript;
-
   if (!rec.restored) {
-    setTimeout(function() { card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+    setTimeout(function(){ card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
   }
 }
 
-function escHtml(s) {
-  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function showSaved(id) {
+  var el = document.getElementById('saved-' + id);
+  if (!el) return;
+  el.classList.add('show');
+  setTimeout(function(){ el.classList.remove('show'); }, 2000);
 }
 
-/* ── Field sync ── */
+/* ── Field updates (debounced to Firebase) ── */
 function updateRecField(id, field, val) {
-  var rec = recordings.find(function(r) { return r.id === id; });
+  var rec = recordings.find(function(r){ return r.id===id; });
   if (!rec) return;
-  if (field === 'who') rec.who = val;
-  if (field === 'transcript') rec.transcript = val;
+  if (field==='who') rec.who = val;
+  if (field==='transcript') rec.transcript = val;
   saveToStorage();
+  // Debounce Firebase update — wait 1s after last keystroke
+  clearTimeout(fbUpdateTimers[id]);
+  fbUpdateTimers[id] = setTimeout(function(){
+    if (window.fbUpdate) window.fbUpdate(id, field, val);
+  }, 1000);
 }
 
-/* ── Delete card ── */
+/* ── Delete ── */
 function deleteCard(id) {
-  recordings = recordings.filter(function(r) { return r.id !== id; });
+  if (!confirm('Remove this visit?')) return;
+  recordings = recordings.filter(function(r){ return r.id!==id; });
   var card = document.getElementById('card-' + id);
   if (card) card.remove();
   renumberCards();
-  updateBottomBar();
   saveToStorage();
+  if (window.fbDelete) window.fbDelete(id);
 }
 
 function renumberCards() {
-  recordings.forEach(function(rec, i) {
+  recordings.forEach(function(rec, i){
     var card = document.getElementById('card-' + rec.id);
-    if (card) {
-      var numEl = card.querySelector('.rec-num');
-      if (numEl) numEl.textContent = 'Visit ' + (i + 1);
-    }
+    if (card) { var n = card.querySelector('.rec-num'); if (n) n.textContent = 'Visit '+(i+1); }
   });
 }
 
-/* ── Bottom bar ── */
-function updateBottomBar() {
-  document.getElementById('bottom-bar').style.display =
-    recordings.length > 0 ? 'block' : 'none';
-}
-
-/* ── localStorage persistence ── */
+/* ── localStorage (fast local cache) ── */
 function saveToStorage() {
   try {
-    var data = recordings.map(function(r) {
-      return {
-        id:         r.id,
-        startTime:  r.startTime instanceof Date ? r.startTime.toISOString() : r.startTime,
-        duration:   r.duration,
-        transcript: r.transcript || '',
-        who:        r.who || ''
-      };
+    var data = recordings.map(function(r){
+      return { id:r.id, startTime:r.startTime instanceof Date?r.startTime.toISOString():r.startTime, duration:r.duration, transcript:r.transcript||'', who:r.who||'' };
     });
     localStorage.setItem('vr_recordings', JSON.stringify(data));
-  } catch(e) {}
+  } catch(e){}
 }
-
 function loadFromStorage() {
   try {
     var raw = localStorage.getItem('vr_recordings');
     if (!raw) return;
     var data = JSON.parse(raw);
-    if (!data || !data.length) return;
-    data.forEach(function(d) {
-      var rec = {
-        id:        d.id,
-        startTime: new Date(d.startTime),
-        duration:  d.duration,
-        transcript:d.transcript || '',
-        who:       d.who || '',
-        audioBlob: null,
-        restored:  true
-      };
+    if (!data||!data.length) return;
+    data.forEach(function(d){
+      if (recordings.find(function(r){ return r.id===d.id; })) return;
+      var rec = { id:d.id, startTime:new Date(d.startTime), duration:d.duration, transcript:d.transcript||'', who:d.who||'', audioBlob:null, restored:true };
       recordings.push(rec);
       renderCard(rec);
     });
-    updateBottomBar();
-    setStatus('Visits restored from last session');
-  } catch(e) {}
-}
-
-function clearAllRecordings() {
-  if (!confirm('Delete all saved visits?')) return;
-  recordings = [];
-  document.getElementById('recordings-list').innerHTML = '';
-  updateBottomBar();
-  setStatus('');
-  try { localStorage.removeItem('vr_recordings'); } catch(e) {}
-}
-
-/* ── Copy single card ── */
-function copyCardToNotion(id) {
-  var rec = recordings.find(function(r) { return r.id === id; });
-  if (!rec) return;
-  var card = document.getElementById('card-' + id);
-  var who  = card ? (card.querySelector('.rec-who-input').value.trim() || '') : (rec.who || '');
-  var tx   = card ? (card.querySelector('.rec-tx').value.trim() || '') : (rec.transcript || '');
-
-  var dateStr = rec.startTime.toLocaleDateString('en-US',
-    { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  var out = '# Visit — ' + dateStr + ' at ' + fmtTime(rec.startTime) + '\n\n';
-  if (who) out += '**Provider:** ' + who + '\n';
-  out += '**Duration:** ' + fmt(rec.duration) + '\n\n---\n\n## Transcript\n\n';
-  out += tx || '(no transcript)';
-
-  copyText(out, 'Copied! Paste into Notion ✓');
-}
-
-/* ── Copy all to Notion ── */
-function copyAllToNotion() {
-  if (recordings.length === 0) return;
-
-  var firstDate = recordings[0].startTime.toLocaleDateString('en-US',
-    { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  var out = '# Hospital Visit Notes — ' + firstDate + '\n\n';
-
-  recordings.forEach(function(rec, i) {
-    var card = document.getElementById('card-' + rec.id);
-    var who  = card ? (card.querySelector('.rec-who-input').value.trim() || '') : (rec.who || '');
-    var tx   = card ? (card.querySelector('.rec-tx').value.trim() || '') : (rec.transcript || '');
-
-    out += '---\n\n';
-    out += '## Visit ' + (i + 1) + ' · ' + fmtTime(rec.startTime) + '\n\n';
-    if (who) out += '**Provider:** ' + who + '\n';
-    out += '**Duration:** ' + fmt(rec.duration) + '\n\n';
-    out += tx || '(no transcript)';
-    out += '\n\n';
-  });
-
-  copyText(out, 'All ' + recordings.length + ' visits copied! ✓');
-}
-
-/* ── Copy helper ── */
-function copyText(text, toastMsg) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function() { showToast(toastMsg); });
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
-    document.body.appendChild(ta);
-    ta.focus(); ta.select();
-    try { document.execCommand('copy'); showToast(toastMsg); }
-    catch(e) { showToast('Copy failed — select text manually'); }
-    document.body.removeChild(ta);
-  }
+  } catch(e){}
 }
 
 /* ── Download audio ── */
 function downloadAudio(id) {
-  var rec = recordings.find(function(r) { return r.id === id; });
-  if (!rec || !rec.audioBlob) return;
-  var type = rec.audioBlob.type || 'audio/webm';
-  var ext  = type.includes('mp4') ? 'm4a' : type.includes('ogg') ? 'ogg' : 'webm';
+  var rec = recordings.find(function(r){ return r.id===id; });
+  if (!rec||!rec.audioBlob) return;
+  var type = rec.audioBlob.type||'audio/webm';
+  var ext  = type.includes('mp4')?'m4a':type.includes('ogg')?'ogg':'webm';
   var url  = URL.createObjectURL(rec.audioBlob);
   var a    = document.createElement('a');
-  var ts   = rec.startTime.toTimeString().slice(0,5).replace(':','-');
-  a.href     = url;
-  a.download = 'visit-' + ts + '.' + ext;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(function() { URL.revokeObjectURL(url); }, 15000);
+  a.href = url; a.download = 'visit-'+rec.startTime.toTimeString().slice(0,5).replace(':','-')+'.'+ext;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 15000);
+}
+
+/* ── Load on start ── */
+window.addEventListener('load', function(){
+  loadFromStorage();
+  // Firebase will merge in anything not in localStorage after it connects
+});
+</script>
+
+<!-- ── Firebase module (auto-save + sync) ── -->
+<script type="module">
+import { initializeApp }                           from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getAuth, signInAnonymously }              from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, getDocs, query, where, serverTimestamp }
+                                                   from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey:            "AIzaSyARzjrwt_Asr-_ca5bBYUBoFUMKM8sRAFc",
+  authDomain:        "therapy-by-david.firebaseapp.com",
+  projectId:         "therapy-by-david",
+  storageBucket:     "therapy-by-david.firebasestorage.app",
+  messagingSenderId: "45351635355",
+  appId:             "1:45351635355:web:3da34281325675f125793e"
+};
+
+const app  = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db   = getFirestore(app);
+const fbIdMap = {};   // localId (number) -> Firestore doc ID (string)
+
+setSyncDot('syncing');
+
+try {
+  /* ── Sign in anonymously (gives this device a persistent identity) ── */
+  const cred = await signInAnonymously(auth);
+  const uid  = cred.user.uid;
+
+  /* ── Load all this device's recordings from Firestore ── */
+  const snap = await getDocs(query(
+    collection(db, 'visit_recordings'),
+    where('userId', '==', uid)
+  ));
+  const rows = [];
+  snap.forEach(function(d){ rows.push({ fbId: d.id, ...d.data() }); });
+  rows.sort(function(a,b){ return (a.startTime?.seconds||0) - (b.startTime?.seconds||0); });
+
+  rows.forEach(function(d){
+    fbIdMap[d.localId] = d.fbId;
+    if (window.recordings && window.recordings.find(function(r){ return r.id===d.localId; })) return;
+    var rec = {
+      id:        d.localId,
+      startTime: d.startTime?.toDate ? d.startTime.toDate() : new Date(d.startTime),
+      duration:  d.duration,
+      transcript:d.transcript || '',
+      who:       d.who || '',
+      audioBlob: null,
+      restored:  true
+    };
+    window.recordings.push(rec);
+    window.renderCard(rec);
+  });
+
+  setSyncDot('synced');
+
+  /* ── Save a new recording ── */
+  window.fbSave = async function(rec) {
+    setSyncDot('syncing');
+    try {
+      const ref = await addDoc(collection(db, 'visit_recordings'), {
+        userId:     uid,
+        localId:    rec.id,
+        startTime:  rec.startTime,
+        duration:   rec.duration,
+        transcript: rec.transcript || '',
+        who:        rec.who || '',
+        createdAt:  serverTimestamp()
+      });
+      fbIdMap[rec.id] = ref.id;
+      setSyncDot('synced');
+      window.showSaved(rec.id);
+    } catch(e) { setSyncDot('error'); }
+  };
+
+  /* ── Update a field (called after debounce) ── */
+  window.fbUpdate = async function(localId, field, val) {
+    var fbId = fbIdMap[localId];
+    if (!fbId) return;
+    setSyncDot('syncing');
+    try {
+      var patch = {}; patch[field] = val;
+      await updateDoc(doc(db, 'visit_recordings', fbId), patch);
+      setSyncDot('synced');
+      window.showSaved(localId);
+    } catch(e) { setSyncDot('error'); }
+  };
+
+  /* ── Delete a recording ── */
+  window.fbDelete = async function(localId) {
+    var fbId = fbIdMap[localId];
+    if (!fbId) return;
+    try { await deleteDoc(doc(db, 'visit_recordings', fbId)); delete fbIdMap[localId]; } catch(e) {}
+  };
+
+} catch(err) {
+  setSyncDot('error');
+  console.error('Firebase error:', err);
 }
 </script>
 
