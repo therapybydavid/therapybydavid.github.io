@@ -31,7 +31,7 @@ export async function onRequestPost(context) {
         max_tokens: 500,
         messages: [{
           role: 'user',
-          content: `You are summarizing a recording of a hospital/doctor visit for the patient. Write clear, factual notes covering: what the provider said, any findings or observations, medications or treatments mentioned, instructions, and follow-up steps. Be specific. Plain prose, no headers.\n\nTranscript:\n${transcript.trim()}`,
+          content: `Summarize the following recorded conversation. Write clear, concise notes covering the key points discussed, anything important that was said, any instructions or next steps mentioned, and any decisions made. Be specific. Plain prose, no headers.\n\nTranscript:\n${transcript.trim()}`,
         }],
       }),
     });
