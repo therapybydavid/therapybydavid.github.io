@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/coping-skills-that-actually-work"
 canonical: "https://therapybydavid.com/blog/coping-skills-that-actually-work"
 permalink: "/blog/coping-skills-that-actually-work.html"
-date: 2026-07-04
+date: 2026-05-12
 order: 50
 tag: "Mental Health"
-dateDisplay: "July 4, 2026 · 6 min read"
+dateDisplay: "May 12, 2026 · 6 min read"
 deck: "You already have coping skills — the question is whether they're solving the problem or just postponing it."
 cardTitle: "Why Your Coping Skills Aren't Working (And What to Try Instead)"
 cardTag: "Mental Health"
 cardDescription: "Not all coping skills are created equal. Learn why some strategies backfire and what research says about building ones that actually help."
-cardDate: "July 4, 2026 · 6 min read"
+cardDate: "May 12, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1554188572-9d184b57d8e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwYnJlYXRoaW5nJTIwY2FsbXxlbnwxfDB8fHwxNzgzNDQyMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man wearing black crew-neck top"
