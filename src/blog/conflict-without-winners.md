@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/conflict-without-winners"
 canonical: "https://therapybydavid.com/blog/conflict-without-winners"
 permalink: "/blog/conflict-without-winners.html"
-date: 2026-07-07
+date: 2026-05-10
 order: 50
 tag: "Relationships"
-dateDisplay: "July 7, 2026 · 6 min read"
+dateDisplay: "May 10, 2026 · 6 min read"
 deck: "If every disagreement ends with a winner and a loser, both of you are losing something more important than the argument."
 cardTitle: "When Winning the Argument Means Losing the Relationship"
 cardTag: "Relationships"
 cardDescription: "Conflict isn't the problem — how you fight is. Learn why the need to 'win' arguments damages relationships and what to do instead."
-cardDate: "July 7, 2026 · 6 min read"
+cardDate: "May 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1542338347-4fff3276af78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBjYWxtJTIwY29udmVyc2F0aW9ufGVufDF8MHx8fDE3ODM0NDIyODZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man and woman holding hands"
