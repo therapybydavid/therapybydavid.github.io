@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "When anxiety spikes, your thinking brain goes offline first. Here's how to work with your nervous system, not against it."
 cardDate: "July 3, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1465409042654-5314e9d1754b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHBlcnNvbiUyMGRlZXAlMjBicmVhdGhpbmd8ZW58MXwwfHx8MTc4MzQ0MjI5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "closeup photo of woman wearing black top"
+cardImage: "https://images.unsplash.com/photo-1465409042654-5314e9d1754b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHBlcnNvbiUyMGRlZXAlMjBicmVhdGhpbmd8ZW58MXwwfHx8MTc4MzQ0MjI5Mnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "closeup photo of woman wearing black top"
 ---
 
 ## When "Just Relax" Doesn't Work
