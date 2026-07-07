@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Not all coping skills are created equal. Learn why some strategies backfire and what research says about building ones that actually help."
 cardDate: "July 4, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1554188572-9d184b57d8e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwYnJlYXRoaW5nJTIwY2FsbXxlbnwxfDB8fHwxNzgzNDQyMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man wearing black crew-neck top"
+cardImage: "https://images.unsplash.com/photo-1554188572-9d184b57d8e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwYnJlYXRoaW5nJTIwY2FsbXxlbnwxfDB8fHwxNzgzNDQyMjkwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man wearing black crew-neck top"
 ---
 
 Most people already have coping skills. They go for a run when they're stressed. They call a friend when they're overwhelmed. They watch TV to wind down. The problem isn't that people don't cope — it's that some of the ways we cope quietly make things harder over time.
