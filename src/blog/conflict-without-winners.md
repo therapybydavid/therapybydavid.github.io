@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Conflict isn't the problem — how you fight is. Learn why the need to 'win' arguments damages relationships and what to do instead."
 cardDate: "July 7, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1542338347-4fff3276af78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBjYWxtJTIwY29udmVyc2F0aW9ufGVufDF8MHx8fDE3ODM0NDIyODZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man and woman holding hands"
+cardImage: "https://images.unsplash.com/photo-1542338347-4fff3276af78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBjYWxtJTIwY29udmVyc2F0aW9ufGVufDF8MHx8fDE3ODM0NDIyODZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man and woman holding hands"
 ---
 
 Most people don't want to fight. They want to feel heard. But somewhere between the first raised voice and the slammed cabinet, the original point gets buried under a pile of score-keeping, old grievances, and the quiet, desperate need to be right.
