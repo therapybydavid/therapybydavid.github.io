@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/when-your-values-drift-apart-in-a-relationship"
 canonical: "https://therapybydavid.com/blog/when-your-values-drift-apart-in-a-relationship"
 permalink: "/blog/when-your-values-drift-apart-in-a-relationship.html"
-date: 2026-05-16
+date: 2026-05-14
 order: 50
 tag: "Relationships"
-dateDisplay: "May 16, 2026 · 6 min read"
+dateDisplay: "May 14, 2026 · 6 min read"
 deck: "A relationship can be loving, low-conflict, and still quietly falling apart — and the reason is often values, not feelings."
 cardTitle: "When You Still Love Each Other But Want Different Things"
 cardTag: "Relationships"
 cardDescription: "Loving your partner and sharing their values are two different things. Here's what it means when those two things quietly come apart."
-cardDate: "May 16, 2026 · 6 min read"
+cardDate: "May 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1614087976686-4cae4b457506?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGVzJTIwdGFsa2luZyUyMHNlcmlvdXNseSUyMHBhcnRuZXJzJTIwaG9sZGluZyUyMGhhbmRzJTIwY29udmVyc2F0aW9uJTIwY291cGxlJTIwc2l0dGluZyUyMHRvZ2V0aGVyJTIwdGhvdWdodGZ1bHxlbnwxfDB8fHwxNzgyOTA4MDM3fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in blue denim jacket and blue denim jeans sitting on brown wooden bench"
