@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/anxiety-in-the-body-not-just-the-mind"
 canonical: "https://therapybydavid.com/blog/anxiety-in-the-body-not-just-the-mind"
 permalink: "/blog/anxiety-in-the-body-not-just-the-mind.html"
-date: 2026-05-06
+date: 2026-05-04
 order: 50
 tag: "Anxiety"
-dateDisplay: "May 6, 2026 · 5 min read"
+dateDisplay: "May 4, 2026 · 5 min read"
 deck: "The reason calming thoughts rarely calm you down — and what actually helps when anxiety is happening right now."
 cardTitle: "Your Anxiety Isn't Just in Your Head — It's in Your Body"
 cardTag: "Anxiety"
 cardDescription: "When anxiety spikes, your thinking brain goes offline first. Here's how to work with your nervous system, not against it."
-cardDate: "May 6, 2026 · 5 min read"
+cardDate: "May 4, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1465409042654-5314e9d1754b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHBlcnNvbiUyMGRlZXAlMjBicmVhdGhpbmd8ZW58MXwwfHx8MTc4MzQ0MjI5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "closeup photo of woman wearing black top"
