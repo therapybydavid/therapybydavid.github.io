@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/when-healing-isnt-linear-understanding-the-two-steps-back"
 canonical: "https://therapybydavid.com/blog/when-healing-isnt-linear-understanding-the-two-steps-back"
 permalink: "/blog/when-healing-isnt-linear-understanding-the-two-steps-back.html"
-date: 2026-07-11
+date: 2026-04-24
 order: 50
 tag: "Trauma"
-dateDisplay: "July 11, 2026 · 5 min read"
+dateDisplay: "April 24, 2026 · 5 min read"
 deck: "You were doing better — and then suddenly you weren't. That doesn't mean the progress was an illusion."
 cardTitle: "When Healing Isn't Linear: Why Getting Worse Can Be Part of Getting Better"
 cardTag: "Trauma"
 cardDescription: "Healing rarely moves in a straight line. Here's what it actually looks like — and why setbacks don't mean you're failing."
-cardDate: "July 11, 2026 · 5 min read"
+cardDate: "April 24, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1714976694756-28bf07af3758?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzaXR0aW5nJTIwd2l0aCUyMHRoZXJhcGlzdCUyMGxpc3RlbmluZyUyMGNvbXBhc3Npb25hdGVseXxlbnwxfDB8fHwxNzgzODE4NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a woman sitting on a couch with a clipboard in her hand"
