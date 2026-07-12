@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-the-body-changes-before-the-mind-does"
 canonical: "https://therapybydavid.com/blog/why-the-body-changes-before-the-mind-does"
 permalink: "/blog/why-the-body-changes-before-the-mind-does.html"
-date: 2026-04-28
+date: 2026-04-26
 order: 50
 tag: "Mental Health"
-dateDisplay: "April 28, 2026 · 5 min read"
+dateDisplay: "April 26, 2026 · 5 min read"
 deck: "Understanding why you do something is rarely enough to make you stop — and there's a neurological reason for that."
 cardTitle: "You Understand the Problem. So Why Can't You Change It?"
 cardTag: "Mental Health"
 cardDescription: "Insight tells you what's wrong. But change happens somewhere deeper — in the nervous system, habits, and relationships that insight alone can't reach."
-cardDate: "April 28, 2026 · 5 min read"
+cardDate: "April 26, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1607557997149-96bf2b30c3c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwcmVmbGVjdGluZyUyMGpvdXJuYWxpbmclMjB0aG91Z2h0ZnVsJTIwd29tYW4lMjBzaXR0aW5nJTIwcXVpZXRseXxlbnwxfDB8fHwxNzgzNjA5Njg0fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in white knit sweater and blue denim jeans sitting on gray sofa chair reading book"
