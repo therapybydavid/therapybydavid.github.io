@@ -19,6 +19,10 @@ cardTag: "Trauma"
 cardDescription: "Healing rarely moves in a straight line. Here's what it actually looks like — and why setbacks don't mean you're failing."
 cardDate: "July 11, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1714976694843-1bbd8bb0aa61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwaG9wZWZ1bCUyMGFmdGVyJTIwY3J5aW5nJTIwdGhlcmFwaXN0JTIwbGlzdGVuaW5nJTIwY29tcGFzc2lvbmF0ZWx5JTIwd29tYW4lMjB0YWtpbmclMjBkZWVwJTIwYnJlYXRoJTIwaW5kb29yc3xlbnwxfDB8fHwxNzgzODE4MzYwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch drinking from a cup"
+cardImage: "https://images.unsplash.com/photo-1714976694843-1bbd8bb0aa61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwaG9wZWZ1bCUyMGFmdGVyJTIwY3J5aW5nJTIwdGhlcmFwaXN0JTIwbGlzdGVuaW5nJTIwY29tcGFzc2lvbmF0ZWx5JTIwd29tYW4lMjB0YWtpbmclMjBkZWVwJTIwYnJlYXRoJTIwaW5kb29yc3xlbnwxfDB8fHwxNzgzODE4MzYwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch drinking from a cup"
 ---
 
 There's a version of healing that gets talked about a lot. You go through something hard, you do the work, and gradually — steadily — you feel better. One day you realize you've turned a corner. Done.
