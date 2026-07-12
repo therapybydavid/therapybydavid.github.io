@@ -19,9 +19,9 @@ cardTag: "Mental Health"
 cardDescription: "Understanding your patterns is a real achievement. But insight alone rarely changes behavior. Here's what actually needs to happen next."
 cardDate: "July 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzNDQyMjk1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzODE4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man in black jacket looking out the window"
-cardImage: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzNDQyMjk1fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardImage: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzODE4NDM4fDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "man in black jacket looking out the window"
 ---
 
