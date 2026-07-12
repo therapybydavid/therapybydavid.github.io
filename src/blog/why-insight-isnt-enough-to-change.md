@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Understanding your patterns is a real achievement. But insight alone rarely changes behavior. Here's what actually needs to happen next."
 cardDate: "July 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzODE4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "man in black jacket looking out the window"
-cardImage: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzgzODE4NDM4fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "man in black jacket looking out the window"
+image: "https://images.unsplash.com/photo-1611060786886-abc094a36921?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwcGF1c2luZyUyMGF0JTIwd2luZG93fGVufDF8MHx8fDE3ODM4MTg0NTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting on the floor looking at his cell phone"
+cardImage: "https://images.unsplash.com/photo-1611060786886-abc094a36921?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwcGVyc29uJTIwc2l0dGluZyUyMHF1aWV0bHklMjByZWZsZWN0aW5nJTIwdGhvdWdodGZ1bCUyMGFkdWx0JTIwcGF1c2luZyUyMGF0JTIwd2luZG93fGVufDF8MHx8fDE3ODM4MTg0NTl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting on the floor looking at his cell phone"
 ---
 
 There's a particular kind of frustration that shows up a lot in therapy — and honestly, in life.
