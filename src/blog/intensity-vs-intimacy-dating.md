@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/intensity-vs-intimacy-dating"
 canonical: "https://therapybydavid.com/blog/intensity-vs-intimacy-dating"
 permalink: "/blog/intensity-vs-intimacy-dating.html"
-date: 2026-07-14
+date: 2026-04-18
 order: 50
 tag: "Relationships"
-dateDisplay: "July 14, 2026 · 6 min read"
+dateDisplay: "April 18, 2026 · 6 min read"
 deck: "The person who makes your stomach drop isn't always the person who's actually available to you — here's how to tell the difference before you're in too deep."
 cardTitle: "Mistaking Intensity for Intimacy: Why the Strongest Chemistry Isn't Always the Safest Connection"
 cardTag: "Relationships"
 cardDescription: "Why the dating connections that feel the most intense are sometimes the least emotionally available — and how to tell the difference."
-cardDate: "July 14, 2026 · 6 min read"
+cardDate: "April 18, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1574740601012-f6f25029b347?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8Y29ubmVjdGlvbiUyMHN1cHBvcnQlMjB3YXJtdGglMjBoYW5kc3xlbnwxfDB8fHwxNzg0MDc0NDMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "people holding hands"
