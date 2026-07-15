@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A simple but overlooked communication mismatch — confusing venting with asking for help — that quietly derails conversations with partners, friends, and family."
 cardDate: "July 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "group stacking hands in colorful sweaters"
+cardImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzNzF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "group stacking hands in colorful sweaters"
 ---
 
 Picture this: you come home and start telling your partner about a frustrating day at work. Within thirty seconds, they're offering solutions. Try this. Have you talked to your manager. Why didn't you just say something in the meeting. You didn't ask for any of that. You just wanted to be heard. Now you're annoyed, they're confused about why their "help" backfired, and a five-minute conversation turns into a twenty-minute misunderstanding.
