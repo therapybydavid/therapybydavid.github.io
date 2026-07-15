@@ -19,10 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Why the dating connections that feel the most intense are sometimes the least emotionally available — and how to tell the difference."
 cardDate: "July 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzODV8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "hands formed together with red heart paint"
-cardImage: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzODV8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "hands formed together with red heart paint"
+image: "https://images.unsplash.com/photo-1574740601012-f6f25029b347?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8Y29ubmVjdGlvbiUyMHN1cHBvcnQlMjB3YXJtdGglMjBoYW5kc3xlbnwxfDB8fHwxNzg0MDc0NDMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "people holding hands"
+cardImage: "https://images.unsplash.com/photo-1574740601012-f6f25029b347?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8Y29ubmVjdGlvbiUyMHN1cHBvcnQlMjB3YXJtdGglMjBoYW5kc3xlbnwxfDB8fHwxNzg0MDc0NDMyfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "people holding hands"
 ---
 
 There's a specific feeling a lot of people chase in dating: the racing heart, the can't-stop-checking-your-phone pull, the sense that this one is *different*. It feels like chemistry. Often, it's actually anxiety — and it can be surprisingly easy to confuse the two.
