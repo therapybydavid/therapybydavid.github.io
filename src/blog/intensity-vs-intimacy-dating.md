@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Why the dating connections that feel the most intense are sometimes the least emotionally available — and how to tell the difference."
 cardDate: "July 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "group stacking hands in colorful sweaters"
+cardImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODQwNzQzNzF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "group stacking hands in colorful sweaters"
 ---
 
 There's a specific feeling a lot of people chase in dating: the racing heart, the can't-stop-checking-your-phone pull, the sense that this one is *different*. It feels like chemistry. Often, it's actually anxiety — and it can be surprisingly easy to confuse the two.
