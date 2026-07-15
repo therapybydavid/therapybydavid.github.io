@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/venting-vs-asking-for-help"
 canonical: "https://therapybydavid.com/blog/venting-vs-asking-for-help"
 permalink: "/blog/venting-vs-asking-for-help.html"
-date: 2026-07-14
+date: 2026-04-20
 order: 50
 tag: "Relationships"
-dateDisplay: "July 14, 2026 · 6 min read"
+dateDisplay: "April 20, 2026 · 6 min read"
 deck: "Sometimes the fight isn't about what was said. It's about what the other person thought you were asking for."
 cardTitle: "Venting or Asking for Help? Why Conversations Go Sideways When We Mix Them Up"
 cardTag: "Relationships"
 cardDescription: "A simple but overlooked communication mismatch — confusing venting with asking for help — that quietly derails conversations with partners, friends, and family."
-cardDate: "July 14, 2026 · 6 min read"
+cardDate: "April 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1683209616453-619caef10a00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0d28lMjBmcmllbmRzJTIwdGFsa2luZyUyMHNlcmlvdXNseSUyMHdvbWFuJTIwbGlzdGVuaW5nJTIwdG8lMjBmcmllbmQlMjBjb3VwbGUlMjBoYXZpbmclMjBjb252ZXJzYXRpb24lMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODQwNzQ0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a man sitting on a couch next to a woman"
