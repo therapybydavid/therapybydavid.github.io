@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
 cardDate: "July 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1782901486771-5224454d2307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0MjI4MTQ1fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Frost-covered wooden bench on a path in a natural setting."
-cardImage: "https://images.unsplash.com/photo-1782901486771-5224454d2307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw3M3x8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0MjI4MTQ1fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Frost-covered wooden bench on a path in a natural setting."
+image: "https://images.unsplash.com/photo-1778510433804-4df2880e326e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0MjI4MTczfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Two adirondack chairs by a calm lake."
+cardImage: "https://images.unsplash.com/photo-1778510433804-4df2880e326e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4MXx8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0MjI4MTczfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Two adirondack chairs by a calm lake."
 ---
 
 Most conversations about digital burnout focus on hours logged: how much time we spend on our phones, how many hours of screen time the app reports back to us on Sunday, how guilty we feel about it. But hours aren't really the problem. What wears people down isn't the total time on a device. It's the number of times per day the nervous system gets a small jolt of *something might need me right now* — and never fully gets the signal that it's safe to stand down.
