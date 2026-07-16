@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Many people delay therapy by telling themselves to wait it out. Here's how to tell when that instinct is helping you and when it's just delaying help."
 cardDate: "July 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1779636818471-035e538210be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDIyODE0NXww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Cairn of rocks on a mossy boulder surrounded by greenery."
-cardImage: "https://images.unsplash.com/photo-1779636818471-035e538210be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDIyODE0NXww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Cairn of rocks on a mossy boulder surrounded by greenery."
+image: "https://images.unsplash.com/photo-1761013265046-8a7cb84f6ecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDIyODE3NXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Stacked stones in a shallow stream with fallen leaves"
+cardImage: "https://images.unsplash.com/photo-1761013265046-8a7cb84f6ecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzM3x8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDIyODE3NXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Stacked stones in a shallow stream with fallen leaves"
 ---
 
 Most people don't wake up one day and decide they're against therapy. What actually happens is quieter: they tell themselves to give it a little more time. A few more weeks of sleep, a new routine, a vacation, a slower month at work — surely one of those will fix it. Then a few more weeks pass, and the reasoning starts over again.
