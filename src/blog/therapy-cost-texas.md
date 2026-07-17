@@ -105,7 +105,7 @@ This is why two people with "insurance" can have wildly different experiences. S
 
 The good news: federal mental health parity rules require most plans to cover behavioral health on terms comparable to medical care. Outpatient therapy is a covered benefit on most major Texas plans. The catch is that "covered" doesn't mean "free" — it means your plan picks up its share once you understand the copay-versus-deductible math above.
 
-One more thing worth knowing: with most plans the price you pay in-network isn't the therapist's listed rate at all. It's the rate your insurer negotiated, which is often lower than the sticker price. So even before any copay or deductible math, the in-network number is usually working in your favor. Therapy by David is in-network with many major insurance plans, which means for a lot of clients the real out-of-pocket cost is far smaller than the headline "therapy costs $150 a session" figure they were dreading.
+One more thing worth knowing: with most plans the price you pay in-network isn't the therapist's listed rate at all. It's the rate your insurer negotiated, which is often lower than the sticker price. So even before any copay or deductible math, the in-network number is usually working in your favor. With Therapy by David, many major plans may be covered through partner networks — so for a lot of clients the real out-of-pocket cost ends up far smaller than the headline "therapy costs $150 a session" figure they were dreading. Reach out and we'll verify your specific benefits before your first session.
 
 ## Therapy Without Insurance: Self-Pay and Out-of-Network
 
