@@ -776,9 +776,13 @@
     clearDraft(); // submitted for real — the local draft is no longer needed
     if (data.route === "call") {
       // Profile captured — send them to Calendly with name/email prefilled
-      // so they never type the same thing twice. (Phone isn't a Calendly
-      // field on this event; it lives only in the captured profile.)
+      // so they never type the same thing twice. The consultation is a
+      // phone-call event, so the invitee's number is Calendly's "location"
+      // field and prefills via the location param (E.164 format).
       var params = new URLSearchParams({ name: data.fullName, email: data.email });
+      var digits = (data.phone || "").replace(/\D/g, "");
+      if (digits.length === 10) digits = "1" + digits;
+      if (digits.length === 11 && digits.charAt(0) === "1") params.set("location", "+" + digits);
       window.location.href = CALENDAR_URL + "?" + params.toString();
     } else {
       // Portal route — show the on-page success screen with the portal link.
