@@ -325,17 +325,17 @@
 <main class="card" id="card">
 
   <div class="progress" id="progress" aria-hidden="true">
-    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span>
   </div>
 
   <!-- ============ STEP 1 — Location ============ -->
   <section class="step visible" id="step-1">
-    <p class="eyebrow">Step 1 of 4 — Location</p>
-    <h2>To ensure we're legally cleared to work together, what state do you currently reside in?</h2>
+    <p class="eyebrow">Step 1 of 3 — Location</p>
+    <h2>Do you live in Texas?</h2>
     <p class="sub">Therapy licensure is state-specific, so this is the first thing we confirm.</p>
     <div class="choices">
-      <button type="button" class="choice" data-state="Texas">Texas</button>
-      <button type="button" class="choice" data-state="Other">Other state</button>
+      <button type="button" class="choice" data-state="Texas">Yes, I live in Texas</button>
+      <button type="button" class="choice" data-state="Other">No, I'm somewhere else</button>
     </div>
   </section>
 
@@ -362,7 +362,7 @@
 
   <!-- ============ STEP 2 — Coverage ============ -->
   <section class="step" id="step-2">
-    <p class="eyebrow">Step 2 of 4 — Coverage</p>
+    <p class="eyebrow">Step 2 of 3 — Coverage</p>
     <h2>How do you plan to cover your care?</h2>
     <p class="sub">Either path works — this just helps us start in the right place.</p>
     <div class="choices">
@@ -397,27 +397,9 @@
     </div>
   </section>
 
-  <!-- ============ STEP 3 — Cadence & format ============ -->
+  <!-- ============ STEP 3 — Contact & route ============ -->
   <section class="step" id="step-3">
-    <p class="eyebrow">Step 3 of 4 — Logistics</p>
-    <h2>What session cadence fits your life best?</h2>
-    <p class="sub">Select what feels realistic. Nothing here is locked in.</p>
-
-    <div class="toggle-row" data-group="cadence">
-      <button type="button" class="toggle" data-value="Weekly sessions">Weekly sessions</button>
-      <button type="button" class="toggle" data-value="Bi-weekly sessions">Bi-weekly sessions</button>
-    </div>
-
-    <p class="format-note">All sessions are held by secure video (telehealth), so you can meet from wherever you are in Texas.</p>
-
-    <div class="actions">
-      <button type="button" class="btn-back" data-back="2">&larr; Back</button>
-    </div>
-  </section>
-
-  <!-- ============ STEP 4 — Contact & route ============ -->
-  <section class="step" id="step-4">
-    <p class="eyebrow">Step 4 of 4 — Your details</p>
+    <p class="eyebrow">Step 3 of 3 — Your details</p>
     <h2>Almost there. Where can I reach you?</h2>
     <p class="sub">Your information stays private and is only used to coordinate your care.</p>
 
@@ -432,7 +414,7 @@
 
     <label class="consent">
       <input type="checkbox" id="consent">
-      <span>I agree to email and SMS from Therapy by David (scheduling, reminders). Reply STOP to cancel, HELP for help. Frequency varies. Msg &amp; data rates may apply. <a href="/sms-terms.html" target="_blank" rel="noopener">SMS&nbsp;Terms</a> &middot; <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a></span>
+      <span><strong style="color:var(--text);font-weight:600;">Optional:</strong> I agree to email and SMS from Therapy by David (scheduling, reminders). Reply STOP to cancel, HELP for help. Frequency varies. Msg &amp; data rates may apply. <a href="/sms-terms.html" target="_blank" rel="noopener">SMS&nbsp;Terms</a> &middot; <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a></span>
     </label>
 
     <p class="group-label" style="margin-top:26px;">Your next step</p>
@@ -446,10 +428,10 @@
       </button>
     </div>
 
-    <div class="error-msg" id="error-4"></div>
+    <div class="error-msg" id="error-3"></div>
     <div class="actions" style="flex-direction:column;">
       <button type="button" class="btn-submit" id="submit-btn">Submit &amp; Continue</button>
-      <button type="button" class="btn-back" data-back="3">&larr; Back</button>
+      <button type="button" class="btn-back" data-back="2">&larr; Back</button>
     </div>
   </section>
 
@@ -525,7 +507,6 @@
     1: document.getElementById("step-1"),
     2: document.getElementById("step-2"),
     3: document.getElementById("step-3"),
-    4: document.getElementById("step-4"),
     oos: document.getElementById("step-oos"),
     successPortal: document.getElementById("step-success-portal")
   };
@@ -611,27 +592,12 @@
   });
 
   /* =========================================================
-     STEP 3 — Cadence & format (multi-select toggles)
+     STEP 3 — Contact capture & dynamic route
      ========================================================= */
-  steps[3].querySelectorAll(".toggle").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      steps[3].querySelectorAll(".toggle").forEach(function (b) {
-        b.classList.remove("selected");
-      });
-      btn.classList.add("selected");
-      data.cadence = [btn.dataset.value];
-      saveDraft();
-      setTimeout(function () { show(4, 4); }, 220);
-    });
-  });
-
-  /* =========================================================
-     STEP 4 — Contact capture & dynamic route
-     ========================================================= */
-  steps[4].querySelectorAll('[data-group="route"] .choice').forEach(function (btn) {
+  steps[3].querySelectorAll('[data-group="route"] .choice').forEach(function (btn) {
     btn.addEventListener("click", function () {
       data.route = btn.dataset.route;
-      markSelected(steps[4].querySelector('[data-group="route"]'), btn);
+      markSelected(steps[3].querySelector('[data-group="route"]'), btn);
       saveDraft();
     });
   });
@@ -656,7 +622,7 @@
   });
 
   document.getElementById("submit-btn").addEventListener("click", function () {
-    var err = document.getElementById("error-4");
+    var err = document.getElementById("error-3");
     data.fullName = document.getElementById("full-name").value.trim();
     data.email    = document.getElementById("email").value.trim();
     data.phone    = document.getElementById("phone").value.trim();
@@ -665,7 +631,6 @@
     if (!data.fullName) { err.textContent = "Please enter your full name."; return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { err.textContent = "Please enter a valid email address."; return; }
     if (data.phone.replace(/\D/g, "").length < 10) { err.textContent = "Please enter a valid phone number."; return; }
-    if (!data.consent) { err.textContent = "Please confirm the contact consent box so I can follow up with you."; return; }
     if (!data.route) { err.textContent = "Please choose how you'd like to take the next step."; return; }
 
     err.textContent = "";
@@ -701,7 +666,7 @@
       ? "Insurance: " + (data.insuranceNetwork || "unspecified")
       : "Private pay";
     var summary = [
-      data.state, paymentLabel, data.cadence.join(", "),
+      data.state, paymentLabel,
       data.route === "call" ? "wants 15-min consultation" : "wants portal booking"
     ].join(" · ");
 
@@ -809,21 +774,17 @@
         if (data.insuranceNetwork) networkSelect.value = data.insuranceNetwork;
       }
     }
-    steps[3].querySelectorAll(".toggle").forEach(function (b) {
-      b.classList.toggle("selected", data.cadence.indexOf(b.dataset.value) !== -1);
-    });
     document.getElementById("full-name").value = data.fullName || "";
     document.getElementById("email").value = data.email || "";
     document.getElementById("phone").value = data.phone || "";
     document.getElementById("consent").checked = !!data.consent;
-    var routeGroup = steps[4].querySelector('[data-group="route"]');
+    var routeGroup = steps[3].querySelector('[data-group="route"]');
     var routeBtn = routeGroup.querySelector('[data-route="' + (data.route || "call") + '"]');
     if (routeBtn) markSelected(routeGroup, routeBtn);
 
     // Resume at the furthest step they had completed
     var resumeAt = 2;
     if (data.payment && (data.payment !== "insurance" || data.insuranceNetwork)) resumeAt = 3;
-    if (resumeAt === 3 && data.cadence.length) resumeAt = 4;
     show(resumeAt, resumeAt);
   })();
 })();
