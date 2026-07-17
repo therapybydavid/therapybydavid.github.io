@@ -14,7 +14,7 @@ order: 11
 tag: "Anxiety"
 dateDisplay: "June 6, 2026 · 5 min read"
 deck: "Almost everyone feels anxious sometimes. The question isn't whether you have anxiety — it's whether it has started running the show."
-image: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/how-anxiety-becomes-a-problem.webp"
 imageAlt: "A person pausing by a window in soft light"
 cardImage: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A person pausing by a window in soft light"

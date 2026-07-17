@@ -14,7 +14,7 @@ order: 13
 tag: "Relationships"
 dateDisplay: "June 6, 2026 · 6 min read"
 deck: "If you feel like you've had this exact fight a hundred times, you have. And it's usually not because either of you is the problem."
-image: "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/couples-same-argument.webp"
 imageAlt: "Two people sitting together in conversation"
 cardImage: "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&w=800&q=80"
 cardAlt: "Two people sitting together in conversation"

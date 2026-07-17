@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/after-the-relationship-ends-rebuilding-identity.webp"
 imageAlt: "a woman sitting on a window sill"
 cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a woman sitting on a window sill"

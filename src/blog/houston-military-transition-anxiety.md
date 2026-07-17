@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9uJTIwaG9wZWZ1bCUyMG1pbGl0YXJ5JTIwdmV0ZXJhbiUyMGpvYiUyMGludGVydmlldyUyMGNvbmZpZGVudCUyMGZvcm1lciUyMHNvbGRpZXIlMjBwcm9mZXNzaW9uYWwlMjBuZXclMjBjYXJlZXJ8ZW58MXwwfHx8MTc4Mjc0NjY0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-military-transition-anxiety.webp"
 imageAlt: "minimalist photography of person standing near backpack and boots"
 cardImage: "https://images.unsplash.com/photo-1423492759094-e98da7756991?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwY2l2aWxpYW4lMjB0cmFuc2l0aW9uJTIwaG9wZWZ1bCUyMG1pbGl0YXJ5JTIwdmV0ZXJhbiUyMGpvYiUyMGludGVydmlldyUyMGNvbmZpZGVudCUyMGZvcm1lciUyMHNvbGRpZXIlMjBwcm9mZXNzaW9uYWwlMjBuZXclMjBjYXJlZXJ8ZW58MXwwfHx8MTc4Mjc0NjY0MXww&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "minimalist photography of person standing near backpack and boots"

@@ -30,13 +30,15 @@ layout: base.njk
 </script>
 {# BlogPosting schema derived from the post's own frontmatter + rendered body,
    so image, dates, and word count can never drift from the visible page. #}
+{% set schemaImage = image %}
+{% if schemaImage and schemaImage[0] == "/" %}{% set schemaImage = "https://therapybydavid.com" + schemaImage %}{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
-  {% if image %}"image": {{ image | dump | safe }},{% endif %}
+  {% if schemaImage %}"image": {{ schemaImage | dump | safe }},{% endif %}
   "url": {{ canonical | dump | safe }},
   "mainEntityOfPage": {"@type": "WebPage", "@id": {{ canonical | dump | safe }}},
   "datePublished": "{{ page.date | dateISO }}",
@@ -82,7 +84,7 @@ layout: base.njk
     <h1>{{ title }}</h1>
     {% if deck %}<p class="deck">{{ deck }}</p>{% endif %}
     <div class="author-row">
-      <img src="/david-robles-profile.jpeg" alt="David Robles" class="author-avatar" onerror="this.onerror=null;this.style.background='#142132'">
+      <img src="/david-robles-profile-96.webp" width="48" height="48" alt="David Robles" class="author-avatar" onerror="this.onerror=null;this.style.background='#142132'">
       <div class="author-info">
         <strong>David Robles, LMSW</strong>
         <span>Psychotherapist · Houston, Texas</span>
@@ -93,7 +95,7 @@ layout: base.njk
 
 {% if image %}
 <div class="featured-image">
-  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1400" height="420" loading="eager" />
+  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1400" height="630" loading="eager" />
 </div>
 {% endif %}
 

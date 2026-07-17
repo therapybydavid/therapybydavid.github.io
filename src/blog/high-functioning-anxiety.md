@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxoaWdoJTIwYWNoaWV2aW5nJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjBkZXNrfGVufDF8MHx8fDE3ODI3NjUzNjh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/high-functioning-anxiety.webp"
 imageAlt: "woman talking through mobile phone while sitting on swivel armchair"
 cardImage: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxoaWdoJTIwYWNoaWV2aW5nJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjBkZXNrfGVufDF8MHx8fDE3ODI3NjUzNjh8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "woman talking through mobile phone while sitting on swivel armchair"

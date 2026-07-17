@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-sunday-night-anxiety.webp"
 imageAlt: "sectional sofa near coffee table and window"
 cardImage: "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "sectional sofa near coffee table and window"

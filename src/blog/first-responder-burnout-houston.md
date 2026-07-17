@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/first-responder-burnout-houston.webp"
 imageAlt: "man in black and gray jacket and black pants sitting on brown wooden floor"
 cardImage: "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdCUyMGZpcmVmaWdodGVyJTIwcmVzdGluZyUyMGF0JTIwc3RhdGlvbiUyMGZpcnN0JTIwcmVzcG9uZGVyJTIwbG9va2luZyUyMHRpcmVkJTIwYnV0JTIwcmVzaWxpZW50fGVufDF8MHx8fDE3ODI3MDU3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "man in black and gray jacket and black pants sitting on brown wooden floor"

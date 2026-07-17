@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1775163024488-e88e4a71179f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZXZpZXdpbmclMjBpbnN1cmFuY2UlMjBwYXBlcndvcmslMjBhdCUyMGRlc2t8ZW58MXwwfHx8MTc4Mjc2NTM3MXww&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/therapy-cost-texas.webp"
 imageAlt: "Two people reviewing documents at a table."
 cardImage: "https://images.unsplash.com/photo-1775163024488-e88e4a71179f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZXZpZXdpbmclMjBpbnN1cmFuY2UlMjBwYXBlcndvcmslMjBhdCUyMGRlc2t8ZW58MXwwfHx8MTc4Mjc2NTM3MXww&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "Two people reviewing documents at a table."

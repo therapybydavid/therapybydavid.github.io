@@ -29,8 +29,9 @@ module.exports = function (eleventyConfig) {
   [
     "images", "analytics.js", "site.webmanifest", "robots.txt", "_headers", "_redirects",
     "david-robles-profile.jpeg",
-    "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
-    "therapy-by-david-logo.png", "TBD.png",
+    "david-robles-headshot.jpg", "david-robles-headshot.webp",
+    "david-robles-headshot-360.webp", "david-robles-profile.webp",
+    "david-robles-profile-96.webp", "therapy-by-david-logo.jpg",
     "card", "newsletters",
   ].forEach((p) => {
     if (fs.existsSync(p)) eleventyConfig.addPassthroughCopy({ [p]: p });

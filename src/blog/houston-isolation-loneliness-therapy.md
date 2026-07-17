@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1530621441005-06d343ab2f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxsb25lbHklMjBwZXJzb24lMjBjaXR5JTIwY2FmZSUyMHdpbmRvd3xlbnwxfDB8fHwxNzgyNzMwODk5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-isolation-loneliness-therapy.webp"
 imageAlt: "man sitting on cafe while holding smartphone"
 cardImage: "https://images.unsplash.com/photo-1530621441005-06d343ab2f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxsb25lbHklMjBwZXJzb24lMjBjaXR5JTIwY2FmZSUyMHdpbmRvd3xlbnwxfDB8fHwxNzgyNzMwODk5fDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "man sitting on cafe while holding smartphone"

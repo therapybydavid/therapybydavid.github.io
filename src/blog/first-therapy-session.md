@@ -75,7 +75,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/first-therapy-session.webp"
 imageAlt: "two women sitting at a table talking to each other"
 cardImage: "https://images.unsplash.com/photo-1680204438561-81754a196285?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMjl8fGZpcnN0JTIwdGhlcmFweSUyMHNlc3Npb24lMjBjbGllbnQlMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3R8ZW58MXwwfHx8MTc4MjgyMTc5Nnww&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "two women sitting at a table talking to each other"

@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1754307943655-a76a567661e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHByb2Zlc3Npb25hbCUyMGF0JTIwZGVzayUyMEhvdXN0b24lMjBmb2N1c2VkJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwb3ZlcndoZWxtZWQlMjBwZXJzb24lMjB0YWtpbmclMjBicmVhdGh8ZW58MXwwfHx8MTc4MjcwNTc1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-perfectionism-anxiety-therapy.webp"
 imageAlt: "A woman is working on a laptop, looking pensive."
 cardImage: "https://images.unsplash.com/photo-1754307943655-a76a567661e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzdHJlc3NlZCUyMHByb2Zlc3Npb25hbCUyMGF0JTIwZGVzayUyMEhvdXN0b24lMjBmb2N1c2VkJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwb3ZlcndoZWxtZWQlMjBwZXJzb24lMjB0YWtpbmclMjBicmVhdGh8ZW58MXwwfHx8MTc4MjcwNTc1Nnww&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "A woman is working on a laptop, looking pensive."

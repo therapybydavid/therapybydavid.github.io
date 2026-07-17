@@ -14,7 +14,7 @@ order: 16
 tag: "Relationships"
 dateDisplay: "May 16, 2026 · 7 min read"
 deck: "You recognize the pattern. You've even named it. So why does it keep happening? The answer isn't about wanting it to stop — it's about what feels familiar."
-image: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/relationship-patterns.webp"
 imageAlt: "Two people sitting apart, looking away from each other"
 cardImage: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=800&q=80"
 cardAlt: "Two people sitting apart, looking away from each other"

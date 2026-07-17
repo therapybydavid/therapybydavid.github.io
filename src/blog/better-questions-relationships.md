@@ -14,7 +14,7 @@ order: 14
 tag: "Relationships"
 dateDisplay: "May 29, 2026 · 7 min read"
 deck: "Broad questions get broad answers — every time. If the talking in your house has quietly shrunk down to logistics, the problem usually isn't you. It's the questions."
-image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/better-questions-relationships.webp"
 imageAlt: "A couple sitting together in conversation"
 cardImage: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A couple sitting together in conversation"

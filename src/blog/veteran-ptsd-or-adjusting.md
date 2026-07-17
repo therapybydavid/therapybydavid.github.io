@@ -68,7 +68,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1683274104917-9e496e49eabb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8dmV0ZXJhbiUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdHxlbnwxfDB8fHwxNzgyNzc4ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/veteran-ptsd-or-adjusting.webp"
 imageAlt: "a couple of people sitting on top of a couch"
 cardImage: "https://images.unsplash.com/photo-1683274104917-9e496e49eabb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8dmV0ZXJhbiUyMHRhbGtpbmclMjB0byUyMHRoZXJhcGlzdHxlbnwxfDB8fHwxNzgyNzc4ODk3fDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a couple of people sitting on top of a couch"

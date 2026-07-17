@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-traffic-stress-anxiety.webp"
 imageAlt: "Modern skyscrapers under a cloudy blue sky."
 cardImage: "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "Modern skyscrapers under a cloudy blue sky."

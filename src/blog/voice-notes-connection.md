@@ -14,7 +14,7 @@ order: 15
 tag: "Relationships"
 dateDisplay: "May 29, 2026 · 7 min read"
 deck: "A voice note on your way to work. A quick call instead of a text. It feels like a small thing — but your body knows the difference, and so does the person on the other end."
-image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/voice-notes-connection.webp"
 imageAlt: "Friends talking and laughing together around a table"
 cardImage: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80"
 cardAlt: "Friends talking and laughing together around a table"

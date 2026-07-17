@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/do-i-have-trauma.webp"
 imageAlt: "a man wearing glasses looking out a window"
 cardImage: "https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsb29raW5nJTIwb3V0JTIwd2luZG93JTIwdGhvdWdodGZ1bGx5fGVufDF8MHx8fDE3ODI3NjU0ODN8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a man wearing glasses looking out a window"

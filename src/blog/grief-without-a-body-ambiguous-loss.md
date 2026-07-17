@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/grief-without-a-body-ambiguous-loss.webp"
 imageAlt: "man in red crew neck shirt standing near white curtain"
 cardImage: "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "man in red crew neck shirt standing near white curtain"

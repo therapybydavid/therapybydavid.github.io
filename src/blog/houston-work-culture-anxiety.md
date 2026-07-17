@@ -66,7 +66,7 @@ faqJson: |
       }
     ]
   }
-image: "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/houston-work-culture-anxiety.webp"
 imageAlt: "Woman resting head on hand at desk"
 cardImage: "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "Woman resting head on hand at desk"

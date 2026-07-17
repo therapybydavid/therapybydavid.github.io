@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/why-men-dont-go-to-therapy.webp"
 imageAlt: "a man sitting at a table talking to a woman"
 cardImage: "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxtYW4lMjB0YWxraW5nJTIwdG8lMjB0aGVyYXBpc3QlMjBtYWxlJTIwZnJpZW5kcyUyMGhhdmluZyUyMGhvbmVzdCUyMGNvbnZlcnNhdGlvbiUyMG1hbiUyMGxvb2tpbmclMjB0aG91Z2h0ZnVsJTIwaG9wZWZ1bHxlbnwxfDB8fHwxNzgyNzg5NDYyfDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a man sitting at a table talking to a woman"

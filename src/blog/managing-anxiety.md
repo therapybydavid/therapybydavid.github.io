@@ -14,7 +14,7 @@ order: 17
 tag: "Anxiety"
 dateDisplay: "May 9, 2026 · 6 min read"
 deck: "Anxiety is not a character flaw or a sign that something is permanently broken. It is a nervous system response that made sense at some point — and with the right work, it can change."
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/managing-anxiety.webp"
 imageAlt: "Person sitting quietly in a calm space"
 cardImage: "/images/anxiety-article.jpg"
 cardAlt: "Person sitting quietly in a calm space"

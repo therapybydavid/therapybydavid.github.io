@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1713947503867-3b27964f042b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwZGVza3xlbnwxfDB8fHwxNzgyNzY1MTE4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/burnout-vs-depression.webp"
 imageAlt: "a man sitting at a desk with his head in his hands"
 cardImage: "https://images.unsplash.com/photo-1713947503867-3b27964f042b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwZGVza3xlbnwxfDB8fHwxNzgyNzY1MTE4fDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a man sitting at a desk with his head in his hands"

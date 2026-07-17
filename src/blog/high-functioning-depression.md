@@ -67,7 +67,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1611060786742-f69506a5b858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwb3V0JTIwb2ZmaWNlJTIwd2luZG93fGVufDF8MHx8fDE3ODI3Nzg5OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/high-functioning-depression.webp"
 imageAlt: "a man sitting on a window sill looking at his cell phone"
 cardImage: "https://images.unsplash.com/photo-1611060786742-f69506a5b858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBzdGFyaW5nJTIwb3V0JTIwb2ZmaWNlJTIwd2luZG93fGVufDF8MHx8fDE3ODI3Nzg5OTJ8MA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a man sitting on a window sill looking at his cell phone"

@@ -59,7 +59,7 @@ faqJson: |
         }
       ]
     }
-image: "https://images.unsplash.com/photo-1714640865697-7f345110e793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8cGVyc29uJTIwcmVmbGVjdGluZyUyMHRob3VnaHRmdWxseSUyMHdpbmRvdyUyMGFkdWx0JTIwam91cm5hbGluZyUyMGNvZmZlZSUyMHNob3AlMjB3b21hbiUyMHBlYWNlZnVsJTIwbW9tZW50JTIwc3VubGlnaHR8ZW58MXwwfHx8MTc4Mjc4OTg3N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+image: "/images/blog/trauma-and-patterns.webp"
 imageAlt: "a woman sitting at a table in front of a window"
 cardImage: "https://images.unsplash.com/photo-1714640865697-7f345110e793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8cGVyc29uJTIwcmVmbGVjdGluZyUyMHRob3VnaHRmdWxseSUyMHdpbmRvdyUyMGFkdWx0JTIwam91cm5hbGluZyUyMGNvZmZlZSUyMHNob3AlMjB3b21hbiUyMHBlYWNlZnVsJTIwbW9tZW50JTIwc3VubGlnaHR8ZW58MXwwfHx8MTc4Mjc4OTg3N3ww&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a woman sitting at a table in front of a window"

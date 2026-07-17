@@ -14,7 +14,7 @@ order: 12
 tag: "Veterans"
 dateDisplay: "June 6, 2026 · 6 min read"
 deck: "It's not that you won't relax. It's that your nervous system learned, under real stakes, that staying on is what keeps you alive."
-image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85"
+image: "/images/blog/veterans-hypervigilance.webp"
 imageAlt: "A quiet, still room at dusk"
 cardImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A quiet, still room at dusk"
