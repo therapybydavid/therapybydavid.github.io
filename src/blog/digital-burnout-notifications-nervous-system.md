@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
 cardDate: "July 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1775123793342-f25af7e9f54f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4OXx8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0Mjk2MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Wooden bench overlooking a serene lake and forest"
-cardImage: "https://images.unsplash.com/photo-1775123793342-f25af7e9f54f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw4OXx8cmVzdCUyMGNhbG0lMjBxdWlldCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0Mjk2MDUzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Wooden bench overlooking a serene lake and forest"
+image: "https://images.unsplash.com/photo-1603799241833-c2b6b8eab711?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5N3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwaGFuZHMlMjBhdCUyMGRlc2slMjBvdmVyd2hlbG1lZCUyMHByb2Zlc3Npb25hbCUyMHRha2luZyUyMGRlZXAlMjBicmVhdGh8ZW58MXwwfHx8MTc4NDI5NjA2OXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in gray long sleeve shirt"
+cardImage: "https://images.unsplash.com/photo-1603799241833-c2b6b8eab711?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5N3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwaGFuZHMlMjBhdCUyMGRlc2slMjBvdmVyd2hlbG1lZCUyMHByb2Zlc3Npb25hbCUyMHRha2luZyUyMGRlZXAlMjBicmVhdGh8ZW58MXwwfHx8MTc4NDI5NjA2OXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in gray long sleeve shirt"
 ---
 
 Most conversations about digital burnout focus on hours logged: how much time we spend on our phones, how many hours of screen time the app reports back to us on Sunday, how guilty we feel about it. But hours aren't really the problem. What wears people down isn't the total time on a device. It's the number of times per day the nervous system gets a small jolt of *something might need me right now* — and never fully gets the signal that it's safe to stand down.
