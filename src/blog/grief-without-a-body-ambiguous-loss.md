@@ -19,23 +19,6 @@ cardTag: "Grief"
 cardDescription: "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry."
 cardDate: "June 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "When There's No Funeral: Grieving Losses That Don't Count as Loss",
-    "description": "Ambiguous loss — divorce, estrangement, dementia, a dream you had to let go — is real grief. Here's why it's so hard to carry, from a therapist in Houston, Texas.",
-    "image": "https://images.unsplash.com/photo-1590614622772-51f047984553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cGVyc29uJTIwbG9va2luZyUyMG91dCUyMHdpbmRvdyUyMHRob3VnaHRmdWxseXxlbnwxfDB8fHwxNzgyNzY2ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-10",
-    "dateModified": "2026-06-10",
-    "url": "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/grief-without-a-body-ambiguous-loss",
-    "wordCount": "1800",
-    "articleSection": "Grief",
-    "keywords": "ambiguous loss, grief without closure, estrangement grief, dementia caregiver grief, disenfranchised grief, grief therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

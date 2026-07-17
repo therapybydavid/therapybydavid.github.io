@@ -19,23 +19,6 @@ cardTag: "Relationships"
 cardDescription: "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again."
 cardDate: "May 24, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "After the Relationship Ends: Rebuilding a Sense of Self",
-    "description": "Breakups and divorce don't just end a relationship — they can shake your entire sense of who you are. Here's how to find yourself again, from a therapist in Houston, Texas.",
-    "image": "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhbG9uZSUyMHdpbmRvdyUyMHJlZmxlY3Rpb24lMjBob3BlZnVsfGVufDF8MHx8fDE3ODI3NDcwODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-05-24",
-    "dateModified": "2026-05-24",
-    "url": "https://therapybydavid.com/blog/after-the-relationship-ends-rebuilding-identity",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/after-the-relationship-ends-rebuilding-identity",
-    "wordCount": "1800",
-    "articleSection": "Relationships",
-    "keywords": "identity after breakup, rebuilding identity after divorce, relationship loss therapy, who am I after divorce, breakup recovery, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

@@ -24,30 +24,6 @@ cardDescription: "Staying on kept you alive. Your nervous system learned it as t
 cardDate: "June 6, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Do Veterans Have Trouble Turning Off Hypervigilance?",
-      "description": "Hypervigilance kept you alive in service, so your nervous system learned it as the default. It doesn't switch off just because the threat is gone \u2014 it has to be retrained. Here's why, from an Army veteran and therapist.",
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85",
-      "author": {
-        "@type": "Person",
-        "name": "David Robles",
-        "jobTitle": "Licensed Master Social Worker",
-        "url": "https://therapybydavid.com/#about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Therapy by David",
-        "url": "https://therapybydavid.com/"
-      },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/veterans-hypervigilance",
-      "articleSection": "Veterans",
-      "keywords": "veteran hypervigilance, always on alert, PTSD veterans, veteran therapist Texas, military transition, first responders"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

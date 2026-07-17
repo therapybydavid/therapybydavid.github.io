@@ -19,23 +19,6 @@ cardTag: "Burnout"
 cardDescription: "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "When Taking Care of Everyone Else Leaves Nothing for You: Caregiver Burnout in Houston",
-    "description": "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help.",
-    "image": "https://images.unsplash.com/photo-1604830926588-b51d5ddeba7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwb24lMjBjb3VjaCUyMGNhcmVnaXZlciUyMGJ1cm5vdXR8ZW58MXwwfHx8MTc4MjcwNTc1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "url": "https://therapybydavid.com/blog/houston-caregiver-burnout-therapy",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-caregiver-burnout-therapy",
-    "wordCount": "1800",
-    "articleSection": "Burnout",
-    "keywords": "caregiver burnout, caregiver stress, caregiver mental health, Houston caregivers, family caregiver therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

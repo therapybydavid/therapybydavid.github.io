@@ -20,22 +20,6 @@ cardDescription: "Trauma doesn't stay in the past. It lives in how you react, wh
 cardDate: "May 20, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Does My Past Keep Affecting My Present?",
-      "description": "Trauma doesn't stay in the past. It lives in how you react, who you trust, and how your body responds — often without realizing the connection.",
-      "image": "https://therapybydavid.com/images/trauma-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-05-02",
-      "dateModified": "2026-05-02",
-      "url": "https://therapybydavid.com/blog/trauma-and-patterns",
-      "wordCount": "900",
-      "articleSection": "Trauma",
-      "keywords": "trauma therapy, trauma-informed therapist, therapist Houston Texas, past patterns, nervous system, PTSD"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

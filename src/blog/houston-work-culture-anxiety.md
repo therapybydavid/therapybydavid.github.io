@@ -19,23 +19,6 @@ cardTag: "Anxiety"
 cardDescription: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment",
-    "description": "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing.",
-    "image": "https://images.unsplash.com/photo-1758876022104-368b0f3fb6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0MXx8c3RyZXNzZWQlMjBwcm9mZXNzaW9uYWwlMjBkZWVwJTIwYnJlYXRoJTIwb2ZmaWNlfGVufDF8MHx8fDE3ODI3NDU0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "url": "https://therapybydavid.com/blog/houston-work-culture-anxiety",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-work-culture-anxiety",
-    "wordCount": "1800",
-    "articleSection": "Anxiety",
-    "keywords": "work anxiety Houston, hustle culture anxiety, high-performance anxiety, Houston professional burnout, work stress therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

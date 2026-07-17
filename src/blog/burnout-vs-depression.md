@@ -20,23 +20,6 @@ cardDescription: "Exhausted, flat, running on empty — is it burnout or depress
 cardDate: "June 14, 2026 · 8 min read"
 ctaHeading: "Not sure which one this is?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Burnout vs. Depression: How to Tell the Difference",
-      "description": "Burnout and depression overlap, but they aren't the same. Learn how to tell them apart, when each needs help, and why they often co-occur.",
-      "image": "https://images.unsplash.com/photo-1511087273610-b219e302a808?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/burnout-vs-depression",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/burnout-vs-depression",
-      "wordCount": "2000",
-      "articleSection": "Burnout",
-      "keywords": "burnout vs depression, am I burned out or depressed, burnout symptoms, depression symptoms, high-functioning depression, therapist Houston Texas"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

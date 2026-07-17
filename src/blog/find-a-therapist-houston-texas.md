@@ -24,23 +24,6 @@ cardDescription: "Finding the right therapist isn't about the most credentials �
 cardDate: "June 6, 2026 · 7 min read"
 ctaHeading: "Not sure where to start?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and whether we're a good fit."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How to Find the Right Therapist in Houston & Across Texas",
-      "description": "A practical guide to finding the right therapist in Houston and across Texas — where to search, what actually matters for fit, the questions to ask, and red flags.",
-      "image": "https://images.unsplash.com/photo-1696677369682-689bc9a89e69?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/find-a-therapist-houston-texas",
-      "url": "https://therapybydavid.com/blog/find-a-therapist-houston-texas",
-      "wordCount": "1700",
-      "articleSection": "Getting Started",
-      "keywords": "find a therapist Houston, therapist Texas, telehealth therapy Texas, therapy Pasadena, therapy Clear Lake, free consultation therapist"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

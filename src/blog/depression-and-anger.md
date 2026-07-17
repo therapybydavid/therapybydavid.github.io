@@ -24,22 +24,6 @@ cardDescription: "Depression doesn't always look like sadness. For many people �
 cardDate: "April 25, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Am I So Angry When I'm Depressed?",
-      "description": "Depression doesn't always look like sadness. For many people it shows up as irritability, short fuses, and rage. Here's why — and what it means for getting help.",
-      "image": "https://therapybydavid.com/images/depression-anger-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-04-25",
-      "dateModified": "2026-04-25",
-      "url": "https://therapybydavid.com/blog/depression-and-anger",
-      "wordCount": "880",
-      "articleSection": "Depression",
-      "keywords": "depression and anger, male depression, depression therapist Houston Texas, irritability depression, men's mental health"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

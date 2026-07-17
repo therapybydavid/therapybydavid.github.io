@@ -19,23 +19,6 @@ cardTag: "First Responders"
 cardDescription: "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "When Helping Others Leaves You Empty: Burnout in Houston First Responders",
-    "description": "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help.",
-    "image": "https://images.unsplash.com/photo-1591003764198-2e6b86a26941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwYXJhbWVkaWMlMjBzaXR0aW5nJTIwZXhoYXVzdGVkJTIwYWZ0ZXIlMjBzaGlmdHxlbnwxfDB8fHwxNzgyNzA1NzM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "url": "https://therapybydavid.com/blog/first-responder-burnout-houston",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/first-responder-burnout-houston",
-    "wordCount": "1800",
-    "articleSection": "First Responders",
-    "keywords": "first responder burnout, firefighter burnout, police burnout, EMS stress, Houston first responders, occupational stress therapy, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

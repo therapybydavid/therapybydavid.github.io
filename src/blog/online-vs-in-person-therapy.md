@@ -20,23 +20,6 @@ cardDescription: "Video or in-person? The research says online therapy works jus
 cardDate: "June 4, 2026 · 7 min read"
 ctaHeading: "Not sure which fits you?"
 ctaText: "Schedule a free 15-minute consultation. We'll talk through what's going on, and whether online or in-person makes the most sense for you."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Online Therapy vs. In-Person: Which Is Right for You?",
-      "description": "A balanced guide to choosing between online and in-person therapy: how telehealth works, what the research says, and who each format suits best.",
-      "image": "https://images.unsplash.com/photo-1598183907939-983e4a0cc745?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/online-vs-in-person-therapy",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/online-vs-in-person-therapy",
-      "wordCount": "1700",
-      "articleSection": "Getting Started",
-      "keywords": "online therapy, telehealth therapy, in-person therapy, virtual therapy Texas, therapist Texas, is online therapy effective"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

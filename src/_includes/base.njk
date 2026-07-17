@@ -18,6 +18,9 @@
   {% if schemaJson %}<script type="application/ld+json">
   {{ schemaJson | safe }}
   </script>{% endif %}
+  {% if breadcrumbJson %}<script type="application/ld+json">
+  {{ breadcrumbJson | safe }}
+  </script>{% endif %}
   {% if faqJson %}<script type="application/ld+json">
   {{ faqJson | safe }}
   </script>{% endif %}

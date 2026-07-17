@@ -20,23 +20,6 @@ cardDescription: "You hit the goals, hold it together, look fine — and feel fl
 cardDate: "May 31, 2026 · 8 min read"
 ctaHeading: "Successful but feel empty?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on underneath, and what support might help. Start with depression therapy."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "High-Functioning Depression: When You're Successful but Feel Empty",
-      "description": "You hold down the job, hit the goals, look fine — but feel flat, numb, and empty. Here's what high-functioning depression is and why it's so easy to miss.",
-      "image": "https://images.unsplash.com/photo-1623100989250-27155460738b?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/high-functioning-depression",
-      "url": "https://therapybydavid.com/blog/high-functioning-depression",
-      "wordCount": "1750",
-      "articleSection": "Depression",
-      "keywords": "high-functioning depression, smiling depression, successful but depressed, feeling empty, depression therapist Houston Texas, persistent depressive disorder"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

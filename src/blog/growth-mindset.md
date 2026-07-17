@@ -24,29 +24,6 @@ cardDescription: "If you've been telling yourself \"this is just who I am\" — 
 cardDate: "June 14, 2026 · 7 min read"
 ctaHeading: "Ready to understand what's keeping the pattern alive?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what might actually help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "A Fixed Mindset Isn't a Personality Flaw. It's a Pattern You Learned.",
-      "description": "If you believe your anxiety, anger, or relationship patterns are just 'who you are,' that belief itself may be what's keeping you stuck.",
-      "image": "https://therapybydavid.com/images/blog/growth-mindset-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-14",
-      "dateModified": "2026-06-14",
-      "url": "https://therapybydavid.com/blog/growth-mindset",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/growth-mindset",
-      "wordCount": "2000",
-      "articleSection": "Anxiety",
-      "keywords": "growth mindset therapy Houston, fixed mindset anxiety Texas, mindset and mental health, can people change, therapy for anxiety Houston Texas, therapist Houston TX, therapist Pasadena TX, patterns and beliefs therapy, psychotherapy Texas",
-      "areaServed": [
-        {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}},
-        {"@type": "City", "name": "Pasadena", "containedInPlace": {"@type": "State", "name": "Texas"}},
-        {"@type": "City", "name": "Webster", "containedInPlace": {"@type": "State", "name": "Texas"}},
-        {"@type": "State", "name": "Texas"}
-      ]
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

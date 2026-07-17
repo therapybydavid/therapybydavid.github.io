@@ -24,30 +24,6 @@ cardDescription: "Everyone feels anxious sometimes. The real question is whether
 cardDate: "June 6, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How Do I Know If My Anxiety Is Becoming a Problem?",
-      "description": "Everyday anxiety is normal. It becomes a problem when it's persistent, out of proportion to the situation, and starts interfering with your sleep, work, or relationships. Here are the specific signs to watch for.",
-      "image": "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85",
-      "author": {
-        "@type": "Person",
-        "name": "David Robles",
-        "jobTitle": "Licensed Master Social Worker",
-        "url": "https://therapybydavid.com/#about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Therapy by David",
-        "url": "https://therapybydavid.com/"
-      },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/how-anxiety-becomes-a-problem",
-      "articleSection": "Anxiety",
-      "keywords": "when is anxiety a problem, signs of anxiety disorder, anxiety symptoms, anxiety therapist Texas, anxiety treatment"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

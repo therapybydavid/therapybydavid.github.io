@@ -24,22 +24,6 @@ cardDescription: "Anxiety is not a character flaw or a sign that something is pe
 cardDate: "May 9, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Won't My Mind Shut Off at Night?",
-      "description": "Anxiety isn't a character flaw. It's a nervous system doing exactly what it was built to do. Learn what keeps it going and what actually helps.",
-      "image": "https://therapybydavid.com/images/anxiety-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-05-09",
-      "dateModified": "2026-05-09",
-      "url": "https://therapybydavid.com/blog/managing-anxiety",
-      "wordCount": "850",
-      "articleSection": "Anxiety",
-      "keywords": "anxiety therapy, anxiety treatment, therapist Houston Texas, overthinking, nervous system"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

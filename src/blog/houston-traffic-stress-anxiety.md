@@ -19,23 +19,6 @@ cardTag: "Anxiety"
 cardDescription: "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Houston Traffic and Your Nervous System: When the Commute Is Making You Worse",
-    "description": "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something.",
-    "image": "https://images.unsplash.com/photo-1771207734088-b1ce6d34b3bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxzdHJlc3NlZCUyMGRyaXZlciUyMEhvdXN0b24lMjBjb21tdXRlfGVufDF8MHx8fDE3ODI3MDU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "url": "https://therapybydavid.com/blog/houston-traffic-stress-anxiety",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-traffic-stress-anxiety",
-    "wordCount": "1800",
-    "articleSection": "Anxiety",
-    "keywords": "Houston traffic stress, commute anxiety Houston, stress and anxiety commute, Houston commuter mental health, I-10 anxiety, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

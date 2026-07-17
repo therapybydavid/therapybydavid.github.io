@@ -28,6 +28,50 @@ layout: base.njk
   ]
 }
 </script>
+{# BlogPosting schema derived from the post's own frontmatter + rendered body,
+   so image, dates, and word count can never drift from the visible page. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  {% if image %}"image": {{ image | dump | safe }},{% endif %}
+  "url": {{ canonical | dump | safe }},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": {{ canonical | dump | safe }}},
+  "datePublished": "{{ page.date | dateISO }}",
+  "dateModified": "{{ page.date | dateISO }}",
+  "wordCount": {{ content | wordCount }},
+  "inLanguage": "en-US",
+  "articleSection": {{ tag | dump | safe }},
+  "author": {
+    "@type": "Person",
+    "name": "David Robles",
+    "jobTitle": "Licensed Master Social Worker, Psychotherapist",
+    "url": "https://therapybydavid.com/about",
+    "sameAs": [
+      "https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640",
+      "https://www.zocdoc.com/professional/david-robles-lmsw-702330"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Therapy by David",
+    "url": "https://therapybydavid.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://therapybydavid.com/blog"},
+    {"@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}}
+  ]
+}
+</script>
 <header class="article-hero">
   <div class="container">
     <a href="/blog" class="back-link">All Articles</a>

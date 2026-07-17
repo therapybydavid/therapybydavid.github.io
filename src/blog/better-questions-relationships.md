@@ -24,22 +24,6 @@ cardDescription: "Broad questions get broad answers. If the talking in your hous
 cardDate: "May 29, 2026 · 7 min read"
 ctaHeading: "Want the conversation back?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why \"How Was Your Day\" Never Gets You Anywhere",
-      "description": "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you — it's the questions. A therapist's guide to what to ask instead.",
-      "image": "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1200&h=630&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-05-29",
-      "dateModified": "2026-05-29",
-      "url": "https://therapybydavid.com/blog/better-questions-relationships",
-      "wordCount": "901",
-      "articleSection": "Relationships",
-      "keywords": "couples communication, marriage communication, better questions, relationship connection, couples therapy, therapist Pasadena Friendswood Texas"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

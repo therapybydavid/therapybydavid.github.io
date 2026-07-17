@@ -208,6 +208,46 @@ eleventyExcludeFromCollections: true
 }
 </style>
   <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact"}]}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Therapy by David",
+    "url": "https://therapybydavid.com/contact",
+    "telephone": "+18325442562",
+    "email": "info@therapybydavid.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1335 Regents Park Dr #140",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77058",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+18325442562",
+      "contactType": "customer service",
+      "areaServed": "US-TX",
+      "availableLanguage": "English"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Pasadena", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Webster", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "State", "name": "Texas"}
+    ],
+    "sameAs": [
+      "https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640",
+      "https://www.zocdoc.com/professional/david-robles-lmsw-702330"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -521,10 +561,5 @@ eleventyExcludeFromCollections: true
     });
   </script>
 
-  <!-- Chatbot widget intentionally NOT loaded on /contact.
-       The contact page already has 3 clear on-ramps (form, text/call CTA,
-       email card). A chatbot bubble there competes with the form for
-       attention rather than helping conversion. Bot still loads on every
-       other public page (home, services, blog, resources). -->
 </body>
 </html>

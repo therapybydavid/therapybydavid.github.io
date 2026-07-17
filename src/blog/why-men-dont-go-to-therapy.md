@@ -20,23 +20,6 @@ cardDescription: "Most men wait until they're white-knuckling it. Here's why men
 cardDate: "May 26, 2026 · 8 min read"
 ctaHeading: "Ready to stop white-knuckling it?"
 ctaText: "Schedule a free 15-minute consultation. No pressure, no paperwork — just a straight conversation about what's going on and whether men's mental health therapy is the right fit."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Don't Men Go to Therapy — and What Changes When They Do?",
-      "description": "Most men avoid therapy out of conditioning, not weakness. Here's why men stay quiet, how depression and stress show up differently in them, and what shifts when they do the work.",
-      "image": "https://images.unsplash.com/photo-1511458206431-afcf3cebe562?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/why-men-dont-go-to-therapy",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/why-men-dont-go-to-therapy",
-      "wordCount": "1750",
-      "articleSection": "Men's Mental Health",
-      "keywords": "men's mental health therapy, why men don't go to therapy, therapy for men, veterans therapy, first responders mental health, therapist Houston Texas"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

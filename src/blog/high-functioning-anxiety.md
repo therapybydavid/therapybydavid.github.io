@@ -20,23 +20,6 @@ cardDescription: "You look fine on the outside — productive, capable, on top o
 cardDate: "June 20, 2026 · 8 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "What Does High-Functioning Anxiety Actually Look Like?",
-      "description": "High-functioning anxiety hides behind success and productivity. Learn what it really looks like, what's happening in the nervous system, and what actually helps.",
-      "image": "https://images.unsplash.com/photo-1571990678217-9ea41a3a06e2?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/high-functioning-anxiety",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/high-functioning-anxiety",
-      "wordCount": "2000",
-      "articleSection": "Anxiety",
-      "keywords": "high-functioning anxiety, anxiety therapy, therapist Texas, overthinking, perfectionism, nervous system, telehealth"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

@@ -28,7 +28,7 @@ module.exports = function (eleventyConfig) {
   // NOTE: the "blog" directory is intentionally excluded — Eleventy builds it.
   [
     "images", "analytics.js", "site.webmanifest", "robots.txt", "_headers", "_redirects",
-    "chatbot.css", "chatbot.js", "david-robles-profile.jpeg",
+    "david-robles-profile.jpeg",
     "david-robles-headshot.jpg", "therapy-by-david-logo.jpg",
     "therapy-by-david-logo.png", "TBD.png",
     "card", "newsletters",
@@ -46,6 +46,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("fromJson", (s) => {
     try { return JSON.parse(s); } catch (e) { return null; }
   });
+
+  // Word count for BlogPosting schema, computed from the rendered post body
+  // so the markup can never drift from the actual article length.
+  eleventyConfig.addFilter("wordCount", (html) =>
+    String(html || "").replace(/<[^>]*>/g, " ").trim().split(/\s+/).filter(Boolean).length
+  );
 
   // Date helpers — written by hand so the build needs no extra dependencies.
   eleventyConfig.addFilter("dateISO", (d) => new Date(d).toISOString().slice(0, 10));

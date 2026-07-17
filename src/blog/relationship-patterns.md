@@ -24,22 +24,6 @@ cardDescription: "You recognize the pattern. You've even named it. So why does i
 cardDate: "May 16, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How to Stop Repeating the Same Relationship Patterns",
-      "description": "You recognize the pattern. You've even named it. So why does it keep happening? A therapist in Houston explains what's really driving it — and what actually changes it.",
-      "image": "https://therapybydavid.com/images/relationship-patterns-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-05-16",
-      "dateModified": "2026-05-16",
-      "url": "https://therapybydavid.com/blog/relationship-patterns",
-      "wordCount": "900",
-      "articleSection": "Relationships",
-      "keywords": "relationship patterns, attachment styles, why do I keep dating the same person, therapist Houston Texas, anxious attachment, avoidant attachment, relationship therapy"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

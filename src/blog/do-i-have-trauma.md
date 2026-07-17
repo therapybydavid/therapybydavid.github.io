@@ -20,23 +20,6 @@ cardDescription: "Many people assume trauma only counts if something dramatic ha
 cardDate: "May 22, 2026 · 9 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?",
-      "description": "Trauma isn't defined by the size of the event — it's defined by how an experience overwhelmed your capacity to cope and how your nervous system adapted.",
-      "image": "https://images.unsplash.com/photo-1614462099399-bd81bac74f16?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/do-i-have-trauma",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/do-i-have-trauma",
-      "wordCount": "2000",
-      "articleSection": "Trauma",
-      "keywords": "trauma, small-t trauma, big-T trauma, emotional neglect, chronic stress, trauma therapy, therapist Houston Texas, nervous system"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

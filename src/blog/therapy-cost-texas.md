@@ -20,23 +20,6 @@ cardDescription: "Therapy in Texas can range from a small copay to full self-pay
 cardDate: "June 12, 2026 · 7 min read"
 ctaHeading: "Not sure what it would cost you?"
 ctaText: "Find out in a no-pressure call. We'll talk through your situation, your coverage, and the current rate — no commitment."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How Much Does Therapy Cost in Texas (With & Without Insurance)?",
-      "description": "A clear breakdown of what therapy costs in Texas — insurance copays, self-pay and out-of-network rates, sliding-scale options, and how to check your benefits.",
-      "image": "https://images.unsplash.com/photo-1621519997950-158b631341b6?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/therapy-cost-texas",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/therapy-cost-texas",
-      "wordCount": "1650",
-      "articleSection": "Getting Started",
-      "keywords": "therapy cost Texas, how much does therapy cost, therapy with insurance, self-pay therapy, sliding scale therapy, Open Path, out-of-network reimbursement, therapist Houston Texas"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

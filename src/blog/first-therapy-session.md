@@ -20,23 +20,6 @@ cardDescription: "Not sure what actually happens when you start therapy? Here's 
 cardDate: "May 18, 2026 · 7 min read"
 ctaHeading: "Ready to take the first step?"
 ctaText: "Start with a free 15-minute consultation. No pressure — just a real conversation about what's going on and whether it's a fit."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "What to Expect in Your First Therapy Session",
-      "description": "Nervous about starting therapy? Here's exactly what happens in a first session — from the free 15-minute consultation to intake, goals, and how telehealth works.",
-      "image": "https://images.unsplash.com/photo-1516739063901-94072f684dfc?auto=format&fit=crop&w=800&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/first-therapy-session",
-      "mainEntityOfPage": "https://therapybydavid.com/blog/first-therapy-session",
-      "wordCount": "1650",
-      "articleSection": "Getting Started",
-      "keywords": "first therapy session, what to expect in therapy, free consultation, starting therapy, online therapy Texas, telehealth therapy"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

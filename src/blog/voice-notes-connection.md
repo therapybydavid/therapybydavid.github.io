@@ -24,22 +24,6 @@ cardDescription: "A voice note or a quick call feels like a small thing — but 
 cardDate: "May 29, 2026 · 7 min read"
 ctaHeading: "Feeling more disconnected than you'd like?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Why Hearing Each Other's Voice Is a Small Act of Love",
-      "description": "A voice note or a quick call does more than carry words. Here's what the research says about voice, bonding, and the nervous system.",
-      "image": "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&h=630&q=80",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-05-29",
-      "dateModified": "2026-05-29",
-      "url": "https://therapybydavid.com/blog/voice-notes-connection",
-      "wordCount": "847",
-      "articleSection": "Relationships",
-      "keywords": "voice notes, connection, relationships, oxytocin, loneliness, therapist Houston Texas, phone calls vs texting"
-    }
 faqJson: |
   {
     "@context": "https://schema.org",

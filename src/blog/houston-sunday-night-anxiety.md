@@ -19,23 +19,6 @@ cardTag: "Anxiety"
 cardDescription: "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help."
 cardDate: "June 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-schemaJson: |
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "The Sunday Night Dread: Why Houston Professionals Can't Turn Off the Work Week",
-    "description": "That familiar Sunday evening tension isn't just stress — it's a pattern worth understanding. Here's what's happening and how therapy can help.",
-    "image": "https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8ZXhoYXVzdGVkJTIwcHJvZmVzc2lvbmFsJTIwc3RhcmluZyUyMGF0JTIwcGhvbmUlMjBpbiUyMGRpbSUyMGxpdmluZyUyMHJvb20lMjBhdCUyMG5pZ2h0fGVufDF8MHx8fDE3ODI3NDU0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-    "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "url": "https://therapybydavid.com/blog/houston-sunday-night-anxiety",
-    "mainEntityOfPage": "https://therapybydavid.com/blog/houston-sunday-night-anxiety",
-    "wordCount": "1800",
-    "articleSection": "Anxiety",
-    "keywords": "Sunday night anxiety, Sunday scaries, work anxiety Houston, anticipatory anxiety, Houston professionals stress, therapist Houston TX, therapy Texas, telehealth therapy Texas"
-  }
 faqJson: |
   {
     "@context": "https://schema.org",

@@ -20,30 +20,6 @@ cardDescription: "Some difficulty after service is normal. But how do you know w
 cardDate: "June 6, 2026 · 8 min read"
 ctaHeading: "Ready to figure this out?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation, veteran to veteran, about what's going on and whether support might help. Learn more about therapy for veterans and military families."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "PTSD or Just Adjusting? Signs a Veteran Should Reach Out",
-      "description": "Not every hard transition home is PTSD — but some signs cross the line. Here's how to tell normal post-service adjustment from PTSD, from an Army veteran and therapist.",
-      "image": "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?auto=format&fit=crop&w=800&q=80",
-      "author": {
-        "@type": "Person",
-        "name": "David Robles",
-        "jobTitle": "Licensed Master Social Worker",
-        "url": "https://therapybydavid.com/#about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Therapy by David",
-        "url": "https://therapybydavid.com/"
-      },
-      "datePublished": "2026-06-06",
-      "dateModified": "2026-06-06",
-      "url": "https://therapybydavid.com/blog/veteran-ptsd-or-adjusting",
-      "articleSection": "Veterans",
-      "keywords": "veteran PTSD, post-deployment adjustment, signs of PTSD, veteran therapist Texas, TRICARE therapy, military transition, trauma treatment"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",

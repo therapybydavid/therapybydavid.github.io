@@ -41,7 +41,7 @@
     }
   });
 
-  /* ── High-intent taps: call, text, chatbot ── */
+  /* ── High-intent taps: call, text ── */
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t || !t.closest) return;
@@ -50,12 +50,6 @@
       var href = a.getAttribute('href') || '';
       if (href.indexOf('tel:') === 0) gtag('event', 'call_click', { link_url: href });
       if (href.indexOf('sms:') === 0) gtag('event', 'text_click', { link_url: href });
-    }
-    /* chatbot.js toggles .tbd-chat--open on the bubble's parent before
-       this document-level listener runs, so "open just happened" is
-       simply "the open class is present now" */
-    if (t.closest('.tbd-chat__bubble') && document.querySelector('.tbd-chat--open')) {
-      gtag('event', 'chatbot_open');
     }
   });
 })();

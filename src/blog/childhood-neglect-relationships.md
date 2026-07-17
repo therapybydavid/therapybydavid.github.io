@@ -24,22 +24,6 @@ cardDescription: "You had a roof over your head and nothing dramatically wrong. 
 cardDate: "April 18, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
-schemaJson: |
-  {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How Childhood Emotional Neglect Shows Up in Adult Relationships",
-      "description": "Nothing dramatic happened in your childhood. So why do relationships feel so hard? Childhood emotional neglect is often invisible — but its effects are not.",
-      "image": "https://therapybydavid.com/images/childhood-neglect-article.jpg",
-      "author": { "@type": "Person", "name": "David Robles", "jobTitle": "Licensed Master Social Worker", "url": "https://therapybydavid.com/#about" },
-      "publisher": { "@type": "Organization", "name": "Therapy by David", "url": "https://therapybydavid.com/" },
-      "datePublished": "2026-04-18",
-      "dateModified": "2026-04-18",
-      "url": "https://therapybydavid.com/blog/childhood-neglect-relationships",
-      "wordCount": "920",
-      "articleSection": "Trauma",
-      "keywords": "childhood emotional neglect, adult relationships, attachment, therapist Houston Texas, emotional neglect effects, trauma therapy"
-    }
 faqJson: |
   {
       "@context": "https://schema.org",
