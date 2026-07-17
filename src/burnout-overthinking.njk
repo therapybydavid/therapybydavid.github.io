@@ -611,6 +611,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/burnout-vs-depression", "title": "Burnout vs. Depression: How to Tell the Difference" },
+      { "href": "/blog/houston-work-culture-anxiety", "title": "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment" },
+      { "href": "/blog/coping-skills-that-actually-work", "title": "Why Your Coping Skills Aren't Working (And What to Try Instead)" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">The Loop Doesn't Have To Run You</span>

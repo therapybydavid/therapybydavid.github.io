@@ -609,6 +609,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/do-i-have-trauma", "title": 'Do I Have Trauma If Nothing "Bad" Ever Happened to Me?' },
+      { "href": "/blog/trauma-and-patterns", "title": "Why Does My Past Keep Affecting My Present?" },
+      { "href": "/blog/childhood-neglect-relationships", "title": "How Childhood Emotional Neglect Shows Up in Adult Relationships" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Are More Than What You Survived</span>

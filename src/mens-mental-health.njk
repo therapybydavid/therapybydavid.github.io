@@ -514,6 +514,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/why-men-dont-go-to-therapy", "title": "Why Don't Men Go to Therapy — and What Changes When They Do?" },
+      { "href": "/blog/depression-and-anger", "title": "Why Am I So Angry When I'm Depressed?" },
+      { "href": "/blog/venting-vs-asking-for-help", "title": "Venting or Asking for Help? Why Conversations Go Sideways When We Mix Them Up" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Don't Have To Keep White-Knuckling It</span>

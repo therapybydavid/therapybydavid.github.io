@@ -524,6 +524,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/high-functioning-depression", "title": "High-Functioning Depression: When You're Successful but Feel Empty" },
+      { "href": "/blog/burnout-vs-depression", "title": "Burnout vs. Depression: How to Tell the Difference" },
+      { "href": "/blog/depression-and-anger", "title": "Why Am I So Angry When I'm Depressed?" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">Depression Is Real — And It's Treatable</span>

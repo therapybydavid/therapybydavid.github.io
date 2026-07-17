@@ -572,6 +572,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/veteran-ptsd-or-adjusting", "title": "PTSD or Just Adjusting? Signs a Veteran Should Reach Out" },
+      { "href": "/blog/veterans-hypervigilance", "title": "Why Do Veterans Have Trouble Turning Off Hypervigilance?" },
+      { "href": "/blog/houston-military-transition-anxiety", "title": "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Held The Line. Let Someone Hold It With You.</span>

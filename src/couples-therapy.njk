@@ -514,6 +514,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/couples-same-argument", "title": "Why Do Couples Keep Having the Same Argument?" },
+      { "href": "/blog/conflict-without-winners", "title": "When Winning the Argument Means Losing the Relationship" },
+      { "href": "/blog/relationship-patterns", "title": "How to Stop Repeating the Same Relationship Patterns" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Don't Have To Keep Having The Same Fight</span>

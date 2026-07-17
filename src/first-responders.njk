@@ -611,6 +611,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/first-responder-burnout-houston", "title": "When Helping Others Leaves You Empty: Burnout in Houston First Responders" },
+      { "href": "/blog/veterans-hypervigilance", "title": "Why Do Veterans Have Trouble Turning Off Hypervigilance?" },
+      { "href": "/blog/burnout-vs-depression", "title": "Burnout vs. Depression: How to Tell the Difference" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Carry Enough Already</span>

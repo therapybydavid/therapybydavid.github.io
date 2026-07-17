@@ -514,6 +514,13 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    {% set fromBlog = [
+      { "href": "/blog/high-functioning-anxiety", "title": "What Does High-Functioning Anxiety Actually Look Like?" },
+      { "href": "/blog/anxiety-in-the-body-not-just-the-mind", "title": "Your Anxiety Isn't Just in Your Head — It's in Your Body" },
+      { "href": "/blog/how-anxiety-becomes-a-problem", "title": "How Do I Know If My Anxiety Is Becoming a Problem?" }
+    ] %}
+    {% include "from-blog.njk" %}
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Don't Have To Keep White-Knuckling It</span>
