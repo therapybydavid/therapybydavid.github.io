@@ -149,6 +149,11 @@ eleventyExcludeFromCollections: true
     .tool-row-head { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
     .tool-row-logo { height: 32px; width: auto; max-width: 200px; object-fit: contain; align-self: flex-start; }
     .tool-row-logo.is-upheal { height: 46px; }
+    .tool-row-wordmark { font-family: var(--serif); font-size: 27px; font-weight: 700; letter-spacing: -.02em; color: var(--night); line-height: 1; }
+    .tool-row-compact { grid-template-columns: 1fr auto; gap: 20px; padding: 28px 40px; }
+    .tool-row-compact .tool-row-head { gap: 10px; }
+    .tool-row-go { font-size: 24px; color: var(--gold); transition: transform .2s ease; }
+    .tool-row-compact:hover .tool-row-go { transform: translateX(6px); }
     .tool-row-category { color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
     .tool-row-body { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
     .tool-row-body p { color: var(--muted); font-size: 15.5px; line-height: 1.75; max-width: 58ch; margin: 0; }
@@ -209,6 +214,7 @@ eleventyExcludeFromCollections: true
       .nav-toggle { display: block; }
       .page-hero { padding-top: 130px; padding-bottom: 80px; }
       .tool-row { grid-template-columns: 1fr; gap: 22px; padding: 30px; }
+      .tool-row-compact { grid-template-columns: 1fr auto; padding: 24px 28px; }
       .tool-row-head { gap: 12px; }
       .footer-grid { grid-template-columns: 1fr; }
       .section { padding: 78px 0; }
@@ -299,6 +305,38 @@ eleventyExcludeFromCollections: true
               <a class="tool-row-link" href="https://reclaim.ai/r/s/TRxs7" target="_blank" rel="sponsored noopener nofollow">Try Reclaim.ai &rarr;</a>
             </div>
           </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GET LISTED / DIRECTORIES -->
+    <section class="section listed-section">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Get Found</span>
+          <h2>Where to list your profile.</h2>
+          <p class="section-lead">The tools above keep the practice running — a directory profile is how clients actually find you. This is where I'd start.</p>
+        </div>
+        <div class="tool-list">
+
+          <!-- Therapist.com -->
+          <a class="tool-row tool-row-compact reveal" href="https://therapist.com/" target="_blank" rel="noopener">
+            <div class="tool-row-head">
+              <span class="tool-row-wordmark">Therapist.com</span>
+              <span class="tool-row-category">Therapist Directory</span>
+            </div>
+            <span class="tool-row-go">&rarr;</span>
+          </a>
+
+          <!-- Open Path Collective -->
+          <a class="tool-row tool-row-compact reveal" href="https://openpathcollective.org/" target="_blank" rel="noopener">
+            <div class="tool-row-head">
+              <span class="tool-row-wordmark">Open Path Collective</span>
+              <span class="tool-row-category">Sliding-Scale Directory</span>
+            </div>
+            <span class="tool-row-go">&rarr;</span>
+          </a>
 
         </div>
       </div>
