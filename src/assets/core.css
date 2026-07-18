@@ -20,7 +20,7 @@
   --radius: 28px;
   --max: 1180px;
   --article-max: 740px;
-  --serif: 'Fraunces', Georgia, serif;
+  --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
