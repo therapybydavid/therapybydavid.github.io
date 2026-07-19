@@ -121,6 +121,18 @@ eleventyExcludeFromCollections: true
       align-items: center;
     }
     .refer-portrait { max-width: 280px; justify-self: end; margin: 0; }
+    .cred-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px 40px;
+      background: var(--white); border: 1px solid rgba(20,33,50,.08);
+      border-radius: 22px; padding: 26px 34px;
+      box-shadow: 0 14px 44px rgba(20,33,50,.07);
+    }
+    .cred-strip small {
+      display: block; color: var(--gold); font-size: 10.5px; letter-spacing: .16em;
+      text-transform: uppercase; font-weight: 900; margin-bottom: 6px;
+    }
+    .cred-strip strong { color: var(--night); font-size: 16px; font-weight: 700; }
     .refer-expect-grid {
       display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
     }
@@ -333,6 +345,30 @@ eleventyExcludeFromCollections: true
             <p style="font-size: 15px;"><strong style="color: var(--night);">Free 15-minute consultation</strong> for every new client.</p>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section style="padding: 0 0 84px;">
+      <div class="container reveal">
+        <div class="cred-strip">
+          <div>
+            <small>Texas License</small>
+            <strong>LMSW #117975</strong>
+          </div>
+          <div>
+            <small>NPI</small>
+            <strong>1558160580</strong>
+          </div>
+          <div>
+            <small>Verified Profiles</small>
+            <strong>
+              <a href="https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640" target="_blank" rel="noopener" style="border-bottom: 2px solid var(--champagne);">Psychology Today</a>
+              &nbsp;·&nbsp;
+              <a href="https://www.zocdoc.com/professional/david-robles-lmsw-702330" target="_blank" rel="noopener" style="border-bottom: 2px solid var(--champagne);">Zocdoc</a>
+            </strong>
+          </div>
         </div>
       </div>
     </section>
