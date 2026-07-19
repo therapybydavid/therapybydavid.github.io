@@ -121,6 +121,9 @@ eleventyExcludeFromCollections: true
       align-items: center;
     }
     .refer-portrait { max-width: 280px; justify-self: end; margin: 0; }
+    .refer-expect-grid {
+      display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+    }
     .page-hero::after {
       content: '';
       position: absolute; inset: auto 0 0 0; height: 120px;
@@ -188,6 +191,7 @@ eleventyExcludeFromCollections: true
       .page-hero { padding: 124px 0 40px; }
       .refer-hero-grid { grid-template-columns: 1fr; gap: 32px; }
       .refer-portrait { max-width: 210px; justify-self: start; }
+      .refer-expect-grid { grid-template-columns: 1fr; gap: 24px; }
       .contact-grid, .map-grid, .footer-grid { grid-template-columns: 1fr; }
       .section { padding: 78px 0; }
       .contact-info-section { padding-top: 10px; }
@@ -333,7 +337,7 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- HOW TO REFER -->
-    <section class="section" style="background: var(--cream);">
+    <section class="section" style="background: var(--cream); padding-bottom: 56px;">
       <div class="container">
         <span class="eyebrow">How to Refer</span>
         <h2>Three ways, all simple.</h2>
@@ -351,16 +355,16 @@ eleventyExcludeFromCollections: true
             <p style="font-size: 15px;">Every referred client starts with a <strong style="color: var(--night);">free 15-minute phone consultation</strong>. If I'm not the right fit, I'll say so and help them find someone who is.</p>
           </div>
         </div>
-        <p class="reveal" style="font-style: italic; margin-bottom: 28px;">I keep referring providers' trust by being reachable, responsive, and honest about fit.</p>
-        <div class="reveal" style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a class="btn btn-dark" href="/assets/therapy-by-david-referral-sheet.pdf" target="_blank" rel="noopener">Download the one-page referral sheet (PDF)</a>
+        <p class="reveal" style="font-style: italic; margin-bottom: 32px;">I keep referring providers' trust by being reachable, responsive, and honest about fit.</p>
+        <div class="reveal refer-expect-grid">
+          <p style="font-size: 15px; margin: 0;"><strong style="color: var(--night);">What referred clients can expect:</strong> structured, practical work, usually weekly. We name the pattern keeping the anxiety, stress, or conflict alive, build the skills to regulate it, and practice responding differently. Clients know what we're working on and why, from the first session.</p>
+          <a class="btn btn-dark" style="align-self: start; white-space: nowrap;" href="/assets/therapy-by-david-referral-sheet.pdf" target="_blank" rel="noopener">Download the referral sheet (PDF)</a>
         </div>
-        <p class="reveal" style="margin-top: 32px; font-size: 15px; max-width: 68ch;"><strong style="color: var(--night);">What referred clients can expect:</strong> structured, practical work, usually weekly. We name the pattern keeping the anxiety, stress, or conflict alive, build the skills to regulate it, and practice responding differently. Clients know what we're working on and why, from the first session.</p>
       </div>
     </section>
 
     <!-- LOCATIONS -->
-    <section class="section" id="locations" style="background: var(--cream);">
+    <section class="section" id="locations" style="background: var(--cream); padding-top: 56px;">
       <div class="container">
         <span class="eyebrow">Office Locations</span>
         <h2>In-person in Clear Lake and Pasadena.<br>Telehealth across Texas.</h2>
