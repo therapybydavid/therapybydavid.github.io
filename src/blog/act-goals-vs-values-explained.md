@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "An ACT-based look at why achieving your goals doesn't always feel like enough, and what values actually mean in Acceptance and Commitment Therapy."
 cardDate: "July 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0NTQ1MjYwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "gray rocks on seashore during daytime"
+cardImage: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0NTQ1MjYwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "gray rocks on seashore during daytime"
 ---
 
 Acceptance and Commitment Therapy (ACT) gets described a lot of ways — mindfulness-based, values-driven, focused on psychological flexibility. Those descriptions are accurate, but they can also make ACT sound abstract in a way that doesn't explain what actually happens in the room. One of the clearest, most useful pieces of ACT is a distinction most people have never had spelled out: the difference between a **goal** and a **value**.
