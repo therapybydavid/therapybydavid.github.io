@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/digital-burnout-notifications-nervous-system"
 canonical: "https://therapybydavid.com/blog/digital-burnout-notifications-nervous-system"
 permalink: "/blog/digital-burnout-notifications-nervous-system.html"
-date: 2026-04-16
+date: 2026-04-14
 order: 50
 tag: "Burnout"
-dateDisplay: "April 16, 2026 · 6 min read"
+dateDisplay: "April 14, 2026 · 6 min read"
 deck: "It's not the hours you spend on your phone that wear you down. It's how many times a day your body braces for something."
 cardTitle: "Why Your Nervous System Never Gets the 'All Clear' Signal"
 cardTag: "Burnout"
 cardDescription: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
-cardDate: "April 16, 2026 · 6 min read"
+cardDate: "April 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1581518867593-6f1736be9489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZXhoYXVzdGVkJTIwd29tYW4lMjByZXN0aW5nJTIwaGVhZCUyMG9uJTIwaGFuZHMlMjBhdCUyMGRlc2slMjBvdmVyd2hlbG1lZCUyMHByb2Zlc3Npb25hbCUyMHRha2luZyUyMGRlZXAlMjBicmVhdGh8ZW58MXwwfHx8MTc4NDUyMDIwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in white crew neck t-shirt"
