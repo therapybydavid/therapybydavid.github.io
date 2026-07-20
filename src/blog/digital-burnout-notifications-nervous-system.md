@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
 cardDate: "July 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1758876201884-8695c9c98203?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjB3b21hbiUyMHJlc3RpbmclMjBoZWFkJTIwb24lMjBkZXNrJTIwb3ZlcndoZWxtZWQlMjBwcm9mZXNzaW9uYWwlMjBydWJiaW5nJTIwZXllcyUyMGF0JTIwd29ya3xlbnwxfDB8fHwxNzg0NTE2NTMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Woman looking away from laptop at desk"
-cardImage: "https://images.unsplash.com/photo-1758876201884-8695c9c98203?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGhhdXN0ZWQlMjB3b21hbiUyMHJlc3RpbmclMjBoZWFkJTIwb24lMjBkZXNrJTIwb3ZlcndoZWxtZWQlMjBwcm9mZXNzaW9uYWwlMjBydWJiaW5nJTIwZXllcyUyMGF0JTIwd29ya3xlbnwxfDB8fHwxNzg0NTE2NTMzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Woman looking away from laptop at desk"
+image: "https://images.unsplash.com/photo-1543183601-e4c9648a72f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODQ1MjAxOTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "gray stone beside body of water"
+cardImage: "https://images.unsplash.com/photo-1543183601-e4c9648a72f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODQ1MjAxOTN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "gray stone beside body of water"
 ---
 
 Most conversations about digital burnout focus on hours logged: how much time we spend on our phones, how many hours of screen time the app reports back to us on Sunday, how guilty we feel about it. But hours aren't really the problem. What wears people down isn't the total time on a device. It's the number of times per day the nervous system gets a small jolt of *something might need me right now* — and never fully gets the signal that it's safe to stand down.
