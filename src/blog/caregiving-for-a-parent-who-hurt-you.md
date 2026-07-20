@@ -19,10 +19,10 @@ cardTag: "Caregiving"
 cardDescription: "When the parent you're now caring for wasn't safe or loving when you were young, caregiving can stir up grief, resentment, and guilt all at once."
 cardDate: "July 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1780277006288-f05cc55f3260?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg0NTE2NTM0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "A small boat on a green river with lush trees."
-cardImage: "https://images.unsplash.com/photo-1780277006288-f05cc55f3260?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg0NTE2NTM0fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "A small boat on a green river with lush trees."
+image: "https://images.unsplash.com/photo-1686935821509-b1c37181b766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8YWR1bHQlMjBkYXVnaHRlciUyMGNvbXxlbnwxfDB8fHwxNzg0NTE2NjQyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man and a woman standing next to each other"
+cardImage: "https://images.unsplash.com/photo-1686935821509-b1c37181b766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyNXx8YWR1bHQlMjBkYXVnaHRlciUyMGNvbXxlbnwxfDB8fHwxNzg0NTE2NjQyfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man and a woman standing next to each other"
 ---
 
 Caregiving is hard enough when the relationship is uncomplicated. You're tired, stretched thin, grieving the slow loss of someone you love. But there's a version of caregiving that doesn't get talked about nearly as much: caring for a parent who wasn't safe, present, or loving when you were the one who needed care.
