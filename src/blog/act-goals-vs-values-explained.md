@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "An ACT-based look at why achieving your goals doesn't always feel like enough, and what values actually mean in Acceptance and Commitment Therapy."
 cardDate: "July 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1780359398835-a2fd0d742a5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0NTU1Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "A woman sits on a rock by a flowing stream."
-cardImage: "https://images.unsplash.com/photo-1780359398835-a2fd0d742a5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg0NTU1Mzg5fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "A woman sits on a rock by a flowing stream."
+image: "https://images.unsplash.com/photo-1783649387532-524532d57cad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDU1NTg0M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Lily pads float on water reflecting trees and golden light."
+cardImage: "https://images.unsplash.com/photo-1783649387532-524532d57cad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8Y2FsbSUyMG1pbmRmdWxuZXNzJTIwcGVhY2VmdWwlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NDU1NTg0M3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Lily pads float on water reflecting trees and golden light."
 ---
 
 Acceptance and Commitment Therapy (ACT) gets described a lot of ways — mindfulness-based, values-driven, focused on psychological flexibility. Those descriptions are accurate, but they can also make ACT sound abstract in a way that doesn't explain what actually happens in the room. One of the clearest, most useful pieces of ACT is a distinction most people have never had spelled out: the difference between a **goal** and a **value**.
