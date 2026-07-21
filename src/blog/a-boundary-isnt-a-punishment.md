@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Many so-called boundaries are actually ultimatums aimed at controlling someone else. Here's the difference, and why it matters."
 cardDate: "July 21, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1610462534419-4878c980c5da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0d28lMjB3b21lbiUyMGhhdmluZyUyMHN1cHBvcnRpdmUlMjBjb252ZXJzYXRpb24lMjBwZXJzb24lMjBzZXR0aW5nJTIwY2FsbSUyMGJvdW5kYXJ5JTIwaW4lMjBjb252ZXJzYXRpb24lMjBmcmllbmRzJTIwdGFsa2luZyUyMHdhcm1seXxlbnwxfDB8fHwxNzg0NjMxNjYxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in white shirt smiling"
+cardImage: "https://images.unsplash.com/photo-1610462534419-4878c980c5da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0d28lMjB3b21lbiUyMGhhdmluZyUyMHN1cHBvcnRpdmUlMjBjb252ZXJzYXRpb24lMjBwZXJzb24lMjBzZXR0aW5nJTIwY2FsbSUyMGJvdW5kYXJ5JTIwaW4lMjBjb252ZXJzYXRpb24lMjBmcmllbmRzJTIwdGFsa2luZyUyMHdhcm1seXxlbnwxfDB8fHwxNzg0NjMxNjYxfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in white shirt smiling"
 ---
 
 A lot of what gets called "setting a boundary" is really an attempt to control someone else's behavior with better vocabulary. "If you don't stop calling me names, I'm done" sounds like a boundary. It might also be a threat, an ultimatum, or a bargaining chip, depending on what happens next and who it's actually about.
