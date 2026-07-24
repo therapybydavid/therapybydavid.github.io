@@ -19,6 +19,10 @@ cardTag: "First Responders"
 cardDescription: "Moral injury is different from PTSD. For first responders, the hardest calls often leave guilt and self-judgment, not just fear. Here's how to recognize it."
 cardDate: "July 24, 2026 · 7 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1542591796-19c9263df33d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxmaXJlZmlnaHRlciUyMHBvcnRyYWl0JTIwdGhvdWdodGZ1bCUyMHBhcmFtZWRpYyUyMHNpdHRpbmclMjBhbG9uZSUyMHJlZmxlY3RpdmUlMjBmaXJzdCUyMHJlc3BvbmRlciUyMHN1cHBvcnR8ZW58MXwwfHx8MTc4NDg5MTAzNnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "fireman holding phone"
+cardImage: "https://images.unsplash.com/photo-1542591796-19c9263df33d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxmaXJlZmlnaHRlciUyMHBvcnRyYWl0JTIwdGhvdWdodGZ1bCUyMHBhcmFtZWRpYyUyMHNpdHRpbmclMjBhbG9uZSUyMHJlZmxlY3RpdmUlMjBmaXJzdCUyMHJlc3BvbmRlciUyMHN1cHBvcnR8ZW58MXwwfHx8MTc4NDg5MTAzNnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "fireman holding phone"
 ---
 
 When people think about the psychological toll of police work, firefighting, EMS, or dispatch, they usually think of fear. The adrenaline, the hypervigilance, the nervous system that won't power down after a bad call. That's real, and it matters. But a lot of first responders describe something that doesn't quite fit the fear model. It's not "I'm scared this will happen again." It's "I can't stop thinking about what I did — or didn't do."
