@@ -19,10 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "Many college students feel like they're living double lives — one self at school, another at home. Here's why that split happens and what it can mean."
 cardDate: "July 23, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODQ4MDQ5NTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "person doing yoga on seashore during daytime"
-cardImage: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODQ4MDQ5NTl8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "person doing yoga on seashore during daytime"
+image: "https://images.unsplash.com/photo-1762322797330-bb8fadc5e440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODQ4OTE1ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Man holding surfboard by calm lake at sunrise"
+cardImage: "https://images.unsplash.com/photo-1762322797330-bb8fadc5e440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODQ4OTE1ODZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Man holding surfboard by calm lake at sunrise"
 ---
 
 Somewhere around week three of freshman year, a lot of students notice something strange: the person they are at school doesn't quite match the person they were at home. Maybe you're more outspoken now, or quieter, or you've started sleeping at 2am and eating cereal for dinner without anyone raising an eyebrow. Then you go home for Thanksgiving and suddenly you're back in your childhood bedroom, being asked why you haven't called more, and some of that new self just... evaporates.
