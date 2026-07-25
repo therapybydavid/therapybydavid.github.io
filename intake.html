@@ -402,6 +402,25 @@
         </div>
       </div>
 
+      <div class="section" id="sec-referral">
+        <p class="section-label" id="lbl-referral">How did you hear about me? <span class="optional">(optional)</span></p>
+        <select id="referral-source" aria-labelledby="lbl-referral">
+          <option value="" selected>Select one</option>
+          <option>Google or web search</option>
+          <option>Psychology Today</option>
+          <option>Open Path Collective</option>
+          <option>A friend or family member</option>
+          <option>A doctor, therapist, or other professional</option>
+          <option>My insurance company's directory</option>
+          <option>Social media</option>
+          <option>Other</option>
+        </select>
+        <div class="reveal" id="referral-who-reveal">
+          <label class="field-label" for="referral-who">Who should I thank? <span style="color:var(--muted);">(optional)</span></label>
+          <input type="text" id="referral-who" placeholder="Name of the person or office">
+        </div>
+      </div>
+
       <div class="section" id="sec-route">
         <p class="section-label" id="lbl-route">Your next step</p>
         <div class="cards" role="group" aria-labelledby="lbl-route" data-group="route">
@@ -489,6 +508,8 @@
     insuranceNetwork: null,
     format: null,            // ["In person (Webster office)"] | ["Telehealth / Secure video"]
     preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
+    referralSource: null,    // self-reported "how did you hear about me?"
+    referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
     email: "",
     phone: "",
@@ -518,6 +539,7 @@
         insuranceNetwork: data.insuranceNetwork,
         format: data.format,
         preferredTimes: data.preferredTimes,
+        referralSource: data.referralSource,
         route: data.route
       }));
     } catch (e) {}
@@ -660,6 +682,34 @@
   });
 
   /* =========================================================
+     REFERRAL SOURCE (optional). Self-reported, because analytics only
+     sees the digital path — a physician's referral usually arrives as a
+     plain Google search for David's name.
+     ========================================================= */
+  var referralSelect = document.getElementById("referral-source");
+  var referralWhoReveal = document.getElementById("referral-who-reveal");
+  var referralWho = document.getElementById("referral-who");
+  var NAMED_SOURCES = ["A friend or family member", "A doctor, therapist, or other professional"];
+
+  function syncReferralReveal() {
+    if (NAMED_SOURCES.indexOf(referralSelect.value) !== -1) {
+      referralWhoReveal.classList.add("open");
+    } else {
+      referralWhoReveal.classList.remove("open");
+      referralWho.value = "";
+      data.referralWho = "";
+    }
+  }
+  referralSelect.addEventListener("change", function () {
+    data.referralSource = referralSelect.value || null;
+    syncReferralReveal();
+    saveDraft();
+  });
+  referralWho.addEventListener("input", function () {
+    data.referralWho = referralWho.value.trim();
+  });
+
+  /* =========================================================
      NEXT STEP (equal-weight cards)
      ========================================================= */
   var routeGroup = document.querySelector('[data-group="route"]');
@@ -755,8 +805,11 @@
       : "Private pay";
     var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var timesLabel  = data.preferredTimes.length ? "Prefers " + data.preferredTimes.join("/") : null;
+    var referralLabel = data.referralSource
+      ? "Heard via " + data.referralSource + (data.referralWho ? " (" + data.referralWho + ")" : "")
+      : null;
     var summary = [
-      data.state, paymentLabel, formatLabel, timesLabel,
+      data.state, paymentLabel, formatLabel, timesLabel, referralLabel,
       data.route === "call" ? "wants 15-min intro call" : "wants portal booking"
     ].filter(Boolean).join(" · ");
 
@@ -770,6 +823,8 @@
       insurance_network: data.insuranceNetwork,
       format:     data.format,
       preferred_times: data.preferredTimes,
+      referral_source: data.referralSource,
+      referral_who: data.referralWho || null,
       next_step:  data.route,
 
       sms_opt_in:  false,
@@ -857,6 +912,7 @@
       data.insuranceNetwork = saved.insuranceNetwork || null;
       data.format = saved.format || null;
       data.preferredTimes = saved.preferredTimes || [];
+      data.referralSource = saved.referralSource || null;
       data.route = saved.route || null;
 
       markSelected(stateGroup, stateGroup.querySelector('[data-state="Texas"]'));
@@ -874,6 +930,10 @@
         var b = timesGroup.querySelector('[data-time="' + t + '"]');
         if (b) { b.classList.add("selected"); b.setAttribute("aria-pressed", "true"); }
       });
+      if (data.referralSource) {
+        referralSelect.value = data.referralSource;
+        syncReferralReveal();
+      }
       if (data.route) selectRoute(data.route);
     }
 
