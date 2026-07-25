@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Request an Appointment — Therapy by David</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap"></noscript>
 <script src="/analytics.js" defer></script>
 <style>
   :root {
@@ -17,6 +21,8 @@
     --label: #d9d9d9;
     --muted: #a6a6a6;
     --gold: #c9a548;
+    --champagne: #d8b866;
+    --serif: 'Playfair Display', Georgia, serif;
     --gold-soft: rgba(201, 165, 72, 0.14);
     --invalid: #e07070;
     --radius: 14px;
@@ -39,7 +45,9 @@
   .card {
     width: 100%;
     max-width: 640px;
-    background: var(--card);
+    background:
+      radial-gradient(120% 190px at 50% -40px, rgba(201,165,72,.10), transparent 70%),
+      var(--card);
     border: 1px solid #2e2e2e;
     border-radius: var(--radius);
     padding: 44px 40px;
@@ -54,11 +62,21 @@
   }
 
   h1 {
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 8px;
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.6vw, 36px);
+    font-weight: 560;
+    letter-spacing: -0.01em;
+    line-height: 1.18;
+    margin-bottom: 12px;
     outline: none;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(100deg, var(--champagne) 10%, #ecd28f 45%, var(--gold) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .sub {
@@ -211,6 +229,38 @@
     text-align: center;
   }
 
+  .upload-row { margin-top: 14px; }
+  .upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--chip-bg);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14.5px;
+    font-family: inherit;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+  .upload-btn:hover { border-color: var(--gold); }
+  .upload-btn svg { flex: none; }
+  .upload-status {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.55;
+  }
+  .upload-status.ok { color: var(--gold); }
+  .upload-status.warn { color: var(--invalid); }
+  .upload-hint {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 7px;
+    line-height: 1.55;
+  }
+
   .fees-note {
     font-size: 13.5px;
     color: var(--muted);
@@ -292,7 +342,7 @@
     line-height: 52px;
     margin: 0 auto 20px;
   }
-  .end-screen h2 { font-size: 22px; font-weight: 600; margin-bottom: 10px; outline: none; }
+  .end-screen h2 { font-family: var(--serif); font-size: 27px; font-weight: 560; margin-bottom: 10px; outline: none; }
   .end-screen p { color: var(--muted); font-size: 15px; }
   .link { color: var(--gold); font-weight: 600; text-decoration: none; font-size: 15.5px; }
   .link:hover { text-decoration: underline; }
@@ -321,8 +371,8 @@
   <!-- ============ THE FORM ============ -->
   <section class="panel visible" id="form-panel">
     <p class="eyebrow">Therapy by David</p>
-    <h1 id="form-heading" tabindex="-1">Request an appointment</h1>
-    <p class="sub">A few details so we start in the right place. This takes about a minute.</p>
+    <h1 id="form-heading" tabindex="-1">Reaching out is the hard part. <em>The rest is just details.</em></h1>
+    <p class="sub">A few questions so we start in the right place. It takes about a minute.</p>
 
     <form id="intake-form" novalidate>
 
@@ -381,6 +431,17 @@
             <option>UnitedHealthcare</option>
             <option>Other / not sure</option>
           </select>
+
+          <div class="upload-row">
+            <label class="field-label" for="insurance-card">Insurance card <span style="color:var(--muted);">(optional)</span></label>
+            <input type="file" id="insurance-card" accept="image/*,application/pdf" style="display:none;">
+            <button type="button" class="upload-btn" id="card-btn">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 14V4m0 0L6 8m4-4l4 4M3 15v1a2 2 0 002 2h10a2 2 0 002-2v-1" stroke="#c9a548" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Add a photo of your card
+            </button>
+            <p class="upload-status" id="card-status" role="status" aria-live="polite"></p>
+            <p class="upload-hint">A photo of the front is enough. It's stored securely and used only to verify your benefits.</p>
+          </div>
         </div>
         <p class="fees-note">Self-pay sessions are $150, confirmed up front with no surprises. The 15-minute intro call is always free. Many major plans may be covered through partner networks.</p>
       </div>
@@ -508,6 +569,7 @@
     insuranceNetwork: null,
     format: null,            // ["In person (Webster office)"] | ["Telehealth / Secure video"]
     preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
+    insuranceCardPath: null, // Storage path only — never the file, never a link
     referralSource: null,    // self-reported "how did you hear about me?"
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
@@ -636,6 +698,13 @@
         insuranceReveal.classList.remove("open");
         data.insuranceNetwork = null;
         networkSelect.value = "";
+        data.insuranceCardPath = null;
+        cardUpload = null;
+        if (cardInput) {
+          cardInput.value = "";
+          cardStatus.textContent = "";
+          cardStatus.className = "upload-status";
+        }
       }
       saveDraft();
     });
@@ -678,6 +747,63 @@
         btn.setAttribute("aria-pressed", "false");
       }
       saveDraft();
+    });
+  });
+
+  /* =========================================================
+     INSURANCE CARD (optional). PHI, so it is handled differently from
+     everything else on this page: the file goes straight from the
+     browser to Cloud Storage (no Worker, no third party in the middle),
+     only the resulting storage path is kept on the lead record, and the
+     notification pipeline is told nothing but "on file". Upload starts
+     as soon as a file is chosen so submitting is never blocked.
+     ========================================================= */
+  var cardInput  = document.getElementById("insurance-card");
+  var cardBtn    = document.getElementById("card-btn");
+  var cardStatus = document.getElementById("card-status");
+  var cardUpload = null;   // in-flight/settled upload promise
+  var MAX_CARD_BYTES = 12 * 1024 * 1024;
+
+  cardBtn.addEventListener("click", function () { cardInput.click(); });
+
+  cardInput.addEventListener("change", function () {
+    var file = cardInput.files && cardInput.files[0];
+    data.insuranceCardPath = null;
+    cardUpload = null;
+    if (!file) { cardStatus.textContent = ""; cardStatus.className = "upload-status"; return; }
+
+    var okType = /^image\//.test(file.type) || file.type === "application/pdf";
+    if (!okType) {
+      cardStatus.textContent = "Please choose a photo or a PDF.";
+      cardStatus.className = "upload-status warn";
+      cardInput.value = "";
+      return;
+    }
+    if (file.size > MAX_CARD_BYTES) {
+      cardStatus.textContent = "That file is over 12 MB — try a photo instead of a scan.";
+      cardStatus.className = "upload-status warn";
+      cardInput.value = "";
+      return;
+    }
+
+    cardStatus.textContent = "Uploading…";
+    cardStatus.className = "upload-status";
+
+    cardUpload = (typeof window.__uploadCard === "function"
+      ? window.__uploadCard(file)
+      : Promise.reject(new Error("storage unavailable"))
+    ).then(function (path) {
+      data.insuranceCardPath = path;
+      cardStatus.textContent = "Card attached \u2713";
+      cardStatus.className = "upload-status ok";
+      track("intake_card_uploaded");
+      return path;
+    }).catch(function () {
+      // Never block the lead on this — they can send it later.
+      data.insuranceCardPath = null;
+      cardStatus.textContent = "Couldn't attach that — no problem, you can send it later. Your request will still go through.";
+      cardStatus.className = "upload-status warn";
+      return null;
     });
   });
 
@@ -785,7 +911,18 @@
     }
 
     err.textContent = "";
-    submitIntake();
+    if (cardUpload) {
+      // A card is still uploading — let it finish (capped) so the path
+      // lands on the record, but never strand the visitor.
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Processing…";
+      Promise.race([
+        cardUpload.catch(function () {}),
+        new Promise(function (r) { setTimeout(r, 6000); })
+      ]).then(submitIntake);
+    } else {
+      submitIntake();
+    }
   });
 
   function submitIntake() {
@@ -801,7 +938,8 @@
     var firstName = nameParts.shift() || "";
     var lastName  = nameParts.join(" ");
     var paymentLabel = data.payment === "insurance"
-      ? "Insurance: " + (data.insuranceNetwork || "unspecified")
+      ? "Insurance: " + (data.insuranceNetwork || "unspecified") +
+        (data.insuranceCardPath ? " (card on file)" : "")
       : "Private pay";
     var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var timesLabel  = data.preferredTimes.length ? "Prefers " + data.preferredTimes.join("/") : null;
@@ -821,6 +959,7 @@
       state:      data.state,
       payment:    data.payment,
       insurance_network: data.insuranceNetwork,
+      insurance_card_path: data.insuranceCardPath,
       format:     data.format,
       preferred_times: data.preferredTimes,
       referral_source: data.referralSource,
@@ -955,6 +1094,8 @@
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
   import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+  import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+  import { getStorage, ref, uploadBytes } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js';
 
   const app = initializeApp({
     apiKey: "AIzaSyARzjrwt_Asr-_ca5bBYUBoFUMKM8sRAFc",
@@ -965,6 +1106,23 @@
     appId: "1:45351635355:web:3da34281325675f125793e"
   });
   const db = getFirestore(app);
+
+  // Insurance-card upload (PHI). The file goes browser -> Cloud Storage
+  // directly, so it never passes through the notification Worker, Trello,
+  // SMS, or email. Anonymous auth gives each upload an attributable uid;
+  // storage.rules allows create-only into insurance-cards/{uid}/ and no
+  // public read. Only the resulting path is stored on the lead record.
+  window.__uploadCard = async function (file) {
+    const auth = getAuth(app);
+    const cred = auth.currentUser || (await signInAnonymously(auth)).user;
+    const ext = (file.name.match(/\.[A-Za-z0-9]+$/) || [""])[0].toLowerCase() ||
+                (file.type === "application/pdf" ? ".pdf" : ".jpg");
+    // No name or other identifier in the path — the lead record is the link.
+    const key = Date.now() + "-" + Math.random().toString(36).slice(2, 10) + ext;
+    const dest = ref(getStorage(app), `insurance-cards/${cred.uid}/${key}`);
+    await uploadBytes(dest, file, { contentType: file.type });
+    return dest.fullPath;
+  };
 
   // Called by the form script on submit. Server timestamps are added here
   // because serverTimestamp() only exists inside this module.

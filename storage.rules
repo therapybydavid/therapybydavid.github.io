@@ -1,0 +1,34 @@
+rules_version = '2';
+
+// Cloud Storage for Firebase — therapy-by-david
+//
+// Insurance cards uploaded from the public intake form (/intake.html).
+// This is PHI, so the rules are deliberately narrow:
+//   * create-only — the public can add a file and can never read, list,
+//     overwrite, or delete anything (David reads them in the Firebase
+//     console / Admin SDK, which bypasses these rules).
+//   * anonymous auth required, so every object is attributable to a uid
+//     and the bucket is not an open write endpoint.
+//   * images and PDFs only, 12 MB cap — phone photos of a card are ~2-5 MB.
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    match /insurance-cards/{uid}/{fileName} {
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 12 * 1024 * 1024
+        && (
+             request.resource.contentType.matches('image/.*')
+             || request.resource.contentType == 'application/pdf'
+           );
+
+      // No public read/list/update/delete of PHI, ever.
+      allow read, update, delete: if false;
+    }
+
+    // Everything else in the bucket is closed to the public.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
