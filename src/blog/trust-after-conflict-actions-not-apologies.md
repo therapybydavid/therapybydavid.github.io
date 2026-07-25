@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "An apology can end an argument, but it doesn't rebuild trust. Here's what actually does — and why the process rarely feels fair to either person."
 cardDate: "July 25, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758524945240-5d6d584b4a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzJTIwY29udmVyc2F0aW9uJTIwb24lMjBjb3VjaCUyMHdvbWFuJTIwbGlzdGVuaW5nJTIwdGhvdWdodGZ1bGx5JTIwdG8lMjBwYXJ0bmVyJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZ3xlbnwxfDB8fHwxNzg0OTc3MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Couple sitting on sofa looking at phones"
+cardImage: "https://images.unsplash.com/photo-1758524945240-5d6d584b4a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzJTIwY29udmVyc2F0aW9uJTIwb24lMjBjb3VjaCUyMHdvbWFuJTIwbGlzdGVuaW5nJTIwdGhvdWdodGZ1bGx5JTIwdG8lMjBwYXJ0bmVyJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZ3xlbnwxfDB8fHwxNzg0OTc3MjY4fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Couple sitting on sofa looking at phones"
 ---
 
 After a serious conflict, there's often a moment that feels like it should fix things. Someone apologizes. They mean it. The other person says "okay" or even "I forgive you." And then, a few days later, one of them is confused about why things still feel off.
