@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/trust-after-conflict-actions-not-apologies"
 canonical: "https://therapybydavid.com/blog/trust-after-conflict-actions-not-apologies"
 permalink: "/blog/trust-after-conflict-actions-not-apologies.html"
-date: 2026-07-25
+date: 2026-04-12
 order: 50
 tag: "Relationships"
-dateDisplay: "July 25, 2026 · 6 min read"
+dateDisplay: "April 12, 2026 · 6 min read"
 deck: "Forgiveness can happen in a conversation. Trust is rebuilt somewhere else entirely — in the weeks and months after."
 cardTitle: "Why Trust Doesn't Come Back Just Because You're Sorry"
 cardTag: "Relationships"
 cardDescription: "An apology can end an argument, but it doesn't rebuild trust. Here's what actually does — and why the process rarely feels fair to either person."
-cardDate: "July 25, 2026 · 6 min read"
+cardDate: "April 12, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1758524945240-5d6d584b4a84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzJTIwY29udmVyc2F0aW9uJTIwb24lMjBjb3VjaCUyMHdvbWFuJTIwbGlzdGVuaW5nJTIwdGhvdWdodGZ1bGx5JTIwdG8lMjBwYXJ0bmVyJTIwdHdvJTIwcGVvcGxlJTIwdGFsa2luZ3xlbnwxfDB8fHwxNzg0OTc3MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "Couple sitting on sofa looking at phones"
