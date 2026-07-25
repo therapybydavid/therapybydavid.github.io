@@ -325,12 +325,12 @@
 <main class="card" id="card">
 
   <div class="progress" id="progress" aria-hidden="true">
-    <span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
   </div>
 
   <!-- ============ STEP 1 — Location ============ -->
   <section class="step visible" id="step-1">
-    <p class="eyebrow">Step 1 of 3 — Location</p>
+    <p class="eyebrow">Step 1 of 4 — Location</p>
     <h2>Do you live in Texas?</h2>
     <p class="sub">Therapy licensure is state-specific, so this is the first thing we confirm.</p>
     <div class="choices">
@@ -362,7 +362,7 @@
 
   <!-- ============ STEP 2 — Coverage ============ -->
   <section class="step" id="step-2">
-    <p class="eyebrow">Step 2 of 3 — Coverage</p>
+    <p class="eyebrow">Step 2 of 4 — Coverage</p>
     <h2>How do you plan to cover your care?</h2>
     <p class="sub">Either path works — this just helps us start in the right place.</p>
     <div class="choices">
@@ -398,9 +398,29 @@
     </div>
   </section>
 
-  <!-- ============ STEP 3 — Contact & route ============ -->
+  <!-- ============ STEP 3 — Format ============ -->
   <section class="step" id="step-3">
-    <p class="eyebrow">Step 3 of 3 — Your details</p>
+    <p class="eyebrow">Step 3 of 4 — How we meet</p>
+    <h2>How would you like to meet?</h2>
+    <p class="sub">Both are the same 50-minute session. Pick whichever is easier for you.</p>
+    <div class="choices">
+      <button type="button" class="choice" data-format="In person (Webster office)">
+        In person at the Webster office
+        <span class="choice-note">Meet face to face at the Webster office.</span>
+      </button>
+      <button type="button" class="choice" data-format="Telehealth / Secure video">
+        Telehealth, secure video
+        <span class="choice-note">Meet from anywhere in Texas.</span>
+      </button>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn-back" data-back="2">&larr; Back</button>
+    </div>
+  </section>
+
+  <!-- ============ STEP 4 — Contact & route ============ -->
+  <section class="step" id="step-4">
+    <p class="eyebrow">Step 4 of 4 — Your details</p>
     <h2>Almost there. Where can I reach you?</h2>
     <p class="sub">Your information stays private and is only used to coordinate your care.</p>
 
@@ -412,11 +432,6 @@
 
     <label class="field-label" for="phone">Phone number</label>
     <input type="tel" id="phone" autocomplete="tel" placeholder="(555) 555-5555">
-
-    <label class="consent">
-      <input type="checkbox" id="consent">
-      <span><strong style="color:var(--text);font-weight:600;">Optional:</strong> I agree to email and SMS from Therapy by David (scheduling, reminders). Reply STOP to cancel, HELP for help. Frequency varies. Msg &amp; data rates may apply. <a href="/sms-terms.html" target="_blank" rel="noopener">SMS&nbsp;Terms</a> &middot; <a href="/privacy.html" target="_blank" rel="noopener">Privacy</a></span>
-    </label>
 
     <p class="group-label" style="margin-top:26px;">Your next step</p>
     <div class="choices" data-group="route">
@@ -432,7 +447,7 @@
     <div class="error-msg" id="error-3"></div>
     <div class="actions" style="flex-direction:column;">
       <button type="button" class="btn-submit" id="submit-btn">Submit &amp; Continue</button>
-      <button type="button" class="btn-back" data-back="2">&larr; Back</button>
+      <button type="button" class="btn-back" data-back="3">&larr; Back</button>
     </div>
   </section>
 
@@ -471,11 +486,10 @@
     payment: null,
     insuranceNetwork: null,
     cadence: [],
-    format: ["Telehealth / Secure video"], // only format offered — stated, not asked
+    format: null, // set by the "How would you like to meet?" step
     fullName: "",
     email: "",
     phone: "",
-    consent: false,
     route: "call", // discovery call is the pre-selected default path
 
     submittedAt: null
@@ -508,6 +522,7 @@
     1: document.getElementById("step-1"),
     2: document.getElementById("step-2"),
     3: document.getElementById("step-3"),
+    4: document.getElementById("step-4"),
     oos: document.getElementById("step-oos"),
     successPortal: document.getElementById("step-success-portal")
   };
@@ -593,12 +608,24 @@
   });
 
   /* =========================================================
-     STEP 3 — Contact capture & dynamic route
+     STEP 3 — Format (in person vs telehealth)
      ========================================================= */
-  steps[3].querySelectorAll('[data-group="route"] .choice').forEach(function (btn) {
+  steps[3].querySelectorAll(".choice").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      data.format = [btn.dataset.format];
+      markSelected(steps[3], btn);
+      saveDraft();
+      setTimeout(function () { show(4, 4); }, 220);
+    });
+  });
+
+  /* =========================================================
+     STEP 4 — Contact capture & dynamic route
+     ========================================================= */
+  steps[4].querySelectorAll('[data-group="route"] .choice').forEach(function (btn) {
     btn.addEventListener("click", function () {
       data.route = btn.dataset.route;
-      markSelected(steps[3].querySelector('[data-group="route"]'), btn);
+      markSelected(steps[4].querySelector('[data-group="route"]'), btn);
       saveDraft();
     });
   });
@@ -610,13 +637,11 @@
     data.fullName = document.getElementById("full-name").value.trim();
     data.email    = document.getElementById("email").value.trim();
     data.phone    = document.getElementById("phone").value.trim();
-    data.consent  = document.getElementById("consent").checked;
     saveDraft();
   }
   ["full-name", "email", "phone"].forEach(function (id) {
     document.getElementById(id).addEventListener("input", syncContact);
   });
-  document.getElementById("consent").addEventListener("change", syncContact);
 
   document.getElementById("back-to-site").addEventListener("click", function () {
     window.location.href = "/";
@@ -627,7 +652,6 @@
     data.fullName = document.getElementById("full-name").value.trim();
     data.email    = document.getElementById("email").value.trim();
     data.phone    = document.getElementById("phone").value.trim();
-    data.consent  = document.getElementById("consent").checked;
 
     if (!data.fullName) { err.textContent = "Please enter your full name."; return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { err.textContent = "Please enter a valid email address."; return; }
@@ -637,18 +661,6 @@
     err.textContent = "";
     submitIntake();
   });
-
-  /* ---- Consent audit record. Versioned so historical submissions
-     always point to the exact wording the visitor saw — same TCPA
-     audit pattern as the contact form. Keep in sync with the
-     checkbox label above. ---- */
-  var SMS_CONSENT_VERSION = "2026-06-12-intake-v1";
-  var SMS_CONSENT_TEXT =
-    "I agree to email and SMS from Therapy by David (scheduling, reminders). " +
-    "Reply STOP to cancel, HELP for help. " +
-    "Frequency varies. Msg & data rates may apply. " +
-    "SMS Terms (https://therapybydavid.com/sms-terms.html) · " +
-    "Privacy Policy (https://therapybydavid.com/privacy.html).";
 
   function submitIntake() {
     var btn = document.getElementById("submit-btn");
@@ -666,8 +678,9 @@
     var paymentLabel = data.payment === "insurance"
       ? "Insurance: " + (data.insuranceNetwork || "unspecified")
       : "Private pay";
+    var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var summary = [
-      data.state, paymentLabel,
+      data.state, paymentLabel, formatLabel,
       data.route === "call" ? "wants 15-min consultation" : "wants portal booking"
     ].join(" · ");
 
@@ -683,11 +696,8 @@
       format:     data.format,
       next_step:  data.route,
 
-      sms_opt_in:          data.consent,
-      sms_consent_version: data.consent ? SMS_CONSENT_VERSION : null,
-      sms_consent_text:    data.consent ? SMS_CONSENT_TEXT    : null,
-      sms_consent_page:    data.consent ? location.href       : null,
-      user_agent:          navigator.userAgent,
+      sms_opt_in:  false,
+      user_agent:  navigator.userAgent,
 
       lead_referrer:     leadSrc.referrer     || null,
       lead_landing_page: leadSrc.landing_page || null,
@@ -701,7 +711,7 @@
     // the Firebase module script at the bottom of this page and adds the
     // server timestamps).
     var stored = (typeof window.__intakeStore === "function")
-      ? window.__intakeStore(record, data.consent)
+      ? window.__intakeStore(record, false)
       : Promise.reject(new Error("Firestore module not loaded"));
 
     // 2 — Fire-and-forget notification pipeline (not awaited; a Worker
@@ -715,7 +725,7 @@
         from_email: data.email,
         phone:      data.phone,
         message:    "Intake screen: " + summary,
-        sms_opt_in: data.consent,
+        sms_opt_in: false,
         lead_source: leadSrc.utm_source || leadSrc.referrer || "(direct)"
       })
     }).catch(function () {});
@@ -755,12 +765,26 @@
     chosen.classList.add("selected");
   }
 
+  /* ---- Entry intent: ?intent=session (the "Schedule Your First Session"
+     buttons) pre-selects the direct portal-booking route. Default (no
+     param / the consultation buttons) keeps the 15-min call selected.
+     Applied last so it wins over a stale draft's route. ---- */
+  function applyUrlIntent() {
+    var intent = null;
+    try { intent = new URLSearchParams(location.search).get("intent"); } catch (e) {}
+    if (intent !== "session") return;
+    data.route = "portal";
+    var rg = steps[4].querySelector('[data-group="route"]');
+    var pb = rg.querySelector('[data-route="portal"]');
+    if (pb) markSelected(rg, pb);
+  }
+
   /* =========================================================
      INITIAL DISPLAY — resume a saved Texas draft, or start fresh
      ========================================================= */
   (function init() {
     var saved = loadDraft();
-    if (!saved || saved.state !== "Texas") { show(1, 1); return; }
+    if (!saved || saved.state !== "Texas") { applyUrlIntent(); show(1, 1); return; }
 
     Object.keys(data).forEach(function (k) {
       if (k in saved && saved[k] != null) data[k] = saved[k];
@@ -778,14 +802,19 @@
     document.getElementById("full-name").value = data.fullName || "";
     document.getElementById("email").value = data.email || "";
     document.getElementById("phone").value = data.phone || "";
-    document.getElementById("consent").checked = !!data.consent;
-    var routeGroup = steps[3].querySelector('[data-group="route"]');
+    if (data.format) {
+      var fmtBtn = steps[3].querySelector('[data-format="' + data.format[0] + '"]');
+      if (fmtBtn) markSelected(steps[3], fmtBtn);
+    }
+    var routeGroup = steps[4].querySelector('[data-group="route"]');
     var routeBtn = routeGroup.querySelector('[data-route="' + (data.route || "call") + '"]');
     if (routeBtn) markSelected(routeGroup, routeBtn);
 
     // Resume at the furthest step they had completed
     var resumeAt = 2;
     if (data.payment && (data.payment !== "insurance" || data.insuranceNetwork)) resumeAt = 3;
+    if (resumeAt === 3 && data.format) resumeAt = 4;
+    applyUrlIntent();
     show(resumeAt, resumeAt);
   })();
 })();
