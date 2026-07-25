@@ -10,11 +10,15 @@
   :root {
     --bg: #0d0d0d;
     --card: #141414;
-    --line: #2a2a2a;
+    --line: #414141;
+    --divider: #262626;
+    --chip-bg: #1e1e1e;
     --text: #f5f5f5;
-    --muted: #9a9a9a;
+    --label: #d9d9d9;
+    --muted: #a6a6a6;
     --gold: #c9a548;
-    --gold-soft: rgba(201, 165, 72, 0.12);
+    --gold-soft: rgba(201, 165, 72, 0.14);
+    --invalid: #e07070;
     --radius: 14px;
   }
 
@@ -36,7 +40,7 @@
     width: 100%;
     max-width: 640px;
     background: var(--card);
-    border: 1px solid var(--line);
+    border: 1px solid #2e2e2e;
     border-radius: var(--radius);
     padding: 44px 40px;
   }
@@ -54,29 +58,40 @@
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 8px;
+    outline: none;
   }
 
   .sub {
     color: var(--muted);
-    font-size: 14.5px;
-    margin-bottom: 34px;
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 
   /* ---- Sections ---- */
-  .section { margin-bottom: 30px; }
-  .section-label {
-    font-size: 12px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
+  .section {
+    padding: 26px 0;
+    border-top: 1px solid var(--divider);
   }
-  .section-label .optional { text-transform: none; letter-spacing: 0; }
+  .section.first { border-top: none; padding-top: 0; }
+  .section-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .section-label .optional {
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: var(--muted);
+  }
 
   /* ---- Chip choices (single- and multi-select) ---- */
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip {
-    background: transparent;
+    background: var(--chip-bg);
     border: 1px solid var(--line);
     border-radius: 10px;
     color: var(--text);
@@ -87,13 +102,17 @@
     transition: border-color 0.2s ease, background 0.2s ease;
   }
   .chip:hover { border-color: var(--gold); }
-  .chip.selected { border-color: var(--gold); background: var(--gold-soft); }
+  .chip[aria-pressed="true"] {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+    box-shadow: inset 0 0 0 1px var(--gold);
+  }
 
   /* ---- Card-style choices (next step) ---- */
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .opt-card {
     text-align: left;
-    background: transparent;
+    background: var(--chip-bg);
     border: 1px solid var(--line);
     border-radius: 10px;
     color: var(--text);
@@ -105,7 +124,11 @@
     transition: border-color 0.2s ease, background 0.2s ease;
   }
   .opt-card:hover { border-color: var(--gold); }
-  .opt-card.selected { border-color: var(--gold); background: var(--gold-soft); }
+  .opt-card[aria-pressed="true"] {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+    box-shadow: inset 0 0 0 1px var(--gold);
+  }
   .opt-note {
     display: block;
     font-size: 13px;
@@ -115,6 +138,10 @@
     line-height: 1.5;
   }
 
+  /* ---- Invalid highlighting ---- */
+  .invalid-group .chip, .invalid-group .opt-card { border-color: var(--invalid); }
+  input.invalid, select.invalid { border-color: var(--invalid) !important; }
+
   /* ---- Inputs ---- */
   .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .field-grid .full { grid-column: 1 / -1; }
@@ -122,17 +149,17 @@
   label.field-label {
     display: block;
     font-size: 13.5px;
-    color: var(--muted);
+    color: var(--label);
     margin-bottom: 6px;
   }
 
   input[type="text"], input[type="email"], input[type="tel"], select {
     width: 100%;
-    background: var(--bg);
+    background: #0f0f0f;
     border: 1px solid var(--line);
     border-radius: 10px;
     color: var(--text);
-    font-size: 15.5px;
+    font-size: 16px;
     font-family: inherit;
     padding: 13px 15px;
     outline: none;
@@ -140,8 +167,15 @@
     -webkit-appearance: none;
     appearance: none;
   }
+  input::placeholder { color: #7f7f7f; }
   input:focus, select:focus { border-color: var(--gold); }
-  select { cursor: pointer; }
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23c9a548' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 42px;
+  }
   select:invalid { color: var(--muted); }
 
   .reveal { display: none; margin-top: 12px; }
@@ -170,7 +204,7 @@
   .btn-submit:disabled { opacity: 0.55; cursor: default; }
 
   .error-msg {
-    color: #e07070;
+    color: var(--invalid);
     font-size: 14px;
     min-height: 20px;
     margin: 12px 0 0;
@@ -187,7 +221,6 @@
   /* ---- Panels (out-of-state, success) ---- */
   .panel { display: none; animation: fadeIn 0.3s ease both; }
   .panel.visible { display: block; }
-  #form-panel.visible { display: block; }
 
   .btn-back {
     background: none;
@@ -212,7 +245,7 @@
     line-height: 52px;
     margin: 0 auto 20px;
   }
-  .end-screen h2 { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+  .end-screen h2 { font-size: 22px; font-weight: 600; margin-bottom: 10px; outline: none; }
   .end-screen p { color: var(--muted); font-size: 15px; }
   .link { color: var(--gold); font-weight: 600; text-decoration: none; font-size: 15.5px; }
   .link:hover { text-decoration: underline; }
@@ -241,107 +274,110 @@
   <!-- ============ THE FORM ============ -->
   <section class="panel visible" id="form-panel">
     <p class="eyebrow">Therapy by David</p>
-    <h1>Request an appointment</h1>
+    <h1 id="form-heading" tabindex="-1">Request an appointment</h1>
     <p class="sub">A few details so we start in the right place. This takes about a minute.</p>
 
-    <div class="section">
-      <p class="section-label">Where you live</p>
-      <div class="chips" data-group="state">
-        <button type="button" class="chip" data-state="Texas">Texas</button>
-        <button type="button" class="chip" data-state="Other">Outside Texas</button>
-      </div>
-    </div>
+    <form id="intake-form" novalidate>
 
-    <div class="section">
-      <p class="section-label">Contact</p>
-      <div class="field-grid">
-        <div class="full">
-          <label class="field-label" for="full-name">Full name</label>
-          <input type="text" id="full-name" autocomplete="name" placeholder="Your full name">
-        </div>
-        <div>
-          <label class="field-label" for="email">Email address</label>
-          <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
-        </div>
-        <div>
-          <label class="field-label" for="phone">Phone number</label>
-          <input type="tel" id="phone" autocomplete="tel" placeholder="(555) 555-5555">
+      <div class="section first" id="sec-state">
+        <p class="section-label" id="lbl-state">Where you live</p>
+        <div class="chips" role="group" aria-labelledby="lbl-state" data-group="state">
+          <button type="button" class="chip" aria-pressed="false" data-state="Texas">Texas</button>
+          <button type="button" class="chip" aria-pressed="false" data-state="Other">Outside Texas</button>
         </div>
       </div>
-    </div>
 
-    <div class="section">
-      <p class="section-label">Coverage</p>
-      <div class="chips" data-group="payment">
-        <button type="button" class="chip" data-pay="private">Private pay / self-pay</button>
-        <button type="button" class="chip" data-pay="insurance">Health insurance</button>
+      <div class="section" id="sec-contact">
+        <p class="section-label" id="lbl-contact">Contact</p>
+        <div class="field-grid">
+          <div class="full">
+            <label class="field-label" for="full-name">Full name</label>
+            <input type="text" id="full-name" name="name" autocomplete="name" placeholder="Your full name">
+          </div>
+          <div>
+            <label class="field-label" for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="field-label" for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+          </div>
+        </div>
       </div>
-      <div class="reveal" id="insurance-reveal">
-        <label class="field-label" for="insurance-network">Which network are you with?</label>
-        <select id="insurance-network" required>
-          <option value="" selected disabled>Select your network</option>
-          <option>Aetna</option>
-          <option>Ambetter</option>
-          <option>Anthem</option>
-          <option>BlueCross BlueShield</option>
-          <option>Carelon Behavioral Health</option>
-          <option>CHIP</option>
-          <option>Cigna / Evernorth</option>
-          <option>Community Health Choice</option>
-          <option>Humana</option>
-          <option>Magellan</option>
-          <option>Medicaid</option>
-          <option>Medicare</option>
-          <option>Molina Healthcare</option>
-          <option>Optum</option>
-          <option>Oscar Health</option>
-          <option>TRICARE</option>
-          <option>UnitedHealthcare</option>
-          <option>Other / not sure</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="section">
-      <p class="section-label">How we meet</p>
-      <div class="chips" data-group="format">
-        <button type="button" class="chip" data-format="In person (Webster office)">In person &middot; Webster office</button>
-        <button type="button" class="chip" data-format="Telehealth / Secure video">Telehealth &middot; anywhere in Texas</button>
+      <div class="section" id="sec-payment">
+        <p class="section-label" id="lbl-payment">Coverage</p>
+        <div class="chips" role="group" aria-labelledby="lbl-payment" data-group="payment">
+          <button type="button" class="chip" aria-pressed="false" data-pay="private">Private pay / self-pay</button>
+          <button type="button" class="chip" aria-pressed="false" data-pay="insurance">Health insurance</button>
+        </div>
+        <div class="reveal" id="insurance-reveal">
+          <label class="field-label" for="insurance-network">Which network are you with?</label>
+          <select id="insurance-network" required>
+            <option value="" selected disabled>Select your network</option>
+            <option>Aetna</option>
+            <option>Ambetter</option>
+            <option>Anthem</option>
+            <option>BlueCross BlueShield</option>
+            <option>Carelon Behavioral Health</option>
+            <option>CHIP</option>
+            <option>Cigna / Evernorth</option>
+            <option>Community Health Choice</option>
+            <option>Humana</option>
+            <option>Magellan</option>
+            <option>Medicaid</option>
+            <option>Medicare</option>
+            <option>Molina Healthcare</option>
+            <option>Optum</option>
+            <option>Oscar Health</option>
+            <option>TRICARE</option>
+            <option>UnitedHealthcare</option>
+            <option>Other / not sure</option>
+          </select>
+        </div>
       </div>
-    </div>
 
-    <div class="section">
-      <p class="section-label">Preferred times <span class="optional">(optional — pick any)</span></p>
-      <div class="chips" data-group="times">
-        <button type="button" class="chip" data-time="Mornings">Mornings</button>
-        <button type="button" class="chip" data-time="Afternoons">Afternoons</button>
-        <button type="button" class="chip" data-time="Evenings">Evenings</button>
+      <div class="section" id="sec-format">
+        <p class="section-label" id="lbl-format">How we meet</p>
+        <div class="chips" role="group" aria-labelledby="lbl-format" data-group="format">
+          <button type="button" class="chip" aria-pressed="false" data-format="In person (Webster office)">In person &middot; Webster office</button>
+          <button type="button" class="chip" aria-pressed="false" data-format="Telehealth / Secure video">Telehealth &middot; anywhere in Texas</button>
+        </div>
       </div>
-    </div>
 
-    <div class="section">
-      <p class="section-label">Your next step</p>
-      <div class="cards" data-group="route">
-        <button type="button" class="opt-card" data-route="call">
-          15-minute intro call
-          <span class="opt-note">A short conversation to talk through what you're looking for — free, no commitment.</span>
-        </button>
-        <button type="button" class="opt-card" data-route="portal">
-          Book your first session
-          <span class="opt-note">Go straight to the secure client portal and pick a time for a full session.</span>
-        </button>
+      <div class="section" id="sec-times">
+        <p class="section-label" id="lbl-times">Preferred times <span class="optional">(optional — pick any)</span></p>
+        <div class="chips" role="group" aria-labelledby="lbl-times" data-group="times">
+          <button type="button" class="chip" aria-pressed="false" data-time="Mornings">Mornings</button>
+          <button type="button" class="chip" aria-pressed="false" data-time="Afternoons">Afternoons</button>
+          <button type="button" class="chip" aria-pressed="false" data-time="Evenings">Evenings</button>
+        </div>
       </div>
-    </div>
 
-    <div class="error-msg" id="error-msg" role="alert" aria-live="polite"></div>
-    <button type="button" class="btn-submit" id="submit-btn">Continue</button>
-    <p class="privacy-note">Your information stays private and is only used to coordinate your care.</p>
+      <div class="section" id="sec-route">
+        <p class="section-label" id="lbl-route">Your next step</p>
+        <div class="cards" role="group" aria-labelledby="lbl-route" data-group="route">
+          <button type="button" class="opt-card" aria-pressed="false" data-route="call">
+            15-minute intro call
+            <span class="opt-note">A short conversation to talk through what you're looking for — free, no commitment.</span>
+          </button>
+          <button type="button" class="opt-card" aria-pressed="false" data-route="portal">
+            Book your first session
+            <span class="opt-note">Go straight to the secure client portal and pick a time for a full session.</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="error-msg" id="error-msg" role="alert"></div>
+      <button type="submit" class="btn-submit" id="submit-btn">Continue</button>
+      <p class="privacy-note">Your information stays private and is only used to coordinate your care.</p>
+    </form>
   </section>
 
   <!-- ============ OUT-OF-STATE → COACHING (The Override) ============ -->
   <section class="panel" id="oos-panel">
     <p class="eyebrow">Outside Texas</p>
-    <h1 style="font-size:22px;">I can't be your therapist — but I might still be able to help.</h1>
+    <h1 id="oos-heading" tabindex="-1" style="font-size:22px;">I can't be your therapist — but I might still be able to help.</h1>
     <p class="sub" style="margin-bottom:22px;">My therapy license only covers Texas, so I can't provide therapy where you live. But therapy isn't the only work I do.</p>
 
     <div style="background:var(--gold-soft);border:1px solid var(--gold);border-radius:12px;padding:22px 24px;margin-bottom:22px;">
@@ -352,7 +388,7 @@
 
     <a href="https://theoverride.co/?utm_source=therapybydavid&amp;utm_medium=intake&amp;utm_campaign=oos" target="_blank" rel="noopener" style="display:block;background:var(--gold);color:#111;border-radius:8px;font-size:15px;font-weight:600;font-family:inherit;padding:15px 24px;text-align:center;text-decoration:none;transition:opacity .2s ease;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">See if The Override is your next move &rarr;</a>
 
-    <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin:18px 0 0;">Coaching isn't therapy or mental-health treatment. In a crisis or need clinical care? Call or text <strong style="color:var(--text);font-weight:600;">988</strong>, or find a licensed provider where you live.</p>
+    <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin:18px 0 0;">Coaching isn't therapy or mental-health treatment. In a crisis? Call or text <strong style="color:var(--text);font-weight:600;">988</strong>. Looking for therapy or clinical care? Find a licensed provider where you live.</p>
 
     <div style="text-align:center;margin-top:22px;">
       <button type="button" class="btn-back" id="oos-back">&larr; Back — I selected the wrong state</button>
@@ -363,7 +399,7 @@
   <section class="panel" id="success-panel">
     <div class="end-screen">
       <div class="mark">&#10003;</div>
-      <h2>You're all set.</h2>
+      <h2 id="success-heading" tabindex="-1">You're all set.</h2>
       <p>Your information has been received. Use the secure client portal below to choose a time and book your first full session.</p>
       <p style="margin-top:18px;">
         <a class="link" href="https://david-robles.clientsecure.me/request/service" id="portal-link" target="_blank" rel="noopener">Open the secure client portal &rarr;</a>
@@ -398,9 +434,7 @@
     fullName: "",
     email: "",
     phone: "",
-    route: null,             // "call" | "portal" — set by entry intent or the visitor
-
-    submittedAt: null
+    route: null              // "call" | "portal" — set by entry intent or the visitor
   };
 
   /* ---- GA4 funnel events (anonymous — never includes contact fields).
@@ -411,18 +445,34 @@
     gtag("event", eventName, params || {});
   }
 
-  /* ---- Draft persistence: saved only in THIS browser (localStorage),
-     never sent anywhere. Cleared on submit. v2 key — the old wizard's
-     draft shape is incompatible. ---- */
+  /* ---- Draft persistence: choices only, saved in THIS browser
+     (localStorage), never sent anywhere. Contact fields are deliberately
+     NOT persisted (shared-computer privacy — browser autofill covers
+     them), and drafts expire after 24 hours. Cleared on submit. ---- */
   var DRAFT_KEY = "tbd_intake_draft_v2";
+  var DRAFT_TTL = 24 * 60 * 60 * 1000;
   function saveDraft() {
-    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(data)); } catch (e) {}
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify({
+        ts: Date.now(),
+        state: data.state,
+        payment: data.payment,
+        insuranceNetwork: data.insuranceNetwork,
+        format: data.format,
+        preferredTimes: data.preferredTimes,
+        route: data.route
+      }));
+    } catch (e) {}
   }
   function clearDraft() {
     try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
   }
   function loadDraft() {
-    try { return JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); } catch (e) { return null; }
+    try {
+      var d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null");
+      if (!d || !d.ts || (Date.now() - d.ts) > DRAFT_TTL) return null;
+      return d;
+    } catch (e) { return null; }
   }
 
   var panels = {
@@ -430,19 +480,39 @@
     oos:     document.getElementById("oos-panel"),
     success: document.getElementById("success-panel")
   };
+  var headings = {
+    form:    document.getElementById("form-heading"),
+    oos:     document.getElementById("oos-heading"),
+    success: document.getElementById("success-heading")
+  };
   function showPanel(key) {
     Object.keys(panels).forEach(function (k) { panels[k].classList.remove("visible"); });
     var el = panels[key];
     void el.offsetWidth;
     el.classList.add("visible");
+    // Move focus to the panel heading so the swap is announced and
+    // keyboard/screen-reader users land somewhere sensible.
+    if (headings[key]) headings[key].focus({ preventScroll: false });
   }
 
   /* ---- Helper: single-select highlight within a container ---- */
   function markSelected(container, chosen) {
     container.querySelectorAll(".chip, .opt-card").forEach(function (b) {
       b.classList.remove("selected");
+      b.setAttribute("aria-pressed", "false");
     });
-    if (chosen) chosen.classList.add("selected");
+    if (chosen) {
+      chosen.classList.add("selected");
+      chosen.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function clearInvalid() {
+    document.querySelectorAll(".invalid-group").forEach(function (g) { g.classList.remove("invalid-group"); });
+    document.querySelectorAll("input.invalid, select.invalid").forEach(function (i) {
+      i.classList.remove("invalid");
+      i.removeAttribute("aria-invalid");
+    });
   }
 
   /* =========================================================
@@ -493,6 +563,8 @@
 
   networkSelect.addEventListener("change", function () {
     data.insuranceNetwork = networkSelect.value;
+    networkSelect.classList.remove("invalid");
+    networkSelect.removeAttribute("aria-invalid");
     saveDraft();
   });
 
@@ -519,9 +591,11 @@
       if (i === -1) {
         data.preferredTimes.push(t);
         btn.classList.add("selected");
+        btn.setAttribute("aria-pressed", "true");
       } else {
         data.preferredTimes.splice(i, 1);
         btn.classList.remove("selected");
+        btn.setAttribute("aria-pressed", "false");
       }
       saveDraft();
     });
@@ -544,15 +618,17 @@
     if (btn) { data.route = route; markSelected(routeGroup, btn); }
   }
 
-  /* ---- Contact fields sync ---- */
+  /* ---- Contact fields (read live at submit; not persisted) ---- */
   function syncContact() {
     data.fullName = document.getElementById("full-name").value.trim();
     data.email    = document.getElementById("email").value.trim();
     data.phone    = document.getElementById("phone").value.trim();
-    saveDraft();
   }
   ["full-name", "email", "phone"].forEach(function (id) {
-    document.getElementById(id).addEventListener("input", syncContact);
+    document.getElementById(id).addEventListener("input", function () {
+      this.classList.remove("invalid");
+      this.removeAttribute("aria-invalid");
+    });
   });
 
   document.getElementById("back-to-site").addEventListener("click", function () {
@@ -560,29 +636,53 @@
   });
 
   /* =========================================================
-     SUBMIT
+     SUBMIT — validate everything at once, mark and scroll to
+     the first problem, then run the pipeline.
      ========================================================= */
-  document.getElementById("submit-btn").addEventListener("click", function () {
+  var submitBtn = document.getElementById("submit-btn");
+
+  function markGroupInvalid(sectionId) {
+    var s = document.getElementById(sectionId);
+    if (s) s.classList.add("invalid-group");
+    return s;
+  }
+  function markFieldInvalid(id) {
+    var f = document.getElementById(id);
+    if (f) { f.classList.add("invalid"); f.setAttribute("aria-invalid", "true"); }
+    return f ? f.closest(".section") : null;
+  }
+
+  document.getElementById("intake-form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
     var err = document.getElementById("error-msg");
     syncContact();
+    clearInvalid();
 
-    if (data.state !== "Texas") { err.textContent = "Please select where you live — therapy licensure is state-specific."; return; }
-    if (!data.fullName) { err.textContent = "Please enter your full name."; return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { err.textContent = "Please enter a valid email address."; return; }
-    if (data.phone.replace(/\D/g, "").length < 10) { err.textContent = "Please enter a valid phone number."; return; }
-    if (!data.payment) { err.textContent = "Please choose how you plan to cover your care."; return; }
-    if (data.payment === "insurance" && !data.insuranceNetwork) { err.textContent = "Please select your insurance network."; return; }
-    if (!data.format || !data.format.length) { err.textContent = "Please choose how you'd like to meet."; return; }
-    if (!data.route) { err.textContent = "Please choose your next step."; return; }
+    // Collect every problem in one pass.
+    var problems = [];
+    if (data.state !== "Texas") problems.push({ msg: "Please select where you live — therapy licensure is state-specific.", section: markGroupInvalid("sec-state") });
+    if (!data.fullName) problems.push({ msg: "Please enter your full name.", section: markFieldInvalid("full-name") });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) problems.push({ msg: "Please enter a valid email address.", section: markFieldInvalid("email") });
+    if (data.phone.replace(/\D/g, "").length < 10) problems.push({ msg: "Please enter a valid phone number.", section: markFieldInvalid("phone") });
+    if (!data.payment) problems.push({ msg: "Please choose how you plan to cover your care.", section: markGroupInvalid("sec-payment") });
+    else if (data.payment === "insurance" && !data.insuranceNetwork) problems.push({ msg: "Please select your insurance network.", section: markFieldInvalid("insurance-network") });
+    if (!data.format || !data.format.length) problems.push({ msg: "Please choose how you'd like to meet.", section: markGroupInvalid("sec-format") });
+    if (!data.route) problems.push({ msg: "Please choose your next step.", section: markGroupInvalid("sec-route") });
+
+    if (problems.length) {
+      err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention — they're outlined in red.)" : "");
+      var first = problems[0].section;
+      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
     err.textContent = "";
     submitIntake();
   });
 
   function submitIntake() {
-    var btn = document.getElementById("submit-btn");
-    btn.disabled = true;
-    btn.textContent = "Processing…";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Processing…";
     track("intake_submitted", { route: data.route, payment: data.payment });
 
     // First-touch lead source captured by /analytics.js
@@ -632,10 +732,12 @@
       ? window.__intakeStore(record, false)
       : Promise.reject(new Error("Firestore module not loaded"));
 
-    // 2 — Fire-and-forget notification pipeline (not awaited; a Worker
-    // hiccup must not break the form for the visitor).
-    fetch(NOTIFY_URL, {
+    // 2 — Notification pipeline. keepalive lets the request survive the
+    // Calendly navigation, and the call route waits for it to settle so
+    // the lead alert can't be aborted mid-flight by the redirect.
+    var notified = fetch(NOTIFY_URL, {
       method: "POST",
+      keepalive: true,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         first_name: firstName,
@@ -648,10 +750,10 @@
       })
     }).catch(function () {});
 
-    // Never strand the client on "Processing…": route after the record
-    // saves, or after 2.5s, whichever comes first.
+    // Never strand the client on "Processing…": route once both record
+    // paths settle, or after 2.5s, whichever comes first.
     Promise.race([
-      stored.catch(function () {}),
+      Promise.all([stored.catch(function () {}), notified]),
       new Promise(function (r) { setTimeout(r, 2500); })
     ]).then(routeUser);
   }
@@ -675,15 +777,29 @@
     }
   }
 
+  /* ---- bfcache: coming Back from Calendly restores the page frozen at
+     "Processing…" with the draft cleared. Reset so the visitor can
+     change an answer and resubmit. ---- */
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Continue";
+      saveDraft(); // choices are still in memory — re-persist them
+    }
+  });
+
   /* =========================================================
      INITIAL DISPLAY — restore a saved draft, then apply entry intent
      ========================================================= */
   (function init() {
     var saved = loadDraft();
     if (saved && saved.state === "Texas") {
-      Object.keys(data).forEach(function (k) {
-        if (k in saved && saved[k] != null) data[k] = saved[k];
-      });
+      data.state = saved.state;
+      data.payment = saved.payment || null;
+      data.insuranceNetwork = saved.insuranceNetwork || null;
+      data.format = saved.format || null;
+      data.preferredTimes = saved.preferredTimes || [];
+      data.route = saved.route || null;
 
       markSelected(stateGroup, stateGroup.querySelector('[data-state="Texas"]'));
       if (data.payment) {
@@ -698,11 +814,8 @@
       }
       data.preferredTimes.forEach(function (t) {
         var b = timesGroup.querySelector('[data-time="' + t + '"]');
-        if (b) b.classList.add("selected");
+        if (b) { b.classList.add("selected"); b.setAttribute("aria-pressed", "true"); }
       });
-      document.getElementById("full-name").value = data.fullName || "";
-      document.getElementById("email").value = data.email || "";
-      document.getElementById("phone").value = data.phone || "";
       if (data.route) selectRoute(data.route);
     }
 
