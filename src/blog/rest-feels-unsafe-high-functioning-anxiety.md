@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "For many high-functioning anxious people, slowing down doesn't feel relaxing — it feels threatening. Here's why, and what actually helps."
 cardDate: "July 27, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1MTU1ODEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "gray rocks on seashore during daytime"
+cardImage: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1MTU1ODEwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "gray rocks on seashore during daytime"
 ---
 
 You finally have a free Saturday. No meetings, no errands, nothing on the calendar. And instead of relief, you feel restless, vaguely guilty, maybe even a little panicked. Within twenty minutes you're making a list, cleaning something that didn't need cleaning, or opening your laptop "just to check one thing."
