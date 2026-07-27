@@ -355,21 +355,8 @@ eleventyExcludeFromCollections: true
     <section class="section contact-info-section">
       <div class="container">
 
-        <!-- Quick text/call CTA (the "low-commitment on-ramp") -->
-        <div class="reveal" style="background: radial-gradient(circle at 88% 25%, rgba(216,184,102,.2), transparent 55%), linear-gradient(135deg, var(--night) 0%, var(--ink) 100%); border: 1px solid var(--line); border-radius: 28px; padding: 32px 36px; margin-bottom: 32px; box-shadow: 0 22px 52px rgba(8,11,16,.3);">
-          <div class="prefer-texting-grid">
-            <div>
-              <h3 style="font-size: 24px; margin: 0; color: var(--white); font-family: var(--sans); font-weight: 700; letter-spacing: .01em; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap;">Text us at (832) 544-2562</h3>
-            </div>
-            <div class="ptg-actions">
-              <a class="btn" href="sms:8325442562" style="background: var(--white); color: var(--night); box-shadow: 0 10px 26px rgba(0,0,0,.22);">Text</a>
-              <a class="btn btn-gold" href="tel:8325442562">Call</a>
-            </div>
-          </div>
-        </div>
-
         <!-- Contact Form -->
-        <div class="message-grid reveal" style="margin-bottom: 48px;">
+        <div class="message-grid reveal" style="margin-bottom: 32px;">
 
           <div class="message-intro">
             <span class="eyebrow">Send a Message</span>
@@ -461,6 +448,21 @@ eleventyExcludeFromCollections: true
             -->
             <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
           </form>
+          </div>
+        </div>
+
+        <!-- Quick text/call CTA (the "low-commitment on-ramp") — sits after
+             the form so the form is the first thing on the page, and this
+             reads as the alternative for anyone who would rather not type. -->
+        <div class="reveal" style="background: radial-gradient(circle at 88% 25%, rgba(216,184,102,.2), transparent 55%), linear-gradient(135deg, var(--night) 0%, var(--ink) 100%); border: 1px solid var(--line); border-radius: 28px; padding: 32px 36px; box-shadow: 0 22px 52px rgba(8,11,16,.3);">
+          <div class="prefer-texting-grid">
+            <div>
+              <h3 style="font-size: 24px; margin: 0; color: var(--white); font-family: var(--sans); font-weight: 700; letter-spacing: .01em; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap;">Text us at (832) 544-2562</h3>
+            </div>
+            <div class="ptg-actions">
+              <a class="btn" href="sms:8325442562" style="background: var(--white); color: var(--night); box-shadow: 0 10px 26px rgba(0,0,0,.22);">Text</a>
+              <a class="btn btn-gold" href="tel:8325442562">Call</a>
+            </div>
           </div>
         </div>
 
