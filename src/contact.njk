@@ -172,6 +172,93 @@ eleventyExcludeFromCollections: true
        gigantic dead zone above the first CTA card. */
     .contact-info-section { padding-top: 24px; }
 
+    /* ── Message section: intro rail + form card ──────────────────────────
+       Was a single full-width white slab. Split so the headline and the
+       "what happens after you send this" reassurance sit beside the form
+       instead of stacking into one grey wall above it. */
+    .message-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      gap: 48px;
+      align-items: start;
+    }
+    .message-intro h2 { margin-bottom: 14px; }
+    .message-intro .section-lead { margin-bottom: 32px; max-width: 46ch; }
+
+    .assurances { display: grid; border-top: 1px solid var(--mist); }
+    .assurance {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--mist);
+    }
+    .assurance:last-child { border-bottom: 0; }
+    .assurance-mark {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(216,184,102,.15);
+      color: var(--gold);
+      margin-top: 1px;
+    }
+    .assurance-mark svg { width: 15px; height: 15px; display: block; }
+    .assurance strong {
+      display: block; font-size: 15px; color: var(--night);
+      font-weight: 700; letter-spacing: -.01em; margin-bottom: 3px;
+    }
+    .assurance span { display: block; font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .form-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 42px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .form-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--champagne), var(--gold));
+    }
+    .form-grid { display: grid; gap: 18px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field label {
+      display: block; font-size: 11px; font-weight: 800;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--night); margin-bottom: 8px;
+    }
+    .field input, .field textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid rgba(20,33,50,.14);
+      border-radius: 14px;
+      font-size: 15px;
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--night);
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .field textarea { resize: vertical; line-height: 1.65; }
+    .field input::placeholder, .field textarea::placeholder { color: #a79d8f; }
+    .field input:hover, .field textarea:hover { border-color: rgba(20,33,50,.26); }
+    /* Visible focus ring — the old inline styles killed the outline and
+       replaced it with nothing, leaving keyboard users with no indicator. */
+    .field input:focus, .field textarea:focus {
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(216,184,102,.18);
+    }
+
+    @media (max-width: 900px) {
+      .message-grid { grid-template-columns: 1fr; gap: 34px; }
+      .form-card { padding: 28px 22px; }
+      .field-row { grid-template-columns: 1fr; }
+      .message-intro .section-lead { margin-bottom: 26px; }
+    }
+
     @media (max-width: 900px) {
       .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
       .nav-links.open { display: flex; }
@@ -282,29 +369,63 @@ eleventyExcludeFromCollections: true
         </div>
 
         <!-- Contact Form -->
-        <div class="reveal" style="background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 28px; padding: 48px; box-shadow: 0 18px 60px rgba(20,33,50,.09); margin-bottom: 48px;">
-          <span class="eyebrow">Send a Message</span>
-          <h2 style="margin-bottom: 8px;">Have a question? Reach out.</h2>
-          <p style="margin-bottom: 12px;">Fill out the form and David will get back to you personally within 24 hours.</p>
-          <p style="font-size: 14px; margin-bottom: 32px;">Good to know: the first 15-minute consultation is free, sessions are $150 self-pay (confirmed up front, with sliding-scale spots from $80–$125), and many major insurance plans may be covered through partner networks — reach out to verify yours.</p>
-          <form id="contact-form" style="display: grid; gap: 16px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-              <div>
-                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">First Name</label>
-                <input type="text" id="first_name" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+        <div class="message-grid reveal" style="margin-bottom: 48px;">
+
+          <div class="message-intro">
+            <span class="eyebrow">Send a Message</span>
+            <h2>Have a question? Reach out.</h2>
+            <p class="section-lead">Fill out the form and David will get back to you personally within 24 hours.</p>
+
+            <div class="assurances">
+              <div class="assurance">
+                <span class="assurance-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <div>
+                  <strong>A reply within 24 hours</strong>
+                  <span>David reads and answers every message himself.</span>
+                </div>
               </div>
-              <div>
-                <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Last Name</label>
-                <input type="text" id="last_name" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+              <div class="assurance">
+                <span class="assurance-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                </span>
+                <div>
+                  <strong>Private either way</strong>
+                  <span>What you write stays between you and David.</span>
+                </div>
+              </div>
+              <div class="assurance">
+                <span class="assurance-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>
+                </span>
+                <div>
+                  <strong>No commitment</strong>
+                  <span>Asking a question is not booking anything.</span>
+                </div>
               </div>
             </div>
-            <div>
-              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Email</label>
-              <input type="email" id="email" required placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+          </div>
+
+          <div class="form-card">
+          <form id="contact-form" class="form-grid">
+            <div class="field-row">
+              <div class="field">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" required placeholder="">
+              </div>
+              <div class="field">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" required placeholder="">
+              </div>
             </div>
-            <div>
-              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Phone (optional)</label>
-              <input type="tel" id="phone" placeholder="" style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night);">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" required placeholder="">
+            </div>
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" placeholder="">
             </div>
 
             <!-- SMS opt-in (revealed only when a valid phone is entered) -->
@@ -321,11 +442,11 @@ eleventyExcludeFromCollections: true
               </label>
             </div>
 
-            <div>
-              <label style="display: block; font-size: 13px; font-weight: 700; color: var(--night); margin-bottom: 6px;">Message</label>
-              <textarea id="message" required rows="5" placeholder="What's on your mind? No pressure — just a few words about what you're dealing with or what you're looking for." style="width: 100%; padding: 14px 16px; border: 1px solid rgba(20,33,50,.15); border-radius: 12px; font-size: 15px; font-family: var(--sans); outline: none; background: var(--paper); color: var(--night); resize: vertical;"></textarea>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" required rows="5" placeholder="What's on your mind? No pressure, just a few words about what you're dealing with or what you're looking for."></textarea>
             </div>
-            <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line — if you are in immediate danger, call 988 or 911.</p>
+            <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line. If you are in immediate danger, call 988 or 911.</p>
             <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
             <!-- ── Cloudflare Turnstile (spam protection) — INACTIVE until keys are added ──
                  Activate in 4 steps:
@@ -340,6 +461,7 @@ eleventyExcludeFromCollections: true
             -->
             <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
           </form>
+          </div>
         </div>
 
       </div>
