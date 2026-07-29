@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Request an Appointment — Therapy by David</title>
+<title>Request an Appointment | Therapy by David</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -455,7 +455,7 @@
       </div>
 
       <div class="section" id="sec-times">
-        <p class="section-label" id="lbl-times">Preferred times <span class="optional">(optional — pick any)</span></p>
+        <p class="section-label" id="lbl-times">Preferred times <span class="optional">(optional, pick any)</span></p>
         <div class="chips" role="group" aria-labelledby="lbl-times" data-group="times">
           <button type="button" class="chip" aria-pressed="false" data-time="Mornings">Mornings</button>
           <button type="button" class="chip" aria-pressed="false" data-time="Afternoons">Afternoons</button>
@@ -487,7 +487,7 @@
         <div class="cards" role="group" aria-labelledby="lbl-route" data-group="route">
           <button type="button" class="opt-card" aria-pressed="false" data-route="call">
             15-minute intro call
-            <span class="opt-note">A short conversation to talk through what you're looking for — free, no commitment.</span>
+            <span class="opt-note">A short conversation to talk through what you're looking for. Free, no commitment.</span>
           </button>
           <button type="button" class="opt-card" aria-pressed="false" data-route="portal">
             Book your first session
@@ -515,12 +515,12 @@
   <!-- ============ OUT-OF-STATE → COACHING (The Override) ============ -->
   <section class="panel" id="oos-panel">
     <p class="eyebrow">Outside Texas</p>
-    <h1 id="oos-heading" tabindex="-1" style="font-size:22px;">I can't be your therapist — but I might still be able to help.</h1>
+    <h1 id="oos-heading" tabindex="-1" style="font-size:22px;">I can't be your therapist, but I might still be able to help.</h1>
     <p class="sub" style="margin-bottom:22px;">My therapy license only covers Texas, so I can't provide therapy where you live. But therapy isn't the only work I do.</p>
 
     <div style="background:var(--gold-soft);border:1px solid var(--gold);border-radius:12px;padding:22px 24px;margin-bottom:22px;">
-      <p style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">The Override — Coaching</p>
-      <p style="font-size:15px;line-height:1.65;margin-bottom:14px;">For high-functioning people who look fine on paper but keep running the same loops — in relationships, at work, in their own head. It's a coaching framework built on catching the pattern and choosing a different move. Available in any state.</p>
+      <p style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">The Override &middot; Coaching</p>
+      <p style="font-size:15px;line-height:1.65;margin-bottom:14px;">For high-functioning people who look fine on paper but keep running the same loops: in relationships, at work, in their own head. It's a coaching framework built on catching the pattern and choosing a different move. Available in any state.</p>
       <p style="font-size:15px;line-height:1.65;margin-bottom:0;">The pattern isn't the problem anymore. Staying loyal to it is.</p>
     </div>
 
@@ -529,11 +529,11 @@
     <p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin:18px 0 0;">Coaching isn't therapy or mental-health treatment. In a crisis? Call or text <strong style="color:var(--text);font-weight:600;">988</strong>. Looking for therapy or clinical care? Find a licensed provider where you live.</p>
 
     <div style="text-align:center;margin-top:22px;">
-      <button type="button" class="btn-back" id="oos-back">&larr; Back — I selected the wrong state</button>
+      <button type="button" class="btn-back" id="oos-back">&larr; Back, I selected the wrong state</button>
     </div>
   </section>
 
-  <!-- ============ SUCCESS — Portal route ============ -->
+  <!-- ============ SUCCESS: Portal route ============ -->
   <section class="panel" id="success-panel">
     <div class="end-screen">
       <div class="mark">&#10003;</div>
@@ -569,16 +569,16 @@
     insuranceNetwork: null,
     format: null,            // ["In person (Webster office)"] | ["Telehealth / Secure video"]
     preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
-    insuranceCardPath: null, // Storage path only — never the file, never a link
+    insuranceCardPath: null, // Storage path only, never the file, never a link
     referralSource: null,    // self-reported "how did you hear about me?"
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
     email: "",
     phone: "",
-    route: null              // "call" | "portal" — set by entry intent or the visitor
+    route: null              // "call" | "portal", set by entry intent or the visitor
   };
 
-  /* ---- GA4 funnel events (anonymous — never includes contact fields).
+  /* ---- GA4 funnel events (anonymous, never includes contact fields).
      Same queue pattern as /analytics.js. ---- */
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -588,7 +588,7 @@
 
   /* ---- Draft persistence: choices only, saved in THIS browser
      (localStorage), never sent anywhere. Contact fields are deliberately
-     NOT persisted (shared-computer privacy — browser autofill covers
+     NOT persisted (shared-computer privacy, browser autofill covers
      them), and drafts expire after 24 hours. Cleared on submit. ---- */
   var DRAFT_KEY = "tbd_intake_draft_v2";
   var DRAFT_TTL = 24 * 60 * 60 * 1000;
@@ -780,7 +780,7 @@
       return;
     }
     if (file.size > MAX_CARD_BYTES) {
-      cardStatus.textContent = "That file is over 12 MB — try a photo instead of a scan.";
+      cardStatus.textContent = "That file is over 12 MB. Try a photo instead of a scan.";
       cardStatus.className = "upload-status warn";
       cardInput.value = "";
       return;
@@ -799,9 +799,9 @@
       track("intake_card_uploaded");
       return path;
     }).catch(function () {
-      // Never block the lead on this — they can send it later.
+      // Never block the lead on this, they can send it later.
       data.insuranceCardPath = null;
-      cardStatus.textContent = "Couldn't attach that — no problem, you can send it later. Your request will still go through.";
+      cardStatus.textContent = "Couldn't attach that. No problem, you can send it later. Your request will still go through.";
       cardStatus.className = "upload-status warn";
       return null;
     });
@@ -809,7 +809,7 @@
 
   /* =========================================================
      REFERRAL SOURCE (optional). Self-reported, because analytics only
-     sees the digital path — a physician's referral usually arrives as a
+     sees the digital path. A physician's referral usually arrives as a
      plain Google search for David's name.
      ========================================================= */
   var referralSelect = document.getElementById("referral-source");
@@ -870,7 +870,7 @@
   });
 
   /* =========================================================
-     SUBMIT — validate everything at once, mark and scroll to
+     SUBMIT: validate everything at once, mark and scroll to
      the first problem, then run the pipeline.
      ========================================================= */
   var submitBtn = document.getElementById("submit-btn");
@@ -894,7 +894,7 @@
 
     // Collect every problem in one pass.
     var problems = [];
-    if (data.state !== "Texas") problems.push({ msg: "Please select where you live — therapy licensure is state-specific.", section: markGroupInvalid("sec-state") });
+    if (data.state !== "Texas") problems.push({ msg: "Please select where you live. Therapy licensure is state-specific.", section: markGroupInvalid("sec-state") });
     if (!data.fullName) problems.push({ msg: "Please enter your full name.", section: markFieldInvalid("full-name") });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) problems.push({ msg: "Please enter a valid email address.", section: markFieldInvalid("email") });
     if (data.phone.replace(/\D/g, "").length < 10) problems.push({ msg: "Please enter a valid phone number.", section: markFieldInvalid("phone") });
@@ -904,7 +904,7 @@
     if (!data.route) problems.push({ msg: "Please choose your next step.", section: markGroupInvalid("sec-route") });
 
     if (problems.length) {
-      err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention — they're outlined in red.)" : "");
+      err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention, they're outlined in red.)" : "");
       var first = problems[0].section;
       if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
@@ -912,7 +912,7 @@
 
     err.textContent = "";
     if (cardUpload) {
-      // A card is still uploading — let it finish (capped) so the path
+      // A card is still uploading, let it finish (capped) so the path
       // lands on the record, but never strand the visitor.
       submitBtn.disabled = true;
       submitBtn.textContent = "Processing…";
@@ -977,14 +977,14 @@
       lead_first_seen:   leadSrc.first_seen   || null
     };
 
-    // 1 — Firestore (canonical record; window.__intakeStore is defined by
+    // 1. Firestore (canonical record; window.__intakeStore is defined by
     // the Firebase module script at the bottom of this page and adds the
     // server timestamps).
     var stored = (typeof window.__intakeStore === "function")
       ? window.__intakeStore(record, false)
       : Promise.reject(new Error("Firestore module not loaded"));
 
-    // 2 — Notification pipeline. keepalive lets the request survive the
+    // 2. Notification pipeline. keepalive lets the request survive the
     // Calendly navigation, and the call route waits for it to settle so
     // the lead alert can't be aborted mid-flight by the redirect.
     var notified = fetch(NOTIFY_URL, {
@@ -1011,7 +1011,7 @@
   }
 
   function routeUser() {
-    clearDraft(); // submitted for real — the local draft is no longer needed
+    clearDraft(); // submitted for real, the local draft is no longer needed
     if (data.route === "call") {
       // Send them to Calendly with name/email prefilled so they never type
       // the same thing twice. The intro call is a phone-call event, so the
@@ -1023,7 +1023,7 @@
       if (digits.length === 11 && digits.charAt(0) === "1") params.set("location", "+" + digits);
       window.location.href = CALENDAR_URL + "?" + params.toString();
     } else {
-      // Portal route — show the on-page success panel with the portal link.
+      // Portal route: show the on-page success panel with the portal link.
       document.getElementById("portal-link").href = PORTAL_URL;
       showPanel("success");
     }
@@ -1036,12 +1036,12 @@
     if (e.persisted) {
       submitBtn.disabled = false;
       submitBtn.textContent = "Continue";
-      saveDraft(); // choices are still in memory — re-persist them
+      saveDraft(); // choices are still in memory, re-persist them
     }
   });
 
   /* =========================================================
-     INITIAL DISPLAY — restore a saved draft, then apply entry intent
+     INITIAL DISPLAY: restore a saved draft, then apply entry intent
      ========================================================= */
   (function init() {
     var saved = loadDraft();
@@ -1078,7 +1078,7 @@
 
     /* ---- Entry intent (applied last so it reflects the button the
        visitor just clicked, even over a stale draft):
-       ?intent=session — the "Schedule Your First Session" buttons —
+       ?intent=session (the "Schedule Your First Session" buttons)
        pre-selects direct portal booking; anything else (the consultation
        buttons link the bare URL) pre-selects the intro call. Both stay
        one click from switching. ---- */
@@ -1090,7 +1090,7 @@
 })();
 </script>
 
-<!-- Firebase SDK — same project and pattern as contact.html -->
+<!-- Firebase SDK: same project and pattern as contact.html -->
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
   import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
@@ -1117,7 +1117,7 @@
     const cred = auth.currentUser || (await signInAnonymously(auth)).user;
     const ext = (file.name.match(/\.[A-Za-z0-9]+$/) || [""])[0].toLowerCase() ||
                 (file.type === "application/pdf" ? ".pdf" : ".jpg");
-    // No name or other identifier in the path — the lead record is the link.
+    // No name or other identifier in the path, the lead record is the link.
     const key = Date.now() + "-" + Math.random().toString(36).slice(2, 10) + ext;
     const dest = ref(getStorage(app), `insurance-cards/${cred.uid}/${key}`);
     await uploadBytes(dest, file, { contentType: file.type });

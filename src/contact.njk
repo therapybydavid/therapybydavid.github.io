@@ -162,12 +162,12 @@ eleventyExcludeFromCollections: true
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* "Prefer Texting?" CTA — text + buttons side-by-side on desktop,
+    /* "Prefer Texting?" CTA: text + buttons side-by-side on desktop,
        stacked + centered on mobile so the phone number doesn't wrap. */
     .prefer-texting-grid { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
     .prefer-texting-grid .ptg-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* First content section after the hero — reduce top padding so the
+    /* First content section after the hero: reduce top padding so the
        hero's bottom padding + gradient overlay don't compound into a
        gigantic dead zone above the first CTA card. */
     .contact-info-section { padding-top: 24px; }
@@ -244,7 +244,7 @@ eleventyExcludeFromCollections: true
     .field textarea { resize: vertical; line-height: 1.65; }
     .field input::placeholder, .field textarea::placeholder { color: #a79d8f; }
     .field input:hover, .field textarea:hover { border-color: rgba(20,33,50,.26); }
-    /* Visible focus ring — the old inline styles killed the outline and
+    /* Visible focus ring: the old inline styles killed the outline and
        replaced it with nothing, leaving keyboard users with no indicator. */
     .field input:focus, .field textarea:focus {
       border-color: var(--gold);
@@ -463,7 +463,7 @@ eleventyExcludeFromCollections: true
             </div>
             <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line. If you are in immediate danger, call 988 or 911.</p>
             <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
-            <!-- ── Cloudflare Turnstile (spam protection) — INACTIVE until keys are added ──
+            <!-- ── Cloudflare Turnstile (spam protection): INACTIVE until keys are added ──
                  Activate in 4 steps:
                  1. Add this once, in <head>:
                     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -479,7 +479,7 @@ eleventyExcludeFromCollections: true
           </div>
         </div>
 
-        <!-- Quick text/call CTA (the "low-commitment on-ramp") — sits after
+        <!-- Quick text/call CTA (the "low-commitment on-ramp"): sits after
              the form so the form is the first thing on the page, and this
              reads as the alternative for anyone who would rather not type. -->
         <div class="reveal" style="background: radial-gradient(circle at 88% 25%, rgba(216,184,102,.2), transparent 55%), linear-gradient(135deg, var(--night) 0%, var(--ink) 100%); border: 1px solid var(--line); border-radius: 28px; padding: 32px 36px; box-shadow: 0 22px 52px rgba(8,11,16,.3);">
@@ -661,7 +661,7 @@ eleventyExcludeFromCollections: true
         lead_first_seen:   leadSrc.first_seen   || null
       };
 
-      // ── TURNSTILE spam-protection gate — INACTIVE until keys are added ──
+      // ── TURNSTILE spam-protection gate: INACTIVE until keys are added ──
       // Uncomment to require a valid Turnstile token before saving the lead.
       // Pair with the widget + script in the form markup above, and set
       // TURNSTILE_SECRET_KEY in Cloudflare (see functions/verify-turnstile.js).
@@ -682,19 +682,19 @@ eleventyExcludeFromCollections: true
       btn.textContent = 'Sending…';
 
       try {
-        // 1 — Save to Firestore (must succeed; this is the canonical record)
+        // 1. Save to Firestore (must succeed; this is the canonical record)
         await addDoc(collection(db, 'contact_submissions'), data);
 
         if (typeof gtag === 'function') gtag('event', 'form_submit', { form: 'contact' });
 
-        // 2 — Fire-and-forget notification pipeline via the openpath-intake
+        // 2. Fire-and-forget notification pipeline via the openpath-intake
         // Worker. NOT awaited; a Worker hiccup must not break the form for
         // the visitor. The Worker has Textbelt / Twilio / Resend / Trello /
         // Anthropic keys server-side so they never leak to the browser.
         // Worker does: Textbelt SMS alert to David, Trello card in "New Lead",
         // Twilio welcome SMS to opted-in visitors, and an AI-drafted Gmail
         // reply landing in David's Drafts folder. EmailJS was removed
-        // 2026-05-31 — the Worker now covers every notification path it used
+        // 2026-05-31: the Worker now covers every notification path it used
         // to provide (and more).
         fetch('https://openpath-intake.roblesinc.workers.dev/contact-notify', {
           method:  'POST',
@@ -707,7 +707,7 @@ eleventyExcludeFromCollections: true
             message:    data.message,
             sms_opt_in: data.sms_opt_in,
             // one-line source summary for the Trello card / SMS alert;
-            // the Worker may ignore it — full detail lives in Firestore
+            // the Worker may ignore it, full detail lives in Firestore
             lead_source: leadSrc.utm_source || leadSrc.referrer || '(direct)',
           }),
         }).catch(() => {});  // ignore worker errors silently
@@ -716,7 +716,7 @@ eleventyExcludeFromCollections: true
         status.style.display      = 'block';
         status.style.background   = '#e6f4ea';
         status.style.color        = '#1a7c34';
-        status.textContent        = '✓ Message sent — David will be in touch within 24 hours.';
+        status.textContent        = '✓ Message sent. David will be in touch within 24 hours.';
         e.target.reset();
       } catch (err) {
         console.error(err);
