@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Most therapy sessions aren't dramatic. Here's what the ordinary, uneventful ones are actually doing — and why they matter."
 cardDate: "July 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1713942590288-cd74f53b42d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjB0YWxraW5nJTIwY2FsbWx5JTIwcGVyc29uJTIwZmVlbGluZyUyMHJlbGlldmVkJTIwYWZ0ZXIlMjBjb252ZXJzYXRpb24lMjB0d28lMjBwZW9wbGUlMjBzaXR0aW5nJTIwaW4lMjB3YXJ8ZW58MXwwfHx8MTc4NTMyMzU1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a man sitting at a table talking to a woman"
-cardImage: "https://images.unsplash.com/photo-1713942590288-cd74f53b42d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjB0YWxraW5nJTIwY2FsbWx5JTIwcGVyc29uJTIwZmVlbGluZyUyMHJlbGlldmVkJTIwYWZ0ZXIlMjBjb252ZXJzYXRpb24lMjB0d28lMjBwZW9wbGUlMjBzaXR0aW5nJTIwaW4lMjB3YXJ8ZW58MXwwfHx8MTc4NTMyMzU1Nnww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a man sitting at a table talking to a woman"
+image: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjBpbiUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMHJlZmxlY3RpbmclMjBkdXJpbmclMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNhbG0lMjBzdXBwb3J0aXZlJTIwY291bnNlbGluZyUyMGNvbnxlbnwxfDB8fHwxNzg1MzIzNTk3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to another woman"
+cardImage: "https://images.unsplash.com/photo-1714976695024-55a90b113f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjBpbiUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMHJlZmxlY3RpbmclMjBkdXJpbmclMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNhbG0lMjBzdXBwb3J0aXZlJTIwY291bnNlbGluZyUyMGNvbnxlbnwxfDB8fHwxNzg1MzIzNTk3fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to another woman"
 ---
 
 Most people picture therapy as a series of emotional peaks. A moment of realization. Tears, maybe. A therapist saying something so precise it reorganizes your whole week. That does happen sometimes. But if you've been in therapy for more than a few months, you've probably also had sessions that felt... unremarkable. You talked about your week. Nothing clicked. You left not totally sure what you accomplished.
