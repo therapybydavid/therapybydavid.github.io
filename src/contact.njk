@@ -270,6 +270,10 @@ eleventyExcludeFromCollections: true
       .prefer-texting-grid { grid-template-columns: 1fr; gap: 18px; text-align: center; }
       .prefer-texting-grid .ptg-actions { justify-content: center; }
     }
+    .faq-list { display: grid; gap: 18px; margin-top: 44px; }
+    .faq-item { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 28px 32px; box-shadow: 0 18px 48px rgba(20,33,50,.06); }
+    .faq-item h3 { font-size: 20px; margin-bottom: 10px; color: var(--night); }
+    .faq-item p { font-size: 16px; line-height: 1.75; max-width: 82ch; }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
@@ -332,6 +336,30 @@ eleventyExcludeFromCollections: true
     "sameAs": [
       "https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640",
       "https://www.zocdoc.com/professional/david-robles-lmsw-702330"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "I think I need therapy but I don't know where to start — what should I even look for in a therapist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most important thing is fit — you need someone you can actually be straight with. Beyond that, look for a therapist who specializes in what you're dealing with (anxiety, trauma, relationship patterns, burnout) rather than someone who does a little of everything. Check that they're licensed in your state, understand how they work, and make sure there's a way to talk to them before you commit. David Robles, LMSW, offers a free 15-minute consultation for exactly this reason — no pressure, no paperwork, just a real conversation to see if it's a fit. Based in Houston, TX, available statewide via telehealth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I've been putting off getting help for years. What actually makes people finally go to therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually something tips. A relationship cracks, work becomes unbearable, or you just get tired of feeling the same way you've felt for years. The truth is there's no perfect time — there's just the point where the cost of staying the same feels higher than the discomfort of doing something about it. If you're reading this, you're probably closer to that point than you think. The free 15-minute consultation with David is no-commitment — just a real conversation about what's going on and whether working together makes sense."
+        }
+      }
     ]
   }
   </script>
@@ -487,6 +515,24 @@ eleventyExcludeFromCollections: true
     </section>
 
     <!-- CTA -->
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Still deciding whether to reach out?</h2>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3>I think I need therapy but I don't know where to start — what should I even look for in a therapist?</h3>
+            <p>The most important thing is fit — you need someone you can actually be straight with. Beyond that, look for a therapist who specializes in what you're dealing with (anxiety, trauma, relationship patterns, burnout) rather than someone who does a little of everything. Check that they're licensed in your state, understand how they work, and make sure there's a way to talk to them before you commit. David Robles, LMSW, offers a free 15-minute consultation for exactly this reason — no pressure, no paperwork, just a real conversation to see if it's a fit. Based in Houston, TX, available statewide via telehealth.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>I've been putting off getting help for years. What actually makes people finally go to therapy?</h3>
+            <p>Usually something tips. A relationship cracks, work becomes unbearable, or you just get tired of feeling the same way you've felt for years. The truth is there's no perfect time — there's just the point where the cost of staying the same feels higher than the discomfort of doing something about it. If you're reading this, you're probably closer to that point than you think. The free 15-minute consultation with David is no-commitment — just a real conversation about what's going on and whether working together makes sense.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">Start Here</span>

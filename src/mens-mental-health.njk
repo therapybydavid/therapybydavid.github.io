@@ -328,6 +328,10 @@ eleventyExcludeFromCollections: true
       .section { padding: 78px 0; }
       .what-is-grid { grid-template-columns: 1fr !important; }
     }
+    .faq-list { display: grid; gap: 18px; margin-top: 44px; }
+    .faq-item { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 28px 32px; box-shadow: 0 18px 48px rgba(20,33,50,.06); }
+    .faq-item h3 { font-size: 20px; margin-bottom: 10px; color: var(--night); }
+    .faq-item p { font-size: 16px; line-height: 1.75; max-width: 82ch; }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
@@ -341,6 +345,22 @@ eleventyExcludeFromCollections: true
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
     {"@type": "ListItem", "position": 2, "name": "Therapy for Men"}]}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "I'm a guy and I've never really talked to anyone about this stuff. Is therapy actually going to work for me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That hesitation is real — and it's one of the most common things men bring into a first session. Therapy here isn't about processing feelings for an hour while someone nods at you. It's direct, practical, and focused on what's actually getting in your way — at work, in relationships, in your own head. David is a U.S. Army veteran who understands the culture around handling it yourself. You don't have to explain why asking for help feels uncomfortable. The free 15-minute consultation is low-stakes — just a conversation to see if this is the right fit."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -495,6 +515,20 @@ eleventyExcludeFromCollections: true
             </div>
             <p style="color: var(--muted); font-size: 15px; margin-top: 22px;">Don't see your plan listed? <a href="contact.html" style="color: var(--gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">Get in touch</a> and we'll check together.</p>
             <p style="color: var(--muted); font-size: 15px; margin-top: 10px;">Paying out of pocket? Sessions are $150, confirmed up front — no surprises. Sliding-scale spots ($80–$125) are available when cost is a barrier.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Questions men ask before starting.</h2>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3>I'm a guy and I've never really talked to anyone about this stuff. Is therapy actually going to work for me?</h3>
+            <p>That hesitation is real — and it's one of the most common things men bring into a first session. Therapy here isn't about processing feelings for an hour while someone nods at you. It's direct, practical, and focused on what's actually getting in your way — at work, in relationships, in your own head. David is a U.S. Army veteran who understands the culture around handling it yourself. You don't have to explain why asking for help feels uncomfortable. The free 15-minute consultation is low-stakes — just a conversation to see if this is the right fit.</p>
           </div>
         </div>
       </div>
