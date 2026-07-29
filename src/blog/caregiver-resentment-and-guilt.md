@@ -19,6 +19,10 @@ cardTag: "Caregiving"
 cardDescription: "Resenting someone you love while caring for them doesn't make you a bad person. Here's why this happens and how to carry it without shame."
 cardDate: "July 29, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODUzMjI5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "person doing yoga on seashore during daytime"
+cardImage: "https://images.unsplash.com/photo-1526724038726-3007ffb8025f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODUzMjI5MDd8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "person doing yoga on seashore during daytime"
 ---
 
 There's a specific kind of silence that follows a thought like *I can't stand doing this anymore* when "this" is caring for a parent, spouse, or child you love. Most caregivers don't say it out loud. They barely let themselves think it. But the feeling shows up anyway — in the sigh before answering the phone, in the flash of irritation over a spilled cup, in the moment you catch yourself wishing, just for a second, that things were different.
