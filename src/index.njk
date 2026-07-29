@@ -397,14 +397,24 @@ eleventyExcludeFromCollections: true
     .quote-card::before { content: '“'; position: absolute; top: -30px; left: 18px; font-family: var(--serif); font-size: 190px; color: rgba(216,184,102,.14); line-height: 1; }
     .quote-card p { color: rgba(255,255,255,.85); font-family: var(--serif); font-size: clamp(24px, 2.4vw, 30px); line-height: 1.4; font-weight: 500; position: relative; }
     .quote-card small { display: block; color: var(--champagne); margin-top: 26px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; font-size: 11px; }
-    .signal-list { display: grid; gap: 12px; margin-top: 34px; list-style: none; }
+    .signal-list { display: grid; gap: 12px; margin-top: 34px; list-style: none; position: relative; padding-left: 30px; }
+    .signal-list::before {
+      content: ''; position: absolute; left: 5px; top: 14px; bottom: 14px; width: 1px;
+      background: linear-gradient(180deg, transparent, var(--champagne) 12%, var(--champagne) 88%, transparent);
+      opacity: .55;
+    }
     .signal-list li {
-      display: flex; gap: 14px; align-items: baseline;
+      position: relative;
       background: var(--white); border: 1px solid var(--line-dark); border-radius: 16px;
       padding: 17px 20px; color: #33302a; font-weight: 600; font-size: 15.5px;
       box-shadow: 0 8px 26px rgba(20,33,50,.05);
     }
-    .signal-list li::before { content: '—'; color: var(--gold); font-weight: 800; flex-shrink: 0; }
+    .signal-list li::before {
+      content: ''; position: absolute; left: -30px; top: 24px;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--gold);
+      box-shadow: 0 0 0 4px var(--paper);
+    }
 
     /* ── Services ───────────────────────────────── */
     .services { background: var(--cream); }
@@ -523,13 +533,14 @@ eleventyExcludeFromCollections: true
     }
     summary::-webkit-details-marker { display: none; }
     summary::after {
-      content: '+'; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
-      width: 30px; height: 30px; display: grid; place-items: center;
-      border: 1px solid rgba(185,145,56,.35); border-radius: 50%;
-      color: var(--gold-deep); font-weight: 500; font-size: 18px; font-family: var(--serif);
-      transition: transform .25s ease, background .25s ease;
+      content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+      width: 32px; height: 32px; display: grid; place-items: center;
+      background: var(--night); border-radius: 50%;
+      color: var(--champagne); font-weight: 600; font-size: 21px; line-height: 1;
+      box-shadow: 0 3px 10px rgba(13,19,28,.24);
+      transition: transform .25s ease;
     }
-    details[open] summary::after { transform: translateY(-50%) rotate(45deg); background: rgba(216,184,102,.14); }
+    details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
     details p, details ul { padding: 0 26px 24px; }
     details p { margin: 0; }
 
