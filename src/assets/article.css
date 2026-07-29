@@ -63,6 +63,14 @@
 .faq-item { border: 1px solid rgba(0,0,0,.1); border-radius: 14px; padding: 4px 22px; margin-bottom: 12px; background: #fff; }
 .faq-item summary { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--night); cursor: pointer; padding: 16px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: '+'; font-family: var(--sans, sans-serif); font-size: 24px; font-weight: 400; color: var(--champagne); flex-shrink: 0; line-height: 1; }
-.faq-item[open] summary::after { content: '\2013'; }
+.faq-item summary::after {
+  content: '+'; flex-shrink: 0;
+  width: 32px; height: 32px; display: grid; place-items: center;
+  background: var(--night); border-radius: 50%;
+  font-family: var(--sans, sans-serif); font-size: 21px; font-weight: 600; line-height: 1;
+  color: var(--champagne);
+  box-shadow: 0 3px 10px rgba(13,19,28,.24);
+  transition: transform .25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { font-size: 16px; line-height: 1.8; color: #3d3830; margin: 0 0 18px; max-width: none; }
