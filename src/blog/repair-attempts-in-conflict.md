@@ -19,10 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Most arguments have an exit ramp. Here's why couples miss it, and how to recognize repair attempts before conflict escalates."
 cardDate: "July 30, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1758524944669-8194fae9813e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHBhcnRuZXJzJTIwaGF2aW5nJTIwZGVlcCUyMGNvbnZlcnNhdGlvbiUyMGNvdXBsZSUyMHJlY29uY2lsaW5nJTIwYWZ0ZXIlMjBhcmd1bWVudHxlbnwxfDB8fHwxNzg1NDA5OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Couple arguing while sitting on a couch."
-cardImage: "https://images.unsplash.com/photo-1758524944669-8194fae9813e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHBhcnRuZXJzJTIwaGF2aW5nJTIwZGVlcCUyMGNvbnZlcnNhdGlvbiUyMGNvdXBsZSUyMHJlY29uY2lsaW5nJTIwYWZ0ZXIlMjBhcmd1bWVudHxlbnwxfDB8fHwxNzg1NDA5OTQyfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Couple arguing while sitting on a couch."
+image: "https://images.unsplash.com/photo-1758524944737-fb8a4034541b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjb3VwbGUlMjBoYXZpbmclMjBoZWFydGZlbHQlMjBjb252ZXJzYXRpb24lMjBjb3VwbGUlMjBob2xkaW5nJTIwaGFuZHMlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHR3byUyMHBlb3BsZSUyMHJlY29uY2lsaW5nfGVufDF8MHx8fDE3ODU0MDk5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Couple arguing while sitting on a sofa"
+cardImage: "https://images.unsplash.com/photo-1758524944737-fb8a4034541b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxjb3VwbGUlMjBoYXZpbmclMjBoZWFydGZlbHQlMjBjb252ZXJzYXRpb24lMjBjb3VwbGUlMjBob2xkaW5nJTIwaGFuZHMlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHR3byUyMHBlb3BsZSUyMHJlY29uY2lsaW5nfGVufDF8MHx8fDE3ODU0MDk5NjF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Couple arguing while sitting on a sofa"
 ---
 
 ## The Moment the Fight Could Have Stopped
