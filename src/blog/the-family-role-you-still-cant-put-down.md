@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Long before you had boundaries, your family gave you a role. Here's why it's so hard to step out of, even when you've outgrown it."
 cardDate: "July 31, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODU0OTU2OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "group stacking hands in colorful sweaters"
+cardImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODU0OTU2OTZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "group stacking hands in colorful sweaters"
 ---
 
 Most people don't remember being assigned a role in their family. It wasn't a conversation. It was something that formed slowly, out of necessity, out of what the family needed at the time, and out of what you were good at or willing to do.
