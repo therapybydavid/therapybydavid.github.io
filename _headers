@@ -14,5 +14,5 @@
 
 # The link-preview card. It is referenced only by the og:image meta tag and is
 # never shown on a page, so keep it out of image search too.
-/images/og-card-v2.png
+/images/og-card-v3.png
   X-Robots-Tag: noindex
