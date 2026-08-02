@@ -482,20 +482,6 @@
         </div>
       </div>
 
-      <div class="section" id="sec-route">
-        <p class="section-label" id="lbl-route">Your next step</p>
-        <div class="cards" role="group" aria-labelledby="lbl-route" data-group="route">
-          <button type="button" class="opt-card" aria-pressed="false" data-route="call">
-            15-minute intro call
-            <span class="opt-note">A short conversation to talk through what you're looking for. Free, no commitment.</span>
-          </button>
-          <button type="button" class="opt-card" aria-pressed="false" data-route="portal">
-            Book your first session
-            <span class="opt-note">Go straight to the secure client portal and pick a time for a full session.</span>
-          </button>
-        </div>
-      </div>
-
       <div class="error-msg" id="error-msg" role="alert"></div>
       <button type="submit" class="btn-submit" id="submit-btn">Continue</button>
       <p class="privacy-note">Your information stays private and is only used to coordinate your care.</p>
@@ -504,8 +490,8 @@
         <p class="section-label" id="lbl-next" style="margin-bottom:0;">What happens next</p>
         <ol>
           <li>I personally review your request.</li>
-          <li>We connect for your 15-minute intro call or your first session.</li>
-          <li>We get started.</li>
+          <li>We talk for 15 minutes &mdash; free, no commitment.</li>
+          <li>If we're a fit, I get your first session on the calendar.</li>
         </ol>
         <p class="response-line">You'll hear back within one business day.</p>
       </div>
@@ -533,19 +519,6 @@
     </div>
   </section>
 
-  <!-- ============ SUCCESS: Portal route ============ -->
-  <section class="panel" id="success-panel">
-    <div class="end-screen">
-      <div class="mark">&#10003;</div>
-      <h2 id="success-heading" tabindex="-1">You're all set.</h2>
-      <p>Your information has been received. Use the secure client portal below to choose a time and book your first full session.</p>
-      <p style="margin-top:18px;">
-        <a class="link" href="https://david-robles.clientsecure.me/request/service" id="portal-link" target="_blank" rel="noopener">Open the secure client portal &rarr;</a>
-      </p>
-      <button type="button" class="btn-back" id="back-to-site" style="margin-top:22px;">&larr; Back to therapybydavid.com</button>
-    </div>
-  </section>
-
   <p class="brand-foot">Therapy by David &middot; Houston, TX</p>
 </main>
 
@@ -559,8 +532,10 @@
   // Same notification Worker the contact form uses: SMS alert to David,
   // Trello card, AI-drafted reply.
   var NOTIFY_URL    = "https://openpath-intake.roblesinc.workers.dev/contact-notify";
-  var PORTAL_URL    = "https://david-robles.clientsecure.me/request/service"; // SimplePractice client portal
-  var CALENDAR_URL  = "https://calendly.com/roblesinc/consultation"; // 15-min intro call (Calendly)
+  // Every request ends the same way: a free 15-minute call. Nobody books a
+  // session from the public site — David books it himself once they've
+  // talked and benefits are known. That is why there is no portal link here.
+  var CALENDAR_URL  = "https://calendly.com/roblesinc/consultation"; // 15-min call (Calendly)
 
   /* ---- State ---- */
   var data = {
@@ -574,8 +549,7 @@
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
     email: "",
-    phone: "",
-    route: null              // "call" | "portal", set by entry intent or the visitor
+    phone: ""
   };
 
   /* ---- GA4 funnel events (anonymous, never includes contact fields).
@@ -601,8 +575,7 @@
         insuranceNetwork: data.insuranceNetwork,
         format: data.format,
         preferredTimes: data.preferredTimes,
-        referralSource: data.referralSource,
-        route: data.route
+        referralSource: data.referralSource
       }));
     } catch (e) {}
   }
@@ -619,13 +592,11 @@
 
   var panels = {
     form:    document.getElementById("form-panel"),
-    oos:     document.getElementById("oos-panel"),
-    success: document.getElementById("success-panel")
+    oos:     document.getElementById("oos-panel")
   };
   var headings = {
     form:    document.getElementById("form-heading"),
-    oos:     document.getElementById("oos-heading"),
-    success: document.getElementById("success-heading")
+    oos:     document.getElementById("oos-heading")
   };
   function showPanel(key) {
     Object.keys(panels).forEach(function (k) { panels[k].classList.remove("visible"); });
@@ -835,23 +806,6 @@
     data.referralWho = referralWho.value.trim();
   });
 
-  /* =========================================================
-     NEXT STEP (equal-weight cards)
-     ========================================================= */
-  var routeGroup = document.querySelector('[data-group="route"]');
-  routeGroup.querySelectorAll(".opt-card").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      data.route = btn.dataset.route;
-      markSelected(routeGroup, btn);
-      saveDraft();
-    });
-  });
-
-  function selectRoute(route) {
-    var btn = routeGroup.querySelector('[data-route="' + route + '"]');
-    if (btn) { data.route = route; markSelected(routeGroup, btn); }
-  }
-
   /* ---- Contact fields (read live at submit; not persisted) ---- */
   function syncContact() {
     data.fullName = document.getElementById("full-name").value.trim();
@@ -863,10 +817,6 @@
       this.classList.remove("invalid");
       this.removeAttribute("aria-invalid");
     });
-  });
-
-  document.getElementById("back-to-site").addEventListener("click", function () {
-    window.location.href = "/";
   });
 
   /* =========================================================
@@ -901,7 +851,6 @@
     if (!data.payment) problems.push({ msg: "Please choose how you plan to cover your care.", section: markGroupInvalid("sec-payment") });
     else if (data.payment === "insurance" && !data.insuranceNetwork) problems.push({ msg: "Please select your insurance network.", section: markFieldInvalid("insurance-network") });
     if (!data.format || !data.format.length) problems.push({ msg: "Please choose how you'd like to meet.", section: markGroupInvalid("sec-format") });
-    if (!data.route) problems.push({ msg: "Please choose your next step.", section: markGroupInvalid("sec-route") });
 
     if (problems.length) {
       err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention, they're outlined in red.)" : "");
@@ -928,7 +877,7 @@
   function submitIntake() {
     submitBtn.disabled = true;
     submitBtn.textContent = "Processing…";
-    track("intake_submitted", { route: data.route, payment: data.payment });
+    track("intake_submitted", { payment: data.payment });
 
     // First-touch lead source captured by /analytics.js
     var leadSrc = {};
@@ -948,7 +897,7 @@
       : null;
     var summary = [
       data.state, paymentLabel, formatLabel, timesLabel, referralLabel,
-      data.route === "call" ? "wants 15-min intro call" : "wants portal booking"
+      "booking the free 15-min call"
     ].filter(Boolean).join(" · ");
 
     var record = {
@@ -964,7 +913,7 @@
       preferred_times: data.preferredTimes,
       referral_source: data.referralSource,
       referral_who: data.referralWho || null,
-      next_step:  data.route,
+      next_step:  "call",   // the only public path; sessions are booked by David
 
       sms_opt_in:  false,
       user_agent:  navigator.userAgent,
@@ -985,8 +934,8 @@
       : Promise.reject(new Error("Firestore module not loaded"));
 
     // 2. Notification pipeline. keepalive lets the request survive the
-    // Calendly navigation, and the call route waits for it to settle so
-    // the lead alert can't be aborted mid-flight by the redirect.
+    // Calendly navigation, and the submit waits for it to settle so the
+    // lead alert can't be aborted mid-flight by the redirect.
     var notified = fetch(NOTIFY_URL, {
       method: "POST",
       keepalive: true,
@@ -1012,21 +961,15 @@
 
   function routeUser() {
     clearDraft(); // submitted for real, the local draft is no longer needed
-    if (data.route === "call") {
-      // Send them to Calendly with name/email prefilled so they never type
-      // the same thing twice. The intro call is a phone-call event, so the
-      // invitee's number is Calendly's "location" field and prefills via
-      // the location param (E.164 format).
-      var params = new URLSearchParams({ name: data.fullName, email: data.email });
-      var digits = (data.phone || "").replace(/\D/g, "");
-      if (digits.length === 10) digits = "1" + digits;
-      if (digits.length === 11 && digits.charAt(0) === "1") params.set("location", "+" + digits);
-      window.location.href = CALENDAR_URL + "?" + params.toString();
-    } else {
-      // Portal route: show the on-page success panel with the portal link.
-      document.getElementById("portal-link").href = PORTAL_URL;
-      showPanel("success");
-    }
+    // One destination for everyone: the free 15-minute call. Name and email
+    // are prefilled so they never type the same thing twice. The call is a
+    // phone-call event, so the invitee's number is Calendly's "location"
+    // field and prefills via the location param (E.164 format).
+    var params = new URLSearchParams({ name: data.fullName, email: data.email });
+    var digits = (data.phone || "").replace(/\D/g, "");
+    if (digits.length === 10) digits = "1" + digits;
+    if (digits.length === 11 && digits.charAt(0) === "1") params.set("location", "+" + digits);
+    window.location.href = CALENDAR_URL + "?" + params.toString();
   }
 
   /* ---- bfcache: coming Back from Calendly restores the page frozen at
@@ -1052,7 +995,6 @@
       data.format = saved.format || null;
       data.preferredTimes = saved.preferredTimes || [];
       data.referralSource = saved.referralSource || null;
-      data.route = saved.route || null;
 
       markSelected(stateGroup, stateGroup.querySelector('[data-state="Texas"]'));
       if (data.payment) {
@@ -1073,18 +1015,8 @@
         referralSelect.value = data.referralSource;
         syncReferralReveal();
       }
-      if (data.route) selectRoute(data.route);
     }
 
-    /* ---- Entry intent (applied last so it reflects the button the
-       visitor just clicked, even over a stale draft):
-       ?intent=session (the "Schedule Your First Session" buttons)
-       pre-selects direct portal booking; anything else (the consultation
-       buttons link the bare URL) pre-selects the intro call. Both stay
-       one click from switching. ---- */
-    var intent = null;
-    try { intent = new URLSearchParams(location.search).get("intent"); } catch (e) {}
-    selectRoute(intent === "session" ? "portal" : "call");
     saveDraft();
   })();
 })();

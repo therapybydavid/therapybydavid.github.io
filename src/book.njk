@@ -167,13 +167,7 @@ permalink: /book/index.html
       overflow: hidden;
       box-shadow: 0 24px 64px rgba(20,33,50,.08);
     }
-    /* Tall enough to show the month grid and the full time list without an
-       inner scrollbar. Calendly stacks the calendar above the times on narrow
-       screens, so mobile needs more height, not less. */
-    .calendly-inline-widget { min-width: 320px; height: 960px; }
-    @media (max-width: 760px) {
-      .calendly-inline-widget { height: 1180px; }
-    }
+    .calendar-section .btn { margin-top: 4px; }
 
     /* Footer */
     footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
@@ -220,7 +214,7 @@ permalink: /book/index.html
     <!-- HERO -->
     <section class="page-hero">
       <div class="container">
-        <span class="eyebrow">Free Consultation</span>
+        <span class="eyebrow">Free 15-Min Call</span>
         <h1>Let's take 15 minutes and see if this is a good fit.</h1>
         <p class="lead">No pressure, no commitment. Just a straightforward conversation about what you're dealing with and whether therapy with me makes sense.</p>
       </div>
@@ -253,18 +247,18 @@ permalink: /book/index.html
       </div>
     </section>
 
-    <!-- CALENDLY EMBED -->
+    <!-- BOOKING CTA
+         Deliberately the intake form rather than an inline Calendly embed:
+         the form is what POSTs to the notification Worker, and the Worker
+         is what creates the Trello card and fires the SMS alert. Embedding
+         Calendly here would let someone book with no card and no alert. -->
     <section class="section calendar-section">
       <div class="container">
-        <div class="reveal" style="text-align:center; margin-bottom: 48px;">
+        <div class="reveal" style="text-align:center;">
           <span class="eyebrow">Schedule Your Call</span>
           <h2>Pick a time that works for you.</h2>
-          <p style="margin: 0 auto; font-size: 17px;">All calls are by phone. Texas residents only.</p>
-        </div>
-        <div class="calendar-wrap reveal">
-          <div class="calendly-inline-widget"
-            data-url="https://calendly.com/roblesinc/consultation?hide_gdpr_banner=1&hide_event_type_details=1&background_color=ffffff&text_color=1a1a1a&primary_color=b99138">
-          </div>
+          <p style="margin: 0 auto 36px; font-size: 17px;">A few quick questions first so I know what's going on before we talk &mdash; then you choose your time. Calls are by phone. Texas residents only.</p>
+          <a class="btn btn-gold" href="/intake.html">Book a Free 15-Minute Call</a>
         </div>
       </div>
     </section>

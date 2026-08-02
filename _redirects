@@ -2,5 +2,9 @@
 # Branded short links → destinations. Used in SMS/print where a clean,
 # on-brand URL reads better and survives carrier link-filtering.
 
-# Free consult — used in the (832) 536-5177 inbound-text auto-reply.
-/consult   https://calendly.com/roblesinc/consultation   302
+# Free call — used in the (832) 536-5177 inbound-text auto-reply.
+# Points at the intake form, not straight at Calendly: the form is what
+# POSTs to the notification Worker, and the Worker is what creates the
+# Trello card and fires the SMS alert. Linking Calendly directly would
+# put the booking on the calendar with no card and no alert.
+/consult   /intake.html   302
