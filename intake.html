@@ -405,7 +405,7 @@
       <div class="section" id="sec-payment">
         <p class="section-label" id="lbl-payment">Coverage</p>
         <div class="chips" role="group" aria-labelledby="lbl-payment" data-group="payment">
-          <button type="button" class="chip" aria-pressed="false" data-pay="private">Private pay / self-pay</button>
+          <button type="button" class="chip" aria-pressed="false" data-pay="private">Paying out of pocket</button>
           <button type="button" class="chip" aria-pressed="false" data-pay="insurance">Health insurance</button>
         </div>
         <div class="reveal" id="insurance-reveal">
@@ -443,7 +443,7 @@
             <p class="upload-hint">A photo of the front is enough. It's stored securely and used only to verify your benefits.</p>
           </div>
         </div>
-        <p class="fees-note">Self-pay sessions are $150, confirmed up front with no surprises. The 15-minute intro call is always free. Many major plans may be covered through partner networks.</p>
+        <p class="fees-note">We'll go over cost on the 15-minute call &mdash; including sliding-scale options &mdash; before anything gets scheduled. The call itself is always free.</p>
       </div>
 
       <div class="section" id="sec-format">
@@ -889,7 +889,7 @@
     var paymentLabel = data.payment === "insurance"
       ? "Insurance: " + (data.insuranceNetwork || "unspecified") +
         (data.insuranceCardPath ? " (card on file)" : "")
-      : "Private pay";
+      : "Paying out of pocket";
     var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var timesLabel  = data.preferredTimes.length ? "Prefers " + data.preferredTimes.join("/") : null;
     var referralLabel = data.referralSource
