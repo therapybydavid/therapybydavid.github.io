@@ -466,6 +466,7 @@ eleventyExcludeFromCollections: true
     .ins-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
     .ins-chips span { background: var(--white); border: 1px solid rgba(185,145,56,.22); border-radius: 999px; padding: 6px 14px; font-size: 12.5px; font-weight: 700; color: #514a3a; }
     .insurance-note em { display: block; font-style: normal; font-size: 13.5px; color: var(--muted); margin-top: 14px; }
+    .insurance-note + .insurance-note { margin-top: 18px; }
 
     /* ── About ──────────────────────────────────── */
     .about { background: var(--cream); }
@@ -759,8 +760,8 @@ eleventyExcludeFromCollections: true
           <div class="fee-card reveal" style="--d: .1s;">
             <div class="fee-tag">Standard Session</div>
             <div class="price">$150</div>
-            <div class="per">per session · self-pay</div>
-            <p>Confirmed up front before your first session. Private-pay keeps the work between us. No diagnosis required for insurance paperwork.</p>
+            <div class="per">per 50-min session &middot; private pay</div>
+            <p>My standard rate, confirmed before your first session. Private pay keeps the work between us, with no diagnosis required for insurance paperwork. Sliding-scale spots and Open Path are available when cost is the barrier &mdash; just ask on the call.</p>
             <a class="btn btn-outline" href="/intake.html">Start with a Free Call</a>
           </div>
         </div>
@@ -769,7 +770,11 @@ eleventyExcludeFromCollections: true
           <div class="ins-chips">
             <span>Aetna</span><span>Ambetter</span><span>Anthem</span><span>BlueCross BlueShield</span><span>Carelon</span><span>CHIP</span><span>Cigna / Evernorth</span><span>Community Health Choice</span><span>Humana</span><span>Magellan</span><span>Medicaid</span><span>Medicare</span><span>Molina</span><span>Optum</span><span>Oscar</span><span>TRICARE</span><span>UnitedHealthcare</span>
           </div>
-          <em>I don't bill insurance directly. My own practice is self-pay. These plans are covered through the agency I'm affiliated with, which handles the billing. Reach out and we'll verify your specific benefits before your first session.</em>
+          <em>I don't bill insurance directly. My own practice is private pay. These plans are covered through the agency I'm affiliated with, which handles the billing &mdash; I'm still the therapist you work with. I'll verify your specific benefits and tell you your exact copay before anything gets scheduled.</em>
+        </div>
+        <div class="insurance-note reveal">
+          <strong>Cost is the barrier?</strong>
+          <em style="margin-top:0;">Say so on the call. I keep a limited number of sliding-scale spots, and I'm a member of <a href="https://openpathcollective.org/" target="_blank" rel="noopener" style="color: var(--gold-deep); text-decoration: underline;">Open Path Collective</a>, which offers reduced-fee sessions well below my standard rate. Neither is something you have to qualify for in advance or explain in writing &mdash; just ask.</em>
         </div>
       </div>
     </section>
