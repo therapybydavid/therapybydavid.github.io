@@ -405,7 +405,7 @@
       <div class="section" id="sec-payment">
         <p class="section-label" id="lbl-payment">Coverage</p>
         <div class="chips" role="group" aria-labelledby="lbl-payment" data-group="payment">
-          <button type="button" class="chip" aria-pressed="false" data-pay="private">Paying out of pocket</button>
+          <button type="button" class="chip" aria-pressed="false" data-pay="private">Private Pay</button>
           <button type="button" class="chip" aria-pressed="false" data-pay="insurance">Health insurance</button>
         </div>
         <div class="reveal" id="insurance-reveal">
@@ -889,7 +889,7 @@
     var paymentLabel = data.payment === "insurance"
       ? "Insurance: " + (data.insuranceNetwork || "unspecified") +
         (data.insuranceCardPath ? " (card on file)" : "")
-      : "Paying out of pocket";
+      : "Private pay";
     var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var timesLabel  = data.preferredTimes.length ? "Prefers " + data.preferredTimes.join("/") : null;
     var referralLabel = data.referralSource
