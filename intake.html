@@ -171,7 +171,7 @@
     margin-bottom: 6px;
   }
 
-  input[type="text"], input[type="email"], input[type="tel"], select {
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
     width: 100%;
     background: #0f0f0f;
     border: 1px solid var(--line);
@@ -187,6 +187,9 @@
   }
   input::placeholder { color: #7f7f7f; }
   input:focus, select:focus { border-color: var(--gold); }
+  /* Safari/iOS render an empty date input as blank; keep it legible on dark. */
+  input[type="date"] { min-height: 49px; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(72%) sepia(38%) saturate(480%) hue-rotate(2deg); cursor: pointer; }
   select {
     cursor: pointer;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23c9a548' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -432,6 +435,10 @@
             <option>Other / not sure</option>
           </select>
 
+          <label class="field-label" for="dob" style="margin-top:16px;">Date of birth</label>
+          <input type="date" id="dob" name="dob" autocomplete="bday" max="2026-08-02">
+          <p class="upload-hint" style="margin-top:6px;">Needed to check your benefits before we talk, so I can tell you your actual copay on the call.</p>
+
           <div class="upload-row">
             <label class="field-label" for="insurance-card">Insurance card <span style="color:var(--muted);">(optional)</span></label>
             <input type="file" id="insurance-card" accept="image/*,application/pdf" style="display:none;">
@@ -545,6 +552,7 @@
     format: null,            // ["In person (Webster office)"] | ["Telehealth / Secure video"]
     preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
     insuranceCardPath: null, // Storage path only, never the file, never a link
+    dateOfBirth: null,       // insurance only; Firestore only, never the Worker
     referralSource: null,    // self-reported "how did you hear about me?"
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
@@ -811,8 +819,20 @@
     data.fullName = document.getElementById("full-name").value.trim();
     data.email    = document.getElementById("email").value.trim();
     data.phone    = document.getElementById("phone").value.trim();
+    // Read live and never persisted to the draft: date of birth is identity
+    // -grade PHI and the draft lives in localStorage on a possibly shared
+    // computer, same reason the contact fields aren't persisted either.
+    data.dateOfBirth = document.getElementById("dob").value || null;
   }
-  ["full-name", "email", "phone"].forEach(function (id) {
+
+  // No future dates — the picker caps at today.
+  (function capDob() {
+    var d = new Date();
+    document.getElementById("dob").max =
+      d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  })();
+
+  ["full-name", "email", "phone", "dob"].forEach(function (id) {
     document.getElementById(id).addEventListener("input", function () {
       this.classList.remove("invalid");
       this.removeAttribute("aria-invalid");
@@ -850,6 +870,7 @@
     if (data.phone.replace(/\D/g, "").length < 10) problems.push({ msg: "Please enter a valid phone number.", section: markFieldInvalid("phone") });
     if (!data.payment) problems.push({ msg: "Please choose how you plan to cover your care.", section: markGroupInvalid("sec-payment") });
     else if (data.payment === "insurance" && !data.insuranceNetwork) problems.push({ msg: "Please select your insurance network.", section: markFieldInvalid("insurance-network") });
+    if (data.payment === "insurance" && !data.dateOfBirth) problems.push({ msg: "Please add your date of birth so I can check your benefits.", section: markFieldInvalid("dob") });
     if (!data.format || !data.format.length) problems.push({ msg: "Please choose how you'd like to meet.", section: markGroupInvalid("sec-format") });
 
     if (problems.length) {
@@ -909,6 +930,10 @@
       payment:    data.payment,
       insurance_network: data.insuranceNetwork,
       insurance_card_path: data.insuranceCardPath,
+      // Firestore only. Deliberately absent from the Worker payload below,
+      // for the same reason the card image is: it must not land in Trello,
+      // an SMS, or an email.
+      date_of_birth: data.dateOfBirth,
       format:     data.format,
       preferred_times: data.preferredTimes,
       referral_source: data.referralSource,
