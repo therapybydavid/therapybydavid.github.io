@@ -990,7 +990,17 @@
     // are prefilled so they never type the same thing twice. The call is a
     // phone-call event, so the invitee's number is Calendly's "location"
     // field and prefills via the location param (E.164 format).
-    var params = new URLSearchParams({ name: data.fullName, email: data.email });
+    //
+    // utm_source=site comes back to us in the Calendly webhook's tracking
+    // object (see functions/calendly-webhook.js). This form has already told
+    // the notification Worker about this lead, so the webhook uses the tag to
+    // skip it — without it every booking made here would get a second Trello
+    // card. Bookings that never touched the site carry no tag and do notify.
+    var params = new URLSearchParams({
+      name: data.fullName,
+      email: data.email,
+      utm_source: "site"
+    });
     var digits = (data.phone || "").replace(/\D/g, "");
     if (digits.length === 10) digits = "1" + digits;
     if (digits.length === 11 && digits.charAt(0) === "1") params.set("location", "+" + digits);
