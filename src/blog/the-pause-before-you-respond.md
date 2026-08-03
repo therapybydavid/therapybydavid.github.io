@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/the-pause-before-you-respond"
 canonical: "https://therapybydavid.com/blog/the-pause-before-you-respond"
 permalink: "/blog/the-pause-before-you-respond.html"
-date: 2026-08-03
+date: 2026-04-04
 order: 50
 tag: "Relationships"
-dateDisplay: "August 3, 2026 · 6 min read"
+dateDisplay: "April 4, 2026 · 6 min read"
 deck: "In the heat of an argument, the fastest response usually isn't the most honest one — it's the one your body picked for you."
 cardTitle: "The Pause Before You Respond: Why Reacting Fast Isn't the Same as Being Honest"
 cardTag: "Relationships"
 cardDescription: "Why the instinct to respond immediately in conflict often reflects nervous system arousal, not truth — and how learning to pause changes communication."
-cardDate: "August 3, 2026 · 6 min read"
+cardDate: "April 4, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1541089404510-5c9a779841fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmd8ZW58MXwwfHx8MTc4NTc1NDg5N3ww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man and woman hugging each other"
