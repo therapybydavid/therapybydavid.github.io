@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/the-inner-critic-is-trying-to-protect-you"
 canonical: "https://therapybydavid.com/blog/the-inner-critic-is-trying-to-protect-you"
 permalink: "/blog/the-inner-critic-is-trying-to-protect-you.html"
-date: 2026-08-01
+date: 2026-04-02
 order: 50
 tag: "Self-Worth"
-dateDisplay: "August 1, 2026 · 6 min read"
+dateDisplay: "April 2, 2026 · 6 min read"
 deck: "Most people try to silence their inner critic. Understanding what it's actually trying to do for you is often more useful."
 cardTitle: "The Inner Critic Isn't Cruel for No Reason — It's Trying to Protect You"
 cardTag: "Self-Worth"
 cardDescription: "Self-criticism often isn't a character flaw or bad habit. It's a learned strategy for staying safe. Here's why that matters for how you change it."
-cardDate: "August 1, 2026 · 6 min read"
+cardDate: "April 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1461468611824-46457c0e11fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODU1ODIwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman wearing gray long-sleeved shirt facing the sea"
