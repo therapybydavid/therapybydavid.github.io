@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Why the instinct to respond immediately in conflict often reflects nervous system arousal, not truth — and how learning to pause changes communication."
 cardDate: "August 3, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1541089404510-5c9a779841fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmd8ZW58MXwwfHx8MTc4NTc1NDg5N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man and woman hugging each other"
+cardImage: "https://images.unsplash.com/photo-1541089404510-5c9a779841fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmd8ZW58MXwwfHx8MTc4NTc1NDg5N3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man and woman hugging each other"
 ---
 
 There's a specific moment in almost every argument that determines how the rest of it goes. It happens right after your partner says something that stings — a comment, a tone, an accusation — and right before you open your mouth to respond. That gap is usually less than a second. Most people don't experience it as a choice at all. It feels like the response just happens.
