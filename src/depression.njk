@@ -220,6 +220,40 @@ eleventyExcludeFromCollections: true
     .impact-list li { color: rgba(255,255,255,.68); font-size: 15px; padding-left: 18px; position: relative; }
     .impact-list li::before { content: '›'; position: absolute; left: 0; color: var(--champagne); font-size: 18px; font-weight: 700; line-height: 1; top: 1px; }
 
+    /* Hub diagram: at-a-glance map above the detail cards */
+    .hub { position: relative; margin-top: 48px; display: grid; grid-template-columns: 1fr 210px 1fr; gap: 20px 44px; align-items: center; }
+    .hub-lines { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; overflow: visible; pointer-events: none; }
+    .hub-node, .hub-core { position: relative; z-index: 1; }
+    .hub-node {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+    }
+    .hub-node .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .hub-node ul { list-style: none; display: grid; gap: 7px; }
+    .hub-node li { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.5; padding-left: 16px; position: relative; }
+    .hub-node li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--champagne); opacity: .85; }
+    .hub-core {
+      justify-self: center; align-self: center;
+      width: 150px; height: 150px; border-radius: 50%;
+      display: grid; place-items: center; text-align: center;
+      background: rgba(216,184,102,.07);
+      border: 1px solid rgba(216,184,102,.55);
+      font-family: var(--serif); font-size: 23px; color: var(--champagne); letter-spacing: -.02em;
+    }
+    .hub-core { grid-column: 2; grid-row: 1 / span 2; }
+    .hub-n1 { grid-column: 1; grid-row: 1; }
+    .hub-n2 { grid-column: 3; grid-row: 1; }
+    .hub-n3 { grid-column: 1; grid-row: 2; }
+    .hub-n4 { grid-column: 3; grid-row: 2; }
+    @media (max-width: 860px) {
+      .hub { grid-template-columns: 1fr; gap: 16px; }
+      .hub-lines { display: none; }
+      .hub-core, .hub-n1, .hub-n2, .hub-n3, .hub-n4 { grid-column: 1; grid-row: auto; }
+      .hub-core { width: 130px; height: 130px; font-size: 21px; margin-bottom: 4px; }
+    }
+
     /* Cycle steps */
     .cycle-steps { display: grid; gap: 18px; margin-top: 42px; }
     .cycle-step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
@@ -395,6 +429,52 @@ eleventyExcludeFromCollections: true
         <span class="eyebrow">The Full Picture</span>
         <h2>Depression affects your whole self.</h2>
         <p class="section-lead">Depression is not just an emotional experience. It shows up in your body, your thinking, your behavior, and your feelings, often all at once, and often in ways that are hard to name.</p>
+
+        <div class="hub" role="img" aria-label="Depression at the center, connected to four areas it affects: the body, your thinking, what you do, and what you feel.">
+          <div class="hub-core" aria-hidden="true"><span>Depression</span>
+            <svg class="hub-lines" viewBox="0 0 260 260" aria-hidden="true" focusable="false">
+              <g stroke="rgba(216,184,102,.42)" stroke-width="1" stroke-linecap="round">
+                <line x1="64.2" y1="92" x2="-13" y2="47.4"/>
+                <line x1="195.8" y1="92" x2="273" y2="47.4"/>
+                <line x1="64.2" y1="168" x2="-13" y2="212.6"/>
+                <line x1="195.8" y1="168" x2="273" y2="212.6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="hub-node hub-n1">
+            <span class="label">Body</span>
+            <ul>
+              <li>Heavy, tired, slowed down</li>
+              <li>Sleep and appetite shifts</li>
+              <li>Aches with no clear cause</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n2">
+            <span class="label">Thoughts</span>
+            <ul>
+              <li>Harsh self-criticism</li>
+              <li>Hopeless about what's ahead</li>
+              <li>Hard to concentrate</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n3">
+            <span class="label">Behavior</span>
+            <ul>
+              <li>Pulling away from people</li>
+              <li>Messages left unanswered</li>
+              <li>Dropping what you enjoyed</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n4">
+            <span class="label">Feelings</span>
+            <ul>
+              <li>Sadness or emptiness</li>
+              <li>Numb and disconnected</li>
+              <li>Guilt and shame</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="impact-grid">
           <div class="impact-card reveal">
             <span class="label">Body</span>
