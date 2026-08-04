@@ -56,10 +56,10 @@ faqJson: |
         },
         {
           "@type": "Question",
-          "name": "Does TRICARE cover therapy for veterans?",
+          "name": "What if cost is a barrier to starting therapy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TRICARE is accepted at Therapy by David. Coverage specifics depend on your plan, so it's worth confirming your benefits \u2014 but cost should not be the thing that stops you from getting support."
+            "text": "David's private practice is self-pay, confirmed up front with no surprises, and sliding-scale spots are available when cost is a barrier. He is also affiliated with an agency, and that is the route where insurance applies. Reach out and we will sort out which route fits before the first session."
           }
         }
       ]
@@ -90,4 +90,4 @@ Not exactly. Hypervigilance is one symptom that often shows up in PTSD, but you 
 
 Yes. The same nervous system that learned to stay on can learn that it's allowed to stand down — gradually, with the right work. That means teaching the body to recognize genuine safety, working through the experiences that set the alarm so high, and rebuilding the ability to rest without feeling exposed. It's not about becoming soft or "letting your guard down." It's about getting the choice back.
 
-As an Army veteran myself, I work with veterans, active military, and first responders who are tired of running at full alert. [Therapy for veterans and military families](/veterans-military-families.html) is available by telehealth across Texas, and TRICARE is accepted. You shouldn't have to over-explain it to be understood.
+As an Army veteran myself, I work with veterans, active military, and first responders who are tired of running at full alert. [Therapy for veterans and military families](/veterans-military-families.html) is available by telehealth across Texas. You shouldn't have to over-explain it to be understood.

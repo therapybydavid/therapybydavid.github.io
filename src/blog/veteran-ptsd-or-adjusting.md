@@ -60,10 +60,10 @@ faqJson: |
         },
         {
           "@type": "Question",
-          "name": "Does TRICARE cover therapy for PTSD?",
+          "name": "What if cost is a barrier to starting therapy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TRICARE is accepted at Therapy by David. Coverage specifics depend on your plan, so it's worth confirming your benefits — but cost should not be the thing that stops you from getting support."
+            "text": "David's private practice is self-pay, confirmed up front with no surprises, and sliding-scale spots are available when cost is a barrier. He is also affiliated with an agency, and that is the route where insurance applies. Reach out and we will sort out which route fits before the first session."
           }
         }
       ]
@@ -137,7 +137,7 @@ It also helps to know what treatment actually looks like, because the version in
 
 You don't have to know whether it's "really" PTSD before you reach out. That's literally what an evaluation is for. If it turns out to be a normal adjustment that just needs some support, good — you'll have lost nothing. And if it's more than that, you'll have caught it early, which is exactly when it's easiest to treat. The veterans I've worked with almost never say they regret making the call. What they regret is the months or years they spent telling themselves it would pass.
 
-I work with veterans, active military, and their families who are sorting through this same question. [Therapy for veterans and military families](/veterans-military-families.html) is available by telehealth across Texas, TRICARE is accepted, and you won't have to over-explain the experience to be understood. I've been on that side of it too.
+I work with veterans, active military, and their families who are sorting through this same question. [Therapy for veterans and military families](/veterans-military-families.html) is available by telehealth across Texas, and you won't have to over-explain the experience to be understood. I've been on that side of it too.
 
 ### If you're in crisis right now
 
