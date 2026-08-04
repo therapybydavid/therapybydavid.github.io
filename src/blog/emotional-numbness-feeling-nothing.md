@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Emotional numbness isn't coldness or apathy — it's often a protective response. Here's what's happening underneath it and how to gently reconnect."
 cardDate: "August 4, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1ODQxMjk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "green leafed tree surrounded by fog during daytime"
+cardImage: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1ODQxMjk4fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "green leafed tree surrounded by fog during daytime"
 ---
 
 Someone tells you their loved one passed away, or you get the call about your own diagnosis, or you finally get the job you've wanted for years — and instead of grief, or fear, or joy, there's just... static. A flatness. You wait for the feeling to arrive, and it doesn't come.
