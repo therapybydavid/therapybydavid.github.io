@@ -63,7 +63,7 @@ faqJson: |
           "name": "What if cost is a barrier to starting therapy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "David's private practice is self-pay, confirmed up front with no surprises, and sliding-scale spots are available when cost is a barrier. He is also affiliated with an agency, and that is the route where insurance applies. Reach out and we will sort out which route fits before the first session."
+            "text": "David's private practice is self-pay, confirmed up front with no surprises, and sliding-scale spots are available when cost is a barrier. He is also affiliated with partner agencies, and that is the route where insurance applies. Reach out and we will sort out which route fits before the first session."
           }
         }
       ]
