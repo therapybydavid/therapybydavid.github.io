@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Most therapy sessions aren't dramatic. Here's what the ordinary, uneventful ones are actually doing — and why they matter."
 cardDate: "July 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1ODQ3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "gray rocks on seashore during daytime"
-cardImage: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg1ODQ3NTIxfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "gray rocks on seashore during daytime"
+image: "https://images.unsplash.com/photo-1714976694229-20285bd38000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHBlcnNvbiUyMHJlZmxlY3RpbmclMjBxdWlldGx5JTIwaW4lMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMHdhcm0lMjBjb252ZXJzYXRpb258ZW58MXwwfHx8MTc4NTg0NzU1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to another woman"
+cardImage: "https://images.unsplash.com/photo-1714976694229-20285bd38000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx0aGVyYXBpc3QlMjBhbmQlMjBjbGllbnQlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMHBlcnNvbiUyMHJlZmxlY3RpbmclMjBxdWlldGx5JTIwaW4lMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMHdhcm0lMjBjb252ZXJzYXRpb258ZW58MXwwfHx8MTc4NTg0NzU1N3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to another woman"
 ---
 
 Most people picture therapy as a series of emotional peaks. A moment of realization. Tears, maybe. A therapist saying something so precise it reorganizes your whole week. That does happen sometimes. But if you've been in therapy for more than a few months, you've probably also had sessions that felt... unremarkable. You talked about your week. Nothing clicked. You left not totally sure what you accomplished.
