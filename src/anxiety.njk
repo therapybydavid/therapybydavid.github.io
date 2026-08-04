@@ -238,25 +238,30 @@ eleventyExcludeFromCollections: true
       justify-self: center; align-self: center;
       width: 150px; height: 150px; border-radius: 50%;
       display: grid; place-items: center; text-align: center;
-      background: radial-gradient(circle at 50% 50%, rgba(216,184,102,.17), rgba(216,184,102,.045) 72%);
-      border: 1.5px solid rgba(216,184,102,.85);
-      box-shadow: 0 0 48px rgba(216,184,102,.22), inset 0 0 28px rgba(216,184,102,.07);
+      background: radial-gradient(circle at 50% 50%, rgba(216,184,102,.28), rgba(216,184,102,.06) 72%);
+      border: 1.5px solid rgba(216,184,102,.95);
+      box-shadow: 0 0 96px rgba(216,184,102,.34), 0 0 32px rgba(216,184,102,.3), inset 0 0 32px rgba(216,184,102,.11);
       font-family: var(--serif); font-size: 25px; color: var(--champagne); letter-spacing: -.02em;
     }
     .hub-core { grid-column: 2; grid-row: 1 / span 2; }
-    .hub-core::before {
+    .hub-core::before, .hub-core::after {
       content: ''; position: absolute; inset: -2px; border-radius: 50%;
-      border: 1px solid rgba(216,184,102,.6);
-      animation: hubPulse 4.8s cubic-bezier(.25,.6,.35,1) infinite;
+      border: 1px solid rgba(216,184,102,.75);
+      animation: hubPulse 5.2s cubic-bezier(.25,.6,.35,1) infinite;
       pointer-events: none;
     }
+    .hub-core::after { animation-delay: 2.6s; }
     @keyframes hubPulse {
-      0%   { transform: scale(1);    opacity: .6; }
-      75%  { opacity: 0; }
-      100% { transform: scale(1.32); opacity: 0; }
+      0%   { transform: scale(1);    opacity: .8; }
+      78%  { opacity: 0; }
+      100% { transform: scale(1.46); opacity: 0; }
     }
+    .hub-lines line { stroke-dasharray: 5 7; animation: hubFlow 4s linear infinite; }
+    @keyframes hubFlow { to { stroke-dashoffset: -24; } }
     @media (prefers-reduced-motion: reduce) {
-      .hub-core::before { animation: none; opacity: .45; transform: none; }
+      .hub-core::before { animation: none; opacity: .5; transform: none; }
+      .hub-core::after { display: none; }
+      .hub-lines line { animation: none; stroke-dasharray: none; }
     }
     .hub-n1 { grid-column: 1; grid-row: 1; }
     .hub-n2 { grid-column: 3; grid-row: 1; }
