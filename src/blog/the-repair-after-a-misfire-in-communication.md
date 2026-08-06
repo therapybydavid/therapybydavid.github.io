@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Most communication advice focuses on getting it right. Here's why learning to repair after a misfire matters just as much — and how to do it well."
 cardDate: "August 6, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758524944669-8194fae9813e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjByZWNvbmNpbGluZyUyMGFmdGVyJTIwYXJndW1lbnQlMjB0d28lMjBwZW9wbGUlMjB0YWxraW5nJTIwc2VyaW91c2x5JTIwb24lMjBjb3VjaCUyMHdvbWFuJTIwY29tZm9ydGluZyUyMHBhcnRuZXIlMjBjb252ZXJzfGVufDF8MHx8fDE3ODYwMTQxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Couple arguing while sitting on a couch."
+cardImage: "https://images.unsplash.com/photo-1758524944669-8194fae9813e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjByZWNvbmNpbGluZyUyMGFmdGVyJTIwYXJndW1lbnQlMjB0d28lMjBwZW9wbGUlMjB0YWxraW5nJTIwc2VyaW91c2x5JTIwb24lMjBjb3VjaCUyMHdvbWFuJTIwY29tZm9ydGluZyUyMHBhcnRuZXIlMjBjb252ZXJzfGVufDF8MHx8fDE3ODYwMTQxMDF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Couple arguing while sitting on a couch."
 ---
 
 Most advice about communication is really advice about prevention — use "I" statements, pick the right time, don't bring it up when you're tired. All of that has value. But it assumes the conversation can be steered perfectly if you just say the right words in the right order.
