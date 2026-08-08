@@ -19,10 +19,10 @@ cardTag: "Parenting"
 cardDescription: "Losing your temper over small things isn't about being a bad parent. It's often a nervous system with nothing left to give."
 cardDate: "August 5, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1629976532523-6203073f9fd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxmcnVzdHJhdGVkJTIwbW90aGVyJTIwd2l0aCUyMGNoaWxkcmVuJTIwYXQlMjBob21lJTIwcGFyZW50JTIwdGFraW5nJTIwZGVlcCUyMGJyZWF0aCUyMHdpdGglMjBraWRzJTIwb3ZlcndoZWxtZWQlMjBwYXJ8ZW58MXwwfHx8MTc4NjAyMDE4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "girl in white t-shirt sitting on floor"
-cardImage: "https://images.unsplash.com/photo-1629976532523-6203073f9fd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxmcnVzdHJhdGVkJTIwbW90aGVyJTIwd2l0aCUyMGNoaWxkcmVuJTIwYXQlMjBob21lJTIwcGFyZW50JTIwdGFraW5nJTIwZGVlcCUyMGJyZWF0aCUyMHdpdGglMjBraWRzJTIwb3ZlcndoZWxtZWQlMjBwYXJ8ZW58MXwwfHx8MTc4NjAyMDE4Nnww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "girl in white t-shirt sitting on floor"
+image: "https://images.unsplash.com/photo-1615105743129-aed06043f3e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxmcnVzdHJhdGVkJTIwbW90aGVyJTIwd2l0aCUyMGNoaWxkcmVuJTIwYXQlMjBob21lJTIwcGFyZW50JTIwdGFraW5nJTIwZGVlcCUyMGJyZWF0aCUyMHdpdGglMjBraWRzJTIwbW90aGVyJTIwY29tZm9ydGluZyUyMGNoaWxkJTIwYWZ0ZXJ8ZW58MXwwfHx8MTc4NjE5NzkxMHww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in white long sleeve shirt carrying baby in red sweater"
+cardImage: "https://images.unsplash.com/photo-1615105743129-aed06043f3e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxmcnVzdHJhdGVkJTIwbW90aGVyJTIwd2l0aCUyMGNoaWxkcmVuJTIwYXQlMjBob21lJTIwcGFyZW50JTIwdGFraW5nJTIwZGVlcCUyMGJyZWF0aCUyMHdpdGglMjBraWRzJTIwbW90aGVyJTIwY29tZm9ydGluZyUyMGNoaWxkJTIwYWZ0ZXJ8ZW58MXwwfHx8MTc4NjE5NzkxMHww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in white long sleeve shirt carrying baby in red sweater"
 ---
 
 You told yourself you weren't going to yell today. And then your kid drops a cup, or asks the same question for the fifth time, or takes twenty minutes to put on shoes, and something in you goes off before you've even decided to react.
