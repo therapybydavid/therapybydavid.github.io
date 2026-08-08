@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Not every disagreement has a resolution. Learn the difference between solvable and perpetual problems—and why that distinction changes how you fight."
 cardDate: "August 8, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758522485066-be71f3486e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMGNvdXBsZSUyMGhhdmluZyUyMGRlZXAlMjBjb252ZXJzYXRpb24lMjBhdCUyMGhvbWUlMjB0d28lMjBwZW9wbGUlMjB0YWxraW5nJTIwY2FsbWx5JTIwYXQlMjB0YWJsZXxlbnwxfDB8fHwxNzg2MTg2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Couple sharing a morning moment in the kitchen."
+cardImage: "https://images.unsplash.com/photo-1758522485066-be71f3486e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB0YWxraW5nJTIwb24lMjBjb3VjaCUyMGNvdXBsZSUyMGhhdmluZyUyMGRlZXAlMjBjb252ZXJzYXRpb24lMjBhdCUyMGhvbWUlMjB0d28lMjBwZW9wbGUlMjB0YWxraW5nJTIwY2FsbWx5JTIwYXQlMjB0YWJsZXxlbnwxfDB8fHwxNzg2MTg2OTE5fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Couple sharing a morning moment in the kitchen."
 ---
 
 Most people walk into conflict assuming there's a finish line. Say the right thing, understand each other clearly enough, and eventually the disagreement will resolve. When it doesn't, couples often conclude something is wrong with them, with their partner, or with the relationship itself.
