@@ -19,10 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "People-pleasing often gets mistaken for kindness. Here's how to tell the difference — and what it costs you when the two get confused."
 cardDate: "August 7, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1714978444498-4a5cc5953055?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHNldHRpbmclMjBib3VuZGFyeSUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMGZlZWxpbmclMjByZWxpZXZlZCUyMHNtaWxpbmclMjBhbG9uZSUyMGZyaWVuZHMlMjB0YWxraW5nJTIwaG9uZXN0fGVufDF8MHx8fDE3ODYxMDIzMDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a group of people sitting around a living room"
-cardImage: "https://images.unsplash.com/photo-1714978444498-4a5cc5953055?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHNldHRpbmclMjBib3VuZGFyeSUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMGZlZWxpbmclMjByZWxpZXZlZCUyMHNtaWxpbmclMjBhbG9uZSUyMGZyaWVuZHMlMjB0YWxraW5nJTIwaG9uZXN0fGVufDF8MHx8fDE3ODYxMDIzMDl8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a group of people sitting around a living room"
+image: "https://images.unsplash.com/photo-1758525226304-bde3a91d3de9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNldHRpbmclMjBib3VuZGFyeSUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMHNtaWxpbmclMjBjb25maWRlbnRseSUyMGFsb25lJTIwZnJpZW5kcyUyMHRhbGtpbmclMjBzdXBwb3J0aXZlbHklMjBvdXRkfGVufDF8MHx8fDE3ODYxOTc5MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Two women talking at an outdoor cafe table."
+cardImage: "https://images.unsplash.com/photo-1758525226304-bde3a91d3de9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNldHRpbmclMjBib3VuZGFyeSUyMGNvbnZlcnNhdGlvbiUyMHBlcnNvbiUyMHNtaWxpbmclMjBjb25maWRlbnRseSUyMGFsb25lJTIwZnJpZW5kcyUyMHRhbGtpbmclMjBzdXBwb3J0aXZlbHklMjBvdXRkfGVufDF8MHx8fDE3ODYxOTc5MTJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Two women talking at an outdoor cafe table."
 ---
 
 Most people who struggle with people-pleasing don't think of themselves as people-pleasers. They think of themselves as easygoing. Low-maintenance. The friend who never causes drama, the employee who never pushes back, the partner who goes along with whatever the group decides. It reads as kindness, and for a long time it feels like kindness too.
