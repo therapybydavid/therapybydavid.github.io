@@ -19,10 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "People-pleasing often gets mistaken for kindness. Here's how to tell the difference — and what it costs you when the two get confused."
 cardDate: "August 7, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1783560626653-33d370e1851d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg2MjgxNzc0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Two people fishing by a scenic lake and distant forest."
-cardImage: "https://images.unsplash.com/photo-1783560626653-33d370e1851d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg2MjgxNzc0fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Two people fishing by a scenic lake and distant forest."
+image: "https://images.unsplash.com/photo-1782465686786-c4fb0954a7ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg2MjgyMTU3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Yellow boat on a calm river surrounded by green trees."
+cardImage: "https://images.unsplash.com/photo-1782465686786-c4fb0954a7ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8cHJvZmVzc2lvbmFsJTIwcGVyc29uJTIwY2FsbXxlbnwxfDB8fHwxNzg2MjgyMTU3fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Yellow boat on a calm river surrounded by green trees."
 ---
 
 Most people who struggle with people-pleasing don't think of themselves as people-pleasers. They think of themselves as easygoing. Low-maintenance. The friend who never causes drama, the employee who never pushes back, the partner who goes along with whatever the group decides. It reads as kindness, and for a long time it feels like kindness too.
