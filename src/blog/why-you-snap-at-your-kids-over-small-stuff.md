@@ -19,10 +19,10 @@ cardTag: "Parenting"
 cardDescription: "Losing your temper over small things isn't about being a bad parent. It's often a nervous system with nothing left to give."
 cardDate: "August 5, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1774485532647-e20cb1269336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODYyODE3NzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Two people rowing a small boat on the ocean."
-cardImage: "https://images.unsplash.com/photo-1774485532647-e20cb1269336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODYyODE3NzR8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Two people rowing a small boat on the ocean."
+image: "https://images.unsplash.com/photo-1758598737761-ca1bc67b5fbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZnJ1c3RyYXRlZCUyMG1vdGhlciUyMHdpdGglMjBjaGlsZHJlbiUyMGF0JTIwaG9tZSUyMHBhcmVudCUyMHRha2luZyUyMGRlZXAlMjBicmVhdGglMjB3aXRoJTIwY2hpbGQlMjBtb3RoZXIlMjBjb21mb3J0aW5nJTIwdXBzZXQlMjBjaGlsZHxlbnwxfDB8fHwxNzg2MjgyMTU3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Mother and son sitting together on a couch."
+cardImage: "https://images.unsplash.com/photo-1758598737761-ca1bc67b5fbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8ZnJ1c3RyYXRlZCUyMG1vdGhlciUyMHdpdGglMjBjaGlsZHJlbiUyMGF0JTIwaG9tZSUyMHBhcmVudCUyMHRha2luZyUyMGRlZXAlMjBicmVhdGglMjB3aXRoJTIwY2hpbGQlMjBtb3RoZXIlMjBjb21mb3J0aW5nJTIwdXBzZXQlMjBjaGlsZHxlbnwxfDB8fHwxNzg2MjgyMTU3fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Mother and son sitting together on a couch."
 ---
 
 You told yourself you weren't going to yell today. And then your kid drops a cup, or asks the same question for the fifth time, or takes twenty minutes to put on shoes, and something in you goes off before you've even decided to react.
