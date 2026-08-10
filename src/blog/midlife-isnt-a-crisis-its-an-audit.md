@@ -19,9 +19,9 @@ cardTag: "Mental Health"
 cardDescription: "The 'midlife crisis' is a cultural cliché. What's actually happening in midlife is quieter, more useful, and worth taking seriously."
 cardDate: "August 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2MzU5Njc5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2MzY0NDc1fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "green leafed tree surrounded by fog during daytime"
-cardImage: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2MzU5Njc5fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardImage: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2MzY0NDc1fDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "green leafed tree surrounded by fog during daytime"
 ---
 
