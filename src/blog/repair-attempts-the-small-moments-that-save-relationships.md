@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/repair-attempts-the-small-moments-that-save-relationships"
 canonical: "https://therapybydavid.com/blog/repair-attempts-the-small-moments-that-save-relationships"
 permalink: "/blog/repair-attempts-the-small-moments-that-save-relationships.html"
-date: 2026-08-11
+date: 2026-03-28
 order: 50
 tag: "Relationships"
-dateDisplay: "August 11, 2026 · 6 min read"
+dateDisplay: "March 28, 2026 · 6 min read"
 deck: "Long before an argument ends, someone usually tries to stop it — the question is whether anyone notices."
 cardTitle: "Repair Attempts: The Small Moments That Save Relationships (and Why We Miss Them)"
 cardTag: "Relationships"
 cardDescription: "A therapist explains repair attempts—the small bids to de-escalate conflict—and why couples so often miss them."
-cardDate: "August 11, 2026 · 6 min read"
+cardDate: "March 28, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1513267000941-598abe7be16f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODY0NDYwOTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "two person holding each other's hands"
