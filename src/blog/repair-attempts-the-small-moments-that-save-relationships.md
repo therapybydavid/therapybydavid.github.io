@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A therapist explains repair attempts—the small bids to de-escalate conflict—and why couples so often miss them."
 cardDate: "August 11, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1513267000941-598abe7be16f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODY0NDYwOTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "two person holding each other's hands"
+cardImage: "https://images.unsplash.com/photo-1513267000941-598abe7be16f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODY0NDYwOTd8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "two person holding each other's hands"
 ---
 
 Most couples don't fall apart because they fight. They fall apart because their attempts to stop fighting keep getting missed.
