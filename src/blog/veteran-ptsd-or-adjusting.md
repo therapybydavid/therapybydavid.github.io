@@ -113,7 +113,7 @@ Feeling cut off from people who love you. Losing interest in things that used to
 
 ### Hypervigilance and being permanently keyed up
 
-Always scanning. A startle response that won't settle. Irritability or anger that comes faster and harder than the situation calls for. Trouble concentrating. Sleep that never feels like rest. Your body is still running the threat program long after the threat is gone. I've written more about [why hypervigilance is so hard to switch off](veterans-hypervigilance.html) if that piece resonates most.
+Always scanning. A startle response that won't settle. Irritability or anger that comes faster and harder than the situation calls for. Trouble concentrating. Sleep that never feels like rest. Your body is still running the threat program long after the threat is gone. I've written more about [why hypervigilance is so hard to switch off](/blog/veterans-hypervigilance) if that piece resonates most.
 
 ## The two questions that actually settle it
 

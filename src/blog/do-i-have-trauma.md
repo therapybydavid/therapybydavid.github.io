@@ -109,7 +109,7 @@ The most overlooked form of trauma is the one defined by absence rather than by 
 
 Parents who were emotionally neglectful often weren't bad people. Many were doing their best with what they had. Some were managing their own depression, stress, or unprocessed history. Some came from families where emotions simply weren't discussed. Some were physically present but emotionally checked out. The result, from a child's perspective, is the same lesson: that emotions aren't welcome or important, that needing things is a burden, that you handle your inner life alone.
 
-This is exactly the experience that produces the "nothing bad happened" feeling. There's no event to remember, no clear wrongdoing to name. The family may have looked perfectly functional from the outside. But the absence of emotional presence shapes the nervous system, the attachment style, and the beliefs a person carries into every relationship — just as powerfully as a harmful event would. I've written more about how this plays out later in [childhood emotional neglect and adult relationships](childhood-neglect-relationships.html).
+This is exactly the experience that produces the "nothing bad happened" feeling. There's no event to remember, no clear wrongdoing to name. The family may have looked perfectly functional from the outside. But the absence of emotional presence shapes the nervous system, the attachment style, and the beliefs a person carries into every relationship — just as powerfully as a harmful event would. I've written more about how this plays out later in [childhood emotional neglect and adult relationships](/blog/childhood-neglect-relationships).
 
 ## Chronic Stress and Instability Count Too
 
