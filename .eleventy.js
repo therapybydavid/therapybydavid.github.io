@@ -37,9 +37,11 @@ module.exports = function (eleventyConfig) {
     if (fs.existsSync(p)) eleventyConfig.addPassthroughCopy({ [p]: p });
   });
 
-  // Blog posts, ordered to match the curated sequence from the original index.
+  // Blog posts, newest first. Every post carries a real `date:` in frontmatter
+  // (the agent stamps publish day), so new articles land at the top of /blog
+  // automatically. The old curated `order:` field is ignored.
   eleventyConfig.addCollection("posts", (api) =>
-    api.getFilteredByTag("blog").sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+    api.getFilteredByTag("blog").sort((a, b) => b.date - a.date)
   );
 
   // Parse a JSON string (e.g. the faqJson frontmatter) into an object so the
