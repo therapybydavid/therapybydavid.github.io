@@ -10,6 +10,19 @@ eleventyExcludeFromCollections: true
   <title>Veterans &amp; Military Therapist in Houston, TX | David Robles, LMSW</title>
   <meta name="description" content="Therapy for veterans &amp; military families in Houston (Clear Lake), TX &amp; statewide telehealth. Veteran-to-veteran work on PTSD, transition stress, and hypervigilance. David Robles, LMSW, U.S. Army veteran." />
   <link rel="canonical" href="https://therapybydavid.com/veterans-military-families">
+  <meta property="og:title" content="Veterans &amp; Military Therapist in Houston, TX" />
+  <meta property="og:description" content="Therapy for veterans &amp; military families in Houston (Clear Lake), TX &amp; statewide telehealth. Veteran-to-veteran work on PTSD, transition stress, and hypervigilance. David Robles, LMSW, U.S. Army veteran." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therapybydavid.com/veterans-military-families" />
+  <meta property="og:site_name" content="Therapy by David" />
+  <meta property="og:image" content="https://therapybydavid.com/images/og-card-v4.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Therapy by David" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Veterans &amp; Military Therapist in Houston, TX" />
+  <meta name="twitter:description" content="Therapy for veterans &amp; military families in Houston (Clear Lake), TX &amp; statewide telehealth. Veteran-to-veteran work on PTSD, transition stress, and hypervigilance. David Robles, LMSW, U.S. Army veteran." />
+  <meta name="twitter:image" content="https://therapybydavid.com/images/og-card-v4.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -173,6 +186,10 @@ eleventyExcludeFromCollections: true
     h3 { font-size: 25px; font-weight: 650; }
     .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
     .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .faq-list { display: grid; gap: 18px; margin-top: 44px; }
+    .faq-item { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: var(--radius); padding: 28px 32px; box-shadow: 0 18px 48px rgba(20,33,50,.06); }
+    .faq-item h3 { font-size: 20px; margin-bottom: 10px; color: var(--night); }
+    .faq-item p { font-size: 16px; line-height: 1.75; max-width: 82ch; }
     .prose p { font-size: 17px; line-height: 1.8; margin-bottom: 18px; }
     .prose a.inline-link { color: var(--gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     .dark-section .prose a.inline-link { color: var(--champagne); }
@@ -418,7 +435,7 @@ eleventyExcludeFromCollections: true
         <h1>Therapy for <em>Veterans &amp; Military Families</em></h1>
         <p class="lead">A direct, no-nonsense approach from a clinician who has worn the uniform. Serving veterans, service members, and their families across Texas, in person in Houston&#39;s Clear Lake area and statewide via telehealth.</p>
         <div class="button-row">
-          <a class="btn btn-gold" href="/intake.html">Book a Free 15-Minute Call</a>
+          <a class="btn btn-gold" href="/intake">Book a Free 15-Minute Call</a>
           <a class="btn btn-ghost" href="#what-we-do">What Therapy Looks Like</a>
         </div>
       </div>
@@ -552,13 +569,43 @@ eleventyExcludeFromCollections: true
     ] %}
     {% include "from-blog.njk" %}
 
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Questions veterans and families ask before starting.</h2>
+        <p class="section-lead">A few of the things people most often ask before reaching out.</p>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3>Do you work with veterans and military families in the Houston area?</h3>
+            <p>Yes. David Robles, LMSW, is a U.S. Army veteran and licensed psychotherapist who works with veterans, active and reserve service members, and their families. Sessions are available in person in the Clear Lake area of Houston, TX, and by telehealth anywhere in Texas.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>Is the therapist a veteran himself?</h3>
+            <p>Yes. David is a U.S. Army veteran. For many service members and veterans, working with a clinician who has worn the uniform means less time spent explaining military culture and more time on the work itself.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>What do veterans usually come to therapy for?</h3>
+            <p>Common reasons include combat and service-related stress, hypervigilance and sleep problems, the transition to civilian life, anger and irritability, moral injury and grief, and strain on marriage and family. You do not need a diagnosis or a specific reason to begin.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>How does payment work?</h3>
+            <p>David's private practice is self-pay, confirmed up front with no surprises. He is also affiliated with partner agencies, and that is the route where insurance applies. Reach out and we will sort out which route fits your situation before the first session.</p>
+          </div>
+          <div class="faq-item reveal">
+            <h3>Are telehealth sessions available across Texas?</h3>
+            <p>Yes. Telehealth is available to clients located anywhere in Texas. In-person sessions are held in the Clear Lake area of Houston, TX. As a Texas-licensed clinician, David sees clients who are physically located in Texas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="final-cta">
       <div class="container reveal">
         <span class="eyebrow">You Held The Line. Let Someone Hold It With You.</span>
         <h2>Take the first step on your terms.</h2>
         <p>A free 15-minute consultation is a low-pressure way to see if the fit is right. No commitment, no paperwork. Reach out by phone, email, or book online.</p>
         <div class="button-row" style="justify-content: center;">
-          <a class="btn btn-gold" href="/intake.html">Book a Free 15-Minute Call</a>
+          <a class="btn btn-gold" href="/intake">Book a Free 15-Minute Call</a>
           <a class="btn btn-ghost" href="contact.html">Contact David</a>
         </div>      </div>
     </section>

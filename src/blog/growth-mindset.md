@@ -169,4 +169,4 @@ If you recognized yourself in any of this — the resigned certainty, the patter
 
 That belief didn't come from nowhere, and it doesn't have to be the last word. If you're carrying it alongside anxiety, burnout, relationship patterns that keep repeating, or a general sense that nothing really changes no matter what you do, that's something we can work with together.
 
-I see clients via telehealth across Texas and in person in the Houston area. If you want to have a real conversation about what's going on — not a pitch, just a conversation — you can start with a [free 15-minute consultation](/intake.html).
+I see clients via telehealth across Texas and in person in the Houston area. If you want to have a real conversation about what's going on — not a pitch, just a conversation — you can start with a [free 15-minute consultation](/intake).

@@ -7,4 +7,4 @@
 # POSTs to the notification Worker, and the Worker is what creates the
 # Trello card and fires the SMS alert. Linking Calendly directly would
 # put the booking on the calendar with no card and no alert.
-/consult   /intake.html   302
+/consult   /intake   302
