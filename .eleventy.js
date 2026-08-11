@@ -28,6 +28,9 @@ module.exports = function (eleventyConfig) {
   // NOTE: the "blog" directory is intentionally excluded — Eleventy builds it.
   [
     "images", "analytics.js", "site.webmanifest", "robots.txt", "_headers", "_redirects",
+    // IndexNow ownership proof. Bing fetches this file to confirm we control the
+    // domain before accepting URL submissions; its contents must equal its name.
+    "3d9d1c44f4c79e3d15bcb945defc5033.txt",
     "david-robles-profile.jpeg",
     "david-robles-headshot.jpg", "david-robles-headshot.webp",
     "david-robles-headshot-360.webp", "david-robles-profile.webp",
