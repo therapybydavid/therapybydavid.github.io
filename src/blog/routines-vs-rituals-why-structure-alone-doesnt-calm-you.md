@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "A healthy routine and a calming ritual aren't the same thing. Here's the difference, and why it matters for anxiety, stress, and daily structure."
 cardDate: "August 12, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb258ZW58MXwwfHx8MTc4NjUzMjUyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "shallow focus photography of woman outdoor during day"
+cardImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb258ZW58MXwwfHx8MTc4NjUzMjUyMHww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "shallow focus photography of woman outdoor during day"
 ---
 
 Most advice about building healthy routines focuses on structure: wake up at the same time, exercise, plan your meals, go to bed by 10. This isn't bad advice. Structure matters. But a lot of people build a technically sound routine and still feel anxious, scattered, or braced for the day — because a routine and a ritual aren't the same thing, and only one of them actually calms the nervous system.
