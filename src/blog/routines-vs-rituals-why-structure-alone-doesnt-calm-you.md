@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "A healthy routine and a calming ritual aren't the same thing. Here's the difference, and why it matters for anxiety, stress, and daily structure."
 cardDate: "August 12, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2NTU4NjM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "gray rocks on seashore during daytime"
-cardImage: "https://images.unsplash.com/photo-1598826739205-d09823c3bc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2NTU4NjM5fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "gray rocks on seashore during daytime"
+image: "https://images.unsplash.com/photo-1652940113952-71e4eeca0539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsaWdodGluZyUyMGNhbmRsZSUyMG1vcm5pbmclMjByaXR1YWwlMjB3b21hbiUyMGpvdXJuYWxpbmclMjBjYWxtJTIwbW9ybmluZyUyMHJvdXRpbmUlMjBwZXJzb24lMjBwcmFjdGljaW5nJTIwY2FsbWluZ3xlbnwxfDB8fHwxNzg2NTU4NjUwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch reading a book"
+cardImage: "https://images.unsplash.com/photo-1652940113952-71e4eeca0539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBsaWdodGluZyUyMGNhbmRsZSUyMG1vcm5pbmclMjByaXR1YWwlMjB3b21hbiUyMGpvdXJuYWxpbmclMjBjYWxtJTIwbW9ybmluZyUyMHJvdXRpbmUlMjBwZXJzb24lMjBwcmFjdGljaW5nJTIwY2FsbWluZ3xlbnwxfDB8fHwxNzg2NTU4NjUwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch reading a book"
 ---
 
 Most advice about building healthy routines focuses on structure: wake up at the same time, exercise, plan your meals, go to bed by 10. This isn't bad advice. Structure matters. But a lot of people build a technically sound routine and still feel anxious, scattered, or braced for the day — because a routine and a ritual aren't the same thing, and only one of them actually calms the nervous system.
