@@ -31,6 +31,23 @@
 .prose blockquote { border-left: 3px solid var(--champagne); margin: 36px 0; padding: 20px 26px; background: rgba(216,184,102,.07); border-radius: 0 16px 16px 0; }
 .prose blockquote p { font-family: var(--serif); font-size: 20px; color: var(--night); line-height: 1.5; margin: 0; font-weight: 600; }
 
+/* In-body article images */
+.prose figure { margin: 40px 0; }
+.prose figure img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 14px 40px rgba(0,0,0,.13); display: block; }
+.prose figcaption { margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--muted); text-align: center; }
+
+/* "The short version" summary box */
+.prose .key-points { background: rgba(216,184,102,.08); border: 1px solid rgba(216,184,102,.28); border-radius: 20px; padding: 28px 32px; margin: 36px 0 44px; }
+.prose .key-points-label { display: block; font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--night); margin-bottom: 16px; }
+.prose .key-points ul { gap: 12px; margin: 0; }
+.prose .key-points ul li { background: none; border: 0; border-radius: 0; padding: 0 0 0 26px; font-size: 16px; line-height: 1.7; }
+.prose .key-points ul li::before { left: 4px; top: 10px; }
+
+@media (max-width: 700px) {
+  .prose .key-points { padding: 24px 22px; }
+  .prose figure { margin: 32px 0; }
+}
+
 .article-cta { background: var(--night); border-radius: var(--radius); padding: 48px; text-align: center; margin: 64px auto 0; max-width: var(--article-max); }
 .article-cta h3 { font-family: var(--serif); color: var(--white); font-size: 28px; margin-bottom: 14px; }
 .article-cta p { color: rgba(255,255,255,.68); font-size: 16px; margin: 0 auto 28px; max-width: 480px; }
