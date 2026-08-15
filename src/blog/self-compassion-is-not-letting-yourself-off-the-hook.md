@@ -19,6 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "Many people avoid self-compassion because they think it means lowering their standards. Here's why the opposite is usually true."
 cardDate: "August 15, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1526779259212-939e64788e3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODY3OTE3MzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man sitting on rock surrounded by water"
+cardImage: "https://images.unsplash.com/photo-1526779259212-939e64788e3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODY3OTE3MzB8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man sitting on rock surrounded by water"
 ---
 
 A lot of people who could benefit most from self-compassion won't go near it. Not because they haven't heard of it, but because they've decided what it means — and what it means, to them, is letting themselves off the hook.
