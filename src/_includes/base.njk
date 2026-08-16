@@ -22,7 +22,9 @@
      blog index are unaffected. #}
   {% if ogType == "article" %}
   <meta property="article:published_time" content="{{ page.date | dateISO }}" />
-  <meta property="article:modified_time" content="{{ (dateModified or page.date) | dateISO }}" />
+  {# Same resolution order as the BlogPosting dateModified in post.njk, so the
+     two can never disagree about when the article last changed. #}
+  <meta property="article:modified_time" content="{{ (dateModified or (page.inputPath | gitLastmod) or page.date) | dateISO }}" />
   {% if tag %}<meta property="article:section" content="{{ tag }}" />{% endif %}
   <meta property="article:author" content="https://therapybydavid.com/about" />
   {% endif %}
