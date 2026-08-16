@@ -53,7 +53,7 @@ schemaJson: |
       <div class="blog-grid">
         {%- for post in collections.posts %}
         <article class="post-card reveal">
-          <a href="{{ post.url }}"><img class="post-card-image" src="{{ post.data.cardImage }}" alt="{{ post.data.cardAlt }}" /></a>
+          <a href="{{ post.url | cleanUrl }}"><img class="post-card-image" src="{{ post.data.cardImage }}" alt="{{ post.data.cardAlt }}" width="552" height="210" decoding="async"{% if loop.index > 4 %} loading="lazy"{% endif %} /></a>
           <div class="post-card-body">
             <div class="post-meta">
               <span class="tag">{{ post.data.cardTag }}</span>
@@ -61,7 +61,9 @@ schemaJson: |
             </div>
             <h2>{{ post.data.cardTitle }}</h2>
             <p>{{ post.data.cardDescription }}</p>
-            <a class="read-link" href="{{ post.url }}">Read article</a>
+            {# The visible label stays "Read article". The hidden span gives crawlers and
+               screen readers the topical anchor text without changing the card design. #}
+            <a class="read-link" href="{{ post.url | cleanUrl }}">Read article<span class="sr-only">: {{ post.data.cardTitle }}</span></a>
           </div>
         </article>
         {%- endfor %}

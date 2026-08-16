@@ -16,3 +16,22 @@
 # never shown on a page, so keep it out of image search too.
 /images/og-card-v4.png
   X-Robots-Tag: noindex
+
+# Internal preview pages. These are kept out of the index with a header rather
+# than a robots.txt Disallow: a disallowed URL is never fetched, so the crawler
+# can never read a noindex on it and the bare URL can still be listed. A header
+# is fetched and obeyed. mailchimp-campaign.html is a raw email fragment with no
+# <head>, so a header is the only way to mark it at all.
+/email-preview
+  X-Robots-Tag: noindex, nofollow
+/report-preview
+  X-Robots-Tag: noindex, nofollow
+/mailchimp-campaign
+  X-Robots-Tag: noindex, nofollow
+
+# Fingerprint-free static assets. A week of browser caching with revalidation
+# keeps repeat visits cheap without risking a stale stylesheet after a deploy.
+/assets/*
+  Cache-Control: public, max-age=604800, must-revalidate
+/images/*
+  Cache-Control: public, max-age=2592000

@@ -1,0 +1,35 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+{#- Atom feed for the blog. Referenced from every page via the
+    <link rel="alternate"> tag in _includes/base.njk, so feed readers and
+    aggregators can discover it. Entries carry summaries, not full text. -#}
+{%- set newest = collections.posts[0] -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Therapy by David · Articles</title>
+  <subtitle>Practical writing on anxiety, trauma, burnout, men's mental health, and what therapy actually looks like. By David Robles, LMSW.</subtitle>
+  <link href="https://therapybydavid.com/feed.xml" rel="self"/>
+  <link href="https://therapybydavid.com/blog"/>
+  <updated>{{ (newest.data.dateModified or (newest.inputPath | gitLastmod) or newest.date) | dateISO }}T00:00:00Z</updated>
+  <id>https://therapybydavid.com/blog</id>
+  <author>
+    <name>David Robles, LMSW</name>
+    <uri>https://therapybydavid.com/about</uri>
+  </author>
+  <rights>© {{ newest.date.getFullYear() }} Therapy by David. All rights reserved.</rights>
+{%- for post in collections.posts %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ post.data.canonical }}"/>
+    <id>{{ post.data.canonical }}</id>
+    <published>{{ post.date | dateISO }}T00:00:00Z</published>
+    <updated>{{ (post.data.dateModified or (post.inputPath | gitLastmod) or post.date) | dateISO }}T00:00:00Z</updated>
+    {%- if post.data.tag %}
+    <category term="{{ post.data.tag }}"/>
+    {%- endif %}
+    <summary type="text">{{ post.data.description }}</summary>
+  </entry>
+{%- endfor %}
+</feed>

@@ -2,138 +2,64 @@
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
+{#- Static pages. `src` is the file the page is built from, so <lastmod> comes
+    from that file's last commit instead of a hand-typed date that goes stale the
+    moment the page is edited. `fallback` is used only when git is unavailable or
+    the checkout is shallow (see GIT_USABLE in .eleventy.js), so a CI build can
+    never stamp every URL with the deploy date. -#}
+{%- set staticPages = [
+  { loc: "/",                          src: "src/index.njk",                      freq: "weekly",  pri: "1.0", fallback: "2026-08-11" },
+  { loc: "/about",                     src: "src/about.njk",                      freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/contact",                   src: "src/contact.njk",                    freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/resources",                 src: "src/resources.njk",                  freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/veterans-military-families", src: "src/veterans-military-families.njk", freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/mens-mental-health",        src: "src/mens-mental-health.njk",         freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/couples-therapy",           src: "src/couples-therapy.njk",            freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/anxiety-therapy",           src: "src/anxiety-therapy.njk",            freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/depression-therapy",        src: "src/depression-therapy.njk",         freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/first-responders",          src: "src/first-responders.njk",           freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/burnout-overthinking",      src: "src/burnout-overthinking.njk",       freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/trauma-therapy",            src: "src/trauma-therapy.njk",             freq: "monthly", pri: "0.9", fallback: "2026-08-11" },
+  { loc: "/depression",                src: "src/depression.njk",                 freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/anxiety",                   src: "src/anxiety.njk",                    freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/trauma",                    src: "src/trauma.njk",                     freq: "monthly", pri: "0.8", fallback: "2026-08-11" },
+  { loc: "/refer",                     src: "src/refer.njk",                      freq: "monthly", pri: "0.7", fallback: "2026-08-11" },
+  { loc: "/start-here",                src: "src/start-here.njk",                 freq: "monthly", pri: "0.5", fallback: "2026-08-11" },
+  { loc: "/join",                      src: "join.html",                          freq: "monthly", pri: "0.5", fallback: "2026-07-29" },
+  { loc: "/privacy",                   src: "src/privacy.njk",                    freq: "yearly",  pri: "0.3", fallback: "2026-08-11" },
+  { loc: "/sms-terms",                 src: "src/sms-terms.njk",                  freq: "yearly",  pri: "0.3", fallback: "2026-08-11" }
+] -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in staticPages %}
+{%- set gitDate = p.src | gitLastmod %}
   <url>
-    <loc>https://therapybydavid.com/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://therapybydavid.com{{ p.loc }}</loc>
+    <lastmod>{{ gitDate if gitDate else p.fallback }}</lastmod>
+    <changefreq>{{ p.freq }}</changefreq>
+    <priority>{{ p.pri }}</priority>
   </url>
-  <url>
-    <loc>https://therapybydavid.com/about</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/contact</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/resources</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+{%- endfor %}
+{#- /blog changes every time a post publishes. Post frontmatter dates are
+    deliberately backdated on this site, so the newest `date:` is not a
+    freshness signal; take the newest commit across the post sources instead.
+    ISO dates sort chronologically as plain strings. -#}
+{%- set blogMod = "src/blog.njk" | gitLastmod %}
+{%- for post in collections.posts %}
+{%- set pd = post.inputPath | gitLastmod %}
+{%- if pd > blogMod %}{% set blogMod = pd %}{% endif %}
+{%- endfor %}
   <url>
     <loc>https://therapybydavid.com/blog</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/veterans-military-families</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>{{ blogMod if blogMod else (collections.posts[0].date | dateISO) }}</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/mens-mental-health</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/couples-therapy</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/anxiety-therapy</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/depression-therapy</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/first-responders</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/burnout-overthinking</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/trauma-therapy</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/depression</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/anxiety</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/trauma</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/refer</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/start-here</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/join</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/privacy</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://therapybydavid.com/sms-terms</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 {%- for post in collections.posts %}
+{%- set postMod = post.data.dateModified or (post.inputPath | gitLastmod) or post.date %}
   <url>
     <loc>{{ post.data.canonical }}</loc>
-    <lastmod>{{ post.date | dateISO }}</lastmod>
+    <lastmod>{{ postMod | dateISO }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -4,17 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ pageTitle or title }}</title>
-  <meta name="description" content="{{ description }}" />
+  {% if description or deck %}<meta name="description" content="{{ description or deck }}" />{% endif %}
   <meta name="keywords" content="{{ keywords or 'therapist Houston Texas, therapy Clear Lake Houston TX, anxiety therapy Texas, trauma therapy Houston, telehealth therapy Texas, David Robles LMSW' }}" />
   <meta name="geo.region" content="US-TX" />
   <meta name="geo.placename" content="Houston, Texas" />
   <meta name="geo.position" content="29.5530;-95.0981" />
   <meta name="ICBM" content="29.5530, -95.0981" />
-  {% if ogTitle %}<meta property="og:title" content="{{ ogTitle }}" />{% endif %}
-  {% if ogDescription %}<meta property="og:description" content="{{ ogDescription }}" />{% endif %}
+  {% set ogTitleOut = ogTitle or pageTitle or title %}
+  {% set ogDescOut = ogDescription or description or deck %}
+  {% set canonicalOut = canonical or ("https://therapybydavid.com" + (page.url | cleanUrl)) %}
+  {% if ogTitleOut %}<meta property="og:title" content="{{ ogTitleOut }}" />{% endif %}
+  {% if ogDescOut %}<meta property="og:description" content="{{ ogDescOut }}" />{% endif %}
   {% if ogType %}<meta property="og:type" content="{{ ogType }}" />{% endif %}
-  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}" />{% endif %}
-  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  <meta property="og:url" content="{{ ogUrl or canonicalOut }}" />
+  <meta property="og:locale" content="en_US" />
+  {# Article-level Open Graph. Only rendered on posts, so service pages and the
+     blog index are unaffected. #}
+  {% if ogType == "article" %}
+  <meta property="article:published_time" content="{{ page.date | dateISO }}" />
+  <meta property="article:modified_time" content="{{ (dateModified or page.date) | dateISO }}" />
+  {% if tag %}<meta property="article:section" content="{{ tag }}" />{% endif %}
+  <meta property="article:author" content="https://therapybydavid.com/about" />
+  {% endif %}
+  {# A canonical is never optional: fall back to this page's own URL rather than
+     emitting nothing, which would leave the URL open to duplicate-content splits. #}
+  <link rel="canonical" href="{{ canonicalOut }}">
   {% if schemaJson %}<script type="application/ld+json">
   {{ schemaJson | safe }}
   </script>{% endif %}
@@ -39,13 +53,24 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
   <link rel="stylesheet" href="/assets/core.css">
   {% if pageStyles %}<link rel="stylesheet" href="/assets/{{ pageStyles }}">{% endif %}
+  <link rel="alternate" type="application/atom+xml" title="Therapy by David · Articles" href="/feed.xml">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+  {# The blog index pulls ~48 card images from the Unsplash CDN. Starting the
+     handshake early keeps it off the critical path. #}
+  {% if page.url == "/blog.html" %}<link rel="preconnect" href="https://images.unsplash.com" crossorigin>{% endif %}
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#080b10">
+  {# Calendly is render-blocking third-party weight. Only load it on pages that
+     actually embed a widget — set `calendly: true` in that page's frontmatter.
+     Blog posts and the blog index embed nothing, so they no longer pay for it. #}
+  {% if calendly %}
+  <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  {% endif %}
   <script src="/analytics.js" defer></script>
 </head>
 <body>

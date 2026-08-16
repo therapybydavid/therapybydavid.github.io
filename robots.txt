@@ -1,10 +1,12 @@
 User-agent: *
 Allow: /
 
-# Block preview/internal pages
-Disallow: /email-preview
-Disallow: /report-preview
-Disallow: /mailchimp-campaign
+# Admin surfaces only. Everything else that should stay out of the index uses a
+# `noindex` meta tag instead of a Disallow: a disallowed URL is never fetched, so
+# Google cannot read the noindex on it and will still list the bare URL if anyone
+# links to it. The preview pages (/email-preview, /report-preview,
+# /mailchimp-campaign) each carry their own noindex and are deliberately NOT
+# listed here so that directive is actually readable.
 Disallow: /admin/
 
 Sitemap: https://therapybydavid.com/sitemap.xml

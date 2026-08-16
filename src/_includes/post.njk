@@ -36,16 +36,19 @@ layout: base.njk
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ title | dump | safe }},
-  "description": {{ description | dump | safe }},
+  {# Every interpolation is guarded. An undefined value renders as an empty
+     string, which would emit a bare `,` and silently invalidate the whole
+     block — the build would still succeed and Google would drop the markup. #}
+  "headline": {{ (title or "Therapy by David") | dump | safe }},
+  "description": {{ (description or deck or title or "") | dump | safe }},
   {% if schemaImage %}"image": {{ schemaImage | dump | safe }},{% endif %}
-  "url": {{ canonical | dump | safe }},
-  "mainEntityOfPage": {"@type": "WebPage", "@id": {{ canonical | dump | safe }}},
+  "url": {{ (canonical or ("https://therapybydavid.com" + (page.url | cleanUrl))) | dump | safe }},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": {{ (canonical or ("https://therapybydavid.com" + (page.url | cleanUrl))) | dump | safe }}},
   "datePublished": "{{ page.date | dateISO }}",
-  "dateModified": "{{ page.date | dateISO }}",
+  "dateModified": "{{ (dateModified or (page.inputPath | gitLastmod) or page.date) | dateISO }}",
   "wordCount": {{ content | wordCount }},
   "inLanguage": "en-US",
-  "articleSection": {{ tag | dump | safe }},
+  {% if tag %}"articleSection": {{ tag | dump | safe }},{% endif %}
   "author": {
     "@type": "Person",
     "name": "David Robles",
@@ -70,10 +73,11 @@ layout: base.njk
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://therapybydavid.com/blog"},
-    {"@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}}
+    {"@type": "ListItem", "position": 3, "name": {{ (title or "Article") | dump | safe }}}
   ]
 }
 </script>
+<article>
 <header class="article-hero">
   <div class="container">
     <a href="/blog" class="back-link">All Articles</a>
@@ -95,7 +99,9 @@ layout: base.njk
 
 {% if image %}
 <div class="featured-image">
-  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1400" height="630" loading="eager" />
+  {# LCP element on desktop. fetchpriority tells the browser to start it ahead of
+     the other subresources instead of at default priority. #}
+  <img src="{{ image }}" alt="{{ imageAlt or title }}" width="1400" height="630" loading="eager" fetchpriority="high" decoding="async" />
 </div>
 {% endif %}
 
@@ -135,22 +141,51 @@ layout: base.njk
   "Veterans": ["/veterans-military-families", "Therapy for veterans & military families"],
   "Men's Mental Health": ["/mens-mental-health", "Men's mental health"],
   "Relationships": ["/couples-therapy", "Couples & relationship therapy"],
-  "Getting Started": ["/book", "Book a free 15-minute consultation"],
+  "Getting Started": ["/book/", "Book a free 15-minute consultation"],
   "First Responders": ["/first-responders", "Therapy for first responders"],
-  "Mental Health": ["/book", "Book a free 15-minute consultation"],
-  "Grief": ["/trauma-therapy", "Grief and trauma therapy in Texas"]
+  "Mental Health": ["/contact", "Talk with a therapist in Texas"],
+  "Grief": ["/trauma-therapy", "Grief and trauma therapy in Texas"],
+  "Self-Worth": ["/depression-therapy", "Therapy for self-worth and depression in Texas"]
 } %}
 {% set service = serviceMap[tag] %}
+{# Ring selection: each post links to the four posts that FOLLOW it within its own
+   tag, wrapping around. The old version took the newest four in the tag for every
+   post, so in a 15-post tag the same four collected every link and ten posts got
+   none. This gives every post in a tag roughly four inbound links. #}
+{% set sameTag = [] %}
+{% for post in collections.posts %}
+  {% if post.data.tag == tag %}{% set _ = sameTag.push(post) %}{% endif %}
+{% endfor %}
+{% set tIdx = [] %}
+{% for p in sameTag %}
+  {% if p.url == page.url %}{% set _ = tIdx.push(loop.index0) %}{% endif %}
+{% endfor %}
+{% set myTagIndex = tIdx[0] or 0 %}
+{% set gIdx = [] %}
+{% for p in collections.posts %}
+  {% if p.url == page.url %}{% set _ = gIdx.push(loop.index0) %}{% endif %}
+{% endfor %}
+{% set myGlobalIndex = gIdx[0] or 0 %}
+
 {% set related = [] %}
-{% for post in collections.posts %}
-  {% if post.data.tag == tag and post.url != page.url %}{% set _ = related.push(post) %}{% endif %}
+{% set takenUrls = [page.url] %}
+{# Three from the tag ring, so the links stay topically relevant. #}
+{% for i in range(1, 4) %}
+  {% if i < sameTag.length %}
+    {% set c = sameTag[(myTagIndex + i) % sameTag.length] %}
+    {% if c.url not in takenUrls %}{% set _ = related.push(c) %}{% set _ = takenUrls.push(c.url) %}{% endif %}
+  {% endif %}
 {% endfor %}
-{# Fallback for single-post tags: fill from the broader pool so every post links out #}
-{% if related.length == 0 %}
-{% for post in collections.posts %}
-  {% if post.url != page.url and related.length < 4 %}{% set _ = related.push(post) %}{% endif %}
+{# The fourth slot always comes from the GLOBAL ring. Because every post fills
+   this slot with its own successor in collections.posts, every post is some
+   other post's successor, so no post can end up with zero inbound links. This
+   also covers tags that only have one post in them. #}
+{% for i in range(1, 10) %}
+  {% if related.length < 4 %}
+    {% set c = collections.posts[(myGlobalIndex + i) % collections.posts.length] %}
+    {% if c.url not in takenUrls %}{% set _ = related.push(c) %}{% set _ = takenUrls.push(c.url) %}{% endif %}
+  {% endif %}
 {% endfor %}
-{% endif %}
 
 <aside class="related">
   {% if service %}
@@ -172,3 +207,4 @@ layout: base.njk
   {% endif %}
   <a class="related-all" href="/blog">Browse all articles &rarr;</a>
 </aside>
+</article>

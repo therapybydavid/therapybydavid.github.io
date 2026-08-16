@@ -1,4 +1,37 @@
 const fs = require("fs");
+const { execFileSync } = require("child_process");
+
+// --- Real last-modified dates, read from git ----------------------------
+// Sitemap <lastmod> and schema dateModified were previously hand-typed or
+// copied from the publish date, so every "freshness" signal the site sent
+// was wrong. These read the actual last commit that touched a file.
+
+function _git(args) {
+  try {
+    return execFileSync("git", args, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+  } catch (e) {
+    return "";
+  }
+}
+
+// A shallow checkout makes every file look like it was added in the tip
+// commit, which would stamp every URL with the deploy date — the same
+// fabricated freshness this is meant to remove. Refuse git dates entirely
+// in that case and let each caller fall back to its declared date.
+const GIT_USABLE = _git(["rev-parse", "--is-shallow-repository"]) === "false";
+
+const _gitDateCache = new Map();
+function gitLastmod(file) {
+  if (!GIT_USABLE || !file) return "";
+  const key = String(file);
+  if (_gitDateCache.has(key)) return _gitDateCache.get(key);
+  const out = _git(["log", "-1", "--format=%cs", "--", key]);
+  _gitDateCache.set(key, out);
+  return out;
+}
 
 module.exports = function (eleventyConfig) {
   // The shared stylesheet + Eleventy-managed assets.
@@ -59,6 +92,16 @@ module.exports = function (eleventyConfig) {
     String(html || "").replace(/<[^>]*>/g, " ").trim().split(/\s+/).filter(Boolean).length
   );
 
+  // Strip the .html extension from a built URL. Posts are written to
+  // /blog/<slug>.html but Cloudflare Pages serves them at /blog/<slug> and
+  // 308-redirects the .html form, so every internal link must use the
+  // extensionless URL or each crawl costs an extra hop to a non-canonical URL.
+  eleventyConfig.addFilter("cleanUrl", (u) => String(u || "").replace(/\.html$/, ""));
+
+  // Last commit date for a file, as YYYY-MM-DD. Empty string when git is
+  // unavailable or the checkout is shallow, so templates can fall back.
+  eleventyConfig.addFilter("gitLastmod", gitLastmod);
+
   // Date helpers — written by hand so the build needs no extra dependencies.
   eleventyConfig.addFilter("dateISO", (d) => new Date(d).toISOString().slice(0, 10));
 
@@ -69,6 +112,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (d) => {
     const dt = new Date(d);
     return `${months[dt.getUTCMonth()]} ${dt.getUTCDate()}, ${dt.getUTCFullYear()}`;
+  });
+
+  // Fail the build if any page emits unparseable JSON-LD. Without this the
+  // failure is invisible: a post missing one frontmatter field renders a
+  // normal-looking page, the build succeeds, and Google silently discards
+  // the whole structured-data block.
+  eleventyConfig.addTransform("validateJsonLd", function (content) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+    let m;
+    while ((m = re.exec(content))) {
+      try {
+        JSON.parse(m[1]);
+      } catch (e) {
+        throw new Error(
+          `Invalid JSON-LD in ${this.page.inputPath}: ${e.message}\n${m[1].slice(0, 300)}`
+        );
+      }
+    }
+    return content;
   });
 
   return {
