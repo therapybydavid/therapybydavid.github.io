@@ -14,13 +14,13 @@ date: 2026-07-25
 order: 50
 tag: "Relationships"
 
-dateDisplay: "July 25, 2026 · 6 min read"
+dateDisplay: "July 25, 2026 · 7 min read"
 deck: "The word gets thrown at every difficult ex and every bad boss. Here's what it actually means, and what to do if you're the one living with the fallout."
 
 cardTitle: "Narcissist Is Not a Diagnosis: What NPD Actually Means"
 cardTag: "Relationships"
 cardDescription: "Narcissism is a trait. NPD is a disorder. The difference matters most to the people living closest to it. Here's how to tell them apart, and what actually helps."
-cardDate: "July 25, 2026 · 6 min read"
+cardDate: "July 25, 2026 · 7 min read"
 
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure, just a real conversation about what's going on and what support might help."
@@ -143,6 +143,32 @@ A few things actually help:
 **Get your own support.** Individual therapy gives you a place to see the pattern clearly and decide what you want, without someone rewriting the story in real time.
 
 One important caution: if there's abuse in the relationship, couples counseling is not the answer. It can make things more dangerous. The National Domestic Violence Hotline is available 24/7 at 1-800-799-7233 if you need to talk through your situation with someone trained in it.
+
+## What it does to the people around it
+
+If you've been close to someone with these patterns for a long time, the effects on you tend to be more predictable than the behavior that caused them.
+
+Self-trust goes first. When your account of events is regularly contradicted, and contradicted confidently, you start double-checking your own memory. People describe rehearsing conversations to make sure they'll get the details right, or keeping notes to reassure themselves later.
+
+Then decision-making gets harder, because you've spent so long anticipating someone else's reaction that your own preferences got quieter. Asked what you want, you check first what would go over well.
+
+Then your world shrinks. Not usually through explicit demands. It happens through the cost of things, the mood after seeing a certain friend, the fallout from a weekend away, until it just becomes easier not to.
+
+And there's the exhaustion of running a constant background calculation about what version of them you're getting today.
+
+Those effects don't require a diagnosis to be real, and they don't disappear the moment the relationship does. Most of the recovery work is about reversing them specifically: rebuilding trust in your own read on things, taking back decisions, and expanding the footprint of your life again.
+
+## What to do while you're still in it
+
+Whether you stay or leave is your call, and either way a few things help.
+
+**Keep an outside reference point.** One person who knows the whole picture and isn't in it. Isolation is what makes this hardest to see clearly.
+
+**Write things down.** Not to build a case, but because when your recollection gets challenged routinely, having your own record protects your sense of what happened.
+
+**Expect the pattern after boundaries.** Charm, escalation, or a period of unusually good behavior often follows a limit being set. Knowing that sequence in advance makes it much easier not to read it as change.
+
+**Notice your own baseline.** How much are you drinking, sleeping, eating? Those tend to shift before anyone consciously admits how much the relationship is costing.
 
 ## The bottom line
 

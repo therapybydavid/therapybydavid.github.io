@@ -2,9 +2,9 @@
 llmsDescription: "Better questions for real connection at home."
 title: "Why \"How Was Your Day\" Never Gets You Anywhere"
 pageTitle: "Why \"How Was Your Day\" Never Gets You Anywhere | Therapy by David"
-description: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you — it's the questions. A therapist's guide to what to ask instead."
+description: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you. It's the questions. A therapist's guide to what to ask instead."
 ogTitle: "Why \"How Was Your Day\" Never Gets You Anywhere"
-ogDescription: "Broad questions get broad answers. The problem usually isn't you — it's the questions. Here's what to ask instead."
+ogDescription: "Broad questions get broad answers. The problem usually isn't you. It's the questions. Here's what to ask instead."
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/better-questions-relationships"
 canonical: "https://therapybydavid.com/blog/better-questions-relationships"
@@ -13,17 +13,17 @@ date: 2026-05-29
 order: 14
 tag: "Relationships"
 dateDisplay: "May 29, 2026 · 7 min read"
-deck: "Broad questions get broad answers — every time. If the talking in your house has quietly shrunk down to logistics, the problem usually isn't you. It's the questions."
+deck: "Broad questions get broad answers, every time. If the talking in your house has quietly shrunk down to logistics, the problem usually isn't you. It's the questions."
 image: "/images/blog/better-questions-relationships.webp"
 imageAlt: "A couple sitting together in conversation"
 cardImage: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=800&q=80"
 cardAlt: "A couple sitting together in conversation"
 cardTitle: "Why \"How Was Your Day\" Never Gets You Anywhere"
 cardTag: "Relationships"
-cardDescription: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you — it's the questions. Here's what to ask instead."
+cardDescription: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you. It's the questions. Here's what to ask instead."
 cardDate: "May 29, 2026 · 7 min read"
 ctaHeading: "Want the conversation back?"
-ctaText: "Schedule a free 15-minute consultation. No pressure — just a real conversation about what's going on and what support might help."
+ctaText: "Schedule a free 15-minute consultation. No pressure, just a real conversation about what's going on and what support might help."
 faqJson: |
   {
       "@context": "https://schema.org",
@@ -65,7 +65,7 @@ faqJson: |
     }
 ---
 
-If the talking at home has shrunk to logistics and “how was your day,” it's usually not that you've stopped caring — it's that broad, autopilot questions can only produce broad, autopilot answers. Better connection starts with better questions: specific, curious ones that give the other person something real to actually answer.
+If the talking at home has shrunk to logistics and “how was your day,” it's usually not that you've stopped caring. It's that broad, autopilot questions can only produce broad, autopilot answers. Better connection starts with better questions: specific, curious ones that give the other person something real to actually answer.
 
 You ask your husband how his day was. He says fine. You ask your wife what she wants for dinner. She says I don't care. You ask the kids how school went. You get a shrug and a closed bedroom door.
 
@@ -81,7 +81,7 @@ Most of us learned to communicate by asking for information. Where were you. Who
 
 A good question is not an interrogation. It is an invitation. It tells the other person you actually want to hear from them, not just confirm a fact.
 
-And here is the part people miss: you usually have to put something of your own on the table first. If you walk in cold and start asking questions, you get defense. If you offer a little of yourself — a thought, an observation, something you noticed — the other person has room to step toward you instead of bracing against you.
+And here is the part people miss: you usually have to put something of your own on the table first. If you walk in cold and start asking questions, you get defense. If you offer a little of yourself, a thought, an observation, something you noticed, the other person has room to step toward you instead of bracing against you.
 
 ## What to ask instead
 
@@ -91,7 +91,7 @@ This is not about memorizing scripts. It is about trading the lazy default for s
 
 -   Instead of **"How was your day?"** try **"What was the most annoying part of your day?"** People answer specific questions. Vague ones get vague answers.
 -   Instead of **"How was work?"** try **"Did anything happen today worth complaining about?"** That gives them permission to actually vent.
--   Instead of **"How are you?"** try **"You seemed a little off this morning — what was that about?"** It shows you were paying attention.
+-   Instead of **"How are you?"** try **"You seemed a little off this morning, what was that about?"** It shows you were paying attention.
 
 ### Lead with an observation, not a question
 
@@ -103,7 +103,7 @@ This is not about memorizing scripts. It is about trading the lazy default for s
 
 -   Instead of **"Where were you?"** try **"Tell me about your night, I want to hear about it."**
 -   Instead of **"Why didn't you call?"** try **"I missed hearing from you today."**
--   Instead of **"Who were you with?"** try **"Sounds like a fun crowd — who all was there?"**
+-   Instead of **"Who were you with?"** try **"Sounds like a fun crowd, who all was there?"**
 
 ### Open the door, then give it room
 
@@ -117,6 +117,28 @@ Notice what all of these have in common. They are specific, they assume good int
 It feels small. It is not small. The couples who stay connected over the long haul are usually not the ones having dramatic heart-to-heart talks every night. They are the ones who keep asking each other questions that are worth answering, year after year, long after the easy version of the relationship wore off.
 
 You do not need a new personality to do this. You just need to stop asking the question you already know the answer to, and start asking the one you actually want to know.
+
+## When you get a one-word answer anyway
+
+Better questions do not work every time, and it helps to know what to do when one lands flat.
+
+The first move is to leave the silence alone. Most people fill a pause after about two seconds, usually by asking the question again in a worse form or by answering it themselves. A lot of good answers show up in second four.
+
+The second move is to lower the ask. If "what was the most annoying part of your day" gets you nothing, the person may be too tired to sort through the day at all. Something smaller works better: what they ate, who they saw, whether that guy at work did the thing again.
+
+The third is to not treat a short answer as a verdict. Some days a person has nothing available. That's information about the day, not about the relationship, and reacting to it as rejection is the fastest way to make the next question harder to answer.
+
+And a practical one: check when you're asking. Nobody gives a thoughtful answer while walking through the door, in front of the kids, or with a phone in their hand. Same question, twenty minutes later, often gets a completely different response.
+
+## When it isn't the questions
+
+Sometimes the questions get better and nothing opens up. That usually means the issue is upstream.
+
+People open up when they expect the answer to be received without a correction, a defense, or a lecture attached. If the last few honest answers turned into arguments, the person across from you has already learned what happens, and no rewording gets around that.
+
+If that's the situation, the useful work isn't finding a sharper question. It's what happens after someone answers. Can they say something unflattering about their day, or about you, without it becoming a bigger conversation than they signed up for?
+
+Most people can tell within a few seconds whether it's safe to say the real thing. That judgment gets made off of what happened last time, not off of how well the question was phrased.
 
 ## One more thing
 

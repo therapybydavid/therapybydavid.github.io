@@ -12,12 +12,12 @@ permalink: "/blog/online-vs-in-person-therapy.html"
 date: 2026-06-04
 order: 2
 tag: "Getting Started"
-dateDisplay: "June 4, 2026 · 7 min read"
-deck: "Both formats can do real work. The right choice isn't about which is \"better\" in the abstract — it's about what fits your life, your nervous system, and the kind of support you're actually looking for."
+dateDisplay: "June 4, 2026 · 8 min read"
+deck: "Both formats can do real work. The right choice isn't about which is \"better\" in the abstract. It's about what fits your life, your nervous system, and the kind of support you're actually looking for."
 cardTitle: "Online Therapy vs. In-Person: Which Is Right for You?"
 cardTag: "Getting Started"
-cardDescription: "Video or in-person? The research says online therapy works just as well for most things — but the right choice depends on you. Here's an honest side-by-side to help you decide."
-cardDate: "June 4, 2026 · 7 min read"
+cardDescription: "Video or in-person? The research says online therapy works just as well for most things, but the right choice depends on you. Here's an honest side-by-side to help you decide."
+cardDate: "June 4, 2026 · 8 min read"
 ctaHeading: "Not sure which fits you?"
 ctaText: "Schedule a free 15-minute consultation. We'll talk through what's going on, and whether online or in-person makes the most sense for you."
 faqJson: |
@@ -75,27 +75,27 @@ cardAlt: "Woman video calls couple on laptop outdoors."
 
 A decade ago, "going to therapy" meant one thing: driving to an office, sitting in a waiting room, then spending fifty minutes on a couch across from your therapist. Today you have a real choice. You can do that same work over a secure video call from your living room, your car on a lunch break, or a quiet corner of your home.
 
-The question I hear most often from people first reaching out is some version of: *Does online therapy actually work, or is it a watered-down version of the real thing?* It's a fair question. So let's walk through it honestly — how telehealth works, what the research says, what each format does well, and how to figure out which one fits you.
+The question I hear most often from people first reaching out is some version of: *Does online therapy actually work, or is it a watered-down version of the real thing?* It's a fair question. So let's walk through it honestly, how telehealth works, what the research says, what each format does well, and how to figure out which one fits you.
 
 ## How Online Therapy Actually Works
 
-Online therapy — also called telehealth or virtual therapy — is a regular therapy session held over a secure video link instead of in a physical office. There's no commute, no waiting room, and no special software to download. It works on any phone, tablet, or computer. At your appointment time, you click a link, your therapist appears, and you have the same kind of conversation you'd have in person.
+Online therapy, also called telehealth or virtual therapy, is a regular therapy session held over a secure video link instead of in a physical office. There's no commute, no waiting room, and no special software to download. It works on any phone, tablet, or computer. At your appointment time, you click a link, your therapist appears, and you have the same kind of conversation you'd have in person.
 
 The format itself is simple. What surprises most people is how quickly it stops feeling like a "video call" and starts feeling like therapy. After the first few minutes, the screen tends to fade into the background and you're just two people doing focused, honest work.
 
-The trade-off to be aware of is that some of the subtler body language a therapist reads in the room is harder to catch through a webcam, and the occasional dropped connection can interrupt a moment. In practice, these are minor and easily managed — but they're real, and worth naming.
+The trade-off to be aware of is that some of the subtler body language a therapist reads in the room is harder to catch through a webcam, and the occasional dropped connection can interrupt a moment. In practice, these are minor and easily managed, but they're real, and worth naming.
 
-It's also worth saying what online therapy is *not*. It isn't a chatbot, a text-message subscription, or a generic app that pairs you with a different counselor every week. When I talk about telehealth, I mean a scheduled, one-on-one video session with the same therapist each time — the only thing that's changed from the traditional model is the room you're sitting in. The relationship, the continuity, and the depth of the work are exactly the same.
+It's also worth saying what online therapy is *not*. It isn't a chatbot, a text-message subscription, or a generic app that pairs you with a different counselor every week. When I talk about telehealth, I mean a scheduled, one-on-one video session with the same therapist each time, the only thing that's changed from the traditional model is the room you're sitting in. The relationship, the continuity, and the depth of the work are exactly the same.
 
 ## What the Research Actually Says
 
 This is the part people most want reassurance on, and the evidence here is genuinely strong. A large and growing body of research shows that telehealth therapy is just as effective as in-person care for the most common reasons people seek help: anxiety, depression, and trauma.
 
-That finding holds up across study after study. What actually predicts whether therapy works isn't the delivery method — it's the quality of the relationship between you and your therapist, and the consistency of the work you do together. A strong, trusting connection over video beats a lukewarm one in a beautiful office every time.
+That finding holds up across study after study. What actually predicts whether therapy works isn't the delivery method. It's the quality of the relationship between you and your therapist, and the consistency of the work you do together. A strong, trusting connection over video beats a lukewarm one in a beautiful office every time.
 
 > "The screen isn't what makes therapy work or not work. The relationship is. The honesty is. The showing up week after week is."
 
-None of this means online therapy is right for everyone or every situation. It means the old assumption — that you have to be in the room for it to "count" — simply isn't supported by the evidence. For most people, the format is a logistics decision, not a clinical one.
+None of this means online therapy is right for everyone or every situation. It means the old assumption, that you have to be in the room for it to "count", simply isn't supported by the evidence. For most people, the format is a logistics decision, not a clinical one.
 
 ## Online vs. In-Person: A Side-by-Side Look
 
@@ -119,33 +119,33 @@ Here's an honest comparison of where each format tends to shine, so you can weig
 
 Strip away the logistics and it usually comes down to a few honest questions about your life right now.
 
-**Online therapy tends to suit you if** your schedule is full, you live far from a therapist who's a good fit, you have a private space at home, and you value being able to keep sessions consistent without rearranging your whole day. It's also a natural fit for high-functioning people whose biggest obstacle to getting help is simply *time* — the kind who would have skipped therapy entirely rather than add a commute to an already-overloaded week.
+**Online therapy tends to suit you if** your schedule is full, you live far from a therapist who's a good fit, you have a private space at home, and you value being able to keep sessions consistent without rearranging your whole day. It's also a natural fit for high-functioning people whose biggest obstacle to getting help is simply *time*, the kind who would have skipped therapy entirely rather than add a commute to an already-overloaded week.
 
-**In-person therapy tends to suit you if** you don't have reliable private space or internet, you're already worn out by screens, you're navigating an acute crisis, or you know yourself well enough to say that you need the ritual of physically leaving the house to take the work seriously. There's no shame in any of those — knowing how you operate is useful information.
+**In-person therapy tends to suit you if** you don't have reliable private space or internet, you're already worn out by screens, you're navigating an acute crisis, or you know yourself well enough to say that you need the ritual of physically leaving the house to take the work seriously. There's no shame in any of those, knowing how you operate is useful information.
 
 And for many people, the honest answer is that either format would work fine, and the deciding factor is just what makes it easier to show up week after week.
 
-One more thing worth saying: this isn't always a permanent choice. Plenty of people start online for the convenience and never feel a reason to switch. Others begin in person, then move to video once they're more comfortable and life gets busier. What matters isn't locking in the "right" format on day one — it's starting somewhere, then adjusting honestly as you learn how you do your best work.
+One more thing worth saying: this isn't always a permanent choice. Plenty of people start online for the convenience and never feel a reason to switch. Others begin in person, then move to video once they're more comfortable and life gets busier. What matters isn't locking in the "right" format on day one. It's starting somewhere, then adjusting honestly as you learn how you do your best work.
 
 ## Privacy and the Tech Basics
 
-A reasonable concern with online therapy is privacy, so it's worth being clear about it. Reputable therapists don't use ordinary consumer video apps — they use encrypted, HIPAA-compliant platforms built for healthcare. The connection between you and your therapist is protected.
+A reasonable concern with online therapy is privacy, so it's worth being clear about it. Reputable therapists don't use ordinary consumer video apps. They use encrypted, HIPAA-compliant platforms built for healthcare. The connection between you and your therapist is protected.
 
 The bigger privacy variable is actually on your end, and it's easy to manage:
 
--   Pick a space where you won't be overheard — a closed room, a parked car, anywhere with a door.
+-   Pick a space where you won't be overheard, a closed room, a parked car, anywhere with a door.
 -   Use headphones so only you hear your therapist's side of the conversation.
 -   Make sure your internet connection is reasonably stable; a phone hotspot works in a pinch.
 -   Let the people you live with know you'll be unavailable for the hour, so you're not interrupted mid-sentence.
 
-None of this requires being tech-savvy. If you can join a video call with a relative, you can do online therapy. And if the very first session feels a little awkward, that's normal — it settles fast.
+None of this requires being tech-savvy. If you can join a video call with a relative, you can do online therapy. And if the very first session feels a little awkward, that's normal. It settles fast.
 
 ## How I Work, and Why Geography Isn't a Barrier
 
-At Therapy by David, sessions are available via secure video, statewide across Texas. Whether you're in Houston, Pasadena, Webster, Austin, Dallas, San Antonio, or a small town hours from the nearest practice, you can be seen from wherever you are — no commute required. For clients in the Houston area who prefer to meet face to face, in-person options are also available.
+At Therapy by David, sessions are available via secure video, statewide across Texas. Whether you're in Houston, Pasadena, Webster, Austin, Dallas, San Antonio, or a small town hours from the nearest practice, you can be seen from wherever you are, no commute required. For clients in the Houston area who prefer to meet face to face, in-person options are also available.
 
-I mention this not as a sales pitch but because the most common reason people put off therapy isn't doubt about whether it helps — it's logistics. They can't find someone nearby, or they can't carve out the time. Telehealth removes both of those, which is exactly why the research on access matters so much. The best therapy is the one you'll actually attend.
+I mention this not as a sales pitch but because the most common reason people put off therapy isn't doubt about whether it helps. It's logistics. They can't find someone nearby, or they can't carve out the time. Telehealth removes both of those, which is exactly why the research on access matters so much. The best therapy is the one you'll actually attend.
 
-If you're weighing this decision and aren't sure which format fits, that's a perfectly good thing to talk through before committing to anything. You can [book a free 15-minute consultation](/contact.html) — no pressure, just a real conversation about what's going on and what kind of support would help.
+If you're weighing this decision and aren't sure which format fits, that's a perfectly good thing to talk through before committing to anything. You can [book a free 15-minute consultation](/contact.html), no pressure, just a real conversation about what's going on and what kind of support would help.
 
-Whichever way you lean, the format is the smaller decision. The bigger one is deciding to start. Both online and in-person therapy can take you somewhere real — what matters most is choosing the one that makes it easiest to keep showing up.
+Whichever way you lean, the format is the smaller decision. The bigger one is deciding to start. Both online and in-person therapy can take you somewhere real, what matters most is choosing the one that makes it easiest to keep showing up.
