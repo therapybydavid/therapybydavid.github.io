@@ -1,8 +1,8 @@
 ---
 llmsDescription: "What keeps nighttime anxiety going, and how to quiet it."
 title: "Why Won't My Mind Shut Off at Night?"
-pageTitle: "Nighttime Anxiety and Racing Thoughts | Therapy by David"
-description: "Why the mind gets loudest at bedtime, what keeps the worry running, and what actually helps at 2 a.m., written by a therapist in Houston, Texas."
+pageTitle: "Why Won't My Mind Shut Off at Night? | Therapy by David"
+description: "Anxiety isn't a character flaw. It's a nervous system doing what it was built to do. What keeps it going and what helps, from a therapist in Houston, Texas."
 ogTitle: "Why Won't My Mind Shut Off at Night?"
 ogDescription: "Anxiety isn't a character flaw. It's a nervous system doing exactly what it was built to do. Learn what keeps it going and what actually helps."
 ogType: article
