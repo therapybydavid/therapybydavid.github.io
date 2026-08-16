@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Houston rewards ambition, but for a lot of adults here, the pressure to keep performing has started to feel less like motivation and more like something they can't turn off."
 title: "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment"
-pageTitle: "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment | Therapy by David"
-description: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
+pageTitle: "Work Anxiety in Houston's Hustle Culture | Therapy by David"
+description: "Houston rewards long hours, so work anxiety hides in plain sight. What it looks like, how it differs from stress, and what therapy works on."
 ogTitle: "When Hustle Culture Hurts: Work Anxiety in Houston's High-Performance Environment"
 ogDescription: "Houston's drive-hard culture can quietly fuel anxiety and burnout. Learn what work anxiety actually looks like and when it might be worth addressing."
 ogType: article

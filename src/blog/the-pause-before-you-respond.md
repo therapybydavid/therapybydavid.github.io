@@ -1,8 +1,8 @@
 ---
 llmsDescription: "In the heat of an argument, the fastest response usually isn't the most honest one. It's the one your body picked for you."
 title: "The Pause Before You Respond: Why Reacting Fast Isn't the Same as Being Honest"
-pageTitle: "The Pause Before You Respond: Why Reacting Fast Isn't the Same as Being Honest | Therapy by David"
-description: "Why the instinct to respond immediately in conflict often reflects nervous system arousal, not truth, and how learning to pause changes communication."
+pageTitle: "The Pause Before You React in Conflict | Therapy by David"
+description: "Fast reactions in an argument come from a flooded nervous system, not honesty. A Houston therapist on what a real pause is and how couples build one."
 ogTitle: "The Pause Before You Respond: Why Reacting Fast Isn't the Same as Being Honest"
 ogDescription: "Why the instinct to respond immediately in conflict often reflects nervous system arousal, not truth, and how learning to pause changes communication."
 ogType: article

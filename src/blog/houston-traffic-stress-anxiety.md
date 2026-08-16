@@ -1,8 +1,8 @@
 ---
 llmsDescription: "For many Houston professionals, the commute isn't just an inconvenience. It's where anxiety quietly builds into something harder to shake."
 title: "Houston Traffic and Your Nervous System: When the Commute Is Making You Worse"
-pageTitle: "Houston Traffic and Your Nervous System: When the Commute Is Making You Worse | Therapy by David"
-description: "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something."
+pageTitle: "Houston Traffic Stress and Anxiety | Therapy by David"
+description: "Why the Houston commute can leave you tense, short-tempered, and spent before the day starts, and what helps a nervous system stuck on high alert."
 ogTitle: "Houston Traffic and Your Nervous System: When the Commute Is Making You Worse"
 ogDescription: "If Houston traffic leaves you tense, irritable, or exhausted before your day even starts, your nervous system may be telling you something."
 ogType: article

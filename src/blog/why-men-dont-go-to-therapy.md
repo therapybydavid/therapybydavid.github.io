@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Why men avoid therapy, how distress hides as anger/shutdown, and what shifts when they go."
 title: "Why Don't Men Go to Therapy, and What Changes When They Do?"
-pageTitle: "Why Don't Men Go to Therapy, and What Changes When They Do? | Therapy by David"
-description: "Most men avoid therapy out of conditioning, not weakness. A therapist and Army veteran in Houston, Texas on why men stay quiet, and what shifts when they do the work."
+pageTitle: "Why Men Avoid Therapy, and What Changes | Therapy by David"
+description: "Men stay away out of conditioning, not weakness. How stress and depression hide as anger, overwork, and numbing, plus what sessions are like. Houston, Texas."
 ogTitle: "Why Don't Men Go to Therapy, and What Changes When They Do?"
 ogDescription: "Most men avoid therapy out of conditioning, not weakness. Here's why men stay quiet, how depression and stress show up differently in them, and what shifts when they do the work."
 ogType: article

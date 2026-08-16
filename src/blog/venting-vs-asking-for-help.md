@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Sometimes the fight isn't about what was said. It's about what the other person thought you were asking for."
 title: "Venting or Asking for Help? Why Conversations Go Sideways When We Mix Them Up"
-pageTitle: "Venting or Asking for Help? Why Conversations Go Sideways When We Mix Them Up | Therapy by David"
-description: "A simple but overlooked communication mismatch, confusing venting with asking for help, that quietly derails conversations with partners, friends, and family."
+pageTitle: "When Venting Sounds Like Asking for Help | Therapy by David"
+description: "Venting and asking for help open the same way, so the listener guesses wrong. A Houston therapist on naming what you need before advice lands badly."
 ogTitle: "Venting or Asking for Help? Why Conversations Go Sideways When We Mix Them Up"
 ogDescription: "A simple but overlooked communication mismatch, confusing venting with asking for help, that quietly derails conversations with partners, friends, and family."
 ogType: article

@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You trained to run toward the problem. Nobody trained you for what happens when the job starts hollowing you out."
 title: "When Helping Others Leaves You Empty: Burnout in Houston First Responders"
-pageTitle: "When Helping Others Leaves You Empty: Burnout in Houston First Responders | Therapy by David"
-description: "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help."
+pageTitle: "Burnout in Houston First Responders | Therapy by David"
+description: "Police, fire, EMS, and dispatch in Houston carry chronic occupational stress. What burnout looks like here, how it differs from trauma, and what helps."
 ogTitle: "When Helping Others Leaves You Empty: Burnout in Houston First Responders"
 ogDescription: "Houston first responders face unique burnout pressures. Learn what chronic occupational stress looks like and when therapy might help."
 ogType: article

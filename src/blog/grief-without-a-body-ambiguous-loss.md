@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Some of the heaviest grief comes from losses the world never officially acknowledges, and that silence makes everything harder."
 title: "When There's No Funeral: Grieving Losses That Don't Count as Loss"
-pageTitle: "When There's No Funeral: Grieving Losses That Don't Count as Loss | Therapy by David"
-description: "Ambiguous loss, divorce, estrangement, dementia, a dream you had to let go, is real grief. Here's why it's so hard to carry, from a therapist in Houston, Texas."
+pageTitle: "Ambiguous Loss: Grief With No Funeral | Therapy by David"
+description: "Divorce, estrangement, dementia, a dream you let go of: grief without a funeral is still grief. A Houston therapist on why it's so hard to carry."
 ogTitle: "When There's No Funeral: Grieving Losses That Don't Count as Loss"
 ogDescription: "Ambiguous loss, divorce, estrangement, dementia, a dream you had to let go, is real grief. Here's why it's so hard to carry."
 ogType: article

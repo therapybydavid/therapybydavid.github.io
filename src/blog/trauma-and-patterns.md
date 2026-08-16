@@ -1,8 +1,8 @@
 ---
 llmsDescription: "How trauma lives on in present-day reactions, trust, and the body."
 title: "Why Does My Past Keep Affecting My Present?"
-pageTitle: "Why Does My Past Keep Affecting My Present? | Therapy by David"
-description: "Trauma doesn't stay in the past. It lives in how you react, who you trust, and how your body responds, often without realizing the connection. Written by a trauma-informed therapist in Houston, Texas."
+pageTitle: "Why Your Past Still Affects Your Present | Therapy by David"
+description: "Trauma shows up in reactions, trust, and the body, not just memory. A trauma-informed therapist in Houston on why the response outlasts the details."
 ogTitle: "Why Does My Past Keep Affecting My Present?"
 ogDescription: "Trauma doesn't stay in the past. It lives in how you react, who you trust, and how your body responds, often without realizing the connection."
 ogType: article

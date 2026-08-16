@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Why trauma is defined by impact, not the size of the event."
 title: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?"
-pageTitle: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me? | Therapy by David"
-description: "Trauma isn't defined by the size of the event. It's defined by how an experience overwhelmed you. A therapist in Houston, Texas explains why small-t trauma counts."
+pageTitle: "Do I Have Trauma If Nothing Bad Happened? | Therapy by David"
+description: "Trauma is about impact, not the size of the event. A Houston therapist explains small-t trauma, emotional neglect, and why people minimize their own."
 ogTitle: "Do I Have Trauma If Nothing \"Bad\" Ever Happened to Me?"
 ogDescription: "Trauma isn't defined by the size of the event. It's defined by how an experience overwhelmed your capacity to cope and how your nervous system adapted."
 ogType: article

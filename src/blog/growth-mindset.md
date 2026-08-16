@@ -1,8 +1,8 @@
 ---
 llmsDescription: "How the belief that \"this is just who I am\" drives anxiety, avoidance, and emotional suffering, and how therapy helps examine it."
 title: "A Fixed Mindset Isn't a Personality Flaw. It's a Pattern You Learned."
-pageTitle: "A Fixed Mindset Isn't a Personality Flaw. It's a Pattern You Learned. | Therapy by David"
-description: "If you believe your anxiety, anger, or relationship patterns are just 'who you are,' that belief itself may be what's keeping you stuck. A therapist in Houston, Texas explains."
+pageTitle: "How a Fixed Mindset Feeds Anxiety | Therapy by David"
+description: "Believing your anxiety or anger is just who you are makes it harder to shift. A Houston therapist on where that belief starts and what loosens it."
 ogTitle: "A Fixed Mindset Isn't a Personality Flaw. It's a Pattern You Learned."
 ogDescription: "If you believe your anxiety, anger, or relationship patterns are just 'who you are,' that belief itself may be what's keeping you stuck."
 ogType: article

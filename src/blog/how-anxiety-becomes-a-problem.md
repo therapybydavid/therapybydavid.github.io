@@ -1,10 +1,10 @@
 ---
 llmsDescription: "When everyday anxiety crosses into something worth treating."
 title: "How Do I Know If My Anxiety Is Becoming a Problem?"
-pageTitle: "How Do I Know If My Anxiety Is Becoming a Problem? | Therapy by David"
-description: "Everyday anxiety is normal. It becomes a problem when it's persistent, out of proportion to the situation, and starts interfering with your sleep, work, or relationships. Here are the specific signs to watch for."
+pageTitle: "Signs Your Anxiety Has Become a Problem | Therapy by David"
+description: "Normal anxiety passes. Problem anxiety lingers, spreads, and costs you sleep, focus, and relationships. The signs to watch for, from a Texas therapist."
 ogTitle: "How Do I Know If My Anxiety Is Becoming a Problem?"
-ogDescription: "Everyday anxiety is normal. It becomes a problem when it's persistent, out of proportion to the situation, and starts interfering with your sleep, work, or relationships. Here are the specific signs to watch for."
+ogDescription: "Normal anxiety passes. Problem anxiety lingers, spreads, and costs you sleep, focus, and relationships. The signs to watch for, from a Texas therapist."
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/how-anxiety-becomes-a-problem"
 canonical: "https://therapybydavid.com/blog/how-anxiety-becomes-a-problem"

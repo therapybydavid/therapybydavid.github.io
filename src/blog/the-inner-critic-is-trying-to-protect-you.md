@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Most people try to silence their inner critic. Understanding what it's actually trying to do for you is often more useful."
 title: "The Inner Critic Isn't Cruel for No Reason. It's Trying to Protect You."
-pageTitle: "The Inner Critic Isn't Cruel for No Reason. It's Trying to Protect You. | Therapy by David"
-description: "Self-criticism often isn't a character flaw or bad habit. It's a learned strategy for staying safe. Here's why that matters for how you change it."
+pageTitle: "Why Your Inner Critic Is So Harsh | Therapy by David"
+description: "Self-criticism is usually an old protective strategy, not a flaw. A Houston therapist on where that voice came from and what changes its tone."
 ogTitle: "The Inner Critic Isn't Cruel for No Reason. It's Trying to Protect You."
 ogDescription: "Self-criticism often isn't a character flaw or bad habit. It's a learned strategy for staying safe. Here's why that matters for how you change it."
 ogType: article

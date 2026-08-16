@@ -1,8 +1,8 @@
 ---
 llmsDescription: "The reason calming thoughts rarely calm you down, and what actually helps when anxiety is happening right now."
 title: "Your Anxiety Isn't Just in Your Head, It's in Your Body"
-pageTitle: "Your Anxiety Isn't Just in Your Head, It's in Your Body | Therapy by David"
-description: "When anxiety spikes, your thinking brain goes offline first. Here's how to work with your nervous system, not against it."
+pageTitle: "Anxiety in the Body, Not Just the Mind | Therapy by David"
+description: "When anxiety spikes, the thinking part of your brain goes offline first. A Houston therapist on breath, orienting, and movement that reach the body."
 ogTitle: "Your Anxiety Isn't Just in Your Head. It's in Your Body"
 ogDescription: "When anxiety spikes, your thinking brain goes offline first. Here's how to work with your nervous system, not against it."
 ogType: article

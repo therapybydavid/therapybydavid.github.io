@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Looking fine and hitting goals while feeling flat, numb, or empty inside."
 title: "High-Functioning Depression: When You're Successful but Feel Empty"
-pageTitle: "High-Functioning Depression: When You're Successful but Feel Empty | Therapy by David"
-description: "You hold down the job, hit the goals, look fine, but feel flat, numb, empty. A Houston therapist explains high-functioning depression and what helps."
+pageTitle: "High-Functioning Depression Explained | Therapy by David"
+description: "You meet every goal and still feel flat, numb, like you're going through the motions. A Houston therapist on depression that hides behind competence."
 ogTitle: "High-Functioning Depression: When You're Successful but Feel Empty"
 ogDescription: "You hold down the job, hit the goals, look fine, but feel flat, numb, and empty. Here's what high-functioning depression is and why it's so easy to miss."
 ogType: article

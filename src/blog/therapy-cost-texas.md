@@ -1,8 +1,8 @@
 ---
 llmsDescription: "The cost landscape, insurance copays, self-pay, sliding scale, and the free consultation."
 title: "How Much Does Therapy Cost in Texas (With and Without Insurance)?"
-pageTitle: "How Much Does Therapy Cost in Texas (With & Without Insurance)? | Therapy by David"
-description: "A clear breakdown of what therapy costs in Texas, insurance copays, self-pay and out-of-network rates, sliding-scale options, and how to check your benefits."
+pageTitle: "How Much Therapy Costs in Texas | Therapy by David"
+description: "What therapy really costs in Texas with and without insurance: copays, deductibles, self-pay rates, sliding scale through Open Path, and superbills."
 ogTitle: "How Much Does Therapy Cost in Texas (With & Without Insurance)?"
 ogDescription: "A clear breakdown of what therapy costs in Texas, insurance copays, self-pay and out-of-network rates, sliding-scale options, and how to check your benefits."
 ogType: article

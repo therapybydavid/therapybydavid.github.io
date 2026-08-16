@@ -1,8 +1,8 @@
 ---
 llmsDescription: "What actually happens, from the free consult to your first full session."
 title: "What to Expect in Your First Therapy Session"
-pageTitle: "What to Expect in Your First Therapy Session | Therapy by David"
-description: "Nervous about starting therapy? Here's exactly what happens in a first session, from the free 15-minute consultation to intake, goals, and how telehealth works."
+pageTitle: "What Happens in a First Therapy Session | Therapy by David"
+description: "A step by step look at starting therapy: the free 15-minute consult, intake, goals, nerves, and how telehealth works across Texas. No prep needed."
 ogTitle: "What to Expect in Your First Therapy Session"
 ogDescription: "Nervous about starting therapy? Here's exactly what happens in a first session, from the free 15-minute consultation to intake, goals, and how telehealth works."
 ogType: article

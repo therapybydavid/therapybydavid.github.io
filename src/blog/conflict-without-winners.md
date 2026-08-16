@@ -1,8 +1,8 @@
 ---
 llmsDescription: "If every disagreement ends with a winner and a loser, both of you are losing something more important than the argument."
 title: "When Winning the Argument Means Losing the Relationship"
-pageTitle: "When Winning the Argument Means Losing the Relationship | Therapy by David"
-description: "Conflict isn't the problem, how you fight is. Learn why the need to 'win' arguments damages relationships and what to do instead."
+pageTitle: "Arguing to Win Costs the Relationship | Therapy by David"
+description: "The need to win an argument is usually a need to feel heard. What fighting to be right costs a relationship, and what repair looks like, from a Texas therapist."
 ogTitle: "When Winning the Argument Means Losing the Relationship"
 ogDescription: "Conflict isn't the problem, how you fight is. Learn why the need to 'win' arguments damages relationships and what to do instead."
 ogType: article

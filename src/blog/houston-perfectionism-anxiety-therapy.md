@@ -1,8 +1,8 @@
 ---
 llmsDescription: "If you're constantly raising the bar the moment you clear it, that's not ambition. That's anxiety with a work ethic."
 title: "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston"
-pageTitle: "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston | Therapy by David"
-description: "Perfectionism isn't about high standards. It's often anxiety in disguise. Here's what that looks like for Houston adults and when therapy can help."
+pageTitle: "Perfectionism and Anxiety in Houston | Therapy by David"
+description: "Perfectionism often runs on fear of falling short, not high standards. What that costs Houston professionals, and what therapy actually looks at."
 ogTitle: "When 'Good Enough' Never Feels Like Enough: Perfectionism and Anxiety in Houston"
 ogDescription: "Perfectionism isn't about high standards. It's often anxiety in disguise. Here's what that looks like for Houston adults and when therapy can help."
 ogType: article

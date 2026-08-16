@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You can be surrounded by people, coworkers, neighbors, a full social calendar, and still feel profoundly alone. In Houston, that disconnect is more common than most people admit."
 title: "Why So Many Houston Adults Feel Lonely in a City of 7 Million"
-pageTitle: "Why So Many Houston Adults Feel Lonely in a City of 7 Million | Therapy by David"
-description: "Houston is one of the largest cities in America, yet loneliness is quietly common. Here's why it happens and what can help."
+pageTitle: "Loneliness in Houston and What Helps | Therapy by David"
+description: "A full calendar and an empty feeling. How Houston's sprawl and long hours thin out everyday contact, and what actually rebuilds real connection."
 ogTitle: "Why So Many Houston Adults Feel Lonely in a City of 7 Million"
 ogDescription: "Houston is one of the largest cities in America, yet loneliness is quietly common. Here's why it happens and what can help."
 ogType: article

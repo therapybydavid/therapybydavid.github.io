@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You were doing better, and then suddenly you weren't. That doesn't mean the progress was an illusion."
 title: "When Healing Isn't Linear: Why Getting Worse Can Be Part of Getting Better"
-pageTitle: "When Healing Isn't Linear: Why Getting Worse Can Be Part of Getting Better | Therapy by David"
-description: "Healing rarely moves in a straight line. Here's what it actually looks like, and why setbacks don't mean you're failing."
+pageTitle: "Why Healing Isn't Linear, and What Helps | Therapy by David"
+description: "Setbacks don't erase progress. What the window of tolerance explains, how to tell real movement from stalling, and what to do mid-setback. Houston, Texas."
 ogTitle: "When Healing Isn't Linear: Why Getting Worse Can Be Part of Getting Better"
 ogDescription: "Healing rarely moves in a straight line. Here's what it actually looks like, and why setbacks don't mean you're failing."
 ogType: article

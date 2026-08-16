@@ -1,8 +1,8 @@
 ---
 llmsDescription: "If Sunday evenings feel heavier than they should, you're not alone, and there's more going on than just dreading Monday."
 title: "The Sunday Night Dread: Why Houston Professionals Can't Turn Off the Work Week"
-pageTitle: "The Sunday Night Dread: Why Houston Professionals Can't Turn Off the Work Week | Therapy by David"
-description: "That familiar Sunday evening tension isn't just stress. It's a pattern worth understanding. Here's what's happening and how therapy can help."
+pageTitle: "Sunday Night Anxiety in Houston | Therapy by David"
+description: "The Sunday evening dread a lot of Houston professionals know: where anticipatory anxiety comes from, why it creeps earlier, and what can settle it."
 ogTitle: "The Sunday Night Dread: Why Houston Professionals Can't Turn Off the Work Week"
 ogDescription: "That familiar Sunday evening tension isn't just stress. It's a pattern worth understanding. Here's what's happening and how therapy can help."
 ogType: article

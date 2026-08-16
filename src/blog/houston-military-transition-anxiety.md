@@ -1,8 +1,8 @@
 ---
 llmsDescription: "For many veterans, the hardest deployment isn't overseas. It's adjusting to civilian life in a city that doesn't quite speak your language."
 title: "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston"
-pageTitle: "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston | Therapy by David"
-description: "Leaving the military can trigger anxiety, identity loss, and isolation. Houston veterans share a common struggle, and therapy can help."
+pageTitle: "Veteran Transition Anxiety in Houston | Therapy by David"
+description: "Structure, rank, purpose, people who get it: all of it ends at once. A Houston therapist and Army veteran on anxiety after leaving the military."
 ogTitle: "When the Mission Ends: Anxiety and Identity After Leaving the Military in Houston"
 ogDescription: "Leaving the military can trigger anxiety, identity loss, and isolation. Houston veterans share a common struggle, and therapy can help."
 ogType: article

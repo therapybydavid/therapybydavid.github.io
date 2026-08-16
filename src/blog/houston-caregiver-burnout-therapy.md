@@ -1,8 +1,8 @@
 ---
 llmsDescription: "If you're the person everyone else leans on, you might be the last one to notice how much you're struggling."
 title: "When Taking Care of Everyone Else Leaves Nothing for You: Caregiver Burnout in Houston"
-pageTitle: "When Taking Care of Everyone Else Leaves Nothing for You: Caregiver Burnout in Houston | Therapy by David"
-description: "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help."
+pageTitle: "Houston Caregiver Burnout and Guilt | Therapy by David"
+description: "Exhaustion sleep doesn't fix, resentment you feel guilty about, no self left over. What caregiver burnout does to Houston adults, and what helps."
 ogTitle: "When Taking Care of Everyone Else Leaves Nothing for You: Caregiver Burnout in Houston"
 ogDescription: "Houston caregivers often put everyone else first until they're running on empty. Learn what caregiver burnout looks like and when therapy can help."
 ogType: article

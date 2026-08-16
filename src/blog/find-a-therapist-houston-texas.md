@@ -1,8 +1,8 @@
 ---
 llmsDescription: "How to search, what actually matters (fit over credentials), and questions to ask."
 title: "How to Find the Right Therapist in Houston & Across Texas"
-pageTitle: "How to Find the Right Therapist in Houston & Across Texas | Therapy by David"
-description: "A practical guide to finding the right therapist in Houston and across Texas, where to search, what actually matters for fit, the questions to ask, and red flags."
+pageTitle: "How to Find a Therapist in Houston, TX | Therapy by David"
+description: "A practical way to search in Houston or anywhere in Texas: where to look, why fit matters more than credentials, what to ask, and the red flags."
 ogTitle: "How to Find the Right Therapist in Houston & Across Texas"
 ogDescription: "Where to search, what actually matters for fit, the questions to ask in a consultation, and why the free 15-minute call exists, a practical how-to."
 ogType: article

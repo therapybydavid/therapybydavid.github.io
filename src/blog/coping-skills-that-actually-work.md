@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You already have coping skills, the question is whether they're solving the problem or just postponing it."
 title: "Why Your Coping Skills Aren't Working (And What to Try Instead)"
-pageTitle: "Why Your Coping Skills Aren't Working (And What to Try Instead) | Therapy by David"
-description: "Not all coping skills are created equal. Learn why some strategies backfire and what research says about building ones that actually help."
+pageTitle: "Coping Skills That Stop Working | Therapy by David"
+description: "Some coping lowers distress without touching the cause. A Houston therapist on avoidant coping, what holds up over time, and when it needs to go deeper."
 ogTitle: "Why Your Coping Skills Aren't Working (And What to Try Instead)"
 ogDescription: "Not all coping skills are created equal. Learn why some strategies backfire and what research says about building ones that actually help."
 ogType: article

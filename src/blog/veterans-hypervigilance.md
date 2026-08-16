@@ -1,10 +1,10 @@
 ---
 llmsDescription: "Why the nervous system stays \"on\" after service, and what helps."
 title: "Why Do Veterans Have Trouble Turning Off Hypervigilance?"
-pageTitle: "Why Do Veterans Have Trouble Turning Off Hypervigilance? | Therapy by David"
-description: "Hypervigilance kept you alive in service, so your nervous system learned it as the default. It doesn't switch off just because the threat is gone. It has to be retrained. Here's why, from an Army veteran and therapist."
+pageTitle: "Hypervigilance After Military Service | Therapy by David"
+description: "Your nervous system learned that staying on kept you alive. Why it sticks long after service, what it quietly costs, and how it gets retrained. Texas."
 ogTitle: "Why Do Veterans Have Trouble Turning Off Hypervigilance?"
-ogDescription: "Hypervigilance kept you alive in service, so your nervous system learned it as the default. It doesn't switch off just because the threat is gone. It has to be retrained. Here's why, from an Army veteran and therapist."
+ogDescription: "Your nervous system learned that staying on kept you alive. Why it sticks long after service, what it quietly costs, and how it gets retrained. Texas."
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/veterans-hypervigilance"
 canonical: "https://therapybydavid.com/blog/veterans-hypervigilance"

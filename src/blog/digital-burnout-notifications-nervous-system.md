@@ -1,8 +1,8 @@
 ---
 llmsDescription: "It's not the hours you spend on your phone that wear you down. It's how many times a day your body braces for something."
 title: "Why Your Nervous System Never Gets the 'All Clear' Signal"
-pageTitle: "Why Your Nervous System Never Gets the 'All Clear' Signal | Therapy by David"
-description: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
+pageTitle: "Digital Burnout and Your Nervous System | Therapy by David"
+description: "Screen time isn't the variable, the interruptions are. Why your body never gets an all clear signal, why rest doesn't touch it, and what helps. Houston, TX."
 ogTitle: "Why Your Nervous System Never Gets the 'All Clear' Signal"
 ogDescription: "Digital burnout isn't just about screen time. It's about a nervous system that never gets the signal to fully stand down."
 ogType: article

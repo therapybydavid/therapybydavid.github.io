@@ -1,8 +1,8 @@
 ---
 llmsDescription: "When a relationship ends, you don't just lose a partner. You can lose the version of yourself that existed inside it."
 title: "After the Relationship Ends: Rebuilding a Sense of Self"
-pageTitle: "After the Relationship Ends: Rebuilding a Sense of Self | Therapy by David"
-description: "Breakups and divorce don't just end a relationship. They can shake your entire sense of who you are. Here's how to find yourself again, from a therapist in Houston, Texas."
+pageTitle: "Rebuilding Your Identity After a Breakup | Therapy by David"
+description: "A breakup or divorce can leave you unsure what you even want anymore. A Houston therapist on the identity loss underneath the grief, and what helps."
 ogTitle: "After the Relationship Ends: Rebuilding a Sense of Self"
 ogDescription: "Breakups and divorce don't just end a relationship. They can shake your entire sense of who you are. Here's how to find yourself again."
 ogType: article

@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Forgiveness can happen in a conversation. Trust is rebuilt somewhere else entirely, in the weeks and months after."
 title: "Why Trust Doesn't Come Back Just Because You're Sorry"
-pageTitle: "Why Trust Doesn't Come Back Just Because You're Sorry | Therapy by David"
-description: "An apology can end an argument, but it doesn't rebuild trust. Here's what actually does, and why the process rarely feels fair to either person."
+pageTitle: "Rebuilding Trust After an Apology | Therapy by David"
+description: "Forgiveness is a decision. Trust is a prediction your body makes from a pattern of evidence. A Houston therapist on what rebuilds it after a rupture."
 ogTitle: "Why Trust Doesn't Come Back Just Because You're Sorry"
 ogDescription: "An apology can end an argument, but it doesn't rebuild trust. Here's what actually does, and why the process rarely feels fair to either person."
 ogType: article

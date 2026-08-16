@@ -1,8 +1,8 @@
 ---
 llmsDescription: "A relationship can be loving, low-conflict, and still quietly falling apart, and the reason is often values, not feelings."
 title: "When You Still Love Each Other But Want Different Things"
-pageTitle: "When You Still Love Each Other But Want Different Things | Therapy by David"
-description: "Loving your partner and sharing their values are two different things. Here's what it means when those two things quietly come apart."
+pageTitle: "When Partners' Values Drift Apart | Therapy by David"
+description: "Loving someone and sharing their values are two different things. How the drift starts, why ordinary arguments get heavier, and what helps. Houston, Texas."
 ogTitle: "When You Still Love Each Other But Want Different Things"
 ogDescription: "Loving your partner and sharing their values are two different things. Here's what it means when those two things quietly come apart."
 ogType: article

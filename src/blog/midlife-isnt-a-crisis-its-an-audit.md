@@ -1,8 +1,8 @@
 ---
 llmsDescription: "The questions that surface in your 40s and 50s aren't a breakdown. They're an overdue inventory of a life you built on autopilot."
 title: "Midlife Isn't a Crisis. It's an Audit."
-pageTitle: "Midlife Isn't a Crisis. It's an Audit. | Therapy by David"
-description: "The 'midlife crisis' is a cultural cliché. What's actually happening in midlife is quieter, more useful, and worth taking seriously."
+pageTitle: "Midlife Restlessness Isn't a Crisis | Therapy by David"
+description: "The questions that show up in your 40s and 50s are an overdue inventory, not a breakdown. A Houston therapist on restlessness, guilt, and taking stock."
 ogTitle: "Midlife Isn't a Crisis. It's an Audit."
 ogDescription: "The 'midlife crisis' is a cultural cliché. What's actually happening in midlife is quieter, more useful, and worth taking seriously."
 ogType: article

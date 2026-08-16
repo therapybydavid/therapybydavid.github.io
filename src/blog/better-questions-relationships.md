@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Better questions for real connection at home."
 title: "Why \"How Was Your Day\" Never Gets You Anywhere"
-pageTitle: "Why \"How Was Your Day\" Never Gets You Anywhere | Therapy by David"
-description: "Broad questions get broad answers. If the talking in your house has shrunk to logistics, the problem usually isn't you. It's the questions. A therapist's guide to what to ask instead."
+pageTitle: "Better Questions to Ask Your Partner | Therapy by David"
+description: "Broad questions get broad answers. Here are the specific, curious ones that give your partner or your kids something real to answer, from a Houston therapist."
 ogTitle: "Why \"How Was Your Day\" Never Gets You Anywhere"
 ogDescription: "Broad questions get broad answers. The problem usually isn't you. It's the questions. Here's what to ask instead."
 ogType: article

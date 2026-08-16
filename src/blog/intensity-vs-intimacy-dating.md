@@ -1,8 +1,8 @@
 ---
 llmsDescription: "The person who makes your stomach drop isn't always the person who's actually available to you. Here's how to tell the difference before you're in too deep."
 title: "Mistaking Intensity for Intimacy: Why the Strongest Chemistry Isn't Always the Safest Connection"
-pageTitle: "Mistaking Intensity for Intimacy: Why the Strongest Chemistry Isn't Always the Safest Connection | Therapy by David"
-description: "Why the dating connections that feel the most intense are sometimes the least emotionally available, and how to tell the difference."
+pageTitle: "Mistaking Intensity for Intimacy | Therapy by David"
+description: "Why the most intense dating connection can be the least emotionally available, how uncertainty gets read as chemistry, and what Houston adults look at."
 ogTitle: "Mistaking Intensity for Intimacy: Why the Strongest Chemistry Isn't Always the Safest Connection"
 ogDescription: "Why the dating connections that feel the most intense are sometimes the least emotionally available, and how to tell the difference."
 ogType: article

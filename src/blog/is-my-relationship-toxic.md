@@ -1,8 +1,8 @@
 ---
 llmsDescription: "\"Toxic\" isn't a clinical diagnosis, but the pattern people use it to describe is real, and it has a shape you can learn to recognize."
 title: "Is My Relationship Toxic? What That Word Actually Means"
-pageTitle: "Is My Relationship Toxic? What That Word Actually Means | Therapy by David"
-description: "\"Toxic\" isn't a clinical term, but the pattern it describes is real. A Houston therapist on the signs, what they cost, and when a relationship can change."
+pageTitle: "Is My Relationship Toxic, or Just Hard? | Therapy by David"
+description: "Toxic isn't a diagnosis, but the pattern behind it is real. A Houston therapist on the signs, the line between toxic and abusive, and whether it can change."
 ogTitle: "Is My Relationship Toxic? What That Word Actually Means"
 ogDescription: "\"Toxic\" isn't a clinical term, but the pattern it describes is real. Here are the signs, what they cost, and when a relationship can actually change."
 ogType: article

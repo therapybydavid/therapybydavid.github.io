@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You can name exactly where the pattern came from, and still find yourself doing it again on a Tuesday night."
 title: "You Already Know Why You Do It. So Why Can't You Stop?"
-pageTitle: "You Already Know Why You Do It. So Why Can't You Stop? | Therapy by David"
-description: "Understanding your patterns is a real achievement. But insight alone rarely changes behavior. Here's what actually needs to happen next."
+pageTitle: "Knowing Why You Do It Isn't Enough | Therapy by David"
+description: "You can explain the pattern and still repeat it. Why insight stalls, how it can become its own defense, and what shifts behavior. Houston and across Texas."
 ogTitle: "You Already Know Why You Do It. So Why Can't You Stop?"
 ogDescription: "Understanding your patterns is a real achievement. But insight alone rarely changes behavior. Here's what actually needs to happen next."
 ogType: article
