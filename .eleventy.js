@@ -19,16 +19,25 @@ function _git(args) {
 
 // A shallow checkout makes every file look like it was added in the tip
 // commit, which would stamp every URL with the deploy date — the same
-// fabricated freshness this is meant to remove. Refuse git dates entirely
-// in that case and let each caller fall back to its declared date.
+// fabricated freshness this is meant to remove. Cloudflare Pages checks out
+// shallow, so in CI we read the precomputed map that `npm run build` writes
+// locally (scripts/gen-git-dates.js) instead of asking git.
 const GIT_USABLE = _git(["rev-parse", "--is-shallow-repository"]) === "false";
+
+let GIT_DATES = {};
+try {
+  GIT_DATES = require("./src/_data/gitdates.json");
+} catch (e) {
+  GIT_DATES = {}; // not generated yet; callers fall back to declared dates
+}
 
 const _gitDateCache = new Map();
 function gitLastmod(file) {
-  if (!GIT_USABLE || !file) return "";
-  const key = String(file);
+  if (!file) return "";
+  const key = String(file).replace(/^\.\//, "");
   if (_gitDateCache.has(key)) return _gitDateCache.get(key);
-  const out = _git(["log", "-1", "--format=%cs", "--", key]);
+  // Live git when the history is really there, otherwise the committed map.
+  const out = (GIT_USABLE ? _git(["log", "-1", "--format=%cs", "--", key]) : "") || GIT_DATES[key] || "";
   _gitDateCache.set(key, out);
   return out;
 }

@@ -4,7 +4,8 @@
   "private": true,
   "description": "Proof-of-concept Eleventy build for Therapy by David (Phase 1).",
   "scripts": {
-    "build": "eleventy",
+    "build": "node scripts/gen-git-dates.js && eleventy",
+    "gitdates": "node scripts/gen-git-dates.js",
     "serve": "eleventy --serve"
   },
   "devDependencies": {
