@@ -19,9 +19,9 @@ cardTag: "Mental Health"
 cardDescription: "The hardest part of therapy usually isn't the first session or a breakthrough — it's the quiet middle stretch. Here's what that phase is actually doing."
 cardDate: "August 13, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1663680603289-4a8936f5bed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2NjE4OTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1663680603289-4a8936f5bed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2ODg3MjQyfDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a rocky beach with a statue on top of it"
-cardImage: "https://images.unsplash.com/photo-1663680603289-4a8936f5bed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2NjE4OTQ2fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardImage: "https://images.unsplash.com/photo-1663680603289-4a8936f5bed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2ODg3MjQyfDA&ixlib=rb-4.1.0&q=80&w=400"
 cardAlt: "a rocky beach with a statue on top of it"
 ---
 
