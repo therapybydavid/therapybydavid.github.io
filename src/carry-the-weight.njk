@@ -338,25 +338,12 @@ eleventyExcludeFromCollections: true
     .buy-band h2 { color:var(--cream); }
     .buy-band p { color:rgba(245,239,227,.72); margin:0 auto; }
     .fineprint { color:var(--muted); font-size:13.5px; margin-top:26px; max-width:none; }
-    .pages { display:grid; grid-template-columns:repeat(5,1fr); gap:26px; margin-top:40px; }
-    .pages figure { margin:0; }
-    .pages img { width:100%; height:auto; border-radius:6px; box-shadow:0 18px 44px rgba(0,0,0,.45);
-                 background:var(--paper); }
-    .pages figcaption { margin-top:14px; font-size:13px; letter-spacing:.04em;
-                        color:rgba(245,239,227,.62); }
     .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:66px; align-items:center; }
     .hero-art img { width:100%; height:auto; border-radius:20px; border:1px solid var(--line);
                     box-shadow:0 34px 90px rgba(0,0,0,.55); }
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns:1fr; gap:38px; }
       .hero-art { order:-1; max-width:330px; }
-    }
-    @media (max-width: 1024px) {
-      /* Below desktop the five pages become a swipeable strip rather than
-         five unreadable slivers. */
-      .pages { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory;
-               margin-left:-24px; margin-right:-24px; padding:0 24px 8px; }
-      .pages figure { flex:0 0 190px; scroll-snap-align:start; }
     }
     @media (max-width: 860px) {
       .toc { grid-template-columns:1fr; }
@@ -464,34 +451,6 @@ eleventyExcludeFromCollections: true
             <div><b>12</b><p>A 30-day plan with relapse-prevention built in</p></div>
             <div><b>13</b><p>Thirty journal prompts that earn their ink</p></div>
             <div><b>14</b><p>A one-page emergency reset card, built to keep on your phone</p></div>
-      </div>
-
-      <div style="margin-top:72px;" class="reveal">
-        <span class="eyebrow">A Look Inside</span>
-        <h3 style="font-family:var(--serif); font-size:30px; color:var(--cream); font-weight:600;">
-          Five actual pages.</h3>
-        <div class="pages">
-          <figure>
-            <img src="/images/cw-page-anger.webp" width="460" height="595" loading="lazy" alt="Workbook page titled Anger Is a Bodyguard, with above the waterline and below the waterline writing prompts.">
-            <figcaption>The anger iceberg</figcaption>
-          </figure>
-          <figure>
-            <img src="/images/cw-page-traps.webp" width="460" height="595" loading="lazy" alt="Workbook page listing common thinking traps with a counter for each one.">
-            <figcaption>Eight thinking traps</figcaption>
-          </figure>
-          <figure>
-            <img src="/images/cw-page-record.webp" width="460" height="595" loading="lazy" alt="Workbook page walking step by step through a cognitive behavioral thought record.">
-            <figcaption>The thought record</figcaption>
-          </figure>
-          <figure>
-            <img src="/images/cw-page-tracker.webp" width="460" height="595" loading="lazy" alt="Workbook page with a seven day grid for tracking mood, sleep, and habits.">
-            <figcaption>Mood and habit tracker</figcaption>
-          </figure>
-          <figure>
-            <img src="/images/cw-page-plan.webp" width="460" height="595" loading="lazy" alt="Workbook page laying out a thirty day action plan with relapse prevention.">
-            <figcaption>The 30-day plan</figcaption>
-          </figure>
-        </div>
       </div>
     </div>
   </section>
