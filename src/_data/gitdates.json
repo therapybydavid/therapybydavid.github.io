@@ -76,6 +76,7 @@
   "src/blog/why-the-body-changes-before-the-mind-does.md": "2026-08-16",
   "src/book.njk": "2026-08-11",
   "src/burnout-overthinking.njk": "2026-08-11",
+  "src/burnout.njk": "2026-08-17",
   "src/carry-the-weight.njk": "2026-08-17",
   "src/contact.njk": "2026-08-11",
   "src/couples-therapy.njk": "2026-08-11",
@@ -88,6 +89,7 @@
   "src/mens-mental-health.njk": "2026-08-11",
   "src/privacy.njk": "2026-08-11",
   "src/refer.njk": "2026-08-11",
+  "src/relationships.njk": "2026-08-17",
   "src/resources.njk": "2026-08-17",
   "src/sitemap.njk": "2026-08-16",
   "src/sms-terms.njk": "2026-08-11",
@@ -96,5 +98,6 @@
   "src/trauma-therapy.njk": "2026-08-11",
   "src/trauma.njk": "2026-08-11",
   "src/veterans-military-families.njk": "2026-08-11",
+  "src/veterans.njk": "2026-08-17",
   "thank-you.html": "2026-07-29"
 }
