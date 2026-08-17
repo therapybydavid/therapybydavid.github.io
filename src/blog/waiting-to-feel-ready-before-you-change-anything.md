@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
 cardDate: "August 17, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2OTY0NTAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "foggy trees across lake"
-cardImage: "https://images.unsplash.com/photo-1544397189-b5a684ee08d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjYWxtJTIwbWluZGZ1bG5lc3MlMjBwZWFjZWZ1bCUyMG5hdHVyZXxlbnwxfDB8fHwxNzg2OTY0NTAzfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "foggy trees across lake"
+image: "https://images.unsplash.com/photo-1572605895004-24ccc43931f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzaXR0aW5nJTIwdGhvdWdodGZ1bGx5JTIwYXQlMjB3aW5kb3clMjB3b21hbiUyMHBhdXNpbmclMjBtaWQtdGFzayUyMGxvb2tpbmclMjBob3BlZnVsJTIwcGVyc29ufGVufDF8MHx8fDE3ODY5NzM0NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "women's brown sweater"
+cardImage: "https://images.unsplash.com/photo-1572605895004-24ccc43931f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzaXR0aW5nJTIwdGhvdWdodGZ1bGx5JTIwYXQlMjB3aW5kb3clMjB3b21hbiUyMHBhdXNpbmclMjBtaWQtdGFzayUyMGxvb2tpbmclMjBob3BlZnVsJTIwcGVyc29ufGVufDF8MHx8fDE3ODY5NzM0NzJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "women's brown sweater"
 ---
 
 Most people who feel stuck aren't waiting for an opportunity. They're waiting for a feeling. A sense of readiness, clarity, or confidence that will finally make the next step obvious and safe. The job change, the difficult conversation, the move, the decision to end something or begin something — it's all sitting there, waiting for that feeling to arrive.
