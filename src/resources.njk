@@ -163,6 +163,12 @@ eleventyExcludeFromCollections: true
       box-shadow: 0 24px 64px rgba(20,33,50,.12);
       border-color: rgba(216,184,102,.7);
     }
+    .resource-card.is-feature {
+      grid-column: 1 / -1;
+      border-color: rgba(216,184,102,.8);
+      background: linear-gradient(180deg, var(--white), rgba(216,184,102,.06));
+    }
+    .resource-card.is-feature p { max-width: 62ch; }
     .resource-card-category {
       display: inline-block;
       color: var(--gold);
@@ -342,6 +348,12 @@ eleventyExcludeFromCollections: true
             <h3>How Trauma Works</h3>
             <p>Trauma isn't defined by the size of what happened. It's defined by the impact. A plain-language guide to what trauma is, how it affects the nervous system, and what healing looks like.</p>
             <a class="resource-card-link" href="/trauma">Read This Guide &rarr;</a>
+          </article>
+          <article class="resource-card is-feature reveal">
+            <span class="resource-card-category">Workbook &middot; $14</span>
+            <h3>Carry the Weight, Not the Damage</h3>
+            <p>A 27-page workbook for men dealing with stress, anger, and pressure. The same practical tools used in a therapy room, in plain language, to work through on your own time.</p>
+            <a class="resource-card-link" href="/carry-the-weight">See the Workbook &rarr;</a>
           </article>
         </div>
       </div>
