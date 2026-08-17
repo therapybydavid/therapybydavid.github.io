@@ -244,34 +244,45 @@ eleventyExcludeFromCollections: true
     .light-card small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; display: block; margin-bottom: 14px; }
     .light-card h3 { font-size: 22px; margin-bottom: 10px; }
 
-    /* Quote + symptom card */
-    .qs-card {
-      border: 1px solid rgba(20,33,50,.08);
-      border-radius: 20px;
+    /* Recognition checklist */
+    .rec-card {
+      background: var(--night);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 38px 36px 34px;
+      box-shadow: 0 24px 60px rgba(8,11,16,.22);
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 52px rgba(20,33,50,.12);
     }
-    .qs-quote { background: var(--night); padding: 34px 36px 32px; position: relative; overflow: hidden; }
-    .qs-quote::before {
+    .rec-card::before {
       content: '';
       position: absolute;
-      width: 300px; height: 300px;
+      width: 320px; height: 320px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%);
-      top: -150px; right: -110px;
+      background: radial-gradient(circle, rgba(216,184,102,.12), transparent 68%);
+      top: -170px; right: -120px;
       pointer-events: none;
     }
-    .qs-card blockquote { position: relative; z-index: 2; font-family: var(--serif); font-size: 23px; line-height: 1.45; color: var(--white); letter-spacing: -.015em; }
-    .qs-card cite { position: relative; z-index: 2; display: block; font-style: normal; font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.55); margin-top: 16px; }
-    .qs-body { background: var(--white); padding: 28px 36px 32px; }
-    .qs-label { display: block; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .qs-card ul { list-style: none; display: grid; gap: 11px; }
-    .qs-card li { font-size: 16px; color: var(--text); display: flex; gap: 12px; align-items: baseline; }
-    .qs-card li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--champagne); flex: none; transform: translateY(-3px); }
+    .rec-label { position: relative; z-index: 2; display: block; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--champagne); margin-bottom: 24px; }
+    .rec-card ul { position: relative; z-index: 2; list-style: none; display: grid; gap: 0; }
+    .rec-card li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 16.5px; line-height: 1.55; color: rgba(255,255,255,.86);
+      padding: 15px 0; border-top: 1px solid rgba(255,255,255,.09);
+    }
+    .rec-card li:first-child { border-top: 0; padding-top: 0; }
+    .rec-tick { flex: none; width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid rgba(216,184,102,.5); display: grid; place-items: center; margin-top: 2px; }
+    .rec-tick svg { width: 11px; height: 11px; stroke: var(--champagne); stroke-width: 2.6; fill: none; }
+    .rec-close {
+      position: relative; z-index: 2;
+      margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12);
+      font-family: var(--serif); font-size: 19px; line-height: 1.55; color: rgba(255,255,255,.8);
+      max-width: unset;
+    }
     @media (max-width: 860px) {
-      .qs-quote { padding: 30px 26px 28px; }
-      .qs-body { padding: 26px 26px 28px; }
-      .qs-card blockquote { font-size: 21px; }
+      .rec-card { padding: 32px 26px 28px; }
+      .rec-card li { font-size: 16px; }
+      .rec-close { font-size: 18px; }
     }
 
     /* Insurance block */
@@ -420,22 +431,17 @@ eleventyExcludeFromCollections: true
           plain language, without an appointment.</p>
         </div>
         <div class="reveal">
-          <div class="qs-card">
-            <div class="qs-quote">
-              <blockquote>&ldquo;Nothing is wrong. I just don&rsquo;t feel like myself and I can&rsquo;t
-              explain it to anyone.&rdquo;</blockquote>
-              <cite>The sentence men say right before they finally do something about it.</cite>
-            </div>
-            <div class="qs-body">
-              <span class="qs-label">What it works on</span>
-              <ul>
-                <li>Anger that arrives too fast</li>
-                <li>Running on empty</li>
-                <li>Distance at home</li>
-                <li>Coping that backfires</li>
-                <li>A mind that won&rsquo;t shut off</li>
-              </ul>
-            </div>
+          <div class="rec-card">
+            <span class="rec-label">Sound familiar</span>
+            <ul>
+              <li><span class="rec-tick"><svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="1,6 4.5,9.5 11,2.5"/></svg></span><span>The fuse got shorter, and you hear it in your own voice.</span></li>
+              <li><span class="rec-tick"><svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="1,6 4.5,9.5 11,2.5"/></svg></span><span>You sleep, and you wake up just as tired.</span></li>
+              <li><span class="rec-tick"><svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="1,6 4.5,9.5 11,2.5"/></svg></span><span>You are home, and not really there.</span></li>
+              <li><span class="rec-tick"><svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="1,6 4.5,9.5 11,2.5"/></svg></span><span>Whatever takes the edge off is starting to cost more than it gives.</span></li>
+              <li><span class="rec-tick"><svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="1,6 4.5,9.5 11,2.5"/></svg></span><span>You can explain your whole life and still not explain how you feel.</span></li>
+            </ul>
+            <p class="rec-close">None of that means something is wrong with you. It usually means the
+            load has been yours to carry for a long time.</p>
           </div>
         </div>
       </div>
