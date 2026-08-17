@@ -1,0 +1,881 @@
+---
+permalink: /veterans.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life After Service | Therapy by David</title>
+  <meta name="description" content="Why the training does not switch off when the service ends, how hypervigilance and transition stress actually work, and what helps. Written by a therapist who served." />
+  <link rel="canonical" href="https://therapybydavid.com/veterans">
+  <meta property="og:title" content="Life After Service" />
+  <meta property="og:description" content="Why the training does not switch off when the service ends, how hypervigilance and transition stress actually work, and what helps. Written by a therapist who served." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therapybydavid.com/veterans" />
+  <meta property="og:site_name" content="Therapy by David" />
+  <meta property="og:image" content="https://therapybydavid.com/images/og-card-v4.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Therapy by David" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Life After Service" />
+  <meta name="twitter:description" content="Why the training does not switch off when the service ends, how hypervigilance and transition stress actually work, and what helps. Written by a therapist who served." />
+  <meta name="twitter:image" content="https://therapybydavid.com/images/og-card-v4.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); }
+    .btn-light { color: var(--night); border-color: rgba(20,33,50,.18); background: rgba(255,255,255,.62); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 20px;
+      text-decoration: none;
+      transition: text-decoration .15s ease;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 820px; margin-bottom: 26px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 36px; max-width: 640px; }
+
+    /* Dark section */
+    .dark-section { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+    .dark-section::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.16), transparent 68%); top: -220px; right: -160px; }
+    .dark-section .container { position: relative; z-index: 2; }
+    .dark-section h2, .dark-section h3 { color: var(--white); }
+    .dark-section p { color: rgba(255,255,255,.68); }
+
+    /* Cards */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(216,184,102,.42); background: rgba(255,255,255,.08); }
+    .card .num { color: var(--champagne); font-size: 13px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 22px; display: block; }
+    .card h3 { margin-bottom: 12px; font-size: 22px; }
+
+    /* Light cards */
+    .lux-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .lux-card h3 { margin-bottom: 12px; }
+
+    .light-cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+
+    .light-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 18px 48px rgba(20,33,50,.07);
+      transition: transform .22s ease;
+    }
+    .light-card:hover { transform: translateY(-4px); }
+    .light-card small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; display: block; margin-bottom: 14px; }
+    .light-card h3 { font-size: 22px; margin-bottom: 10px; }
+
+    /* Myth-busting tags */
+    .myth-tag {
+      display: inline-block;
+      background: rgba(216,184,102,.15);
+      border: 1px solid rgba(216,184,102,.3);
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin: 4px 4px 4px 0;
+      letter-spacing: .04em;
+    }
+    .myth-busted { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+
+    /* Body / Thoughts / Behavior / Feelings grid */
+    .impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 46px; }
+    .impact-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .impact-card:hover { transform: translateY(-4px); border-color: rgba(216,184,102,.42); }
+    .impact-card .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .impact-card h3 { margin-bottom: 14px; color: var(--white); font-size: 22px; }
+    .impact-list { list-style: none; display: grid; gap: 8px; }
+    .impact-list li { color: rgba(255,255,255,.68); font-size: 15px; padding-left: 18px; position: relative; }
+    .impact-list li::before { content: '›'; position: absolute; left: 0; color: var(--champagne); font-size: 18px; font-weight: 700; line-height: 1; top: 1px; }
+
+    /* Hub diagram: at-a-glance map above the detail cards */
+    .hub { position: relative; margin-top: 48px; display: grid; grid-template-columns: 1fr 210px 1fr; gap: 20px 44px; align-items: center; }
+    .hub-lines { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; overflow: visible; pointer-events: none; }
+    .hub-node, .hub-core { position: relative; z-index: 1; }
+    .hub-node {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+    }
+    .hub-node .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .hub-node ul { list-style: none; display: grid; gap: 7px; }
+    .hub-node li { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.5; padding-left: 16px; position: relative; }
+    .hub-node li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--champagne); opacity: .85; }
+    .hub-core {
+      justify-self: center; align-self: center;
+      width: 150px; height: 150px; border-radius: 50%;
+      display: grid; place-items: center; text-align: center;
+      background: radial-gradient(circle at 50% 50%, rgba(216,184,102,.28), rgba(216,184,102,.06) 72%);
+      border: 1.5px solid rgba(216,184,102,.95);
+      box-shadow: 0 0 96px rgba(216,184,102,.34), 0 0 32px rgba(216,184,102,.3), inset 0 0 32px rgba(216,184,102,.11);
+      font-family: var(--serif); font-size: 25px; color: var(--champagne); letter-spacing: -.02em;
+    }
+    .hub-core { grid-column: 2; grid-row: 1 / span 2; }
+    .hub-core::before, .hub-core::after {
+      content: ''; position: absolute; inset: -2px; border-radius: 50%;
+      border: 1px solid rgba(216,184,102,.75);
+      animation: hubPulse 5.2s cubic-bezier(.25,.6,.35,1) infinite;
+      pointer-events: none;
+    }
+    .hub-core::after { animation-delay: 2.6s; }
+    @keyframes hubPulse {
+      0%   { transform: scale(1);    opacity: .8; }
+      78%  { opacity: 0; }
+      100% { transform: scale(1.46); opacity: 0; }
+    }
+    .hub-lines line { stroke-dasharray: 5 7; animation: hubFlow 4s linear infinite; }
+    @keyframes hubFlow { to { stroke-dashoffset: -24; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hub-core::before { animation: none; opacity: .5; transform: none; }
+      .hub-core::after { display: none; }
+      .hub-lines line { animation: none; stroke-dasharray: none; }
+    }
+    .hub-n1 { grid-column: 1; grid-row: 1; }
+    .hub-n2 { grid-column: 3; grid-row: 1; }
+    .hub-n3 { grid-column: 1; grid-row: 2; }
+    .hub-n4 { grid-column: 3; grid-row: 2; }
+    @media (max-width: 860px) {
+      .hub { grid-template-columns: 1fr; gap: 16px; }
+      .hub-lines { display: none; }
+      .hub-core, .hub-n1, .hub-n2, .hub-n3, .hub-n4 { grid-column: 1; grid-row: auto; }
+      .hub-core { width: 130px; height: 130px; font-size: 22px; margin-bottom: 4px; }
+    }
+
+    /* Cycle steps */
+    .cycle-steps { display: grid; gap: 18px; margin-top: 42px; }
+    .cycle-step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
+    .step-number { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--champagne); font-family: var(--serif); font-size: 22px; }
+    .cycle-step h3 { font-size: 23px; margin-bottom: 8px; }
+
+    /* Stat strip */
+    .stat-strip { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 32px; box-shadow: 0 18px 50px rgba(20,33,50,.07); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .stat-item { text-align: center; }
+    .stat-item strong { display: block; font-family: var(--serif); color: var(--night); font-size: 36px; line-height: 1; margin-bottom: 8px; }
+    .stat-item span { color: var(--muted); font-size: 14px; }
+
+    /* Quote card */
+    .quote-card { background: var(--night); color: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
+    .quote-card p { color: rgba(255,255,255,.78); font-family: var(--serif); font-size: 26px; line-height: 1.4; max-width: unset; }
+    .quote-card small { display: block; color: var(--champagne); margin-top: 22px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 11px; }
+
+    /* CTA section */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
+    .final-cta .container { position: relative; z-index: 2; }
+    .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .floating-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 124px; }
+      .cards-3, .cards-4, .light-cards-3, .light-cards-4, .impact-grid, .stat-strip, .footer-grid { grid-template-columns: 1fr; }
+      .cards-2, .light-cards-2 { grid-template-columns: 1fr; }
+      .cycle-step { grid-template-columns: 1fr; }
+      .step-number { width: 46px; height: 46px; font-size: 18px; }
+      .section { padding: 78px 0; }
+      .floating-cta { left: 18px; right: 18px; width: auto; }
+      .floating-cta .btn { width: 100%; }
+      .what-is-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  <style id="guide-extra-styles">
+    /* "X is not" chips: the inherited champagne-on-cream was near-invisible
+       on the light section, so these carry a dark label and a gold mark. */
+    .myth-intro {
+      display: block;
+      color: var(--night);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    .myth-busted { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0; }
+    .myth-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.09);
+      color: var(--night);
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0;
+      padding: 13px 22px 13px 14px;
+      margin: 0;
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(20,33,50,.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .myth-tag::before {
+      content: '\2715';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--champagne), var(--gold));
+      color: #16100a;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .myth-tag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(20,33,50,.12);
+      border-color: rgba(216,184,102,.55);
+    }
+    /* Keep the dark-section variant legible where the background is ink. */
+    .dark-section .myth-tag {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(216,184,102,.3);
+      color: var(--white);
+      box-shadow: none;
+    }
+    @media (max-width: 600px) {
+      .myth-tag { font-size: 13.5px; padding: 11px 18px 11px 12px; }
+    }
+
+    .stat-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: linear-gradient(140deg, var(--night), var(--navy) 60%, var(--ink));
+      border: 1px solid rgba(216,184,102,.4);
+      border-radius: var(--radius);
+      padding: 52px 46px;
+      margin-top: 52px;
+      box-shadow: 0 30px 90px rgba(8,11,16,.2);
+    }
+    .stat-panel::before {
+      content: '';
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,184,102,.15), transparent 68%);
+      top: -180px; right: -120px;
+      pointer-events: none;
+    }
+    .stat-cell { position: relative; z-index: 2; padding: 0 36px; }
+    .stat-cell:first-child { padding-left: 0; }
+    .stat-cell:last-child { padding-right: 0; }
+    .stat-cell + .stat-cell { border-left: 1px solid rgba(216,184,102,.24); }
+    .stat-label {
+      display: block;
+      color: var(--champagne);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .stat-cell strong {
+      display: block;
+      font-family: var(--serif);
+      color: var(--white);
+      font-size: 33px;
+      line-height: 1.12;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .stat-cell > span:last-child {
+      display: block;
+      color: rgba(255,255,255,.68);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .stat-panel { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
+      .stat-cell { padding: 0; }
+      .stat-cell + .stat-cell { border-left: 0; border-top: 1px solid rgba(216,184,102,.24); padding-top: 30px; }
+      .stat-cell strong { font-size: 29px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style id="nav-dd-styles">
+.nav-dd { position: relative; }
+.nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+.nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+.nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+.nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+.nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+@media (max-width: 900px) {
+  .nav-dd { width: 100%; }
+  .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+  .nav-dd-menu::before { display: none; }
+  .nav-dd-menu a { padding: 8px 0; }
+}
+</style>
+  <script src="/analytics.js" defer></script>
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Life After Service",
+  "description": "Why the training does not switch off when the service ends, how hypervigilance and transition stress actually work, and what helps. Written by a therapist who served.",
+  "url": "https://therapybydavid.com/veterans",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Therapy by David",
+    "url": "https://therapybydavid.com/"
+  },
+  "about": {
+    "@type": "MedicalCondition",
+    "name": "Post-Traumatic Stress and Military Transition"
+  },
+  "audience": {
+    "@type": "Patient"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://therapybydavid.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://therapybydavid.com/resources"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Life After Service",
+      "item": "https://therapybydavid.com/veterans"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <a class="back-link" href="/resources">&larr; Back to Resources</a>
+        <span class="eyebrow">Mental Health Resources</span>
+        <h1>Life After <em>Service</em></h1>
+        <p class="lead">The nervous system learned to operate in an environment that demanded it. A clear look at what carries over, what it costs, and what can be retrained.</p>
+      </div>
+    </section>
+
+    <!-- WHAT IT IS -->
+    <section class="section" id="what-changes">
+      <div class="container">
+        <div class="reveal" style="max-width: 860px;">
+          <span class="eyebrow">What Is It</span>
+          <h2>The training did not stop when the mission did.</h2>
+          <p class="section-lead">Military service teaches the nervous system to run at a level of readiness that civilian life does not require. Scanning a room, tracking exits, sleeping lightly, reading people fast. None of that was a malfunction. It was trained, reinforced, and in the environment it was built for, it worked.</p>
+          <p class="section-lead">The difficulty is that the training does not come with an off switch, and the body does not update simply because the address changed. What was competence in one environment becomes exhausting in another, and the gap between those two facts is where most post-service difficulty actually sits.</p>
+        </div>
+        <div class="reveal" style="margin-top: 52px;">
+          <span class="myth-intro">What carries over is not:</span>
+          <div class="myth-busted">
+            <span class="myth-tag">Weakness</span>
+            <span class="myth-tag">Something to push through</span>
+            <span class="myth-tag">Only about combat</span>
+            <span class="myth-tag">A permanent condition</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="stat-panel">
+            <div class="stat-cell">
+              <span class="stat-label">What it is</span>
+              <strong>Trained, not broken</strong>
+              <span>The response was adaptive in the place it formed.</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-label">How common</span>
+              <strong>The norm</strong>
+              <span>Adjustment difficulty is expected, not unusual.</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-label">What is possible</span>
+              <strong>Retrainable</strong>
+              <span>The nervous system can learn a different baseline.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FULL PICTURE -->
+    <section class="section dark-section" id="how-it-affects">
+      <div class="container">
+        <span class="eyebrow">The Full Picture</span>
+        <h2>It shows up in the ordinary parts of life.</h2>
+        <p class="section-lead">What carries over rarely announces itself. It appears in traffic, at a family dinner, in a hardware store, in the space between you and the people who were waiting for you to come home.</p>
+
+        <div class="hub" role="img" aria-label="Post-service carryover at the center, connected to four areas it affects: the body, your thinking, what you do, and your relationships.">
+          <div class="hub-core" aria-hidden="true"><span>Carryover</span>
+            <svg class="hub-lines" viewBox="0 0 260 260" aria-hidden="true" focusable="false">
+              <g stroke="rgba(216,184,102,.42)" stroke-width="1" stroke-linecap="round">
+                <line x1="64.2" y1="92" x2="-13" y2="47.4"/>
+                <line x1="195.8" y1="92" x2="273" y2="47.4"/>
+                <line x1="64.2" y1="168" x2="-13" y2="212.6"/>
+                <line x1="195.8" y1="168" x2="273" y2="212.6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="hub-node hub-n1">
+            <span class="label">Body</span>
+            <ul>
+              <li>Sleeping light, waking fast</li>
+              <li>Startle out of proportion</li>
+              <li>Never fully settled</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n2">
+            <span class="label">Thoughts</span>
+            <ul>
+              <li>Scanning, assessing, ranking</li>
+              <li>Running the what-if</li>
+              <li>Difficulty being present</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n3">
+            <span class="label">What You Do</span>
+            <ul>
+              <li>Sitting facing the door</li>
+              <li>Avoiding crowds and noise</li>
+              <li>Keeping people at a distance</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n4">
+            <span class="label">Relationships</span>
+            <ul>
+              <li>Short fuse over small things</li>
+              <li>Feeling apart in a full room</li>
+              <li>Hard to explain, so you do not</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card reveal">
+            <span class="label">Body</span>
+            <h3>In Your Body</h3>
+            <ul class="impact-list">
+              <li>Sleeping lightly or waking often</li>
+              <li>Startling hard at sudden noise</li>
+              <li>Constant low-level tension</li>
+              <li>Fatigue from never standing down</li>
+              <li>Headaches and jaw tension</li>
+              <li>Adrenaline with no outlet</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Thoughts</span>
+            <h3>In Your Thinking</h3>
+            <ul class="impact-list">
+              <li>Automatically scanning any space</li>
+              <li>Assessing people quickly</li>
+              <li>Rehearsing what could go wrong</li>
+              <li>Difficulty being fully present</li>
+              <li>Intrusive memories or images</li>
+              <li>Feeling older than people your age</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Behavior</span>
+            <h3>In What You Do</h3>
+            <ul class="impact-list">
+              <li>Choosing seats with a view of the exit</li>
+              <li>Avoiding crowds, traffic, fireworks</li>
+              <li>Staying busy to stay ahead of it</li>
+              <li>Drinking to come down at night</li>
+              <li>Withdrawing from social plans</li>
+              <li>Handling everything alone</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Relationships</span>
+            <h3>In Your Relationships</h3>
+            <ul class="impact-list">
+              <li>Irritability over small things</li>
+              <li>Feeling separate in a full room</li>
+              <li>Difficulty explaining it to family</li>
+              <li>Partners describing you as distant</li>
+              <li>Losing the people who understood</li>
+              <li>Missing the unit more than the job</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SHAPES IT TAKES -->
+    <section class="section" id="types" style="background: var(--cream);">
+      <div class="container">
+        <span class="eyebrow">What Carries Over</span>
+        <h2>Several different things travel home.</h2>
+        <p class="section-lead">Post-service difficulty is often filed under one heading, and it is usually several separate things at once. They overlap and they are not the same, and telling them apart changes what actually helps.</p>
+        <div class="light-cards-3" style="margin-top: 46px;">
+          <div class="light-card reveal">
+            <small>Hypervigilance</small>
+            <h3>Hypervigilance</h3>
+            <p>The readiness that kept you alive, still running at full strength. It does not respond to reassurance because it was never a belief about safety. It is a trained physical state, which is also why it can be retrained rather than argued with.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Transition</small>
+            <h3>Transition and Identity</h3>
+            <p>Service supplies structure, purpose, rank, and a group of people who understood without explanation. All of it ends at once. What follows is frequently described as anxiety and is often closer to grief for a life that had a shape.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Trauma</small>
+            <h3>Post-Traumatic Stress</h3>
+            <p>Intrusion, avoidance, negative shifts in mood, and persistent arousal. The distinction from ordinary adjustment is not the severity of what happened, but whether it is staying in the past and whether life is narrowing to avoid it.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Moral Injury</small>
+            <h3>Moral Injury</h3>
+            <p>The weight of something done, witnessed, or not prevented that sits against your own sense of right. It is distinct from fear-based trauma, it responds to different work, and it is frequently the part that goes unspoken longest.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Sleep</small>
+            <h3>Sleep and Nightmares</h3>
+            <p>Broken sleep, light sleep, dreams that return you there. Sleep is where much of the recovery would otherwise happen, so its disruption tends to worsen everything else and is worth addressing early.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Anger</small>
+            <h3>Anger and Irritability</h3>
+            <p>Anger is often the one emotion that stayed permitted, so a great deal routes through it. The disproportionate reaction to something small is usually the visible end of something considerably larger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <section class="section" id="in-practice" style="padding-bottom: 0;">
+      <div class="container reveal">
+        <div class="quote-card" style="text-align: center; padding: 60px 40px;">
+          <p style="max-width: 44ch; margin: 0 auto;">"I can be sitting in my own living room with the door locked and still be working the room. I know it is safe. That is not the part that decides."</p>
+          <small>A common way hypervigilance gets described</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE CYCLE -->
+    <section class="section" id="the-cycle">
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2>Why it does not fade on its own.</h2>
+        <p class="section-lead">The most common expectation is that time handles it. Time helps with some of it. The part that persists usually persists for a specific reason, and understanding the mechanism explains why willpower has not resolved it.</p>
+        <div class="cycle-steps">
+          <div class="cycle-step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>The response gets trained.</h3>
+              <p>Constant readiness is reinforced daily in an environment where it is genuinely warranted. It becomes automatic, fast, and reliable, which is exactly what was needed.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>The environment changes and the training does not.</h3>
+              <p>You come home. The setting no longer calls for it, but the nervous system has no way to learn that from a change of address. It keeps running its baseline.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Ordinary life triggers it.</h3>
+              <p>Fireworks, a crowded store, traffic, a slammed door. The response fires exactly as trained, in a situation where it does not fit, in front of people who do not follow what just happened.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">4</div>
+            <div>
+              <h3>You avoid what sets it off.</h3>
+              <p>Fewer crowds, fewer events, fewer situations you cannot read quickly. Reasonable each time, and the effect accumulates into a life organized around not being triggered.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">5</div>
+            <div>
+              <h3>Avoidance keeps it intact.</h3>
+              <p>Because you never stay in those situations long enough to be proven wrong, the nervous system never gets the evidence that would let it stand down. Each avoidance confirms the threat.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">6</div>
+            <div>
+              <h3>The world narrows.</h3>
+              <p>The isolation that follows is often more damaging than the original response. Fewer people, fewer places, fewer conversations, and the ones who might have understood are the furthest away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT HELPS -->
+    <section class="section dark-section" id="what-helps">
+      <div class="container">
+        <span class="eyebrow">What Actually Helps</span>
+        <h2>A trained response can be retrained.</h2>
+        <p class="section-lead">This is not about talking through your service until it stops mattering. The work is more specific: giving the nervous system repeated evidence that the current environment differs from the one it learned in, and dealing directly with what has not been said.</p>
+        <div class="cards-3" style="margin-top: 48px;">
+          <article class="card reveal">
+            <span class="num">01</span>
+            <h3>Name which part is which.</h3>
+            <p>Hypervigilance, transition grief, post-traumatic stress, and moral injury travel together and need different work. Sorting them out is the first step and is difficult to do alone from inside it.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">02</span>
+            <h3>Work with the body, not just the story.</h3>
+            <p>The response lives below conscious thought, so it does not resolve through insight alone. Approaches that engage the nervous system directly tend to reach it in ways that discussion by itself does not.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">03</span>
+            <h3>Reduce avoidance gradually.</h3>
+            <p>The narrowing is maintained by never staying long enough to gather different evidence. Deliberate, paced re-entry into what you have been avoiding is what allows the baseline to shift.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">04</span>
+            <h3>Address sleep early.</h3>
+            <p>Broken sleep amplifies everything else and undermines the rest of the work. It is unglamorous, it is often where progress starts, and it is one of the more responsive pieces.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">05</span>
+            <h3>Rebuild purpose and people.</h3>
+            <p>Much of what is missing is not clinical. It is structure, a role that matters, and people who do not require the full explanation. Veteran-specific groups reach parts of this that individual work cannot.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">06</span>
+            <h3>Work with someone who does not need it explained.</h3>
+            <p>Not every therapist is familiar with service. Working with someone who is means less time spent translating and more spent on what you actually came in for.</p>
+          </article>
+        </div>
+
+        <div class="quote-card" style="margin-top: 48px;">
+          <p>If you are in crisis or thinking about harming yourself, call or text 988. Veterans can dial 988 and then press 1.</p>
+          <small>Veterans Crisis Line, available 24 hours a day</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">You Do Not Have to Explain It From Scratch</span>
+        <h2>The response made sense. It can also stand down.</h2>
+        <p>Therapy with someone who served means less time spent explaining the context and more time spent on what has been carrying over since you came home.</p>
+        <a class="btn btn-gold" href="/intake">Book a Free 15-Minute Call</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

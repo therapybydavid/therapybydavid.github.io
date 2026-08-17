@@ -1,0 +1,876 @@
+---
+permalink: /relationships.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Relationship Patterns Repeat | Therapy by David</title>
+  <meta name="description" content="Why the same argument, the same distance, and the same ending keep showing up with different people, where the pattern was learned, and what actually interrupts it." />
+  <link rel="canonical" href="https://therapybydavid.com/relationships">
+  <meta property="og:title" content="Why Relationship Patterns Repeat" />
+  <meta property="og:description" content="Why the same argument, the same distance, and the same ending keep showing up with different people, where the pattern was learned, and what actually interrupts it." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://therapybydavid.com/relationships" />
+  <meta property="og:site_name" content="Therapy by David" />
+  <meta property="og:image" content="https://therapybydavid.com/images/og-card-v4.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Therapy by David" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Relationship Patterns Repeat" />
+  <meta name="twitter:description" content="Why the same argument, the same distance, and the same ending keep showing up with different people, where the pattern was learned, and what actually interrupts it." />
+  <meta name="twitter:image" content="https://therapybydavid.com/images/og-card-v4.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+  <style>
+    :root {
+      --ink: #080b10;
+      --night: #101720;
+      --navy: #142132;
+      --champagne: #d8b866;
+      --gold: #b99138;
+      --cream: #f5efe3;
+      --paper: #fbf8f1;
+      --mist: #e8decc;
+      --text: #15171b;
+      --muted: #6a6258;
+      --white: #ffffff;
+      --line: rgba(216, 184, 102, .25);
+      --shadow: 0 24px 80px rgba(0,0,0,.18);
+      --radius: 28px;
+      --max: 1180px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p { color: var(--muted); max-width: 68ch; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--night); line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(46px, 7vw, 92px); font-weight: 700; }
+    h2 { font-size: clamp(34px, 4.5vw, 58px); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 25px; font-weight: 650; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,.74); line-height: 1.7; }
+    .section-lead { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg, var(--champagne), var(--gold)); color: #16100a; box-shadow: 0 16px 38px rgba(185,145,56,.32); }
+    .btn-ghost { color: var(--white); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+    .btn-dark { color: var(--white); background: var(--night); }
+    .btn-light { color: var(--night); border-color: rgba(20,33,50,.18); background: rgba(255,255,255,.62); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(8,11,16,.74);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; flex-direction: column; line-height: 1; color: var(--white); }
+    .brand strong { font-family: var(--serif); font-size: 25px; letter-spacing: -.02em; font-weight: 700; }
+    .brand span { color: var(--champagne); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; margin-top: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle { display: none; background: transparent; border: 0; width: 42px; height: 42px; cursor: pointer; }
+    .nav-toggle span { display: block; height: 2px; background: var(--white); margin: 7px; border-radius: 99px; }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 20px;
+      text-decoration: none;
+      transition: text-decoration .15s ease;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 148px 0 86px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 20% 50%, rgba(216,184,102,.18), transparent 40%),
+        linear-gradient(135deg, rgba(8,11,16,.98) 0%, rgba(16,23,32,.94) 60%, rgba(8,11,16,.88) 100%);
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--paper));
+      pointer-events: none;
+    }
+    .page-hero h1 { color: var(--white); max-width: 820px; margin-bottom: 26px; }
+    .page-hero h1 em { color: var(--champagne); font-style: italic; }
+    .page-hero .lead { margin-bottom: 36px; max-width: 640px; }
+
+    /* Dark section */
+    .dark-section { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+    .dark-section::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.16), transparent 68%); top: -220px; right: -160px; }
+    .dark-section .container { position: relative; z-index: 2; }
+    .dark-section h2, .dark-section h3 { color: var(--white); }
+    .dark-section p { color: rgba(255,255,255,.68); }
+
+    /* Cards */
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(216,184,102,.42); background: rgba(255,255,255,.08); }
+    .card .num { color: var(--champagne); font-size: 13px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 22px; display: block; }
+    .card h3 { margin-bottom: 12px; font-size: 22px; }
+
+    /* Light cards */
+    .lux-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 18px 60px rgba(20,33,50,.09);
+    }
+    .lux-card h3 { margin-bottom: 12px; }
+
+    .light-cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .light-cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+
+    .light-card {
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.08);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 18px 48px rgba(20,33,50,.07);
+      transition: transform .22s ease;
+    }
+    .light-card:hover { transform: translateY(-4px); }
+    .light-card small { color: var(--gold); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; display: block; margin-bottom: 14px; }
+    .light-card h3 { font-size: 22px; margin-bottom: 10px; }
+
+    /* Myth-busting tags */
+    .myth-tag {
+      display: inline-block;
+      background: rgba(216,184,102,.15);
+      border: 1px solid rgba(216,184,102,.3);
+      color: var(--champagne);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin: 4px 4px 4px 0;
+      letter-spacing: .04em;
+    }
+    .myth-busted { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+
+    /* Body / Thoughts / Behavior / Feelings grid */
+    .impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 46px; }
+    .impact-card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .impact-card:hover { transform: translateY(-4px); border-color: rgba(216,184,102,.42); }
+    .impact-card .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .impact-card h3 { margin-bottom: 14px; color: var(--white); font-size: 22px; }
+    .impact-list { list-style: none; display: grid; gap: 8px; }
+    .impact-list li { color: rgba(255,255,255,.68); font-size: 15px; padding-left: 18px; position: relative; }
+    .impact-list li::before { content: '›'; position: absolute; left: 0; color: var(--champagne); font-size: 18px; font-weight: 700; line-height: 1; top: 1px; }
+
+    /* Hub diagram: at-a-glance map above the detail cards */
+    .hub { position: relative; margin-top: 48px; display: grid; grid-template-columns: 1fr 210px 1fr; gap: 20px 44px; align-items: center; }
+    .hub-lines { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; overflow: visible; pointer-events: none; }
+    .hub-node, .hub-core { position: relative; z-index: 1; }
+    .hub-node {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+    }
+    .hub-node .label { color: var(--champagne); font-size: 11px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .hub-node ul { list-style: none; display: grid; gap: 7px; }
+    .hub-node li { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.5; padding-left: 16px; position: relative; }
+    .hub-node li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--champagne); opacity: .85; }
+    .hub-core {
+      justify-self: center; align-self: center;
+      width: 150px; height: 150px; border-radius: 50%;
+      display: grid; place-items: center; text-align: center;
+      background: radial-gradient(circle at 50% 50%, rgba(216,184,102,.28), rgba(216,184,102,.06) 72%);
+      border: 1.5px solid rgba(216,184,102,.95);
+      box-shadow: 0 0 96px rgba(216,184,102,.34), 0 0 32px rgba(216,184,102,.3), inset 0 0 32px rgba(216,184,102,.11);
+      font-family: var(--serif); font-size: 25px; color: var(--champagne); letter-spacing: -.02em;
+    }
+    .hub-core { grid-column: 2; grid-row: 1 / span 2; }
+    .hub-core::before, .hub-core::after {
+      content: ''; position: absolute; inset: -2px; border-radius: 50%;
+      border: 1px solid rgba(216,184,102,.75);
+      animation: hubPulse 5.2s cubic-bezier(.25,.6,.35,1) infinite;
+      pointer-events: none;
+    }
+    .hub-core::after { animation-delay: 2.6s; }
+    @keyframes hubPulse {
+      0%   { transform: scale(1);    opacity: .8; }
+      78%  { opacity: 0; }
+      100% { transform: scale(1.46); opacity: 0; }
+    }
+    .hub-lines line { stroke-dasharray: 5 7; animation: hubFlow 4s linear infinite; }
+    @keyframes hubFlow { to { stroke-dashoffset: -24; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hub-core::before { animation: none; opacity: .5; transform: none; }
+      .hub-core::after { display: none; }
+      .hub-lines line { animation: none; stroke-dasharray: none; }
+    }
+    .hub-n1 { grid-column: 1; grid-row: 1; }
+    .hub-n2 { grid-column: 3; grid-row: 1; }
+    .hub-n3 { grid-column: 1; grid-row: 2; }
+    .hub-n4 { grid-column: 3; grid-row: 2; }
+    @media (max-width: 860px) {
+      .hub { grid-template-columns: 1fr; gap: 16px; }
+      .hub-lines { display: none; }
+      .hub-core, .hub-n1, .hub-n2, .hub-n3, .hub-n4 { grid-column: 1; grid-row: auto; }
+      .hub-core { width: 130px; height: 130px; font-size: 22px; margin-bottom: 4px; }
+    }
+
+    /* Cycle steps */
+    .cycle-steps { display: grid; gap: 18px; margin-top: 42px; }
+    .cycle-step { display: grid; grid-template-columns: 76px 1fr; gap: 22px; background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 24px; }
+    .step-number { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--champagne); font-family: var(--serif); font-size: 22px; }
+    .cycle-step h3 { font-size: 23px; margin-bottom: 8px; }
+
+    /* Stat strip */
+    .stat-strip { background: var(--white); border: 1px solid rgba(20,33,50,.08); border-radius: 24px; padding: 32px; box-shadow: 0 18px 50px rgba(20,33,50,.07); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .stat-item { text-align: center; }
+    .stat-item strong { display: block; font-family: var(--serif); color: var(--night); font-size: 36px; line-height: 1; margin-bottom: 8px; }
+    .stat-item span { color: var(--muted); font-size: 14px; }
+
+    /* Quote card */
+    .quote-card { background: var(--night); color: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px; }
+    .quote-card p { color: rgba(255,255,255,.78); font-family: var(--serif); font-size: 26px; line-height: 1.4; max-width: unset; }
+    .quote-card small { display: block; color: var(--champagne); margin-top: 22px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 11px; }
+
+    /* CTA section */
+    .final-cta { background: var(--ink); color: var(--white); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.14), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
+    .final-cta .container { position: relative; z-index: 2; }
+    .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
+    .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
+
+    /* Footer */
+    footer { background: #000000; color: rgba(255,255,255,.6); padding: 58px 0 38px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 28px; }
+    footer h3, footer h4 { color: var(--white); }
+    footer h3 { font-size: 29px; margin-bottom: 12px; }
+    footer h4 { font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 14px; color: var(--champagne); }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a { color: rgba(255,255,255,.68); }
+    footer a:hover { color: var(--white); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.08); margin-top: 42px; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    .floating-cta { position: fixed; right: 18px; bottom: 18px; z-index: 60; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .page-hero { padding-top: 124px; }
+      .cards-3, .cards-4, .light-cards-3, .light-cards-4, .impact-grid, .stat-strip, .footer-grid { grid-template-columns: 1fr; }
+      .cards-2, .light-cards-2 { grid-template-columns: 1fr; }
+      .cycle-step { grid-template-columns: 1fr; }
+      .step-number { width: 46px; height: 46px; font-size: 18px; }
+      .section { padding: 78px 0; }
+      .floating-cta { left: 18px; right: 18px; width: auto; }
+      .floating-cta .btn { width: 100%; }
+      .what-is-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  <style id="guide-extra-styles">
+    /* "X is not" chips: the inherited champagne-on-cream was near-invisible
+       on the light section, so these carry a dark label and a gold mark. */
+    .myth-intro {
+      display: block;
+      color: var(--night);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+    .myth-busted { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0; }
+    .myth-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: var(--white);
+      border: 1px solid rgba(20,33,50,.09);
+      color: var(--night);
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0;
+      padding: 13px 22px 13px 14px;
+      margin: 0;
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(20,33,50,.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .myth-tag::before {
+      content: '\2715';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--champagne), var(--gold));
+      color: #16100a;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .myth-tag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(20,33,50,.12);
+      border-color: rgba(216,184,102,.55);
+    }
+    /* Keep the dark-section variant legible where the background is ink. */
+    .dark-section .myth-tag {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(216,184,102,.3);
+      color: var(--white);
+      box-shadow: none;
+    }
+    @media (max-width: 600px) {
+      .myth-tag { font-size: 13.5px; padding: 11px 18px 11px 12px; }
+    }
+
+    .stat-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: linear-gradient(140deg, var(--night), var(--navy) 60%, var(--ink));
+      border: 1px solid rgba(216,184,102,.4);
+      border-radius: var(--radius);
+      padding: 52px 46px;
+      margin-top: 52px;
+      box-shadow: 0 30px 90px rgba(8,11,16,.2);
+    }
+    .stat-panel::before {
+      content: '';
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,184,102,.15), transparent 68%);
+      top: -180px; right: -120px;
+      pointer-events: none;
+    }
+    .stat-cell { position: relative; z-index: 2; padding: 0 36px; }
+    .stat-cell:first-child { padding-left: 0; }
+    .stat-cell:last-child { padding-right: 0; }
+    .stat-cell + .stat-cell { border-left: 1px solid rgba(216,184,102,.24); }
+    .stat-label {
+      display: block;
+      color: var(--champagne);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .stat-cell strong {
+      display: block;
+      font-family: var(--serif);
+      color: var(--white);
+      font-size: 33px;
+      line-height: 1.12;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .stat-cell > span:last-child {
+      display: block;
+      color: rgba(255,255,255,.68);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .stat-panel { grid-template-columns: 1fr; padding: 34px 28px; gap: 30px; }
+      .stat-cell { padding: 0; }
+      .stat-cell + .stat-cell { border-left: 0; border-top: 1px solid rgba(216,184,102,.24); padding-top: 30px; }
+      .stat-cell strong { font-size: 29px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style id="nav-dd-styles">
+.nav-dd { position: relative; }
+.nav-dd > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd > a .caret { font-size: 9px; opacity: .7; transition: transform .2s ease; }
+.nav-dd:hover > a .caret, .nav-dd:focus-within > a .caret { transform: rotate(180deg); }
+.nav-dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(8px); min-width: 268px; list-style: none; padding: 10px; background: rgba(8,11,16,.97); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; display: grid; gap: 2px; z-index: 60; }
+.nav-dd-menu::before { content: ''; position: absolute; top: -18px; left: 0; right: 0; height: 18px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dd-menu a { display: block; padding: 11px 14px; border-radius: 11px; font-size: 14px; color: rgba(255,255,255,.78); white-space: nowrap; }
+.nav-dd-menu a:hover { background: rgba(216,184,102,.14); color: #fff; }
+@media (max-width: 900px) {
+  .nav-dd { width: 100%; }
+  .nav-dd-menu { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; padding: 8px 0 0 14px; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
+  .nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { transform: none; }
+  .nav-dd-menu::before { display: none; }
+  .nav-dd-menu a { padding: 8px 0; }
+}
+</style>
+  <script src="/analytics.js" defer></script>
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Why Relationship Patterns Repeat",
+  "description": "Why the same argument, the same distance, and the same ending keep showing up with different people, where the pattern was learned, and what actually interrupts it.",
+  "url": "https://therapybydavid.com/relationships",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Therapy by David",
+    "url": "https://therapybydavid.com/"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Relationship Patterns"
+  },
+  "audience": {
+    "@type": "Patient"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://therapybydavid.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://therapybydavid.com/resources"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why Relationship Patterns Repeat",
+      "item": "https://therapybydavid.com/relationships"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <a class="back-link" href="/resources">&larr; Back to Resources</a>
+        <span class="eyebrow">Mental Health Resources</span>
+        <h1>Why <em>Relationship Patterns</em> Repeat</h1>
+        <p class="lead">The same argument with a different person. The same distance, arriving at the same point. A clear look at where that comes from and what actually changes it.</p>
+      </div>
+    </section>
+
+    <!-- WHAT IT IS -->
+    <section class="section" id="what-is-a-pattern">
+      <div class="container">
+        <div class="reveal" style="max-width: 860px;">
+          <span class="eyebrow">What Is It</span>
+          <h2>The pattern was learned before you chose it.</h2>
+          <p class="section-lead">A relationship pattern is a set of responses you learned early, in the relationships that first taught you what closeness costs and what it takes to stay safe inside one. If closeness came with unpredictability, you may have learned to monitor. If needing things went badly, you may have learned to need less. Those responses were accurate then. They protected something real.</p>
+          <p class="section-lead">The difficulty is that they kept running after the conditions changed. A pattern is not a preference and it is not a decision you keep making badly. It is an old adaptation still operating at full strength in a situation it was never built for, which is why it feels automatic and why insight alone rarely stops it.</p>
+        </div>
+        <div class="reveal" style="margin-top: 52px;">
+          <span class="myth-intro">A relationship pattern is not:</span>
+          <div class="myth-busted">
+            <span class="myth-tag">Bad luck</span>
+            <span class="myth-tag">Picking the wrong people</span>
+            <span class="myth-tag">A character flaw</span>
+            <span class="myth-tag">Something you can just decide to stop</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="stat-panel">
+            <div class="stat-cell">
+              <span class="stat-label">Where it comes from</span>
+              <strong>Not bad luck</strong>
+              <span>Patterns follow the person, not the partner.</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-label">When it forms</span>
+              <strong>Learned early</strong>
+              <span>Usually long before the current relationship began.</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-label">What is possible</span>
+              <strong>Changeable</strong>
+              <span>With awareness, practice, and repeated repair.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FULL PICTURE -->
+    <section class="section dark-section" id="how-it-affects">
+      <div class="container">
+        <span class="eyebrow">The Full Picture</span>
+        <h2>A pattern runs in more than your head.</h2>
+        <p class="section-lead">By the time you notice a pattern, it has already moved through your body, your interpretation, and your behavior. It is rarely a thought you can catch in advance. It is closer to a sequence that completes itself before you have decided anything.</p>
+
+        <div class="hub" role="img" aria-label="A relationship pattern at the center, connected to four areas it moves through: the body, the story you tell, what you do, and what happens between you.">
+          <div class="hub-core" aria-hidden="true"><span>The Pattern</span>
+            <svg class="hub-lines" viewBox="0 0 260 260" aria-hidden="true" focusable="false">
+              <g stroke="rgba(216,184,102,.42)" stroke-width="1" stroke-linecap="round">
+                <line x1="64.2" y1="92" x2="-13" y2="47.4"/>
+                <line x1="195.8" y1="92" x2="273" y2="47.4"/>
+                <line x1="64.2" y1="168" x2="-13" y2="212.6"/>
+                <line x1="195.8" y1="168" x2="273" y2="212.6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="hub-node hub-n1">
+            <span class="label">Body</span>
+            <ul>
+              <li>Chest tightens, jaw sets</li>
+              <li>Flushed, restless, keyed up</li>
+              <li>Or numb and far away</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n2">
+            <span class="label">The Story</span>
+            <ul>
+              <li>Here we go again</li>
+              <li>They do not actually care</li>
+              <li>I am too much, or not enough</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n3">
+            <span class="label">What You Do</span>
+            <ul>
+              <li>Push harder for an answer</li>
+              <li>Go quiet and withdraw</li>
+              <li>Smooth it over quickly</li>
+            </ul>
+          </div>
+          <div class="hub-node hub-n4">
+            <span class="label">Between You</span>
+            <ul>
+              <li>The same argument, again</li>
+              <li>Distance neither of you named</li>
+              <li>Repair that never quite lands</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card reveal">
+            <span class="label">Body</span>
+            <h3>In Your Body</h3>
+            <ul class="impact-list">
+              <li>Tight chest or throat</li>
+              <li>Heat rising, restlessness</li>
+              <li>Going cold or numb</li>
+              <li>Trouble sleeping after conflict</li>
+              <li>Stomach in knots</li>
+              <li>Exhaustion that outlasts the argument</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Thoughts</span>
+            <h3>In Your Thinking</h3>
+            <ul class="impact-list">
+              <li>Reading tone for hidden meaning</li>
+              <li>Rehearsing the conversation in advance</li>
+              <li>Certainty about what they meant</li>
+              <li>Scorekeeping across weeks</li>
+              <li>All-or-nothing conclusions</li>
+              <li>Replaying it long after it ended</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Behavior</span>
+            <h3>In What You Do</h3>
+            <ul class="impact-list">
+              <li>Pursuing an answer immediately</li>
+              <li>Shutting down and going silent</li>
+              <li>Agreeing to end the discomfort</li>
+              <li>Managing their mood before your own</li>
+              <li>Testing whether they will stay</li>
+              <li>Leaving before you can be left</li>
+            </ul>
+          </div>
+          <div class="impact-card reveal">
+            <span class="label">Relationship</span>
+            <h3>In the Relationship</h3>
+            <ul class="impact-list">
+              <li>The same fight in new clothes</li>
+              <li>Conflict that never fully resolves</li>
+              <li>Closeness followed by distance</li>
+              <li>Feeling unseen by someone present</li>
+              <li>Repair attempts that miss</li>
+              <li>A slow accumulation of resentment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SHAPES IT TAKES -->
+    <section class="section" id="types" style="background: var(--cream);">
+      <div class="container">
+        <span class="eyebrow">The Common Shapes</span>
+        <h2>Most patterns take one of a few forms.</h2>
+        <p class="section-lead">Patterns are personal, but they are not infinite. Most of what shows up in a therapy room falls into a handful of recognizable shapes. Naming yours is useful not because the label explains you, but because it makes the pattern visible while it is happening.</p>
+        <div class="light-cards-3" style="margin-top: 46px;">
+          <div class="light-card reveal">
+            <small>Pursue</small>
+            <h3>The Pursuer</h3>
+            <p>When distance appears, you move toward it. You want to resolve it now, talk it through, get an answer. The urgency is real, and it often reads to the other person as pressure, which produces more of the distance you were trying to close.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Withdraw</small>
+            <h3>The Withdrawer</h3>
+            <p>When conflict rises, you go quiet. Not to punish, but because the volume is genuinely more than you can process in the moment. The silence buys you room and reads to the other person as abandonment.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Peace</small>
+            <h3>Keeping the Peace</h3>
+            <p>You sense tension early and move to smooth it before it forms. Preferences go unsaid, small disagreements get absorbed, and the relationship stays calm on the surface while the honest conversation never happens.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Score</small>
+            <h3>Keeping Score</h3>
+            <p>You track what you have given against what you have received. The ledger is usually accurate, and it is also a sign that asking directly has not felt possible. Resentment builds in the gap between what you needed and what you requested.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Over-Function</small>
+            <h3>Over-Functioning</h3>
+            <p>You carry more than your half: the planning, the emotional labor, the anticipating. It looks like competence and often started as necessity. It quietly trains the other person to do less and leaves you depleted and alone in the work.</p>
+          </div>
+          <div class="light-card reveal">
+            <small>Test</small>
+            <h3>Testing</h3>
+            <p>Rather than ask whether you matter, you construct situations that answer it. Withdrawing to see if they follow, saying the harsh thing to see if they stay. The answer never satisfies for long, because the question was never really asked out loud.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <section class="section" id="in-practice" style="padding-bottom: 0;">
+      <div class="container reveal">
+        <div class="quote-card" style="text-align: center; padding: 60px 40px;">
+          <p style="max-width: 44ch; margin: 0 auto;">"I keep ending up in the same place. Different person, same conversation, same feeling in my chest when it starts."</p>
+          <small>A common way patterns get described</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE CYCLE -->
+    <section class="section" id="the-cycle">
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2>What a pattern looks like in real time.</h2>
+        <p class="section-lead">Patterns feel instantaneous, but they are sequential. Slowing the sequence down is most of the work, because every step in it is a place where something different becomes possible.</p>
+        <div class="cycle-steps">
+          <div class="cycle-step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Something small happens.</h3>
+              <p>A tone, a delay in replying, a look across the room. Objectively minor, and often something an outside observer would not register at all.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Your body responds first.</h3>
+              <p>Before any conscious thought, the chest tightens or the stomach drops. The nervous system has already classified this as familiar, and familiar means it knows what comes next.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>An old story arrives as fact.</h3>
+              <p>Here we go again. They are pulling away. I am about to be left. It does not feel like an interpretation. It feels like information you have just received about the situation.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">4</div>
+            <div>
+              <h3>You do the thing that used to work.</h3>
+              <p>Pursue, withdraw, smooth it over, go cold. Whatever protected you the first time this pattern formed. It is fast, practiced, and it happens before deciding.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">5</div>
+            <div>
+              <h3>They respond to your response.</h3>
+              <p>They meet your pursuit with distance, or your silence with alarm. Not because they are cruel, but because they are also reacting from inside their own pattern, at the same speed.</p>
+            </div>
+          </div>
+          <div class="cycle-step reveal">
+            <div class="step-number">6</div>
+            <div>
+              <h3>The pattern proves itself.</h3>
+              <p>The outcome you feared appears, which confirms the story, which strengthens the response for next time. Nobody intended this. The loop simply ran to completion, as it has before.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT HELPS -->
+    <section class="section dark-section" id="what-helps">
+      <div class="container">
+        <span class="eyebrow">What Changes It</span>
+        <h2>Patterns can be interrupted.</h2>
+        <p class="section-lead">Understanding a pattern is not the same as changing one, which is why insight often arrives long before anything is different. What changes a pattern is repetition of a new response in the moments that used to run automatically.</p>
+        <div class="cards-3" style="margin-top: 48px;">
+          <article class="card reveal">
+            <span class="num">01</span>
+            <h3>Catch it in the body first.</h3>
+            <p>The physical signal arrives before the story does, and it is the earliest point you can reach. Learning your own tell, the tight chest or the cold distance, gives you a few seconds that did not exist before.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">02</span>
+            <h3>Separate the moment from the pattern.</h3>
+            <p>Ask what portion of this reaction belongs to what just happened, and what portion belongs to everything it reminds you of. The intensity usually lives in the second part.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">03</span>
+            <h3>Say the need instead of performing it.</h3>
+            <p>Testing, withdrawing, and scorekeeping are all ways of asking a question without risking it out loud. Naming the actual need is more exposing and considerably more likely to get an answer.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">04</span>
+            <h3>Let repair be ordinary.</h3>
+            <p>Most relationships are not decided by whether conflict happens, but by how reliably it gets repaired afterward. Small, unglamorous repair attempts, made often, matter more than getting it right the first time.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">05</span>
+            <h3>Expect the discomfort.</h3>
+            <p>Doing the opposite of your pattern feels wrong, not liberating. The pursuer who waits feels negligent. The withdrawer who stays feels flooded. That discomfort is the pattern being interrupted, not evidence of a mistake.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">06</span>
+            <h3>Work on it with support.</h3>
+            <p>Patterns are hardest to see from inside them, especially with the people who matter most, where they run strongest. Therapy offers an outside view and a place to practice the new response before it is needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container reveal">
+        <span class="eyebrow">The Pattern Is Not the Whole Story</span>
+        <h2>You can understand the pattern and still need help changing it.</h2>
+        <p>Therapy is a place to see the pattern clearly, understand where it came from, and practice responding differently in the relationships that matter to you now.</p>
+        <a class="btn btn-gold" href="/intake">Book a Free 15-Minute Call</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "footer.njk" %}
+
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
