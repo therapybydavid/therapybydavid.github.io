@@ -1,9 +1,9 @@
 ---
 llmsDescription: "You don't need to feel ready to start. You need to start to feel ready."
-title: "Waiting to Feel Ready Before You Change Anything Might Be the Reason You're Stuck"
-pageTitle: "Waiting to Feel Ready Before You Change Anything Might Be the Reason You're Stuck | Therapy by David"
+title: "Why Waiting to Feel Ready Keeps You Stuck"
+pageTitle: "Why Waiting to Feel Ready Keeps You Stuck | Therapy by David"
 description: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
-ogTitle: "Waiting to Feel Ready Before You Change Anything Might Be the Reason You're Stuck"
+ogTitle: "Why Waiting to Feel Ready Keeps You Stuck"
 ogDescription: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
 ogType: article
 ogUrl: "https://therapybydavid.com/blog/waiting-to-feel-ready-before-you-change-anything"
@@ -14,7 +14,7 @@ order: 50
 tag: "Mental Health"
 dateDisplay: "August 17, 2026 · 6 min read"
 deck: "You don't need to feel ready to start. You need to start to feel ready."
-cardTitle: "Waiting to Feel Ready Before You Change Anything Might Be the Reason You're Stuck"
+cardTitle: "Why Waiting to Feel Ready Keeps You Stuck"
 cardTag: "Mental Health"
 cardDescription: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
 cardDate: "August 17, 2026 · 6 min read"
