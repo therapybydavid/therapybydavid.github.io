@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/waiting-to-feel-ready-before-you-change-anything"
 canonical: "https://therapybydavid.com/blog/waiting-to-feel-ready-before-you-change-anything"
 permalink: "/blog/waiting-to-feel-ready-before-you-change-anything.html"
-date: 2026-08-17
+date: 2026-08-18
 order: 50
 tag: "Mental Health"
-dateDisplay: "August 17, 2026 · 6 min read"
+dateDisplay: "August 18, 2026 · 6 min read"
 deck: "You don't need to feel ready to start. You need to start to feel ready."
 cardTitle: "Why Waiting to Feel Ready Keeps You Stuck"
 cardTag: "Mental Health"
 cardDescription: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
-cardDate: "August 17, 2026 · 6 min read"
+cardDate: "August 18, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1572605895004-24ccc43931f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzaXR0aW5nJTIwdGhvdWdodGZ1bGx5JTIwYXQlMjB3aW5kb3clMjB3b21hbiUyMHBhdXNpbmclMjBtaWQtdGFzayUyMGxvb2tpbmclMjBob3BlZnVsJTIwcGVyc29ufGVufDF8MHx8fDE3ODY5NzM0NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "women's brown sweater"
