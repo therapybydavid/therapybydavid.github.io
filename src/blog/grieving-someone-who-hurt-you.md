@@ -19,6 +19,10 @@ cardTag: "Grief"
 cardDescription: "When the person you lost also caused you pain, grief gets complicated. Here's why relief, anger, and guilt can all show up at once — and what to do with them."
 cardDate: "August 18, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1713947505435-b79c33c6c91a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODcwNTA5MDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting at a desk with her hands behind her head"
+cardImage: "https://images.unsplash.com/photo-1713947505435-b79c33c6c91a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBjYWxtfGVufDF8MHx8fDE3ODcwNTA5MDB8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting at a desk with her hands behind her head"
 ---
 
 Most of what we're taught about grief assumes a certain kind of loss: someone who loved you well, whose absence leaves a clean, aching hole. But grief doesn't check credentials first. It shows up just as forcefully when the person you lost was difficult, harmful, or someone you had a genuinely complicated relationship with — a parent who was emotionally unavailable, a sibling who hurt you for years, a partner from a relationship that ended badly before it ended permanently.
