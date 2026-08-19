@@ -2,7 +2,7 @@
 llmsDescription: "The cost landscape, insurance copays, self-pay, sliding scale, and the free consultation."
 title: "How Much Does Therapy Cost in Texas (With and Without Insurance)?"
 pageTitle: "How Much Therapy Costs in Texas | Therapy by David"
-description: "What therapy really costs in Texas with and without insurance: copays, deductibles, self-pay rates, sliding scale through Open Path, and superbills."
+description: "What therapy really costs in Texas with and without insurance: copays, deductibles, self-pay rates, sliding-scale options, and superbills."
 ogTitle: "How Much Does Therapy Cost in Texas (With & Without Insurance)?"
 ogDescription: "A clear breakdown of what therapy costs in Texas, insurance copays, self-pay and out-of-network rates, sliding-scale options, and how to check your benefits."
 ogType: article
@@ -46,7 +46,7 @@ faqJson: |
           "name": "What is a sliding scale in therapy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A sliding scale is a reduced fee based on your income or financial situation, so therapy costs less when paying full price isn't realistic. One well-known option is the Open Path Collective, a nonprofit network where members pay a one-time fee and then see participating therapists at a flat, reduced rate per session. Therapy by David offers reduced-fee, sliding-scale sessions through Open Path for uninsured clients and those paying out of pocket."
+            "text": "A sliding scale is a reduced fee based on your income or financial situation, so therapy costs less when paying full price isn't realistic. Nonprofit networks also connect uninsured clients with therapists who hold a set number of reduced-rate slots. Therapy by David keeps sliding-scale spots open for uninsured clients and those paying out of pocket."
           }
         },
         {
@@ -112,9 +112,9 @@ It's also worth being realistic about timing. Out-of-network reimbursement is a 
 
 If full price isn't realistic right now, that doesn't mean therapy is off the table. A *sliding scale* is a reduced fee based on your income or financial situation, the same therapist, at a lower rate that reflects what you can actually afford.
 
-One of the most widely used options is the **Open Path Collective**, a nonprofit network built specifically for people who are uninsured or paying out of pocket. You pay a one-time membership fee, and then you can see participating therapists at a flat, reduced rate per session, well below typical self-pay pricing. It's a clean, no-judgment way to make ongoing therapy sustainable.
+Nonprofit networks exist for exactly this. Several of them connect people who are uninsured or paying out of pocket with therapists who hold a set number of reduced-rate slots, often well below typical self-pay pricing. It's a clean, no-judgment way to make ongoing therapy sustainable.
 
-Therapy by David offers reduced-fee, sliding-scale sessions through Open Path for exactly these situations. If affordability is the thing standing between you and getting started, that's worth naming directly. It's usually solvable.
+Therapy by David keeps sliding-scale spots open for exactly these situations. If affordability is the thing standing between you and getting started, that's worth naming directly. It's usually solvable.
 
 A few other low-cost avenues exist in Texas, too, depending on your circumstances. Community mental health centers, university training clinics, and nonprofit counseling programs often offer reduced rates, and some employers provide a handful of free sessions through an Employee Assistance Program (EAP). None of these are a fit for everyone, but it's worth knowing the landscape is wider than just "full price or nothing." The goal is simply to find a sustainable arrangement, therapy works through consistency, and consistency is hard if every session feels like a financial decision.
 
@@ -147,6 +147,6 @@ Five minutes on the phone turns "I have no idea what this will cost" into a real
 
 You don't have to figure all of this out alone, and you definitely don't have to commit to anything before you understand the cost. The first step is free.
 
-At Therapy by David, every new client starts with a free 15-minute consultation. It's a no-pressure conversation about what's going on, how the work would look, and, yes, exactly what it would cost in your situation. The practice is in-network with many major insurance plans, confirms self-pay rates up front with no surprises, and offers reduced-fee, sliding-scale sessions through Open Path Collective for those paying out of pocket. For your current rate and what your specific coverage would mean, the fastest answer is to [book a free 15-minute consultation](/contact.html) and ask directly.
+At Therapy by David, every new client starts with a free 15-minute consultation. It's a no-pressure conversation about what's going on, how the work would look, and, yes, exactly what it would cost in your situation. The practice is in-network with many major insurance plans, confirms self-pay rates up front with no surprises, and keeps sliding-scale spots open for those paying out of pocket. For your current rate and what your specific coverage would mean, the fastest answer is to [book a free 15-minute consultation](/contact.html) and ask directly.
 
 Cost is a real consideration. It shouldn't be the reason you keep putting off support that could actually change things.
