@@ -372,6 +372,21 @@
     text-align: center;
     margin-top: 30px;
   }
+  .brand-foot a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .brand-foot a:hover { color: var(--gold); border-bottom-color: rgba(201, 165, 72, 0.5); }
+
+  .privacy-note a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(166, 166, 166, 0.45);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .privacy-note a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
   @media (max-width: 560px) {
     body { padding: 20px 14px; }
@@ -495,7 +510,7 @@
       <div class="error-msg" id="error-msg" role="alert"></div>
       <button type="submit" class="btn-submit" id="submit-btn">Continue</button>
       <p class="alt-contact">Rather talk first? Call or text <a href="tel:+18325442562">(832) 544-2562</a>.</p>
-      <p class="privacy-note">Your information stays private and is only used to coordinate your care.</p>
+      <p class="privacy-note">Your information stays private and is only used to coordinate your care. <a href="/privacy">Privacy policy</a>.</p>
 
       <div class="next-steps" aria-labelledby="lbl-next">
         <p class="section-label" id="lbl-next" style="margin-bottom:0;">What happens next</p>
@@ -530,7 +545,7 @@
     </div>
   </section>
 
-  <p class="brand-foot">Therapy by David &middot; Houston, TX</p>
+  <p class="brand-foot"><a href="/">Therapy by David</a> &middot; Houston, TX</p>
 </main>
 
 <script>
