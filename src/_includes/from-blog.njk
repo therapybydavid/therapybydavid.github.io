@@ -1,10 +1,13 @@
 {# --- "From the blog" cluster links: set `fromBlog` (list of {href,title}) before including --- #}
 <style>
   .from-blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-  .from-blog-card { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; background: var(--white, #fff); border: 1px solid rgba(20, 33, 50, .08); border-radius: var(--radius, 18px); padding: 28px; text-decoration: none; box-shadow: 0 18px 48px rgba(20, 33, 50, .07); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
-  .from-blog-card:hover { transform: translateY(-4px); border-color: var(--line); box-shadow: 0 22px 56px rgba(20, 33, 50, .11); }
-  .from-blog-card-title { font-size: 19px; font-weight: 600; line-height: 1.35; color: var(--ink); }
-  .from-blog-more { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--navy); }
+  .from-blog-card { display: flex; flex-direction: column; justify-content: space-between; gap: 30px; background: linear-gradient(158deg, #1b2c42 0%, #111c2b 100%); border: 1px solid rgba(216, 184, 102, .2); border-radius: var(--radius, 18px); padding: 34px; text-decoration: none; box-shadow: 0 20px 54px rgba(20, 33, 50, .22); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+  .from-blog-card:hover { transform: translateY(-5px); border-color: var(--champagne, #d8b866); box-shadow: 0 28px 70px rgba(20, 33, 50, .32); }
+  .from-blog-card-title { display: block; font-size: 24px; font-weight: 600; line-height: 1.28; color: var(--white, #fff); }
+  .from-blog-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .from-blog-more { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--champagne, #d8b866); }
+  .from-blog-badge { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 44px; height: 44px; border-radius: 999px; background: var(--champagne, #d8b866); color: var(--navy, #142132); font-size: 19px; font-weight: 800; line-height: 1; transition: transform .22s ease; }
+  .from-blog-card:hover .from-blog-badge { transform: translateX(5px); }
   @media (max-width: 900px) { .from-blog-grid { grid-template-columns: 1fr; } }
 </style>
 <section class="section" id="from-the-blog">
@@ -16,7 +19,11 @@
       {% for p in fromBlog %}
       <a class="from-blog-card reveal" href="{{ p.href }}">
         <span class="from-blog-card-title">{{ p.title }}</span>
-        <span class="from-blog-more">Read the article &rarr;</span>
+        <span class="from-blog-foot">
+          <span class="from-blog-more">Read the article</span>
+          {# Decorative: the link text above already names the action. #}
+          <span class="from-blog-badge" aria-hidden="true">&rarr;</span>
+        </span>
       </a>
       {% endfor %}
     </div>
