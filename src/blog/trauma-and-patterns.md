@@ -129,4 +129,4 @@ Understanding that doesn't excuse the impact, and it isn't meant to. It does cha
 
 Recognizing these patterns in yourself is not a diagnosis or a life sentence. It is the beginning of being able to work with them honestly. Most people carrying unprocessed trauma have found ways to function, often very effectively, while managing the weight of it. That takes real strength.
 
-But functioning is not the same as living without the weight. Therapy creates a place to put it down, and if you're in Texas, that support is available in person in Pasadena and Webster, or via telehealth anywhere in the state.
+But functioning is not the same as living without the weight. Therapy creates a place to put it down, and if you're in Texas, that support is available in person in Clear Lake (Houston), or via telehealth anywhere in the state.

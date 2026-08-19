@@ -318,6 +318,20 @@
     margin-top: 16px;
   }
 
+  .alt-contact {
+    font-size: 13.5px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 14px;
+  }
+  .alt-contact a {
+    color: var(--gold);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(201, 165, 72, 0.4);
+  }
+  .alt-contact a:hover { border-bottom-color: var(--gold); }
+
   /* ---- Panels (out-of-state, success) ---- */
   .panel { display: none; animation: fadeIn 0.3s ease both; }
   .panel.visible { display: block; }
@@ -449,7 +463,7 @@
       <div class="section" id="sec-format">
         <p class="section-label" id="lbl-format">How we meet</p>
         <div class="chips" role="group" aria-labelledby="lbl-format" data-group="format">
-          <button type="button" class="chip" aria-pressed="false" data-format="In person (Webster office)">In person &middot; Webster office</button>
+          <button type="button" class="chip" aria-pressed="false" data-format="In person">In person</button>
           <button type="button" class="chip" aria-pressed="false" data-format="Telehealth / Secure video">Telehealth &middot; anywhere in Texas</button>
         </div>
       </div>
@@ -480,6 +494,7 @@
 
       <div class="error-msg" id="error-msg" role="alert"></div>
       <button type="submit" class="btn-submit" id="submit-btn">Continue</button>
+      <p class="alt-contact">Rather talk first? Call or text <a href="tel:+18325442562">(832) 544-2562</a>.</p>
       <p class="privacy-note">Your information stays private and is only used to coordinate your care.</p>
 
       <div class="next-steps" aria-labelledby="lbl-next">
@@ -538,7 +553,7 @@
     state: null,
     payment: null,
     insuranceNetwork: null,
-    format: null,            // ["In person (Webster office)"] | ["Telehealth / Secure video"]
+    format: null,            // ["In person"] | ["Telehealth / Secure video"]
     preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
     insuranceCardPath: null, // Storage path only, never the file, never a link
     dateOfBirth: null,       // insurance only; Firestore only, never the Worker

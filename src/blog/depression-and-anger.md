@@ -143,4 +143,4 @@ Therapy for this kind of depression doesn't start with trying to suppress the an
 
 That process takes honesty and a willingness to look at things you may have been avoiding. But it's also where things start to shift.
 
-[Depression and men's mental health are core areas of focus at Therapy by David](/index.html#services), serving adults across Texas via telehealth and in person in the Houston area, Pasadena and Webster.
+[Depression and men's mental health are core areas of focus at Therapy by David](/index.html#services), serving adults across Texas via telehealth and in person in Clear Lake (Houston).

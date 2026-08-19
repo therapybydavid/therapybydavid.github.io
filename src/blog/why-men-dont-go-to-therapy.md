@@ -145,4 +145,4 @@ The relationships that mattered most start to come back. The men who came in hea
 
 And maybe the biggest shift: the story changes. Therapy stops being proof that something's wrong with you and becomes one more thing you handled directly, like everything else you've handled. That's not weakness. That's the same competence you already have, finally pointed at the part of your life you'd been avoiding.
 
-If any of this sounds like you, [men's mental health therapy](/mens-mental-health.html) at Therapy by David is built exactly for this, direct, practical, and respectful of how you operate. It's available via telehealth across Texas and in person in the Houston area, Pasadena and Webster.
+If any of this sounds like you, [men's mental health therapy](/mens-mental-health.html) at Therapy by David is built exactly for this, direct, practical, and respectful of how you operate. It's available via telehealth across Texas and in person in Clear Lake (Houston).

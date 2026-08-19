@@ -139,4 +139,4 @@ When did this start? What does it protect me from? What would it mean to need so
 
 Those aren't comfortable questions. But they're the right ones.
 
-If you're tired of watching the same story play out with different people, that's not a sign something is fundamentally broken. It's a sign you're ready to do something about it. [Relationship-focused therapy at Therapy by David](/index.html#services) is available via telehealth across Texas and in person in the Houston area, Pasadena and Webster. The pattern got built in relationship. It changes there too.
+If you're tired of watching the same story play out with different people, that's not a sign something is fundamentally broken. It's a sign you're ready to do something about it. [Relationship-focused therapy at Therapy by David](/index.html#services) is available via telehealth across Texas and in person in Clear Lake (Houston). The pattern got built in relationship. It changes there too.

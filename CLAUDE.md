@@ -99,7 +99,7 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 
 ## Business Info
 - David is a licensed psychotherapist in Texas
-- Offers telehealth across Texas + in-person in Pasadena and Webster, TX
+- Offers telehealth across Texas + in-person in Clear Lake (Houston), TX
 - Specialties: anxiety, trauma, burnout, overthinking, men's mental health, veterans
 - Practice email: roblesinc@gmail.com
 - Contact form submissions are stored in Firebase and emailed to roblesinc@gmail.com via EmailJS

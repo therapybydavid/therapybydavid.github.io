@@ -158,6 +158,6 @@ You don't have to wait until you've sorted out whether this "counts" as depressi
 
 None of these fix it on their own. They're how you start interrupting a pattern that's been running on autopilot, often for years. The point isn't to perform wellness. It's to stop performing long enough to be honest about where you actually are.
 
-If this sounds like you, here's how I help: [depression therapy](/depression-therapy.html) at Therapy by David gives you a place to look at what's underneath the functioning, without having to perform there too. It's available via telehealth across Texas and in person in the Houston area, in Pasadena and Webster.
+If this sounds like you, here's how I help: [depression therapy](/depression-therapy.html) at Therapy by David gives you a place to look at what's underneath the functioning, without having to perform there too. It's available via telehealth across Texas and in person in Clear Lake (Houston).
 
 You've spent a long time making sure everyone else thinks you're okay. You're allowed to find out what it feels like to actually be okay.

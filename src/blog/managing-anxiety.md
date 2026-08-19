@@ -149,4 +149,4 @@ Anxiety responds to consistent, structured work. Not willpower. Not "pushing thr
 
 If your mind hasn't slowed down in months, if the worry is affecting your sleep, relationships, focus, or sense of peace, that's a reasonable place to ask for help.
 
-[Anxiety therapy at Therapy by David](/index.html#services) is available via telehealth across Texas and in person in the Houston area, Pasadena and Webster. It gives you tools, not just insight. And over time, things can begin to feel quieter again.
+[Anxiety therapy at Therapy by David](/index.html#services) is available via telehealth across Texas and in person in Clear Lake (Houston). It gives you tools, not just insight. And over time, things can begin to feel quieter again.
