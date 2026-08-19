@@ -68,7 +68,10 @@ async function findCard(env, lists, fullName) {
   const candidates = lists.filter((l) => SEARCH_LISTS.includes(l.name));
   const all = [];
   for (const list of candidates) {
-    const res = await fetch(`https://api.trello.com/1/lists/${list.id}/cards?fields=name&${auth(env)}`);
+    // shortUrl matters as well as name: a matched card feeds the SMS link, and
+    // requesting only `name` left it undefined, so the text degraded to the
+    // useless "the lead board" fallback on every match.
+    const res = await fetch(`https://api.trello.com/1/lists/${list.id}/cards?fields=name,shortUrl&${auth(env)}`);
     if (res.ok) all.push(...(await res.json()));
   }
   return (
@@ -253,9 +256,10 @@ export async function onRequestPost(context) {
     steps.push('move');
 
     const first = fullName.split(/\s+/)[0] || fullName;
+    const cardLink = card.shortUrl || card.url || `https://trello.com/c/${card.id}`;
     const sms = await textDavid(
       env,
-      `${first} sent their insurance details${isSelf ? '' : ' (someone else is the policyholder)'}. On their card: ${card.shortUrl || card.url || 'the lead board'}`
+      `${first} sent their insurance details${isSelf ? '' : ' (someone else is the policyholder)'}. On their card: ${cardLink}`
     );
 
     return json({ ok: true, matched, attached, sms, steps });
