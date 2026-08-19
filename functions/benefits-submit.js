@@ -260,7 +260,12 @@ export async function onRequestPost(context) {
 
     return json({ ok: true, matched, attached, sms, steps });
   } catch (err) {
-    return json({ ok: false, error: String(err.message || err).slice(0, 200), steps }, 502);
+    // 424 rather than 502 on purpose: Cloudflare replaces a 502 coming from the
+    // origin with its own generic error page, which swallows this JSON body and
+    // leaves the real cause invisible on the custom domain (it is still visible
+    // on *.pages.dev, which is what made this confusing to diagnose). A 4xx
+    // passes through untouched.
+    return json({ ok: false, error: String(err.message || err).slice(0, 200), steps }, 424);
   }
 }
 
