@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Insurance Details | Therapy by David</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap"></noscript>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #141414;
+    --line: #414141;
+    --divider: #262626;
+    --chip-bg: #1e1e1e;
+    --text: #f5f5f5;
+    --label: #d9d9d9;
+    --muted: #a6a6a6;
+    --gold: #c9a548;
+    --champagne: #d8b866;
+    --serif: 'Playfair Display', Georgia, serif;
+    --gold-soft: rgba(201, 165, 72, 0.14);
+    --invalid: #e07070;
+    --ok: #6fbf8f;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 44px 20px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 640px;
+    background:
+      radial-gradient(120% 190px at 50% -40px, rgba(201,165,72,.10), transparent 70%),
+      var(--card);
+    border: 1px solid #2e2e2e;
+    border-radius: var(--radius);
+    padding: 44px 40px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.6vw, 36px);
+    font-weight: 560;
+    letter-spacing: -0.01em;
+    line-height: 1.18;
+    margin-bottom: 12px;
+    outline: none;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(100deg, var(--champagne) 10%, #ecd28f 45%, var(--gold) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .section {
+    padding: 26px 0;
+    border-top: 1px solid var(--divider);
+  }
+  .section.first { border-top: none; padding-top: 0; }
+  .section-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .section-label .optional {
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    background: var(--chip-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .chip:hover { border-color: var(--gold); }
+  .chip[aria-pressed="true"] {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+    box-shadow: inset 0 0 0 1px var(--gold);
+  }
+
+  .invalid-group .chip { border-color: var(--invalid); }
+  input.invalid, select.invalid { border-color: var(--invalid) !important; }
+
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field-grid .full { grid-column: 1 / -1; }
+
+  label.field-label {
+    display: block;
+    font-size: 13.5px;
+    color: var(--label);
+    margin-bottom: 6px;
+  }
+
+  input[type="text"], input[type="date"], select, textarea {
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 16px;
+    font-family: inherit;
+    padding: 13px 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  textarea { resize: vertical; min-height: 92px; line-height: 1.55; }
+  input::placeholder, textarea::placeholder { color: #7f7f7f; }
+  input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+  input[type="date"] { min-height: 49px; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(72%) sepia(38%) saturate(480%) hue-rotate(2deg); cursor: pointer; }
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23c9a548' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 42px;
+  }
+  select:invalid { color: var(--muted); }
+
+  .reveal { display: none; margin-top: 14px; }
+  .reveal.open { display: block; animation: fadeIn 0.25s ease both; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Card photo pickers ---- */
+  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .shot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 132px;
+    background: var(--chip-bg);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14.5px;
+    font-family: inherit;
+    padding: 16px 12px;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  .shot:hover { border-color: var(--gold); }
+  .shot.filled { border-style: solid; border-color: var(--gold); }
+  .shot .side { font-weight: 600; }
+  .shot .tap { font-size: 12.5px; color: var(--muted); }
+  .shot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+  }
+  .shot .over { position: relative; z-index: 1; }
+  .shot-status {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.55;
+    text-align: center;
+  }
+  .shot-status.ok { color: var(--ok); }
+  .shot-status.warn { color: var(--invalid); }
+
+  .hint {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.55;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--gold);
+    border: none;
+    border-radius: 10px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 26px;
+  }
+  .btn-submit:hover { opacity: 0.88; }
+  .btn-submit:disabled { opacity: 0.55; cursor: default; }
+
+  .error-msg {
+    color: var(--invalid);
+    font-size: 14px;
+    min-height: 20px;
+    margin: 12px 0 0;
+    text-align: center;
+  }
+
+  .privacy-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 16px;
+  }
+  .privacy-note a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(166, 166, 166, 0.45);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .privacy-note a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .panel { display: none; }
+  .panel.visible { display: block; }
+
+  .done-mark {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .brand-foot {
+    font-size: 11.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 30px;
+  }
+  .brand-foot a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .brand-foot a:hover { color: var(--gold); border-bottom-color: rgba(201, 165, 72, 0.5); }
+
+  @media (max-width: 560px) {
+    body { padding: 20px 14px; }
+    .card { padding: 34px 24px; }
+    .field-grid { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<main class="card" id="card">
+
+  <!-- ============ THE FORM ============ -->
+  <section class="panel visible" id="form-panel">
+    <p class="eyebrow">Therapy by David</p>
+    <h1 id="form-heading" tabindex="-1">Let's get your <em>actual</em> cost.</h1>
+    <p class="sub">Send me your plan details and I'll check what your visits will really run you, then text you the number. This takes about a minute.</p>
+
+    <form id="benefits-form" novalidate>
+
+      <div class="section first" id="sec-you">
+        <p class="section-label" id="lbl-you">Who you are</p>
+        <div class="field-grid">
+          <div class="full">
+            <label class="field-label" for="full-name">Full name</label>
+            <input type="text" id="full-name" autocomplete="name" placeholder="As it appears on the plan">
+          </div>
+          <div class="full">
+            <label class="field-label" for="dob">Date of birth</label>
+            <input type="date" id="dob" autocomplete="bday">
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="sec-plan">
+        <p class="section-label" id="lbl-plan">Your plan</p>
+        <label class="field-label" for="carrier">Insurance carrier</label>
+        <select id="carrier">
+          <option value="" selected disabled>Select your carrier</option>
+          <option>Blue Cross Blue Shield of Texas</option>
+          <option>UnitedHealthcare</option>
+          <option>Aetna</option>
+          <option>Cigna</option>
+          <option>Humana</option>
+          <option>Ambetter (Superior HealthPlan)</option>
+          <option>Molina Healthcare</option>
+          <option>Community Health Choice</option>
+          <option>Medicaid &amp; CHIP</option>
+          <option>Medicare</option>
+          <option>Other / not sure</option>
+        </select>
+
+        <div class="field-grid" style="margin-top:16px;">
+          <div>
+            <label class="field-label" for="member-id">Member ID</label>
+            <input type="text" id="member-id" placeholder="From the front of the card">
+          </div>
+          <div>
+            <label class="field-label" for="group-id">Group number <span style="color:var(--muted);">(if listed)</span></label>
+            <input type="text" id="group-id" placeholder="Optional">
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="sec-holder">
+        <p class="section-label" id="lbl-holder">Whose plan is it</p>
+        <div class="chips" role="group" aria-labelledby="lbl-holder" data-group="holder">
+          <button type="button" class="chip" aria-pressed="false" data-holder="self">It's mine</button>
+          <button type="button" class="chip" aria-pressed="false" data-holder="other">It's someone else's</button>
+        </div>
+        <div class="reveal" id="holder-reveal">
+          <div class="field-grid">
+            <div>
+              <label class="field-label" for="sub-name">Policyholder's full name</label>
+              <input type="text" id="sub-name" placeholder="Whose name is on the plan">
+            </div>
+            <div>
+              <label class="field-label" for="sub-dob">Their date of birth</label>
+              <input type="date" id="sub-dob">
+            </div>
+          </div>
+          <p class="hint">Plans get verified against the policyholder, so if it's a parent's or a spouse's plan I need their details too. This is the detail that most often makes a benefits check come back wrong.</p>
+        </div>
+      </div>
+
+      <div class="section" id="sec-photos">
+        <p class="section-label" id="lbl-photos">Photos of your card</p>
+        <div class="shots">
+          <button type="button" class="shot" id="shot-front" data-side="front">
+            <span class="over side">Front</span>
+            <span class="over tap">Tap to add a photo</span>
+          </button>
+          <button type="button" class="shot" id="shot-back" data-side="back">
+            <span class="over side">Back</span>
+            <span class="over tap">Tap to add a photo</span>
+          </button>
+        </div>
+        <input type="file" id="file-front" accept="image/*" capture="environment" style="display:none;">
+        <input type="file" id="file-back" accept="image/*" capture="environment" style="display:none;">
+        <p class="shot-status" id="shot-status" role="status" aria-live="polite"></p>
+        <p class="hint">The back matters as much as the front, it carries the payer ID and the number I call to verify. Photos are resized on your phone before they're sent.</p>
+      </div>
+
+      <div class="section" id="sec-note">
+        <p class="section-label" id="lbl-note">Anything I should know <span class="optional">(optional)</span></p>
+        <textarea id="note" placeholder="Secondary insurance, a plan that just changed, anything that might complicate this."></textarea>
+      </div>
+
+      <div class="error-msg" id="error-msg" role="alert"></div>
+      <button type="submit" class="btn-submit" id="submit-btn">Send it over</button>
+      <p class="privacy-note">This goes only to David. <a href="/privacy">Privacy policy</a>.</p>
+    </form>
+  </section>
+
+  <!-- ============ DONE ============ -->
+  <section class="panel" id="done-panel">
+    <div class="done-mark" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#c9a548" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <p class="eyebrow">Got it</p>
+    <h1 id="done-heading" tabindex="-1">That's everything I need.</h1>
+    <p class="sub" style="margin-bottom:0;">I'll run your benefits and text you what your visits will actually cost, usually the same day. If anything on the card is unclear I'll reach out before I check.</p>
+  </section>
+
+  <p class="brand-foot"><a href="/">Therapy by David</a> &middot; Houston, TX</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var ENDPOINT = "/benefits-submit";
+  var MAX_EDGE  = 2000;   // longest side after resize, px
+  var JPEG_Q    = 0.85;
+
+  var data = {
+    fullName: "", dob: "", carrier: null,
+    memberId: "", groupId: "",
+    holder: null, subName: "", subDob: "",
+    note: ""
+  };
+  var shots = { front: null, back: null };   // resized Blobs
+
+  var panels = {
+    form: document.getElementById("form-panel"),
+    done: document.getElementById("done-panel")
+  };
+  function show(which) {
+    Object.keys(panels).forEach(function (k) { panels[k].classList.remove("visible"); });
+    panels[which].classList.add("visible");
+    var h = panels[which].querySelector("h1");
+    if (h) h.focus();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function clearInvalid() {
+    document.querySelectorAll(".invalid-group").forEach(function (g) { g.classList.remove("invalid-group"); });
+    document.querySelectorAll("input.invalid, select.invalid").forEach(function (i) {
+      i.classList.remove("invalid");
+      i.removeAttribute("aria-invalid");
+    });
+  }
+  function markField(id) {
+    var f = document.getElementById(id);
+    if (f) { f.classList.add("invalid"); f.setAttribute("aria-invalid", "true"); }
+    return f ? f.closest(".section") : null;
+  }
+  function markGroup(sectionId) {
+    var s = document.getElementById(sectionId);
+    if (s) s.classList.add("invalid-group");
+    return s;
+  }
+
+  /* ---- Policyholder chips ---- */
+  var holderGroup   = document.querySelector('[data-group="holder"]');
+  var holderReveal  = document.getElementById("holder-reveal");
+  holderGroup.querySelectorAll(".chip").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      data.holder = btn.dataset.holder;
+      holderGroup.querySelectorAll(".chip").forEach(function (b) {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+      if (data.holder === "other") {
+        holderReveal.classList.add("open");
+      } else {
+        holderReveal.classList.remove("open");
+        data.subName = ""; data.subDob = "";
+        document.getElementById("sub-name").value = "";
+        document.getElementById("sub-dob").value = "";
+      }
+    });
+  });
+
+  /* ---- Card photos: resized in the browser so a 5MB phone shot
+     becomes a few hundred KB and the upload actually completes. ---- */
+  function resize(file) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      var url = URL.createObjectURL(file);
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        var w = img.naturalWidth, h = img.naturalHeight;
+        var scale = Math.min(1, MAX_EDGE / Math.max(w, h));
+        var cw = Math.round(w * scale), ch = Math.round(h * scale);
+        var cv = document.createElement("canvas");
+        cv.width = cw; cv.height = ch;
+        cv.getContext("2d").drawImage(img, 0, 0, cw, ch);
+        cv.toBlob(function (blob) {
+          blob ? resolve(blob) : reject(new Error("encode failed"));
+        }, "image/jpeg", JPEG_Q);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error("not an image")); };
+      img.src = url;
+    });
+  }
+
+  var status = document.getElementById("shot-status");
+  ["front", "back"].forEach(function (side) {
+    var btn   = document.getElementById("shot-" + side);
+    var input = document.getElementById("file-" + side);
+    btn.addEventListener("click", function () { input.click(); });
+    input.addEventListener("change", function () {
+      var file = input.files && input.files[0];
+      if (!file) return;
+      if (!/^image\//.test(file.type)) {
+        status.textContent = "That doesn't look like a photo. Try again with an image.";
+        status.className = "shot-status warn";
+        input.value = "";
+        return;
+      }
+      status.textContent = "Processing the " + side + "…";
+      status.className = "shot-status";
+      resize(file).then(function (blob) {
+        shots[side] = blob;
+        // Preview behind the label so it's obvious which side is done.
+        var old = btn.querySelector("img");
+        if (old) old.remove();
+        var img = document.createElement("img");
+        img.src = URL.createObjectURL(blob);
+        img.alt = "";
+        btn.insertBefore(img, btn.firstChild);
+        btn.classList.add("filled");
+        btn.querySelector(".tap").textContent = "Added, tap to replace";
+        var have = ["front", "back"].filter(function (s) { return shots[s]; });
+        status.textContent = have.length === 2
+          ? "Both sides added ✓"
+          : "Front added. The back has the payer ID, so add that one too.";
+        status.className = "shot-status ok";
+      }).catch(function () {
+        status.textContent = "Couldn't read that photo. Try taking it again.";
+        status.className = "shot-status warn";
+        input.value = "";
+      });
+    });
+  });
+
+  /* ---- Clear the invalid state as soon as someone starts fixing it ---- */
+  ["full-name", "dob", "carrier", "member-id", "sub-name", "sub-dob"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener("input", function () {
+      this.classList.remove("invalid");
+      this.removeAttribute("aria-invalid");
+    });
+    el.addEventListener("change", function () {
+      this.classList.remove("invalid");
+      this.removeAttribute("aria-invalid");
+    });
+  });
+
+  function sync() {
+    data.fullName = document.getElementById("full-name").value.trim();
+    data.dob      = document.getElementById("dob").value || "";
+    data.carrier  = document.getElementById("carrier").value || null;
+    data.memberId = document.getElementById("member-id").value.trim();
+    data.groupId  = document.getElementById("group-id").value.trim();
+    data.subName  = document.getElementById("sub-name").value.trim();
+    data.subDob   = document.getElementById("sub-dob").value || "";
+    data.note     = document.getElementById("note").value.trim();
+  }
+
+  var submitBtn = document.getElementById("submit-btn");
+
+  document.getElementById("benefits-form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var err = document.getElementById("error-msg");
+    sync();
+    clearInvalid();
+
+    var problems = [];
+    if (!data.fullName) problems.push({ msg: "Please enter your full name.", section: markField("full-name") });
+    if (!data.dob)      problems.push({ msg: "Please add your date of birth.", section: markField("dob") });
+    if (!data.carrier)  problems.push({ msg: "Please choose your insurance carrier.", section: markField("carrier") });
+    if (!data.memberId) problems.push({ msg: "Please enter the member ID from your card.", section: markField("member-id") });
+    if (!data.holder)   problems.push({ msg: "Please tell me whose plan this is.", section: markGroup("sec-holder") });
+    if (data.holder === "other" && !data.subName)
+      problems.push({ msg: "Please add the policyholder's name.", section: markField("sub-name") });
+    if (data.holder === "other" && !data.subDob)
+      problems.push({ msg: "Please add the policyholder's date of birth.", section: markField("sub-dob") });
+    if (!shots.front) problems.push({ msg: "Please add a photo of the front of your card.", section: document.getElementById("sec-photos") });
+
+    if (problems.length) {
+      err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention.)" : "");
+      if (problems[0].section) problems[0].section.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    err.textContent = "";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    var fd = new FormData();
+    fd.append("full_name", data.fullName);
+    fd.append("dob", data.dob);
+    fd.append("carrier", data.carrier);
+    fd.append("member_id", data.memberId);
+    fd.append("group_id", data.groupId);
+    fd.append("is_policyholder", data.holder === "self" ? "yes" : "no");
+    fd.append("subscriber_name", data.subName);
+    fd.append("subscriber_dob", data.subDob);
+    fd.append("note", data.note);
+    if (shots.front) fd.append("card_front", shots.front, "card-front.jpg");
+    if (shots.back)  fd.append("card_back",  shots.back,  "card-back.jpg");
+
+    var key = new URLSearchParams(location.search).get("k");
+    fetch(ENDPOINT + (key ? "?k=" + encodeURIComponent(key) : ""), { method: "POST", body: fd })
+      .then(function (res) { return res.json().catch(function () { return {}; }).then(function (j) { return { ok: res.ok, body: j }; }); })
+      .then(function (r) {
+        if (!r.ok || !r.body.ok) throw new Error((r.body && r.body.error) || "failed");
+        show("done");
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send it over";
+        err.textContent = "That didn't go through. Try once more, or just text it to me at (832) 544-2562.";
+      });
+  });
+})();
+</script>
+</body>
+</html>

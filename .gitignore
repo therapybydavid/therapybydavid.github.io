@@ -16,3 +16,6 @@
 # Eleventy proof of concept (Phase 1) — dependencies and build output
 node_modules/
 _site/
+
+# wrangler local secrets — never commit
+.dev.vars
