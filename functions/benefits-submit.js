@@ -95,9 +95,12 @@ async function createCard(env, listId, name) {
   return res.json();
 }
 
-async function attach(env, cardId, file, label) {
+async function attach(env, cardId, bytes, type, label) {
   const fd = new FormData();
-  fd.append('file', file, label);
+  // A fresh Blob from the raw bytes, rather than forwarding the File object we
+  // got from request.formData(). Re-wrapping avoids the streaming/identity
+  // quirks that make the forwarded object unreliable once deployed.
+  fd.append('file', new Blob([bytes], { type: type || 'image/jpeg' }), label);
   fd.append('name', label);
   const res = await fetch(`https://api.trello.com/1/cards/${cardId}/attachments?${auth(env)}`, {
     method: 'POST',
@@ -175,34 +178,44 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'missing-subscriber' }, 400);
   }
 
+  const steps = [];
   const images = [];
-  for (const [field, label] of [['card_front', 'card-front.jpg'], ['card_back', 'card-back.jpg']]) {
-    const f = form.get(field);
-    if (f && typeof f === 'object' && f.size > 0) {
-      if (f.size > MAX_IMAGE_BYTES) return json({ ok: false, error: 'image-too-large' }, 413);
-      images.push([f, label]);
+  try {
+    for (const [field, label] of [['card_front', 'card-front.jpg'], ['card_back', 'card-back.jpg']]) {
+      const f = form.get(field);
+      if (f && typeof f === 'object' && f.size > 0) {
+        if (f.size > MAX_IMAGE_BYTES) return json({ ok: false, error: 'image-too-large' }, 413);
+        images.push([await f.arrayBuffer(), f.type, label]);
+        steps.push(`read:${label}`);
+      }
     }
+  } catch (err) {
+    return json({ ok: false, error: `read-image: ${String(err.message || err)}`.slice(0, 200) }, 400);
   }
   if (!images.length) return json({ ok: false, error: 'missing-card-photo' }, 400);
 
   try {
     const lists  = await trelloLists(env);
+    steps.push('lists');
     const target = lists.find((l) => l.name === TARGET_LIST);
     if (!target) throw new Error(`no "${TARGET_LIST}" list on the board`);
 
     let card = await findCard(env, lists, fullName);
+    steps.push('find');
     const matched = !!card;
-    if (!card) card = await createCard(env, target.id, fullName);
+    if (!card) { card = await createCard(env, target.id, fullName); steps.push('create'); }
 
     // Attachments before the comment, so opening the card shows the photos
     // next to the text that describes them.
     const attached = [];
-    for (const [file, label] of images) {
+    for (const [bytes, type, label] of images) {
       try {
-        await attach(env, card.id, file, label);
+        await attach(env, card.id, bytes, type, label);
         attached.push(label.includes('front') ? 'front' : 'back');
-      } catch {
-        /* one bad photo must not lose the typed details */
+        steps.push(`attach:${label}`);
+      } catch (err) {
+        // One bad photo must not lose the typed details.
+        steps.push(`attach-failed:${label}:${String(err.message || err).slice(0, 60)}`);
       }
     }
 
@@ -235,7 +248,9 @@ export async function onRequestPost(context) {
     ].filter(Boolean).join('\n\n');
 
     await comment(env, card.id, lines);
+    steps.push('comment');
     await moveCard(env, card.id, target.id);
+    steps.push('move');
 
     const first = fullName.split(/\s+/)[0] || fullName;
     const sms = await textDavid(
@@ -243,9 +258,9 @@ export async function onRequestPost(context) {
       `${first} sent their insurance details${isSelf ? '' : ' (someone else is the policyholder)'}. On their card: ${card.shortUrl || card.url || 'the lead board'}`
     );
 
-    return json({ ok: true, matched, attached, sms });
+    return json({ ok: true, matched, attached, sms, steps });
   } catch (err) {
-    return json({ ok: false, error: String(err.message || err).slice(0, 200) }, 502);
+    return json({ ok: false, error: String(err.message || err).slice(0, 200), steps }, 502);
   }
 }
 
