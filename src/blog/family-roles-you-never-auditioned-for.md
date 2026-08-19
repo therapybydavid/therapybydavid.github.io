@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "How childhood family roles like the peacekeeper or the golden child quietly shape adult boundaries, and what it takes to step outside the script."
 cardDate: "August 19, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1495653797063-114787b77b23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODcxMzczMTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman and man holding hands"
+cardImage: "https://images.unsplash.com/photo-1495653797063-114787b77b23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjb25uZWN0aW9uJTIwc3VwcG9ydCUyMHdhcm10aCUyMGhhbmRzfGVufDF8MHx8fDE3ODcxMzczMTl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman and man holding hands"
 ---
 
 Most people didn't choose their role in the family. It was assigned early, often before language, based on what the family needed at the time. Someone had to keep the peace. Someone had to be the achievement everyone could point to. Someone had to absorb the blame so the rest of the system could avoid looking too closely at itself. You didn't audition for your part. You just learned it, the way kids learn anything — through repetition and consequence.
