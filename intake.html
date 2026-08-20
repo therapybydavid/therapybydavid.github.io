@@ -734,6 +734,49 @@
     });
   });
 
+  /* ---- Phone: format as (xxx) xxx-xxxx while they type ---- */
+  (function () {
+    var phoneInput = document.getElementById("phone");
+
+    function digitsOf(value) {
+      var d = (value || "").replace(/\D/g, "");
+      if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1); // pasted 1-prefixed
+      return d.slice(0, 10);
+    }
+
+    function formatPhone(value) {
+      var d = digitsOf(value);
+      if (d.length <= 3) return d;
+      if (d.length <= 6) return "(" + d.slice(0, 3) + ") " + d.slice(3);
+      return "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+    }
+
+    phoneInput.addEventListener("input", function () {
+      var start = this.selectionStart;
+      var before = this.value;
+      // how many digits sit to the left of the caret
+      var digitsBefore = before.slice(0, start).replace(/\D/g, "").length;
+      var formatted = formatPhone(before);
+      if (formatted === before) return;
+      this.value = formatted;
+      // put the caret back after the same digit
+      var seen = 0, pos = formatted.length;
+      for (var i = 0; i < formatted.length; i++) {
+        if (/\d/.test(formatted.charAt(i))) {
+          seen++;
+          if (seen === digitsBefore) { pos = i + 1; break; }
+        }
+      }
+      if (digitsBefore === 0) pos = 0;
+      try { this.setSelectionRange(pos, pos); } catch (e) {}
+    });
+
+    // Formats anything already in the box (autofill, restored value, paste)
+    phoneInput.addEventListener("blur", function () {
+      this.value = formatPhone(this.value);
+    });
+  })();
+
   /* =========================================================
      SUBMIT: validate everything at once, mark and scroll to
      the first problem, then run the pipeline.
