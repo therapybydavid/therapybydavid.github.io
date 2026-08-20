@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Unhealthy patterns often persist because they're quietly protecting you from something. Here's how to find what that is and change it without losing that protection."
 cardDate: "August 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1763477899299-912835fff556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjB3aW5kb3clMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNvbnZlcnNhdGlvbiUyMHdvbWFuJTIwcmVmbGVjdGluZyUyMHF1aWV0bHklMjBhdCUyMGhvbWV8ZW58MXwwfHx8MTc4NzIzMzM2N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Woman reading by window with autumn foliage outside"
+cardImage: "https://images.unsplash.com/photo-1763477899299-912835fff556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjB3aW5kb3clMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNvbnZlcnNhdGlvbiUyMHdvbWFuJTIwcmVmbGVjdGluZyUyMHF1aWV0bHklMjBhdCUyMGhvbWV8ZW58MXwwfHx8MTc4NzIzMzM2N3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Woman reading by window with autumn foliage outside"
 ---
 
 ## When the Pattern Doesn't Make Sense on Paper
