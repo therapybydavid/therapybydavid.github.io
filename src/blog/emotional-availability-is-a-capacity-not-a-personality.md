@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Emotional availability isn't fixed. It's shaped by bandwidth, grief, and stress — and confusing the two keeps people stuck in the wrong conclusions about dating."
 cardDate: "August 20, 2026 · 8 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758524944637-a515455f95ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBlbW90fGVufDF8MHx8fDE3ODcyMzA2MDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Couple sitting apart on a sofa, looking away"
+cardImage: "https://images.unsplash.com/photo-1758524944637-a515455f95ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBlbW90fGVufDF8MHx8fDE3ODcyMzA2MDF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Couple sitting apart on a sofa, looking away"
 ---
 
 When people say someone is "emotionally unavailable," they usually mean it the way you'd describe an eye color — a fixed feature of who that person is. It becomes a diagnosis you hand someone after a few dates, or a label you apply to yourself with a kind of resignation. But availability isn't a personality trait. It's a capacity. And capacity moves depending on what's happening in someone's life — a demanding job, a recent loss, a nervous system that's still recovering from the last relationship. Treating it as fixed makes it harder to tell the difference between someone who can't meet you right now and someone who won't, ever.
