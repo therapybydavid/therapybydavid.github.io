@@ -437,15 +437,6 @@
         </div>
       </div>
 
-      <div class="section" id="sec-times">
-        <p class="section-label" id="lbl-times">Preferred times <span class="optional">(optional, pick any)</span></p>
-        <div class="chips" role="group" aria-labelledby="lbl-times" data-group="times">
-          <button type="button" class="chip" aria-pressed="false" data-time="Mornings">Mornings</button>
-          <button type="button" class="chip" aria-pressed="false" data-time="Afternoons">Afternoons</button>
-          <button type="button" class="chip" aria-pressed="false" data-time="Evenings">Evenings</button>
-        </div>
-      </div>
-
       <div class="section" id="sec-referral">
         <p class="section-label" id="lbl-referral">How did you hear about me? <span class="optional">(optional)</span></p>
         <select id="referral-source" aria-labelledby="lbl-referral">
@@ -522,7 +513,6 @@
     payment: null,
     insuranceNetwork: null,
     format: null,            // ["In person"] | ["Telehealth / Secure video"]
-    preferredTimes: [],      // multi-select: Mornings / Afternoons / Evenings
     referralSource: null,    // self-reported "how did you hear about me?"
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
@@ -552,7 +542,6 @@
         payment: data.payment,
         insuranceNetwork: data.insuranceNetwork,
         format: data.format,
-        preferredTimes: data.preferredTimes,
         referralSource: data.referralSource
       }));
     } catch (e) {}
@@ -667,27 +656,6 @@
     btn.addEventListener("click", function () {
       data.format = [btn.dataset.format];
       markSelected(formatGroup, btn);
-      saveDraft();
-    });
-  });
-
-  /* =========================================================
-     PREFERRED TIMES (multi-select, optional)
-     ========================================================= */
-  var timesGroup = document.querySelector('[data-group="times"]');
-  timesGroup.querySelectorAll(".chip").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var t = btn.dataset.time;
-      var i = data.preferredTimes.indexOf(t);
-      if (i === -1) {
-        data.preferredTimes.push(t);
-        btn.classList.add("selected");
-        btn.setAttribute("aria-pressed", "true");
-      } else {
-        data.preferredTimes.splice(i, 1);
-        btn.classList.remove("selected");
-        btn.setAttribute("aria-pressed", "false");
-      }
       saveDraft();
     });
   });
@@ -837,12 +805,11 @@
       ? "Insurance: " + (data.insuranceNetwork || "unspecified")
       : "Private pay";
     var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
-    var timesLabel  = data.preferredTimes.length ? "Prefers " + data.preferredTimes.join("/") : null;
     var referralLabel = data.referralSource
       ? "Heard via " + data.referralSource + (data.referralWho ? " (" + data.referralWho + ")" : "")
       : null;
     var summary = [
-      data.state, paymentLabel, formatLabel, timesLabel, referralLabel,
+      data.state, paymentLabel, formatLabel, referralLabel,
       "booking the free 15-min call"
     ].filter(Boolean).join(" · ");
 
@@ -855,7 +822,6 @@
       payment:    data.payment,
       insurance_network: data.insuranceNetwork,
       format:     data.format,
-      preferred_times: data.preferredTimes,
       referral_source: data.referralSource,
       referral_who: data.referralWho || null,
       next_step:  "call",   // the only public path; sessions are booked by David
@@ -938,7 +904,6 @@
       data.payment = saved.payment || null;
       data.insuranceNetwork = saved.insuranceNetwork || null;
       data.format = saved.format || null;
-      data.preferredTimes = saved.preferredTimes || [];
       data.referralSource = saved.referralSource || null;
 
       markSelected(stateGroup, stateGroup.querySelector('[data-state="Texas"]'));
@@ -952,10 +917,6 @@
       if (data.format && data.format[0]) {
         markSelected(formatGroup, formatGroup.querySelector('[data-format="' + data.format[0] + '"]'));
       }
-      data.preferredTimes.forEach(function (t) {
-        var b = timesGroup.querySelector('[data-time="' + t + '"]');
-        if (b) { b.classList.add("selected"); b.setAttribute("aria-pressed", "true"); }
-      });
       if (data.referralSource) {
         referralSelect.value = data.referralSource;
         syncReferralReveal();
