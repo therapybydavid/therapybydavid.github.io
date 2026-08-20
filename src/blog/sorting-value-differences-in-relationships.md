@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A practical way to sort the value differences that threaten a relationship from the ones you can actually live with."
 cardDate: "August 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1527184478405-b1cf212ab2a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzfGVufDF8MHx8fDE3ODcyMzAzNzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man and woman standing while looking each other near body of water"
+cardImage: "https://images.unsplash.com/photo-1527184478405-b1cf212ab2a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzfGVufDF8MHx8fDE3ODcyMzAzNzd8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man and woman standing while looking each other near body of water"
 ---
 
 Most couples don't wake up one day and announce, "our values no longer align." It happens quietly. One of you wants to spend a Saturday at church and the other wants to sleep in. One of you saves every extra dollar and the other believes money is for living now. One of you wants to raise kids with strict routines and the other grew up without any and turned out fine, thanks.
