@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "You don't need a crisis to justify therapy. Here's how to think about timing without waiting for things to fall apart first."
 cardDate: "August 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1780946078535-0ed9cb10fe45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzaXR0aW5nJTIwdGhvdWdodGZ1bGx5JTIwYnklMjB3aW5kb3clMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNvbnZlcnNhdGlvbiUyMHdvbWFuJTIwcmVmbGVjdGluZyUyMHF1aWV0bHl8ZW58MXwwfHx8MTc4NzIyMzcwM3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Woman on a couch with bright window light"
+cardImage: "https://images.unsplash.com/photo-1780946078535-0ed9cb10fe45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzaXR0aW5nJTIwdGhvdWdodGZ1bGx5JTIwYnklMjB3aW5kb3clMjB0aGVyYXB5JTIwc2Vzc2lvbiUyMGNvbnZlcnNhdGlvbiUyMHdvbWFuJTIwcmVmbGVjdGluZyUyMHF1aWV0bHl8ZW58MXwwfHx8MTc4NzIyMzcwM3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Woman on a couch with bright window light"
 ---
 
 Almost everyone who calls to schedule a first session says some version of the same thing: "I don't know if this is bad enough to need therapy." It's one of the most common questions people carry into the process, and it's rarely asked out loud until they're already in the room.
