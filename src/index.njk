@@ -436,16 +436,22 @@ eleventyExcludeFromCollections: true
     /* ── Process ────────────────────────────────── */
     .process { display: grid; gap: 0; margin-top: 50px; max-width: 880px; }
     .step {
-      display: grid; grid-template-columns: 92px 1fr; gap: 26px; align-items: start;
-      padding: 34px 8px; border-bottom: 1px solid var(--line-dark);
+      display: grid; grid-template-columns: 84px 1fr; gap: 26px; align-items: start;
+      padding: 0 8px 34px; position: relative;
     }
-    .step:first-child { border-top: 1px solid var(--line-dark); }
+    .step::before {
+      content: ''; position: absolute; left: 39px; top: 66px; bottom: 0;
+      width: 2px; background: rgba(216,184,102,.32);
+    }
+    .step:last-child::before { display: none; }
     .step-number {
-      font-family: var(--serif); font-style: italic; font-size: 46px; font-weight: 500; line-height: 1;
-      background: linear-gradient(135deg, var(--champagne), var(--gold));
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%;
+      background: var(--ink); border: 2px solid var(--champagne);
+      color: var(--champagne); -webkit-text-fill-color: var(--champagne);
+      font-family: var(--serif); font-style: normal; font-size: 21px; font-weight: 600;
+      position: relative; z-index: 1;
     }
-    .step h3 { font-size: 23px; margin-bottom: 8px; }
+    .step h3 { font-size: 23px; margin-bottom: 8px; padding-top: 18px; }
     .step p { font-size: 16px; }
 
     /* ── Fees ───────────────────────────────────── */
@@ -591,8 +597,10 @@ eleventyExcludeFromCollections: true
       .hero::after { display: none; }
       .scroll-cue { display: none; }
       .service-grid, .pillars, .fee-grid, .bfeed-grid, .footer-grid { grid-template-columns: 1fr; }
-      .step { grid-template-columns: 64px 1fr; gap: 18px; padding: 26px 4px; }
-      .step-number { font-size: 36px; }
+      .step { grid-template-columns: 56px 1fr; gap: 16px; padding: 0 4px 26px; }
+      .step-number { width: 50px; height: 50px; font-size: 18px; }
+      .step::before { left: 28px; top: 52px; }
+      .step h3 { padding-top: 12px; }
       .quote-card { padding: 36px 28px; }
       h1 { font-size: clamp(40px, 12vw, 58px); }
       body { padding-bottom: 84px; }
@@ -736,7 +744,7 @@ eleventyExcludeFromCollections: true
       </div>
     </section>
 
-    <section class="section">
+    <section class="section dark-section">
       <div class="container">
         <span class="eyebrow">How The Work Moves</span>
         <h2>Therapy should have <em>a direction.</em></h2>
