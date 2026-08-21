@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/sorting-value-differences-in-relationships"
 canonical: "https://therapybydavid.com/blog/sorting-value-differences-in-relationships"
 permalink: "/blog/sorting-value-differences-in-relationships.html"
-date: 2026-08-20
+date: 2026-08-21
 order: 50
 tag: "Relationships"
-dateDisplay: "August 20, 2026 · 6 min read"
+dateDisplay: "August 21, 2026 · 6 min read"
 deck: "When you and your partner see the world differently, the hardest part isn't the disagreement itself. It's figuring out what it actually means."
 cardTitle: "Not Every Value Difference Is a Dealbreaker: How to Tell Which Ones Are"
 cardTag: "Relationships"
 cardDescription: "A practical way to sort the value differences that threaten a relationship from the ones you can actually live with."
-cardDate: "August 20, 2026 · 6 min read"
+cardDate: "August 21, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1527184478405-b1cf212ab2a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXZpbmclMjBzZXJpb3VzfGVufDF8MHx8fDE3ODcyMzAzNzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man and woman standing while looking each other near body of water"
