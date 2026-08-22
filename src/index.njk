@@ -554,6 +554,9 @@ eleventyExcludeFromCollections: true
       color: rgba(216,184,102,.09);
       pointer-events: none; z-index: 1; user-select: none;
     }
+    @media (max-width: 640px) {
+      .final-cta::after { right: 4%; bottom: -3%; font-size: 76px; }
+    }
     .final-cta .container { position: relative; z-index: 2; }
     .final-cta h2 { color: var(--white); max-width: 880px; margin: 0 auto 24px; }
     .final-cta p { margin: 0 auto 38px; color: rgba(255,255,255,.7); font-size: 19px; }
@@ -601,7 +604,6 @@ eleventyExcludeFromCollections: true
       .sticky-cta { display: block; }
     }
     @media (max-width: 640px) {
-      .final-cta::after { display: none; }
       .section { padding: 82px 0; }
       .hero { padding: 132px 0 96px; min-height: 0; }
       .hero::after { display: none; }

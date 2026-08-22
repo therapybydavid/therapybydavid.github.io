@@ -190,6 +190,9 @@ eleventyExcludeFromCollections: true
       color: rgba(216,184,102,.09);
       pointer-events: none; z-index: 1; user-select: none;
     }
+    @media (max-width: 640px) {
+      .final-cta::after { right: 4%; bottom: -3%; font-size: 76px; }
+    }
     .final-cta .container { position: relative; z-index: 2; }
     .final-cta h2 { color: var(--white); max-width: 860px; margin: 0 auto 22px; }
     .final-cta p { margin: 0 auto 34px; color: rgba(255,255,255,.72); font-size: 19px; }
@@ -219,7 +222,6 @@ eleventyExcludeFromCollections: true
     .contact-info-section { padding-top: 24px; }
 
     @media (max-width: 900px) {
-      .final-cta::after { display: none; }
       .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 24px 28px; background: rgba(8,11,16,.96); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,.08); }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
