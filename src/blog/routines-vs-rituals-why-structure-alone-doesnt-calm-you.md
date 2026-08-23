@@ -20,10 +20,10 @@ cardDescription: "A healthy routine and a calming ritual aren't the same thing. 
 cardDate: "August 12, 2026 · 9 min read"
 ctaHeading: "Ready to work on this?"
 ctaText: "Schedule a free 15-minute consultation. No pressure, just a real conversation about what's going on and what support might help."
-image: "/images/blog/routines-vs-rituals-why-structure-alone-doesnt-calm-you.webp"
-imageAlt: "Tranquil garden scene viewed through a decorative window"
-cardImage: "/images/blog/routines-vs-rituals-card.webp"
-cardAlt: "Tranquil garden scene viewed through a decorative window"
+image: "https://images.unsplash.com/photo-1525169507283-1a58b0ccc082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+imageAlt: "coffee mug resting on open newspaper in moody black and white"
+cardImage: "https://images.unsplash.com/photo-1525169507283-1a58b0ccc082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+cardAlt: "coffee mug resting on open newspaper in moody black and white"
 faqJson: |
   {
     "@context": "https://schema.org",
