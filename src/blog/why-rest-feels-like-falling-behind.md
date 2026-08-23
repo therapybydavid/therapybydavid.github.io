@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "Why resting can trigger guilt instead of relief, and how to tell the difference between recovery and just collapsing at the end of a busy day."
 cardDate: "August 23, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1602583576918-ae9d1f3d1439?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHByb2Zlc3Npb25hbCUyMHJlc3RpbmclMjBhdCUyMGRlc2slMjBleGhhdXN0ZWQlMjB3b21hbiUyMHRha2luZyUyMGJyZWFrJTIwYXQlMjB3b3JrJTIwcGVyc29uJTIwcmVsYXhpbmclMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODczOTY1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "woman in gray sweater and blue denim jeans sitting on gray couch"
-cardImage: "https://images.unsplash.com/photo-1602583576918-ae9d1f3d1439?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHByb2Zlc3Npb25hbCUyMHJlc3RpbmclMjBhdCUyMGRlc2slMjBleGhhdXN0ZWQlMjB3b21hbiUyMHRha2luZyUyMGJyZWFrJTIwYXQlMjB3b3JrJTIwcGVyc29uJTIwcmVsYXhpbmclMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODczOTY1MTd8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "woman in gray sweater and blue denim jeans sitting on gray couch"
+image: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+imageAlt: "man holds his head while sitting on a sofa"
+cardImage: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+cardAlt: "man holds his head while sitting on a sofa"
 ---
 
 ## The Couch Test
