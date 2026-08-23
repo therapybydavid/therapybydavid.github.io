@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-rest-feels-like-falling-behind"
 canonical: "https://therapybydavid.com/blog/why-rest-feels-like-falling-behind"
 permalink: "/blog/why-rest-feels-like-falling-behind.html"
-date: 2026-08-22
+date: 2026-08-23
 order: 50
 tag: "Burnout"
-dateDisplay: "August 22, 2026 · 6 min read"
+dateDisplay: "August 23, 2026 · 6 min read"
 deck: "For a lot of busy people, the hardest part of rest isn't finding the time. It's tolerating it once they have it."
 cardTitle: "Why Rest Feels Like Falling Behind"
 cardTag: "Burnout"
 cardDescription: "Why resting can trigger guilt instead of relief, and how to tell the difference between recovery and just collapsing at the end of a busy day."
-cardDate: "August 22, 2026 · 6 min read"
+cardDate: "August 23, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1602583576918-ae9d1f3d1439?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHByb2Zlc3Npb25hbCUyMHJlc3RpbmclMjBhdCUyMGRlc2slMjBleGhhdXN0ZWQlMjB3b21hbiUyMHRha2luZyUyMGJyZWFrJTIwYXQlMjB3b3JrJTIwcGVyc29uJTIwcmVsYXhpbmclMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODczOTY1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in gray sweater and blue denim jeans sitting on gray couch"
