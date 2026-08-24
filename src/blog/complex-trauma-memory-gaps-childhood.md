@@ -19,10 +19,10 @@ cardTag: "Trauma"
 cardDescription: "For some adults, complex trauma doesn't leave vivid memories to relive. It leaves gaps, and those gaps carry their own kind of weight."
 cardDate: "August 24, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1750739555332-45babd127ae4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxoZWFsaW5nJTIwc2VyZW5lJTIwbGlnaHQlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NzU3NjI1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Sunlight shines on pink flowers and leaves"
-cardImage: "https://images.unsplash.com/photo-1750739555332-45babd127ae4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5fHxoZWFsaW5nJTIwc2VyZW5lJTIwbGlnaHQlMjBuYXR1cmV8ZW58MXwwfHx8MTc4NzU3NjI1M3ww&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Sunlight shines on pink flowers and leaves"
+image: "https://images.unsplash.com/photo-1491251909217-354a730460ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8aGVhbGluZyUyMHNlcmVuZSUyMGxpZ2h0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc1NzYyNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "white petaled flowers shined by sunlight"
+cardImage: "https://images.unsplash.com/photo-1491251909217-354a730460ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxN3x8aGVhbGluZyUyMHNlcmVuZSUyMGxpZ2h0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc1NzYyNjJ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "white petaled flowers shined by sunlight"
 ---
 
 ## The Question That Catches People Off Guard
