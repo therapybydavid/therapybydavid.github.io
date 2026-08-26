@@ -174,6 +174,22 @@ eleventyExcludeFromCollections: true
     }
     .tool-row-link:hover { transform: translateY(-2px); background: #1c2a3a; }
 
+    /* Getting online (dark band) */
+    .online-section {
+      background:
+        radial-gradient(circle at 82% 30%, rgba(216,184,102,.14), transparent 46%),
+        linear-gradient(135deg, var(--ink) 0%, var(--navy) 60%, var(--night) 100%);
+      color: var(--white);
+    }
+    .online-section h2 { color: var(--white); }
+    .online-section .eyebrow { color: var(--champagne); }
+    .online-section .section-lead { color: rgba(255,255,255,.72); }
+    .online-section .tool-row { background: rgba(255,255,255,.05); border-color: rgba(216,184,102,.34); }
+    .online-section .tool-row:hover { background: rgba(255,255,255,.08); border-color: rgba(216,184,102,.62); box-shadow: 0 24px 64px rgba(0,0,0,.30); }
+    .online-section .tool-row-wordmark { color: var(--white); }
+    .online-section .tool-row-category { color: var(--champagne); }
+    .online-section .tool-row-go { color: var(--champagne); }
+
     /* Final / contact */
     .final-cta { background: var(--cream); text-align: center; padding: 110px 0; position: relative; overflow: hidden; }
     .final-cta::before { content: ''; position: absolute; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(216,184,102,.22), transparent 68%); top: -220px; right: -160px; pointer-events: none; }
@@ -292,6 +308,38 @@ eleventyExcludeFromCollections: true
               <a class="tool-row-link" href="https://reclaim.ai/r/s/TRxs7" target="_blank" rel="sponsored noopener nofollow">Try Reclaim.ai &rarr;</a>
             </div>
           </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GETTING ONLINE -->
+    <section class="section online-section">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Getting Online</span>
+          <h2>Your name, your address on the internet.</h2>
+          <p class="section-lead">Before a directory can send anyone your way, you need somewhere to send them. Your domain is your name. Hosting is where the site actually lives. Two decisions, and then you're online.</p>
+        </div>
+        <div class="tool-list">
+
+          <!-- Porkbun -->
+          <a class="tool-row tool-row-compact reveal" href="https://porkbun.com/" target="_blank" rel="noopener">
+            <div class="tool-row-head">
+              <span class="tool-row-wordmark">Porkbun</span>
+              <span class="tool-row-category">Domain Registrar</span>
+            </div>
+            <span class="tool-row-go">&rarr;</span>
+          </a>
+
+          <!-- Cloudflare -->
+          <a class="tool-row tool-row-compact reveal" href="https://www.cloudflare.com/" target="_blank" rel="noopener">
+            <div class="tool-row-head">
+              <span class="tool-row-wordmark">Cloudflare</span>
+              <span class="tool-row-category">Hosting &amp; DNS</span>
+            </div>
+            <span class="tool-row-go">&rarr;</span>
+          </a>
 
         </div>
       </div>
