@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "A look at why fragmented, scattered time leaves busy people feeling depleted, and what actually helps beyond time-blocking and productivity apps."
 cardDate: "August 27, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1696149326569-435b33af9575?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc4Mjg1MTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a house sits on the edge of a lake"
-cardImage: "https://images.unsplash.com/photo-1696149326569-435b33af9575?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc4Mjg1MTV8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a house sits on the edge of a lake"
+image: "https://images.unsplash.com/photo-1572929546114-de3d5dbe9cc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc5NDE2Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "landscape photography of trees beside river"
+cardImage: "https://images.unsplash.com/photo-1572929546114-de3d5dbe9cc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxyZXN0JTIwY2FsbSUyMHF1aWV0JTIwbmF0dXJlfGVufDF8MHx8fDE3ODc5NDE2Nzh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "landscape photography of trees beside river"
 ---
 
 You answered forty emails, drove two carpools, sat through three meetings, unloaded the dishwasher twice, and somehow it's 9pm and you can't name a single thing you actually finished. This isn't a discipline problem. It has a name, and once you see it, it explains a specific kind of exhaustion that doesn't come from working too many hours. It comes from never getting a real hour at all.
