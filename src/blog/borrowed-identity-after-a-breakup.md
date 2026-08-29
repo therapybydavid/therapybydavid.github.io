@@ -19,6 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "A breakup often leaves you unsure which tastes, habits, and opinions were ever really yours. Here's how to sort that out without rushing it."
 cardDate: "August 29, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbnxlbnwxfDB8fHwxNzg4MDAxMzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "shallow focus photography of woman outdoor during day"
+cardImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbnxlbnwxfDB8fHwxNzg4MDAxMzIwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "shallow focus photography of woman outdoor during day"
 ---
 
 When a long relationship ends, most people expect to grieve the person. Fewer expect to feel unsure about their own opinions. But it's a common thing to hear in a first few sessions after a breakup: "I don't even know what I like anymore." Not in a dramatic, existential way. In a smaller, stranger way. Someone realizes they've been ordering the same coffee for three years and isn't sure they ever liked it. Someone else notices they haven't picked a restaurant, a movie, or a vacation spot on their own in so long that they've forgotten how. This isn't a character flaw. It's what happens when two people build a shared life, and one person's preferences quietly become the default for both. Untangling that afterward is its own kind of identity work, separate from the general grief of the breakup itself, and it deserves its own attention.
