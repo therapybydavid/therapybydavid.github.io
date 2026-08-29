@@ -1,0 +1,177 @@
+---
+permalink: /schedule/
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session | Therapy by David</title>
+  <meta name="description" content="Request a therapy session with David Robles, LMSW through the secure scheduling portal." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://therapybydavid.com/schedule">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/core.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080b10">
+  <script src="/analytics.js" defer></script>
+
+  <style>
+    .sched-hero { background: var(--ink); color: var(--white); padding: 150px 0 110px; text-align: center; }
+    .sched-hero .eyebrow { display: inline-block; color: var(--champagne); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; }
+    .sched-hero h1 { color: var(--white); font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; max-width: 760px; margin: 0 auto 48px; }
+    .sched-hero .lead { color: rgba(255,255,255,.74); font-size: 19px; max-width: 600px; margin: 0 auto 44px; }
+
+    .sched-card {
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 44px 40px;
+    }
+    .sched-card .kicker { display: inline-block; color: #1371C8; background: #eef6fd; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+    .sched-card h2 { font-family: var(--serif); color: var(--text); font-size: 1.55rem; margin-bottom: 10px; }
+    .sched-card p { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; }
+
+    /* SimplePractice Appointment-Request Widget, restyled to match the site.
+       The button is bound by SimplePractice's integration script via
+       data-spwidget-autobind and opens the scheduler in an overlay on this
+       page. The href is the no-JS fallback. */
+    .spwidget-button-wrapper { text-align: center; }
+    .spwidget-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 17px 28px;
+      color: #fff;
+      background: #1371C8;
+      border: 1px solid #1371C8;
+      border-radius: 999px;
+      font-size: 16.5px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(19,113,200,.22);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer;
+    }
+    .spwidget-button svg { width: 19px; height: 19px; }
+    .spwidget-button:hover { background: #0F5AA0; border-color: #0F5AA0; color: #fff; transform: translateY(-2px); box-shadow: 0 18px 38px rgba(19,113,200,.30); }
+    .spwidget-button:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(0, 0, 0, .15) inset; }
+
+    .sched-hint { text-align: center; font-size: 13px; line-height: 1.5; color: var(--muted); margin: 14px 0 0; }
+    .sched-hint svg { width: 13px; height: 13px; opacity: .8; vertical-align: -2px; margin-right: 5px; }
+
+    .sched-rule { height: 1px; background: rgba(0,0,0,.08); margin: 28px 0; }
+
+    .portal-row { text-align: center; }
+    .portal-row .portal-label { display: block; font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
+    .portal-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      color: #1371C8;
+      background: #fff;
+      border: 1px solid rgba(19,113,200,.4);
+      border-radius: 999px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .portal-button svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .portal-button:hover { border-color: #1371C8; background: #f4f9fe; }
+
+    .sched-back { display: block; text-align: center; padding: 36px 0 80px; }
+    .sched-back a { color: var(--muted); font-size: 14px; font-weight: 600; }
+    .sched-back a:hover { color: var(--gold); }
+
+    @media (max-width: 560px) {
+      .sched-card { padding: 36px 20px; margin: 0 16px; }
+      .sched-hero { padding: 128px 0 80px; }
+      .spwidget-button { padding: 16px 18px; font-size: 16px; }
+      .portal-button { padding: 11px 16px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main>
+    <section class="sched-hero">
+      <div class="container">
+        <span class="eyebrow">Scheduling</span>
+        <h1>Book a session</h1>
+        <div class="sched-card">
+          <span class="kicker">Secure scheduling</span>
+          <h2>Request a session</h2>
+          <p>Pick an open time that works for you.</p>
+
+          <div class="spwidget-button-wrapper">
+            <a href="https://david-robles.clientsecure.me"
+               class="spwidget-button"
+               data-spwidget-scope-id="a8458265-25de-4517-9bb4-98a868f6f12b"
+               data-spwidget-scope-uri="david-robles"
+               data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"
+               data-spwidget-type="OAR"
+               data-spwidget-scope-global
+               data-spwidget-autobind>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Request Appointment
+            </a>
+          </div>
+
+          <p class="sched-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Opens here on this page. Your information stays encrypted.</p>
+
+          <div class="sched-rule"></div>
+
+          <div class="portal-row">
+            <span class="portal-label">Already a client?</span>
+            <a class="portal-button" href="https://david-robles.clientsecure.me/sign-in" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+              Sign in to the client portal
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sched-back">
+      <a href="/">&larr; Back to home</a>
+    </div>
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" async></script>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+    document.querySelectorAll('#year,.year').forEach(el => el.textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>
