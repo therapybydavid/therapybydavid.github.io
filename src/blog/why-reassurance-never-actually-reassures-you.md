@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "A look at the reassurance-seeking loop in generalized anxiety: why asking for certainty feels urgent, why it never lasts, and what actually helps."
 cardDate: "August 30, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1653762379954-8943c787e78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFueGlvdXNseSUyMGNoZWNraW5nJTIwcGhvbmUlMjBtZXNzYWdlc3xlbnwxfDB8fHwxNzg4MDk5OTAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting at a table looking at her cell phone"
+cardImage: "https://images.unsplash.com/photo-1653762379954-8943c787e78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFueGlvdXNseSUyMGNoZWNraW5nJTIwcGhvbmUlMjBtZXNzYWdlc3xlbnwxfDB8fHwxNzg4MDk5OTAzfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting at a table looking at her cell phone"
 ---
 
 You send the text. "We're okay, right?" The reply comes back within a minute: "Yeah, of course, why?" For about four minutes, your chest loosens. Then the thought creeps back in, slightly reworded, slightly more urgent. "But are we really okay?" You've asked three times today already. You know this. You ask again anyway. This is one of the most common and least talked-about features of generalized anxiety: the reassurance loop. It doesn't look like panic. It looks like checking, confirming, double-texting, googling, re-reading. It looks reasonable, even responsible, right up until you notice you've done it forty times this month and you still don't feel settled.
