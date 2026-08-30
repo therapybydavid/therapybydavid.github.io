@@ -19,10 +19,10 @@ cardTag: "Burnout"
 cardDescription: "A look at why fragmented, scattered time leaves busy people feeling depleted, and what actually helps beyond time-blocking and productivity apps."
 cardDate: "August 27, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1758611975583-fddf609226a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxvdmVyd2hlbG1lZCUyMHdvbWFuJTIwbXVsdGl0YXNraW5nJTIwaG9tZSUyMGV4aGF1c3RlZHxlbnwxfDB8fHwxNzg4MDk4NDE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Young woman talking on phone at laptop desk"
-cardImage: "https://images.unsplash.com/photo-1758611975583-fddf609226a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxvdmVyd2hlbG1lZCUyMHdvbWFuJTIwbXVsdGl0YXNraW5nJTIwaG9tZSUyMGV4aGF1c3RlZHxlbnwxfDB8fHwxNzg4MDk4NDE5fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Young woman talking on phone at laptop desk"
+image: "https://images.unsplash.com/photo-1628645315925-c4d4a65ca73d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxvdmVyd2hlbG1lZCUyMHdvbWFuJTIwbXVsdGl0YXNraW5nJTIwaG9tZSUyMGV4aGF1c3RlZHxlbnwxfDB8fHwxNzg4MDk4NDE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in black long sleeve shirt sitting on chair"
+cardImage: "https://images.unsplash.com/photo-1628645315925-c4d4a65ca73d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxvdmVyd2hlbG1lZCUyMHdvbWFuJTIwbXVsdGl0YXNraW5nJTIwaG9tZSUyMGV4aGF1c3RlZHxlbnwxfDB8fHwxNzg4MDk4NDE5fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in black long sleeve shirt sitting on chair"
 ---
 
 You answered forty emails, drove two carpools, sat through three meetings, unloaded the dishwasher twice, and somehow it's 9pm and you can't name a single thing you actually finished. This isn't a discipline problem. It has a name, and once you see it, it explains a specific kind of exhaustion that doesn't come from working too many hours. It comes from never getting a real hour at all.
