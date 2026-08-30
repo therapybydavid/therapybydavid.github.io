@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/time-confetti-busy-but-never-caught-up"
 canonical: "https://therapybydavid.com/blog/time-confetti-busy-but-never-caught-up"
 permalink: "/blog/time-confetti-busy-but-never-caught-up.html"
-date: 2026-08-27
+date: 2026-08-30
 order: 50
 tag: "Burnout"
-dateDisplay: "August 27, 2026 · 6 min read"
+dateDisplay: "August 30, 2026 · 6 min read"
 deck: "You didn't stop moving all day, so why does it feel like you accomplished nothing and rested even less?"
 cardTitle: "Time Confetti: Why You Can Be Busy All Day and Still Feel Like You Got Nothing Done"
 cardTag: "Burnout"
 cardDescription: "A look at why fragmented, scattered time leaves busy people feeling depleted, and what actually helps beyond time-blocking and productivity apps."
-cardDate: "August 27, 2026 · 6 min read"
+cardDate: "August 30, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1628645315925-c4d4a65ca73d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxvdmVyd2hlbG1lZCUyMHdvbWFuJTIwbXVsdGl0YXNraW5nJTIwaG9tZSUyMGV4aGF1c3RlZHxlbnwxfDB8fHwxNzg4MDk4NDE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in black long sleeve shirt sitting on chair"
