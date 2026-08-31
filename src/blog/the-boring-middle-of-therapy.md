@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Therapy isn't a string of breakthroughs. Here's what the quiet, repetitive middle stretch of therapy really looks like and why it matters."
 cardDate: "August 31, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1714976694867-bc0e012fab70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjbGllbnQlMjBzaXR0aW5nJTIwb24lMjBjb3VjaCUyMHRoZXJhcHl8ZW58MXwwfHx8MTc4ODE3NDEyNnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a couch talking to another woman"
+cardImage: "https://images.unsplash.com/photo-1714976694867-bc0e012fab70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjbGllbnQlMjBzaXR0aW5nJTIwb24lMjBjb3VjaCUyMHRoZXJhcHl8ZW58MXwwfHx8MTc4ODE3NDEyNnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a couch talking to another woman"
 ---
 
 Most people picture therapy as a series of moments. The one where you finally say the hard thing out loud. The one where you cry. The one where something clicks and you walk out lighter. Those moments happen, but they are not most of therapy. Most of therapy is the weeks in between, when nothing dramatic is happening and you're not sure if you're making progress at all. That stretch is not a sign that therapy has stalled. It is usually the part doing the most work, even though it feels the least eventful.
