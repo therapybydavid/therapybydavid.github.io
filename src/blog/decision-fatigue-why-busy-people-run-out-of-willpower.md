@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/decision-fatigue-why-busy-people-run-out-of-willpower"
 canonical: "https://therapybydavid.com/blog/decision-fatigue-why-busy-people-run-out-of-willpower"
 permalink: "/blog/decision-fatigue-why-busy-people-run-out-of-willpower.html"
-date: 2026-08-28
+date: 2026-08-31
 order: 50
 tag: "Mental Health"
-dateDisplay: "August 28, 2026 · 6 min read"
+dateDisplay: "August 31, 2026 · 6 min read"
 deck: "You didn't run out of discipline today. You ran out of decisions."
 cardTitle: "Decision Fatigue: Why the Busiest People Run Out of Willpower Before the Day Ends"
 cardTag: "Mental Health"
 cardDescription: "Balance isn't just about time. It's about the hundreds of small decisions that drain you before you even get to the ones that matter."
-cardDate: "August 28, 2026 · 6 min read"
+cardDate: "August 31, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1758598497429-6eb3895d5bfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxleGhhdXN0ZWQlMjBwcm9mZXNzaW9uYWwlMjBvdmVyd2hlbG1lZCUyMGRlc2slMjB0aXJlZHxlbnwxfDB8fHwxNzg4MDk4NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "Man rubbing his face in front of laptop"
