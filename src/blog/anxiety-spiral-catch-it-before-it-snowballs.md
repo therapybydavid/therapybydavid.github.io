@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "A practical look at how anxious thoughts escalate in real time, why common advice like just calm down backfires, and what actually interrupts the spiral."
 cardDate: "September 1, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1698620625735-361b7ec4e4d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzMHx8YW54aW91cyUyMHBlcnNvbiUyMHF1aWV0JTIwbW9tZW50JTIwaW5kb29yc3xlbnwxfDB8fHwxNzg4MjYzMTkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a woman standing in front of a book shelf"
-cardImage: "https://images.unsplash.com/photo-1698620625735-361b7ec4e4d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzMHx8YW54aW91cyUyMHBlcnNvbiUyMHF1aWV0JTIwbW9tZW50JTIwaW5kb29yc3xlbnwxfDB8fHwxNzg4MjYzMTkxfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a woman standing in front of a book shelf"
+image: "https://images.unsplash.com/photo-1478707734876-10bbf5b7a44b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0OXx8YW54aW91cyUyMHBlcnNvbiUyMHF1aWV0JTIwbW9tZW50JTIwaW5kb29yc3xlbnwxfDB8fHwxNzg4MjYzMjE0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman wearing gray long-sleeved shirt in front of table with piece of cake"
+cardImage: "https://images.unsplash.com/photo-1478707734876-10bbf5b7a44b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0OXx8YW54aW91cyUyMHBlcnNvbiUyMHF1aWV0JTIwbW9tZW50JTIwaW5kb29yc3xlbnwxfDB8fHwxNzg4MjYzMjE0fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman wearing gray long-sleeved shirt in front of table with piece of cake"
 ---
 
 ## The Moment Anxiety Tips Over
