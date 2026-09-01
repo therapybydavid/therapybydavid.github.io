@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/borrowed-identity-after-a-breakup"
 canonical: "https://therapybydavid.com/blog/borrowed-identity-after-a-breakup"
 permalink: "/blog/borrowed-identity-after-a-breakup.html"
-date: 2026-08-29
+date: 2026-09-01
 order: 50
 tag: "Self-Worth"
-dateDisplay: "August 29, 2026 · 6 min read"
+dateDisplay: "September 1, 2026 · 6 min read"
 deck: "After a long relationship ends, you may not just be grieving a person. You may be grieving a version of yourself you're not sure you ever chose."
 cardTitle: "Do You Actually Like That, or Did You Learn to Like It With Them?"
 cardTag: "Self-Worth"
 cardDescription: "A breakup often leaves you unsure which tastes, habits, and opinions were ever really yours. Here's how to sort that out without rushing it."
-cardDate: "August 29, 2026 · 6 min read"
+cardDate: "September 1, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1698077419194-499225ff57a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHRoaW5raW5nJTIwcmVmbGVjdGl2ZSUyMHdpbmRvdyUyMGZyaWVuZHN8ZW58MXwwfHx8MTc4ODA5ODQxMXww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a woman sitting on a window sill looking out the window"
