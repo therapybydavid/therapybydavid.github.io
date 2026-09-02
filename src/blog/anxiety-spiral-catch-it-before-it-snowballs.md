@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/anxiety-spiral-catch-it-before-it-snowballs"
 canonical: "https://therapybydavid.com/blog/anxiety-spiral-catch-it-before-it-snowballs"
 permalink: "/blog/anxiety-spiral-catch-it-before-it-snowballs.html"
-date: 2026-09-01
+date: 2026-09-02
 order: 50
 tag: "Anxiety"
-dateDisplay: "September 1, 2026 · 6 min read"
+dateDisplay: "September 2, 2026 · 6 min read"
 deck: "Anxiety rarely arrives as one big wave. It usually builds thought by thought, and there is a specific moment where you can still catch it."
 cardTitle: "The Anxiety Spiral: How to Catch It Before It Snowballs"
 cardTag: "Anxiety"
 cardDescription: "A practical look at how anxious thoughts escalate in real time, why common advice like just calm down backfires, and what actually interrupts the spiral."
-cardDate: "September 1, 2026 · 6 min read"
+cardDate: "September 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1569033485185-7b9d3130ba7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw5N3x8YW54aW91cyUyMHBlcnNvbiUyMHF1aWV0JTIwbW9tZW50JTIwaW5kb29yc3xlbnwxfDB8fHwxNzg4MjYzMjM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in sleeveless top"
