@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Real balance isn't hitting every category perfectly each day. Here's why that model fails and what actually works instead."
 cardDate: "September 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758874960877-1a579d6c159e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHBhcmVudCUyMGNoZWNraW5nJTIwcGhvbmUlMjBraXRjaGVufGVufDF8MHx8fDE3ODgzNDY5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Girl using phone at kitchen table with breakfast"
+cardImage: "https://images.unsplash.com/photo-1758874960877-1a579d6c159e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHBhcmVudCUyMGNoZWNraW5nJTIwcGhvbmUlMjBraXRjaGVufGVufDF8MHx8fDE3ODgzNDY5NDZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Girl using phone at kitchen table with breakfast"
 ---
 
 Most people who come in feeling out of balance are not lazy, disorganized, or bad at managing their time. They are working from a definition of balance that was never realistic to begin with: the idea that a good day means hitting every category. Work, exercise, kids, marriage, friendships, sleep, some kind of personal project. All of it, every day, in roughly equal measure. When the day inevitably falls short of that, the story becomes "I'm failing at balance," instead of "the model I'm using doesn't match how life actually works."
