@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "A clear look at what CBT actually targets in your thinking, why positive thinking isn't the point, and how to catch distortions in real time."
 cardDate: "September 3, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1763575647131-fea35b69e7d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1MHx8d29tYW4lMjB3cml0aW5nJTIwaW4lMjBub3RlYm9va3xlbnwxfDB8fHwxNzg4NDM1Nzg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "Woman writing on paper with a pencil outdoors"
-cardImage: "https://images.unsplash.com/photo-1763575647131-fea35b69e7d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1MHx8d29tYW4lMjB3cml0aW5nJTIwaW4lMjBub3RlYm9va3xlbnwxfDB8fHwxNzg4NDM1Nzg3fDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "Woman writing on paper with a pencil outdoors"
+image: "https://images.unsplash.com/photo-1621610085923-4e8234a10784?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxNDV8fHdvbWFuJTIwd3JpdGluZyUyMGluJTIwbm90ZWJvb2t8ZW58MXwwfHx8MTc4ODQzNTgwOXww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in black and pink long sleeve shirt using macbook pro"
+cardImage: "https://images.unsplash.com/photo-1621610085923-4e8234a10784?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxNDV8fHdvbWFuJTIwd3JpdGluZyUyMGluJTIwbm90ZWJvb2t8ZW58MXwwfHx8MTc4ODQzNTgwOXww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in black and pink long sleeve shirt using macbook pro"
 ---
 
 ## The Positive Thinking Myth
