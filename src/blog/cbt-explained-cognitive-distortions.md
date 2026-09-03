@@ -19,10 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "A clear look at what CBT actually targets in your thinking, why positive thinking isn't the point, and how to catch distortions in real time."
 cardDate: "September 3, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1550592704-6c76defa9985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHdyaXRpbmclMjBpbiUyMG5vdGVib29rfGVufDF8MHx8fDE3ODg0MzU3NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "person holding on red pen while writing on book"
-cardImage: "https://images.unsplash.com/photo-1550592704-6c76defa9985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHdyaXRpbmclMjBpbiUyMG5vdGVib29rfGVufDF8MHx8fDE3ODg0MzU3NjZ8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "person holding on red pen while writing on book"
+image: "https://images.unsplash.com/photo-1781527142476-656f6171edc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHdyaXRpbmclMjBpbiUyMG5vdGVib29rfGVufDF8MHx8fDE3ODg0MzU3NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Person writing at a picnic table in a stone courtyard"
+cardImage: "https://images.unsplash.com/photo-1781527142476-656f6171edc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHdyaXRpbmclMjBpbiUyMG5vdGVib29rfGVufDF8MHx8fDE3ODg0MzU3NjZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Person writing at a picnic table in a stone courtyard"
 ---
 
 ## The Positive Thinking Myth
