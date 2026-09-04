@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/cbt-explained-cognitive-distortions"
 canonical: "https://therapybydavid.com/blog/cbt-explained-cognitive-distortions"
 permalink: "/blog/cbt-explained-cognitive-distortions.html"
-date: 2026-09-03
+date: 2026-09-04
 order: 50
 tag: "Mental Health"
-dateDisplay: "September 3, 2026 · 6 min read"
+dateDisplay: "September 4, 2026 · 6 min read"
 deck: "CBT gets reduced to \"just think positive,\" but the real work is noticing specific thinking patterns before they run the show."
 cardTitle: "CBT Isn't About Thinking Positive: What Cognitive Distortions Actually Are"
 cardTag: "Mental Health"
 cardDescription: "A clear look at what CBT actually targets in your thinking, why positive thinking isn't the point, and how to catch distortions in real time."
-cardDate: "September 3, 2026 · 6 min read"
+cardDate: "September 4, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1752650734567-fca336c8b77a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzMzl8fHdvbWFuJTIwd3JpdGluZyUyMGluJTIwbm90ZWJvb2t8ZW58MXwwfHx8MTc4ODQzNTgzMXww&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "Two women work together in a creative office"
