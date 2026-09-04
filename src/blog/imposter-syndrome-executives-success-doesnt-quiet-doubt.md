@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Why accomplished executives still feel like frauds, and why more achievement rarely fixes it. A therapist's look at imposter syndrome in leadership."
 cardDate: "September 4, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1758518730655-30a3cc3a4c68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBhbG9uZSUyMGluJTIwb2ZmaWNlJTIwbG9va2luZ3xlbnwxfDB8fHwxNzg4NTE5NzIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Woman in glasses taking a selfie by the window"
+cardImage: "https://images.unsplash.com/photo-1758518730655-30a3cc3a4c68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBhbG9uZSUyMGluJTIwb2ZmaWNlJTIwbG9va2luZ3xlbnwxfDB8fHwxNzg4NTE5NzIwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Woman in glasses taking a selfie by the window"
 ---
 
 You would think it gets easier. More experience, more credentials, a bigger title on the door. Logically, the doubt should shrink as the evidence of competence piles up. For a lot of the executives and senior professionals I work with, it works the opposite way. The higher they climb, the louder the voice gets: *you got lucky, you're behind, they're going to figure out you don't actually know what you're doing.* This isn't a confidence problem you can fix with another promotion. It's a pattern, and it has a shape once you know what to look for.
