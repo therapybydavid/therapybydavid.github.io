@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "The divorce decree and your readiness to date rarely arrive on the same day. Here's how to tell the difference before you start swiping."
 cardDate: "September 5, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1519944518895-f08a12d6dfd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxtaWRkbGUtYWdlZCUyMHBlcnNvbiUyMGxvb2tpbmclMjBhdCUyMHBob25lfGVufDF8MHx8fDE3ODg2MDYxMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man holding a smartphone near the window"
+cardImage: "https://images.unsplash.com/photo-1519944518895-f08a12d6dfd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxtaWRkbGUtYWdlZCUyMHBlcnNvbiUyMGxvb2tpbmclMjBhdCUyMHBob25lfGVufDF8MHx8fDE3ODg2MDYxMzN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man holding a smartphone near the window"
 ---
 
 The papers get signed on a Tuesday. By Thursday, some people have already downloaded three dating apps. Others wait two years, three years, and still feel like the idea of a first date makes their stomach drop. Neither timeline is wrong on its own, but a lot of people mistake the calendar for the clock that actually matters. Legal divorce has a date. Emotional divorce doesn't. It happens in pieces, at different speeds, for different parts of you. You can be completely done with the marriage and still not be ready to be someone's partner again. You can also spend years "healing" in a way that's really just avoidance wearing a more acceptable name. Both situations show up in this practice constantly, and both get missed because everyone is looking at the wrong marker: whether the divorce is final, instead of whether the person is.
