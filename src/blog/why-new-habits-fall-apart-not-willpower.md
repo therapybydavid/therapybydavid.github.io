@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Most new habits collapse under stress, not laziness. A look at why habit change fails and how to build routines that actually hold up."
 cardDate: "September 7, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjB3cml0aW5nJTIwaW4lMjBwbGFubmVyfGVufDF8MHx8fDE3ODg3Nzg5MzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "person writing on a book"
+cardImage: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjB3cml0aW5nJTIwaW4lMjBwbGFubmVyfGVufDF8MHx8fDE3ODg3Nzg5MzN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "person writing on a book"
 ---
 
 Most people who come in talking about habits do not actually have a motivation problem. They have tried the 5am workout, the meditation app, the food journal, the no-phone-after-9pm rule. They have started strong more than once. And then, somewhere around day nine or ten, life got loud and the habit quietly disappeared. The usual conclusion is some version of "I just don't have the discipline for this." That conclusion is almost always wrong. What actually happened is that the habit was built for a version of the person who does not exist yet, one with more time, more energy, and a calmer nervous system than the person currently has. The habit did not fail because of a character flaw. It failed because of bad design.
