@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A grounded look at the timing question every divorced parent faces: when is it actually time to introduce a new partner to your children."
 cardDate: "September 8, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1560328055-e938bb2ed50a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzaW5nbGUlMjBwYXJlbnQlMjBhbmQlMjBuZXclMjBwYXJ0bmVyfGVufDF8MHx8fDE3ODg4NjUzMzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man in white shirt carrying boy"
+cardImage: "https://images.unsplash.com/photo-1560328055-e938bb2ed50a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxzaW5nbGUlMjBwYXJlbnQlMjBhbmQlMjBuZXclMjBwYXJ0bmVyfGVufDF8MHx8fDE3ODg4NjUzMzB8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man in white shirt carrying boy"
 ---
 
 Most divorced parents who start dating again eventually land on the same question. Not "should I date," but "when do my kids get to know about this person." It sounds like a logistics question. It usually isn't. Underneath it is a harder question: how do you know if this relationship is stable enough to introduce into a life that already absorbed one major loss. There's no universal timeline that works for every family. But there is a pattern worth naming, because it shows up in session after session: parents tend to measure their own readiness to introduce someone, not their child's readiness to meet them. Those are two different clocks, and confusing them is where most of the trouble starts.
