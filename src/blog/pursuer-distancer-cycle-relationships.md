@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A common but rarely named communication pattern in relationships: one partner pushes for connection while the other withdraws, and both end up more alone."
 cardDate: "September 9, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1625427725033-f3baaaac3971?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODg5NTE3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "grayscale photo of couple sitting on chair"
+cardImage: "https://images.unsplash.com/photo-1625427725033-f3baaaac3971?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODg5NTE3Mzh8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "grayscale photo of couple sitting on chair"
 ---
 
 ## The Pattern Has a Name
