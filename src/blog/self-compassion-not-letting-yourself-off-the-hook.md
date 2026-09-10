@@ -19,6 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "Self-compassion often gets confused with excuse-making. Here's what it actually requires, and why it's harder than self-criticism for many people."
 cardDate: "September 10, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNpdHRpbmclMjBxdWlldGx5JTIwYnklMjB3aW5kb3d8ZW58MXwwfHx8MTc4OTAzODA4M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman sitting on a window sill"
+cardImage: "https://images.unsplash.com/photo-1658279366796-e0c28623cd27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNpdHRpbmclMjBxdWlldGx5JTIwYnklMjB3aW5kb3d8ZW58MXwwfHx8MTc4OTAzODA4M3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman sitting on a window sill"
 ---
 
 When people hear "self-compassion," a lot of them picture something soft and a little indulgent. Skipping the workout because you're tired. Letting yourself off the hook after you snapped at your partner. Telling yourself it's fine that you missed the deadline because you've had a hard month. That's not self-compassion. That's avoidance wearing a nicer outfit. Real self-compassion is closer to the opposite. It's what lets you look directly at a mistake, a missed goal, or a moment you're not proud of, without flinching away or spiraling into shame. It doesn't lower the bar. It changes what happens when you fall short of it.
