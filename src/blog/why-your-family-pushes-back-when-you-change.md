@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Setting boundaries with family often triggers more resistance, not less. Here's why family systems push back and how to hold steady anyway."
 cardDate: "September 11, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1467799824547-58bcafb6dbc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxhZHVsdCUyMGRhdWdodGVyJTIwc2VyaW91cyUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5MTI0NTEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "women sitting on black wooden stools"
+cardImage: "https://images.unsplash.com/photo-1467799824547-58bcafb6dbc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxhZHVsdCUyMGRhdWdodGVyJTIwc2VyaW91cyUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5MTI0NTEwfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "women sitting on black wooden stools"
 ---
 
 You finally say no. Maybe it's skipping Thanksgiving at your mother's house for the first time, or telling your sister you won't be the one mediating her fights with your dad anymore, or simply saying "I can't talk about this right now" instead of absorbing another hour of criticism. You brace yourself for a hard conversation. What you don't expect is what happens next: the sudden health scare, the guilt-laden voicemail, the relative who calls you "selfish" for the first time in your life, the pile-on of siblings texting to ask why you're "doing this to the family." It can feel like proof that you did something wrong. More often, it's proof that the family system noticed the change and is trying to pull you back into place.
