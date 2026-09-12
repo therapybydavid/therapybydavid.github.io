@@ -19,10 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "A look at a specific form of hypervigilance: constantly monitoring other people's faces, tone, and silences for signs of danger, and how to build a more accurate radar."
 cardDate: "September 12, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1703683971476-fada8eab40a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFueGlvdXNseSUyMHdhdGNoaW5nJTIwY29sbGVhZ3VlJTIwc3xlbnwxfDB8fHwxNzg5MjEwOTMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "a boy and a girl sitting at a table with a laptop"
-cardImage: "https://images.unsplash.com/photo-1703683971476-fada8eab40a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFueGlvdXNseSUyMHdhdGNoaW5nJTIwY29sbGVhZ3VlJTIwc3xlbnwxfDB8fHwxNzg5MjEwOTMyfDA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "a boy and a girl sitting at a table with a laptop"
+image: "https://images.unsplash.com/photo-1758520144517-30a30357fb2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1Mnx8d29tYW4lMjBhbnhpb3VzbHklMjB3YXRjaGluZyUyMGNvbGxlYWd1ZSUyMHN8ZW58MXwwfHx8MTc4OTIxMTc3Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Two women arm wrestling at a table"
+cardImage: "https://images.unsplash.com/photo-1758520144517-30a30357fb2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1Mnx8d29tYW4lMjBhbnhpb3VzbHklMjB3YXRjaGluZyUyMGNvbGxlYWd1ZSUyMHN8ZW58MXwwfHx8MTc4OTIxMTc3Mnww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "Two women arm wrestling at a table"
 ---
 
 When people hear the word hypervisor vigilance, they usually picture something dramatic: a veteran scanning a crowd for threats, someone flinching at a loud noise, a person who can't relax in a parking garage. Those are real. But there's a quieter, more common version that shows up in ordinary rooms, on ordinary days, and it doesn't get talked about as often. It's the habit of constantly reading other people. Their tone of voice. The set of their jaw. How long it took them to text back. Whether they seem a little off. For a lot of people, this isn't a personality quirk or a sign of high emotional intelligence. It's a nervous system that learned, somewhere along the way, that other people's moods were information it needed in order to stay safe.
