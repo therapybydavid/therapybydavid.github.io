@@ -1,8 +1,8 @@
 ---
 llmsDescription: "You can explain your patterns perfectly and still repeat them tomorrow. Here's why insight and change live in different parts of you."
 title: "The Insight Trap: Why Knowing Doesn't Change You"
-pageTitle: "The Insight Trap: Why Knowing Doesn't Change You | Therapy by David"
-description: "Insight feels like progress, but understanding your patterns and changing them are two different skills. Here's why the gap exists and how to close it."
+pageTitle: "The Insight Trap: Knowing Isn't Changing | Therapy by David"
+description: "Insight feels like progress, but understanding your patterns and changing them are different skills. Here's why the gap exists and how to close it."
 ogTitle: "The Insight Trap: Why Knowing Doesn't Change You"
 ogDescription: "Insight feels like progress, but understanding your patterns and changing them are two different skills. Here's why the gap exists and how to close it."
 ogType: article

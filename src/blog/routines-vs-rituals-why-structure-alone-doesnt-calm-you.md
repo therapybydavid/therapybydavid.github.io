@@ -2,7 +2,7 @@
 llmsDescription: "You can follow the same schedule every day and still feel unsettled. The missing piece usually isn't more structure, it's meaning."
 title: "Why Rituals Calm You Down and Routines Alone Don't"
 pageTitle: "Routines vs. Rituals for a Calmer Day | Therapy by David"
-description: "A routine is a sequence of tasks, a ritual is the same one done with attention. Why edges in the day settle the nervous system, from a Houston therapist."
+description: "A routine is a set of tasks. A ritual is the same set, done with attention. Why edges in the day settle the nervous system, from a Houston therapist."
 ogTitle: "Why Rituals Calm You Down and Routines Alone Don't"
 ogDescription: "A healthy routine and a calming ritual aren't the same thing. Here's the difference, and why it matters for anxiety, stress, and daily structure."
 ogType: article

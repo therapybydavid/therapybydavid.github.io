@@ -2,7 +2,7 @@
 llmsDescription: "Why relationships feel hard when \"nothing dramatic\" ever happened."
 title: "How Childhood Emotional Neglect Shows Up in Adult Relationships"
 pageTitle: "Emotional Neglect in Adult Relationships | Therapy by David"
-description: "Nothing dramatic happened, so why is closeness so hard? A Houston therapist on how childhood emotional neglect shapes trust, self-reliance, and intimacy."
+description: "Nothing bad happened, so why is closeness so hard? A Houston therapist on how childhood emotional neglect shapes trust, self-reliance, and intimacy."
 ogTitle: "How Childhood Emotional Neglect Shows Up in Adult Relationships"
 ogDescription: "Nothing dramatic happened in your childhood. So why do relationships feel so hard? Childhood emotional neglect is often invisible, but its effects are not."
 ogType: article

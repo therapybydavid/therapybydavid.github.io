@@ -2,7 +2,7 @@
 llmsDescription: "Long before an argument ends, someone usually tries to stop it. The question is whether anyone notices."
 title: "Repair Attempts: The Small Moments That Save Relationships (and Why We Miss Them)"
 pageTitle: "Repair Attempts: Why Couples Miss Them | Therapy by David"
-description: "Small bids to lower the temperature mid-argument, why flooding makes them invisible, and how to send clearer ones, from a therapist in Houston, Texas."
+description: "Repair attempts are small bids to lower the temperature mid-argument. A Houston therapist on why flooding hides them and how to send clearer ones."
 ogTitle: "Repair Attempts: The Small Moments That Save Relationships (and Why We Miss Them)"
 ogDescription: "A therapist explains repair attempts, the small bids to de-escalate conflict, and why couples so often miss them."
 ogType: article

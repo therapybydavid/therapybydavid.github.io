@@ -2,7 +2,7 @@
 llmsDescription: "The difference between narcissistic traits and NPD, and what to do when you love someone who has them."
 title: "Narcissist Is Not a Diagnosis: What NPD Actually Means"
 pageTitle: "Narcissistic Traits vs. NPD Explained | Therapy by David"
-description: "Narcissism is a trait, NPD is a disorder. A Houston therapist on grandiose and covert patterns, gaslighting, and what helps when you love someone like this."
+description: "Narcissism is a trait, NPD is a disorder. A Houston therapist on grandiose and covert patterns, gaslighting, and loving someone like this."
 ogTitle: "Narcissist Is Not a Diagnosis: What NPD Actually Means"
 ogDescription: "The word gets thrown at every difficult ex and bad boss. Here's what narcissistic personality disorder actually is, and what to do when you're the one living with the fallout."
 ogType: article

@@ -1,7 +1,7 @@
 ---
 llmsDescription: "When you and your partner see the world differently, the hardest part isn't the disagreement itself. It's figuring out what it actually means."
 title: "Not Every Value Difference Is a Dealbreaker: How to Tell Which Ones Are"
-pageTitle: "Not Every Value Difference Is a Dealbreaker: How to Tell Which Ones Are | Therapy by David"
+pageTitle: "When a Value Difference Is a Dealbreaker | Therapy by David"
 description: "A practical way to sort the value differences that threaten a relationship from the ones you can actually live with."
 ogTitle: "Not Every Value Difference Is a Dealbreaker: How to Tell Which Ones Are"
 ogDescription: "A practical way to sort the value differences that threaten a relationship from the ones you can actually live with."

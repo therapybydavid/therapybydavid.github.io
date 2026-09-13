@@ -1,7 +1,7 @@
 ---
 llmsDescription: "Not every trauma response comes with a clear memory attached to it, and the not-remembering can be just as disorienting as the remembering."
 title: "When You Can't Remember Your Childhood: Complex Trauma and the Fog Around Memory"
-pageTitle: "When You Can't Remember Your Childhood: Complex Trauma and the Fog Around Memory | Therapy by David"
+pageTitle: "Complex Trauma and Childhood Memory Gaps | Therapy by David"
 description: "For some adults, complex trauma doesn't leave vivid memories to relive. It leaves gaps, and those gaps carry their own kind of weight."
 ogTitle: "When You Can't Remember Your Childhood: Complex Trauma and the Fog Around Memory"
 ogDescription: "For some adults, complex trauma doesn't leave vivid memories to relive. It leaves gaps, and those gaps carry their own kind of weight."

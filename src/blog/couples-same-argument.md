@@ -2,7 +2,7 @@
 llmsDescription: "Why recurring fights are never really about the surface topic."
 title: "Why Do Couples Keep Having the Same Argument?"
 pageTitle: "Why Couples Repeat the Same Argument | Therapy by David"
-description: "Recurring fights are rarely about the dishes. The pursue-withdraw loop, the need sitting underneath it, and how couples interrupt it. Couples therapy in Texas."
+description: "Recurring fights are rarely about the dishes. The pursue-withdraw loop, the need underneath, and how couples interrupt it. Couples therapy in Texas."
 ogTitle: "Why Do Couples Keep Having the Same Argument?"
 ogDescription: "Recurring fights are rarely about the dishes. The pursue-withdraw loop, the need sitting underneath it, and how couples interrupt it. Couples therapy in Texas."
 ogType: article

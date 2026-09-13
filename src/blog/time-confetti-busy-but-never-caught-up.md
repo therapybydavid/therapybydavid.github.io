@@ -1,7 +1,7 @@
 ---
 llmsDescription: "You didn't stop moving all day, so why does it feel like you accomplished nothing and rested even less?"
 title: "Time Confetti: Why You Can Be Busy All Day and Still Feel Like You Got Nothing Done"
-pageTitle: "Time Confetti: Why You Can Be Busy All Day and Still Feel Like You Got Nothing Done | Therapy by David"
+pageTitle: "Time Confetti: Busy but Never Caught Up | Therapy by David"
 description: "A look at why fragmented, scattered time leaves busy people feeling depleted, and what actually helps beyond time-blocking and productivity apps."
 ogTitle: "Time Confetti: Why You Can Be Busy All Day and Still Feel Like You Got Nothing Done"
 ogDescription: "A look at why fragmented, scattered time leaves busy people feeling depleted, and what actually helps beyond time-blocking and productivity apps."

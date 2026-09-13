@@ -1,7 +1,7 @@
 ---
 llmsDescription: "You don't need to feel ready to start. You need to start to feel ready."
 title: "Why Waiting to Feel Ready Keeps You Stuck"
-pageTitle: "Why Waiting to Feel Ready Keeps You Stuck | Therapy by David"
+pageTitle: "Waiting to Feel Ready Keeps You Stuck | Therapy by David"
 description: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."
 ogTitle: "Why Waiting to Feel Ready Keeps You Stuck"
 ogDescription: "Why waiting for motivation, clarity, or confidence before making a change often keeps people stuck longer than the change itself would."

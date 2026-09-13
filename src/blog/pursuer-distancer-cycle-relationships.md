@@ -1,8 +1,8 @@
 ---
 llmsDescription: "One partner wants to talk it through right now. The other needs space to think. Here is what is actually happening between them, and how to stop the cycle from repeating."
 title: "The Pursuer-Distancer Cycle: When One Partner Chases and the Other Shuts Down"
-pageTitle: "The Pursuer-Distancer Cycle: When One Partner Chases and the Other Shuts Down | Therapy by David"
-description: "A common but rarely named communication pattern in relationships: one partner pushes for connection while the other withdraws, and both end up more alone."
+pageTitle: "Pursuer-Distancer Cycle in Relationships | Therapy by David"
+description: "A common but rarely named pattern in relationships: one partner pushes for connection while the other withdraws, and both end up more alone."
 ogTitle: "The Pursuer-Distancer Cycle: When One Partner Chases and the Other Shuts Down"
 ogDescription: "A common but rarely named communication pattern in relationships: one partner pushes for connection while the other withdraws, and both end up more alone."
 ogType: article

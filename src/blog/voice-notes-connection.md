@@ -2,7 +2,7 @@
 llmsDescription: "What the research says about voice, presence, and connection."
 title: "Why Hearing Each Other's Voice Is a Small Act of Love"
 pageTitle: "Why Voice Notes Feel More Connecting | Therapy by David"
-description: "Research finds voice builds stronger bonds than text, with lower stress hormones. A Houston therapist on why a call lands differently, and when it doesn't."
+description: "Research links voice to stronger bonds than text and lower stress hormones. A Houston therapist on why a call lands differently, and when it doesn't."
 ogTitle: "Why Hearing Each Other's Voice Is a Small Act of Love"
 ogDescription: "A voice note or a quick call does more than carry words. Here's what the research says about voice, bonding, and the nervous system."
 ogType: article

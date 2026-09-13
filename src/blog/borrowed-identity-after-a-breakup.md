@@ -1,7 +1,7 @@
 ---
 llmsDescription: "After a long relationship ends, you may not just be grieving a person. You may be grieving a version of yourself you're not sure you ever chose."
 title: "Do You Actually Like That, or Did You Learn to Like It With Them?"
-pageTitle: "Do You Actually Like That, or Did You Learn to Like It With Them? | Therapy by David"
+pageTitle: "After a Breakup: Which Tastes Are Yours? | Therapy by David"
 description: "A breakup often leaves you unsure which tastes, habits, and opinions were ever really yours. Here's how to sort that out without rushing it."
 ogTitle: "Do You Actually Like That, or Did You Learn to Like It With Them?"
 ogDescription: "A breakup often leaves you unsure which tastes, habits, and opinions were ever really yours. Here's how to sort that out without rushing it."

@@ -2,7 +2,7 @@
 llmsDescription: "When everyday anxiety crosses into something worth treating."
 title: "How Do I Know If My Anxiety Is Becoming a Problem?"
 pageTitle: "Signs Your Anxiety Has Become a Problem | Therapy by David"
-description: "Normal anxiety passes. Problem anxiety lingers, spreads, and costs you sleep, focus, and relationships. The signs to watch for, from a Texas therapist."
+description: "Normal anxiety passes. Problem anxiety lingers, spreads, and costs you sleep, focus, and relationships. Signs to watch for, from a Texas therapist."
 ogTitle: "How Do I Know If My Anxiety Is Becoming a Problem?"
 ogDescription: "Normal anxiety passes. Problem anxiety lingers, spreads, and costs you sleep, focus, and relationships. The signs to watch for, from a Texas therapist."
 ogType: article

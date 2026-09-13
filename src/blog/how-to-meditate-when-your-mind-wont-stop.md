@@ -1,8 +1,8 @@
 ---
 llmsDescription: "A wandering mind is not a sign meditation is failing. Noticing you left and coming back is the entire practice."
 title: "How to Meditate When Your Mind Won't Stop"
-pageTitle: "How to Meditate When Your Mind Won't Stop | Therapy by David"
-description: "A Houston therapist on how to actually start meditating when you overthink, what five minutes a day trains, and when sitting in silence makes anxiety worse."
+pageTitle: "How to Meditate If Your Mind Won't Stop | Therapy by David"
+description: "A Houston therapist on how to start meditating when you overthink, what five minutes a day trains, and when sitting in silence makes anxiety worse."
 ogTitle: "How to Meditate When Your Mind Won't Stop"
 ogDescription: "Most people quit because they think a busy mind means they're doing it wrong. It's the opposite. Here's what the practice actually trains."
 ogType: article

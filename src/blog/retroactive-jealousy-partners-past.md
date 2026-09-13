@@ -30,7 +30,6 @@ schemaAbout:
   - "Relationship anxiety"
   - "Intrusive thoughts"
   - "Reassurance seeking"
-authorCredentials: true
 faqJson: |
   {
     "@context": "https://schema.org",

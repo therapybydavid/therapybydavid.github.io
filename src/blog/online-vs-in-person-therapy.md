@@ -2,7 +2,7 @@
 llmsDescription: "An honest comparison of telehealth and in-person therapy, and who each suits."
 title: "Online Therapy vs. In-Person: Which Is Right for You?"
 pageTitle: "Online or In-Person Therapy in Texas | Therapy by David"
-description: "What the research says about telehealth, where each format fits, and how privacy works. Sessions run by video across Texas and in person near Houston."
+description: "What research says about telehealth, where each format fits, and how privacy works. Sessions run by video across Texas and in person near Houston."
 ogTitle: "Online Therapy vs. In-Person: Which Is Right for You?"
 ogDescription: "A balanced guide to choosing between online and in-person therapy: how telehealth works, what the research says, and who each format suits best."
 ogType: article

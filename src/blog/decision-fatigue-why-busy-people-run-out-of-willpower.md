@@ -1,7 +1,7 @@
 ---
 llmsDescription: "You didn't run out of discipline today. You ran out of decisions."
 title: "Decision Fatigue: Why the Busiest People Run Out of Willpower Before the Day Ends"
-pageTitle: "Decision Fatigue: Why the Busiest People Run Out of Willpower Before the Day Ends | Therapy by David"
+pageTitle: "Decision Fatigue: Why Willpower Runs Out | Therapy by David"
 description: "Balance isn't just about time. It's about the hundreds of small decisions that drain you before you even get to the ones that matter."
 ogTitle: "Decision Fatigue: Why the Busiest People Run Out of Willpower Before the Day Ends"
 ogDescription: "Balance isn't just about time. It's about the hundreds of small decisions that drain you before you even get to the ones that matter."

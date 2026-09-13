@@ -1,8 +1,8 @@
 ---
 llmsDescription: "How to tell exhaustion-from-overload apart from clinical depression, and why it matters."
 title: "Burnout vs. Depression: How to Tell the Difference"
-pageTitle: "Burnout or Depression: Telling Them Apart | Therapy by David"
-description: "Burnout eases when the demand lifts. Depression follows you everywhere. A Houston therapist on how the two differ, where they overlap, and when to get help."
+pageTitle: "Burnout vs. Depression: How They Differ | Therapy by David"
+description: "Burnout eases when demands lift. Depression follows you everywhere. A Houston therapist on how they differ, where they overlap, and when to get help."
 ogTitle: "Burnout vs. Depression: How to Tell the Difference"
 ogDescription: "Burnout and depression overlap, but they aren't the same. Learn how to tell them apart, when each needs help, and why they often co-occur."
 ogType: article

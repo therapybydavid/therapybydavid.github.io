@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Anxiety rarely arrives as one big wave. It usually builds thought by thought, and there is a specific moment where you can still catch it."
 title: "The Anxiety Spiral: How to Catch It Before It Snowballs"
-pageTitle: "The Anxiety Spiral: How to Catch It Before It Snowballs | Therapy by David"
-description: "A practical look at how anxious thoughts escalate in real time, why common advice like just calm down backfires, and what actually interrupts the spiral."
+pageTitle: "Anxiety Spiral: How to Catch It Early | Therapy by David"
+description: "A practical look at how anxious thoughts escalate in real time, why advice like just calm down backfires, and what actually interrupts the spiral."
 ogTitle: "The Anxiety Spiral: How to Catch It Before It Snowballs"
 ogDescription: "A practical look at how anxious thoughts escalate in real time, why common advice like just calm down backfires, and what actually interrupts the spiral."
 ogType: article

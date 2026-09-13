@@ -1,7 +1,7 @@
 ---
 llmsDescription: "CBT gets reduced to \"just think positive,\" but the real work is noticing specific thinking patterns before they run the show."
 title: "CBT Isn't About Thinking Positive: What Cognitive Distortions Actually Are"
-pageTitle: "CBT Isn't About Thinking Positive: What Cognitive Distortions Actually Are | Therapy by David"
+pageTitle: "CBT Isn't About Thinking Positive | Therapy by David"
 description: "A clear look at what CBT actually targets in your thinking, why positive thinking isn't the point, and how to catch distortions in real time."
 ogTitle: "CBT Isn't About Thinking Positive: What Cognitive Distortions Actually Are"
 ogDescription: "A clear look at what CBT actually targets in your thinking, why positive thinking isn't the point, and how to catch distortions in real time."

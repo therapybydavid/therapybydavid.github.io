@@ -1,8 +1,8 @@
 ---
 llmsDescription: "Most people wait until they're barely functioning to ask for help. Here's why that threshold is worth questioning."
 title: "How Bad Does It Have to Get Before Therapy Makes Sense?"
-pageTitle: "How Bad Does It Have to Get Before Therapy Makes Sense? | Therapy by David"
-description: "You don't need a crisis to justify therapy. A Houston therapist on how to think about timing, what waiting actually costs, and the three things that matter more than severity."
+pageTitle: "How Bad Does It Have to Get for Therapy? | Therapy by David"
+description: "You don't need a crisis to justify therapy. A Houston therapist on timing, what waiting costs, and the three things that matter more than severity."
 ogTitle: "How Bad Does It Have to Get Before Therapy Makes Sense?"
 ogDescription: "You don't need a crisis to justify therapy. Here's how to think about timing without waiting for things to fall apart first."
 ogType: article

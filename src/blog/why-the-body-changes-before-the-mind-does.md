@@ -2,7 +2,7 @@
 llmsDescription: "Understanding why you do something is rarely enough to make you stop, and there's a neurological reason for that."
 title: "You Understand the Problem. So Why Can't You Change It?"
 pageTitle: "Why the Body Changes Before the Mind | Therapy by David"
-description: "Fear responses run on faster brain systems than reasoning. Why trying harder backfires, and what small week-to-week change looks like. Houston and Texas."
+description: "Fear responses run on faster systems than reasoning. Why trying harder backfires, and what small week-to-week change looks like. Houston and Texas."
 ogTitle: "You Understand the Problem. So Why Can't You Change It?"
 ogDescription: "Insight tells you what's wrong. But change happens somewhere deeper, in the nervous system, habits, and relationships that insight alone can't reach."
 ogType: article
