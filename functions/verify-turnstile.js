@@ -4,12 +4,16 @@
 // SETUP (do this when you're ready to turn on spam protection):
 //   1. Cloudflare dashboard → Turnstile → add a widget for therapybydavid.com.
 //      You'll get a SITE KEY (public) and a SECRET KEY (private).
-//   2. Put the SECRET KEY in Cloudflare Pages → your project → Settings →
-//      Variables and secrets → add  TURNSTILE_SECRET_KEY  (as a Secret).
-//   3. Put the SITE KEY into the contact form widget (see src/contact.njk).
+//   2. Cloudflare Pages → your project → Settings → Variables and secrets:
+//        • TURNSTILE_SECRET_KEY  — the SECRET key, added as a *Secret*
+//        • TURNSTILE_SITE_KEY    — the SITE key, added as a plain Variable
+//      (the site key can instead be committed to src/_data/turnstile.js).
+//   3. Redeploy. That is the whole activation — no code change needed.
 //
-// Until TURNSTILE_SECRET_KEY is set, this endpoint returns "not-configured"
-// (503) and changes nothing — it is safe to deploy as-is.
+// The front end reads the site key from src/_data/turnstile.js and only renders
+// the widget and enforces the gate when it is non-empty. Until then, and until
+// TURNSTILE_SECRET_KEY is set (this endpoint answers 503 "not-configured"), the
+// contact form behaves exactly as it did before — safe to deploy as-is.
 
 export async function onRequestPost(context) {
   const { env, request } = context;

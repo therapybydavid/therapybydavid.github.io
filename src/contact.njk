@@ -345,6 +345,7 @@ eleventyExcludeFromCollections: true
 }
 </style>
   <script src="/analytics.js" defer></script>
+  {% if turnstile.siteKey %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
@@ -514,17 +515,12 @@ eleventyExcludeFromCollections: true
             </div>
             <p style="font-size: 12px; color: var(--muted); margin: 0;">Your message is private. This form is not a crisis line. If you are in immediate danger, call 988 or 911.</p>
             <div id="form-status" style="display:none; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 600;"></div>
-            <!-- ── Cloudflare Turnstile (spam protection): INACTIVE until keys are added ──
-                 Activate in 4 steps:
-                 1. Add this once, in <head>:
-                    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-                 2. Uncomment the widget below and replace YOUR_TURNSTILE_SITE_KEY with your
-                    Turnstile SITE KEY (public) from the Cloudflare dashboard.
-                 3. Uncomment the verification gate in the submit handler (search "TURNSTILE").
-                 4. Add TURNSTILE_SECRET_KEY (Secret) in Cloudflare Pages → Settings →
-                    Variables and secrets (see functions/verify-turnstile.js).
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" style="margin: 4px 0;"></div>
-            -->
+            {# Cloudflare Turnstile. Renders only once a SITE KEY is set in
+               src/_data/turnstile.js (or the TURNSTILE_SITE_KEY build
+               variable); otherwise nothing is emitted at all. #}
+            {% if turnstile.siteKey %}
+            <div class="cf-turnstile" data-sitekey="{{ turnstile.siteKey }}" data-theme="light" style="margin: 4px 0;"></div>
+            {% endif %}
             <button type="submit" id="submit-btn" class="btn btn-gold" style="justify-self: start; padding: 16px 36px; font-size: 15px;">Send Message</button>
           </form>
           </div>
@@ -654,6 +650,10 @@ eleventyExcludeFromCollections: true
       'Privacy Policy (https://therapybydavid.com/privacy.html).';
     // ────────────────────────────────────────────────────────────────────────
 
+    // Public Turnstile site key, or '' while spam protection is off. Set it
+    // in src/_data/turnstile.js (or the TURNSTILE_SITE_KEY build variable).
+    const TURNSTILE_SITE_KEY = '{{ turnstile.siteKey }}';
+
     document.getElementById('contact-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -694,22 +694,47 @@ eleventyExcludeFromCollections: true
         lead_first_seen:   leadSrc.first_seen   || null
       };
 
-      // ── TURNSTILE spam-protection gate: INACTIVE until keys are added ──
-      // Uncomment to require a valid Turnstile token before saving the lead.
-      // Pair with the widget + script in the form markup above, and set
-      // TURNSTILE_SECRET_KEY in Cloudflare (see functions/verify-turnstile.js).
+      // ── Turnstile spam gate ─────────────────────────────────────────
+      // Runs only once a SITE KEY is configured; with no key this block is inert
+      // and the form behaves exactly as it did before Turnstile existed.
       //
-      // const tsToken = (window.turnstile && turnstile.getResponse()) || '';
-      // const tsOk = await fetch('/verify-turnstile', {
-      //   method: 'POST', headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ token: tsToken }),
-      // }).then(r => r.json()).then(d => d.success).catch(() => false);
-      // if (!tsOk) {
-      //   const s = document.getElementById('form-status');
-      //   s.style.display = 'block';
-      //   s.textContent = 'Please complete the spam check and try again.';
-      //   return;
-      // }
+      // Deliberately fails OPEN whenever the check cannot be completed: the
+      // widget script never loaded (ad blocker, network), the server secret is
+      // not set yet (503), a 500, or a fetch error. Only a widget that loaded
+      // and an explicit 403 from Cloudflare block a submission. Letting a spam
+      // message through is recoverable; silently swallowing a real person's
+      // first message to a therapist is not.
+      if (TURNSTILE_SITE_KEY && window.turnstile) {
+        const tsToken = window.turnstile.getResponse() || '';
+        if (!tsToken) {
+          status.style.display    = 'block';
+          status.style.background = '#fdecea';
+          status.style.color      = '#b71c1c';
+          status.textContent      = 'Please complete the spam check and try again.';
+          return;
+        }
+
+        let tsPass = true;
+        try {
+          const tsRes  = await fetch('/verify-turnstile', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({ token: tsToken }),
+          });
+          const tsBody = await tsRes.json().catch(() => ({}));
+          if (tsRes.status === 403)  tsPass = false;
+          else if (tsRes.ok)         tsPass = !!tsBody.success;
+        } catch (err) { /* network error — fail open */ }
+
+        if (!tsPass) {
+          if (window.turnstile) window.turnstile.reset();
+          status.style.display    = 'block';
+          status.style.background = '#fdecea';
+          status.style.color      = '#b71c1c';
+          status.textContent      = 'The spam check didn’t go through. Please try again.';
+          return;
+        }
+      }
 
       btn.disabled    = true;
       btn.textContent = 'Sending…';
@@ -751,6 +776,8 @@ eleventyExcludeFromCollections: true
         status.style.color        = '#1a7c34';
         status.textContent        = '✓ Message sent. David will be in touch within 24 hours.';
         e.target.reset();
+        // The used token is single-use; arm a fresh one for any second send.
+        if (TURNSTILE_SITE_KEY && window.turnstile) window.turnstile.reset();
       } catch (err) {
         console.error(err);
         status.style.display      = 'block';
