@@ -91,3 +91,12 @@
 }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { font-size: 16px; line-height: 1.8; color: #3d3830; margin: 0 0 18px; max-width: none; }
+
+/* Numbered step list. Opt-in: only posts whose body includes
+   <ol class="loop-steps"> use it. core.css zeroes list margin and padding,
+   so this restores a gutter for the numbers and matches .prose list type.
+   Bare <ol> elements on other posts are untouched. */
+.prose .loop-steps { margin: 4px 0 22px; padding-left: 28px; }
+.prose .loop-steps li { font-size: 16px; line-height: 1.7; color: #3d3830; padding-left: 8px; margin-bottom: 8px; }
+.prose .loop-steps li:last-child { margin-bottom: 0; }
+.prose .loop-steps li::marker { color: var(--gold); font-weight: 800; }
