@@ -429,14 +429,6 @@
         <p class="fees-note">We'll go over cost on the 15-minute call &mdash; including sliding-scale options &mdash; before anything gets scheduled. The call itself is always free.</p>
       </div>
 
-      <div class="section" id="sec-format">
-        <p class="section-label" id="lbl-format">How we meet</p>
-        <div class="chips" role="group" aria-labelledby="lbl-format" data-group="format">
-          <button type="button" class="chip" aria-pressed="false" data-format="In person">In person</button>
-          <button type="button" class="chip" aria-pressed="false" data-format="Telehealth / Secure video">Telehealth &middot; anywhere in Texas</button>
-        </div>
-      </div>
-
       <div class="section" id="sec-referral">
         <p class="section-label" id="lbl-referral">How did you hear about me? <span class="optional">(optional)</span></p>
         <select id="referral-source" aria-labelledby="lbl-referral">
@@ -513,7 +505,6 @@
     state: null,
     payment: null,
     insuranceNetwork: null,
-    format: null,            // ["In person"] | ["Telehealth / Secure video"]
     referralSource: null,    // self-reported "how did you hear about me?"
     referralWho: "",         // who to thank (friend / professional referrals)
     fullName: "",
@@ -542,7 +533,6 @@
         state: data.state,
         payment: data.payment,
         insuranceNetwork: data.insuranceNetwork,
-        format: data.format,
         referralSource: data.referralSource
       }));
     } catch (e) {}
@@ -647,18 +637,6 @@
     networkSelect.classList.remove("invalid");
     networkSelect.removeAttribute("aria-invalid");
     saveDraft();
-  });
-
-  /* =========================================================
-     FORMAT (in person vs telehealth)
-     ========================================================= */
-  var formatGroup = document.querySelector('[data-group="format"]');
-  formatGroup.querySelectorAll(".chip").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      data.format = [btn.dataset.format];
-      markSelected(formatGroup, btn);
-      saveDraft();
-    });
   });
 
   /* =========================================================
@@ -777,7 +755,6 @@
     if (data.phone.replace(/\D/g, "").length < 10) problems.push({ msg: "Please enter a valid phone number.", section: markFieldInvalid("phone") });
     if (!data.payment) problems.push({ msg: "Please choose how you plan to cover your care.", section: markGroupInvalid("sec-payment") });
     else if (data.payment === "insurance" && !data.insuranceNetwork) problems.push({ msg: "Please select your insurance network.", section: markFieldInvalid("insurance-network") });
-    if (!data.format || !data.format.length) problems.push({ msg: "Please choose how you'd like to meet.", section: markGroupInvalid("sec-format") });
 
     if (problems.length) {
       err.textContent = problems[0].msg + (problems.length > 1 ? " (" + problems.length + " things need attention, they're outlined in red.)" : "");
@@ -805,12 +782,11 @@
     var paymentLabel = data.payment === "insurance"
       ? "Insurance: " + (data.insuranceNetwork || "unspecified")
       : "Private pay";
-    var formatLabel = (data.format && data.format[0]) ? data.format[0] : "format not specified";
     var referralLabel = data.referralSource
       ? "Heard via " + data.referralSource + (data.referralWho ? " (" + data.referralWho + ")" : "")
       : null;
     var summary = [
-      data.state, paymentLabel, formatLabel, referralLabel,
+      data.state, paymentLabel, referralLabel,
       "booking the free 15-min call"
     ].filter(Boolean).join(" · ");
 
@@ -822,7 +798,6 @@
       state:      data.state,
       payment:    data.payment,
       insurance_network: data.insuranceNetwork,
-      format:     data.format,
       referral_source: data.referralSource,
       referral_who: data.referralWho || null,
       next_step:  "call",   // the only public path; sessions are booked by David
@@ -904,7 +879,6 @@
       data.state = saved.state;
       data.payment = saved.payment || null;
       data.insuranceNetwork = saved.insuranceNetwork || null;
-      data.format = saved.format || null;
       data.referralSource = saved.referralSource || null;
 
       markSelected(stateGroup, stateGroup.querySelector('[data-state="Texas"]'));
@@ -914,9 +888,6 @@
           insuranceReveal.classList.add("open");
           if (data.insuranceNetwork) networkSelect.value = data.insuranceNetwork;
         }
-      }
-      if (data.format && data.format[0]) {
-        markSelected(formatGroup, formatGroup.querySelector('[data-format="' + data.format[0] + '"]'));
       }
       if (data.referralSource) {
         referralSelect.value = data.referralSource;
