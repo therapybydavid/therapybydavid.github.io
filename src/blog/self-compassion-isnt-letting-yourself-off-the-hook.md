@@ -19,6 +19,10 @@ cardTag: "Self-Worth"
 cardDescription: "A closer look at why self-compassion often gets confused with excuse-making, and what the research and clinical experience actually show about accountability."
 cardDate: "September 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1461468611824-46457c0e11fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNpdHRpbmclMjBxdWlldGx5JTIwcmVmbGVjdGl2ZSUyMG1vbWVudHxlbnwxfDB8fHwxNzg5MzgzNzMxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman wearing gray long-sleeved shirt facing the sea"
+cardImage: "https://images.unsplash.com/photo-1461468611824-46457c0e11fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNpdHRpbmclMjBxdWlldGx5JTIwcmVmbGVjdGl2ZSUyMG1vbWVudHxlbnwxfDB8fHwxNzg5MzgzNzMxfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman wearing gray long-sleeved shirt facing the sea"
 ---
 
 ## The Fear That Keeps People From Trying
