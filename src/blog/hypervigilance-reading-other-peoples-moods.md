@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/hypervigilance-reading-other-peoples-moods"
 canonical: "https://therapybydavid.com/blog/hypervigilance-reading-other-peoples-moods"
 permalink: "/blog/hypervigilance-reading-other-peoples-moods.html"
-date: 2026-09-12
+date: 2026-09-14
 order: 50
 tag: "Anxiety"
-dateDisplay: "September 12, 2026 · 6 min read"
+dateDisplay: "September 14, 2026 · 6 min read"
 deck: "For some people, hypervigilance isn't about traffic or gunfire. It's about a coworker's tone of voice or how fast someone replies to a text."
 cardTitle: "Always Scanning the Room: Hypervigilance to Other People's Moods"
 cardTag: "Anxiety"
 cardDescription: "A look at a specific form of hypervigilance: constantly monitoring other people's faces, tone, and silences for signs of danger, and how to build a more accurate radar."
-cardDate: "September 12, 2026 · 6 min read"
+cardDate: "September 14, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1715778865010-d18a50dd465c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxNDV8fHdvbWFuJTIwYW54aW91c2x5JTIwd2F0Y2hpbmclMjBjb2xsZWFndWUlMjBzfGVufDF8MHx8fDE3ODkyMTE4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "a man and a woman sitting in a dark room"
