@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Autopilot isn't laziness or a lack of discipline. It's a nervous system pattern, and understanding it is the first step to noticing your own life again."
 cardDate: "September 15, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1586857636629-ddba93dae89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzdGFyaW5nJTIwYmxhbmtseSUyMG91dCUyMGNhcnxlbnwxfDB8fHwxNzg5NDcwMTMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in white jacket covering her face with her hands"
+cardImage: "https://images.unsplash.com/photo-1586857636629-ddba93dae89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzdGFyaW5nJTIwYmxhbmtseSUyMG91dCUyMGNhcnxlbnwxfDB8fHwxNzg5NDcwMTMzfDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in white jacket covering her face with her hands"
 ---
 
 ## When the Drive Home Disappears
