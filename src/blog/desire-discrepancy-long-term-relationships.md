@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Mismatched desire for sex, touch, or closeness is one of the most common and least discussed struggles in long-term relationships. Here's what's actually happening."
 cardDate: "September 16, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1565128546240-f2bdab43ac60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODk1NTY1MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man and woman sitting beside each other on gray padded sectional sofa"
+cardImage: "https://images.unsplash.com/photo-1565128546240-f2bdab43ac60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHxjb3VwbGUlMjBzaXR0aW5nJTIwYXBhcnQlMjBvbiUyMGNvdWNofGVufDF8MHx8fDE3ODk1NTY1MzZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man and woman sitting beside each other on gray padded sectional sofa"
 ---
 
 ## A Normal Mismatch That Feels Deeply Personal
