@@ -10,6 +10,7 @@ ogUrl: "https://therapybydavid.com/blog/therapy-cost-texas"
 canonical: "https://therapybydavid.com/blog/therapy-cost-texas"
 permalink: "/blog/therapy-cost-texas.html"
 date: 2026-06-12
+dateModified: 2026-09-17
 order: 6
 tag: "Getting Started"
 dateDisplay: "June 12, 2026 · 8 min read"
@@ -147,6 +148,6 @@ Five minutes on the phone turns "I have no idea what this will cost" into a real
 
 You don't have to figure all of this out alone, and you definitely don't have to commit to anything before you understand the cost. The first step is free.
 
-At Therapy by David, every new client starts with a free 15-minute consultation. It's a no-pressure conversation about what's going on, how the work would look, and, yes, exactly what it would cost in your situation. The practice is in-network with many major insurance plans, confirms self-pay rates up front with no surprises, and keeps sliding-scale spots open for those paying out of pocket. For your current rate and what your specific coverage would mean, the fastest answer is to [book a free 15-minute consultation](/contact.html) and ask directly.
+At Therapy by David, every new client starts with a free 15-minute consultation. It's a no-pressure conversation about what's going on, how the work would look, and, yes, exactly what it would cost in your situation. Partner agencies can bill many major insurance plans, with the same therapist either way. Self-pay rates are confirmed up front with no surprises, and sliding-scale spots stay open for those paying out of pocket. For your current rate and what your specific coverage would mean, the fastest answer is to [book a free 15-minute consultation](/contact.html) and ask directly.
 
 Cost is a real consideration. It shouldn't be the reason you keep putting off support that could actually change things.
