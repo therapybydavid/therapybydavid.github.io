@@ -69,9 +69,9 @@ faqJson: |
       ]
     }
 image: "/images/blog/high-functioning-anxiety.webp"
-imageAlt: "woman talking through mobile phone while sitting on swivel armchair"
-cardImage: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxoaWdoJTIwYWNoaWV2aW5nJTIwd29tYW4lMjBkZWVwJTIwaW4lMjB0aG91Z2h0JTIwYXQlMjBkZXNrfGVufDF8MHx8fDE3ODI3NjUzNjh8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "woman talking through mobile phone while sitting on swivel armchair"
+imageAlt: "man driving on a wet road with both hands on the wheel, wipers running"
+cardImage: "https://images.unsplash.com/photo-1541747277704-ef7fb8e1a31c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+cardAlt: "man driving on a wet road with both hands on the wheel, wipers running"
 ---
 
 A lot of men with high-functioning anxiety would never use that word. They don't feel anxious. They feel responsible. They are the one who has it handled at work, at home, and for everyone who leans on them. They plan ahead, check twice, and stay a step in front of whatever could go wrong. From the outside it reads as reliability. From the inside it feels like never getting to put anything down.
