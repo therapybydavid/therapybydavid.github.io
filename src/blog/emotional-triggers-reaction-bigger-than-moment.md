@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Learn to recognize the gap between what actually happened and how hard it hit you, and what that gap is trying to tell you about an old wound."
 cardDate: "September 17, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBhdXNpbmclMjBkdXJpbmclMjB0ZW5zZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5NjQyOTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "two women sitting on chair"
+cardImage: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBhdXNpbmclMjBkdXJpbmclMjB0ZW5zZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5NjQyOTQ0fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "two women sitting on chair"
 ---
 
 ## The Comment Was Small. The Reaction Wasn't.
