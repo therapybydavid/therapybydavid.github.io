@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Decision fatigue does not just slow you down. It changes what you choose. Here is why evenings go sideways and what actually helps."
 cardDate: "September 18, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1612620980838-5541dad8e254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHBhcmVudCUyMHBob25lJTIwY291Y2glMjBldmVuaW5nfGVufDF8MHx8fDE3ODk3MjkzNTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man in black t-shirt lying on couch"
+cardImage: "https://images.unsplash.com/photo-1612620980838-5541dad8e254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHBhcmVudCUyMHBob25lJTIwY291Y2glMjBldmVuaW5nfGVufDF8MHx8fDE3ODk3MjkzNTN8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man in black t-shirt lying on couch"
 ---
 
 You made it through the day. Meetings, emails, maybe a school pickup or two, dinner started and half-abandoned. Then somewhere around eight or nine at night, something shifts. You snap at your partner over a dish left in the sink. You order something online you will regret. You tell yourself you will start the diet, the budget, the boundary tomorrow, again. If this sounds familiar, it is not a character flaw. It is what decision fatigue looks like once the sun goes down. Most people think of decision fatigue as something that happens to "busy people" in high stakes jobs. It does, and [decision fatigue affects even the busiest, most disciplined people](https://therapybydavid.com/blog/decision-fatigue-why-busy-people-run-out-of-willpower). But there is a specific, predictable version of it that shows up almost every night, in almost every household, and it deserves its own attention because the consequences are different. Daytime decision fatigue makes you slower and less careful. Evening decision fatigue makes you more impulsive, more reactive, and more likely to undo things you worked hard for earlier in the day.
