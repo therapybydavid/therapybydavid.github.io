@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/emotional-triggers-reaction-bigger-than-moment"
 canonical: "https://therapybydavid.com/blog/emotional-triggers-reaction-bigger-than-moment"
 permalink: "/blog/emotional-triggers-reaction-bigger-than-moment.html"
-date: 2026-09-17
+date: 2026-09-19
 order: 50
 tag: "Mental Health"
-dateDisplay: "September 17, 2026 · 6 min read"
+dateDisplay: "September 19, 2026 · 6 min read"
 deck: "When a small comment wrecks your whole afternoon, the problem usually isn't the comment."
 cardTitle: "When the Reaction Is Bigger Than the Moment: How to Spot an Emotional Trigger"
 cardTag: "Mental Health"
 cardDescription: "Learn to recognize the gap between what actually happened and how hard it hit you, and what that gap is trying to tell you about an old wound."
-cardDate: "September 17, 2026 · 6 min read"
+cardDate: "September 19, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1628551019295-99fc72f7fc66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBhdXNpbmclMjBkdXJpbmclMjB0ZW5zZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5NjU3NjU5fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "woman in black crew neck t-shirt"
