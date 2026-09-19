@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A specific pattern in how couples argue turns a small, fixable complaint into a fight about someone's character. Here's how to catch it."
 cardDate: "September 19, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1708201597035-60691c4152cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBoYXZpbmclMjB0ZW5zZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5ODE1NzU1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A man and a woman standing next to each other"
+cardImage: "https://images.unsplash.com/photo-1708201597035-60691c4152cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBoYXZpbmclMjB0ZW5zZSUyMGNvbnZlcnNhdGlvbnxlbnwxfDB8fHwxNzg5ODE1NzU1fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A man and a woman standing next to each other"
 ---
 
 Most couples don't fight about the thing they think they're fighting about. They fight about how the thing got said. A partner brings up something real, forgotten plans, an unanswered text, dishes left in the sink again, and within a few sentences the conversation has stopped being about the dishes at all. It's become a referendum on whether that person is lazy, selfish, or doesn't care. That shift, from a specific complaint to a broader statement about character, is one of the most reliable ways a fixable disagreement turns into a fight that leaves both people raw. This isn't about tone of voice or who raised their voice first. It's about a linguistic pattern that's easy to fall into and surprisingly easy to interrupt once you know what to listen for.
