@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/why-your-worst-decisions-happen-after-8pm"
 canonical: "https://therapybydavid.com/blog/why-your-worst-decisions-happen-after-8pm"
 permalink: "/blog/why-your-worst-decisions-happen-after-8pm.html"
-date: 2026-09-18
+date: 2026-09-20
 order: 50
 tag: "Mental Health"
-dateDisplay: "September 18, 2026 · 6 min read"
+dateDisplay: "September 20, 2026 · 6 min read"
 deck: "By the time the day winds down, the part of your brain that says no has already clocked out."
 cardTitle: "Why Your Worst Decisions Happen After 8 PM"
 cardTag: "Mental Health"
 cardDescription: "Decision fatigue does not just slow you down. It changes what you choose. Here is why evenings go sideways and what actually helps."
-cardDate: "September 18, 2026 · 6 min read"
+cardDate: "September 20, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1612620980838-5541dad8e254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx0aXJlZCUyMHBhcmVudCUyMHBob25lJTIwY291Y2glMjBldmVuaW5nfGVufDF8MHx8fDE3ODk3MjkzNTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "man in black t-shirt lying on couch"
