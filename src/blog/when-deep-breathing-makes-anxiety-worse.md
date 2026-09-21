@@ -19,6 +19,10 @@ cardTag: "Anxiety"
 cardDescription: "Breathing exercises are supposed to calm you down. Here is why they sometimes backfire, and what to try instead when a big inhale makes anxiety spike."
 cardDate: "September 21, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1717691526463-975c4119505c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHx3b21hbiUyMGNsb3NpbmclMjBleWVzJTIwdGFraW5nJTIwYnJlYXRofGVufDF8MHx8fDE3ODk5ODg1MzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a woman standing in front of a tree with her eyes closed"
+cardImage: "https://images.unsplash.com/photo-1717691526463-975c4119505c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHx3b21hbiUyMGNsb3NpbmclMjBleWVzJTIwdGFraW5nJTIwYnJlYXRofGVufDF8MHx8fDE3ODk5ODg1MzR8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a woman standing in front of a tree with her eyes closed"
 ---
 
 ## When "Just Breathe" Doesn't Land
