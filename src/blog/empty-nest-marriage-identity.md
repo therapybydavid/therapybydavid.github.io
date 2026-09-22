@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "When children leave home, couples often discover the marriage was organized around parenting. Here's what that transition actually involves."
 cardDate: "September 22, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1692133220749-1c55bb918ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzdGFuZGluZyUyMGluJTIwZW1wdHklMjBiZWRyb29tfGVufDF8MHx8fDE3OTAwNzQ5NDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "an empty room with white walls and wood floors"
+cardImage: "https://images.unsplash.com/photo-1692133220749-1c55bb918ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBzdGFuZGluZyUyMGluJTIwZW1wdHklMjBiZWRyb29tfGVufDF8MHx8fDE3OTAwNzQ5NDF8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "an empty room with white walls and wood floors"
 ---
 
 A couple in their late forties drops their youngest off at a dorm in College Station. The drive back to Houston on 290 is quiet in a way it hasn't been in eighteen years. No one is arguing about a phone charger or asking to stop for food. By the time they pull into the driveway, the house feels different before they've even opened the door. Most of what gets written about the empty nest treats it like a single event with a single feeling attached, sadness, maybe some relief. In the therapy room, it looks messier than that. It's not one feeling. It's a full renegotiation of a marriage, a home, and a sense of self that had a lot of its structure supplied by someone else's schedule.
