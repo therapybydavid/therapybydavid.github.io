@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Waking up in the middle of the night isn't the same problem as trouble falling asleep. Here's why it happens and what actually helps you get back to sleep."
 cardDate: "September 24, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1585963373105-404b0a93c946?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhd2FrZSUyMGluJTIwYmVkfGVufDF8MHx8fDE3OTAyNDc3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "person in black shorts lying on bed"
+cardImage: "https://images.unsplash.com/photo-1585963373105-404b0a93c946?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhd2FrZSUyMGluJTIwYmVkfGVufDF8MHx8fDE3OTAyNDc3Mzd8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "person in black shorts lying on bed"
 ---
 
 Most people picture insomnia as lying in bed for an hour, unable to fall asleep. But a huge number of people fall asleep just fine. The problem shows up later: 2 a.m. 3 a.m. sometimes the same time almost every night, and then the mind is suddenly wide awake while the body is exhausted. This is a different problem than trouble falling asleep, and it usually needs a different response.
