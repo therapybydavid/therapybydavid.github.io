@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "A plain-language guide to therapist credentials in Texas, what each license actually trains someone to do, and why the letters matter less than the fit."
 cardDate: "September 25, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWFkaW5nJTIwdGhlcmFwaXN0JTIwZGlyZWN0b3J5JTIwbGFwdG9wfGVufDF8MHx8fDE3OTAzMzQxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "person sitting front of laptop"
+cardImage: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWFkaW5nJTIwdGhlcmFwaXN0JTIwZGlyZWN0b3J5JTIwbGFwdG9wfGVufDF8MHx8fDE3OTAzMzQxMzR8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "person sitting front of laptop"
 ---
 
 Most people searching for a therapist land on a directory page and see a wall of abbreviations. LPC. LCSW. LMFT. PhD. PsyD. LPC-Associate. It looks like a code you're supposed to already understand, and most people quietly guess at what it means, or ignore it entirely and pick based on the headshot and the price. Neither approach serves you well. The letters do mean something specific in Texas, but they answer a narrower question than most people assume, and leaning on them too heavily can lead you to overlook what actually determines whether therapy works.
