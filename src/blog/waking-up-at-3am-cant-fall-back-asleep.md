@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/waking-up-at-3am-cant-fall-back-asleep"
 canonical: "https://therapybydavid.com/blog/waking-up-at-3am-cant-fall-back-asleep"
 permalink: "/blog/waking-up-at-3am-cant-fall-back-asleep.html"
-date: 2026-09-24
+date: 2026-09-26
 order: 50
 tag: "Mental Health"
-dateDisplay: "September 24, 2026 · 6 min read"
+dateDisplay: "September 26, 2026 · 6 min read"
 deck: "It's not that you can't sleep. It's that something wakes you up, and your brain decides that's the perfect time to run through everything you're worried about."
 cardTitle: "Why You Keep Waking Up at 3 A.M. and Can't Fall Back Asleep"
 cardTag: "Mental Health"
 cardDescription: "Waking up in the middle of the night isn't the same problem as trouble falling asleep. Here's why it happens and what actually helps you get back to sleep."
-cardDate: "September 24, 2026 · 6 min read"
+cardDate: "September 26, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1585963373105-404b0a93c946?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBhd2FrZSUyMGluJTIwYmVkfGVufDF8MHx8fDE3OTAyNDc3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "person in black shorts lying on bed"
