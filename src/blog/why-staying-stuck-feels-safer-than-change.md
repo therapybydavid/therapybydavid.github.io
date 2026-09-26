@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Feeling stuck isn't always a lack of willpower. Here's why your brain sometimes chooses a familiar rut over an unknown change, and what actually helps."
 cardDate: "September 26, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBzdGFyaW5nJTIwb3V0JTIwd2luZG93JTIwdGhpbmtpbmd8ZW58MXwwfHx8MTc5MDQyMDUzN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "man in black jacket looking out the window"
+cardImage: "https://images.unsplash.com/photo-1603136324205-01cdebce04ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBzdGFyaW5nJTIwb3V0JTIwd2luZG93JTIwdGhpbmtpbmd8ZW58MXwwfHx8MTc5MDQyMDUzN3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "man in black jacket looking out the window"
 ---
 
 There's a particular kind of stuck that doesn't look like crisis. It looks like a person who has a stable job, a decent apartment, people in their life, and a quiet, persistent sense that something needs to change and they are simply not doing it. Not because they don't know what the change is. Often they can name it precisely: leave the job, end the relationship, move to a different city, finally start the thing they keep saying they'll start. The knowing isn't the problem. The staying is. Most people respond to this by assuming they lack discipline or courage. They read something about motivation, try to white-knuckle a decision, and then wonder why three months later nothing has moved. The truth is less about willpower than about how the brain evaluates safety, and once you understand that, staying stuck stops looking like a personal failing and starts looking like a pattern with a logic of its own.
