@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Autopilot isn't always about forgetfulness or busyness. Sometimes it's a system built to keep certain feelings from ever surfacing."
 cardDate: "September 28, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1789841418052-78bcb32a614c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHN0YXJpbmclMjBibGFua2x5JTIwZm9sZGluZyUyMGxhdW5kcnl8ZW58MXwwfHx8MTc5MDU5MzI5N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A woman holding a patterned quilt beside a teak sideboard and sunlit window"
+cardImage: "https://images.unsplash.com/photo-1789841418052-78bcb32a614c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHN0YXJpbmclMjBibGFua2x5JTIwZm9sZGluZyUyMGxhdW5kcnl8ZW58MXwwfHx8MTc5MDU5MzI5N3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A woman holding a patterned quilt beside a teak sideboard and sunlit window"
 ---
 
 Most conversations about autopilot focus on time. The blur of routines, the sense that a year (or three) disappeared without much to show for it. That's real, and worth examining on its own (we've written about it [here](https://therapybydavid.com/blog/living-on-autopilot-missing-time)). But there's a quieter version of autopilot that doesn't show up as lost time. It shows up as a life that runs smoothly, on schedule, with nothing obviously wrong, and still feels like watching yourself from three feet behind your own eyes. This version of autopilot isn't a scheduling problem. It's a protective one. The routines aren't just efficient, they're doing a job: keeping a specific feeling from ever fully arriving.
