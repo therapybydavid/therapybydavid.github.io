@@ -1,0 +1,103 @@
+---
+layout: base.njk
+permalink: /faq.html
+eleventyExcludeFromCollections: true
+title: "FAQ | David Robles, LMSW | Therapy by David"
+description: "Common questions about therapy with David Robles, LMSW: what he helps with, in-person vs. telehealth, first sessions, booking, and the free consultation."
+ogTitle: "Frequently Asked Questions"
+ogDescription: "Straight answers about starting therapy with David Robles, LMSW: what he helps with, how sessions work, and how to book."
+ogType: website
+imageAlt: "David Robles, LMSW, psychotherapist"
+pageStyles: article.css
+breadcrumbJson: |
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://therapybydavid.com/"},
+      {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://therapybydavid.com/faq"}
+    ]
+  }
+# One source for both the visible answers and the FAQPage schema, so the two
+# can never drift apart. Answers may hold inline links; the schema copy is the
+# same text with the tags stripped.
+faqs:
+  - q: "What issues do you help with?"
+    a: >-
+      I work with adults on anxiety and overthinking, trauma and PTSD, depression,
+      burnout and chronic stress, and relationship patterns, including couples
+      therapy. I also focus on men's mental health and on veterans, military
+      families, and first responders.
+  - q: "Do you offer in-person or virtual sessions?"
+    a: >-
+      Both. In-person sessions are held at my office in the Clear Lake area of
+      Houston (1335 Regents Park Dr #140, Houston, TX 77058), and secure video
+      telehealth is available anywhere in Texas, including
+      <a class="inline-link" href="/therapy-pasadena-tx">Pasadena</a>. For
+      telehealth, you need to be in Texas during the session.
+  - q: "What happens in a first session?"
+    a: >-
+      A first full session is mostly about getting to know you: I explain how I
+      work, ask what's been going on and what made you reach out, and we handle
+      the basic intake paperwork. Toward the end, we start shaping what you want
+      to work on. You don't need to prepare anything or have your story figured out.
+  - q: "How do I book?"
+    a: >-
+      Book a free 15-minute phone consultation at
+      <a class="inline-link" href="/intake">therapybydavid.com/intake</a>: a few
+      quick questions first, then you pick a time. You can also call
+      <a class="inline-link" href="tel:8325442562">(832) 544-2562</a>. If it
+      feels like a fit, we schedule your first session.
+  - q: "Do you offer a free consultation?"
+    a: >-
+      Yes. Every new client starts with a free 15-minute phone consultation, with
+      no cost and no commitment. You share a bit about what's going on, I explain
+      how I work, and we decide together whether it's a good fit before you book
+      a full session.
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {"@type": "Answer", "text": {{ item.a | striptags | dump | safe }}}
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+<header class="article-hero">
+  <div class="container">
+    <a href="/" class="back-link">Home</a>
+    <h1>Frequently Asked Questions</h1>
+    <p class="deck">Straight answers about starting therapy with David Robles, LMSW: what he helps with, how sessions work, and how to book.</p>
+    <div class="author-row">
+      <img src="/david-robles-profile-96.webp" width="48" height="48" alt="David Robles" class="author-avatar">
+      <div class="author-info">
+        <strong>David Robles, LMSW</strong>
+        <span>Psychotherapist · Houston, Texas</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <section class="faq" aria-label="Frequently asked questions">
+    {%- for item in faqs %}
+    <details class="faq-item" open>
+      <summary>{{ item.q }}</summary>
+      <p>{{ item.a | safe }}</p>
+    </details>
+    {%- endfor %}
+  </section>
+
+  <div class="article-cta">
+    <h3>Ready to take the first step?</h3>
+    <p>Start with a free 15-minute consultation. No pressure, just a real conversation about what's going on and whether it's a fit.</p>
+    <a class="btn btn-gold" href="/intake">Book a Free 15-Minute Call</a>
+  </div>
+</main>

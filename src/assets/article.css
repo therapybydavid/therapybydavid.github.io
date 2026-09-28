@@ -92,6 +92,11 @@
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { font-size: 16px; line-height: 1.8; color: #3d3830; margin: 0 0 18px; max-width: none; }
 
+/* Inline text links. Opt-in by class, so links in existing posts are unchanged.
+   Dark text with a gold underline stays readable on the light page. */
+.prose a.inline-link, .faq-item a.inline-link { color: var(--night); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.prose a.inline-link:hover, .faq-item a.inline-link:hover { color: var(--gold); }
+
 /* Numbered step list. Opt-in: only posts whose body includes
    <ol class="loop-steps"> use it. core.css zeroes list margin and padding,
    so this restores a gutter for the numbers and matches .prose list type.
