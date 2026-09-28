@@ -117,6 +117,7 @@ edit HTML in the repo root for migrated pages — edit the **source in `src/`**.
 - **Keep new costs at $0** — do not introduce paid infrastructure (e.g. Supabase, AI voice, paid automation tiers) without explicit approval.
 - **Preferences:** No AI voice agent and no autonomous outreach agents. Any outreach stays human-approved ("Claude drafts, David sends").
 - **Trello stays in the business mix for now (per David, 2026-06-17)** — keep the referral automation creating a Trello card *alongside* the Notion lead, so David can compare Trello vs Notion side by side. This reverses the earlier "Trello = personal only" call. (Trello may still be used personally too.)
+- **Calendly bookings → Trello (added 2026-09-28):** `functions/calendly-webhook.js` (free Pages Function) receives Calendly's `invitee.created` webhook, so bookings that skip `/intake` (direct Calendly links, ChatGPT/Psychology Today, the Open Path embed) still reach the lead board. A new person gets a card in **Booked Call**. An existing live card (matched by email, then name) gets a comment, and moves to Booked Call if it was in New Lead or Reached Out. Needs Pages secrets `TRELLO_KEY`, `TRELLO_TOKEN`, `CALENDLY_WEBHOOK_SIGNING_KEY`. The Calendly subscription is managed with `scripts/calendly-webhook.mjs` (`status` / `create` / `backfill YYYY-MM-DD`).
 
 ## Security (hardened 2026-06-21)
 - **Secrets:** never hardcoded — read from env vars / kept in the `openpath-intake`

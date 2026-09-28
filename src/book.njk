@@ -250,8 +250,9 @@ permalink: /book/index.html
     <!-- BOOKING CTA
          Deliberately the intake form rather than an inline Calendly embed:
          the form is what POSTs to the notification Worker, and the Worker
-         is what creates the Trello card and fires the SMS alert. Embedding
-         Calendly here would let someone book with no card and no alert. -->
+         fires the SMS alert and puts the screening answers on the Trello
+         card. Embedding Calendly here would still get a card (from the
+         Calendly webhook) but no alert and no screening. -->
     <section class="section calendar-section">
       <div class="container">
         <div class="reveal" style="text-align:center;">
