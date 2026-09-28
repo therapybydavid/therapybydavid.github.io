@@ -27,9 +27,10 @@ eleventyExcludeFromCollections: true
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": ["ProfessionalService", "MedicalBusiness"],
+    "@id": "https://therapybydavid.com/#practice",
     "name": "Therapy by David",
-    "description": "Private psychotherapy for anxiety, trauma, burnout, overthinking, and emotional overwhelm. Serving adults across Texas via telehealth and in-person offices.",
+    "description": "Private psychotherapy for anxiety, trauma, burnout, overthinking, and emotional overwhelm with David Robles, LMSW, a psychotherapist and U.S. Army veteran. In-person sessions in the Clear Lake area of Houston, Texas, and secure telehealth for adults anywhere in Texas, including Pasadena. New clients start with a free 15-minute consultation.",
     "url": "https://therapybydavid.com/",
     "telephone": "(832) 544-2562",
     "priceRange": "$80 - $150",
@@ -68,21 +69,26 @@ eleventyExcludeFromCollections: true
       "https://www.google.com/search?kgmid=/g/11yydn6wld",
       "https://www.emorahealth.com/providers/profile/12634076/david-robles"
     ],
-    "medicalSpecialty": "Psychotherapy",
-    "serviceType": ["Psychotherapy", "Therapy", "Mental Health Counseling", "Talk Therapy"],
     "hasMap": "https://www.google.com/maps/search/?api=1&query=1335+Regents+Park+Dr+Houston+TX+77058",
     "areaServed": [
       {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}},
-      {"@type": "City", "name": "Pasadena", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Pasadena", "sameAs": "https://en.wikipedia.org/wiki/Pasadena,_Texas", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "City", "name": "Webster", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "State", "name": "Texas"}
     ],
     "founder": {
       "@type": "Person",
+      "@id": "https://therapybydavid.com/about#david-robles",
       "name": "David Robles",
-      "jobTitle": "Licensed Master Social Worker, Psychotherapist",
-      "description": "U.S. Army veteran and licensed psychotherapist specializing in anxiety, trauma, burnout, and men's mental health.",
+      "honorificSuffix": "LMSW",
+      "jobTitle": "Licensed Master Social Worker (LMSW), Psychotherapist",
+      "description": "U.S. Army veteran and psychotherapist (LMSW) specializing in anxiety, trauma, burnout, and men's mental health.",
+      "url": "https://therapybydavid.com/about",
       "alumniOf": {"@type": "CollegeOrUniversity", "name": "Baylor University"},
+      "hasCredential": [
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Licensed Master Social Worker (LMSW)", "recognizedBy": {"@type": "GovernmentOrganization", "name": "Texas State Board of Social Worker Examiners"}},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Master of Social Work (MSW)", "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Baylor University"}}
+      ],
       "knowsAbout": ["Anxiety", "Trauma therapy", "PTSD", "Burnout", "Men's mental health", "Veterans mental health", "Grief", "Couples therapy", "Cognitive Behavioral Therapy (CBT)", "Acceptance and Commitment Therapy (ACT)", "Online therapy in Texas"],
       "sameAs": [
         "https://www.psychologytoday.com/us/therapists/david-robles-houston-tx/1668640",
@@ -91,6 +97,29 @@ eleventyExcludeFromCollections: true
         "https://www.google.com/search?kgmid=/g/11yydn6wld",
         "https://www.emorahealth.com/providers/profile/12634076/david-robles"
       ]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Psychotherapy services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Anxiety Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/anxiety-therapy"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Trauma Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/trauma-therapy"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Depression Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/depression-therapy"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Burnout & Overthinking Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/burnout-overthinking"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Couples Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/couples-therapy"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Men's Mental Health Therapy", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/mens-mental-health"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Therapy for Veterans & Military Families", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/veterans-military-families"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Therapy for First Responders", "serviceType": "Psychotherapy", "url": "https://therapybydavid.com/first-responders"}}
+      ]
+    },
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "name": "Book a free 15-minute consultation",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://therapybydavid.com/intake",
+        "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+      }
     }
   }
   </script>
@@ -518,6 +547,16 @@ eleventyExcludeFromCollections: true
     details p, details ul { padding: 0 26px 24px; }
     details p { margin: 0; }
 
+    /* ── Practice details ───────────────────────── */
+    .facts { background: var(--cream); }
+    .facts-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 18px; margin-top: 44px; max-width: 980px; }
+    .fact { background: var(--white); border: 1px solid var(--line-dark); border-radius: 18px; padding: 20px 24px; box-shadow: 0 10px 30px rgba(20,33,50,.04); }
+    .fact dt { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--gold-deep); margin-bottom: 8px; }
+    .fact dd { color: var(--night); font-size: 15.5px; line-height: 1.6; font-weight: 600; }
+    .fact a, .facts-note a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .facts-note { margin-top: 26px; font-size: 15px; }
+    @media (max-width: 640px) { .facts-list { grid-template-columns: 1fr; } }
+
     /* ── Blog ───────────────────────────────────── */
     .bfeed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
     .bfeed-card { background: var(--white); border: 1px solid var(--line-dark); border-radius: 22px; overflow: hidden; box-shadow: 0 14px 40px rgba(20,33,50,.06); transition: transform .25s ease, box-shadow .25s ease; display: flex; flex-direction: column; }
@@ -815,6 +854,22 @@ eleventyExcludeFromCollections: true
           <details class="reveal"><summary>Where are you located, and do you serve my area?</summary><p>Therapy by David is based in the Clear Lake area of Houston and serves clients across the entire state of Texas by secure telehealth video. Whether you're in Houston, Pasadena, Webster, Austin, Dallas, San Antonio, or a small town, you can be seen from anywhere in Texas. No commute required.</p></details>
           <details class="reveal"><summary>Do you work with veterans and first responders?</summary><p>Yes. David is a U.S. Army veteran himself and works closely with veterans, active military, first responders, and their families. He understands the culture, the pressure, and the specific weight that comes with service, so you don't have to over-explain it.</p></details>
         </div>
+      </div>
+    </section>
+
+    <section class="section facts" id="practice-details">
+      <div class="container">
+        <span class="eyebrow">Practice Details</span>
+        <h2>Therapy by David, <em>at a glance.</em></h2>
+        <dl class="facts-list">
+          <div class="fact"><dt>Therapist</dt><dd>David Robles, LMSW, psychotherapist</dd></div>
+          <div class="fact"><dt>Credentials</dt><dd>Licensed Master Social Worker (LMSW) in Texas &middot; Master of Social Work, Baylor University &middot; U.S. Army veteran</dd></div>
+          <div class="fact"><dt>Session formats</dt><dd>In person in the Clear Lake area of Houston, TX &middot; Secure video telehealth anywhere in Texas</dd></div>
+          <div class="fact"><dt>Areas served</dt><dd><a href="/therapy-pasadena-tx">Pasadena, Texas</a> &middot; Houston &middot; Clear Lake &middot; Webster &middot; anywhere in Texas by telehealth</dd></div>
+          <div class="fact"><dt>Services</dt><dd>Anxiety &amp; overthinking &middot; Trauma &middot; Depression &middot; Burnout &middot; Couples therapy &middot; Men's mental health &middot; Veterans &amp; military families &middot; First responders</dd></div>
+          <div class="fact"><dt>Book</dt><dd>Free 15-minute phone consultation: <a href="/intake">therapybydavid.com/intake</a> &middot; <a href="tel:8325442562">(832) 544-2562</a></dd></div>
+        </dl>
+        <p class="facts-note">Quick answers to common questions are on the <a href="/faq">FAQ page</a>.</p>
       </div>
     </section>
 
