@@ -19,10 +19,10 @@ cardTag: "Veterans"
 cardDescription: "Moral injury is different from PTSD. It's the weight of guilt or shame from what happened, or what didn't, in combat. Here's how it shows up and what helps."
 cardDate: "September 29, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
-image: "https://images.unsplash.com/photo-1608656287411-c81ecb3f04f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwc2l0dGluZyUyMGFsb25lJTIwcmVmbGVjdGluZyUyMG1pbGl0YXJ5fGVufDF8MHx8fDE3OTA2Nzk3MDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "man in black jacket and brown pants sitting on gray concrete bench during daytime"
-cardImage: "https://images.unsplash.com/photo-1608656287411-c81ecb3f04f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHx2ZXRlcmFuJTIwc2l0dGluZyUyMGFsb25lJTIwcmVmbGVjdGluZyUyMG1pbGl0YXJ5fGVufDF8MHx8fDE3OTA2Nzk3MDR8MA&ixlib=rb-4.1.0&q=80&w=400"
-cardAlt: "man in black jacket and brown pants sitting on gray concrete bench during daytime"
+image: "https://images.unsplash.com/photo-1680356253675-59bed166221a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHx2ZXRlcmFuJTIwc2l0dGluZyUyMGFsb25lJTIwcmVmbGVjdGluZyUyMG1pbGl0YXJ5fGVufDF8MHx8fDE3OTA2ODI1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "a man sitting on a hill next to a body of water"
+cardImage: "https://images.unsplash.com/photo-1680356253675-59bed166221a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwzfHx2ZXRlcmFuJTIwc2l0dGluZyUyMGFsb25lJTIwcmVmbGVjdGluZyUyMG1pbGl0YXJ5fGVufDF8MHx8fDE3OTA2ODI1NDl8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "a man sitting on a hill next to a body of water"
 ---
 
 Most people, including a lot of clinicians, think of military trauma as fear-based. A firefight, a roadside bomb, a moment where survival took over. That is real and it matters. But there is another kind of wound that shows up in the therapy room just as often, and it rarely gets named correctly. It is called moral injury, and it is not the same thing as PTSD. Moral injury happens when someone does something, fails to do something, or witnesses something that violates their own sense of right and wrong. It is not about fear circuitry getting stuck on high alert. It is about conscience. A service member who followed a lawful order that still resulted in civilian harm. A medic who had to choose who got treated first when there wasn't enough time for everyone. Someone who survived when the person next to them didn't, and can't make peace with why. None of these require a diagnosis of PTSD to leave a permanent mark.
