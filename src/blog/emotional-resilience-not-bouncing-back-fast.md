@@ -19,6 +19,10 @@ cardTag: "Mental Health"
 cardDescription: "Real resilience isn't the absence of struggle or a quick recovery. It's what you do with the hard feeling instead of skipping past it."
 cardDate: "October 1, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1729517033475-ab2ac094645e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwYXVzaW5nJTIwdG8lMjBicmVhdGhlJTIwb3V0ZG9vcnN8ZW58MXwwfHx8MTc5MDg1MjUxM3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A woman standing in a field with her eyes closed"
+cardImage: "https://images.unsplash.com/photo-1729517033475-ab2ac094645e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwYXVzaW5nJTIwdG8lMjBicmVhdGhlJTIwb3V0ZG9vcnN8ZW58MXwwfHx8MTc5MDg1MjUxM3ww&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "A woman standing in a field with her eyes closed"
 ---
 
 ## The Person Who "Handles Everything Well"
