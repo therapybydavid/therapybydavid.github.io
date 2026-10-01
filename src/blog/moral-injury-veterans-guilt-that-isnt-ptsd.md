@@ -9,15 +9,15 @@ ogType: article
 ogUrl: "https://therapybydavid.com/blog/moral-injury-veterans-guilt-that-isnt-ptsd"
 canonical: "https://therapybydavid.com/blog/moral-injury-veterans-guilt-that-isnt-ptsd"
 permalink: "/blog/moral-injury-veterans-guilt-that-isnt-ptsd.html"
-date: 2026-09-29
+date: 2026-10-01
 order: 50
 tag: "Veterans"
-dateDisplay: "September 29, 2026 · 6 min read"
+dateDisplay: "October 1, 2026 · 6 min read"
 deck: "Not every wound from service is fear-based. Some are about conscience, and they carry a different kind of weight."
 cardTitle: "When Guilt Won't Let Go: Moral Injury in Veterans"
 cardTag: "Veterans"
 cardDescription: "Moral injury is different from PTSD. It's the weight of guilt or shame from what happened, or what didn't, in combat. Here's how it shows up and what helps."
-cardDate: "September 29, 2026 · 6 min read"
+cardDate: "October 1, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
 image: "https://images.unsplash.com/photo-1593625240369-2d49272f7b0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHw1Mnx8dmV0ZXJhbiUyMHNpdHRpbmclMjBhbG9uZSUyMHJlZmxlY3RpbmclMjBtaWxpdGFyeXxlbnwxfDB8fHwxNzkwNzc5NDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080"
 imageAlt: "grayscale photo of man in camouflage uniform and helmet"
