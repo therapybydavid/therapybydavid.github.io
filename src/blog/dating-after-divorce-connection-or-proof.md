@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "A look at why so much post-divorce dating is driven by validation instead of genuine interest, and how to tell the difference in yourself."
 cardDate: "October 2, 2026 · 6 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1517940322679-2b003a168fd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxkaXZvcmNlZCUyMHdvbWFuJTIwY2hlY2tpbmclMjBwaG9uZSUyMGRhdGluZ3xlbnwxfDB8fHwxNzkwOTM4ODk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman leaning on white wooden table while holding black Android smartphone"
+cardImage: "https://images.unsplash.com/photo-1517940322679-2b003a168fd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHxkaXZvcmNlZCUyMHdvbWFuJTIwY2hlY2tpbmclMjBwaG9uZSUyMGRhdGluZ3xlbnwxfDB8fHwxNzkwOTM4ODk4fDA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman leaning on white wooden table while holding black Android smartphone"
 ---
 
 Most people do not sit down and consciously decide to date as a way of proving something. It rarely looks that deliberate. It looks like downloading an app the week the divorce is final, or saying yes to every match, or feeling a rush of relief every time someone new shows interest. It feels like excitement. Sometimes it is. But a lot of the time, what is actually happening is quieter and harder to see: dating has become a way to answer a question the divorce left open, which is whether you are still desirable, still choosable, still worth wanting. That question deserves an honest look, because the answer shapes who you date, how fast you move, and what you actually get out of it.
