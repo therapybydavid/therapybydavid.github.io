@@ -19,6 +19,10 @@ cardTag: "Relationships"
 cardDescription: "Why you keep ending up with partners who recreate an old wound, and why insight alone rarely breaks the cycle."
 cardDate: "October 3, 2026 · 5 min read"
 ctaHeading: "Ready to work on this?"
+image: "https://images.unsplash.com/photo-1582220876602-9b12ee97659b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHN0YXJpbmclMjBvdXQlMjB3aW5kb3clMjB0aG91Z2h0ZnVsfGVufDF8MHx8fDE3OTEwMjUzMjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "woman in brown dress standing near blue metal fence during daytime"
+cardImage: "https://images.unsplash.com/photo-1582220876602-9b12ee97659b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5ODc4OTB8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHN0YXJpbmclMjBvdXQlMjB3aW5kb3clMjB0aG91Z2h0ZnVsfGVufDF8MHx8fDE3OTEwMjUzMjB8MA&ixlib=rb-4.1.0&q=80&w=400"
+cardAlt: "woman in brown dress standing near blue metal fence during daytime"
 ---
 
 You meet someone new. They feel different from the last one: calmer, more direct, less complicated. Six months in, you notice the same silence creeping into arguments, the same feeling of reaching for someone who is already halfway out the door. You think, how did I end up here again. This isn't about poor taste in partners. It's a pattern with a name: repetition compulsion. It describes the unconscious pull to recreate an old emotional situation, usually one from childhood, in the hope of finally getting a different outcome. You're not choosing the same person. You're choosing the same role, and hoping this time you can rewrite the ending.
